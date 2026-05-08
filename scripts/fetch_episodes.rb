@@ -288,13 +288,45 @@ def write_episode_file(path, fm)
   File.write(path, "#{YAML.dump(fm)}---\n")
 end
 
+# Safe ISO8601 for RSS/Atom date values; never raises.
+def date_to_iso8601(d)
+  case d
+  when Time
+    d.utc.iso8601
+  when String
+    s = d.to_s.strip
+    return nil if s.empty?
+
+    begin
+      Time.parse(s).utc.iso8601
+    rescue ArgumentError
+      warn "Skipping invalid date string #{s.inspect}"
+      nil
+    end
+  else
+    nil
+  end
+end
+
 url = ENV["PATREON_RSS_URL"]
 if url.nil? || url.strip.empty?
   warn "Missing PATREON_RSS_URL"
   exit 1
 end
 
-items = parse_feed(url)
+begin
+  items = parse_feed(url)
+rescue OpenURI::HTTPError, SocketError, SystemCallError, Errno::ECONNREFUSED, Errno::ETIMEDOUT => e
+  warn "Failed to fetch feed: #{e.class}: #{e.message}"
+  exit 1
+rescue RSS::Error => e
+  warn "Failed to parse RSS/Atom: #{e.class}: #{e.message}"
+  exit 1
+rescue StandardError => e
+  warn "Unexpected error while fetching or parsing feed: #{e.class}: #{e.message}"
+  exit 1
+end
+
 lim = ENV["EPISODE_LIMIT"]
 if lim && !lim.strip.empty?
   begin
@@ -303,6 +335,16 @@ if lim && !lim.strip.empty?
   rescue ArgumentError
     warn "Invalid EPISODE_LIMIT=#{lim.inspect}"
   end
+end
+
+if items.empty?
+  warn "Feed returned no items; refusing to clear #{OUT_DIR}"
+  exit 1
+end
+
+unless items.any? { |it| !it[:title].to_s.strip.empty? }
+  warn "Feed has no items with a non-empty title; refusing to clear #{OUT_DIR}"
+  exit 1
 end
 
 FileUtils.mkdir_p(OUT_DIR)
@@ -316,16 +358,7 @@ items.each do |it|
   slug = safe_filename("#{slugify(title)}-#{episode_hash(it[:guid], link, title)}")
   path = File.join(OUT_DIR, "#{slug}.md")
 
-  d = it[:date]
-  date_iso =
-    case d
-    when Time
-      d.utc.iso8601
-    when String
-      Time.parse(d).utc.iso8601
-    else
-      nil
-    end
+  date_iso = date_to_iso8601(it[:date])
 
   fm = {
     "title" => title,
