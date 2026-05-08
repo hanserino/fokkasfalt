@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {% include google-analytics.html %}
+    {% include google-tag-manager-head.html %}
     {% if page.url == "/" or page.url == "/index.html" %}
     <link rel="preload" as="image" href="{{ '/assets/fokkasfalt.png' | absolute_url }}" fetchpriority="high" />
     <link rel="preload" as="image" href="{{ '/assets/header2.jpeg' | absolute_url }}" />
@@ -82,6 +82,7 @@
     {% if page.extra_head %}{{ page.extra_head }}{% endif %}
   </head>
   <body>
+    {% include google-tag-manager-body.html %}
     <a class="skip-link" href="#main">Hopp til innhold</a>
     {{ content }}
   </body>
