@@ -2,31 +2,33 @@
 layout: default
 ---
 
-<header class="site-header wrap">
-  <p class="badge">Podcast</p>
-  <h1 class="logo-heading">
-    <img
-      class="logo logo--main"
-      src="{{ '/assets/fokkasfalt.png' | relative_url }}"
-      alt="Føkk Asfalt"
-      width="400"
-      height="246"
-      fetchpriority="high"
-      decoding="async"
-    />
-  </h1>
-  <p class="tagline">Ultraløping · Fjelløping · Skyrunning · Stiløping · Terrengløping · Skandinavia</p>
-  <div class="rebrand-lockup">
-    <p class="rebrand-label">Tidligere kjent som</p>
-    <img
-      class="logo logo--legacy"
-      src="{{ '/assets/naerdetalvor.png' | relative_url }}"
-      alt="Nå Er Det Alvor"
-      width="800"
-      height="800"
-      loading="lazy"
-      decoding="async"
-    />
+<header class="site-header">
+  <div class="site-header__inner wrap">
+    <p class="badge">Podcast</p>
+    <h1 class="logo-heading">
+      <img
+        class="logo logo--main"
+        src="{{ '/assets/fokkasfalt.png' | relative_url }}"
+        alt="Føkk Asfalt"
+        width="400"
+        height="246"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </h1>
+    <p class="tagline">Ultraløping · Fjelløping · Skyrunning · Stiløping · Terrengløping · Skandinavia</p>
+    <div class="rebrand-lockup">
+      <p class="rebrand-label">En produksjon av</p>
+      <img
+        class="logo logo--legacy"
+        src="{{ '/assets/naerdetalvor.png' | relative_url }}"
+        alt="Nå Er Det Alvor"
+        width="800"
+        height="800"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
   </div>
 </header>
 
@@ -43,10 +45,6 @@ layout: default
     <p class="hero-note">
       Mer info om podcasten, nyheter og faglig innhold finner du på
       <a href="https://naerdetalvor.no/" rel="noopener noreferrer" target="_blank">naerdetalvor.no</a>
-    </p>
-    <p class="ep-hero-funnel">
-      <a href="{{ '/episoder/' | relative_url }}">Hele podcast-arkivet</a>
-      <span class="ep-hero-funnel__meta"> — dato, varighet og lenke til Patreon for hver episode.</span>
     </p>
     <div class="cta-row">
       <a class="btn btn--primary" href="{{ '/episoder/' | relative_url }}">Alle episoder</a>
@@ -106,7 +104,7 @@ layout: default
   {% endif %}
 
   <section class="section wrap" aria-labelledby="topics-heading">
-    <h2 id="topics-heading" class="section-title">Dette handler vi om</h2>
+    <h2 id="topics-heading" class="section-title">Dette er FØKK ASFALT</h2>
     <ul class="topic-tags">
       <li>Terrengløping</li>
       <li>Fjelløping</li>
@@ -118,13 +116,13 @@ layout: default
       <h2>Lytt og støtt</h2>
       <ul>
         <li>
-          <strong>Spotify og Apple Podcasts</strong> — <strong>250</strong> episoder å lytte til gratis.
+          <strong><a href="https://open.spotify.com/show/1s8OvAXNcqRa6oncqakhdg?si=95721a9072c34c67">Spotify</a> og <a href="https://podcasts.apple.com/no/podcast/f-k-asfalt-n%C3%A5-er-det-alvor/id1332829214">Apple Podcasts</a></strong> — <strong>250</strong> episoder å lytte til gratis.
         </li>
         <li>
-          <strong>Patreon</strong> — <strong>500+</strong> episoder for medlemmer; bonus, fellesskap og støtte til podcasten.
+          <strong><a href="https://www.patreon.com/alvorpodcast">Patreon</a></strong> — <strong>500+</strong> episoder for medlemmer; bonus, fellesskap og støtte til podcasten.
         </li>
         <li>
-          <strong>fokkasfalt.no</strong> — episodeliste, forsiden du er på nå, og mer etter hvert.
+          <strong><a href="https://naerdetalvor.no/butikk/">Merch-butikken</a></strong> — Caps, t-skjorter, og hoodies.
         </li>
       </ul>
     </div>

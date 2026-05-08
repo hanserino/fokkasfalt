@@ -74,10 +74,41 @@ a:focus-visible {
   margin-inline: auto;
 }
 
-/* Header */
+/* Header — full-width photo + vignette (forsiden) */
 .site-header {
-  padding: var(--space) 0 0.5rem;
+  --site-header-photo: linear-gradient(
+      155deg,
+      rgba(10, 10, 10, 0.9) 0%,
+      rgba(10, 10, 10, 0.42) 42%,
+      rgba(10, 10, 10, 0.94) 100%
+    ),
+    url("../assets/header2.jpeg");
   text-align: center;
+  padding: clamp(1.75rem, 6vw, 3rem) 0 clamp(2rem, 7vw, 3.25rem);
+  margin: 0;
+  /* border-bottom: 1px solid var(--border); */
+  background-color: var(--bg);
+  background-image: var(--site-header-photo);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 28%;
+}
+
+.site-header__inner {
+  position: relative;
+}
+
+.site-header .badge,
+.site-header .tagline,
+.site-header .rebrand-label {
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 28rem) {
+  .site-header {
+    background-position: center 20%;
+  }
 }
 
 .badge {
@@ -103,12 +134,13 @@ a:focus-visible {
 .logo--main {
   width: min(100%, 20rem);
   margin-inline: auto;
+  filter: drop-shadow(0 4px 28px rgba(0, 0, 0, 0.55));
 }
 
 .rebrand-lockup {
   margin-top: 1.5rem;
   padding-top: 1.25rem;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -126,7 +158,8 @@ a:focus-visible {
 
 .logo--legacy {
   max-width: min(8.75rem, 42vw);
-  opacity: 0.9;
+  opacity: 0.95;
+  filter: drop-shadow(0 3px 20px rgba(0, 0, 0, 0.5));
 }
 
 .tagline {
@@ -140,7 +173,7 @@ a:focus-visible {
 
 /* Hero */
 .hero {
-  padding: clamp(2rem, 8vw, 4rem) 0;
+  padding: 2rem 0 0 0;
 }
 
 .hero-lead {
