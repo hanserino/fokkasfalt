@@ -1,0 +1,26 @@
+{% comment %}
+  Norsk dato for visning, f.eks. 8. mai 2026.
+  Bruk: {% include date-no.html date=page.date %} eller date=ep.date
+{% endcomment %}
+{%- assign _dt = include.date -%}
+{%- if _dt == nil or _dt == '' -%}
+{%- else -%}
+{%- assign _d = _dt | date: '%-d' -%}
+{%- assign _m = _dt | date: '%-m' -%}
+{%- assign _y = _dt | date: '%Y' -%}
+{%- case _m -%}
+{%- when '1' -%}{%- assign _mn = 'januar' -%}
+{%- when '2' -%}{%- assign _mn = 'februar' -%}
+{%- when '3' -%}{%- assign _mn = 'mars' -%}
+{%- when '4' -%}{%- assign _mn = 'april' -%}
+{%- when '5' -%}{%- assign _mn = 'mai' -%}
+{%- when '6' -%}{%- assign _mn = 'juni' -%}
+{%- when '7' -%}{%- assign _mn = 'juli' -%}
+{%- when '8' -%}{%- assign _mn = 'august' -%}
+{%- when '9' -%}{%- assign _mn = 'september' -%}
+{%- when '10' -%}{%- assign _mn = 'oktober' -%}
+{%- when '11' -%}{%- assign _mn = 'november' -%}
+{%- when '12' -%}{%- assign _mn = 'desember' -%}
+{%- endcase -%}
+{{- _d }}. {{ _mn }} {{ _y -}}
+{%- endif -%}

@@ -1,0 +1,84 @@
+---
+layout: default
+---
+
+<header class="ep-nav wrap">
+  <div class="ep-nav__start">
+    <a href="{{ '/episoder/' | relative_url }}" class="ep-nav__link">← episoder</a>
+  </div>
+  <a href="{{ '/' | relative_url }}" class="ep-nav__brand" aria-label="Til forsiden, Føkk Asfalt">
+    <img
+      class="ep-nav__logo"
+      src="{{ '/assets/fokkasfalt.png' | relative_url }}"
+      alt=""
+      width="400"
+      height="246"
+      decoding="async"
+    />
+  </a>
+  <div class="ep-nav__end" aria-hidden="true"></div>
+</header>
+
+<article id="main" class="ep-article wrap">
+  <header class="ep-article__header">
+    {% if page.cover %}
+    <img
+      class="ep-article__cover"
+      src="{{ page.cover }}"
+      alt="Omslag: {{ page.title | escape }}"
+      width="600"
+      height="600"
+      loading="eager"
+      decoding="async"
+    />
+    {% endif %}
+    <h1 class="ep-article__title">{{ page.title }}</h1>
+    {% if page.date or page.duration %}
+    <p class="ep-article__meta">
+      {% if page.date %}
+      <time datetime="{{ page.date | date_to_xmlschema }}">{% include date-no.html date=page.date %}</time>
+      {% endif %}
+      {% if page.date and page.duration %}<span class="ep-article__sep" aria-hidden="true">·</span>{% endif %}
+      {% if page.duration %}
+      <span class="ep-article__duration" aria-label="Varighet {{ page.duration }}">{{ page.duration }}</span>
+      {% endif %}
+    </p>
+    {% endif %}
+  </header>
+  {% if page.description %}
+  <p class="ep-article__excerpt">{{ page.description }}</p>
+  {% endif %}
+  {% if page.patreon_url != '' %}
+  <p class="ep-article__cta">
+    <a class="btn btn--primary" href="{{ page.patreon_url }}" rel="noopener noreferrer">Hør hele episoden på Patreon</a>
+  </p>
+  {% endif %}
+  <p class="ep-article__back"><a href="{{ '/episoder/' | relative_url }}">← Til alle episoder</a></p>
+</article>
+
+<footer class="site-footer wrap">
+  {% include footer-contact.html %}
+  <p class="copyright">Føkk Asfalt · <a href="{{ '/' | relative_url }}">Forside</a></p>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PodcastEpisode",
+  "name": {{ page.title | jsonify }},
+  "url": {{ page.url | absolute_url | jsonify }}{% if page.description %},
+  "description": {{ page.description | jsonify }}{% endif %}{% if page.date %},
+  "datePublished": {{ page.date | date_to_xmlschema | jsonify }}{% endif %}{% if page.cover %},
+  "image": {{ page.cover | jsonify }}{% endif %}{% if page.duration_iso8601 %},
+  "timeRequired": {{ page.duration_iso8601 | jsonify }}{% endif %},
+  "partOfSeries": {
+    "@type": "PodcastSeries",
+    "name": "Føkk Asfalt",
+    "url": "https://fokkasfalt.no/"
+  }{% if page.patreon_url %},
+  "associatedMedia": {
+    "@type": "MediaObject",
+    "contentUrl": {{ page.patreon_url | jsonify }}
+  }{% endif %}
+}
+</script>

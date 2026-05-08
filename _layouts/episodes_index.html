@@ -1,0 +1,90 @@
+---
+layout: default
+---
+
+<header class="ep-nav wrap">
+  <div class="ep-nav__start">
+    <a href="{{ '/' | relative_url }}" class="ep-nav__link">← forsiden</a>
+  </div>
+  <a href="{{ '/' | relative_url }}" class="ep-nav__brand" aria-label="Til forsiden, Føkk Asfalt">
+    <img
+      class="ep-nav__logo"
+      src="{{ '/assets/fokkasfalt.png' | relative_url }}"
+      alt=""
+      width="400"
+      height="246"
+      decoding="async"
+    />
+  </a>
+  <div class="ep-nav__end" aria-hidden="true"></div>
+</header>
+
+<main id="main" class="ep-main wrap ep-main--wide">
+  <h1 class="ep-page-title">Alle episoder av podcasten Føkk Asfalt</h1>
+  <p class="ep-intro wrap">
+    Alle episodene som er publisert på Patreon — oppdatert ukentlig via RSS.
+  </p>
+
+  {% assign eps = site.episodes | sort: 'date' | reverse %}
+  {% if eps.size == 0 %}
+  <div class="ep-empty-callout">
+    <p><strong>Det er ikke importert noen episoder ennå.</strong> Denne listen fylles når det ligger Markdown-filer i <code>_episodes/</code> (én fil per episode, generert fra Patreon-RSS).</p>
+    <p><strong>Slik får du innhold lokalt:</strong></p>
+    <ol class="ep-empty-callout__steps">
+      <li>Kopier master-RSS-URL-en fra Patreon (den med <code>auth=</code> og <code>show=</code>).</li>
+      <li>
+        I prosjektmappa, i terminal:
+        <code>export PATREON_RSS_URL='lim_inn_hele_url_her'</code> deretter
+        <code>ruby scripts/fetch_episodes.rb</code>
+      </li>
+      <li>Sjekk at det dukker opp <code>.md</code>-filer under <code>_episodes/</code>. Jekyll (f.eks. <code>jekyll serve</code>) plukker dem opp automatisk — last siden på nytt.</li>
+    </ol>
+    <p class="ep-empty-callout__hint">
+      På GitHub: legg inn secreten <code>PATREON_RSS_URL</code> og kjør workflow «Regenerate Patreon episodes», så committes <code>_episodes/*.md</code> til repoet og vises etter neste bygg på Pages.
+    </p>
+  </div>
+  {% endif %}
+
+  {% if eps.size > 0 %}
+  <ul class="ep-list ep-list--grid">
+    {% for ep in eps %}
+    <li class="ep-list__item">
+      <a class="ep-list__link" href="{{ ep.url | relative_url }}">
+        {% if ep.cover %}
+        <img
+          class="ep-list__thumb"
+          src="{{ ep.cover }}"
+          alt=""
+          width="80"
+          height="80"
+          loading="lazy"
+          decoding="async"
+        />
+        {% else %}
+        <div class="ep-list__thumb ep-list__thumb--empty" aria-hidden="true"></div>
+        {% endif %}
+        <span class="ep-list__meta">
+          <span class="ep-list__title">{{ ep.title }}</span>
+          {% if ep.date or ep.duration %}
+          <span class="ep-list__sub">
+            {% if ep.date %}
+            <time class="ep-list__date" datetime="{{ ep.date | date_to_xmlschema }}">{% include date-no.html date=ep.date %}</time>
+            {% endif %}
+            {% if ep.date and ep.duration %}<span class="ep-list__sep" aria-hidden="true">·</span>{% endif %}
+            {% if ep.duration %}
+            <span class="ep-list__duration" aria-label="Varighet {{ ep.duration }}">{{ ep.duration }}</span>
+            {% endif %}
+          </span>
+          {% endif %}
+        </span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</main>
+
+<footer class="site-footer wrap">
+  {% include footer-contact.html %}
+  <p class="copyright">Bygget med Jekyll · <a href="{{ '/' | relative_url }}">Forside</a></p>
+</footer>

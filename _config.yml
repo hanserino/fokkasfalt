@@ -1,0 +1,33 @@
+title: Føkk Asfalt
+description: "Skandinavias podcast om terrengløping, ultraløp og fjelløping."
+url: "https://fokkasfalt.no"
+baseurl: ""
+lang: nb
+
+plugins:
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+  - scripts
+  - .github
+  - .env
+  - .env.example
+  - .cursor
+
+collections:
+  episodes:
+    output: true
+    permalink: /episoder/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "episodes"
+    values:
+      layout: episode
+      og_type: article

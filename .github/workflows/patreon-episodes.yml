@@ -1,0 +1,53 @@
+# Regenerates _episodes/*.md from Patreon RSS once per day. Jekyll (GitHub Pages) builds static HTML.
+# Add repository secret PATREON_RSS_URL (full master RSS URL including query string).
+
+name: Regenerate Patreon episodes
+
+on:
+  schedule:
+    - cron: "20 5 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/fetch_episodes.rb"
+      - ".github/workflows/patreon-episodes.yml"
+
+concurrency:
+  group: patreon-episodes
+  cancel-in-progress: true
+
+jobs:
+  episodes:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: false
+
+      - name: Fetch RSS and write Jekyll collection files
+        env:
+          PATREON_RSS_URL: ${{ secrets.PATREON_RSS_URL }}
+        run: |
+          if [ -z "$PATREON_RSS_URL" ]; then
+            echo "::warning::PATREON_RSS_URL is not configured — skip episode import."
+            exit 0
+          fi
+          ruby scripts/fetch_episodes.rb
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _episodes/
+          if git diff --staged --quiet; then
+            echo "No changes to _episodes/."
+          else
+            git commit -m "chore: refresh Patreon episode files for Jekyll"
+            git push
+          fi

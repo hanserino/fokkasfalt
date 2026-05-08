@@ -1,0 +1,178 @@
+---
+layout: default
+---
+
+<header class="site-header wrap">
+  <p class="badge">Podcast</p>
+  <h1 class="logo-heading">
+    <img
+      class="logo logo--main"
+      src="{{ '/assets/fokkasfalt.png' | relative_url }}"
+      alt="Føkk Asfalt"
+      width="400"
+      height="246"
+      fetchpriority="high"
+      decoding="async"
+    />
+  </h1>
+  <p class="tagline">Ultraløping · Fjelløping · Skyrunning · Stiløping · Terrengløping · Skandinavia</p>
+  <div class="rebrand-lockup">
+    <p class="rebrand-label">Tidligere kjent som</p>
+    <img
+      class="logo logo--legacy"
+      src="{{ '/assets/naerdetalvor.png' | relative_url }}"
+      alt="Nå Er Det Alvor"
+      width="800"
+      height="800"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero wrap" aria-labelledby="hero-heading">
+    <p id="hero-heading" class="hero-lead">
+      Skandinavias ledende stemme om ultraløping, fjelløping, skyrunning og stiløping. Langformat samtaler, faglig innhold, treningsinspirasjon og god variasjon i intervjuobjekter, fra de aller beste i verden til mannen i gata.
+    </p>
+    <p class="hero-stats">
+      Podcasten ble etablert i <strong>januar 2018</strong>. Siden da har det blitt publisert <strong>minst én episode i uka</strong>.
+      <strong>250</strong> episoder er tilgjengelige på Spotify og Apple Podcasts; på
+      <a href="https://www.patreon.com/alvorpodcast" rel="noopener noreferrer">Patreon</a> finner du <strong>500+</strong> episoder.
+    </p>
+    <p class="hero-note">
+      Mer info om podcasten, nyheter og faglig innhold finner du på
+      <a href="https://naerdetalvor.no/" rel="noopener noreferrer" target="_blank">naerdetalvor.no</a>
+    </p>
+    <p class="ep-hero-funnel">
+      <a href="{{ '/episoder/' | relative_url }}">Hele podcast-arkivet</a>
+      <span class="ep-hero-funnel__meta"> — dato, varighet og lenke til Patreon for hver episode.</span>
+    </p>
+    <div class="cta-row">
+      <a class="btn btn--primary" href="{{ '/episoder/' | relative_url }}">Alle episoder</a>
+      <a class="btn btn--secondary" href="https://www.patreon.com/alvorpodcast" rel="noopener noreferrer">Bli Patreon-medlem</a>
+    </div>
+  </section>
+
+  {% assign eps_all = site.episodes | sort: 'date' | reverse %}
+  {% if eps_all.size > 0 %}
+  <section class="section wrap home-recent-ep" aria-labelledby="recent-ep-heading">
+    <h2 id="recent-ep-heading" class="section-title">Siste episoder</h2>
+    <ul class="ep-list ep-list--grid">
+      {% for ep in eps_all limit: 10 %}
+      <li class="ep-list__item">
+        <a class="ep-list__link" href="{{ ep.url | relative_url }}">
+          {% if ep.cover %}
+          <img
+            class="ep-list__thumb"
+            src="{{ ep.cover }}"
+            alt=""
+            width="80"
+            height="80"
+            {% if forloop.index > 3 %}loading="lazy"{% endif %}
+            decoding="async"
+          />
+          {% else %}
+          <div class="ep-list__thumb ep-list__thumb--empty" aria-hidden="true"></div>
+          {% endif %}
+          <span class="ep-list__meta">
+            <span class="ep-list__title">{{ ep.title }}</span>
+            {% if ep.date or ep.duration %}
+            <span class="ep-list__sub">
+              {% if ep.date %}
+              <time class="ep-list__date" datetime="{{ ep.date | date_to_xmlschema }}">{% include date-no.html date=ep.date %}</time>
+              {% endif %}
+              {% if ep.date and ep.duration %}<span class="ep-list__sep" aria-hidden="true">·</span>{% endif %}
+              {% if ep.duration %}
+              <span class="ep-list__duration" aria-label="Varighet {{ ep.duration }}">{{ ep.duration }}</span>
+              {% endif %}
+            </span>
+            {% endif %}
+          </span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    <p class="home-recent-ep__cta">
+      <a class="btn btn--secondary" href="{{ '/episoder/' | relative_url }}">
+        {%- if eps_all.size == 1 -%}
+          Se episoden
+        {%- else -%}
+          Alle {{ eps_all.size }} episoder
+        {%- endif -%}
+      </a>
+    </p>
+  </section>
+  {% endif %}
+
+  <section class="section wrap" aria-labelledby="topics-heading">
+    <h2 id="topics-heading" class="section-title">Dette handler vi om</h2>
+    <ul class="topic-tags">
+      <li>Terrengløping</li>
+      <li>Fjelløping</li>
+      <li>Ultraløping</li>
+      <li>Skyrunning</li>
+      <li>Stiløping</li>
+    </ul>
+    <div class="card">
+      <h2>Lytt og støtt</h2>
+      <ul>
+        <li>
+          <strong>Spotify og Apple Podcasts</strong> — <strong>250</strong> episoder å lytte til gratis.
+        </li>
+        <li>
+          <strong>Patreon</strong> — <strong>500+</strong> episoder for medlemmer; bonus, fellesskap og støtte til podcasten.
+        </li>
+        <li>
+          <strong>fokkasfalt.no</strong> — episodeliste, forsiden du er på nå, og mer etter hvert.
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer wrap">
+  <nav class="footer-links" aria-label="Footerlenker">
+    <a href="https://fokkasfalt.no/">fokkasfalt.no</a>
+    <a href="{{ '/episoder/' | relative_url }}">Episoder</a>
+    <a href="https://www.patreon.com/alvorpodcast" rel="noopener noreferrer">Patreon</a>
+  </nav>
+  {% include footer-contact.html %}
+  <p class="copyright">&copy; Føkk Asfalt.</p>
+</footer>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Føkk Asfalt",
+        "alternateName": ["Nå Er Det Alvor"],
+        "url": "https://fokkasfalt.no/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": {{ '/assets/fokkasfalt.png' | absolute_url | jsonify }}
+        },
+        "sameAs": [
+          "https://www.patreon.com/alvorpodcast",
+          "https://www.instagram.com/neda_podcast/"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "name": "Føkk Asfalt",
+        "url": "{{ '/' | absolute_url }}",
+        "description": "Inngang til Føkk Asfalt-podcasten om terrengløping og ultraløp.",
+        "publisher": { "@type": "Organization", "name": "Føkk Asfalt" }
+      },
+      {
+        "@type": "PodcastSeries",
+        "name": "Føkk Asfalt",
+        "alternateName": "Nå Er Det Alvor",
+        "url": "https://fokkasfalt.no/",
+        "description": "Podcast om terrengløping, fjelløping, ultraløp og skyrunning i Skandinavia."
+      }
+    ]
+  }
+</script>
