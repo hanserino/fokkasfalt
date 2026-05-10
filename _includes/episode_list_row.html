@@ -1,0 +1,56 @@
+{% comment %}
+  episode_list_row.html — én rad: lenke til episode + høyrekolonne (badge, ev. Spotify/Apple).
+  Parametre: ep, row, hint (valgfri, "1" = vis Buzzsprout-match-linje)
+{% endcomment %}
+<li class="ep-list__item ep-list__item--row">
+  <div class="ep-list__row">
+    <a class="ep-list__main" href="{{ include.ep.url | relative_url }}">
+      {% if include.ep.cover %}
+      <img
+        class="ep-list__thumb"
+        src="{{ include.ep.cover }}"
+        alt=""
+        width="80"
+        height="80"
+        loading="lazy"
+        decoding="async"
+      />
+      {% else %}
+      <div class="ep-list__thumb ep-list__thumb--empty" aria-hidden="true"></div>
+      {% endif %}
+      <span class="ep-list__body">
+        <span class="ep-list__title">{{ include.ep.title }}</span>
+        {% if include.ep.date or include.ep.duration %}
+        <span class="ep-list__sub">
+          {% if include.ep.date %}
+          <time class="ep-list__date" datetime="{{ include.ep.date | date_to_xmlschema }}">{% include date-no.html date=include.ep.date %}</time>
+          {% endif %}
+          {% if include.ep.date and include.ep.duration %}<span class="ep-list__sep" aria-hidden="true">·</span>{% endif %}
+          {% if include.ep.duration %}
+          <span class="ep-list__duration" aria-label="Varighet {{ include.ep.duration }}">{{ include.ep.duration }}</span>
+          {% endif %}
+        </span>
+        {% endif %}
+        {% if include.hint == '1' and include.row and include.row.match_score %}
+        <span class="avail-match-hint">Match {{ include.row.match_score }}%{% if include.row.buzzsprout_title %} — Buzzsprout: «{{ include.row.buzzsprout_title | truncate: 72 }}»{% endif %}</span>
+        {% endif %}
+      </span>
+    </a>
+    <div class="ep-list__tail">
+      <div class="ep-list__tail-badges">
+        {% unless include.row %}
+        <span class="avail-pill avail-pill--pat" title="Ingen tilgjengelighetsdata">?</span>
+        {% elsif include.row.availability == 'also_free' %}
+        <span class="avail-pill avail-pill--free" title="Sannsynlig åpen eller gratis å lytte på (f.eks. via Buzzsprouts feed)">Åpen / gratis</span>
+        {% elsif include.row.availability == 'uncertain' %}
+        <span class="avail-pill avail-pill--warn" title="Usikker match">Usikker</span>
+        {% else %}
+        <span class="avail-pill avail-pill--pat" title="Kun Patreon i praksis">Patreon</span>
+        {% endunless %}
+      </div>
+      {% if include.row and include.row.availability == 'also_free' and site.listen %}
+      <div class="ep-list__tail-listen">{% include listen-icons.html %}</div>
+      {% endif %}
+    </div>
+  </div>
+</li>

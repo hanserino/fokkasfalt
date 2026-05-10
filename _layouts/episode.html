@@ -2,6 +2,20 @@
 layout: default
 ---
 
+{% assign slug_from_path = page.path | split: '/' | last | replace: '.md', '' %}
+{% assign avail_ep = false %}
+{% if site.data.episode_availability and site.data.episode_availability.episodes %}
+{% assign avail_ep = site.data.episode_availability.episodes | where: 'slug', slug_from_path | first %}
+{% endif %}
+{% assign buzz_link = page.buzzsprout_url | default: '' | strip %}
+{% if buzz_link == '' and avail_ep %}
+{% assign buzz_link = avail_ep.buzzsprout_url | default: '' | strip %}
+{% endif %}
+{% assign patreon_href = page.patreon_url | default: '' | strip %}
+{% if page.buzzsprout_only %}
+{% assign patreon_href = '' %}
+{% endif %}
+
 <header class="ep-nav wrap">
   <div class="ep-nav__start">
     <a href="{{ '/episoder/' | relative_url }}" class="ep-nav__link">← episoder</a>
@@ -48,10 +62,22 @@ layout: default
   {% if page.description %}
   <p class="ep-article__excerpt">{{ page.description }}</p>
   {% endif %}
-  {% if page.patreon_url != '' %}
-  <p class="ep-article__cta">
-    <a class="btn btn--primary" href="{{ page.patreon_url }}" rel="noopener noreferrer">Hør hele episoden på Patreon</a>
-  </p>
+  {% if patreon_href != '' or buzz_link != '' %}
+  <div class="ep-article__cta">
+    {% if patreon_href != '' %}
+    <a class="btn btn--primary" href="{{ patreon_href }}" rel="noopener noreferrer">Hør hele episoden på Patreon</a>
+    {% endif %}
+    {% if buzz_link != '' %}
+    {% if patreon_href != '' %}
+    <a class="btn btn--secondary" href="{{ buzz_link }}" rel="noopener noreferrer">Hør gratis</a>
+    {% else %}
+    <a class="btn btn--primary" href="{{ buzz_link }}" rel="noopener noreferrer">Hør gratis</a>
+    {% endif %}
+    {% endif %}
+    {% if avail_ep and avail_ep.availability == 'uncertain' and buzz_link != '' %}
+    <span class="ep-article__cta-note">Buzzsprout-treffet er automatisk og kan være feil.</span>
+    {% endif %}
+  </div>
   {% endif %}
   <p class="ep-article__back"><a href="{{ '/episoder/' | relative_url }}">← Til alle episoder</a></p>
 </article>
@@ -75,10 +101,10 @@ layout: default
     "@type": "PodcastSeries",
     "name": "Føkk Asfalt",
     "url": "https://fokkasfalt.no/"
-  }{% if page.patreon_url %},
+  }{% if patreon_href != '' %},
   "associatedMedia": {
     "@type": "MediaObject",
-    "contentUrl": {{ page.patreon_url | jsonify }}
+    "contentUrl": {{ patreon_href | jsonify }}
   }{% endif %}
 }
 </script>

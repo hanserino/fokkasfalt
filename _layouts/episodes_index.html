@@ -23,6 +23,7 @@ layout: default
   <h1 class="ep-page-title">Alle episoder av podcasten Føkk Asfalt</h1>
   <p class="ep-intro wrap">
     Alle episodene som er publisert på Patreon — oppdatert ukentlig via RSS.
+    <span class="ep-intro__side-note"><a href="{{ '/tilgjengelighet/' | relative_url }}">Sammenlign med Buzzsprout (beta)</a></span>
   </p>
 
   {% assign eps = site.episodes | sort: 'date' | reverse %}
@@ -46,39 +47,15 @@ layout: default
   {% endif %}
 
   {% if eps.size > 0 %}
-  <ul class="ep-list ep-list--grid">
+  {% assign av = site.data.episode_availability %}
+  <ul class="ep-list ep-list--single">
     {% for ep in eps %}
-    <li class="ep-list__item">
-      <a class="ep-list__link" href="{{ ep.url | relative_url }}">
-        {% if ep.cover %}
-        <img
-          class="ep-list__thumb"
-          src="{{ ep.cover }}"
-          alt=""
-          width="80"
-          height="80"
-          loading="lazy"
-          decoding="async"
-        />
-        {% else %}
-        <div class="ep-list__thumb ep-list__thumb--empty" aria-hidden="true"></div>
-        {% endif %}
-        <span class="ep-list__meta">
-          <span class="ep-list__title">{{ ep.title }}</span>
-          {% if ep.date or ep.duration %}
-          <span class="ep-list__sub">
-            {% if ep.date %}
-            <time class="ep-list__date" datetime="{{ ep.date | date_to_xmlschema }}">{% include date-no.html date=ep.date %}</time>
-            {% endif %}
-            {% if ep.date and ep.duration %}<span class="ep-list__sep" aria-hidden="true">·</span>{% endif %}
-            {% if ep.duration %}
-            <span class="ep-list__duration" aria-label="Varighet {{ ep.duration }}">{{ ep.duration }}</span>
-            {% endif %}
-          </span>
-          {% endif %}
-        </span>
-      </a>
-    </li>
+      {% assign slug_key = ep.path | split: '/' | last | replace: '.md', '' %}
+      {% assign row = nil %}
+      {% if av %}
+        {% assign row = av.episodes | where: 'slug', slug_key | first %}
+      {% endif %}
+      {% include episode_list_row.html ep=ep row=row %}
     {% endfor %}
   </ul>
   {% endif %}

@@ -441,6 +441,21 @@ a:focus-visible {
   margin-inline: auto;
 }
 
+.ep-intro__side-note {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.82rem;
+}
+
+.ep-intro__side-note a {
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.ep-intro__side-note a:hover {
+  color: var(--text);
+}
+
 .ep-empty-callout {
   max-width: 52rem;
   margin: 0 auto 1.75rem;
@@ -504,6 +519,133 @@ a:focus-visible {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.65rem;
+  }
+}
+
+/* Én episode per rad + høyrekolonne (badge / Spotify / Apple) */
+.ep-list--single {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ep-list__row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.ep-list__row:hover,
+.ep-list__row:has(.ep-list__main:hover),
+.ep-list__row:has(.listen-icon:hover) {
+  border-color: var(--border-strong);
+  background: var(--surface);
+}
+
+.ep-list__main {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  flex: 1;
+  min-width: 0;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.15s ease;
+}
+
+.ep-list__main:hover {
+  opacity: 0.92;
+}
+
+.ep-list__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+  text-align: left;
+}
+
+.ep-list__tail {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.45rem;
+  max-width: min(12rem, 42%);
+}
+
+.ep-list__tail-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.35rem;
+}
+
+.ep-list__tail-listen {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.35rem;
+}
+
+.listen-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  padding: 0.2rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.listen-icon:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--border-strong);
+}
+
+.listen-icon--spotify {
+  color: #1ed760;
+}
+
+.listen-icon--apple {
+  color: #c084fc;
+}
+
+.listen-icon svg {
+  display: block;
+}
+
+@media (max-width: 32rem) {
+  .ep-list__row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+  }
+
+  .ep-list__tail {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: none;
+    width: 100%;
+    padding-left: calc(4.5rem + 0.85rem);
+  }
+
+  .ep-list__tail-badges {
+    justify-content: flex-start;
+  }
+
+  .ep-list__tail-listen {
+    justify-content: flex-end;
   }
 }
 
@@ -639,6 +781,17 @@ a:focus-visible {
 
 .ep-article__cta {
   margin: 0 0 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.ep-article__cta-note {
+  flex: 1 1 100%;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.45;
 }
 
 .ep-article__back {
@@ -662,6 +815,112 @@ a:focus-visible {
   color: var(--text-subtle);
 }
 
+/* Tilgjengelighet (Buzzsprout vs Patreon) */
+.avail-stats {
+  margin: 1.5rem 0 2rem;
+}
+
+.avail-stats__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: 0.75rem 1rem;
+}
+
+.avail-stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+
+.avail-stat--free {
+  border-color: rgba(34, 197, 94, 0.35);
+}
+
+.avail-stat--warn {
+  border-color: rgba(234, 179, 8, 0.45);
+}
+
+.avail-stat--pat {
+  border-color: rgba(248, 113, 113, 0.35);
+}
+
+.avail-stat__value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+
+.avail-stat__label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.35rem;
+  line-height: 1.35;
+}
+
+.avail-legend {
+  margin: 1rem 0 0;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.avail-nav-secondary {
+  margin: 0 0 1.5rem;
+  font-size: 0.92rem;
+}
+
+.avail-nav-secondary a {
+  font-weight: 600;
+}
+
+.avail-pill {
+  display: inline-block;
+  flex-shrink: 0;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.45rem;
+  border-radius: 6px;
+  margin-right: 0.45rem;
+  vertical-align: 0.1em;
+}
+
+.avail-pill--free {
+  background: rgba(34, 197, 94, 0.2);
+  color: #86efac;
+}
+
+.avail-pill--warn {
+  background: rgba(234, 179, 8, 0.2);
+  color: #fde047;
+}
+
+.avail-pill--pat {
+  background: rgba(248, 113, 113, 0.12);
+  color: #fca5a5;
+}
+
+.avail-match-hint {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.72rem;
+  line-height: 1.35;
+  color: var(--text-subtle);
+}
+
+.ep-intro__meta {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-subtle);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -675,7 +934,10 @@ a:focus-visible {
     transform: none;
   }
 
-  .ep-list__link {
+  .ep-list__link,
+  .ep-list__main,
+  .ep-list__row,
+  .listen-icon {
     transition: none;
   }
 }

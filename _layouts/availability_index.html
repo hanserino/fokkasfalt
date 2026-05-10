@@ -1,0 +1,84 @@
+---
+layout: default
+---
+
+<header class="ep-nav wrap">
+  <div class="ep-nav__start">
+    <a href="{{ '/' | relative_url }}" class="ep-nav__link">← forsiden</a>
+  </div>
+  <a href="{{ '/' | relative_url }}" class="ep-nav__brand" aria-label="Til forsiden, Føkk Asfalt">
+    <img
+      class="ep-nav__logo"
+      src="{{ '/assets/fokkasfalt.png' | relative_url }}"
+      alt=""
+      width="400"
+      height="246"
+      decoding="async"
+    />
+  </a>
+  <div class="ep-nav__end" aria-hidden="true"></div>
+</header>
+
+<main id="main" class="ep-main wrap ep-main--wide">
+  {% assign av = site.data.episode_availability %}
+  <h1 class="ep-page-title">Tilgjengelighet — Patreon vs. gratis RSS (test)</h1>
+
+  {% unless av %}
+  <p class="ep-intro">Ingen datafil funnet. Kjør lokalt: <code>ruby scripts/match_episode_availability.rb</code> (henter Buzzsprout og skriver <code>_data/episode_availability.yml</code>).</p>
+  {% else %}
+  <p class="ep-intro">
+    Sammenligning av episodene i arkivet (importert fra Patreon) mot
+    <a href="{{ av.meta.buzzsprout_feed }}" rel="noopener noreferrer">Buzzsprout-RSS</a>
+    (gratis plattform). Matcher er <strong>automatiske og «fuzzy»</strong> — tittler samsvarer ikke alltid ordrett.
+    {% if av.meta.generated_at %}<span class="ep-intro__meta">Datafil generert {{ av.meta.generated_at }} (UTC).</span>{% endif %}
+  </p>
+
+  <div class="avail-stats" role="region" aria-label="Oppsummering">
+    <div class="avail-stats__grid">
+      <div class="avail-stat">
+        <span class="avail-stat__value">{{ av.stats.total }}</span>
+        <span class="avail-stat__label">episoder i arkivet</span>
+      </div>
+      <div class="avail-stat avail-stat--free">
+        <span class="avail-stat__value">{{ av.stats.also_free }}</span>
+        <span class="avail-stat__label">sannsynlig også på Buzzsprout</span>
+      </div>
+      <div class="avail-stat avail-stat--warn">
+        <span class="avail-stat__value">{{ av.stats.uncertain }}</span>
+        <span class="avail-stat__label">usikker match</span>
+      </div>
+      <div class="avail-stat avail-stat--pat">
+        <span class="avail-stat__value">{{ av.stats.patreon_only }}</span>
+        <span class="avail-stat__label">kun Patreon (eller lav score)</span>
+      </div>
+      <div class="avail-stat">
+        <span class="avail-stat__value">{{ av.stats.unmatched_buzzsprout }}</span>
+        <span class="avail-stat__label">Buzzsprout-episoder uten treff i arkiv</span>
+      </div>
+    </div>
+    <p class="avail-legend">
+      <span class="avail-pill avail-pill--free">Åpen / gratis</span> — trolig samme innhold i gratis-feed ·
+      <span class="avail-pill avail-pill--warn">Usikker</span> sjekk manuelt ·
+      <span class="avail-pill avail-pill--pat">Patreon</span> ikke matchet mot gratis-feed (eller score under terskel)
+    </p>
+  </div>
+
+  <p class="avail-nav-secondary">
+    <a href="{{ '/episoder/' | relative_url }}">Vanlig episodeliste (alle Patreon-episoder)</a>
+  </p>
+
+  {% assign eps = site.episodes | sort: 'date' | reverse %}
+  <ul class="ep-list ep-list--single">
+    {% for ep in eps %}
+      {% assign slug_key = ep.path | split: '/' | last | replace: '.md', '' %}
+      {% assign row = av.episodes | where: 'slug', slug_key | first %}
+      {% include episode_list_row.html ep=ep row=row hint='1' %}
+    {% endfor %}
+  </ul>
+  {% endunless %}
+</main>
+
+<footer class="site-footer wrap">
+  {% include footer-contact.html %}
+  <p class="copyright">Bygget med Jekyll · <a href="{{ '/' | relative_url }}">Forside</a> · <a href="{{ '/episoder/' | relative_url }}">Episoder</a></p>
+</footer>

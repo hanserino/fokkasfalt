@@ -4,6 +4,11 @@ url: "https://fokkasfalt.no"
 baseurl: ""
 lang: nb
 
+# Offentlige lytte-lenker (show-nivå) — brukes når episode matcher «also_free» i episode_availability.yml
+listen:
+  spotify_show: "https://open.spotify.com/show/1s8OvAXNcqRa6oncqakhdg?si=95721a9072c34c67"
+  apple_show: "https://podcasts.apple.com/no/podcast/f-k-asfalt-n%C3%A5-er-det-alvor/id1332829214"
+
 plugins:
   - jekyll-sitemap
 
