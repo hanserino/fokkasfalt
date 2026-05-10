@@ -1,5 +1,8 @@
 # Regenerates _episodes/*.md from Patreon RSS once per day. Jekyll (GitHub Pages) builds static HTML.
-# Add repository secret PATREON_RSS_URL (full master RSS URL including query string).
+#
+# Repository secrets:
+#   PATREON_RSS_URL — full master RSS URL including query string (episode import)
+#   SPOTIFY_CLIENT_ID / SPOTIFY_CLIENT_SECRET — optional; episode-specific Spotify links in _data/episode_availability.yml
 
 name: Regenerate Patreon episodes
 
@@ -11,6 +14,9 @@ on:
     branches: [main]
     paths:
       - "scripts/fetch_episodes.rb"
+      - "scripts/match_episode_availability.rb"
+      - "scripts/buzzsprout_match_core.rb"
+      - "scripts/listen_episode_resolver.rb"
       - ".github/workflows/patreon-episodes.yml"
 
 concurrency:
@@ -40,14 +46,20 @@ jobs:
           fi
           ruby scripts/fetch_episodes.rb
 
+      - name: Regenerate episode availability (Buzzsprout match + listen URLs)
+        env:
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+        run: ruby scripts/match_episode_availability.rb
+
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add _episodes/
+          git add _episodes/ _data/episode_availability.yml
           if git diff --staged --quiet; then
-            echo "No changes to _episodes/."
+            echo "No changes to _episodes/ or _data/episode_availability.yml."
           else
-            git commit -m "chore: refresh Patreon episode files for Jekyll"
+            git commit -m "chore: refresh Patreon episodes and/or episode availability data"
             git push
           fi

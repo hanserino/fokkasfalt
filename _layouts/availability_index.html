@@ -70,9 +70,12 @@ layout: default
   {% assign eps = site.episodes | sort: 'date' | reverse %}
   <ul class="ep-list ep-list--single">
     {% for ep in eps %}
-      {% assign slug_key = ep.path | split: '/' | last | replace: '.md', '' %}
+      {% assign slug_key = ep.name | default: '' | replace: '.md', '' %}
+      {% if slug_key == '' %}
+        {% assign slug_key = ep.path | split: '/' | last | replace: '.md', '' %}
+      {% endif %}
       {% assign row = av.episodes | where: 'slug', slug_key | first %}
-      {% include episode_list_row.html ep=ep row=row hint='1' %}
+      {% include episode_list_row.html ep=ep row=row hint='1' slug_key=slug_key %}
     {% endfor %}
   </ul>
   {% endunless %}

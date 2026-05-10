@@ -1,6 +1,6 @@
 {% comment %}
   episode_list_row.html — én rad: lenke til episode + høyrekolonne (badge, ev. Spotify/Apple).
-  Parametre: ep, row, hint (valgfri, "1" = vis Buzzsprout-match-linje)
+  Parametre: ep, row, hint (valgfri), slug_key (for unike SVG-id-er i lytteikoner)
 {% endcomment %}
 <li class="ep-list__item ep-list__item--row">
   <div class="ep-list__row">
@@ -48,8 +48,8 @@
         <span class="avail-pill avail-pill--pat" title="Kun Patreon i praksis">Patreon</span>
         {% endunless %}
       </div>
-      {% if include.row and include.row.availability == 'also_free' and site.listen %}
-      <div class="ep-list__tail-listen">{% include listen-icons.html %}</div>
+      {% if include.row and include.row.availability == 'also_free' %}
+      <div class="ep-list__tail-listen">{% include listen-icons.html listen_spotify=include.row.listen_spotify_episode_url listen_apple=include.row.listen_apple_episode_url listen_uid=include.slug_key %}</div>
       {% endif %}
     </div>
   </div>

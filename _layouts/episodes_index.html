@@ -50,12 +50,15 @@ layout: default
   {% assign av = site.data.episode_availability %}
   <ul class="ep-list ep-list--single">
     {% for ep in eps %}
-      {% assign slug_key = ep.path | split: '/' | last | replace: '.md', '' %}
+      {% assign slug_key = ep.name | default: '' | replace: '.md', '' %}
+      {% if slug_key == '' %}
+        {% assign slug_key = ep.path | split: '/' | last | replace: '.md', '' %}
+      {% endif %}
       {% assign row = nil %}
       {% if av %}
         {% assign row = av.episodes | where: 'slug', slug_key | first %}
       {% endif %}
-      {% include episode_list_row.html ep=ep row=row %}
+      {% include episode_list_row.html ep=ep row=row slug_key=slug_key %}
     {% endfor %}
   </ul>
   {% endif %}

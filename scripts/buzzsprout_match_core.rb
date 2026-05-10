@@ -397,7 +397,9 @@ module BuzzsproutMatchCore
           "match_score" => (good_enough ? (best_score * 100.0).round(1) : nil),
           "buzzsprout_title" => (bz ? bz[:title] : nil),
           "buzzsprout_pubdate" => (bz&.dig(:pub_utc)&.strftime("%Y-%m-%d")),
-          "buzzsprout_url" => bz_link
+          "buzzsprout_url" => bz_link,
+          "buzzsprout_guid" => (bz ? bz[:guid].to_s : nil),
+          "buzzsprout_duration_hint_sec" => (bz ? bz[:duration_sec] : nil)
         }
       end
       results

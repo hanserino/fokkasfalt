@@ -616,12 +616,15 @@ a:focus-visible {
   color: #1ed760;
 }
 
-.listen-icon--apple {
-  color: #c084fc;
-}
-
 .listen-icon svg {
   display: block;
+}
+
+.listen-icon__apple-mark {
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
 }
 
 @media (max-width: 32rem) {
