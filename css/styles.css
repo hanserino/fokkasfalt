@@ -456,6 +456,127 @@ a:focus-visible {
   color: var(--text);
 }
 
+.ep-search {
+  margin: 0 0 1.5rem;
+  max-width: min(100%, 36rem);
+}
+
+.ep-search__label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  margin-bottom: 0.5rem;
+}
+
+.ep-search__field {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.45rem 0.4rem 1rem;
+  border-radius: 9999px;
+  background:
+    linear-gradient(155deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%),
+    var(--bg-elevated);
+  border: 1px solid var(--border);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 6px 28px rgba(0, 0, 0, 0.45);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ep-search__field:focus-within {
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 10px 40px rgba(0, 0, 0, 0.55);
+}
+
+.ep-search__icon {
+  flex-shrink: 0;
+  display: flex;
+  color: var(--text-muted);
+  opacity: 0.85;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.ep-search__field:focus-within .ep-search__icon {
+  color: var(--text);
+  opacity: 1;
+}
+
+.ep-search__input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.5rem 0.25rem;
+  font: inherit;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+
+.ep-search__input::placeholder {
+  color: var(--text-subtle);
+}
+
+.ep-search__input:focus {
+  outline: none;
+}
+
+.ep-search__clear {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+}
+
+.ep-search__clear:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.ep-search__clear:active {
+  transform: scale(0.94);
+}
+
+.ep-search__clear:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+.ep-search__status {
+  margin: 0.55rem 0 0 1rem;
+  min-height: 1.5em;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.ep-search__empty {
+  margin: 0.75rem 0 0;
+  padding: 1rem 1.1rem;
+  text-align: center;
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+}
+
 .ep-empty-callout {
   max-width: 52rem;
   margin: 0 auto 1.75rem;

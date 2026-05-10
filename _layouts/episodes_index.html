@@ -48,7 +48,40 @@ layout: default
 
   {% if eps.size > 0 %}
   {% assign av = site.data.episode_availability %}
-  <ul class="ep-list ep-list--single">
+  <div class="ep-search" role="search" aria-label="Søk i episoder">
+    <label class="ep-search__label" for="ep-search-input">Søk i episoder</label>
+    <div class="ep-search__field">
+      <span class="ep-search__icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7" />
+          <path d="m21 21-4.35-4.35" />
+        </svg>
+      </span>
+      <input
+        type="search"
+        id="ep-search-input"
+        class="ep-search__input"
+        placeholder="Tittel, dato, flere ord …"
+        autocomplete="off"
+        spellcheck="false"
+        enterkeyhint="search"
+        aria-controls="ep-episode-list"
+      />
+      <button
+        type="button"
+        class="ep-search__clear"
+        id="ep-search-clear"
+        hidden
+        aria-label="Tøm søk"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M18 6 6 18M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <p id="ep-search-status" class="ep-search__status" role="status" aria-live="polite"></p>
+  </div>
+  <ul id="ep-episode-list" class="ep-list ep-list--single ep-list--filterable">
     {% for ep in eps %}
       {% assign slug_key = ep.name | default: '' | replace: '.md', '' %}
       {% if slug_key == '' %}
@@ -61,6 +94,107 @@ layout: default
       {% include episode_list_row.html ep=ep row=row slug_key=slug_key %}
     {% endfor %}
   </ul>
+  <p id="ep-search-empty" class="ep-search__empty" hidden>Ingen episoder matcher søket.</p>
+  <script>
+    (function () {
+      var list = document.getElementById("ep-episode-list");
+      var input = document.getElementById("ep-search-input");
+      var statusEl = document.getElementById("ep-search-status");
+      var emptyEl = document.getElementById("ep-search-empty");
+      var clearBtn = document.getElementById("ep-search-clear");
+      if (!list || !input) return;
+
+      var urlTimer = null;
+      function syncQueryToUrl() {
+        var v = input.value.trim();
+        var params = new URLSearchParams(window.location.search);
+        if (v) {
+          params.set("q", v);
+        } else {
+          params.delete("q");
+        }
+        var qs = params.toString();
+        var next = window.location.pathname + (qs ? "?" + qs : "") + window.location.hash;
+        var cur = window.location.pathname + window.location.search + window.location.hash;
+        if (next !== cur) {
+          history.replaceState(null, "", next);
+        }
+      }
+      function scheduleUrlSync() {
+        if (urlTimer) clearTimeout(urlTimer);
+        urlTimer = setTimeout(function () {
+          urlTimer = null;
+          syncQueryToUrl();
+        }, 200);
+      }
+
+      var items = Array.prototype.slice.call(list.querySelectorAll(".ep-list__item"));
+      var total = items.length;
+
+      function haystack(li) {
+        var parts = [];
+        var title = li.querySelector(".ep-list__title");
+        var sub = li.querySelector(".ep-list__sub");
+        var hint = li.querySelector(".avail-match-hint");
+        if (title) parts.push(title.textContent);
+        if (sub) parts.push(sub.textContent);
+        if (hint) parts.push(hint.textContent);
+        return parts.join(" ").toLowerCase();
+      }
+
+      var stacks = items.map(haystack);
+
+      function filter() {
+        var raw = input.value.trim();
+        var terms = raw ? raw.toLowerCase().split(/\s+/) : [];
+        var visible = 0;
+        for (var i = 0; i < items.length; i++) {
+          var show =
+            terms.length === 0 ||
+            terms.every(function (t) {
+              return stacks[i].indexOf(t) !== -1;
+            });
+          items[i].hidden = !show;
+          if (show) visible++;
+        }
+
+        if (statusEl) {
+          if (terms.length === 0) {
+            statusEl.textContent = "";
+          } else if (visible === 0) {
+            statusEl.textContent = "Ingen treff.";
+          } else {
+            statusEl.textContent =
+              "Viser " + visible + " av " + total + " episoder.";
+          }
+        }
+        if (emptyEl) {
+          emptyEl.hidden = terms.length === 0 || visible > 0;
+        }
+        if (clearBtn) {
+          clearBtn.hidden = !input.value;
+        }
+        scheduleUrlSync();
+      }
+
+      input.addEventListener("input", filter);
+      if (clearBtn) {
+        clearBtn.addEventListener("click", function () {
+          input.value = "";
+          input.focus();
+          filter();
+        });
+      }
+
+      try {
+        var q = new URLSearchParams(window.location.search).get("q");
+        if (q) {
+          input.value = q;
+          filter();
+        }
+      } catch (e) {}
+    })();
+  </script>
   {% endif %}
 </main>
 
