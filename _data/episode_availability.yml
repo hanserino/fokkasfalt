@@ -1,15 +1,15 @@
 ---
 meta:
-  generated_at: '2026-05-10T14:57:21Z'
+  generated_at: '2026-05-10T15:17:36Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
-  total: 621
-  also_free: 269
+  total: 509
+  also_free: 157
   uncertain: 21
   patreon_only: 331
-  unmatched_buzzsprout: 0
+  unmatched_buzzsprout: 112
 episodes:
 - slug: thimmy-klaassen-bli-kjent-med-en-fokk-asfalter-015-27594ff549
   title: Thimmy Klaassen | Bli kjent med en Føkk Asfalter 015
@@ -584,19 +584,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 249-obt2025-solo-champions-gro-siljan-hjukse-john-f-jahr-e051b727b6
-  title: "#249 - OBT2025 Solo Champions \U0001F947 | Gro Siljan Hjukse, John F. Jahre & Eivind Svellingen "
-  episode_url: "/episoder/249-obt2025-solo-champions-gro-siljan-hjukse-john-f-jahr-e051b727b6/"
-  date: '2025-07-24'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#249 - OBT2025 Solo Champions \U0001F947 | Gro Siljan Hjukse, John F. Jahre & Eivind Svellingen "
-  buzzsprout_pubdate: '2025-07-24'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/17550230-249-obt2025-solo-champions-gro-siljan-hjukse-john-f-jahre-eivind-svellingen
-  buzzsprout_guid: Buzzsprout-17550230
-  buzzsprout_duration_hint_sec: 6765
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/249-obt2025-solo-champions-gro-siljan-hjukse-john-f/id1332829214?i=1000718762292&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/6JmVsdfPsoye8fMJDugZn7
 - slug: hallgeir-martin-lundemo-merakers-store-sonn-ced41714b3
   title: Hallgeir Martin Lundemo | Meråkers store sønn
   episode_url: "/episoder/hallgeir-martin-lundemo-merakers-store-sonn-ced41714b3/"
@@ -663,32 +650,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: obt-2025-portrett-24-finn-isaksen-ekstrem-utstyrsnerding-52fc3b2666
-  title: 'OBT 2025 Portrett #24 - Finn Isaksen | Ekstrem Utstyrsnerding '
-  episode_url: "/episoder/obt-2025-portrett-24-finn-isaksen-ekstrem-utstyrsnerding-52fc3b2666/"
-  date: '2025-06-23'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: 'OBT 2025 Portrett #24 - Finn Isaksen | Ekstrem Utstyrsnerding '
-  buzzsprout_pubdate: '2025-06-23'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/17107094-obt-2025-portrett-24-finn-isaksen-ekstrem-utstyrsnerding
-  buzzsprout_guid: Buzzsprout-17107094
-  buzzsprout_duration_hint_sec: 6523
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/obt-2025-portrett-24-finn-isaksen-ekstrem-utstyrsnerding/id1332829214?i=1000714127024&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/22EFWQ8NMR8c6NPlK7VquL
-- slug: obt-2025-portrett-23-harald-bjerke-41f2545a90
-  title: 'OBT 2025 Portrett #23 - Harald Bjerke'
-  episode_url: "/episoder/obt-2025-portrett-23-harald-bjerke-41f2545a90/"
-  date: '2025-06-22'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: 'OBT 2025 Portrett #23 - Harald Bjerke'
-  buzzsprout_pubdate: '2025-06-22'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/16936781-obt-2025-portrett-23-harald-bjerke
-  buzzsprout_guid: Buzzsprout-16936781
-  buzzsprout_duration_hint_sec: 5213
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/obt-2025-portrett-23-harald-bjerke/id1332829214?i=1000714013209&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/7i6kE3TcuBnDbOtVc8oB9U
 - slug: mona-kjeldsberg-oslo-bergen-trail-lopsarrangor-36e148ed1d
   title: 'Mona Kjeldsberg | Oslo Bergen Trail Løpsarrangør '
   episode_url: "/episoder/mona-kjeldsberg-oslo-bergen-trail-lopsarrangor-36e148ed1d/"
@@ -724,19 +685,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: the-romsdal-method-kan-herved-streames-99050debe4
-  title: "THE ROMSDAL METHOD kan herved streames!!! \U0001F4FD️\U0001F37F\U0001F389"
-  episode_url: "/episoder/the-romsdal-method-kan-herved-streames-99050debe4/"
-  date: '2025-05-30'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "THE ROMSDAL METHOD kan herved streames!!! \U0001F4FD️\U0001F37F\U0001F389"
-  buzzsprout_pubdate: '2025-05-30'
-  buzzsprout_url: https://romsdalmethod.com/
-  buzzsprout_guid: Buzzsprout-17245932
-  buzzsprout_duration_hint_sec: 876
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/the-romsdal-method-kan-herved-streames/id1332829214?i=1000710516115&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/6mv3X3gHp7gElxBTu3P8WP
 - slug: arne-natedal-vhut-race-director-1c3898f59c
   title: 'Arne Nåtedal | VHUT Race Director '
   episode_url: "/episoder/arne-natedal-vhut-race-director-1c3898f59c/"
@@ -770,19 +718,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 247-sebastian-mamaj-black-lake-race-c643c10a74
-  title: "#247 - Sebastian Mamaj | Black Lake Race"
-  episode_url: "/episoder/247-sebastian-mamaj-black-lake-race-c643c10a74/"
-  date: '2025-05-12'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#247 - Sebastian Mamaj | Black Lake Race"
-  buzzsprout_pubdate: '2025-05-12'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/15936072-247-sebastian-mamaj-black-lake-race
-  buzzsprout_guid: Buzzsprout-15936072
-  buzzsprout_duration_hint_sec: 2563
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/247-sebastian-mamaj-black-lake-race/id1332829214?i=1000708088851&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/3pdvisIHcGWJPnSy04LMSb
 - slug: gramjeger-ultrasaksen-ekstrem-obt-utstyrsnerding-57902c36dc
   title: 'Gramjeger Ultrasaksen | Ekstrem OBT Utstyrsnerding '
   episode_url: "/episoder/gramjeger-ultrasaksen-ekstrem-obt-utstyrsnerding-57902c36dc/"
@@ -1369,19 +1304,6 @@ episodes:
   buzzsprout_duration_hint_sec: 7373
   listen_apple_episode_url: https://podcasts.apple.com/no/podcast/236-finn-isaksen-kungsleden-med-trailsl%C3%B8ts-fkt-gullruta/id1332829214?i=1000677570546&uo=4
   listen_spotify_episode_url: https://open.spotify.com/episode/29LAKBMDaM60zLb7GVPh6Y
-- slug: dj-granite-jeg-haaaaaater-det-8f6bff0857
-  title: DJ Granite - Jeg Haaaaaater Det!
-  episode_url: "/episoder/dj-granite-jeg-haaaaaater-det-8f6bff0857/"
-  date: '2024-10-06'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: DJ Granite - Jeg Haaaaaater Det!
-  buzzsprout_pubdate: '2024-10-06'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/15720198-dj-granite-jeg-haaaaaater-det
-  buzzsprout_guid: Buzzsprout-15720198
-  buzzsprout_duration_hint_sec: 94
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/dj-granite-jeg-haaaaaater-det/id1332829214?i=1000671959486&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/1rmwIdFGnjL7BgCtlmHv4b
 - slug: live-podcast-fri-trail-by-salomon-2024-ian-corless-thoma-f1f75b7b6a
   title: Live Podcast @ Fýri Trail by Salomon 2024 | Ian Corless, Thomas Riis, Gro Siljan Hjukse, Anders Kjærevik, Clara Henry, Oscar Claesson
   episode_url: "/episoder/live-podcast-fri-trail-by-salomon-2024-ian-corless-thoma-f1f75b7b6a/"
@@ -1526,19 +1448,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 228-utmb-2022-fenre-stangbye-reiterer-albon-ogier-borger-b2caee655e
-  title: "#228 - UTMB 2022 | Fenre, Stangbye, Reiterer, Albon, Ogier, Borgersen, Wästlund, Drion, Årvik, Kjærevik"
-  episode_url: "/episoder/228-utmb-2022-fenre-stangbye-reiterer-albon-ogier-borger-b2caee655e/"
-  date: '2024-08-23'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#228 - UTMB 2022 | Fenre, Stangbye, Reiterer, Albon, Ogier, Borgersen, Wästlund, Drion, Årvik, Kjærevik"
-  buzzsprout_pubdate: '2024-08-23'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/15628660-228-utmb-2022-fenre-stangbye-reiterer-albon-ogier-borgersen-wastlund-drion-arvik-kjaerevik
-  buzzsprout_guid: Buzzsprout-15628660
-  buzzsprout_duration_hint_sec: 13117
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/228-utmb-2022-fenre-stangbye-reiterer-albon-ogier-borgersen/id1332829214?i=1000666353630&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/3DqRnS99CWpdJrXU9xizjd
 - slug: utmb-uka-2024-preview-m-jonas-bye-enevoldsen-a50dc05144
   title: UTMB-uka 2024 Preview m/ Jonas Bye Enevoldsen
   episode_url: "/episoder/utmb-uka-2024-preview-m-jonas-bye-enevoldsen-a50dc05144/"
@@ -1587,19 +1496,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 225-hvordan-trene-til-et-ultralop-askild-vatnbakk-larsen-65c63478ea
-  title: "#225 - Hvordan Trene Til Et Ultraløp? Askild Vatnbakk Larsen Har Svaret"
-  episode_url: "/episoder/225-hvordan-trene-til-et-ultralop-askild-vatnbakk-larsen-65c63478ea/"
-  date: '2024-08-04'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#225 - Hvordan Trene Til Et Ultraløp? Askild Vatnbakk Larsen Har Svaret"
-  buzzsprout_pubdate: '2024-08-04'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/15499621-225-hvordan-trene-til-et-ultralop-askild-vatnbakk-larsen-har-svaret
-  buzzsprout_guid: Buzzsprout-15499621
-  buzzsprout_duration_hint_sec: 5952
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/225-hvordan-trene-til-et-ultral%C3%B8p-askild-vatnbakk-larsen/id1332829214?i=1000664285627&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/207E0cyMUVFwFDIXm6CFHT
 - slug: askild-vatnbakk-larsen-hvordan-trene-til-et-ultralop-912a4e17bd
   title: Askild Vatnbakk Larsen | Hvordan Trene Til Et Ultraløp?
   episode_url: "/episoder/askild-vatnbakk-larsen-hvordan-trene-til-et-ultralop-912a4e17bd/"
@@ -1751,19 +1647,6 @@ episodes:
   buzzsprout_duration_hint_sec: 5440
   listen_apple_episode_url: https://podcasts.apple.com/no/podcast/reportasje-fra-n%C3%B8sen-hundreds-2024-rapport-fra-trail/id1332829214?i=1000659586816&uo=4
   listen_spotify_episode_url: https://open.spotify.com/episode/6zwQ3TcksuhW5qjRmb7DUR
-- slug: teaser-nosen-hundreds-2024-0dc6d0391e
-  title: 'Teaser: Nøsen Hundreds 2024'
-  episode_url: "/episoder/teaser-nosen-hundreds-2024-0dc6d0391e/"
-  date: '2024-06-18'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: 'Teaser: Nøsen Hundreds 2024'
-  buzzsprout_pubdate: '2024-06-18'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/15268334-teaser-nosen-hundreds-2024
-  buzzsprout_guid: Buzzsprout-15268334
-  buzzsprout_duration_hint_sec: 118
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/teaser-n%C3%B8sen-hundreds-2024/id1332829214?i=1000659371417&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/7ukogHUZBrPVTFjGarjPzh
 - slug: anders-vekve-og-sindre-holm-fjellsportno-oslo-bergen-tra-c61b847ce4
   title: Anders Vekve og Sindre Holm | Fjellsport.no, Oslo Bergen Trail, Hagemanns Høydemeterløp | Utdeling Av Billetter Til Fyri Trail 55K | Solidaritetsfestival På Åndalsnes
   episode_url: "/episoder/anders-vekve-og-sindre-holm-fjellsportno-oslo-bergen-tra-c61b847ce4/"
@@ -2094,19 +1977,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 209-jake-catterall-lop-europa-pa-langs-pa-94-dager-fecd0ce8a0
-  title: "#209 - Jake Catterall | Løp Europa På Langs På 94 Dager \U0001F631"
-  episode_url: "/episoder/209-jake-catterall-lop-europa-pa-langs-pa-94-dager-fecd0ce8a0/"
-  date: '2023-12-15'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#209 - Jake Catterall | Løp Europa På Langs På 94 Dager \U0001F631"
-  buzzsprout_pubdate: '2023-12-15'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/13997708-209-jake-catterall-lop-europa-pa-langs-pa-94-dager
-  buzzsprout_guid: Buzzsprout-13997708
-  buzzsprout_duration_hint_sec: 7447
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/209-jake-catterall-l%C3%B8p-europa-p%C3%A5-langs-p%C3%A5-94-dager/id1332829214?i=1000638705171&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/1Cddh3HpvkVRjNovWmJ2qT
 - slug: neda-prisen-2023-oppsummering-av-lopearet-med-thomas-sto-e4460f8b8b
   title: NEDA-Prisen 2023 | Oppsummering Av Løpeåret Med Thomas Stordalen
   episode_url: "/episoder/neda-prisen-2023-oppsummering-av-lopearet-med-thomas-sto-e4460f8b8b/"
@@ -2535,32 +2405,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 193-nosen-hundreds-21km-eivind-klokkehaug-anders-ponny-k-d14aa81291
-  title: "#193 - Nøsen Hundreds 21km | Eivind Klokkehaug, Anders Ponny Kjærevik, Kristoffer Eftedal, Espen Roll Karlsen | Golden Trail National Series - Nordics"
-  episode_url: "/episoder/193-nosen-hundreds-21km-eivind-klokkehaug-anders-ponny-k-d14aa81291/"
-  date: '2023-06-28'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#193 - Nøsen Hundreds 21km | Eivind Klokkehaug, Anders Ponny Kjærevik, Kristoffer Eftedal, Espen Roll Karlsen | Golden Trail National Series - Nordics"
-  buzzsprout_pubdate: '2023-06-28'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/13115432-193-nosen-hundreds-21km-eivind-klokkehaug-anders-ponny-kjaerevik-kristoffer-eftedal-espen-roll-karlsen-golden-trail-national-series-nordics
-  buzzsprout_guid: Buzzsprout-13115432
-  buzzsprout_duration_hint_sec: 1724
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/193-n%C3%B8sen-hundreds-21km-eivind-klokkehaug-anders-ponny/id1332829214?i=1000618576553&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/7qaTYHvyg3Es8KFm833GbK
-- slug: 192-nosen-hundreds-21km-liv-richter-ingeborg-treu-roe-mo-2863a55fab
-  title: "#192 - Nøsen Hundreds 21km | Liv Richter, Ingeborg Treu Røe, Molly Bazilchuk, Ida Kjørholt, Helene Birkeli | Golden Trail National Series - Nordics"
-  episode_url: "/episoder/192-nosen-hundreds-21km-liv-richter-ingeborg-treu-roe-mo-2863a55fab/"
-  date: '2023-06-27'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#192 - Nøsen Hundreds 21km | Liv Richter, Ingeborg Treu Røe, Molly Bazilchuk, Ida Kjørholt, Helene Birkeli | Golden Trail National Series - Nordics"
-  buzzsprout_pubdate: '2023-06-27'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/13115464-192-nosen-hundreds-21km-liv-richter-ingeborg-treu-roe-molly-bazilchuk-ida-kjorholt-helene-birkeli-golden-trail-national-series-nordics
-  buzzsprout_guid: Buzzsprout-13115464
-  buzzsprout_duration_hint_sec: 2157
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/192-n%C3%B8sen-hundreds-21km-liv-richter-ingeborg-treu-r%C3%B8e/id1332829214?i=1000618486946&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/2Lrtue4l3BLugOH34BC7NM
 - slug: nosen-hundreds-2023-lopsrapport-bonanza-med-kjarevik-klo-abda56a15f
   title: Nøsen Hundreds 2023 | Løpsrapport-Bonanza Med Kjærevik, Klokkehaug, Bazilchuk, Treu Røe, Richter, Roll Karlsen, Eftedal, Dahl Fenre, Kjørholt, Birkeli, Haugen, Bye Enevoldsen, Stangbye
   episode_url: "/episoder/nosen-hundreds-2023-lopsrapport-bonanza-med-kjarevik-klo-abda56a15f/"
@@ -2792,58 +2636,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 180-emilia-brangeflt-gtnsn-sandnes-ultratrail-23km-e5b54ce4c6
-  title: "#180 - Emilia Brangefält | \U0001F947 GTNSN Sandnes Ultratrail 23km"
-  episode_url: "/episoder/180-emilia-brangeflt-gtnsn-sandnes-ultratrail-23km-e5b54ce4c6/"
-  date: '2023-04-25'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#180 - Emilia Brangefält | \U0001F947 GTNSN Sandnes Ultratrail 23km"
-  buzzsprout_pubdate: '2023-04-25'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/12717910-180-emilia-brangefalt-gtnsn-sandnes-ultratrail-23km
-  buzzsprout_guid: Buzzsprout-12717910
-  buzzsprout_duration_hint_sec: 817
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/180-emilia-brangef%C3%A4lt-gtnsn-sandnes-ultratrail-23km/id1332829214?i=1000610536066&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/5n5oMTuk2CB1cvNHxwamLd
-- slug: 181-linna-hove-gtnsn-sandnes-ultratrail-23km-5959bad5d1
-  title: "#181 - Linnéa Hove | \U0001F948 GTNSN Sandnes Ultratrail 23km"
-  episode_url: "/episoder/181-linna-hove-gtnsn-sandnes-ultratrail-23km-5959bad5d1/"
-  date: '2023-04-25'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#181 - Linnéa Hove | \U0001F948 GTNSN Sandnes Ultratrail 23km"
-  buzzsprout_pubdate: '2023-04-25'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/12718074-181-linnea-hove-gtnsn-sandnes-ultratrail-23km
-  buzzsprout_guid: Buzzsprout-12718074
-  buzzsprout_duration_hint_sec: 861
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/181-linn%C3%A9a-hove-gtnsn-sandnes-ultratrail-23km/id1332829214?i=1000610536000&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/5QadDI23NYzYGw6pKcHves
-- slug: 179-linus-hultegard-gtnsn-sandnes-ultratrail-23km-89a207f294
-  title: "#179 - Linus Hultegård | \U0001F947 GTNSN Sandnes Ultratrail 23km"
-  episode_url: "/episoder/179-linus-hultegard-gtnsn-sandnes-ultratrail-23km-89a207f294/"
-  date: '2023-04-25'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#179 - Linus Hultegård | \U0001F947 GTNSN Sandnes Ultratrail 23km"
-  buzzsprout_pubdate: '2023-04-25'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/12717693-179-linus-hultegard-gtnsn-sandnes-ultratrail-23km
-  buzzsprout_guid: Buzzsprout-12717693
-  buzzsprout_duration_hint_sec: 1528
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/179-linus-hulteg%C3%A5rd-gtnsn-sandnes-ultratrail-23km/id1332829214?i=1000610536229&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/1fwkwOeECLUBD3pXcffdOc
-- slug: 182-oscar-claesson-gtnsn-sandnes-ultratrail-23km-9ba272825f
-  title: "#182 - Oscar Claesson | \U0001F948 GTNSN Sandnes Ultratrail 23km"
-  episode_url: "/episoder/182-oscar-claesson-gtnsn-sandnes-ultratrail-23km-9ba272825f/"
-  date: '2023-04-25'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#182 - Oscar Claesson | \U0001F948 GTNSN Sandnes Ultratrail 23km"
-  buzzsprout_pubdate: '2023-04-25'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/12717813-182-oscar-claesson-gtnsn-sandnes-ultratrail-23km
-  buzzsprout_guid: Buzzsprout-12717813
-  buzzsprout_duration_hint_sec: 967
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/182-oscar-claesson-gtnsn-sandnes-ultratrail-23km/id1332829214?i=1000610536172&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/2qF7LaQvMb4KnSQUz7iRgV
 - slug: gtnsn-sandnes-ultratrail-23km-hove-brangeflt-hultegard-c-5cd617df5b
   title: GTNSN Sandnes Ultratrail 23km | Hove, Brangefält, Hultegård, Claesson
   episode_url: "/episoder/gtnsn-sandnes-ultratrail-23km-hove-brangeflt-hultegard-c-5cd617df5b/"
@@ -3137,19 +2929,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 170-mathieu-blanchard-blaise-dubois-bone-health-for-moun-131c3b862d
-  title: "#170 - Mathieu Blanchard & Blaise Dubois | Bone Health For Mountain Ultra Trail Runners [ENGLISH]"
-  episode_url: "/episoder/170-mathieu-blanchard-blaise-dubois-bone-health-for-moun-131c3b862d/"
-  date: '2022-12-13'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#170 - Mathieu Blanchard & Blaise Dubois | Bone Health For Mountain Ultra Trail Runners [ENGLISH]"
-  buzzsprout_pubdate: '2022-12-13'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/11750736-170-mathieu-blanchard-blaise-dubois-bone-health-for-mountain-ultra-trail-runners-english
-  buzzsprout_guid: Buzzsprout-11750736
-  buzzsprout_duration_hint_sec: 3772
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/170-mathieu-blanchard-blaise-dubois-bone-health-for/id1332829214?i=1000590025622&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/6MqIpT3TbDeQ0DjydSE8kf
 - slug: anders-ponny-kjarevik-livet-i-et-hamsterhjul-og-trykkamm-9ddc663ba6
   title: Anders "Ponny" Kjærevik | Livet I Et Hamsterhjul Og Trykkammer
   episode_url: "/episoder/anders-ponny-kjarevik-livet-i-et-hamsterhjul-og-trykkamm-9ddc663ba6/"
@@ -3299,19 +3078,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: per-sjgren-og-ulf-man-kullamannen-2022-uoffisiell-race-b-76f33ac1cb
-  title: Per Sjögren Og Ulf Öman | Kullamannen 2022 Uoffisiell Race Brief
-  episode_url: "/episoder/per-sjgren-og-ulf-man-kullamannen-2022-uoffisiell-race-b-76f33ac1cb/"
-  date: '2022-10-12'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: Per Sjögren Og Ulf Öman | Kullamannen 2022 Uoffisiell Race Brief
-  buzzsprout_pubdate: '2022-10-12'
-  buzzsprout_url: https://www.patreon.com/posts/per-sjogren-ulf-72990278
-  buzzsprout_guid: Buzzsprout-11485939
-  buzzsprout_duration_hint_sec: 5751
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/per-sj%C3%B6gren-og-ulf-%C3%B6man-kullamannen-2022-uoffisiell/id1332829214?i=1000582426975&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/4BCuxAlkvjOMZCnfUU4RvJ
 - slug: per-sjgren-ulf-man-asgeir-hjorthaug-kullamannen-2022-uof-adf5bef65a
   title: Per Sjögren, Ulf Öman & Asgeir Hjorthaug | Kullamannen 2022 Uoffisiell Race Brief Og Strategi-Snikk-Snakk
   episode_url: "/episoder/per-sjgren-ulf-man-asgeir-hjorthaug-kullamannen-2022-uof-adf5bef65a/"
@@ -3345,19 +3111,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 166-sophia-laukli-victory-at-stranda-fjord-trail-race-tr-42b0c13b41
-  title: "#166 - Sophia Laukli \U0001F1FA\U0001F1F8\U0001F1F3\U0001F1F4\U0001F947 | Victory At Stranda Fjord Trail Race, Trail Running Vs. Nordic Skiing, Training Principles [ENGLISH]"
-  episode_url: "/episoder/166-sophia-laukli-victory-at-stranda-fjord-trail-race-tr-42b0c13b41/"
-  date: '2022-09-16'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#166 - Sophia Laukli \U0001F1FA\U0001F1F8\U0001F1F3\U0001F1F4\U0001F947 | Victory At Stranda Fjord Trail Race, Trail Running Vs. Nordic Skiing, Training Principles [ENGLISH]"
-  buzzsprout_pubdate: '2022-09-16'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/11329561-166-sophia-laukli-victory-at-stranda-fjord-trail-race-trail-running-vs-nordic-skiing-training-principles-english
-  buzzsprout_guid: Buzzsprout-11329561
-  buzzsprout_duration_hint_sec: 2955
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/166-sophia-laukli-victory-at-stranda-fjord-trail-race/id1332829214?i=1000579655983&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/1GV4qcbLwnpvXpHx8S0DzP
 - slug: sophia-laukli-olav-holden-2stk-droye-stilopere-67d4b1e386
   title: Sophia Laukli & Olav Holden | 2stk Drøye Stiløpere
   episode_url: "/episoder/sophia-laukli-olav-holden-2stk-droye-stilopere-67d4b1e386/"
@@ -3380,19 +3133,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: utmb-2022-teaser-876a21c6de
-  title: UTMB 2022 [Teaser]
-  episode_url: "/episoder/utmb-2022-teaser-876a21c6de/"
-  date: '2022-09-06'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: UTMB 2022 [Teaser]
-  buzzsprout_pubdate: '2022-09-06'
-  buzzsprout_url: https://www.patreon.com/posts/utmb-2022-fenre-71581989
-  buzzsprout_guid: Buzzsprout-11267609
-  buzzsprout_duration_hint_sec: 274
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/utmb-2022-teaser/id1332829214?i=1000578494993&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/4dkTenZBSVsE76zGiWCmMN
 - slug: utmb-2022-fenre-reiterer-ogier-borgersen-drion-arvik-sta-db2f8b38b8
   title: UTMB 2022 | Fenre, Reiterer, Ogier, Borgersen, Drion, Årvik, Stangbye, Kjærevik, Albon, Wästlund
   episode_url: "/episoder/utmb-2022-fenre-reiterer-ogier-borgersen-drion-arvik-sta-db2f8b38b8/"
@@ -3426,19 +3166,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 165-rondane-100-race-brief-ultranerding-med-lopsarrangor-cedc34c996
-  title: "#165 - Rondane 100 Race Brief + Ultranerding Med Løpsarrangør Aasmund Kjøllmoen Steien [SALOMON \U0001F64F]"
-  episode_url: "/episoder/165-rondane-100-race-brief-ultranerding-med-lopsarrangor-cedc34c996/"
-  date: '2022-08-08'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#165 - Rondane 100 Race Brief + Ultranerding Med Løpsarrangør Aasmund Kjøllmoen Steien [SALOMON \U0001F64F]"
-  buzzsprout_pubdate: '2022-08-08'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/11098389-165-rondane-100-race-brief-ultranerding-med-lopsarrangor-aasmund-kjollmoen-steien-salomon
-  buzzsprout_guid: Buzzsprout-11098389
-  buzzsprout_duration_hint_sec: 8282
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/165-rondane-100-race-brief-ultranerding-med-l%C3%B8psarrang%C3%B8r/id1332829214?i=1000575374586&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/5OwGOwmluuxkquD5kWmWb7
 - slug: patrick-stangbye-simen-holvik-andreas-gossner-loping-og-c13636a172
   title: Patrick Stangbye, Simen Holvik, Andreas Gossner | Løping Og Sykling På Island + Badwater 135 Statusmøte
   episode_url: "/episoder/patrick-stangbye-simen-holvik-andreas-gossner-loping-og-c13636a172/"
@@ -3540,19 +3267,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: dj-granite-run-ffs-58d2283a21
-  title: DJ Granite - Run FFS!
-  episode_url: "/episoder/dj-granite-run-ffs-58d2283a21/"
-  date: '2022-05-28'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: DJ Granite - Run FFS!
-  buzzsprout_pubdate: '2022-05-28'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/10621269-dj-granite-run-ffs
-  buzzsprout_guid: Buzzsprout-10621269
-  buzzsprout_duration_hint_sec: 272
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/dj-granite-run-ffs/id1332829214?i=1000564291160&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/47ve5VPnsp4vWX4NmwmRco
 - slug: ultra-qa-med-hk-og-tor-einar-ultratrening-kolesterol-ult-29c0a66fe0
   title: Ultra Q&A med HK og Tor Einar | Ultratrening, kolesterol, ultraernæring, ultrautstyr, ultraløp
   episode_url: "/episoder/ultra-qa-med-hk-og-tor-einar-ultratrening-kolesterol-ult-29c0a66fe0/"
@@ -3691,19 +3405,6 @@ episodes:
   buzzsprout_duration_hint_sec: 522
   listen_apple_episode_url: https://podcasts.apple.com/no/podcast/dj-granite-feat-conrad-anker-intense-mountains/id1332829214?i=1000555413682&uo=4
   listen_spotify_episode_url: https://open.spotify.com/episode/72BFhjwgBNyROEYTYUjKFd
-- slug: 163-dylan-bowman-pyllarsfreetrail-hardrock-100-grand-rai-0bd02383ce
-  title: "#163 - Dylan Bowman | Pyllars/FreeTrail, Hardrock 100, Grand Raid, Mill Valley, Ultrarunning, Europe vs USA"
-  episode_url: "/episoder/163-dylan-bowman-pyllarsfreetrail-hardrock-100-grand-rai-0bd02383ce/"
-  date: '2022-03-25'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#163 - Dylan Bowman | Pyllars/FreeTrail, Hardrock 100, Grand Raid, Mill Valley, Ultrarunning, Europe vs USA"
-  buzzsprout_pubdate: '2022-03-25'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/9684099-163-dylan-bowman-pyllars-freetrail-hardrock-100-grand-raid-mill-valley-ultrarunning-europe-vs-usa
-  buzzsprout_guid: Buzzsprout-9684099
-  buzzsprout_duration_hint_sec: 3228
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/163-dylan-bowman-pyllars-freetrail-hardrock-100-grand/id1332829214?i=1000555185919&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/6KDLeohZJV0VmwXNamr89r
 - slug: thor-gotaas-birken-vasaloppet-comrades-og-hirsegrot-dbdcc4d328
   title: Thor Gotaas | Birken, Vasaloppet, Comrades og Hirsegrøt
   episode_url: "/episoder/thor-gotaas-birken-vasaloppet-comrades-og-hirsegrot-dbdcc4d328/"
@@ -3900,19 +3601,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 146-stian-angermund-treningsfilosofi-periodisering-skade-440e5dd7ae
-  title: "#146 - Stian Angermund \U0001F947 | Treningsfilosofi, Periodisering, Skadehistorikk, Alternativ Trening, Farsrollen, Off season, Festing, Løps-anbefalinger"
-  episode_url: "/episoder/146-stian-angermund-treningsfilosofi-periodisering-skade-440e5dd7ae/"
-  date: '2021-11-02'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#146 - Stian Angermund \U0001F947 | Treningsfilosofi, Periodisering, Skadehistorikk, Alternativ Trening, Farsrollen, Off season, Festing, Løps-anbefalinger"
-  buzzsprout_pubdate: '2021-11-02'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/9475981-146-stian-angermund-treningsfilosofi-periodisering-skadehistorikk-alternativ-trening-farsrollen-off-season-festing-lops-anbefalinger
-  buzzsprout_guid: Buzzsprout-9475981
-  buzzsprout_duration_hint_sec: 4821
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/146-stian-angermund-treningsfilosofi-periodisering/id1332829214?i=1000540513910&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/5mjNyTAPSoh14rKINnR0ND
 - slug: lillomarka-rundt-2021-f58ff89a2a
   title: Lillomarka Rundt 2021
   episode_url: "/episoder/lillomarka-rundt-2021-f58ff89a2a/"
@@ -4020,32 +3708,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 144-kate-trujillo-interim-executive-director-honnold-fou-06392b28ae
-  title: "#144 - Kate Trujillo | Interim Executive Director @ Honnold Foundation [ENGLISH]"
-  episode_url: "/episoder/144-kate-trujillo-interim-executive-director-honnold-fou-06392b28ae/"
-  date: '2021-09-23'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#144 - Kate Trujillo | Interim Executive Director @ Honnold Foundation [ENGLISH]"
-  buzzsprout_pubdate: '2021-09-23'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/9246096-144-kate-trujillo-interim-executive-director-honnold-foundation-english
-  buzzsprout_guid: Buzzsprout-9246096
-  buzzsprout_duration_hint_sec: 2737
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/144-kate-trujillo-interim-executive-director-honnold/id1332829214?i=1000536369892&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/7la3rQVX8iQLwunRoweqJT
-- slug: 143-kristin-harila-mount-everest-lhotse-7-summits-khumbu-d39343e950
-  title: "#143 - Kristin Harila | Mount Everest, Lhotse, 7 Summits, Khumbu, Nepal, Covid-19, Nepal, Ultraløping"
-  episode_url: "/episoder/143-kristin-harila-mount-everest-lhotse-7-summits-khumbu-d39343e950/"
-  date: '2021-09-17'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#143 - Kristin Harila | Mount Everest, Lhotse, 7 Summits, Khumbu, Nepal, Covid-19, Nepal, Ultraløping"
-  buzzsprout_pubdate: '2021-09-17'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/8664953-143-kristin-harila-mount-everest-lhotse-7-summits-khumbu-nepal-covid-19-nepal-ultraloping
-  buzzsprout_guid: Buzzsprout-8664953
-  buzzsprout_duration_hint_sec: 6131
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/143-kristin-harila-mount-everest-lhotse-7-summits-khumbu/id1332829214?i=1000535636024&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/7aAp1QleIMajrPYt1PzlBw
 - slug: sindre-kolbjornsgard-alle-2000m-toppene-pa-73-dager-intr-deae96dc20
   title: Sindre Kolbjørnsgard | Alle 2000m-toppene på 73 dager | Intro med Sidespor-Bjørnar
   episode_url: "/episoder/sindre-kolbjornsgard-alle-2000m-toppene-pa-73-dager-intr-deae96dc20/"
@@ -4278,19 +3940,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 139-yngvild-kaspersen-stian-dahl-sommerseth-lysforurensn-aa85440a2c
-  title: "#139 - Yngvild Kaspersen & Stian Dahl Sommerseth | Lysforurensning, Harry Potter, Ernæring, Toppidrett + Studier, Styrketrening, Vintertrening, Ultraløping, Skyrunning ++"
-  episode_url: "/episoder/139-yngvild-kaspersen-stian-dahl-sommerseth-lysforurensn-aa85440a2c/"
-  date: '2021-07-06'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#139 - Yngvild Kaspersen & Stian Dahl Sommerseth | Lysforurensning, Harry Potter, Ernæring, Toppidrett + Studier, Styrketrening, Vintertrening, Ultraløping, Skyrunning ++"
-  buzzsprout_pubdate: '2021-07-06'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/8818282-139-yngvild-kaspersen-stian-dahl-sommerseth-lysforurensning-harry-potter-ernaering-toppidrett-studier-styrketrening-vintertrening-ultraloping-skyrunning
-  buzzsprout_guid: Buzzsprout-8818282
-  buzzsprout_duration_hint_sec: 6223
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/139-yngvild-kaspersen-stian-dahl-sommerseth-lysforurensning/id1332829214?i=1000527959635&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/192MkbTbLIC4okitWi1Ax9
 - slug: mr-pimp-lotion-nesepusting-loping-fasting-carnivore-wim-ebe99dc2f3
   title: Mr. Pimp Lotion | Nesepusting, Løping, Fasting, Carnivore, Wim Hof, Rap, Skating, Solkrem, Søvn, Lavkarbo, Vegan
   episode_url: "/episoder/mr-pimp-lotion-nesepusting-loping-fasting-carnivore-wim-ebe99dc2f3/"
@@ -4326,19 +3975,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 137-skogvokteren-ultra-2021-stemningsrapport-og-intervju-8a6f38709a
-  title: "#137 - Skogvokteren Ultra 2021 | Stemningsrapport Og Intervjuer "
-  episode_url: "/episoder/137-skogvokteren-ultra-2021-stemningsrapport-og-intervju-8a6f38709a/"
-  date: '2021-06-17'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#137 - Skogvokteren Ultra 2021 | Stemningsrapport Og Intervjuer "
-  buzzsprout_pubdate: '2021-06-17'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/8486156-137-skogvokteren-ultra-2021-stemningsrapport-og-intervjuer
-  buzzsprout_guid: Buzzsprout-8486156
-  buzzsprout_duration_hint_sec: 7688
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/137-skogvokteren-ultra-2021-stemningsrapport-og-intervjuer/id1332829214?i=1000525836563&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/5bGL1KI5lMCQpO8xnSmaOj
 - slug: 69-ccc-2019-sky-blazers-crushing-it-oldie-but-goodie-92dc769fca
   title: "#69 - CCC 2019 | Sky Blazers Crushing It [Oldie but goodie]"
   episode_url: "/episoder/69-ccc-2019-sky-blazers-crushing-it-oldie-but-goodie-92dc769fca/"
@@ -4466,19 +4102,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 136-blazecup-2021-rippel-patrick-stangbye-bilal-chaudhry-51359817d2
-  title: "#136 - BlazeCup 2021 & RIPPEL | Patrick Stangbye, Bilal Chaudhry & Trym Nilsen | Outro med Jon-Kristian Rydningen om Klimabrølet.no"
-  episode_url: "/episoder/136-blazecup-2021-rippel-patrick-stangbye-bilal-chaudhry-51359817d2/"
-  date: '2021-04-28'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#136 - BlazeCup 2021 & RIPPEL | Patrick Stangbye, Bilal Chaudhry & Trym Nilsen | Outro med Jon-Kristian Rydningen om Klimabrølet.no"
-  buzzsprout_pubdate: '2021-04-28'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/8404142-136-blazecup-2021-rippel-patrick-stangbye-bilal-chaudhry-trym-nilsen-outro-med-jon-kristian-rydningen-om-klimabrolet-no
-  buzzsprout_guid: Buzzsprout-8404142
-  buzzsprout_duration_hint_sec: 9129
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/136-blazecup-2021-rippel-patrick-stangbye-bilal-chaudhry/id1332829214?i=1000518974310&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/3UjdgYtwzM2LOkZIRQpNuf
 - slug: jon-kristian-rydningen-klimabroletno-bak-kulissene-snikk-9c59188264
   title: Jon-Kristian Rydningen | Klimabrølet.no | Bak kulissene-snikk-snakk med HK
   episode_url: "/episoder/jon-kristian-rydningen-klimabroletno-bak-kulissene-snikk-9c59188264/"
@@ -4524,32 +4147,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 134-olav-engen-kondisno-ultralopingens-opphav-i-norge-ul-2a25324ca1
-  title: "#134 - Olav Engen | Kondis.no, Ultraløpingens Opphav I Norge, Ultraløping Som 70-åring, Romerike Ultraløperklubb, Ultraløpsutvalget"
-  episode_url: "/episoder/134-olav-engen-kondisno-ultralopingens-opphav-i-norge-ul-2a25324ca1/"
-  date: '2021-04-16'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#134 - Olav Engen | Kondis.no, Ultraløpingens Opphav I Norge, Ultraløping Som 70-åring, Romerike Ultraløperklubb, Ultraløpsutvalget"
-  buzzsprout_pubdate: '2021-04-16'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/8326737-134-olav-engen-kondis-no-ultralopingens-opphav-i-norge-ultraloping-som-70-aring-romerike-ultraloperklubb-ultralopsutvalget
-  buzzsprout_guid: Buzzsprout-8326737
-  buzzsprout_duration_hint_sec: 1461
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/134-olav-engen-kondis-no-ultral%C3%B8pingens-opphav-i-norge/id1332829214?i=1000517405245&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/6nzzFHXhkpSC7N4pmBd0UK
-- slug: 133-karsten-warholm-lego-bygging-kosthold-wings-for-life-ae2b34a486
-  title: "#133 - Karsten Warholm | Lego-bygging, Kosthold, Wings For Life, Treningsglede, RedBull, Omdømme, Rollemodeller, OL, Ultraløping, Treningsfilosofi"
-  episode_url: "/episoder/133-karsten-warholm-lego-bygging-kosthold-wings-for-life-ae2b34a486/"
-  date: '2021-04-08'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#133 - Karsten Warholm | Lego-bygging, Kosthold, Wings For Life, Treningsglede, RedBull, Omdømme, Rollemodeller, OL, Ultraløping, Treningsfilosofi"
-  buzzsprout_pubdate: '2021-04-08'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/8288399-133-karsten-warholm-lego-bygging-kosthold-wings-for-life-treningsglede-redbull-omdomme-rollemodeller-ol-ultraloping-treningsfilosofi
-  buzzsprout_guid: Buzzsprout-8288399
-  buzzsprout_duration_hint_sec: 3821
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/133-karsten-warholm-lego-bygging-kosthold-wings-for/id1332829214?i=1000516408246&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/4XTkYqJMdRR9ppWeXORGpc
 - slug: karsten-warholm-lego-omdomme-ol-ultraloping-treningsgled-38f36f6271
   title: Karsten Warholm | Lego, Omdømme, OL, Ultraløping, Treningsglede, Wings For Life, Kosthold, Periodisering
   episode_url: "/episoder/karsten-warholm-lego-omdomme-ol-ultraloping-treningsgled-38f36f6271/"
@@ -4583,32 +4180,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 132-jon-albon-henriette-albon-skader-treningsfilosofi-20-c4fb06caae
-  title: "#132 - Jon Albon & Henriette Albon | Skader, Treningsfilosofi, 2020-sesongen, Flytting fra Bergen til Åndalsnes"
-  episode_url: "/episoder/132-jon-albon-henriette-albon-skader-treningsfilosofi-20-c4fb06caae/"
-  date: '2021-04-02'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#132 - Jon Albon & Henriette Albon | Skader, Treningsfilosofi, 2020-sesongen, Flytting fra Bergen til Åndalsnes"
-  buzzsprout_pubdate: '2021-04-02'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/8142807-132-jon-albon-henriette-albon-skader-treningsfilosofi-2020-sesongen-flytting-fra-bergen-til-andalsnes
-  buzzsprout_guid: Buzzsprout-8142807
-  buzzsprout_duration_hint_sec: 3108
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/132-jon-albon-henriette-albon-skader-treningsfilosofi/id1332829214?i=1000515443006&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/4gyOjVuehDflwVwcyKRZC3
-- slug: 131-askild-vatnbakk-larsen-wattmaling-for-terrengultra-l-fcff0c9cd7
-  title: "#131 - Askild Vatnbakk Larsen | Wattmåling For Terreng/Ultra-løpere, HRV, Dingsebomser, Patreon Q&A, Treningssnakk, Skadeoppdatering +++"
-  episode_url: "/episoder/131-askild-vatnbakk-larsen-wattmaling-for-terrengultra-l-fcff0c9cd7/"
-  date: '2021-03-31'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#131 - Askild Vatnbakk Larsen | Wattmåling For Terreng/Ultra-løpere, HRV, Dingsebomser, Patreon Q&A, Treningssnakk, Skadeoppdatering +++"
-  buzzsprout_pubdate: '2021-03-31'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/8171726-131-askild-vatnbakk-larsen-wattmaling-for-terreng-ultra-lopere-hrv-dingsebomser-patreon-q-a-treningssnakk-skadeoppdatering
-  buzzsprout_guid: Buzzsprout-8171726
-  buzzsprout_duration_hint_sec: 4438
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/131-askild-vatnbakk-larsen-wattm%C3%A5ling-for-terreng-ultra/id1332829214?i=1000515286443&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/74MFhd57f2qd4VrvAe7MCr
 - slug: askild-vatnbakk-larsen-treningssnakk-watt-maling-for-ult-52602a81a2
   title: Askild Vatnbakk Larsen | Treningssnakk, Watt-måling For Ultra/Terreng-Løpere, HRV, Dingsebomser, Self Quantification, Lytter-Q&A, Skadeoppdatering
   episode_url: "/episoder/askild-vatnbakk-larsen-treningssnakk-watt-maling-for-ult-52602a81a2/"
@@ -4659,19 +4230,6 @@ episodes:
   buzzsprout_duration_hint_sec: 5318
   listen_apple_episode_url: https://podcasts.apple.com/no/podcast/135-p%C3%A5l-lie-magnus-race-director-n%C3%B8sen-hundreds-ultramarathon/id1332829214?i=1000518358818&uo=4
   listen_spotify_episode_url: https://open.spotify.com/episode/1VmeF7UwCc4OtOpaQ64ubX
-- slug: 126-elov-olsson-ockelbomaffian-ultraloping-i-sverige-ol-cd8f160ebd
-  title: "#126 - Elov Olsson | Ockelbomaffian, Ultraløping i Sverige, Øl, Skader"
-  episode_url: "/episoder/126-elov-olsson-ockelbomaffian-ultraloping-i-sverige-ol-cd8f160ebd/"
-  date: '2021-03-06'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#126 - Elov Olsson | Ockelbomaffian, Ultraløping i Sverige, Øl, Skader"
-  buzzsprout_pubdate: '2021-03-06'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/7959445-126-elov-olsson-ockelbomaffian-ultraloping-i-sverige-ol-skader
-  buzzsprout_guid: Buzzsprout-7959445
-  buzzsprout_duration_hint_sec: 2304
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/126-elov-olsson-ockelbomaffian-ultral%C3%B8ping-i-sverige/id1332829214?i=1000511885356&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/7cv2m2hcJ3GbEnpfTU9c5o
 - slug: patrick-stangbye-tyler-jones-ultra-utstyr-nerding-ultra-9836556087
   title: Patrick Stangbye & Tyler Jones | Ultra-utstyr-nerding & Ultra-hacks + Patreon Q&A
   episode_url: "/episoder/patrick-stangbye-tyler-jones-ultra-utstyr-nerding-ultra-9836556087/"
@@ -4818,19 +4376,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 118-thor-gotaas-loping-ultraloping-idrettshistorie-skriv-8b6c9bc572
-  title: "#118 - Thor Gotaas | Løping, Ultraløping, Idrettshistorie, Skriveprosessen, Langrenn, Skihopping"
-  episode_url: "/episoder/118-thor-gotaas-loping-ultraloping-idrettshistorie-skriv-8b6c9bc572/"
-  date: '2021-01-14'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#118 - Thor Gotaas | Løping, Ultraløping, Idrettshistorie, Skriveprosessen, Langrenn, Skihopping"
-  buzzsprout_pubdate: '2021-01-14'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/7296667-118-thor-gotaas-loping-ultraloping-idrettshistorie-skriveprosessen-langrenn-skihopping
-  buzzsprout_guid: Buzzsprout-7296667
-  buzzsprout_duration_hint_sec: 2780
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/118-thor-gotaas-l%C3%B8ping-ultral%C3%B8ping-idrettshistorie/id1332829214?i=1000505360128&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/3AKWvebSPCGo5n3tXswUma
 - slug: tobias-dahl-fenre-arets-ultraloper-2020-8af7b65202
   title: Tobias Dahl Fenre | Årets Ultraløper 2020
   episode_url: "/episoder/tobias-dahl-fenre-arets-ultraloper-2020-8af7b65202/"
@@ -5006,19 +4551,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 114-lopeskader-askild-vatnbakk-larsen-plantar-fascitt-ak-6ff9f454b6
-  title: "#114 - Løpeskader | Askild Vatnbakk Larsen | Plantar fascitt, Akilles Tendonitt, Impingement Syndrome"
-  episode_url: "/episoder/114-lopeskader-askild-vatnbakk-larsen-plantar-fascitt-ak-6ff9f454b6/"
-  date: '2020-11-11'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#114 - Løpeskader | Askild Vatnbakk Larsen | Plantar fascitt, Akilles Tendonitt, Impingement Syndrome"
-  buzzsprout_pubdate: '2020-11-11'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/6320974-114-lopeskader-askild-vatnbakk-larsen-plantar-fascitt-akilles-tendonitt-impingement-syndrome
-  buzzsprout_guid: Buzzsprout-6320974
-  buzzsprout_duration_hint_sec: 8698
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/114-l%C3%B8peskader-askild-vatnbakk-larsen-plantar-fascitt/id1332829214?i=1000498220193&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/17BD0IBwRtbsdohSh1MoZe
 - slug: olav-engen-optimistgammeln-70a96a6a67
   title: Olav Engen | Optimistgammel'n
   episode_url: "/episoder/olav-engen-optimistgammeln-70a96a6a67/"
@@ -5111,19 +4643,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 111-unni-dahl-ottesen-ultraloper-ultrasvommer-ultramamma-f7919657de
-  title: "#111 - Unni Dahl Ottesen | Ultraløper, ultrasvømmer, ultramamma, Pippi Langstrømpe"
-  episode_url: "/episoder/111-unni-dahl-ottesen-ultraloper-ultrasvommer-ultramamma-f7919657de/"
-  date: '2020-10-12'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#111 - Unni Dahl Ottesen | Ultraløper, ultrasvømmer, ultramamma, Pippi Langstrømpe"
-  buzzsprout_pubdate: '2020-10-12'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/5851441-111-unni-dahl-ottesen-ultraloper-ultrasvommer-ultramamma-pippi-langstrompe
-  buzzsprout_guid: Buzzsprout-5851441
-  buzzsprout_duration_hint_sec: 8672
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/111-unni-dahl-ottesen-ultral%C3%B8per-ultrasv%C3%B8mmer-ultramamma/id1332829214?i=1000494467389&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/6pHzoeQbCaqvLVx2KkjJso
 - slug: jorgen-vik-fotball-trenerrollen-motivasjon-skoyter-alter-1c975c4524
   title: Jørgen Vik | Fotball, trenerrollen, motivasjon, skøyter, alternativ trening
   episode_url: "/episoder/jorgen-vik-fotball-trenerrollen-motivasjon-skoyter-alter-1c975c4524/"
@@ -5157,19 +4676,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 109-isak-buhl-mortensen-phd-i-teoretisk-fysikk-impostor-991fb0dee3
-  title: "#109 - Isak Buhl-Mortensen | PhD i teoretisk fysikk, impostor syndrome, Higgs boson, meningen med (A4)livet, kjernekraft, Chernobyl, fraktaler, depresjon, meningsløshet, drugs, militærhelikopter"
-  episode_url: "/episoder/109-isak-buhl-mortensen-phd-i-teoretisk-fysikk-impostor-991fb0dee3/"
-  date: '2020-09-23'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#109 - Isak Buhl-Mortensen | PhD i teoretisk fysikk, impostor syndrome, Higgs boson, meningen med (A4)livet, kjernekraft, Chernobyl, fraktaler, depresjon, meningsløshet, drugs, militærhelikopter"
-  buzzsprout_pubdate: '2020-09-23'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/5565796-109-isak-buhl-mortensen-phd-i-teoretisk-fysikk-impostor-syndrome-higgs-boson-meningen-med-a4-livet-kjernekraft-chernobyl-fraktaler-depresjon-meningsloshet-drugs-militaerhelikopter
-  buzzsprout_guid: Buzzsprout-5565796
-  buzzsprout_duration_hint_sec: 3152
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/109-isak-buhl-mortensen-phd-i-teoretisk-fysikk-impostor/id1332829214?i=1000492286117&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/2TsWihm2LwxKuEU31Fxfp9
 - slug: mollemat-4x10min-terskel-7648084212
   title: Møllemat | 4x10min terskel
   episode_url: "/episoder/mollemat-4x10min-terskel-7648084212/"
@@ -5181,32 +4687,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 108-sindre-buraas-lillo-blaze-cup-2020-dokumentarfilm-in-2742f9a555
-  title: "#108 - Sindre Buraas | Lillo Blaze Cup 2020 dokumentarfilm-intervju"
-  episode_url: "/episoder/108-sindre-buraas-lillo-blaze-cup-2020-dokumentarfilm-in-2742f9a555/"
-  date: '2020-09-21'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#108 - Sindre Buraas | Lillo Blaze Cup 2020 dokumentarfilm-intervju"
-  buzzsprout_pubdate: '2020-09-21'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/5530912-108-sindre-buraas-lillo-blaze-cup-2020-dokumentarfilm-intervju
-  buzzsprout_guid: Buzzsprout-5530912
-  buzzsprout_duration_hint_sec: 1813
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/108-sindre-buraas-lillo-blaze-cup-2020-dokumentarfilm/id1332829214?i=1000492016104&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/6Qmgu2N9zUCBGLPbmyka4j
-- slug: 107-patrick-stangbye-lillo-blaze-cup-2020-dokumentarfilm-e3cf76b51b
-  title: "#107 - Patrick Stangbye | Lillo Blaze Cup 2020 dokumentarfilm-intervju"
-  episode_url: "/episoder/107-patrick-stangbye-lillo-blaze-cup-2020-dokumentarfilm-e3cf76b51b/"
-  date: '2020-09-17'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#107 - Patrick Stangbye | Lillo Blaze Cup 2020 dokumentarfilm-intervju"
-  buzzsprout_pubdate: '2020-09-17'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/5481634-107-patrick-stangbye-lillo-blaze-cup-2020-dokumentarfilm-intervju
-  buzzsprout_guid: Buzzsprout-5481634
-  buzzsprout_duration_hint_sec: 1914
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/107-patrick-stangbye-lillo-blaze-cup-2020-dokumentarfilm/id1332829214?i=1000491560003&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/7iHia5NYRAEIERstZ5At5s
 - slug: leif-harry-hansen-skoyte-eventyret-bad4933fe3
   title: Leif-Harry Hansen | Skøyte-eventyret
   episode_url: "/episoder/leif-harry-hansen-skoyte-eventyret-bad4933fe3/"
@@ -5538,32 +5018,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: slik-blir-neda-sommeren-2020-ekspedisjon-yolo-20-med-pat-1b6ea3735c
-  title: Slik blir NEDA-sommeren 2020 | Ekspedisjon YOLO 2.0 | Med Patrick Stangbye
-  episode_url: "/episoder/slik-blir-neda-sommeren-2020-ekspedisjon-yolo-20-med-pat-1b6ea3735c/"
-  date: '2020-06-19'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: Slik blir NEDA-sommeren 2020 | Ekspedisjon YOLO 2.0 | Med Patrick Stangbye
-  buzzsprout_pubdate: '2020-06-19'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/4235996-slik-blir-neda-sommeren-2020-ekspedisjon-yolo-2-0-med-patrick-stangbye
-  buzzsprout_guid: Buzzsprout-4235996
-  buzzsprout_duration_hint_sec: 1582
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/slik-blir-neda-sommeren-2020-ekspedisjon-yolo-2-0-med/id1332829214?i=1000478762863&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/79ZkBmGi8ZWgw0DjNxzNb8
-- slug: 102-qa-med-programlederen-skader-treningstips-ersfjordtr-f9cead777e
-  title: "#102 - Q&A med programlederen | Skader, treningstips, Ersfjordtraversen, dilemmas, recoverytips, favoritturer, plantar fascitt, keto-diett, framtidsutsikter, ultraløping, Norgesferie reisetips"
-  episode_url: "/episoder/102-qa-med-programlederen-skader-treningstips-ersfjordtr-f9cead777e/"
-  date: '2020-06-13'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#102 - Q&A med programlederen | Skader, treningstips, Ersfjordtraversen, dilemmas, recoverytips, favoritturer, plantar fascitt, keto-diett, framtidsutsikter, ultraløping, Norgesferie reisetips"
-  buzzsprout_pubdate: '2020-06-13'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/4152200-102-q-a-med-programlederen-skader-treningstips-ersfjordtraversen-dilemmas-recoverytips-favoritturer-plantar-fascitt-keto-diett-framtidsutsikter-ultraloping-norgesferie-reisetips
-  buzzsprout_guid: Buzzsprout-4152200
-  buzzsprout_duration_hint_sec: 11240
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/102-q-a-med-programlederen-skader-treningstips/id1332829214?i=1000477872153&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/1hKPR9ThOSTbkbA4trI8Ov
 - slug: stine-holager-og-patrick-stangbye-ultra-small-talk-i-ego-5b66277f34
   title: Stine Holager og Patrick Stangbye | Ultra small talk i Egon Olsens fotspor
   episode_url: "/episoder/stine-holager-og-patrick-stangbye-ultra-small-talk-i-ego-5b66277f34/"
@@ -5599,45 +5053,6 @@ episodes:
   buzzsprout_duration_hint_sec: 8775
   listen_apple_episode_url: https://podcasts.apple.com/no/podcast/101-kenneth-d%C3%A6hlen-besteg-mt-everest-p%C3%A5-rena/id1332829214?i=1000476530191&uo=4
   listen_spotify_episode_url: https://open.spotify.com/episode/0YEXj7E1RFYCDqp9Q7fxsm
-- slug: 100-kilian-jornet-chronology-of-significant-activities-e-425b022034
-  title: "#100 - Kilian Jornet | Chronology Of Significant Activities [ENGLISH]"
-  episode_url: "/episoder/100-kilian-jornet-chronology-of-significant-activities-e-425b022034/"
-  date: '2020-05-24'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#100 - Kilian Jornet | Chronology Of Significant Activities [ENGLISH]"
-  buzzsprout_pubdate: '2020-05-24'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/3887480-100-kilian-jornet-chronology-of-significant-activities-english
-  buzzsprout_guid: Buzzsprout-3887480
-  buzzsprout_duration_hint_sec: 6530
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/100-kilian-jornet-chronology-of-significant/id1332829214?i=1000475635566&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/43kdua6DYAqfMWQZrNpYEo
-- slug: 99-sindre-buraas-og-patrick-stangbye-lillo-blaze-cup-sta-69ac11347c
-  title: "#99 - Sindre Buraas og Patrick Stangbye | Lillo Blaze Cup statusrapport"
-  episode_url: "/episoder/99-sindre-buraas-og-patrick-stangbye-lillo-blaze-cup-sta-69ac11347c/"
-  date: '2020-05-16'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#99 - Sindre Buraas og Patrick Stangbye | Lillo Blaze Cup statusrapport"
-  buzzsprout_pubdate: '2020-05-16'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/3770444-99-sindre-buraas-og-patrick-stangbye-lillo-blaze-cup-statusrapport
-  buzzsprout_guid: Buzzsprout-3770444
-  buzzsprout_duration_hint_sec: 3974
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/99-sindre-buraas-og-patrick-stangbye-lillo-blaze-cup/id1332829214?i=1000474830532&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/4Tcz2LAUFrkhi9mb6PWcix
-- slug: 98-andrew-tunstalls-story-will-change-your-life-intro-wi-1cbaa5883a
-  title: "#98 - Andrew Tunstall's story will change your life | Intro with Sky Blazer Tyler Jones [ENGLISH] "
-  episode_url: "/episoder/98-andrew-tunstalls-story-will-change-your-life-intro-wi-1cbaa5883a/"
-  date: '2020-05-11'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#98 - Andrew Tunstall's story will change your life | Intro with Sky Blazer Tyler Jones [ENGLISH] "
-  buzzsprout_pubdate: '2020-05-11'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/3709205-98-andrew-tunstall-s-story-will-change-your-life-intro-with-sky-blazer-tyler-jones-english
-  buzzsprout_guid: Buzzsprout-3709205
-  buzzsprout_duration_hint_sec: 5084
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/98-andrew-tunstalls-story-will-change-your-life-intro/id1332829214?i=1000474278937&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/3ujtynQbO7yi3wEN6DK2pP
 - slug: 98-english-andrew-tunstall-slow-boat-to-uruguay-a0fbf6413c
   title: "#98 - [ENGLISH] Andrew Tunstall - Slow Boat To Uruguay"
   episode_url: "/episoder/98-english-andrew-tunstall-slow-boat-to-uruguay-a0fbf6413c/"
@@ -5649,32 +5064,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 97-oystein-haugen-mt-kilimanjaro-pa-under-10-timer-intro-7b4f596450
-  title: "#97 - Øystein Haugen | Mt. Kilimanjaro på under 10 timer?!?!  | Intro og outro med Thomas Stordalen"
-  episode_url: "/episoder/97-oystein-haugen-mt-kilimanjaro-pa-under-10-timer-intro-7b4f596450/"
-  date: '2020-04-25'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#97 - Øystein Haugen | Mt. Kilimanjaro på under 10 timer?!?!  | Intro og outro med Thomas Stordalen"
-  buzzsprout_pubdate: '2020-04-25'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/3493411-97-oystein-haugen-mt-kilimanjaro-pa-under-10-timer-intro-og-outro-med-thomas-stordalen
-  buzzsprout_guid: Buzzsprout-3493411
-  buzzsprout_duration_hint_sec: 11616
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/97-%C3%B8ystein-haugen-mt-kilimanjaro-p%C3%A5-under-10-timer/id1332829214?i=1000472601549&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/20mZ3FXtbcE4M4usj9W9m2
-- slug: 96-sky-blazers-presenterer-lillo-blazecup-2020-3-trails-b1aa2cbada
-  title: "#96 - Sky Blazers presenterer Lillo BlazeCup 2020 | 3 trails 1 cup"
-  episode_url: "/episoder/96-sky-blazers-presenterer-lillo-blazecup-2020-3-trails-b1aa2cbada/"
-  date: '2020-04-21'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#96 - Sky Blazers presenterer Lillo BlazeCup 2020 | 3 trails 1 cup"
-  buzzsprout_pubdate: '2020-04-21'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/3435358-96-sky-blazers-presenterer-lillo-blazecup-2020-3-trails-1-cup
-  buzzsprout_guid: Buzzsprout-3435358
-  buzzsprout_duration_hint_sec: 4137
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/96-sky-blazers-presenterer-lillo-blazecup-2020-3-trails/id1332829214?i=1000472152885&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/3ltdGwiSvJdDRF4OV7SnMC
 - slug: episode-95-runar-sather-hva-driver-han-med-i-england-ege-9389d2deb0
   title: 'Episode 95: Runar Sæther | Hva driver han med i England, egentlig? '
   episode_url: "/episoder/episode-95-runar-sather-hva-driver-han-med-i-england-ege-9389d2deb0/"
@@ -5701,19 +5090,6 @@ episodes:
   buzzsprout_duration_hint_sec: 6642
   listen_apple_episode_url: https://podcasts.apple.com/no/podcast/94-leif-abrahamsen-norges-dr%C3%B8yeste-ultral%C3%B8per/id1332829214?i=1000471140651&uo=4
   listen_spotify_episode_url: https://open.spotify.com/episode/0YUdulsxJb4Fc3IUUgJtFz
-- slug: 93-johanna-astrm-koronafast-i-sverige-95b96b8dc8
-  title: "#93 - Johanna Åström | Koronafast i Sverige"
-  episode_url: "/episoder/93-johanna-astrm-koronafast-i-sverige-95b96b8dc8/"
-  date: '2020-04-02'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#93 - Johanna Åström | Koronafast i Sverige"
-  buzzsprout_pubdate: '2020-04-02'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/3210046-93-johanna-astrom-koronafast-i-sverige
-  buzzsprout_guid: Buzzsprout-3210046
-  buzzsprout_duration_hint_sec: 4036
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/93-johanna-%C3%A5str%C3%B6m-koronafast-i-sverige/id1332829214?i=1000470350209&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/69Htd8lQytFuoloaXQI3sk
 - slug: slampoesti-dette-er-neda-ada6739b49
   title: "#Slampoesti – Dette er NEDA"
   episode_url: "/episoder/slampoesti-dette-er-neda-ada6739b49/"
@@ -5727,19 +5103,6 @@ episodes:
   buzzsprout_duration_hint_sec: 225
   listen_apple_episode_url: https://podcasts.apple.com/no/podcast/slampoesti-dette-er-neda/id1332829214?i=1000470012804&uo=4
   listen_spotify_episode_url: https://open.spotify.com/episode/04RQdZuek2XFVAbo1E3diG
-- slug: 92-sky-blazers-vs-korona-patrick-johannes-felipe-og-hk-57ae31bb0b
-  title: "#92 - Sky Blazers vs. Korona | Patrick, Johannes, Felipe og HK"
-  episode_url: "/episoder/92-sky-blazers-vs-korona-patrick-johannes-felipe-og-hk-57ae31bb0b/"
-  date: '2020-03-26'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#92 - Sky Blazers vs. Korona | Patrick, Johannes, Felipe og HK"
-  buzzsprout_pubdate: '2020-03-26'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/3128962-92-sky-blazers-vs-korona-patrick-johannes-felipe-og-hk
-  buzzsprout_guid: Buzzsprout-3128962
-  buzzsprout_duration_hint_sec: 8947
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/92-sky-blazers-vs-korona-patrick-johannes-felipe-og-hk/id1332829214?i=1000469625208&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/7sNezV2gPl42lHCTfHtDZE
 - slug: intervju-med-skyrunner-johanna-astrm-audio-video-79665d73eb
   title: Intervju med skyrunner Johanna Åström | audio + video
   episode_url: "/episoder/intervju-med-skyrunner-johanna-astrm-audio-video-79665d73eb/"
@@ -5751,19 +5114,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 91-paolo-marazzi-ragni-di-lecco-and-arcteryx-climbermoun-dc4e28b30f
-  title: "#91 - Paolo Marazzi | Ragni di Lecco and Arc'teryx climber/mountaineer | Intro with Tim Dunham [ENGLISH] "
-  episode_url: "/episoder/91-paolo-marazzi-ragni-di-lecco-and-arcteryx-climbermoun-dc4e28b30f/"
-  date: '2020-03-24'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#91 - Paolo Marazzi | Ragni di Lecco and Arc'teryx climber/mountaineer | Intro with Tim Dunham [ENGLISH] "
-  buzzsprout_pubdate: '2020-03-24'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/3065281-91-paolo-marazzi-ragni-di-lecco-and-arc-teryx-climber-mountaineer-intro-with-tim-dunham-english
-  buzzsprout_guid: Buzzsprout-3065281
-  buzzsprout_duration_hint_sec: 5832
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/91-paolo-marazzi-ragni-di-lecco-and-arcteryx-climber/id1332829214?i=1000469380127&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/5840oV0eXyuVCIam0LgADr
 - slug: sky-blazers-vs-korona-22-johannes-rummelhoff-aka-dr-sti-cc69600297
   title: Sky Blazers vs. korona 2/2 | Johannes Rummelhoff, aka Dr. Sti
   episode_url: "/episoder/sky-blazers-vs-korona-22-johannes-rummelhoff-aka-dr-sti-cc69600297/"
@@ -5797,18 +5147,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 90-fkt-on-the-huemul-circuit-rene-hamel-el-chalten-patag-03944982fe
-  title: "#90 - FKT on the Huemul Circuit | Renée Hamel, El Chalten, Patagonia, Argentina [ENGLISH] "
-  episode_url: "/episoder/90-fkt-on-the-huemul-circuit-rene-hamel-el-chalten-patag-03944982fe/"
-  date: '2020-03-15'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#90 - FKT on the Huemul Circuit | Renée Hamel, El Chalten, Patagonia, Argentina [ENGLISH] "
-  buzzsprout_pubdate: '2020-03-15'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/3011443-90-fkt-on-the-huemul-circuit-renee-hamel-el-chalten-patagonia-argentina-english
-  buzzsprout_guid: Buzzsprout-3011443
-  buzzsprout_duration_hint_sec: 5430
-  listen_spotify_episode_url: https://open.spotify.com/episode/1CXq10153wXQOjhRV5MVv6
 - slug: rene-hamel-huemul-circuit-fkt-d88353f88c
   title: 'Renée Hamel - Huemul Circuit FKT '
   episode_url: "/episoder/rene-hamel-huemul-circuit-fkt-d88353f88c/"
@@ -5820,18 +5158,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 89-climbing-in-el-chaltn-patagonia-argentina-tad-mcrae-a-f13ac1e80b
-  title: "#89 - Climbing in El Chaltén, Patagonia, Argentina | Tad McRae & Agustin Burgas [ENGLISH] "
-  episode_url: "/episoder/89-climbing-in-el-chaltn-patagonia-argentina-tad-mcrae-a-f13ac1e80b/"
-  date: '2020-03-06'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#89 - Climbing in El Chaltén, Patagonia, Argentina | Tad McRae & Agustin Burgas [ENGLISH] "
-  buzzsprout_pubdate: '2020-03-06'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/2935114-89-climbing-in-el-chalten-patagonia-argentina-tad-mcrae-agustin-burgas-english
-  buzzsprout_guid: Buzzsprout-2935114
-  buzzsprout_duration_hint_sec: 4371
-  listen_spotify_episode_url: https://open.spotify.com/episode/2gx4bpkz80dCEQmpVlGLSq
 - slug: tad-mcrae-agustin-burgas-climbing-in-el-chaltn-7390043950
   title: Tad McRae & Agustin Burgas | Climbing in El Chaltén
   episode_url: "/episoder/tad-mcrae-agustin-burgas-climbing-in-el-chaltn-7390043950/"
@@ -5843,42 +5169,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 87-mountain-running-magazine-mashup-with-emily-hawgood-a-e4bb692005
-  title: "#87 - Mountain Running Magazine mashup with Emily Hawgood and Lyn VanSchoiack | Intro & outro w/ Katherine de las Nieves [ENGLISH]"
-  episode_url: "/episoder/87-mountain-running-magazine-mashup-with-emily-hawgood-a-e4bb692005/"
-  date: '2020-02-18'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#87 - Mountain Running Magazine mashup with Emily Hawgood and Lyn VanSchoiack | Intro & outro w/ Katherine de las Nieves [ENGLISH]"
-  buzzsprout_pubdate: '2020-02-18'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/2780077-87-mountain-running-magazine-mashup-with-emily-hawgood-and-lyn-vanschoiack-intro-outro-w-katherine-de-las-nieves-english
-  buzzsprout_guid: Buzzsprout-2780077
-  buzzsprout_duration_hint_sec: 6076
-  listen_spotify_episode_url: https://open.spotify.com/episode/48yRKQGo9G4L5hHmlJ3vR8
-- slug: 86-ultra-samtaler-med-ultra-patreons-dennis-reidun-ingri-d0036d8bbb
-  title: "#86 - Ultra-samtaler med ultra-patreons | Dennis, Reidun, Ingrid, Amund og Kenneth"
-  episode_url: "/episoder/86-ultra-samtaler-med-ultra-patreons-dennis-reidun-ingri-d0036d8bbb/"
-  date: '2020-02-04'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#86 - Ultra-samtaler med ultra-patreons | Dennis, Reidun, Ingrid, Amund og Kenneth"
-  buzzsprout_pubdate: '2020-02-04'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/2630464-86-ultra-samtaler-med-ultra-patreons-dennis-reidun-ingrid-amund-og-kenneth
-  buzzsprout_guid: Buzzsprout-2630464
-  buzzsprout_duration_hint_sec: 12776
-  listen_spotify_episode_url: https://open.spotify.com/episode/3zVYwBPBj5acUFZ9aFwpAI
-- slug: 84-ultra-qa-med-askild-steffen-og-hk-intro-med-sondre-am-b10c4308b3
-  title: "#84 - Ultra Q&A med Askild, Steffen og HK | Intro med Sondre Amdahl"
-  episode_url: "/episoder/84-ultra-qa-med-askild-steffen-og-hk-intro-med-sondre-am-b10c4308b3/"
-  date: '2020-01-21'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#84 - Ultra Q&A med Askild, Steffen og HK | Intro med Sondre Amdahl"
-  buzzsprout_pubdate: '2020-01-21'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/2542243-84-ultra-q-a-med-askild-steffen-og-hk-intro-med-sondre-amdahl
-  buzzsprout_guid: Buzzsprout-2542243
-  buzzsprout_duration_hint_sec: 7715
-  listen_spotify_episode_url: https://open.spotify.com/episode/3LJgaN7Ev3A7WGemBtdFav
 - slug: askild-vatnbakk-larsen-og-steffen-brufladt-614cb5dbed
   title: Askild Vatnbakk Larsen og Steffen Brufladt
   episode_url: "/episoder/askild-vatnbakk-larsen-og-steffen-brufladt-614cb5dbed/"
@@ -5890,18 +5180,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 83-pete-cameron-product-line-manager-arcteryx-footwear-i-9ba131e42b
-  title: "#83 - Pete Cameron | Product Line Manager @ Arc’teryx Footwear | Intro & outro w/Patrick Stangbye"
-  episode_url: "/episoder/83-pete-cameron-product-line-manager-arcteryx-footwear-i-9ba131e42b/"
-  date: '2020-01-14'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#83 - Pete Cameron | Product Line Manager @ Arc’teryx Footwear | Intro & outro w/Patrick Stangbye"
-  buzzsprout_pubdate: '2020-01-14'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/2488927-83-pete-cameron-product-line-manager-arc-teryx-footwear-intro-outro-w-patrick-stangbye
-  buzzsprout_guid: Buzzsprout-2488927
-  buzzsprout_duration_hint_sec: 6369
-  listen_spotify_episode_url: https://open.spotify.com/episode/2ir3tO41AREcNW0VYoKo4j
 - slug: outroen-som-aldri-ble-publisert-12338db5e5
   title: Outroen som aldri ble publisert
   episode_url: "/episoder/outroen-som-aldri-ble-publisert-12338db5e5/"
@@ -5924,18 +5202,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 82-fra-mexico-til-canada-kristine-oppsummerer-fem-manede-95f5b1801c
-  title: "#82 - Fra Mexico til Canada | Kristine oppsummerer fem måneder på stien"
-  episode_url: "/episoder/82-fra-mexico-til-canada-kristine-oppsummerer-fem-manede-95f5b1801c/"
-  date: '2019-12-30'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#82 - Fra Mexico til Canada | Kristine oppsummerer fem måneder på stien"
-  buzzsprout_pubdate: '2019-12-30'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/2374646-82-fra-mexico-til-canada-kristine-oppsummerer-fem-maneder-pa-stien
-  buzzsprout_guid: Buzzsprout-2374646
-  buzzsprout_duration_hint_sec: 6426
-  listen_spotify_episode_url: https://open.spotify.com/episode/3irASNJcIFFC2797At8EFj
 - slug: episode-81-mingma-david-sherpa-youngest-ever-to-have-cli-94bda7203b
   title: 'Episode 81: Mingma David Sherpa – Youngest ever to have climbed all 8000m peaks and sherpa of the year 2019. Kind of a big deal'
   episode_url: "/episoder/episode-81-mingma-david-sherpa-youngest-ever-to-have-cli-94bda7203b/"
@@ -5948,18 +5214,6 @@ episodes:
   buzzsprout_guid: Buzzsprout-2337248
   buzzsprout_duration_hint_sec: 5821
   listen_spotify_episode_url: https://open.spotify.com/episode/36udsZ6XhZgTmNONLtctau
-- slug: teaser-av-episode-atti-karing-av-arets-lopebragder-med-t-04735887d2
-  title: '"Teaser" av episode åtti | Kåring av årets løpebragder med Thomas Stordalen'
-  episode_url: "/episoder/teaser-av-episode-atti-karing-av-arets-lopebragder-med-t-04735887d2/"
-  date: '2019-12-15'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: '"Teaser" av episode åtti | Kåring av årets løpebragder med Thomas Stordalen'
-  buzzsprout_pubdate: '2019-12-15'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/2286479-teaser-av-episode-atti-karing-av-arets-lopebragder-med-thomas-stordalen
-  buzzsprout_guid: Buzzsprout-2286479
-  buzzsprout_duration_hint_sec: 382
-  listen_spotify_episode_url: https://open.spotify.com/episode/4YLV0wuQxu5WBPwmZfKuyB
 - slug: episode-81-pct-kristine-oppsummerer-fem-maneder-pa-stien-8f1f9ff823
   title: 'Episode 81: "PCT-Kristine" oppsummerer fem måneder på stien'
   episode_url: "/episoder/episode-81-pct-kristine-oppsummerer-fem-maneder-pa-stien-8f1f9ff823/"
@@ -5994,18 +5248,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 78-ian-corless-talking-ultra-english-f312a5eb1c
-  title: "#78 - Ian Corless | Talking Ultra [ENGLISH] "
-  episode_url: "/episoder/78-ian-corless-talking-ultra-english-f312a5eb1c/"
-  date: '2019-11-21'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#78 - Ian Corless | Talking Ultra [ENGLISH] "
-  buzzsprout_pubdate: '2019-11-21'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/2134874-78-ian-corless-talking-ultra-english
-  buzzsprout_guid: Buzzsprout-2134874
-  buzzsprout_duration_hint_sec: 6521
-  listen_spotify_episode_url: https://open.spotify.com/episode/5Iic2GlEkHA9Svi2UPA2of
 - slug: ian-corless-df78e9e10c
   title: Ian Corless
   episode_url: "/episoder/ian-corless-df78e9e10c/"
@@ -6017,30 +5259,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 77-nepal-litt-av-et-land-reisebrev-og-intervju-med-fanny-c79e9f4779
-  title: "#77 - Nepal - Litt Av Et Land \U0001F1F3\U0001F1F5| Reisebrev Og Intervju Med Fanny Borgström Og Klatrere I Ama Dablam Basecamp"
-  episode_url: "/episoder/77-nepal-litt-av-et-land-reisebrev-og-intervju-med-fanny-c79e9f4779/"
-  date: '2019-11-08'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#77 - Nepal - Litt Av Et Land \U0001F1F3\U0001F1F5| Reisebrev Og Intervju Med Fanny Borgström Og Klatrere I Ama Dablam Basecamp"
-  buzzsprout_pubdate: '2019-11-08'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/2017536-77-nepal-litt-av-et-land-reisebrev-og-intervju-med-fanny-borgstrom-og-klatrere-i-ama-dablam-basecamp
-  buzzsprout_guid: Buzzsprout-2017536
-  buzzsprout_duration_hint_sec: 9533
-  listen_spotify_episode_url: https://open.spotify.com/episode/1vlqo5MJUuUlnqPrEKdQJv
-- slug: 75-nm-terrenglop-2019-reportasje-og-intervju-29f9facf65
-  title: "#75 - NM Terrengløp 2019 | Reportasje og intervju"
-  episode_url: "/episoder/75-nm-terrenglop-2019-reportasje-og-intervju-29f9facf65/"
-  date: '2019-10-16'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#75 - NM Terrengløp 2019 | Reportasje og intervju"
-  buzzsprout_pubdate: '2019-10-16'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/1876529-75-nm-terrenglop-2019-reportasje-og-intervju
-  buzzsprout_guid: Buzzsprout-1876529
-  buzzsprout_duration_hint_sec: 2052
-  listen_spotify_episode_url: https://open.spotify.com/episode/4u7P4eTWN2bMrTIrFU6dla
 - slug: super-duper-early-access-til-episode-76-elisabeth-barnes-2db837cbbe
   title: Super duper early access til episode 76 - Elisabeth Barnes & Sondre Amdahl | Alt du trenger å vite om etappeløp
   episode_url: "/episoder/super-duper-early-access-til-episode-76-elisabeth-barnes-2db837cbbe/"
@@ -6052,18 +5270,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 74-en-helg-i-skabu-forpremiere-av-besatt-intervjuer-med-6c9b156388
-  title: "#74 - En helg i Skåbu | Førpremiere av Besatt, intervjuer med Frank Løke, Kristin Aastad, Tom Erik Åsen og Sky Blazers"
-  episode_url: "/episoder/74-en-helg-i-skabu-forpremiere-av-besatt-intervjuer-med-6c9b156388/"
-  date: '2019-10-06'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#74 - En helg i Skåbu | Førpremiere av Besatt, intervjuer med Frank Løke, Kristin Aastad, Tom Erik Åsen og Sky Blazers"
-  buzzsprout_pubdate: '2019-10-06'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/1820722-74-en-helg-i-skabu-forpremiere-av-besatt-intervjuer-med-frank-loke-kristin-aastad-tom-erik-asen-og-sky-blazers
-  buzzsprout_guid: Buzzsprout-1820722
-  buzzsprout_duration_hint_sec: 8042
-  listen_spotify_episode_url: https://open.spotify.com/episode/0FSGr8e8njyn5KEPcRlJoB
 - slug: intervju-med-frank-loke-og-kristin-aastad-0a8975f434
   title: 'Intervju med Frank Løke og Kristin Aastad '
   episode_url: "/episoder/intervju-med-frank-loke-og-kristin-aastad-0a8975f434/"
@@ -6075,18 +5281,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 73-stian-dahl-sommerseth-en-rask-kis-fra-tromso-afe319f98c
-  title: "#73 - Stian Dahl Sommerseth | En rask kis fra Tromsø"
-  episode_url: "/episoder/73-stian-dahl-sommerseth-en-rask-kis-fra-tromso-afe319f98c/"
-  date: '2019-10-04'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#73 - Stian Dahl Sommerseth | En rask kis fra Tromsø"
-  buzzsprout_pubdate: '2019-10-04'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/1814491-73-stian-dahl-sommerseth-en-rask-kis-fra-tromso
-  buzzsprout_guid: Buzzsprout-1814491
-  buzzsprout_duration_hint_sec: 7317
-  listen_spotify_episode_url: https://open.spotify.com/episode/0uPU1wjPA5YIJH4AGRBGrJ
 - slug: reisebrev-fra-70rin0-bfaa284358
   title: Reisebrev fra 70rIn0
   episode_url: "/episoder/reisebrev-fra-70rin0-bfaa284358/"
@@ -6098,18 +5292,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 71-etappelopet-som-gikk-i-vasken-reportasje-og-race-debr-d1f47a6e21
-  title: "#71 - Etappeløpet som gikk i vasken | Reportasje og race debrief fra UTMR med Ruben Espeland"
-  episode_url: "/episoder/71-etappelopet-som-gikk-i-vasken-reportasje-og-race-debr-d1f47a6e21/"
-  date: '2019-09-13'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#71 - Etappeløpet som gikk i vasken | Reportasje og race debrief fra UTMR med Ruben Espeland"
-  buzzsprout_pubdate: '2019-09-13'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/1702825-71-etappelopet-som-gikk-i-vasken-reportasje-og-race-debrief-fra-utmr-med-ruben-espeland
-  buzzsprout_guid: Buzzsprout-1702825
-  buzzsprout_duration_hint_sec: 7415
-  listen_spotify_episode_url: https://open.spotify.com/episode/4izU8s4Om1UY0VxlH45vbq
 - slug: casual-ultra-chat-with-dr-klaus-vom-brocke-and-paul-from-90d0664a49
   title: Casual ultra chat with Dr Klaus Vom Brocke and Paul from Colorado
   episode_url: "/episoder/casual-ultra-chat-with-dr-klaus-vom-brocke-and-paul-from-90d0664a49/"
@@ -6143,30 +5325,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 70-utmb-race-debrief-med-sidespor-bjornar-85c366e3de
-  title: '#70 - UTMB race debrief med "Sidespor-Bjørnar"'
-  episode_url: "/episoder/70-utmb-race-debrief-med-sidespor-bjornar-85c366e3de/"
-  date: '2019-09-02'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: '#70 - UTMB race debrief med "Sidespor-Bjørnar"'
-  buzzsprout_pubdate: '2019-09-02'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/1638235-70-utmb-race-debrief-med-sidespor-bjornar
-  buzzsprout_guid: Buzzsprout-1638235
-  buzzsprout_duration_hint_sec: 2422
-  listen_spotify_episode_url: https://open.spotify.com/episode/4AF07qmi5Bzh5AF6qyJ7xf
-- slug: 67-walk-and-talk-med-sor-koreanske-jessica-i-torino-844daf6419
-  title: "#67 - Walk-and-talk med Sør-Koreanske Jessica i Torino"
-  episode_url: "/episoder/67-walk-and-talk-med-sor-koreanske-jessica-i-torino-844daf6419/"
-  date: '2019-08-24'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#67 - Walk-and-talk med Sør-Koreanske Jessica i Torino"
-  buzzsprout_pubdate: '2019-08-24'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/1595035-67-walk-and-talk-med-sor-koreanske-jessica-i-torino
-  buzzsprout_guid: Buzzsprout-1595035
-  buzzsprout_duration_hint_sec: 5835
-  listen_spotify_episode_url: https://open.spotify.com/episode/42kQgWIneUvOOtqkghqfTz
 - slug: kyuss-pascal-egli-you-need-to-like-to-run-7846669c81
   title: 'Kyuss + Pascal Egli - You Need To Like To Run '
   episode_url: "/episoder/kyuss-pascal-egli-you-need-to-like-to-run-7846669c81/"
@@ -6257,30 +5415,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 64-reisebrev-fra-andorra-510567af40
-  title: "#64 - Reisebrev fra Andorra"
-  episode_url: "/episoder/64-reisebrev-fra-andorra-510567af40/"
-  date: '2019-07-22'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#64 - Reisebrev fra Andorra"
-  buzzsprout_pubdate: '2019-07-22'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/1441813-64-reisebrev-fra-andorra
-  buzzsprout_guid: Buzzsprout-1441813
-  buzzsprout_duration_hint_sec: 2748
-  listen_spotify_episode_url: https://open.spotify.com/episode/1wJy9N84UeoW1shPgm8GQO
-- slug: 63-buff-epic-trail-2019-race-brief-med-professoren-og-so-d0d5015c1e
-  title: "#63 - BUFF Epic Trail 2019 | Race brief med professoren og solo race debrief med programlederen"
-  episode_url: "/episoder/63-buff-epic-trail-2019-race-brief-med-professoren-og-so-d0d5015c1e/"
-  date: '2019-07-16'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#63 - BUFF Epic Trail 2019 | Race brief med professoren og solo race debrief med programlederen"
-  buzzsprout_pubdate: '2019-07-16'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/1416883-63-buff-epic-trail-2019-race-brief-med-professoren-og-solo-race-debrief-med-programlederen
-  buzzsprout_guid: Buzzsprout-1416883
-  buzzsprout_duration_hint_sec: 3223
-  listen_spotify_episode_url: https://open.spotify.com/episode/1Ku89CnQUnYhmnOsAvV9lX
 - slug: english-episode-63-seana-forbes-press-and-media-relation-8564b92e5e
   title: "(ENGLISH!) Episode 63 - Seana Forbes | Press and Media Relations Officer at Skyrunner® World Series"
   episode_url: "/episoder/english-episode-63-seana-forbes-press-and-media-relation-8564b92e5e/"
@@ -6303,18 +5437,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 61-det-narmer-seg-for-bilal-tromso-skyrace-trening-oppkj-097bfeabf3
-  title: "#61 - Det nærmer seg for Bilal | Tromsø Skyrace, trening, oppkjøring, prepping"
-  episode_url: "/episoder/61-det-narmer-seg-for-bilal-tromso-skyrace-trening-oppkj-097bfeabf3/"
-  date: '2019-07-02'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#61 - Det nærmer seg for Bilal | Tromsø Skyrace, trening, oppkjøring, prepping"
-  buzzsprout_pubdate: '2019-07-02'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/1356868-61-det-naermer-seg-for-bilal-tromso-skyrace-trening-oppkjoring-prepping
-  buzzsprout_guid: Buzzsprout-1356868
-  buzzsprout_duration_hint_sec: 7147
-  listen_spotify_episode_url: https://open.spotify.com/episode/3lNHTSF8kWMgFVSo43p2sE
 - slug: episode-62-thomas-oderud-western-states-04d5eee9fd
   title: 'Episode 62 - Thomas Øderud | Western States '
   episode_url: "/episoder/episode-62-thomas-oderud-western-states-04d5eee9fd/"
@@ -6350,30 +5472,6 @@ episodes:
   buzzsprout_guid: Buzzsprout-1333315
   buzzsprout_duration_hint_sec: 5268
   listen_spotify_episode_url: https://open.spotify.com/episode/1RMPIjiK3ksQXVrDXdrWrC
-- slug: 59-chris-mocko-the-mocko-show-english-b2babcb291
-  title: '#59 - Chris Mocko | "The Mocko Show" [ENGLISH]'
-  episode_url: "/episoder/59-chris-mocko-the-mocko-show-english-b2babcb291/"
-  date: '2019-06-18'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: '#59 - Chris Mocko | "The Mocko Show" [ENGLISH]'
-  buzzsprout_pubdate: '2019-06-18'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/1291156-59-chris-mocko-the-mocko-show-english
-  buzzsprout_guid: Buzzsprout-1291156
-  buzzsprout_duration_hint_sec: 4225
-  listen_spotify_episode_url: https://open.spotify.com/episode/1kyDH14Pq4ufJ6qOFFCGre
-- slug: 58-kristian-oye-loping-og-kreft-ebe9c6d79f
-  title: "#58 - Kristian Øye | Løping og kreft"
-  episode_url: "/episoder/58-kristian-oye-loping-og-kreft-ebe9c6d79f/"
-  date: '2019-06-14'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#58 - Kristian Øye | Løping og kreft"
-  buzzsprout_pubdate: '2019-06-14'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/1277335-58-kristian-oye-loping-og-kreft
-  buzzsprout_guid: Buzzsprout-1277335
-  buzzsprout_duration_hint_sec: 3258
-  listen_spotify_episode_url: https://open.spotify.com/episode/0UyIrxj93wqALgsfCUep0f
 - slug: episode-58-kristian-oye-d27cbb870a
   title: Episode 58 - Kristian Øye
   episode_url: "/episoder/episode-58-kristian-oye-d27cbb870a/"
@@ -6396,42 +5494,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 57-vm-terrengultra-2019-hallvard-schjolberg-henriette-al-a7304a84af
-  title: "#57 - VM Terrengultra 2019 \U0001F1F3\U0001F1F4 | Hallvard Schjølberg, Henriette Albon, Sebastian Krogvig, Sylvia Nordskar, Runar Sæther, Molly Bazilchuk, Bård Smedsrød, Gustav Vasdal, Jon Albon, Bjørnar Eidsmo"
-  episode_url: "/episoder/57-vm-terrengultra-2019-hallvard-schjolberg-henriette-al-a7304a84af/"
-  date: '2019-06-10'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#57 - VM Terrengultra 2019 \U0001F1F3\U0001F1F4 | Hallvard Schjølberg, Henriette Albon, Sebastian Krogvig, Sylvia Nordskar, Runar Sæther, Molly Bazilchuk, Bård Smedsrød, Gustav Vasdal, Jon Albon, Bjørnar Eidsmo"
-  buzzsprout_pubdate: '2019-06-10'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/1260506-57-vm-terrengultra-2019-hallvard-schjolberg-henriette-albon-sebastian-krogvig-sylvia-nordskar-runar-saether-molly-bazilchuk-bard-smedsrod-gustav-vasdal-jon-albon-bjornar-eidsmo
-  buzzsprout_guid: Buzzsprout-1260506
-  buzzsprout_duration_hint_sec: 12121
-  listen_spotify_episode_url: https://open.spotify.com/episode/7F1cd3bCc6GINTuU0s12mJ
-- slug: 56-ola-skatvedt-ecotrail-oslo-80km-2019-champion-d5ce73f33c
-  title: "#56 - Ola Skatvedt | Ecotrail Oslo 80km 2019 champion! \U0001F3C6"
-  episode_url: "/episoder/56-ola-skatvedt-ecotrail-oslo-80km-2019-champion-d5ce73f33c/"
-  date: '2019-06-01'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#56 - Ola Skatvedt | Ecotrail Oslo 80km 2019 champion! \U0001F3C6"
-  buzzsprout_pubdate: '2019-06-01'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/1222841-56-ola-skatvedt-ecotrail-oslo-80km-2019-champion
-  buzzsprout_guid: Buzzsprout-1222841
-  buzzsprout_duration_hint_sec: 1975
-  listen_spotify_episode_url: https://open.spotify.com/episode/2kJzLWC28yzbIYqpKwWMR1
-- slug: 55-jonas-sloth-sandell-skihopping-toppidrett-mindset-out-c796cb30b4
-  title: '#55 - Jonas Sloth Sandell | Skihopping, toppidrett, mindset | Outro med "Tromsø Skyrace-Bilal"'
-  episode_url: "/episoder/55-jonas-sloth-sandell-skihopping-toppidrett-mindset-out-c796cb30b4/"
-  date: '2019-05-24'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: '#55 - Jonas Sloth Sandell | Skihopping, toppidrett, mindset | Outro med "Tromsø Skyrace-Bilal"'
-  buzzsprout_pubdate: '2019-05-24'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/1188185-55-jonas-sloth-sandell-skihopping-toppidrett-mindset-outro-med-tromso-skyrace-bilal
-  buzzsprout_guid: Buzzsprout-1188185
-  buzzsprout_duration_hint_sec: 13355
-  listen_spotify_episode_url: https://open.spotify.com/episode/0c8LN27hTY3IB0kv011snS
 - slug: early-access-episode-55-jonas-sloth-sandell-684e2a0973
   title: 'Early access | Episode 55 - Jonas Sloth Sandell '
   episode_url: "/episoder/early-access-episode-55-jonas-sloth-sandell-684e2a0973/"
@@ -6443,18 +5505,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 54-transvulcania-ultramaraton-brief-og-debrief-med-jonas-726e02c773
-  title: "#54 - Transvulcania Ultramaraton | Brief og debrief med Jonas Hesthaug | Outro-snakk om RED-S"
-  episode_url: "/episoder/54-transvulcania-ultramaraton-brief-og-debrief-med-jonas-726e02c773/"
-  date: '2019-05-17'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#54 - Transvulcania Ultramaraton | Brief og debrief med Jonas Hesthaug | Outro-snakk om RED-S"
-  buzzsprout_pubdate: '2019-05-17'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/1154414-54-transvulcania-ultramaraton-brief-og-debrief-med-jonas-hesthaug-outro-snakk-om-red-s
-  buzzsprout_guid: Buzzsprout-1154414
-  buzzsprout_duration_hint_sec: 10674
-  listen_spotify_episode_url: https://open.spotify.com/episode/4jGzYjILWKZ0iWct6yivY0
 - slug: transvulcania-2019-race-debrief-med-hk-og-jonas-hesthaug-88a34d0887
   title: Transvulcania 2019 race debrief med HK og Jonas Hesthaug
   episode_url: "/episoder/transvulcania-2019-race-debrief-med-hk-og-jonas-hesthaug-88a34d0887/"
@@ -6490,18 +5540,6 @@ episodes:
   buzzsprout_guid: Buzzsprout-1083815
   buzzsprout_duration_hint_sec: 7448
   listen_spotify_episode_url: https://open.spotify.com/episode/6nRthX43RpQy4B2t01YrhV
-- slug: 51-english-mt-awa-skyrace-interviews-jon-albon-hiroaki-m-20f34d045d
-  title: "#51 - [ENGLISH] Mt. Awa Skyrace interviews | Jon Albon, Hiroaki Matsunaga, Christoph Lauterback, Janosch Kowalczyk"
-  episode_url: "/episoder/51-english-mt-awa-skyrace-interviews-jon-albon-hiroaki-m-20f34d045d/"
-  date: '2019-05-02'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#51 - [ENGLISH] Mt. Awa Skyrace interviews | Jon Albon, Hiroaki Matsunaga, Christoph Lauterback, Janosch Kowalczyk"
-  buzzsprout_pubdate: '2019-05-02'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/1078367-51-english-mt-awa-skyrace-interviews-jon-albon-hiroaki-matsunaga-christoph-lauterback-janosch-kowalczyk
-  buzzsprout_guid: Buzzsprout-1078367
-  buzzsprout_duration_hint_sec: 3459
-  listen_spotify_episode_url: https://open.spotify.com/episode/3hcxRRID9wgPhbD04pUPzm
 - slug: episode-50-japan-0dae312f88
   title: "Episode #50 - Japan \U0001F1EF\U0001F1F5"
   episode_url: "/episoder/episode-50-japan-0dae312f88/"
@@ -6548,18 +5586,6 @@ episodes:
   buzzsprout_guid: Buzzsprout-1026461
   buzzsprout_duration_hint_sec: 6514
   listen_spotify_episode_url: https://open.spotify.com/episode/45g6lkGF0Wzc8QFnaE1lDV
-- slug: 48-lorenza-walker-skal-sykle-rundt-jorda-pa-100-dager-5daf57658c
-  title: "#48 - Lorenza Walker skal sykle rundt jorda på 100 dager"
-  episode_url: "/episoder/48-lorenza-walker-skal-sykle-rundt-jorda-pa-100-dager-5daf57658c/"
-  date: '2019-03-22'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#48 - Lorenza Walker skal sykle rundt jorda på 100 dager"
-  buzzsprout_pubdate: '2019-03-22'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/1006630-48-lorenza-walker-skal-sykle-rundt-jorda-pa-100-dager
-  buzzsprout_guid: Buzzsprout-1006630
-  buzzsprout_duration_hint_sec: 12898
-  listen_spotify_episode_url: https://open.spotify.com/episode/3V6JekqujfyECldO5Oi2Zm
 - slug: 48-lorenza-skal-sykle-rundt-hele-jorda-pa-100-dager-patr-1005848bf9
   title: "#48 - Lorenza skal sykle rundt hele jorda på 100 dager | Patreon early access og eksklusiv intro"
   episode_url: "/episoder/48-lorenza-skal-sykle-rundt-hele-jorda-pa-100-dager-patr-1005848bf9/"
@@ -6571,30 +5597,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 47-solo-improv-spasertur-fra-jernbanetorget-til-torshov-33a4ca6499
-  title: "#47 - Solo improv spasertur fra Jernbanetorget til Torshov"
-  episode_url: "/episoder/47-solo-improv-spasertur-fra-jernbanetorget-til-torshov-33a4ca6499/"
-  date: '2019-03-14'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#47 - Solo improv spasertur fra Jernbanetorget til Torshov"
-  buzzsprout_pubdate: '2019-03-14'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/994965-47-solo-improv-spasertur-fra-jernbanetorget-til-torshov
-  buzzsprout_guid: Buzzsprout-994965
-  buzzsprout_duration_hint_sec: 4095
-  listen_spotify_episode_url: https://open.spotify.com/episode/6eV2hA0W8z4LSgafAlDoRv
-- slug: 46-kristine-gjor-seg-klar-til-pct-pacific-crest-trail-ut-1a3c4a3d0c
-  title: "#46 - Kristine gjør seg klar til PCT (Pacific Crest Trail) | Utstyr, trening, mat, mindset"
-  episode_url: "/episoder/46-kristine-gjor-seg-klar-til-pct-pacific-crest-trail-ut-1a3c4a3d0c/"
-  date: '2019-03-06'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#46 - Kristine gjør seg klar til PCT (Pacific Crest Trail) | Utstyr, trening, mat, mindset"
-  buzzsprout_pubdate: '2019-03-06'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/984009-46-kristine-gjor-seg-klar-til-pct-pacific-crest-trail-utstyr-trening-mat-mindset
-  buzzsprout_guid: Buzzsprout-984009
-  buzzsprout_duration_hint_sec: 8822
-  listen_spotify_episode_url: https://open.spotify.com/episode/3EhYiHTTvqIPGo81wcdGQg
 - slug: episode-45-terje-lillemark-intro-med-thomas-stordalen-3b38ccb7ef
   title: 'Episode #45 - Terje Lillemark | Intro med Thomas Stordalen'
   episode_url: "/episoder/episode-45-terje-lillemark-intro-med-thomas-stordalen-3b38ccb7ef/"
@@ -6630,18 +5632,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 43-eviva-espaa-ultra-reportasje-fra-arets-ultra-trenings-150305d6b9
-  title: "#43 - Eviva España | Ultra-reportasje fra årets ultra-treningsleir på Gran Canaria"
-  episode_url: "/episoder/43-eviva-espaa-ultra-reportasje-fra-arets-ultra-trenings-150305d6b9/"
-  date: '2019-01-27'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#43 - Eviva España | Ultra-reportasje fra årets ultra-treningsleir på Gran Canaria"
-  buzzsprout_pubdate: '2019-01-27'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/933160-43-eviva-espana-ultra-reportasje-fra-arets-ultra-treningsleir-pa-gran-canaria
-  buzzsprout_guid: Buzzsprout-933160
-  buzzsprout_duration_hint_sec: 11677
-  listen_spotify_episode_url: https://open.spotify.com/episode/7c2disNoSVLEERxaY0J5Cs
 - slug: early-access-lopende-intervju-med-sondre-amdahl-pa-gran-f9f93f257c
   title: 'Early access: Løpende intervju med Sondre Amdahl på Gran Canaria'
   episode_url: "/episoder/early-access-lopende-intervju-med-sondre-amdahl-pa-gran-f9f93f257c/"
@@ -6664,18 +5654,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 41-thomas-stordalen-arlig-talt-22-dea156e037
-  title: "#41 - Thomas Stordalen – ærlig talt! (2/2)"
-  episode_url: "/episoder/41-thomas-stordalen-arlig-talt-22-dea156e037/"
-  date: '2018-12-29'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#41 - Thomas Stordalen – ærlig talt! (2/2)"
-  buzzsprout_pubdate: '2018-12-29'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/902906-41-thomas-stordalen-aerlig-talt-2-2
-  buzzsprout_guid: Buzzsprout-902906
-  buzzsprout_duration_hint_sec: 6379
-  listen_spotify_episode_url: https://open.spotify.com/episode/0xn1W1yyU7EqimyXQJiWuz
 - slug: 42-carl-christian-lein-stormer-theres-always-next-season-394187eb98
   title: "#42: Carl Christian Lein Størmer | There's Always Next Season"
   episode_url: "/episoder/42-carl-christian-lein-stormer-theres-always-next-season-394187eb98/"
@@ -6688,18 +5666,6 @@ episodes:
   buzzsprout_guid: Buzzsprout-898376
   buzzsprout_duration_hint_sec: 8833
   listen_spotify_episode_url: https://open.spotify.com/episode/0kYJpYcWbrPIZd64VSnk7t
-- slug: 40-thomas-stordalen-arlig-talt-12-d11615a51c
-  title: "#40 - Thomas Stordalen – ærlig talt! (1/2)"
-  episode_url: "/episoder/40-thomas-stordalen-arlig-talt-12-d11615a51c/"
-  date: '2018-12-22'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#40 - Thomas Stordalen – ærlig talt! (1/2)"
-  buzzsprout_pubdate: '2018-12-22'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/897367-40-thomas-stordalen-aerlig-talt-1-2
-  buzzsprout_guid: Buzzsprout-897367
-  buzzsprout_duration_hint_sec: 7372
-  listen_spotify_episode_url: https://open.spotify.com/episode/1hxiidwKkYEVUdrJ5YWSYp
 - slug: 40-thomas-stordalen-hans-forste-opptreden-i-neda-177d884205
   title: "#40 Thomas Stordalen (Hans første opptreden i NEDA)"
   episode_url: "/episoder/40-thomas-stordalen-hans-forste-opptreden-i-neda-177d884205/"
@@ -6711,18 +5677,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 38-5stk-bad-ass-ultralopende-kvinner-09acb60630
-  title: "#38 - 5stk bad ass ultraløpende kvinner \U0001F3C3‍♀️\U0001F3C3‍♀️\U0001F3C3‍♀️\U0001F3C3‍♀️\U0001F3C3‍♀️\U0001F3C3‍♂️"
-  episode_url: "/episoder/38-5stk-bad-ass-ultralopende-kvinner-09acb60630/"
-  date: '2018-11-23'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#38 - 5stk bad ass ultraløpende kvinner \U0001F3C3‍♀️\U0001F3C3‍♀️\U0001F3C3‍♀️\U0001F3C3‍♀️\U0001F3C3‍♀️\U0001F3C3‍♂️"
-  buzzsprout_pubdate: '2018-11-23'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/868864-38-5stk-bad-ass-ultralopende-kvinner
-  buzzsprout_guid: Buzzsprout-868864
-  buzzsprout_duration_hint_sec: 9898
-  listen_spotify_episode_url: https://open.spotify.com/episode/0r1KVn01oyz3IWo331JpXy
 - slug: new-intro-ill-let-you-decide-01f8e110de
   title: New intro?! I'll let you decide..
   episode_url: "/episoder/new-intro-ill-let-you-decide-01f8e110de/"
@@ -6758,18 +5712,6 @@ episodes:
   buzzsprout_guid: Buzzsprout-856864
   buzzsprout_duration_hint_sec: 10512
   listen_spotify_episode_url: https://open.spotify.com/episode/06yQvBzB4zbWbLRlnBgEFM
-- slug: 35-nar-du-loper-sa-langt-at-underlivet-blir-et-kjottsar-6e69178d26
-  title: "#35 - Når du løper så langt at underlivet blir et kjøttsår | Del 3/3 av doku-serien om FKT-en til Galdhøpiggen"
-  episode_url: "/episoder/35-nar-du-loper-sa-langt-at-underlivet-blir-et-kjottsar-6e69178d26/"
-  date: '2018-11-03'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#35 - Når du løper så langt at underlivet blir et kjøttsår | Del 3/3 av doku-serien om FKT-en til Galdhøpiggen"
-  buzzsprout_pubdate: '2018-11-03'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/850354-35-nar-du-loper-sa-langt-at-underlivet-blir-et-kjottsar-del-3-3-av-doku-serien-om-fkt-en-til-galdhopiggen
-  buzzsprout_guid: Buzzsprout-850354
-  buzzsprout_duration_hint_sec: 6607
-  listen_spotify_episode_url: https://open.spotify.com/episode/3ca39f8qCqKSn6eysAN1aS
 - slug: episode-35-debrief-med-garningen-som-lop-fra-operataket-ede968d541
   title: 'Episode #35: Debrief med Gærningen som løp fra Operataket til Galdhøpiggen'
   episode_url: "/episoder/episode-35-debrief-med-garningen-som-lop-fra-operataket-ede968d541/"
@@ -6805,18 +5747,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 33-sanjin-filipovic-krig-tegneserier-hip-hop-og-graffiti-eb8fc0b4e2
-  title: "#33 - Sanjin Filipovic | Krig, tegneserier, hip-hop og graffiti"
-  episode_url: "/episoder/33-sanjin-filipovic-krig-tegneserier-hip-hop-og-graffiti-eb8fc0b4e2/"
-  date: '2018-10-13'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#33 - Sanjin Filipovic | Krig, tegneserier, hip-hop og graffiti"
-  buzzsprout_pubdate: '2018-10-13'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/824364-33-sanjin-filipovic-krig-tegneserier-hip-hop-og-graffiti
-  buzzsprout_guid: Buzzsprout-824364
-  buzzsprout_duration_hint_sec: 8388
-  listen_spotify_episode_url: https://open.spotify.com/episode/2hbu08V5jPrLGkqjqLHXlB
 - slug: rambling-pa-gardermoen-ref-intro-episode-33-99c49f7f5a
   title: 'Rambling på Gardermoen (ref intro episode #33)'
   episode_url: "/episoder/rambling-pa-gardermoen-ref-intro-episode-33-99c49f7f5a/"
@@ -6850,30 +5780,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 32-la-oss-snakke-om-proteiner-askild-vatnbakk-larsen-27866417d0
-  title: "#32 - La oss snakke om proteiner | Askild Vatnbakk Larsen "
-  episode_url: "/episoder/32-la-oss-snakke-om-proteiner-askild-vatnbakk-larsen-27866417d0/"
-  date: '2018-09-27'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#32 - La oss snakke om proteiner | Askild Vatnbakk Larsen "
-  buzzsprout_pubdate: '2018-09-27'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/814909-32-la-oss-snakke-om-proteiner-askild-vatnbakk-larsen
-  buzzsprout_guid: Buzzsprout-814909
-  buzzsprout_duration_hint_sec: 5747
-  listen_spotify_episode_url: https://open.spotify.com/episode/1XGSIF7DztfA00mhtBJmWi
-- slug: 31-vm-skyrunning-2018-reportasje-og-intervjuer-stian-ang-1c1d44597a
-  title: "#31 - VM Skyrunning 2018 | Reportasje og intervjuer | Stian Angermund-Vik, André Jonsson, Kristoffer Føllesdal, Hans Kristian Smedsrød"
-  episode_url: "/episoder/31-vm-skyrunning-2018-reportasje-og-intervjuer-stian-ang-1c1d44597a/"
-  date: '2018-09-19'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#31 - VM Skyrunning 2018 | Reportasje og intervjuer | Stian Angermund-Vik, André Jonsson, Kristoffer Føllesdal, Hans Kristian Smedsrød"
-  buzzsprout_pubdate: '2018-09-19'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/808596-31-vm-skyrunning-2018-reportasje-og-intervjuer-stian-angermund-vik-andre-jonsson-kristoffer-follesdal-hans-kristian-smedsrod
-  buzzsprout_guid: Buzzsprout-808596
-  buzzsprout_duration_hint_sec: 6437
-  listen_spotify_episode_url: https://open.spotify.com/episode/5xoc8FghaDMdHN7pxEeOXx
 - slug: ring-of-steall-skyrace-race-brief-race-debrief-med-krist-f4a3138dd0
   title: Ring of Steall Skyrace race brief & race debrief med Kristoffer Føllesdal
   episode_url: "/episoder/ring-of-steall-skyrace-race-brief-race-debrief-med-krist-f4a3138dd0/"
@@ -6885,18 +5791,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 30-utmb-spesial-med-patrick-stangbye-825ea18c47
-  title: "#30 - UTMB-spesial med Patrick Stangbye"
-  episode_url: "/episoder/30-utmb-spesial-med-patrick-stangbye-825ea18c47/"
-  date: '2018-09-07'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#30 - UTMB-spesial med Patrick Stangbye"
-  buzzsprout_pubdate: '2018-09-07'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/797024-30-utmb-spesial-med-patrick-stangbye
-  buzzsprout_guid: Buzzsprout-797024
-  buzzsprout_duration_hint_sec: 6597
-  listen_spotify_episode_url: https://open.spotify.com/episode/1jhzDE6Ec5mp6siCzimZFR
 - slug: patrick-stangbye-og-hk-oppsummerer-utmb-2018-for-deg-298aacdbed
   title: Patrick Stangbye og HK oppsummerer UTMB 2018 for deg
   episode_url: "/episoder/patrick-stangbye-og-hk-oppsummerer-utmb-2018-for-deg-298aacdbed/"
@@ -6941,18 +5835,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 28-fra-operataket-til-galdhopiggen-hva-spiser-man-nar-ma-d1d04cb347
-  title: "#28 - Fra Operataket til Galdhøpiggen. Hva spiser man når man skal løpe i fire døgn i strekk?"
-  episode_url: "/episoder/28-fra-operataket-til-galdhopiggen-hva-spiser-man-nar-ma-d1d04cb347/"
-  date: '2018-08-14'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#28 - Fra Operataket til Galdhøpiggen. Hva spiser man når man skal løpe i fire døgn i strekk?"
-  buzzsprout_pubdate: '2018-08-14'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/776782-28-fra-operataket-til-galdhopiggen-hva-spiser-man-nar-man-skal-lope-i-fire-dogn-i-strekk
-  buzzsprout_guid: Buzzsprout-776782
-  buzzsprout_duration_hint_sec: 5971
-  listen_spotify_episode_url: https://open.spotify.com/episode/6vSlaJRj5BqwRA18fWrEm7
 - slug: patreon-exclusive-jotunheimstien-fkt-ernaringssnakk-02c1424284
   title: 'Patreon Exclusive: Jotunheimstien FKT ernæringssnakk'
   episode_url: "/episoder/patreon-exclusive-jotunheimstien-fkt-ernaringssnakk-02c1424284/"
@@ -6988,18 +5870,6 @@ episodes:
   buzzsprout_guid: Buzzsprout-765163
   buzzsprout_duration_hint_sec: 7567
   listen_spotify_episode_url: https://open.spotify.com/episode/1egsUJGs46BS802MLvaUoY
-- slug: 25-professor-bard-smedsrod-carnivore-dietten-fasting-suk-0686808bab
-  title: "#25 - Professor Bård Smedsrød | carnivore-dietten, fasting, sukker, helsetrender, vitaminer, mineraler ++"
-  episode_url: "/episoder/25-professor-bard-smedsrod-carnivore-dietten-fasting-suk-0686808bab/"
-  date: '2018-07-21'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#25 - Professor Bård Smedsrød | carnivore-dietten, fasting, sukker, helsetrender, vitaminer, mineraler ++"
-  buzzsprout_pubdate: '2018-07-21'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/756193-25-professor-bard-smedsrod-carnivore-dietten-fasting-sukker-helsetrender-vitaminer-mineraler
-  buzzsprout_guid: Buzzsprout-756193
-  buzzsprout_duration_hint_sec: 6644
-  listen_spotify_episode_url: https://open.spotify.com/episode/3FJpUbw1xUlXsMJLJLPhkr
 - slug: lett-og-ledig-sommersnakk-227bbaf765
   title: 'Lett og ledig sommersnakk '
   episode_url: "/episoder/lett-og-ledig-sommersnakk-227bbaf765/"
@@ -7023,30 +5893,6 @@ episodes:
   buzzsprout_guid: Buzzsprout-751648
   buzzsprout_duration_hint_sec: 3414
   listen_spotify_episode_url: https://open.spotify.com/episode/0fLIQdN07d6JyKpZSx3a3j
-- slug: sti-podden-1-erika-the-blaze-boyz-ultra-munndiar-fra-bak-ae94308cc0
-  title: 'Sti-podden #1 - Erika & The Blaze Boyz. Ultra munndiaré fra baksetet i en Tesla tur-retur Oslo-Hornindal'
-  episode_url: "/episoder/sti-podden-1-erika-the-blaze-boyz-ultra-munndiar-fra-bak-ae94308cc0/"
-  date: '2018-07-09'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: 'Sti-podden #1 - Erika & The Blaze Boyz. Ultra munndiaré fra baksetet i en Tesla tur-retur Oslo-Hornindal'
-  buzzsprout_pubdate: '2018-07-09'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/746828-sti-podden-1-erika-the-blaze-boyz-ultra-munndiare-fra-baksetet-i-en-tesla-tur-retur-oslo-hornindal
-  buzzsprout_guid: Buzzsprout-746828
-  buzzsprout_duration_hint_sec: 9238
-  listen_spotify_episode_url: https://open.spotify.com/episode/704IctPbYmPlRQQU0g4DRh
-- slug: 22-la-oss-snakke-om-strava-paneldebatt-med-sky-blazers-o-d111b26680
-  title: "#22 - La oss snakke om Strava. Paneldebatt med Sky Blazers og intervju med Ainhoa Ostolaza"
-  episode_url: "/episoder/22-la-oss-snakke-om-strava-paneldebatt-med-sky-blazers-o-d111b26680/"
-  date: '2018-07-02'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#22 - La oss snakke om Strava. Paneldebatt med Sky Blazers og intervju med Ainhoa Ostolaza"
-  buzzsprout_pubdate: '2018-07-02'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/741408-22-la-oss-snakke-om-strava-paneldebatt-med-sky-blazers-og-intervju-med-ainhoa-ostolaza
-  buzzsprout_guid: Buzzsprout-741408
-  buzzsprout_duration_hint_sec: 6206
-  listen_spotify_episode_url: https://open.spotify.com/episode/7CuGOeAYfQC6Sf3I56aeag
 - slug: morgen-monolog-langs-trondheimsveien-2-193e483b47
   title: 'Morgen-monolog langs Trondheimsveien #2'
   episode_url: "/episoder/morgen-monolog-langs-trondheimsveien-2-193e483b47/"
@@ -7080,18 +5926,6 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 21-sondre-amdahl-varmer-deg-opp-til-western-states-endur-63ef435566
-  title: "#21 - Sondre Amdahl varmer deg opp til Western States Endurance Run 2018"
-  episode_url: "/episoder/21-sondre-amdahl-varmer-deg-opp-til-western-states-endur-63ef435566/"
-  date: '2018-06-20'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#21 - Sondre Amdahl varmer deg opp til Western States Endurance Run 2018"
-  buzzsprout_pubdate: '2018-06-20'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/732461-21-sondre-amdahl-varmer-deg-opp-til-western-states-endurance-run-2018
-  buzzsprout_guid: Buzzsprout-732461
-  buzzsprout_duration_hint_sec: 3676
-  listen_spotify_episode_url: https://open.spotify.com/episode/12relcQyBSMHcTpA6h5mD5
 - slug: rawuncut-recording-fra-treningsleir-i-romsdalen-09062018-e77c056a24
   title: Raw/uncut recording fra treningsleir i Romsdalen 09.06.2018
   episode_url: "/episoder/rawuncut-recording-fra-treningsleir-i-romsdalen-09062018-e77c056a24/"
@@ -7103,231 +5937,3 @@ episodes:
   buzzsprout_url:
   buzzsprout_guid:
   buzzsprout_duration_hint_sec:
-- slug: 20-eirik-husby-dyrseth-co-founder-flowmotion-0f4c6122d7
-  title: "#20 - Eirik Husby Dyrseth - Co Founder @ FlowMotion"
-  episode_url: "/episoder/20-eirik-husby-dyrseth-co-founder-flowmotion-0f4c6122d7/"
-  date: '2018-06-09'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#20 - Eirik Husby Dyrseth - Co Founder @ FlowMotion"
-  buzzsprout_pubdate: '2018-06-09'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/723064-20-eirik-husby-dyrseth-co-founder-flowmotion
-  buzzsprout_guid: Buzzsprout-723064
-  buzzsprout_duration_hint_sec: 5308
-  listen_spotify_episode_url: https://open.spotify.com/episode/5nKjfzd8S6ithj5bb8Q2FS
-- slug: 19-sidespor-bjornar-avslorer-sine-ultra-hemmelige-ultra-b7e687c54d
-  title: "#19 - Sidespor-Bjørnar avslører sine ultra-hemmelige ultra-hemmeligheter"
-  episode_url: "/episoder/19-sidespor-bjornar-avslorer-sine-ultra-hemmelige-ultra-b7e687c54d/"
-  date: '2018-06-02'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#19 - Sidespor-Bjørnar avslører sine ultra-hemmelige ultra-hemmeligheter"
-  buzzsprout_pubdate: '2018-06-02'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/717440-19-sidespor-bjornar-avslorer-sine-ultra-hemmelige-ultra-hemmeligheter
-  buzzsprout_guid: Buzzsprout-717440
-  buzzsprout_duration_hint_sec: 7808
-  listen_spotify_episode_url: https://open.spotify.com/episode/47J5jUAFHGNi1LJXSgz1p7
-- slug: 18-vm-terrengultra-penyagolosa-spesial-086a0de0ad
-  title: "#18 - VM terrengultra Penyagolosa spesial"
-  episode_url: "/episoder/18-vm-terrengultra-penyagolosa-spesial-086a0de0ad/"
-  date: '2018-05-23'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#18 - VM terrengultra Penyagolosa spesial"
-  buzzsprout_pubdate: '2018-05-23'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/711176-18-vm-terrengultra-penyagolosa-spesial
-  buzzsprout_guid: Buzzsprout-711176
-  buzzsprout_duration_hint_sec: 5312
-  listen_spotify_episode_url: https://open.spotify.com/episode/6X4Tn7feDhw4L5RmVwm40g
-- slug: 17-mukbang-og-loping-rett-og-slett-del-22-09a816ee49
-  title: "#17 - Mukbang og løping. Rett og slett. (del 2/2)"
-  episode_url: "/episoder/17-mukbang-og-loping-rett-og-slett-del-22-09a816ee49/"
-  date: '2018-05-14'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#17 - Mukbang og løping. Rett og slett. (del 2/2)"
-  buzzsprout_pubdate: '2018-05-14'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/703777-17-mukbang-og-loping-rett-og-slett-del-2-2
-  buzzsprout_guid: Buzzsprout-703777
-  buzzsprout_duration_hint_sec: 3490
-  listen_spotify_episode_url: https://open.spotify.com/episode/1oxKA3hDHRhYSyd32XjsCA
-- slug: 16-den-der-sjukt-kontroversielle-episoden-med-christel-o-3b384f4e11
-  title: "#16 - Den der sjukt kontroversielle episoden med Christel og Johannes. Spoiler: #plast, #ultraløping, #sustainability, #stirsdag, #skuespilleryrket"
-  episode_url: "/episoder/16-den-der-sjukt-kontroversielle-episoden-med-christel-o-3b384f4e11/"
-  date: '2018-05-02'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#16 - Den der sjukt kontroversielle episoden med Christel og Johannes. Spoiler: #plast, #ultraløping, #sustainability, #stirsdag, #skuespilleryrket"
-  buzzsprout_pubdate: '2018-05-02'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/695322-16-den-der-sjukt-kontroversielle-episoden-med-christel-og-johannes-spoiler-plast-ultraloping-sustainability-stirsdag-skuespilleryrket
-  buzzsprout_guid: Buzzsprout-695322
-  buzzsprout_duration_hint_sec: 4461
-  listen_spotify_episode_url: https://open.spotify.com/episode/6fOfnyoSKP2wbF20iJLNWk
-- slug: 14-en-dyp-samtale-med-rick-salmon-217e699eef
-  title: "#14 - En dyp samtale med Rick Salmon"
-  episode_url: "/episoder/14-en-dyp-samtale-med-rick-salmon-217e699eef/"
-  date: '2018-04-19'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#14 - En dyp samtale med Rick Salmon"
-  buzzsprout_pubdate: '2018-04-19'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/685611-14-en-dyp-samtale-med-rick-salmon
-  buzzsprout_guid: Buzzsprout-685611
-  buzzsprout_duration_hint_sec: 7166
-  listen_spotify_episode_url: https://open.spotify.com/episode/66krUBqyT2uSUJryJnMqPu
-- slug: 13-pizza-bonanza-pa-peloton-b496879454
-  title: "#13 - Pizza-bonanza på Peloton"
-  episode_url: "/episoder/13-pizza-bonanza-pa-peloton-b496879454/"
-  date: '2018-04-11'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#13 - Pizza-bonanza på Peloton"
-  buzzsprout_pubdate: '2018-04-11'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/680706-13-pizza-bonanza-pa-peloton
-  buzzsprout_guid: Buzzsprout-680706
-  buzzsprout_duration_hint_sec: 5252
-  listen_spotify_episode_url: https://open.spotify.com/episode/14o51sC0ObTHxCfSp8oVDF
-- slug: 12-ultraloping-geek-down-med-margrethe-fjetland-lovold-o-9bf06eb2c3
-  title: "#12 - Ultraløping-geek-down med Margrethe Fjetland Løvold og Patrick Stangbye"
-  episode_url: "/episoder/12-ultraloping-geek-down-med-margrethe-fjetland-lovold-o-9bf06eb2c3/"
-  date: '2018-03-23'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#12 - Ultraløping-geek-down med Margrethe Fjetland Løvold og Patrick Stangbye"
-  buzzsprout_pubdate: '2018-03-23'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/665226-12-ultraloping-geek-down-med-margrethe-fjetland-lovold-og-patrick-stangbye
-  buzzsprout_guid: Buzzsprout-665226
-  buzzsprout_duration_hint_sec: 11763
-  listen_spotify_episode_url: https://open.spotify.com/episode/2kLLs9QnSQy2162hp8EtMb
-- slug: 11-slassing-og-bro-science-med-bilal-chaudhry-5fa62f03c3
-  title: "#11 - Slåssing og bro science med Bilal Chaudhry"
-  episode_url: "/episoder/11-slassing-og-bro-science-med-bilal-chaudhry-5fa62f03c3/"
-  date: '2018-03-16'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#11 - Slåssing og bro science med Bilal Chaudhry"
-  buzzsprout_pubdate: '2018-03-16'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/662401-11-slassing-og-bro-science-med-bilal-chaudhry
-  buzzsprout_guid: Buzzsprout-662401
-  buzzsprout_duration_hint_sec: 13645
-  listen_spotify_episode_url: https://open.spotify.com/episode/17XT6yHJqMkuCkBsjUNkvt
-- slug: 10-hoydetrening-med-mo-farah-og-mudane-team-i-etiopia-og-ac69534ed3
-  title: "#10 - Høydetrening med Mo Farah og Mudane Team i Etiopia og VO2max-testing "
-  episode_url: "/episoder/10-hoydetrening-med-mo-farah-og-mudane-team-i-etiopia-og-ac69534ed3/"
-  date: '2018-03-09'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#10 - Høydetrening med Mo Farah og Mudane Team i Etiopia og VO2max-testing "
-  buzzsprout_pubdate: '2018-03-09'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/657685-10-hoydetrening-med-mo-farah-og-mudane-team-i-etiopia-og-vo2max-testing
-  buzzsprout_guid: Buzzsprout-657685
-  buzzsprout_duration_hint_sec: 9018
-  listen_spotify_episode_url: https://open.spotify.com/episode/2xaU239mnJl7QDhCj2URPb
-- slug: 9-bard-smedsrod-en-mann-som-lever-for-a-levere-8309a566ac
-  title: "#9 - Bård Smedsrød | En mann som lever for å levere"
-  episode_url: "/episoder/9-bard-smedsrod-en-mann-som-lever-for-a-levere-8309a566ac/"
-  date: '2018-03-02'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#9 - Bård Smedsrød | En mann som lever for å levere"
-  buzzsprout_pubdate: '2018-03-02'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/653399-9-bard-smedsrod-en-mann-som-lever-for-a-levere
-  buzzsprout_guid: Buzzsprout-653399
-  buzzsprout_duration_hint_sec: 8808
-  listen_spotify_episode_url: https://open.spotify.com/episode/0xa4hNzsR5hGArAaBlTrjJ
-- slug: 8-rikke-jeppsson-et-av-norges-raskeste-mennesker-med-kni-8f910730f9
-  title: "#8 - Rikke Jeppsson - et av Norges raskeste mennesker med kniver på beina"
-  episode_url: "/episoder/8-rikke-jeppsson-et-av-norges-raskeste-mennesker-med-kni-8f910730f9/"
-  date: '2018-02-25'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#8 - Rikke Jeppsson - et av Norges raskeste mennesker med kniver på beina"
-  buzzsprout_pubdate: '2018-02-25'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/650725-8-rikke-jeppsson-et-av-norges-raskeste-mennesker-med-kniver-pa-beina
-  buzzsprout_guid: Buzzsprout-650725
-  buzzsprout_duration_hint_sec: 6013
-  listen_spotify_episode_url: https://open.spotify.com/episode/1mNvx63M5HJ82BEhUOLfOF
-- slug: 7-tim-shieff-en-mindful-warrior-41f109d7b0
-  title: "#7 - Tim Shieff | En mindful warrior"
-  episode_url: "/episoder/7-tim-shieff-en-mindful-warrior-41f109d7b0/"
-  date: '2018-02-20'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#7 - Tim Shieff | En mindful warrior"
-  buzzsprout_pubdate: '2018-02-20'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/646719-7-tim-shieff-en-mindful-warrior
-  buzzsprout_guid: Buzzsprout-646719
-  buzzsprout_duration_hint_sec: 4087
-  listen_spotify_episode_url: https://open.spotify.com/episode/0p8T3n20RHshWO9aAn6YZp
-- slug: 6-i-snikkerbua-med-sindre-buraas-a7fef22c9c
-  title: "#6 - I snikkerbua med Sindre Buraas"
-  episode_url: "/episoder/6-i-snikkerbua-med-sindre-buraas-a7fef22c9c/"
-  date: '2018-02-09'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#6 - I snikkerbua med Sindre Buraas"
-  buzzsprout_pubdate: '2018-02-09'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/637576-6-i-snikkerbua-med-sindre-buraas
-  buzzsprout_guid: Buzzsprout-637576
-  buzzsprout_duration_hint_sec: 7893
-  listen_spotify_episode_url: https://open.spotify.com/episode/4OrJ8AFi9CypovyWOieo58
-- slug: 5-dumpster-diving-det-er-en-greie-8a36695b32
-  title: "#5 - Dumpster diving. Det er en greie. "
-  episode_url: "/episoder/5-dumpster-diving-det-er-en-greie-8a36695b32/"
-  date: '2018-02-02'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#5 - Dumpster diving. Det er en greie. "
-  buzzsprout_pubdate: '2018-02-02'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/632063-5-dumpster-diving-det-er-en-greie
-  buzzsprout_guid: Buzzsprout-632063
-  buzzsprout_duration_hint_sec: 3365
-  listen_spotify_episode_url: https://open.spotify.com/episode/6VLIA5H9FTM3wpwAgtGENi
-- slug: 4-te-seremoni-loping-og-andre-ritualer-med-mads-john-e1da08f8c1
-  title: "#4 - Te-seremoni, løping og andre ritualer med Mads John"
-  episode_url: "/episoder/4-te-seremoni-loping-og-andre-ritualer-med-mads-john-e1da08f8c1/"
-  date: '2018-01-25'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#4 - Te-seremoni, løping og andre ritualer med Mads John"
-  buzzsprout_pubdate: '2018-01-25'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/631350-4-te-seremoni-loping-og-andre-ritualer-med-mads-john
-  buzzsprout_guid: Buzzsprout-631350
-  buzzsprout_duration_hint_sec: 9547
-  listen_spotify_episode_url: https://open.spotify.com/episode/1jLYq6srbtmVk5JScypRSf
-- slug: 3-en-mindful-spasertur-med-phuong-nguyen-50f01a41a9
-  title: "#3 - En mindful spasertur med Phuong Nguyen"
-  episode_url: "/episoder/3-en-mindful-spasertur-med-phuong-nguyen-50f01a41a9/"
-  date: '2018-01-19'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#3 - En mindful spasertur med Phuong Nguyen"
-  buzzsprout_pubdate: '2018-01-19'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/626410-3-en-mindful-spasertur-med-phuong-nguyen
-  buzzsprout_guid: Buzzsprout-626410
-  buzzsprout_duration_hint_sec: 4023
-  listen_spotify_episode_url: https://open.spotify.com/episode/1BGb376xOU37a7djahtXXg
-- slug: 2-lopende-smalltalk-med-didrik-hermansen-2c6f7b2990
-  title: "#2 - Løpende smalltalk med Didrik Hermansen"
-  episode_url: "/episoder/2-lopende-smalltalk-med-didrik-hermansen-2c6f7b2990/"
-  date: '2018-01-15'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#2 - Løpende smalltalk med Didrik Hermansen"
-  buzzsprout_pubdate: '2018-01-15'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/625248-2-lopende-smalltalk-med-didrik-hermansen
-  buzzsprout_guid: Buzzsprout-625248
-  buzzsprout_duration_hint_sec: 3905
-  listen_spotify_episode_url: https://open.spotify.com/episode/6l6GYUOCFOJb4fecjVGckm
-- slug: 1-kaffeslabberas-med-patrick-stangbye-0a8d5d437c
-  title: "#1 - Kaffeslabberas med Patrick Stangbye"
-  episode_url: "/episoder/1-kaffeslabberas-med-patrick-stangbye-0a8d5d437c/"
-  date: '2018-01-06'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#1 - Kaffeslabberas med Patrick Stangbye"
-  buzzsprout_pubdate: '2018-01-06'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/620314-1-kaffeslabberas-med-patrick-stangbye
-  buzzsprout_guid: Buzzsprout-620314
-  buzzsprout_duration_hint_sec: 6004
-  listen_spotify_episode_url: https://open.spotify.com/episode/5xN2qLSEKbkC7Uw0b5f13m
