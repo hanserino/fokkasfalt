@@ -10,4 +10,5 @@ og_type: article
 date: '2024-11-12T04:00:02Z'
 duration: '1:03:40'
 duration_iso8601: PT1H3M40S
+thumb: "/assets/episode-thumbs/bergtatt-gina-johansen-vil-sette-solo-rekord-til-sydpole-5b0b24a71b.webp"
 ---

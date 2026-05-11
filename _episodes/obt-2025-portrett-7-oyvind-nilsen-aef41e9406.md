@@ -7,4 +7,5 @@ og_type: article
 date: '2025-02-12T05:00:07Z'
 duration: '25:56'
 duration_iso8601: PT25M56S
+thumb: "/assets/episode-thumbs/obt-2025-portrett-7-oyvind-nilsen-aef41e9406.webp"
 ---

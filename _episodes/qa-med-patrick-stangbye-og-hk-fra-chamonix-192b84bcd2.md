@@ -10,4 +10,5 @@ og_type: article
 date: '2021-08-24T13:01:04Z'
 duration: '1:44:07'
 duration_iso8601: PT1H44M7S
+thumb: "/assets/episode-thumbs/qa-med-patrick-stangbye-og-hk-fra-chamonix-192b84bcd2.webp"
 ---

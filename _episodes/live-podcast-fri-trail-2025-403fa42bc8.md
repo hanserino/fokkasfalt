@@ -8,4 +8,5 @@ og_type: article
 date: '2025-09-25T03:00:04Z'
 duration: '1:28:45'
 duration_iso8601: PT1H28M45S
+thumb: "/assets/episode-thumbs/live-podcast-fri-trail-2025-403fa42bc8.webp"
 ---

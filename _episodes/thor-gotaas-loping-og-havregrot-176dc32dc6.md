@@ -9,4 +9,5 @@ og_type: article
 date: '2022-07-08T05:40:47Z'
 duration: '1:33:43'
 duration_iso8601: PT1H33M43S
+thumb: "/assets/episode-thumbs/thor-gotaas-loping-og-havregrot-176dc32dc6.webp"
 ---

@@ -10,4 +10,5 @@ og_type: article
 date: '2021-06-05T05:00:02Z'
 duration: '36:57'
 duration_iso8601: PT36M57S
+thumb: "/assets/episode-thumbs/averoy-3-fjell-intervju-med-arrangor-ole-jorgen-garden-2068f11c4a.webp"
 ---

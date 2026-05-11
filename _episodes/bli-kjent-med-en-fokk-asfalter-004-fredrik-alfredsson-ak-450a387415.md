@@ -10,4 +10,5 @@ og_type: article
 date: '2024-10-31T04:00:04Z'
 duration: '54:14'
 duration_iso8601: PT54M14S
+thumb: "/assets/episode-thumbs/bli-kjent-med-en-fokk-asfalter-004-fredrik-alfredsson-ak-450a387415.webp"
 ---

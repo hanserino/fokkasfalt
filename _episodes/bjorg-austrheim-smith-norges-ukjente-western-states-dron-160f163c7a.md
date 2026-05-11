@@ -10,4 +10,5 @@ og_type: article
 date: '2025-04-24T03:00:08Z'
 duration: '2:05:14'
 duration_iso8601: PT2H5M14S
+thumb: "/assets/episode-thumbs/bjorg-austrheim-smith-norges-ukjente-western-states-dron-160f163c7a.webp"
 ---

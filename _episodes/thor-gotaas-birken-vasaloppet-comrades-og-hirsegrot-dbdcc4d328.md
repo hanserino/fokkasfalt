@@ -10,4 +10,5 @@ og_type: article
 date: '2022-03-18T09:50:01Z'
 duration: '2:08:46'
 duration_iso8601: PT2H8M46S
+thumb: "/assets/episode-thumbs/thor-gotaas-birken-vasaloppet-comrades-og-hirsegrot-dbdcc4d328.webp"
 ---

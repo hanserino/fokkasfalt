@@ -10,4 +10,5 @@ og_type: article
 date: '2020-11-26T18:46:15Z'
 duration: '1:28:03'
 duration_iso8601: PT1H28M3S
+thumb: "/assets/episode-thumbs/simen-holvik-live-podcast-pa-instagram-to-dager-for-phan-785d9b45a1.webp"
 ---

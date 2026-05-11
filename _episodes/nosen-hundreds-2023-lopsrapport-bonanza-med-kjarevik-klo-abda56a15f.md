@@ -12,4 +12,5 @@ og_type: article
 date: '2023-06-22T03:57:20Z'
 duration: '1:15:03'
 duration_iso8601: PT1H15M3S
+thumb: "/assets/episode-thumbs/nosen-hundreds-2023-lopsrapport-bonanza-med-kjarevik-klo-abda56a15f.webp"
 ---

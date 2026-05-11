@@ -10,4 +10,5 @@ og_type: article
 date: '2024-11-06T04:00:02Z'
 duration: '1:15:27'
 duration_iso8601: PT1H15M27S
+thumb: "/assets/episode-thumbs/marius-brevik-kullamannen-100-miles-dnf-rapport-2672bb4704.webp"
 ---

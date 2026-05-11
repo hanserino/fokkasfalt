@@ -10,4 +10,5 @@ og_type: article
 date: '2023-09-07T04:22:02Z'
 duration: '49:22'
 duration_iso8601: PT49M22S
+thumb: "/assets/episode-thumbs/kristin-harila-14x8000-k2-tromso-mountain-challenge-ultr-a8e2589daa.webp"
 ---

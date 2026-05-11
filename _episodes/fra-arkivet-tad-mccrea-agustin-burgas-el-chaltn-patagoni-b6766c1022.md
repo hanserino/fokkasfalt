@@ -11,4 +11,5 @@ og_type: article
 date: '2023-07-12T05:47:12Z'
 duration: '1:17:32'
 duration_iso8601: PT1H17M32S
+thumb: "/assets/episode-thumbs/fra-arkivet-tad-mccrea-agustin-burgas-el-chaltn-patagoni-b6766c1022.webp"
 ---

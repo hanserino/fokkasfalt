@@ -10,4 +10,5 @@ og_type: article
 date: '2022-04-06T05:47:58Z'
 duration: '1:01:29'
 duration_iso8601: PT1H1M29S
+thumb: "/assets/episode-thumbs/nm-100km-spesial-sebastian-conrad-hakansson-ingrid-lid-c8bd9fee09.webp"
 ---

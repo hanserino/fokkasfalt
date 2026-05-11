@@ -11,4 +11,5 @@ og_type: article
 date: '2026-04-30T03:00:06Z'
 duration: '1:34:00'
 duration_iso8601: PT1H34M
+thumb: "/assets/episode-thumbs/petter-engdahl-boston-marathon-2026-planer-helsetrobbel-792819e4f3.webp"
 ---

@@ -8,4 +8,5 @@ og_type: article
 date: '2023-08-10T11:34:24Z'
 duration: '1:27:14'
 duration_iso8601: PT1H27M14S
+thumb: "/assets/episode-thumbs/tromso-skyrace-2023-engdahl-hansen-kaspersen-smedsrod-0071dd4493.webp"
 ---

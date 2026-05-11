@@ -11,4 +11,5 @@ og_type: article
 date: '2024-07-04T03:00:04Z'
 duration: '3:14:16'
 duration_iso8601: PT3H14M16S
+thumb: "/assets/episode-thumbs/kim-andr-boe-fra-kreft-til-fyr-til-fyr-rapport-fra-weste-34a8194d15.webp"
 ---

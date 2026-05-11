@@ -10,4 +10,5 @@ og_type: article
 date: '2023-06-02T10:37:58Z'
 duration: '1:39:46'
 duration_iso8601: PT1H39M46S
+thumb: "/assets/episode-thumbs/mathias-ekornas-fredrikke-marie-trana-franskeruta-pa-fra-f4b29fb4bd.webp"
 ---

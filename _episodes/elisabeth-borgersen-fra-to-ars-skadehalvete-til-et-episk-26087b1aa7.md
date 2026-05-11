@@ -11,4 +11,5 @@ og_type: article
 date: '2022-05-06T07:01:01Z'
 duration: '1:43:35'
 duration_iso8601: PT1H43M35S
+thumb: "/assets/episode-thumbs/elisabeth-borgersen-fra-to-ars-skadehalvete-til-et-episk-26087b1aa7.webp"
 ---

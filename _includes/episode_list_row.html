@@ -6,14 +6,20 @@
   <div class="ep-list__row">
     <a class="ep-list__main" href="{{ include.ep.url | relative_url }}">
       {% if include.ep.cover %}
+      {% if include.ep.thumb %}
+        {% assign list_cover_src = include.ep.thumb | relative_url %}
+      {% else %}
+        {% assign list_cover_src = include.ep.cover %}
+      {% endif %}
       <img
         class="ep-list__thumb"
-        src="{{ include.ep.cover }}"
+        src="{{ list_cover_src }}"
         alt=""
         width="80"
         height="80"
         loading="lazy"
         decoding="async"
+        fetchpriority="low"
       />
       {% else %}
       <div class="ep-list__thumb ep-list__thumb--empty" aria-hidden="true"></div>

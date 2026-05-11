@@ -10,4 +10,5 @@ og_type: article
 date: '2022-11-16T06:43:19Z'
 duration: '1:20:57'
 duration_iso8601: PT1H20M57S
+thumb: "/assets/episode-thumbs/aasmund-kjollmoen-steien-kullamannen-100k-champion-2c246885b0.webp"
 ---

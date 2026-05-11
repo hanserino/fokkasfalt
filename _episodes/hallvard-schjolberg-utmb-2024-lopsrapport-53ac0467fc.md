@@ -10,4 +10,5 @@ og_type: article
 date: '2024-09-04T09:41:13Z'
 duration: '1:08:04'
 duration_iso8601: PT1H8M4S
+thumb: "/assets/episode-thumbs/hallvard-schjolberg-utmb-2024-lopsrapport-53ac0467fc.webp"
 ---

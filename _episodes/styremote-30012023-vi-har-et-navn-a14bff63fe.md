@@ -9,4 +9,5 @@ og_type: article
 date: '2023-01-30T20:43:55Z'
 duration: '1:15:45'
 duration_iso8601: PT1H15M45S
+thumb: "/assets/episode-thumbs/styremote-30012023-vi-har-et-navn-a14bff63fe.webp"
 ---

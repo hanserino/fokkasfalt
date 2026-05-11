@@ -10,4 +10,5 @@ og_type: article
 date: '2025-08-14T03:00:04Z'
 duration: '1:50:48'
 duration_iso8601: PT1H50M48S
+thumb: "/assets/episode-thumbs/arne-kluge-iversen-bli-kjent-med-en-fokk-asfalter-007-a8b91afcf7.webp"
 ---

@@ -9,4 +9,5 @@ og_type: article
 date: '2025-10-16T03:00:05Z'
 duration: '1:12:26'
 duration_iso8601: PT1H12M26S
+thumb: "/assets/episode-thumbs/fred-andersen-bli-kjent-med-en-fokk-asfalter-010-5a2554d613.webp"
 ---

@@ -11,4 +11,5 @@ og_type: article
 date: '2019-04-21T21:12:52Z'
 duration: '23:10'
 duration_iso8601: PT23M10S
+thumb: "/assets/episode-thumbs/mt-awa-skyrace-race-debrief-with-jon-albon-3rd-christoph-df1d2d1f18.webp"
 ---

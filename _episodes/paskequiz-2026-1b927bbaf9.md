@@ -8,4 +8,5 @@ og_type: article
 date: '2026-04-01T03:00:03Z'
 duration: '2:27:34'
 duration_iso8601: PT2H27M34S
+thumb: "/assets/episode-thumbs/paskequiz-2026-1b927bbaf9.webp"
 ---

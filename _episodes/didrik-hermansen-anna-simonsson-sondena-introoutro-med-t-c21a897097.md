@@ -10,4 +10,5 @@ og_type: article
 date: '2022-09-22T05:11:40Z'
 duration: '2:13:47'
 duration_iso8601: PT2H13M47S
+thumb: "/assets/episode-thumbs/didrik-hermansen-anna-simonsson-sondena-introoutro-med-t-c21a897097.webp"
 ---

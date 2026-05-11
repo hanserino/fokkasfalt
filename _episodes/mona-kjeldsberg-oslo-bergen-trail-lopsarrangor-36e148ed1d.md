@@ -10,4 +10,5 @@ og_type: article
 date: '2025-06-19T06:24:35Z'
 duration: '53:51'
 duration_iso8601: PT53M51S
+thumb: "/assets/episode-thumbs/mona-kjeldsberg-oslo-bergen-trail-lopsarrangor-36e148ed1d.webp"
 ---

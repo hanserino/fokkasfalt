@@ -10,4 +10,5 @@ og_type: article
 date: '2021-08-28T05:01:00Z'
 duration: '24:54'
 duration_iso8601: PT24M54S
+thumb: "/assets/episode-thumbs/stian-halln-fkt-pa-ersfjordtraversen-gjenhor-med-kilian-0a4a5f0225.webp"
 ---

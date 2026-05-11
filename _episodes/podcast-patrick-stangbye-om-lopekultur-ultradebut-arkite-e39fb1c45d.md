@@ -11,4 +11,5 @@ og_type: article
 date: '2020-06-30T11:50:37Z'
 duration: '1:27:04'
 duration_iso8601: PT1H27M4S
+thumb: "/assets/episode-thumbs/podcast-patrick-stangbye-om-lopekultur-ultradebut-arkite-e39fb1c45d.webp"
 ---

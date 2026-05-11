@@ -10,4 +10,5 @@ og_type: article
 date: '2019-05-14T05:31:42Z'
 duration: '2:16:20'
 duration_iso8601: PT2H16M20S
+thumb: "/assets/episode-thumbs/transvulcania-2019-race-debrief-med-hk-og-jonas-hesthaug-88a34d0887.webp"
 ---

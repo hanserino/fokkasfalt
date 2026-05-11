@@ -11,4 +11,5 @@ og_type: article
 date: '2021-07-31T05:00:02Z'
 duration: '1:17:02'
 duration_iso8601: PT1H17M2S
+thumb: "/assets/episode-thumbs/clubhouse-session-med-simen-holvik-fred-andersen-tobias-89e57c01de.webp"
 ---

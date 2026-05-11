@@ -10,4 +10,5 @@ og_type: article
 date: '2021-05-22T05:01:01Z'
 duration: '1:49:21'
 duration_iso8601: PT1H49M21S
+thumb: "/assets/episode-thumbs/eirik-haugsnes-o2-beistet-fra-nord-a45147be1c.webp"
 ---

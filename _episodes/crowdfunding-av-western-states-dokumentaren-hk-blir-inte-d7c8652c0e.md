@@ -11,4 +11,5 @@ og_type: article
 date: '2024-01-26T10:49:43Z'
 duration: '29:45'
 duration_iso8601: PT29M45S
+thumb: "/assets/episode-thumbs/crowdfunding-av-western-states-dokumentaren-hk-blir-inte-d7c8652c0e.webp"
 ---

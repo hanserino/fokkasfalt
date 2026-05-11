@@ -11,4 +11,5 @@ og_type: article
 date: '2024-06-18T10:14:08Z'
 duration: '1:28:13'
 duration_iso8601: PT1H28M13S
+thumb: "/assets/episode-thumbs/reportasje-fra-nosen-hundreds-2024-rapport-fra-trail-du-f49b53a5a5.webp"
 ---

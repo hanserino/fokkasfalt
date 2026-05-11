@@ -10,4 +10,5 @@ og_type: article
 date: '2019-06-30T17:03:42Z'
 duration: '1:49:32'
 duration_iso8601: PT1H49M32S
+thumb: "/assets/episode-thumbs/episode-61-det-narmer-seg-for-bilal-tromso-skyrace-d1fc0b443d.webp"
 ---

@@ -11,4 +11,5 @@ og_type: article
 date: '2024-05-09T03:00:02Z'
 duration: '2:19:50'
 duration_iso8601: PT2H19M50S
+thumb: "/assets/episode-thumbs/lopsrapport-fra-nm-terrengultra-2024-tobias-dahl-fenre-m-c7d0ce2a26.webp"
 ---

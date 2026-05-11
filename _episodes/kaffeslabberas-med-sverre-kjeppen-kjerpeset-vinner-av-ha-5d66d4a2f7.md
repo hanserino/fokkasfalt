@@ -11,4 +11,5 @@ og_type: article
 date: '2022-11-02T09:15:28Z'
 duration: '1:45:18'
 duration_iso8601: PT1H45M18S
+thumb: "/assets/episode-thumbs/kaffeslabberas-med-sverre-kjeppen-kjerpeset-vinner-av-ha-5d66d4a2f7.webp"
 ---

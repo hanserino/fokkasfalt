@@ -10,4 +10,5 @@ og_type: article
 date: '2025-08-29T08:36:51Z'
 duration: '22:32'
 duration_iso8601: PT22M32S
+thumb: "/assets/episode-thumbs/patrick-stangbye-og-ida-amelie-robsahm-tds-og-occ-2025-bad4df3bd1.webp"
 ---

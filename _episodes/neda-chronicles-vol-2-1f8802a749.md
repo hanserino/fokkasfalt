@@ -10,4 +10,5 @@ og_type: article
 date: '2026-02-26T05:00:00Z'
 duration: '56:36'
 duration_iso8601: PT56M36S
+thumb: "/assets/episode-thumbs/neda-chronicles-vol-2-1f8802a749.webp"
 ---

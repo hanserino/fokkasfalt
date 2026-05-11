@@ -10,4 +10,5 @@ og_type: article
 date: '2020-11-13T07:46:46Z'
 duration: '1:25:57'
 duration_iso8601: PT1H25M57S
+thumb: "/assets/episode-thumbs/elov-olsson-01a6e29c49.webp"
 ---

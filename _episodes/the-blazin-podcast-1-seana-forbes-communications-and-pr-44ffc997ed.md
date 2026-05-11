@@ -11,4 +11,5 @@ og_type: article
 date: '2020-09-11T05:28:14Z'
 duration: '1:39:55'
 duration_iso8601: PT1H39M55S
+thumb: "/assets/episode-thumbs/the-blazin-podcast-1-seana-forbes-communications-and-pr-44ffc997ed.webp"
 ---

@@ -11,4 +11,5 @@ og_type: article
 date: '2021-02-28T09:32:56Z'
 duration: '1:35:42'
 duration_iso8601: PT1H35M42S
+thumb: "/assets/episode-thumbs/magnus-midtbo-mesternes-mester-spiseforstyrrelser-youtub-0e314c400e.webp"
 ---

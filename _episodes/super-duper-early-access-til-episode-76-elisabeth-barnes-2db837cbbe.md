@@ -11,4 +11,5 @@ og_type: article
 date: '2019-10-16T08:32:38Z'
 duration: '1:24:47'
 duration_iso8601: PT1H24M47S
+thumb: "/assets/episode-thumbs/super-duper-early-access-til-episode-76-elisabeth-barnes-2db837cbbe.webp"
 ---

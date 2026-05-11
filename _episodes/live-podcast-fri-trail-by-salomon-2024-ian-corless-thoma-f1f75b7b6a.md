@@ -10,4 +10,5 @@ og_type: article
 date: '2024-10-02T03:00:04Z'
 duration: '57:36'
 duration_iso8601: PT57M36S
+thumb: "/assets/episode-thumbs/live-podcast-fri-trail-by-salomon-2024-ian-corless-thoma-f1f75b7b6a.webp"
 ---

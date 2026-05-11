@@ -10,4 +10,5 @@ og_type: article
 date: '2021-03-08T07:00:01Z'
 duration: '1:14:26'
 duration_iso8601: PT1H14M26S
+thumb: "/assets/episode-thumbs/pal-lie-magnus-race-director-nosen-hundreds-ultramaratho-93b33ee0f4.webp"
 ---

@@ -7,4 +7,5 @@ og_type: article
 date: '2025-03-05T04:00:07Z'
 duration: '33:02'
 duration_iso8601: PT33M2S
+thumb: "/assets/episode-thumbs/obt-2025-portrett-16-randi-aalgaard-cc13fbe482.webp"
 ---

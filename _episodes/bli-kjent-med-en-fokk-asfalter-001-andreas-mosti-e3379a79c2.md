@@ -10,4 +10,5 @@ og_type: article
 date: '2024-06-12T10:02:06Z'
 duration: '1:21:36'
 duration_iso8601: PT1H21M36S
+thumb: "/assets/episode-thumbs/bli-kjent-med-en-fokk-asfalter-001-andreas-mosti-e3379a79c2.webp"
 ---

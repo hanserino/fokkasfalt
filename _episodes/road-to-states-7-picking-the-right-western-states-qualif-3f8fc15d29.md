@@ -11,4 +11,5 @@ og_type: article
 date: '2026-04-22T05:00:00Z'
 duration: '44:03'
 duration_iso8601: PT44M3S
+thumb: "/assets/episode-thumbs/road-to-states-7-picking-the-right-western-states-qualif-3f8fc15d29.webp"
 ---

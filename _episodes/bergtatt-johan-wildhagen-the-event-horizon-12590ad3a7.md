@@ -10,4 +10,5 @@ og_type: article
 date: '2025-12-11T04:00:02Z'
 duration: '2:33:42'
 duration_iso8601: PT2H33M42S
+thumb: "/assets/episode-thumbs/bergtatt-johan-wildhagen-the-event-horizon-12590ad3a7.webp"
 ---

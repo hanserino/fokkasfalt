@@ -12,4 +12,5 @@ og_type: article
 date: '2020-12-09T15:24:35Z'
 duration: '1:20:19'
 duration_iso8601: PT1H20M19S
+thumb: "/assets/episode-thumbs/tim-shieff-way-of-the-rope-bevegelighetstrening-fasting-94b18461f4.webp"
 ---

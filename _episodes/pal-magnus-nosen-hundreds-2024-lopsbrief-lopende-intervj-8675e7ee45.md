@@ -11,4 +11,5 @@ og_type: article
 date: '2024-05-23T03:00:04Z'
 duration: '1:36:04'
 duration_iso8601: PT1H36M4S
+thumb: "/assets/episode-thumbs/pal-magnus-nosen-hundreds-2024-lopsbrief-lopende-intervj-8675e7ee45.webp"
 ---

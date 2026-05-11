@@ -7,4 +7,5 @@ og_type: article
 date: '2025-12-18T04:00:05Z'
 duration: '2:28:34'
 duration_iso8601: PT2H28M34S
+thumb: "/assets/episode-thumbs/neda-prisen-2025-arskavalkade-med-thomas-stordalen-00e4d80485.webp"
 ---

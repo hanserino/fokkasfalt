@@ -10,4 +10,5 @@ og_type: article
 date: '2026-04-16T03:00:07Z'
 duration: '52:13'
 duration_iso8601: PT52M13S
+thumb: "/assets/episode-thumbs/tobias-dahl-fenre-krsultra-2026-champion-70871af12f.webp"
 ---

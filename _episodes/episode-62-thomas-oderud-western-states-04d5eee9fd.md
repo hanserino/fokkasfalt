@@ -9,4 +9,5 @@ og_type: article
 date: '2019-07-01T19:58:23Z'
 duration: '30:45'
 duration_iso8601: PT30M45S
+thumb: "/assets/episode-thumbs/episode-62-thomas-oderud-western-states-04d5eee9fd.webp"
 ---

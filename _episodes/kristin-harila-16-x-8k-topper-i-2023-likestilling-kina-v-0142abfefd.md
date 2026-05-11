@@ -11,4 +11,5 @@ og_type: article
 date: '2023-02-01T16:31:41Z'
 duration: '53:04'
 duration_iso8601: PT53M4S
+thumb: "/assets/episode-thumbs/kristin-harila-16-x-8k-topper-i-2023-likestilling-kina-v-0142abfefd.webp"
 ---

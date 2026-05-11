@@ -11,4 +11,5 @@ og_type: article
 date: '2023-09-19T08:30:14Z'
 duration: '45:25'
 duration_iso8601: PT45M25S
+thumb: "/assets/episode-thumbs/lopsrapporter-fra-fyri-trail-by-salomon-2023-oscar-claes-e5e1d5f18b.webp"
 ---

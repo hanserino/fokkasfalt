@@ -11,4 +11,5 @@ og_type: article
 date: '2023-05-09T06:33:02Z'
 duration: '28:58'
 duration_iso8601: PT28M58S
+thumb: "/assets/episode-thumbs/juho-ylinen-bodom-trail-champion-golden-trail-national-s-9410677622.webp"
 ---

@@ -9,4 +9,5 @@ og_type: article
 date: '2022-06-23T14:49:36Z'
 duration: '56:29'
 duration_iso8601: PT56M29S
+thumb: "/assets/episode-thumbs/tobias-dahl-fenre-dnf-mozart-100-08692ff63c.webp"
 ---

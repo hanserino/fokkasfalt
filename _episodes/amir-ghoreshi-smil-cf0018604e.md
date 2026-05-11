@@ -10,4 +10,5 @@ og_type: article
 date: '2020-12-18T08:58:18Z'
 duration: '5:48:18'
 duration_iso8601: PT5H48M18S
+thumb: "/assets/episode-thumbs/amir-ghoreshi-smil-cf0018604e.webp"
 ---

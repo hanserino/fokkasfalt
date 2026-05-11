@@ -10,4 +10,5 @@ og_type: article
 date: '2025-11-06T04:00:02Z'
 duration: '1:55:37'
 duration_iso8601: PT1H55M37S
+thumb: "/assets/episode-thumbs/ultra-ringerunde-kjollmoen-steien-stangbye-ramsfjell-pol-16762f46d4.webp"
 ---

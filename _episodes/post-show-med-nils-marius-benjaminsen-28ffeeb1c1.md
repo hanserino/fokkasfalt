@@ -10,4 +10,5 @@ og_type: article
 date: '2018-08-19T14:42:11Z'
 duration: '1:04:47'
 duration_iso8601: PT1H4M47S
+thumb: "/assets/episode-thumbs/post-show-med-nils-marius-benjaminsen-28ffeeb1c1.webp"
 ---

@@ -10,4 +10,5 @@ og_type: article
 date: '2023-06-12T08:43:11Z'
 duration: '13:02'
 duration_iso8601: PT13M2S
+thumb: "/assets/episode-thumbs/anders-ponny-kjarevik-lopsrapport-fra-vm-og-tanker-om-no-4cc7e9ad8a.webp"
 ---

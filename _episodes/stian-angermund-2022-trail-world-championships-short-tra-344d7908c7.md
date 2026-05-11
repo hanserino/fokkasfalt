@@ -10,4 +10,5 @@ og_type: article
 date: '2022-12-01T09:04:35Z'
 duration: '53:05'
 duration_iso8601: PT53M5S
+thumb: "/assets/episode-thumbs/stian-angermund-2022-trail-world-championships-short-tra-344d7908c7.webp"
 ---

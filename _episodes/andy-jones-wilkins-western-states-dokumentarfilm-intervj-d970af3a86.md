@@ -10,4 +10,5 @@ og_type: article
 date: '2024-07-09T11:38:48Z'
 duration: '28:18'
 duration_iso8601: PT28M18S
+thumb: "/assets/episode-thumbs/andy-jones-wilkins-western-states-dokumentarfilm-intervj-d970af3a86.webp"
 ---

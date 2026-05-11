@@ -10,4 +10,5 @@ og_type: article
 date: '2023-10-12T04:00:02Z'
 duration: '1:17:42'
 duration_iso8601: PT1H17M42S
+thumb: "/assets/episode-thumbs/tobias-dahl-fenre-dnf-utmb-ville-treningsokter-kullamann-aec929a8ba.webp"
 ---

@@ -10,4 +10,5 @@ og_type: article
 date: '2019-09-23T18:26:49Z'
 duration: '59:48'
 duration_iso8601: PT59M48S
+thumb: "/assets/episode-thumbs/reisebrev-fra-70rin0-bfaa284358.webp"
 ---

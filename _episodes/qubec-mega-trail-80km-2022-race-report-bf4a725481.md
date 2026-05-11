@@ -10,4 +10,5 @@ og_type: article
 date: '2022-07-14T05:26:22Z'
 duration: '1:02:25'
 duration_iso8601: PT1H2M25S
+thumb: "/assets/episode-thumbs/qubec-mega-trail-80km-2022-race-report-bf4a725481.webp"
 ---

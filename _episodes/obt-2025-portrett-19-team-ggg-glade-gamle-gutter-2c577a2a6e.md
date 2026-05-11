@@ -8,4 +8,5 @@ og_type: article
 date: '2025-03-12T08:01:38Z'
 duration: '40:07'
 duration_iso8601: PT40M7S
+thumb: "/assets/episode-thumbs/obt-2025-portrett-19-team-ggg-glade-gamle-gutter-2c577a2a6e.webp"
 ---

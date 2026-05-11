@@ -12,4 +12,5 @@ og_type: article
 date: '2023-08-15T12:59:15Z'
 duration: '50:06'
 duration_iso8601: PT50M6S
+thumb: "/assets/episode-thumbs/stranda-fjord-trail-race-2023-gtnsn-anders-haga-marte-em-222267a203.webp"
 ---

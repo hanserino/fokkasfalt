@@ -10,4 +10,5 @@ og_type: article
 date: '2025-11-13T12:09:24Z'
 duration: '10:01'
 duration_iso8601: PT10M1S
+thumb: "/assets/episode-thumbs/emelie-forsberg-pre-vertikal-innsamlingsaksjon-2025-ddf643d7ca.webp"
 ---

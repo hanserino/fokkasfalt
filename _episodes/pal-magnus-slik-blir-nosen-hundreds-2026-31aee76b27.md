@@ -10,4 +10,5 @@ og_type: article
 date: '2026-03-05T04:00:04Z'
 duration: '1:40:46'
 duration_iso8601: PT1H40M46S
+thumb: "/assets/episode-thumbs/pal-magnus-slik-blir-nosen-hundreds-2026-31aee76b27.webp"
 ---

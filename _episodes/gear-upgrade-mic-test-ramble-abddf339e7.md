@@ -10,4 +10,5 @@ og_type: article
 date: '2018-10-04T06:23:22Z'
 duration: '18:45'
 duration_iso8601: PT18M45S
+thumb: "/assets/episode-thumbs/gear-upgrade-mic-test-ramble-abddf339e7.webp"
 ---

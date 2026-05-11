@@ -11,4 +11,5 @@ og_type: article
 date: '2021-01-27T06:59:03Z'
 duration: '1:06:33'
 duration_iso8601: PT1H6M33S
+thumb: "/assets/episode-thumbs/mark-agnew-hong-kong-trail-running-ocean-rowing-sports-j-6f6ceedb1b.webp"
 ---

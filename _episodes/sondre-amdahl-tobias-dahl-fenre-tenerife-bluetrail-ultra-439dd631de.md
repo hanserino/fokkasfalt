@@ -11,4 +11,5 @@ og_type: article
 date: '2022-06-17T06:44:08Z'
 duration: '1:21:54'
 duration_iso8601: PT1H21M54S
+thumb: "/assets/episode-thumbs/sondre-amdahl-tobias-dahl-fenre-tenerife-bluetrail-ultra-439dd631de.webp"
 ---

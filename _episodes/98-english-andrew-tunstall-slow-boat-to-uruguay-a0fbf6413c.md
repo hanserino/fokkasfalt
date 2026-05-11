@@ -10,4 +10,5 @@ og_type: article
 date: '2020-05-06T05:36:10Z'
 duration: '1:13:35'
 duration_iso8601: PT1H13M35S
+thumb: "/assets/episode-thumbs/98-english-andrew-tunstall-slow-boat-to-uruguay-a0fbf6413c.webp"
 ---

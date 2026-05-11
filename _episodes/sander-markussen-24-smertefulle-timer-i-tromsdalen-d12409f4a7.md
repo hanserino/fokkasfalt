@@ -10,4 +10,5 @@ og_type: article
 date: '2020-10-02T09:55:42Z'
 duration: '1:17:44'
 duration_iso8601: PT1H17M44S
+thumb: "/assets/episode-thumbs/sander-markussen-24-smertefulle-timer-i-tromsdalen-d12409f4a7.webp"
 ---

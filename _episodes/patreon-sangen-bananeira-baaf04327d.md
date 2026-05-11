@@ -10,4 +10,5 @@ og_type: article
 date: '2018-12-30T15:36:41Z'
 duration: '3:28'
 duration_iso8601: PT3M28S
+thumb: "/assets/episode-thumbs/patreon-sangen-bananeira-baaf04327d.webp"
 ---

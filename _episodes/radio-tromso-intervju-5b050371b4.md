@@ -10,4 +10,5 @@ og_type: article
 date: '2019-06-12T08:31:03Z'
 duration: '4:27'
 duration_iso8601: PT4M27S
+thumb: "/assets/episode-thumbs/radio-tromso-intervju-5b050371b4.webp"
 ---

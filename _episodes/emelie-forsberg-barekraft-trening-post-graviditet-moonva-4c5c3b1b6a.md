@@ -11,4 +11,5 @@ og_type: article
 date: '2023-02-23T05:00:02Z'
 duration: '1:15:09'
 duration_iso8601: PT1H15M9S
+thumb: "/assets/episode-thumbs/emelie-forsberg-barekraft-trening-post-graviditet-moonva-4c5c3b1b6a.webp"
 ---

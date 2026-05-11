@@ -11,4 +11,5 @@ og_type: article
 date: '2021-11-25T10:36:30Z'
 duration: '48:05'
 duration_iso8601: PT48M5S
+thumb: "/assets/episode-thumbs/bislett-24-2021-therese-falk-frank-loke-thor-gotaas-ultr-ebf576785a.webp"
 ---

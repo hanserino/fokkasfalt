@@ -10,4 +10,5 @@ og_type: article
 date: '2025-07-16T07:45:44Z'
 duration: '55:42'
 duration_iso8601: PT55M42S
+thumb: "/assets/episode-thumbs/eivind-svellingen-john-f-jahre-obt-2025-champions-b8e34a4f98.webp"
 ---

@@ -10,4 +10,5 @@ og_type: article
 date: '2023-03-16T08:15:25Z'
 duration: '1:08:15'
 duration_iso8601: PT1H8M15S
+thumb: "/assets/episode-thumbs/styremote-15032023-rauma-track-trail-er-snart-en-greie-18ffc61a64.webp"
 ---

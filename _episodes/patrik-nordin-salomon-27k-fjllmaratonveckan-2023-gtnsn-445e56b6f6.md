@@ -10,4 +10,5 @@ og_type: article
 date: '2023-07-21T13:10:04Z'
 duration: '50:58'
 duration_iso8601: PT50M58S
+thumb: "/assets/episode-thumbs/patrik-nordin-salomon-27k-fjllmaratonveckan-2023-gtnsn-445e56b6f6.webp"
 ---

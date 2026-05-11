@@ -9,4 +9,5 @@ og_type: article
 date: '2024-02-15T07:17:55Z'
 duration: '1:45:41'
 duration_iso8601: PT1H45M41S
+thumb: "/assets/episode-thumbs/tor-einar-wahl-angermund-saken-ultrasnakk-561908efe2.webp"
 ---

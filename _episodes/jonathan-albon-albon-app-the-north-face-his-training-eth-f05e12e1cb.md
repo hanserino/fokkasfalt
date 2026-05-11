@@ -11,4 +11,5 @@ og_type: article
 date: '2022-05-13T05:47:10Z'
 duration: '1:18:25'
 duration_iso8601: PT1H18M25S
+thumb: "/assets/episode-thumbs/jonathan-albon-albon-app-the-north-face-his-training-eth-f05e12e1cb.webp"
 ---

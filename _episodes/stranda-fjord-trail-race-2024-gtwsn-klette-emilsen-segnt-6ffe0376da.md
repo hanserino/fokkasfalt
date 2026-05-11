@@ -11,4 +11,5 @@ og_type: article
 date: '2024-08-15T03:00:04Z'
 duration: '1:02:50'
 duration_iso8601: PT1H2M50S
+thumb: "/assets/episode-thumbs/stranda-fjord-trail-race-2024-gtwsn-klette-emilsen-segnt-6ffe0376da.webp"
 ---

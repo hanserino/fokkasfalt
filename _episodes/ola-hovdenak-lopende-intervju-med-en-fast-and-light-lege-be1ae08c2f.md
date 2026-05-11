@@ -10,4 +10,5 @@ og_type: article
 date: '2024-04-25T03:00:03Z'
 duration: '2:25:05'
 duration_iso8601: PT2H25M5S
+thumb: "/assets/episode-thumbs/ola-hovdenak-lopende-intervju-med-en-fast-and-light-lege-be1ae08c2f.webp"
 ---

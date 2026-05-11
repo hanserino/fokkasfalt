@@ -7,4 +7,5 @@ og_type: article
 date: '2025-02-12T04:00:10Z'
 duration: '30:50'
 duration_iso8601: PT30M50S
+thumb: "/assets/episode-thumbs/obt-2025-portrett-6-charlotte-rbberdt-54525934a4.webp"
 ---

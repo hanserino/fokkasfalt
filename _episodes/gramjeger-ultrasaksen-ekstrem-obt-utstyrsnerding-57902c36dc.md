@@ -10,4 +10,5 @@ og_type: article
 date: '2025-05-08T03:00:04Z'
 duration: '1:48:44'
 duration_iso8601: PT1H48M44S
+thumb: "/assets/episode-thumbs/gramjeger-ultrasaksen-ekstrem-obt-utstyrsnerding-57902c36dc.webp"
 ---

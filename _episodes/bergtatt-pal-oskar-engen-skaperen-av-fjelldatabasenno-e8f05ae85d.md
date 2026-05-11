@@ -10,4 +10,5 @@ og_type: article
 date: '2024-11-04T14:36:16Z'
 duration: '30:28'
 duration_iso8601: PT30M28S
+thumb: "/assets/episode-thumbs/bergtatt-pal-oskar-engen-skaperen-av-fjelldatabasenno-e8f05ae85d.webp"
 ---

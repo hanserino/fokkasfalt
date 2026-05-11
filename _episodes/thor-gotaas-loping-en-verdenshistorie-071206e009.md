@@ -10,4 +10,5 @@ og_type: article
 date: '2021-01-06T14:27:36Z'
 duration: '1:25:57'
 duration_iso8601: PT1H25M57S
+thumb: "/assets/episode-thumbs/thor-gotaas-loping-en-verdenshistorie-071206e009.webp"
 ---

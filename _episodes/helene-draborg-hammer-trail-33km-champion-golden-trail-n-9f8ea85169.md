@@ -11,4 +11,5 @@ og_type: article
 date: '2023-05-19T07:38:04Z'
 duration: '15:24'
 duration_iso8601: PT15M24S
+thumb: "/assets/episode-thumbs/helene-draborg-hammer-trail-33km-champion-golden-trail-n-9f8ea85169.webp"
 ---

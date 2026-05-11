@@ -10,4 +10,5 @@ og_type: article
 date: '2025-01-29T04:00:10Z'
 duration: '2:08:43'
 duration_iso8601: PT2H8M43S
+thumb: "/assets/episode-thumbs/frode-lein-frode-lein-lopsrapport-fra-tian-shan-mountain-dcad2e299f.webp"
 ---

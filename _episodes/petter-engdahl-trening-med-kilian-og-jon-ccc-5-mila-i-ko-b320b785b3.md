@@ -10,4 +10,5 @@ og_type: article
 date: '2023-01-05T06:06:05Z'
 duration: '1:41:06'
 duration_iso8601: PT1H41M6S
+thumb: "/assets/episode-thumbs/petter-engdahl-trening-med-kilian-og-jon-ccc-5-mila-i-ko-b320b785b3.webp"
 ---

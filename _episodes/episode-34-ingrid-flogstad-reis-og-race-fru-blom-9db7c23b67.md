@@ -10,4 +10,5 @@ og_type: article
 date: '2018-10-22T06:07:56Z'
 duration: '3:02:38'
 duration_iso8601: PT3H2M38S
+thumb: "/assets/episode-thumbs/episode-34-ingrid-flogstad-reis-og-race-fru-blom-9db7c23b67.webp"
 ---

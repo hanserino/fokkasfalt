@@ -7,4 +7,5 @@ og_type: article
 date: '2025-09-02T15:13:08Z'
 duration: '48:37'
 duration_iso8601: PT48M37S
+thumb: "/assets/episode-thumbs/sylvia-nordskar-2-plass-ccc-2025-9d0c69b97f.webp"
 ---

@@ -10,4 +10,5 @@ og_type: article
 date: '2023-09-28T04:38:01Z'
 duration: '1:19:16'
 duration_iso8601: PT1H19M16S
+thumb: "/assets/episode-thumbs/askild-vatnbakk-larsen-foredrag-neda-experience-2023-f14e45ab0e.webp"
 ---

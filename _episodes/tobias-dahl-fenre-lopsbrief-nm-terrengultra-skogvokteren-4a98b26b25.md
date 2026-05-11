@@ -10,4 +10,5 @@ og_type: article
 date: '2024-05-02T03:00:03Z'
 duration: '1:42:58'
 duration_iso8601: PT1H42M58S
+thumb: "/assets/episode-thumbs/tobias-dahl-fenre-lopsbrief-nm-terrengultra-skogvokteren-4a98b26b25.webp"
 ---

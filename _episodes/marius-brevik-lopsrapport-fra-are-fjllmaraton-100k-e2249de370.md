@@ -10,4 +10,5 @@ og_type: article
 date: '2024-08-08T04:54:11Z'
 duration: '1:30:54'
 duration_iso8601: PT1H30M54S
+thumb: "/assets/episode-thumbs/marius-brevik-lopsrapport-fra-are-fjllmaraton-100k-e2249de370.webp"
 ---

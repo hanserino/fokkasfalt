@@ -10,4 +10,5 @@ og_type: article
 date: '2026-02-12T04:00:04Z'
 duration: '1:38:10'
 duration_iso8601: PT1H38M10S
+thumb: "/assets/episode-thumbs/hakon-amundsen-nesheim-bli-kjent-med-en-fokk-asfalter-01-7ce9cfd736.webp"
 ---

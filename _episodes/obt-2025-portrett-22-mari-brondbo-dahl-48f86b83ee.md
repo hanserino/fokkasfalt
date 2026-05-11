@@ -8,4 +8,5 @@ og_type: article
 date: '2025-04-02T09:29:09Z'
 duration: '32:27'
 duration_iso8601: PT32M27S
+thumb: "/assets/episode-thumbs/obt-2025-portrett-22-mari-brondbo-dahl-48f86b83ee.webp"
 ---

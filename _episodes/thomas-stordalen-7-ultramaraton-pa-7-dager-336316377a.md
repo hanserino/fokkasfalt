@@ -10,4 +10,5 @@ og_type: article
 date: '2024-09-10T03:32:57Z'
 duration: '1:57:54'
 duration_iso8601: PT1H57M54S
+thumb: "/assets/episode-thumbs/thomas-stordalen-7-ultramaraton-pa-7-dager-336316377a.webp"
 ---

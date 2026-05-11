@@ -11,4 +11,5 @@ og_type: article
 date: '2021-01-18T11:04:34Z'
 duration: '1:02:58'
 duration_iso8601: PT1H2M58S
+thumb: "/assets/episode-thumbs/sebastian-conrad-hakansson-treningsfilosofi-phantasm24-o-11e1aaab9f.webp"
 ---

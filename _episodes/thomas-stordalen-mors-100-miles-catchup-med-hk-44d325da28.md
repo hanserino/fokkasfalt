@@ -7,4 +7,5 @@ og_type: article
 date: '2022-10-20T05:57:02Z'
 duration: '2:09:03'
 duration_iso8601: PT2H9M3S
+thumb: "/assets/episode-thumbs/thomas-stordalen-mors-100-miles-catchup-med-hk-44d325da28.webp"
 ---

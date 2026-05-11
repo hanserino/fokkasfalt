@@ -10,4 +10,5 @@ og_type: article
 date: '2020-11-22T19:25:52Z'
 duration: '1:13:47'
 duration_iso8601: PT1H13M47S
+thumb: "/assets/episode-thumbs/bernt-marius-rorstad-fjelloping-med-protese-059f8d5006.webp"
 ---

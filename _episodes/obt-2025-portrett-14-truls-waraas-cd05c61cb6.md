@@ -7,4 +7,5 @@ og_type: article
 date: '2025-02-26T04:01:00Z'
 duration: '23:15'
 duration_iso8601: PT23M15S
+thumb: "/assets/episode-thumbs/obt-2025-portrett-14-truls-waraas-cd05c61cb6.webp"
 ---

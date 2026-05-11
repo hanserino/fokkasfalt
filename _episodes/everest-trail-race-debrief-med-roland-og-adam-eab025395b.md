@@ -10,4 +10,5 @@ og_type: article
 date: '2019-11-25T12:48:13Z'
 duration: '1:30:46'
 duration_iso8601: PT1H30M46S
+thumb: "/assets/episode-thumbs/everest-trail-race-debrief-med-roland-og-adam-eab025395b.webp"
 ---

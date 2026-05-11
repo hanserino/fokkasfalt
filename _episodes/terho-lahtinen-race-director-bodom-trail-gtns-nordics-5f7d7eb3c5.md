@@ -10,4 +10,5 @@ og_type: article
 date: '2023-05-04T13:59:49Z'
 duration: '43:15'
 duration_iso8601: PT43M15S
+thumb: "/assets/episode-thumbs/terho-lahtinen-race-director-bodom-trail-gtns-nordics-5f7d7eb3c5.webp"
 ---

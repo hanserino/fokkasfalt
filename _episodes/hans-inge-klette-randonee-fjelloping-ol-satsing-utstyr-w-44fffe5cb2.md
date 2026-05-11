@@ -10,4 +10,5 @@ og_type: article
 date: '2023-02-16T08:24:42Z'
 duration: '58:03'
 duration_iso8601: PT58M3S
+thumb: "/assets/episode-thumbs/hans-inge-klette-randonee-fjelloping-ol-satsing-utstyr-w-44fffe5cb2.webp"
 ---

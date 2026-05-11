@@ -10,4 +10,5 @@ og_type: article
 date: '2023-07-13T04:28:00Z'
 duration: '41:26'
 duration_iso8601: PT41M26S
+thumb: "/assets/episode-thumbs/mari-klakegg-fenre-val-daran-by-utmb-vm-deltakelse-treni-bb2f99e6ea.webp"
 ---

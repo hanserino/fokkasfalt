@@ -11,4 +11,5 @@ og_type: article
 date: '2024-06-05T08:59:56Z'
 duration: '2:00:44'
 duration_iso8601: PT2H0M44S
+thumb: "/assets/episode-thumbs/jonas-hesthaug-aniek-lith-anders-haga-og-kim-larsen-lops-96b0d6ba1b.webp"
 ---

@@ -11,4 +11,5 @@ og_type: article
 date: '2021-06-12T05:00:02Z'
 duration: '2:08:53'
 duration_iso8601: PT2H8M53S
+thumb: "/assets/episode-thumbs/kristin-harila-mount-everest-lhotse-7-summits-fjelloping-6910a5e9f3.webp"
 ---

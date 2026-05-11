@@ -10,4 +10,5 @@ og_type: article
 date: '2020-07-17T20:19:22Z'
 duration: '45:58'
 duration_iso8601: PT45M58S
+thumb: "/assets/episode-thumbs/fredrik-askeland-ultraloper-mattelarer-og-vinnerkandidat-58ef8182b9.webp"
 ---

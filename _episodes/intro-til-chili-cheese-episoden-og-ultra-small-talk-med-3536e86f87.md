@@ -11,4 +11,5 @@ og_type: article
 date: '2021-10-08T10:43:02Z'
 duration: '42:55'
 duration_iso8601: PT42M55S
+thumb: "/assets/episode-thumbs/intro-til-chili-cheese-episoden-og-ultra-small-talk-med-3536e86f87.webp"
 ---

@@ -11,4 +11,5 @@ og_type: article
 date: '2021-10-15T05:00:03Z'
 duration: '1:36:15'
 duration_iso8601: PT1H36M15S
+thumb: "/assets/episode-thumbs/henning-lauridsen-ultraloping-bikepacking-bislett-24-car-b08cc9a180.webp"
 ---

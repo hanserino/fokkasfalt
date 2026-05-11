@@ -10,4 +10,5 @@ og_type: article
 date: '2022-07-02T09:01:01Z'
 duration: '1:55:14'
 duration_iso8601: PT1H55M14S
+thumb: "/assets/episode-thumbs/nosen-hundreds-2022-paul-ogier-nora-serres-og-lopsarrang-e23b515f5f.webp"
 ---

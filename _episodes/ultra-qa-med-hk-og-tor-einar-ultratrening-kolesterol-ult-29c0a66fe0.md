@@ -11,4 +11,5 @@ og_type: article
 date: '2022-05-28T05:41:17Z'
 duration: '2:56:32'
 duration_iso8601: PT2H56M32S
+thumb: "/assets/episode-thumbs/ultra-qa-med-hk-og-tor-einar-ultratrening-kolesterol-ult-29c0a66fe0.webp"
 ---

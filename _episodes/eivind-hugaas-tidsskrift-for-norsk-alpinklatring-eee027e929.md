@@ -10,4 +10,5 @@ og_type: article
 date: '2023-07-27T05:00:02Z'
 duration: '2:09:02'
 duration_iso8601: PT2H9M2S
+thumb: "/assets/episode-thumbs/eivind-hugaas-tidsskrift-for-norsk-alpinklatring-eee027e929.webp"
 ---

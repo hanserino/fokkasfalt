@@ -11,4 +11,5 @@ og_type: article
 date: '2023-11-23T05:00:02Z'
 duration: '2:53:11'
 duration_iso8601: PT2H53M11S
+thumb: "/assets/episode-thumbs/jake-catterall-running-europe-north-to-south-hadi-aklagh-6826598f28.webp"
 ---

@@ -10,4 +10,5 @@ og_type: article
 date: '2025-06-12T03:00:04Z'
 duration: '2:11:08'
 duration_iso8601: PT2H11M8S
+thumb: "/assets/episode-thumbs/petr-pavlek-skal-lope-norge-pa-langs-clean-style-og-lage-e358982213.webp"
 ---

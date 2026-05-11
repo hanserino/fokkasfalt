@@ -10,4 +10,5 @@ og_type: article
 date: '2025-11-13T04:00:04Z'
 duration: '1:55:09'
 duration_iso8601: PT1H55M9S
+thumb: "/assets/episode-thumbs/shangave-shanga-balendran-05cfa1f5eb.webp"
 ---

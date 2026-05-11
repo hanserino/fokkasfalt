@@ -8,4 +8,5 @@ og_type: article
 date: '2025-03-19T05:54:18Z'
 duration: '37:33'
 duration_iso8601: PT37M33S
+thumb: "/assets/episode-thumbs/obt-2025-portrett-20-gro-siljan-hjukse-9d683203f0.webp"
 ---

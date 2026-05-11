@@ -10,4 +10,5 @@ og_type: article
 date: '2021-08-12T05:01:00Z'
 duration: '1:52:59'
 duration_iso8601: PT1H52M59S
+thumb: "/assets/episode-thumbs/85-didrik-hermansen-skader-comeback-2018-intervjuet-oldi-db503eb103.webp"
 ---

@@ -8,4 +8,5 @@ og_type: article
 date: '2026-01-08T04:00:03Z'
 duration: '40:32'
 duration_iso8601: PT40M32S
+thumb: "/assets/episode-thumbs/road-to-states-5-it-aint-over-til-its-over-99c56adf2e.webp"
 ---

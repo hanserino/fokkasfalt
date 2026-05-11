@@ -11,4 +11,5 @@ og_type: article
 date: '2021-07-03T05:00:02Z'
 duration: '5:00:01'
 duration_iso8601: PT5H0M1S
+thumb: "/assets/episode-thumbs/mr-pimp-lotion-nesepusting-loping-fasting-carnivore-wim-ebe99dc2f3.webp"
 ---

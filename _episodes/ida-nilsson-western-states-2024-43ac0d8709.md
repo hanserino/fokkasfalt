@@ -10,4 +10,5 @@ og_type: article
 date: '2024-07-31T03:00:02Z'
 duration: '38:57'
 duration_iso8601: PT38M57S
+thumb: "/assets/episode-thumbs/ida-nilsson-western-states-2024-43ac0d8709.webp"
 ---

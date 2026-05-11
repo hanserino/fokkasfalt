@@ -10,4 +10,5 @@ og_type: article
 date: '2020-10-30T07:28:59Z'
 duration: '2:19:27'
 duration_iso8601: PT2H19M27S
+thumb: "/assets/episode-thumbs/sindre-kolbjornsgard-eventyrer-fotograf-og-filmskaper-836d55335f.webp"
 ---

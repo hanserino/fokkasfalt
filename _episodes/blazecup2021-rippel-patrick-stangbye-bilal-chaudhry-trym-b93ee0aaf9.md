@@ -10,4 +10,5 @@ og_type: article
 date: '2021-04-24T05:01:00Z'
 duration: '2:00:40'
 duration_iso8601: PT2H0M40S
+thumb: "/assets/episode-thumbs/blazecup2021-rippel-patrick-stangbye-bilal-chaudhry-trym-b93ee0aaf9.webp"
 ---

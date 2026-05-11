@@ -10,4 +10,5 @@ og_type: article
 date: '2021-06-09T05:07:57Z'
 duration: '1:44:00'
 duration_iso8601: PT1H44M
+thumb: "/assets/episode-thumbs/39-bislett-24-timers-2018-stemningsrapport-og-intervjuer-af16cc71bf.webp"
 ---

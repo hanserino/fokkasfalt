@@ -11,4 +11,5 @@ og_type: article
 date: '2021-12-08T11:00:29Z'
 duration: '1:21:40'
 duration_iso8601: PT1H21M40S
+thumb: "/assets/episode-thumbs/dylan-bowman-pyllarsfreetrail-hardrock-100-grand-raid-ba-a017c637c9.webp"
 ---

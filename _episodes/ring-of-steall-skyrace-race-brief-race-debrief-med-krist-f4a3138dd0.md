@@ -10,4 +10,5 @@ og_type: article
 date: '2018-09-17T14:27:39Z'
 duration: '24:53'
 duration_iso8601: PT24M53S
+thumb: "/assets/episode-thumbs/ring-of-steall-skyrace-race-brief-race-debrief-med-krist-f4a3138dd0.webp"
 ---

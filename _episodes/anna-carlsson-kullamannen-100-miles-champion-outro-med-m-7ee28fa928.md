@@ -10,4 +10,5 @@ og_type: article
 date: '2021-11-10T10:56:18Z'
 duration: '1:36:23'
 duration_iso8601: PT1H36M23S
+thumb: "/assets/episode-thumbs/anna-carlsson-kullamannen-100-miles-champion-outro-med-m-7ee28fa928.webp"
 ---

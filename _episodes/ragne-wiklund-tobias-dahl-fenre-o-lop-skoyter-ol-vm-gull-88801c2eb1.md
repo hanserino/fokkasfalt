@@ -11,4 +11,5 @@ og_type: article
 date: '2022-01-06T12:37:20Z'
 duration: '1:32:34'
 duration_iso8601: PT1H32M34S
+thumb: "/assets/episode-thumbs/ragne-wiklund-tobias-dahl-fenre-o-lop-skoyter-ol-vm-gull-88801c2eb1.webp"
 ---

@@ -9,4 +9,5 @@ og_type: article
 date: '2024-09-05T03:00:03Z'
 duration: '1:19:46'
 duration_iso8601: PT1H19M46S
+thumb: "/assets/episode-thumbs/kenneth-dahlen-utmb-2024-lopsrapport-occ-dnf-rapport-av-e5937976ae.webp"
 ---

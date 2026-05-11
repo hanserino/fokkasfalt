@@ -10,4 +10,5 @@ og_type: article
 date: '2026-05-07T03:00:08Z'
 duration: '1:17:05'
 duration_iso8601: PT1H17M5S
+thumb: "/assets/episode-thumbs/thimmy-klaassen-bli-kjent-med-en-fokk-asfalter-015-27594ff549.webp"
 ---

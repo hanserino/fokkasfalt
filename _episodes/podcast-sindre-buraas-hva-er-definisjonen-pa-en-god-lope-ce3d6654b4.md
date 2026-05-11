@@ -10,4 +10,5 @@ og_type: article
 date: '2020-07-03T15:20:41Z'
 duration: '1:30:50'
 duration_iso8601: PT1H30M50S
+thumb: "/assets/episode-thumbs/podcast-sindre-buraas-hva-er-definisjonen-pa-en-god-lope-ce3d6654b4.webp"
 ---

@@ -10,4 +10,5 @@ og_type: article
 date: '2022-12-10T06:05:29Z'
 duration: '1:16:02'
 duration_iso8601: PT1H16M2S
+thumb: "/assets/episode-thumbs/anders-ponny-kjarevik-livet-i-et-hamsterhjul-og-trykkamm-9ddc663ba6.webp"
 ---

@@ -11,4 +11,5 @@ og_type: article
 date: '2023-08-09T08:47:08Z'
 duration: '36:16'
 duration_iso8601: PT36M16S
+thumb: "/assets/episode-thumbs/stranda-fjord-trail-race-2023-race-brief-oscar-almgren-m-4079ad12db.webp"
 ---

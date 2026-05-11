@@ -11,4 +11,5 @@ og_type: article
 date: '2023-07-06T04:30:01Z'
 duration: '1:48:26'
 duration_iso8601: PT1H48M26S
+thumb: "/assets/episode-thumbs/thomas-stordalen-finn-isaksen-tom-erik-halvorsen-5-ultra-3ae84ef990.webp"
 ---

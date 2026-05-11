@@ -10,4 +10,5 @@ og_type: article
 date: '2018-11-15T15:50:16Z'
 duration: '0:41'
 duration_iso8601: PT41S
+thumb: "/assets/episode-thumbs/new-intro-ill-let-you-decide-01f8e110de.webp"
 ---

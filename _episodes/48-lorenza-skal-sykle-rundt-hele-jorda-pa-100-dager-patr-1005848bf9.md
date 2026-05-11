@@ -11,4 +11,5 @@ og_type: article
 date: '2019-03-22T09:40:47Z'
 duration: '2:57:12'
 duration_iso8601: PT2H57M12S
+thumb: "/assets/episode-thumbs/48-lorenza-skal-sykle-rundt-hele-jorda-pa-100-dager-patr-1005848bf9.webp"
 ---

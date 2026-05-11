@@ -10,4 +10,5 @@ og_type: article
 date: '2020-06-25T10:49:07Z'
 duration: '1:29:25'
 duration_iso8601: PT1H29M25S
+thumb: "/assets/episode-thumbs/podcast-trym-nilsen-livet-pa-fire-hjul-vanlife-loping-bl-e819cc88fb.webp"
 ---

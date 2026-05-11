@@ -10,4 +10,5 @@ og_type: article
 date: '2020-09-16T08:05:17Z'
 duration: '1:49:20'
 duration_iso8601: PT1H49M20S
+thumb: "/assets/episode-thumbs/leif-harry-hansen-skoyte-eventyret-bad4933fe3.webp"
 ---

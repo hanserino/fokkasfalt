@@ -10,4 +10,5 @@ og_type: article
 date: '2018-10-13T09:01:00Z'
 duration: '13:06'
 duration_iso8601: PT13M6S
+thumb: "/assets/episode-thumbs/rambling-pa-gardermoen-ref-intro-episode-33-99c49f7f5a.webp"
 ---

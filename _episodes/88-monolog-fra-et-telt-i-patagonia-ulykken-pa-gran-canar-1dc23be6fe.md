@@ -11,4 +11,5 @@ og_type: article
 date: '2021-09-08T05:00:03Z'
 duration: '1:29:32'
 duration_iso8601: PT1H29M32S
+thumb: "/assets/episode-thumbs/88-monolog-fra-et-telt-i-patagonia-ulykken-pa-gran-canar-1dc23be6fe.webp"
 ---

@@ -10,4 +10,5 @@ og_type: article
 date: '2020-06-23T20:07:41Z'
 duration: '1:29:10'
 duration_iso8601: PT1H29M10S
+thumb: "/assets/episode-thumbs/podcast-smve-2020-stemningsrapport-og-intervjuer-med-noe-473ac08594.webp"
 ---

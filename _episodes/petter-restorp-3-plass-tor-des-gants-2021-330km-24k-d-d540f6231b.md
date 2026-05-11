@@ -10,4 +10,5 @@ og_type: article
 date: '2021-09-24T06:40:55Z'
 duration: '59:39'
 duration_iso8601: PT59M39S
+thumb: "/assets/episode-thumbs/petter-restorp-3-plass-tor-des-gants-2021-330km-24k-d-d540f6231b.webp"
 ---

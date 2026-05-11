@@ -7,4 +7,5 @@ og_type: article
 date: '2025-02-19T04:01:01Z'
 duration: '23:32'
 duration_iso8601: PT23M32S
+thumb: "/assets/episode-thumbs/obt-2025-portrett-11-lars-erik-nystuen-9839a1d41d.webp"
 ---

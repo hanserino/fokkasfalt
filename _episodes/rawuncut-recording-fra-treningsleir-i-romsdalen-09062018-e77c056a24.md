@@ -10,4 +10,5 @@ og_type: article
 date: '2018-06-19T06:37:03Z'
 duration: '37:48'
 duration_iso8601: PT37M48S
+thumb: "/assets/episode-thumbs/rawuncut-recording-fra-treningsleir-i-romsdalen-09062018-e77c056a24.webp"
 ---

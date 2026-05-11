@@ -11,4 +11,5 @@ og_type: article
 date: '2019-07-12T08:45:56Z'
 duration: '1:31:10'
 duration_iso8601: PT1H31M10S
+thumb: "/assets/episode-thumbs/english-episode-63-seana-forbes-press-and-media-relation-8564b92e5e.webp"
 ---

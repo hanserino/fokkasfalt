@@ -10,4 +10,5 @@ og_type: article
 date: '2020-08-17T09:06:37Z'
 duration: '59:33'
 duration_iso8601: PT59M33S
+thumb: "/assets/episode-thumbs/molly-bazilchuk-vinneren-av-rondane-100-9b38d14b39.webp"
 ---

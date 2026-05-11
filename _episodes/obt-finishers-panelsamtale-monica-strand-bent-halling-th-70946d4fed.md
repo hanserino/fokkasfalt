@@ -9,4 +9,5 @@ og_type: article
 date: '2026-03-26T04:02:00Z'
 duration: '31:39'
 duration_iso8601: PT31M39S
+thumb: "/assets/episode-thumbs/obt-finishers-panelsamtale-monica-strand-bent-halling-th-70946d4fed.webp"
 ---

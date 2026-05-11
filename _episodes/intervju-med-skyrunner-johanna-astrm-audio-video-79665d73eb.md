@@ -10,4 +10,5 @@ og_type: article
 date: '2020-03-25T07:06:08Z'
 duration: '45:08'
 duration_iso8601: PT45M8S
+thumb: "/assets/episode-thumbs/intervju-med-skyrunner-johanna-astrm-audio-video-79665d73eb.webp"
 ---

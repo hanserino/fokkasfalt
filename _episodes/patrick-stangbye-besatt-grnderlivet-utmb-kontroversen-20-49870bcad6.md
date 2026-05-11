@@ -10,4 +10,5 @@ og_type: article
 date: '2024-02-08T04:00:01Z'
 duration: '1:38:56'
 duration_iso8601: PT1H38M56S
+thumb: "/assets/episode-thumbs/patrick-stangbye-besatt-grnderlivet-utmb-kontroversen-20-49870bcad6.webp"
 ---

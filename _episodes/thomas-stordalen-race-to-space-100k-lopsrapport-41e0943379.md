@@ -10,4 +10,5 @@ og_type: article
 date: '2026-01-15T04:33:15Z'
 duration: '1:39:30'
 duration_iso8601: PT1H39M30S
+thumb: "/assets/episode-thumbs/thomas-stordalen-race-to-space-100k-lopsrapport-41e0943379.webp"
 ---

@@ -10,4 +10,5 @@ og_type: article
 date: '2019-01-24T06:40:26Z'
 duration: '37:28'
 duration_iso8601: PT37M28S
+thumb: "/assets/episode-thumbs/early-access-lopende-intervju-med-sondre-amdahl-pa-gran-f9f93f257c.webp"
 ---

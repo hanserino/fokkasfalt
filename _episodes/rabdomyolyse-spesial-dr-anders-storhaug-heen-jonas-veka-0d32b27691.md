@@ -10,4 +10,5 @@ og_type: article
 date: '2024-01-25T04:00:02Z'
 duration: '1:55:51'
 duration_iso8601: PT1H55M51S
+thumb: "/assets/episode-thumbs/rabdomyolyse-spesial-dr-anders-storhaug-heen-jonas-veka-0d32b27691.webp"
 ---

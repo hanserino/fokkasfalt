@@ -10,4 +10,5 @@ og_type: article
 date: '2021-06-16T05:00:03Z'
 duration: '1:13:34'
 duration_iso8601: PT1H13M34S
+thumb: "/assets/episode-thumbs/69-ccc-2019-sky-blazers-crushing-it-oldie-but-goodie-92dc769fca.webp"
 ---

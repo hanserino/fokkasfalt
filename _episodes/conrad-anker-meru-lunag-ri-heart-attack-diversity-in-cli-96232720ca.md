@@ -11,4 +11,5 @@ og_type: article
 date: '2022-03-09T05:52:14Z'
 duration: '1:23:34'
 duration_iso8601: PT1H23M34S
+thumb: "/assets/episode-thumbs/conrad-anker-meru-lunag-ri-heart-attack-diversity-in-cli-96232720ca.webp"
 ---

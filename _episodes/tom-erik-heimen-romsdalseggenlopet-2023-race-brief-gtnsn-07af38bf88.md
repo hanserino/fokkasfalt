@@ -10,4 +10,5 @@ og_type: article
 date: '2023-08-17T04:37:51Z'
 duration: '49:24'
 duration_iso8601: PT49M24S
+thumb: "/assets/episode-thumbs/tom-erik-heimen-romsdalseggenlopet-2023-race-brief-gtnsn-07af38bf88.webp"
 ---

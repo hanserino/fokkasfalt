@@ -10,4 +10,5 @@ og_type: article
 date: '2024-06-26T03:06:30Z'
 duration: '17:49'
 duration_iso8601: PT17M49S
+thumb: "/assets/episode-thumbs/tim-tollefson-dokumentarfilm-intervju-7c7f57a0a6.webp"
 ---

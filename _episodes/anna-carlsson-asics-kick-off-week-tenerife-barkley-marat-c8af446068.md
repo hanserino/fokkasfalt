@@ -10,4 +10,5 @@ og_type: article
 date: '2022-02-28T12:24:02Z'
 duration: '1:11:48'
 duration_iso8601: PT1H11M48S
+thumb: "/assets/episode-thumbs/anna-carlsson-asics-kick-off-week-tenerife-barkley-marat-c8af446068.webp"
 ---

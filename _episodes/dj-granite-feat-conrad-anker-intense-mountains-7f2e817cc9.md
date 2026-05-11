@@ -10,4 +10,5 @@ og_type: article
 date: '2022-03-27T05:45:04Z'
 duration: '8:42'
 duration_iso8601: PT8M42S
+thumb: "/assets/episode-thumbs/dj-granite-feat-conrad-anker-intense-mountains-7f2e817cc9.webp"
 ---

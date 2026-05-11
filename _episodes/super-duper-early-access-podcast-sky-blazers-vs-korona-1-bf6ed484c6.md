@@ -10,4 +10,5 @@ og_type: article
 date: '2020-03-21T07:52:06Z'
 duration: '1:15:39'
 duration_iso8601: PT1H15M39S
+thumb: "/assets/episode-thumbs/super-duper-early-access-podcast-sky-blazers-vs-korona-1-bf6ed484c6.webp"
 ---

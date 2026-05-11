@@ -10,4 +10,5 @@ og_type: article
 date: '2020-08-21T06:51:49Z'
 duration: '1:39:18'
 duration_iso8601: PT1H39M18S
+thumb: "/assets/episode-thumbs/kenneth-melin-grodahl-skoyteloper-mellomdistanseloper-fa-3e55734599.webp"
 ---

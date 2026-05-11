@@ -10,4 +10,5 @@ og_type: article
 date: '2024-07-18T03:00:04Z'
 duration: '55:16'
 duration_iso8601: PT55M16S
+thumb: "/assets/episode-thumbs/petter-engdahl-western-states-2024-ad755a522c.webp"
 ---

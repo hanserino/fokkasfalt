@@ -9,4 +9,5 @@ og_type: article
 date: '2024-09-17T09:24:05Z'
 duration: '37:17'
 duration_iso8601: PT37M17S
+thumb: "/assets/episode-thumbs/jon-albon-wildstrubel-50k-35k-champion-d74ebc6564.webp"
 ---

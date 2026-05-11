@@ -10,4 +10,5 @@ og_type: article
 date: '2020-11-09T08:52:36Z'
 duration: '2:10:21'
 duration_iso8601: PT2H10M21S
+thumb: "/assets/episode-thumbs/olav-engen-optimistgammeln-70a96a6a67.webp"
 ---

@@ -11,4 +11,5 @@ og_type: article
 date: '2022-10-19T04:41:59Z'
 duration: '58:14'
 duration_iso8601: PT58M14S
+thumb: "/assets/episode-thumbs/krister-kopala-fri-flyt-film-tour-splitboard-vs-rando-ji-9b6ee18002.webp"
 ---

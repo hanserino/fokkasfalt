@@ -10,4 +10,5 @@ og_type: article
 date: '2019-02-05T05:15:11Z'
 duration: '5:33:35'
 duration_iso8601: PT5H33M35S
+thumb: "/assets/episode-thumbs/episode-44-amir-har-gjort-noe-helt-sjukt-559995986b.webp"
 ---

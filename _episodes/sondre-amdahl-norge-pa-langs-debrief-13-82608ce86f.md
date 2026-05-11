@@ -10,4 +10,5 @@ og_type: article
 date: '2021-08-05T05:00:02Z'
 duration: '36:17'
 duration_iso8601: PT36M17S
+thumb: "/assets/episode-thumbs/sondre-amdahl-norge-pa-langs-debrief-13-82608ce86f.webp"
 ---

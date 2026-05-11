@@ -8,4 +8,5 @@ og_type: article
 date: '2026-02-19T04:00:04Z'
 duration: '36:23'
 duration_iso8601: PT36M23S
+thumb: "/assets/episode-thumbs/road-to-states-6-surgery-knee-update-tgc-training-rebran-95a36f1688.webp"
 ---

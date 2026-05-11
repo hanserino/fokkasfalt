@@ -10,4 +10,5 @@ og_type: article
 date: '2021-01-22T06:34:02Z'
 duration: '1:12:39'
 duration_iso8601: PT1H12M39S
+thumb: "/assets/episode-thumbs/kenneth-dahlen-24-timer-i-en-bunker-pa-rena-38b3a7d932.webp"
 ---

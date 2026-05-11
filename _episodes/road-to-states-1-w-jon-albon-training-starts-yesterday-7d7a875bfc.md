@@ -9,4 +9,5 @@ og_type: article
 date: '2025-12-04T04:00:04Z'
 duration: '1:02:31'
 duration_iso8601: PT1H2M31S
+thumb: "/assets/episode-thumbs/road-to-states-1-w-jon-albon-training-starts-yesterday-7d7a875bfc.webp"
 ---

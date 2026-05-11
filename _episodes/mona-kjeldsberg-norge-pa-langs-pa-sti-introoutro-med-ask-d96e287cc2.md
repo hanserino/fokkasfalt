@@ -10,4 +10,5 @@ og_type: article
 date: '2023-03-02T05:00:02Z'
 duration: '2:15:14'
 duration_iso8601: PT2H15M14S
+thumb: "/assets/episode-thumbs/mona-kjeldsberg-norge-pa-langs-pa-sti-introoutro-med-ask-d96e287cc2.webp"
 ---

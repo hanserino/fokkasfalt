@@ -10,4 +10,5 @@ og_type: article
 date: '2021-04-27T05:19:37Z'
 duration: '46:26'
 duration_iso8601: PT46M26S
+thumb: "/assets/episode-thumbs/jon-kristian-rydningen-klimabroletno-bak-kulissene-snikk-9c59188264.webp"
 ---

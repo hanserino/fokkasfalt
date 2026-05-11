@@ -10,4 +10,5 @@ og_type: article
 date: '2023-01-12T07:37:56Z'
 duration: '1:11:52'
 duration_iso8601: PT1H11M52S
+thumb: "/assets/episode-thumbs/fokk-asfalt-kahoot-e9c2aa8510.webp"
 ---

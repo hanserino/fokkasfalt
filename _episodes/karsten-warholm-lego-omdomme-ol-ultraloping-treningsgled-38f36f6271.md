@@ -11,4 +11,5 @@ og_type: article
 date: '2021-04-07T04:47:26Z'
 duration: '1:45:39'
 duration_iso8601: PT1H45M39S
+thumb: "/assets/episode-thumbs/karsten-warholm-lego-omdomme-ol-ultraloping-treningsgled-38f36f6271.webp"
 ---

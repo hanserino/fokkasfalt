@@ -10,4 +10,5 @@ og_type: article
 date: '2023-05-04T04:00:02Z'
 duration: '1:04:26'
 duration_iso8601: PT1H4M26S
+thumb: "/assets/episode-thumbs/heidi-bye-svartangen-bikkje-loping-3-dbe14c547d.webp"
 ---

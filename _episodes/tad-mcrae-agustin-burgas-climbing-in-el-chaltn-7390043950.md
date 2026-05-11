@@ -10,4 +10,5 @@ og_type: article
 date: '2020-03-02T18:09:09Z'
 duration: '1:02:37'
 duration_iso8601: PT1H2M37S
+thumb: "/assets/episode-thumbs/tad-mcrae-agustin-burgas-climbing-in-el-chaltn-7390043950.webp"
 ---

@@ -10,4 +10,5 @@ og_type: article
 date: '2024-01-11T04:00:03Z'
 duration: '1:20:41'
 duration_iso8601: PT1H20M41S
+thumb: "/assets/episode-thumbs/vegard-breie-norges-mest-stoka-ekstremsportfotograf-9149ef988a.webp"
 ---

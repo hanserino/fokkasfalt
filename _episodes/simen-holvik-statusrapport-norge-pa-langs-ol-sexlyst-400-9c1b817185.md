@@ -11,4 +11,5 @@ og_type: article
 date: '2021-05-01T05:00:04Z'
 duration: '1:43:38'
 duration_iso8601: PT1H43M38S
+thumb: "/assets/episode-thumbs/simen-holvik-statusrapport-norge-pa-langs-ol-sexlyst-400-9c1b817185.webp"
 ---

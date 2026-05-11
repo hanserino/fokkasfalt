@@ -8,4 +8,5 @@ og_type: article
 date: '2025-12-22T04:00:02Z'
 duration: '27:02'
 duration_iso8601: PT27M2S
+thumb: "/assets/episode-thumbs/road-to-states-4-there-will-be-consequences-dd54088f98.webp"
 ---

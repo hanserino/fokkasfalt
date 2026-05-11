@@ -10,4 +10,5 @@ og_type: article
 date: '2020-07-05T14:25:32Z'
 duration: '2:08:57'
 duration_iso8601: PT2H8M57S
+thumb: "/assets/episode-thumbs/unni-dahl-ottesen-om-ultraloping-ultrasvomming-triatlon-f40e92741f.webp"
 ---

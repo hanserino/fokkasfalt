@@ -10,4 +10,5 @@ og_type: article
 date: '2025-08-06T03:00:04Z'
 duration: '2:08:18'
 duration_iso8601: PT2H8M18S
+thumb: "/assets/episode-thumbs/askild-vatnbakk-larsen-ranking-av-intervensjoner-5f7fde065f.webp"
 ---

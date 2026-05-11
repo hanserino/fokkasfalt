@@ -10,4 +10,5 @@ og_type: article
 date: '2018-07-14T10:51:45Z'
 duration: '52:40'
 duration_iso8601: PT52M40S
+thumb: "/assets/episode-thumbs/sti-podden-episode-2-tyler-jones-buns-of-steel-896f97f01a.webp"
 ---

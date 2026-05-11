@@ -11,4 +11,5 @@ og_type: article
 date: '2024-04-11T03:00:03Z'
 duration: '2:02:41'
 duration_iso8601: PT2H2M41S
+thumb: "/assets/episode-thumbs/pop-up-runs-2024-intervju-med-samtlige-lopsarrangorer-in-282485aca7.webp"
 ---

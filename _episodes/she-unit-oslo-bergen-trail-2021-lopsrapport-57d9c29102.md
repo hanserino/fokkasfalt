@@ -10,4 +10,5 @@ og_type: article
 date: '2021-08-14T05:00:03Z'
 duration: '1:39:21'
 duration_iso8601: PT1H39M21S
+thumb: "/assets/episode-thumbs/she-unit-oslo-bergen-trail-2021-lopsrapport-57d9c29102.webp"
 ---

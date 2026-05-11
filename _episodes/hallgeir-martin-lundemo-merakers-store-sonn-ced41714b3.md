@@ -10,4 +10,5 @@ og_type: article
 date: '2025-07-23T03:00:03Z'
 duration: '2:00:55'
 duration_iso8601: PT2H0M55S
+thumb: "/assets/episode-thumbs/hallgeir-martin-lundemo-merakers-store-sonn-ced41714b3.webp"
 ---

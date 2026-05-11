@@ -10,4 +10,5 @@ og_type: article
 date: '2025-04-10T03:00:02Z'
 duration: '1:28:09'
 duration_iso8601: PT1H28M9S
+thumb: "/assets/episode-thumbs/harald-bjerke-ekeberg-backyard-obt-lavkarbo-atlaskorrige-0206ca274f.webp"
 ---

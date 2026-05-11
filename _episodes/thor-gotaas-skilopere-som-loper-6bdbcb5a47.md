@@ -10,4 +10,5 @@ og_type: article
 date: '2021-05-29T05:00:02Z'
 duration: '1:42:20'
 duration_iso8601: PT1H42M20S
+thumb: "/assets/episode-thumbs/thor-gotaas-skilopere-som-loper-6bdbcb5a47.webp"
 ---

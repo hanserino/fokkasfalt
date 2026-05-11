@@ -10,4 +10,5 @@ og_type: article
 date: '2025-10-09T03:00:04Z'
 duration: '1:11:12'
 duration_iso8601: PT1H11M12S
+thumb: "/assets/episode-thumbs/eivind-svellingen-t-11-dager-for-bigs-backyard-ultra-202-c569e2dfac.webp"
 ---

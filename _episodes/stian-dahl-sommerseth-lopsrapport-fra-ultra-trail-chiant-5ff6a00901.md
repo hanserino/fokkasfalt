@@ -10,4 +10,5 @@ og_type: article
 date: '2025-03-24T11:45:11Z'
 duration: '49:09'
 duration_iso8601: PT49M9S
+thumb: "/assets/episode-thumbs/stian-dahl-sommerseth-lopsrapport-fra-ultra-trail-chiant-5ff6a00901.webp"
 ---

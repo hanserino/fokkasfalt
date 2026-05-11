@@ -11,4 +11,5 @@ og_type: article
 date: '2021-10-20T04:51:45Z'
 duration: '1:23:40'
 duration_iso8601: PT1H23M40S
+thumb: "/assets/episode-thumbs/145-golden-trail-world-series-finale-stian-angermund-and-83886b0cb8.webp"
 ---

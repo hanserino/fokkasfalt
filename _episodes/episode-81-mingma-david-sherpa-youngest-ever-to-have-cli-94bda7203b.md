@@ -11,4 +11,5 @@ og_type: article
 date: '2019-12-18T19:42:31Z'
 duration: '1:42:43'
 duration_iso8601: PT1H42M43S
+thumb: "/assets/episode-thumbs/episode-81-mingma-david-sherpa-youngest-ever-to-have-cli-94bda7203b.webp"
 ---

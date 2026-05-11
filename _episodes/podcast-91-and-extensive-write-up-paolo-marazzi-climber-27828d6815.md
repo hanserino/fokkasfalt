@@ -10,4 +10,5 @@ og_type: article
 date: '2020-03-17T11:15:16Z'
 duration: '1:16:10'
 duration_iso8601: PT1H16M10S
+thumb: "/assets/episode-thumbs/podcast-91-and-extensive-write-up-paolo-marazzi-climber-27828d6815.webp"
 ---

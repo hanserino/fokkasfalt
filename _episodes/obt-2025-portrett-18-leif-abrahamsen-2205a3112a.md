@@ -7,4 +7,5 @@ og_type: article
 date: '2025-03-06T04:00:05Z'
 duration: '36:19'
 duration_iso8601: PT36M19S
+thumb: "/assets/episode-thumbs/obt-2025-portrett-18-leif-abrahamsen-2205a3112a.webp"
 ---

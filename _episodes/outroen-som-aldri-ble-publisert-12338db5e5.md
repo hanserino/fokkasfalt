@@ -10,4 +10,5 @@ og_type: article
 date: '2020-01-14T14:16:08Z'
 duration: '15:48'
 duration_iso8601: PT15M48S
+thumb: "/assets/episode-thumbs/outroen-som-aldri-ble-publisert-12338db5e5.webp"
 ---

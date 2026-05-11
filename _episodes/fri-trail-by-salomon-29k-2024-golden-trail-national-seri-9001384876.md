@@ -10,4 +10,5 @@ og_type: article
 date: '2024-09-25T06:17:45Z'
 duration: '1:05:57'
 duration_iso8601: PT1H5M57S
+thumb: "/assets/episode-thumbs/fri-trail-by-salomon-29k-2024-golden-trail-national-seri-9001384876.webp"
 ---

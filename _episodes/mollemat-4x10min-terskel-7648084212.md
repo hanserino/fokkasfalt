@@ -10,4 +10,5 @@ og_type: article
 date: '2020-09-22T14:59:54Z'
 duration: '1:13:34'
 duration_iso8601: PT1H13M34S
+thumb: "/assets/episode-thumbs/mollemat-4x10min-terskel-7648084212.webp"
 ---

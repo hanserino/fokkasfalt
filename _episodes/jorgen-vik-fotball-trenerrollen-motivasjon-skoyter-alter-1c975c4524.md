@@ -10,4 +10,5 @@ og_type: article
 date: '2020-10-07T06:09:25Z'
 duration: '1:27:25'
 duration_iso8601: PT1H27M25S
+thumb: "/assets/episode-thumbs/jorgen-vik-fotball-trenerrollen-motivasjon-skoyter-alter-1c975c4524.webp"
 ---

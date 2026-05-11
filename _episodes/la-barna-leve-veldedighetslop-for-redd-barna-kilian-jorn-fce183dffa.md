@@ -12,4 +12,5 @@ og_type: article
 date: '2023-11-14T07:10:57Z'
 duration: '1:30:56'
 duration_iso8601: PT1H30M56S
+thumb: "/assets/episode-thumbs/la-barna-leve-veldedighetslop-for-redd-barna-kilian-jorn-fce183dffa.webp"
 ---

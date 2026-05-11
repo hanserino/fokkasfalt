@@ -11,4 +11,5 @@ og_type: article
 date: '2026-03-12T06:53:17Z'
 duration: '1:10:00'
 duration_iso8601: PT1H10M
+thumb: "/assets/episode-thumbs/mona-kjeldsberg-ultra-seminar-pa-jessheim-oslo-bergen-tr-dbd7ec4c78.webp"
 ---

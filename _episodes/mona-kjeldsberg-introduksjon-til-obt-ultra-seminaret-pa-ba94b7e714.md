@@ -11,4 +11,5 @@ og_type: article
 date: '2026-03-20T10:30:56Z'
 duration: '20:13'
 duration_iso8601: PT20M13S
+thumb: "/assets/episode-thumbs/mona-kjeldsberg-introduksjon-til-obt-ultra-seminaret-pa-ba94b7e714.webp"
 ---

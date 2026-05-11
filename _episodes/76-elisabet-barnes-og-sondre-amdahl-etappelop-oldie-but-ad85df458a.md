@@ -10,4 +10,5 @@ og_type: article
 date: '2021-08-04T05:00:02Z'
 duration: '1:42:39'
 duration_iso8601: PT1H42M39S
+thumb: "/assets/episode-thumbs/76-elisabet-barnes-og-sondre-amdahl-etappelop-oldie-but-ad85df458a.webp"
 ---

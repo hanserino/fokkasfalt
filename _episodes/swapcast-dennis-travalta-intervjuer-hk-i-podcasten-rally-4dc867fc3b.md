@@ -10,4 +10,5 @@ og_type: article
 date: '2023-10-02T16:07:43Z'
 duration: '1:53:22'
 duration_iso8601: PT1H53M22S
+thumb: "/assets/episode-thumbs/swapcast-dennis-travalta-intervjuer-hk-i-podcasten-rally-4dc867fc3b.webp"
 ---

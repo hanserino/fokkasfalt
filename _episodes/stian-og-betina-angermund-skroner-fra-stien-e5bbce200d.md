@@ -10,4 +10,5 @@ og_type: article
 date: '2020-07-30T10:53:45Z'
 duration: '54:59'
 duration_iso8601: PT54M59S
+thumb: "/assets/episode-thumbs/stian-og-betina-angermund-skroner-fra-stien-e5bbce200d.webp"
 ---

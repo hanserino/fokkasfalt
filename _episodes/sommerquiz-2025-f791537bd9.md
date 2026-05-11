@@ -8,4 +8,5 @@ og_type: article
 date: '2025-07-09T03:00:03Z'
 duration: '1:37:40'
 duration_iso8601: PT1H37M40S
+thumb: "/assets/episode-thumbs/sommerquiz-2025-f791537bd9.webp"
 ---

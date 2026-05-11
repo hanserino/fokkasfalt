@@ -10,4 +10,5 @@ og_type: article
 date: '2018-09-05T08:53:02Z'
 duration: '1:28:45'
 duration_iso8601: PT1H28M45S
+thumb: "/assets/episode-thumbs/patrick-stangbye-og-hk-oppsummerer-utmb-2018-for-deg-298aacdbed.webp"
 ---

@@ -10,4 +10,5 @@ og_type: article
 date: '2018-08-14T09:16:12Z'
 duration: '59:17'
 duration_iso8601: PT59M17S
+thumb: "/assets/episode-thumbs/patreon-exclusive-jotunheimstien-fkt-ernaringssnakk-02c1424284.webp"
 ---

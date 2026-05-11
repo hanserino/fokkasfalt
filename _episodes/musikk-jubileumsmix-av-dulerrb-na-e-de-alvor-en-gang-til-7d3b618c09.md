@@ -10,4 +10,5 @@ og_type: article
 date: '2020-05-27T07:47:57Z'
 duration: '2:13:49'
 duration_iso8601: PT2H13M49S
+thumb: "/assets/episode-thumbs/musikk-jubileumsmix-av-dulerrb-na-e-de-alvor-en-gang-til-7d3b618c09.webp"
 ---

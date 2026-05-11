@@ -11,4 +11,5 @@ og_type: article
 date: '2024-04-18T03:00:03Z'
 duration: '1:11:24'
 duration_iso8601: PT1H11M24S
+thumb: "/assets/episode-thumbs/marius-brevik-nye-naerdetalvorno-oslo-bergen-trail-2025-068b463aa5.webp"
 ---

@@ -10,4 +10,5 @@ og_type: article
 date: '2021-07-29T06:53:52Z'
 duration: '53:52'
 duration_iso8601: PT53M52S
+thumb: "/assets/episode-thumbs/72-stian-angermund-occ-2019-champion-oldie-but-goodie-544bfdd646.webp"
 ---

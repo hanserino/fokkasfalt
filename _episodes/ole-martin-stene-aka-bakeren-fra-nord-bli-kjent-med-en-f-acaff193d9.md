@@ -9,4 +9,5 @@ og_type: article
 date: '2025-09-11T03:00:06Z'
 duration: '45:04'
 duration_iso8601: PT45M4S
+thumb: "/assets/episode-thumbs/ole-martin-stene-aka-bakeren-fra-nord-bli-kjent-med-en-f-acaff193d9.webp"
 ---

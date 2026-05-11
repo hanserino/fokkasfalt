@@ -10,4 +10,5 @@ og_type: article
 date: '2025-06-24T03:49:35Z'
 duration: '2:31:29'
 duration_iso8601: PT2H31M29S
+thumb: "/assets/episode-thumbs/jonas-20-western-states-2025-preview-feb152781c.webp"
 ---

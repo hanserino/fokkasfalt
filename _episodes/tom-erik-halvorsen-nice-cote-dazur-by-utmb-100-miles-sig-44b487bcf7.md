@@ -11,4 +11,5 @@ og_type: article
 date: '2023-10-19T04:30:00Z'
 duration: '2:13:22'
 duration_iso8601: PT2H13M22S
+thumb: "/assets/episode-thumbs/tom-erik-halvorsen-nice-cote-dazur-by-utmb-100-miles-sig-44b487bcf7.webp"
 ---

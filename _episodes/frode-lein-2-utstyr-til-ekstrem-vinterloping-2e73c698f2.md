@@ -10,4 +10,5 @@ og_type: article
 date: '2024-02-22T04:00:02Z'
 duration: '3:44:22'
 duration_iso8601: PT3H44M22S
+thumb: "/assets/episode-thumbs/frode-lein-2-utstyr-til-ekstrem-vinterloping-2e73c698f2.webp"
 ---

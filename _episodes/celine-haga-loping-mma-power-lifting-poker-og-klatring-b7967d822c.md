@@ -10,4 +10,5 @@ og_type: article
 date: '2020-10-26T07:32:58Z'
 duration: '1:37:20'
 duration_iso8601: PT1H37M20S
+thumb: "/assets/episode-thumbs/celine-haga-loping-mma-power-lifting-poker-og-klatring-b7967d822c.webp"
 ---

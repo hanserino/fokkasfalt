@@ -10,4 +10,5 @@ og_type: article
 date: '2023-08-24T04:08:34Z'
 duration: '1:21:23'
 duration_iso8601: PT1H21M23S
+thumb: "/assets/episode-thumbs/stian-dahl-sommerseth-utmb-2023-preview-605032d32a.webp"
 ---

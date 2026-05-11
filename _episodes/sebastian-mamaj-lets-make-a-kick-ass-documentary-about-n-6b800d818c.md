@@ -11,4 +11,5 @@ og_type: article
 date: '2021-03-20T07:00:02Z'
 duration: '56:56'
 duration_iso8601: PT56M56S
+thumb: "/assets/episode-thumbs/sebastian-mamaj-lets-make-a-kick-ass-documentary-about-n-6b800d818c.webp"
 ---

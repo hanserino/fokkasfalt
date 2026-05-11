@@ -11,4 +11,5 @@ og_type: article
 date: '2021-06-26T05:01:00Z'
 duration: '1:13:04'
 duration_iso8601: PT1H13M4S
+thumb: "/assets/episode-thumbs/clubhouse-session-23062021-tobias-dahl-fenre-simen-holvi-2063c02676.webp"
 ---

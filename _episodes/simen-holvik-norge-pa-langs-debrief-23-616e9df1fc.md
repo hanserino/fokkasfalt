@@ -10,4 +10,5 @@ og_type: article
 date: '2021-08-07T05:01:00Z'
 duration: '2:34:07'
 duration_iso8601: PT2H34M7S
+thumb: "/assets/episode-thumbs/simen-holvik-norge-pa-langs-debrief-23-616e9df1fc.webp"
 ---

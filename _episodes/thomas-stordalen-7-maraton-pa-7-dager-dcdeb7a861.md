@@ -10,4 +10,5 @@ og_type: article
 date: '2020-08-25T07:04:55Z'
 duration: '1:48:49'
 duration_iso8601: PT1H48M49S
+thumb: "/assets/episode-thumbs/thomas-stordalen-7-maraton-pa-7-dager-dcdeb7a861.webp"
 ---

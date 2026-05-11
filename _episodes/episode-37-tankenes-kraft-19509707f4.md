@@ -10,4 +10,5 @@ og_type: article
 date: '2018-11-10T08:18:00Z'
 duration: '2:14:11'
 duration_iso8601: PT2H14M11S
+thumb: "/assets/episode-thumbs/episode-37-tankenes-kraft-19509707f4.webp"
 ---

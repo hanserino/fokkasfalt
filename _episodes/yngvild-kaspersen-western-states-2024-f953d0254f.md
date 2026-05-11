@@ -9,4 +9,5 @@ og_type: article
 date: '2024-07-09T12:02:10Z'
 duration: '33:01'
 duration_iso8601: PT33M1S
+thumb: "/assets/episode-thumbs/yngvild-kaspersen-western-states-2024-f953d0254f.webp"
 ---

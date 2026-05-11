@@ -9,4 +9,5 @@ og_type: article
 date: '2018-08-01T07:21:31Z'
 duration: '2:05:57'
 duration_iso8601: PT2H5M57S
+thumb: "/assets/episode-thumbs/early-access-til-neste-episode-med-camilla-elise-e0f15d5997.webp"
 ---

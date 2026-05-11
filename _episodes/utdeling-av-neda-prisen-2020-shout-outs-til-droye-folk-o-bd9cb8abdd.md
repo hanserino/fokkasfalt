@@ -11,4 +11,5 @@ og_type: article
 date: '2020-12-03T14:20:09Z'
 duration: '4:05:40'
 duration_iso8601: PT4H5M40S
+thumb: "/assets/episode-thumbs/utdeling-av-neda-prisen-2020-shout-outs-til-droye-folk-o-bd9cb8abdd.webp"
 ---

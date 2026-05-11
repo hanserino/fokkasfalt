@@ -10,4 +10,5 @@ og_type: article
 date: '2025-09-18T03:00:07Z'
 duration: '51:35'
 duration_iso8601: PT51M35S
+thumb: "/assets/episode-thumbs/henrik-blindheim-bli-kjent-med-en-fokk-asfalter-009-d587cc4c31.webp"
 ---

@@ -10,4 +10,5 @@ og_type: article
 date: '2022-10-21T04:28:52Z'
 duration: '59:26'
 duration_iso8601: PT59M26S
+thumb: "/assets/episode-thumbs/thomas-henderson-story-of-the-fall-part-one-4c16df8208.webp"
 ---

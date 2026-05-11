@@ -10,4 +10,5 @@ og_type: article
 date: '2026-02-26T04:00:09Z'
 duration: '1:07:18'
 duration_iso8601: PT1H7M18S
+thumb: "/assets/episode-thumbs/lise-fredrikke-smedsrod-engdahl-familierad-3841528233.webp"
 ---

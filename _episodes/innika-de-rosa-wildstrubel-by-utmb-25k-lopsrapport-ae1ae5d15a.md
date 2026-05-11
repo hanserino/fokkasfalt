@@ -9,4 +9,5 @@ og_type: article
 date: '2024-09-18T04:25:11Z'
 duration: '1:00:46'
 duration_iso8601: PT1H0M46S
+thumb: "/assets/episode-thumbs/innika-de-rosa-wildstrubel-by-utmb-25k-lopsrapport-ae1ae5d15a.webp"
 ---

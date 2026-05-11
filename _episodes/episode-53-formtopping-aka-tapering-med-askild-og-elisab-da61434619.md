@@ -10,4 +10,5 @@ og_type: article
 date: '2019-05-05T06:45:19Z'
 duration: '2:02:21'
 duration_iso8601: PT2H2M21S
+thumb: "/assets/episode-thumbs/episode-53-formtopping-aka-tapering-med-askild-og-elisab-da61434619.webp"
 ---

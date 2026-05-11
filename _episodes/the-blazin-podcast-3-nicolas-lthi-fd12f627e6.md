@@ -10,4 +10,5 @@ og_type: article
 date: '2019-07-27T09:56:30Z'
 duration: '51:59'
 duration_iso8601: PT51M59S
+thumb: "/assets/episode-thumbs/the-blazin-podcast-3-nicolas-lthi-fd12f627e6.webp"
 ---

@@ -7,4 +7,5 @@ og_type: article
 date: '2022-04-09T06:01:00Z'
 duration: '1:12:15'
 duration_iso8601: PT1H12M15S
+thumb: "/assets/episode-thumbs/kaffeslabberas-med-patrick-stangbye-og-johannes-rummelho-ddd2a0be33.webp"
 ---

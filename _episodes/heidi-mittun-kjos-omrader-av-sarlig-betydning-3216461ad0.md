@@ -10,4 +10,5 @@ og_type: article
 date: '2021-05-08T05:00:02Z'
 duration: '41:35'
 duration_iso8601: PT41M35S
+thumb: "/assets/episode-thumbs/heidi-mittun-kjos-omrader-av-sarlig-betydning-3216461ad0.webp"
 ---

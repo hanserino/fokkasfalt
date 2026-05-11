@@ -9,4 +9,5 @@ og_type: article
 date: '2023-10-31T19:37:25Z'
 duration: '1:24:54'
 duration_iso8601: PT1H24M54S
+thumb: "/assets/episode-thumbs/kullamannen-race-prep-clubhouse-session-med-jonas-kim-to-4fdf348bbc.webp"
 ---

@@ -11,4 +11,5 @@ og_type: article
 date: '2020-07-02T13:51:16Z'
 duration: '5:12:19'
 duration_iso8601: PT5H12M19S
+thumb: "/assets/episode-thumbs/isak-buhl-mortensen-om-synet-man-far-pa-naturen-verden-l-d42f60c17c.webp"
 ---

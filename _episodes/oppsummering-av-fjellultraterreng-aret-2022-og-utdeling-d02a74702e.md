@@ -10,4 +10,5 @@ og_type: article
 date: '2022-12-21T12:58:41Z'
 duration: '2:35:22'
 duration_iso8601: PT2H35M22S
+thumb: "/assets/episode-thumbs/oppsummering-av-fjellultraterreng-aret-2022-og-utdeling-d02a74702e.webp"
 ---

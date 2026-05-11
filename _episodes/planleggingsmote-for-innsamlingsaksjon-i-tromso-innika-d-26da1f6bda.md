@@ -11,4 +11,5 @@ og_type: article
 date: '2023-11-24T08:06:33Z'
 duration: '40:25'
 duration_iso8601: PT40M25S
+thumb: "/assets/episode-thumbs/planleggingsmote-for-innsamlingsaksjon-i-tromso-innika-d-26da1f6bda.webp"
 ---

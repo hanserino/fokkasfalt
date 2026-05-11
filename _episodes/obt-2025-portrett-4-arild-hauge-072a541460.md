@@ -8,4 +8,5 @@ og_type: article
 date: '2025-02-06T07:58:34Z'
 duration: '28:53'
 duration_iso8601: PT28M53S
+thumb: "/assets/episode-thumbs/obt-2025-portrett-4-arild-hauge-072a541460.webp"
 ---

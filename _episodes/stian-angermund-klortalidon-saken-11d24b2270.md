@@ -9,4 +9,5 @@ og_type: article
 date: '2025-01-16T16:55:37Z'
 duration: '1:29:58'
 duration_iso8601: PT1H29M58S
+thumb: "/assets/episode-thumbs/stian-angermund-klortalidon-saken-11d24b2270.webp"
 ---

@@ -10,4 +10,5 @@ og_type: article
 date: '2021-04-16T12:47:46Z'
 duration: '1:50:17'
 duration_iso8601: PT1H50M17S
+thumb: "/assets/episode-thumbs/jon-aukrust-osmoen-trollmannen-fra-os-deb448808d.webp"
 ---

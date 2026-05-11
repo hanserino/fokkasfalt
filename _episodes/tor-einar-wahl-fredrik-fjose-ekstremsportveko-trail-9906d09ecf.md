@@ -10,4 +10,5 @@ og_type: article
 date: '2026-04-09T03:00:05Z'
 duration: '1:33:50'
 duration_iso8601: PT1H33M50S
+thumb: "/assets/episode-thumbs/tor-einar-wahl-fredrik-fjose-ekstremsportveko-trail-9906d09ecf.webp"
 ---

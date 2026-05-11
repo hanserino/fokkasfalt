@@ -10,4 +10,5 @@ og_type: article
 date: '2025-03-10T10:52:26Z'
 duration: '2:23:22'
 duration_iso8601: PT2H23M22S
+thumb: "/assets/episode-thumbs/springskalle-x-fokk-asfalt-the-romsdal-method-7c83ba1e25.webp"
 ---

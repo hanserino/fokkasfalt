@@ -10,4 +10,5 @@ og_type: article
 date: '2023-11-16T05:00:04Z'
 duration: '1:51:35'
 duration_iso8601: PT1H51M35S
+thumb: "/assets/episode-thumbs/simen-holvik-ambisjoner-i-fat-ox-48-spartathlon-badwater-1dfef1f963.webp"
 ---

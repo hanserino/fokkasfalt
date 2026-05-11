@@ -10,4 +10,5 @@ og_type: article
 date: '2026-01-01T04:00:05Z'
 duration: '1:16:54'
 duration_iso8601: PT1H16M54S
+thumb: "/assets/episode-thumbs/finn-isaksen-fkt-spesial-a97b77e33f.webp"
 ---

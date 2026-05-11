@@ -11,4 +11,5 @@ og_type: article
 date: '2022-07-16T07:23:28Z'
 duration: '1:58:22'
 duration_iso8601: PT1H58M22S
+thumb: "/assets/episode-thumbs/ultranerding-med-tor-einar-wahl-rapport-fra-marathon-du-4c123488e0.webp"
 ---

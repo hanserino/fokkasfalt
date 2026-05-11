@@ -10,4 +10,5 @@ og_type: article
 date: '2019-11-19T02:57:04Z'
 duration: '1:23:29'
 duration_iso8601: PT1H23M29S
+thumb: "/assets/episode-thumbs/ian-corless-df78e9e10c.webp"
 ---

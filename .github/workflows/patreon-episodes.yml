@@ -14,6 +14,7 @@ on:
     branches: [main]
     paths:
       - "scripts/fetch_episodes.rb"
+      - "scripts/generate_episode_thumbnails.rb"
       - "scripts/match_episode_availability.rb"
       - "scripts/buzzsprout_match_core.rb"
       - "scripts/listen_episode_resolver.rb"
@@ -34,7 +35,10 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3"
-          bundler-cache: false
+          bundler-cache: true
+
+      - name: Install ImageMagick
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends imagemagick
 
       - name: Fetch RSS and write Jekyll collection files
         env:
@@ -46,6 +50,11 @@ jobs:
           fi
           ruby scripts/fetch_episodes.rb
 
+      - name: Generate episode list thumbnails (WebP)
+        env:
+          THUMB_HTTP_DELAY_MS: "35"
+        run: bundle exec ruby scripts/generate_episode_thumbnails.rb
+
       - name: Regenerate episode availability (Buzzsprout match + listen URLs)
         env:
           SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
@@ -56,7 +65,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add _episodes/ _data/episode_availability.yml
+          git add _episodes/ _data/episode_availability.yml assets/episode-thumbs/
           if git diff --staged --quiet; then
             echo "No changes to _episodes/ or _data/episode_availability.yml."
           else

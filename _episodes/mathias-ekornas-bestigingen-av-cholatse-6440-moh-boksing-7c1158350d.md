@@ -11,4 +11,5 @@ og_type: article
 date: '2022-11-22T07:18:33Z'
 duration: '2:18:33'
 duration_iso8601: PT2H18M33S
+thumb: "/assets/episode-thumbs/mathias-ekornas-bestigingen-av-cholatse-6440-moh-boksing-7c1158350d.webp"
 ---

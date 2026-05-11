@@ -11,4 +11,5 @@ og_type: article
 date: '2021-02-09T06:46:55Z'
 duration: '1:30:39'
 duration_iso8601: PT1H30M39S
+thumb: "/assets/episode-thumbs/borge-fagerli-kosthold-kosttilskudd-styrketrening-ostrog-592d11b76c.webp"
 ---

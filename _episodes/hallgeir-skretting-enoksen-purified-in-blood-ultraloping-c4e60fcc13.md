@@ -11,4 +11,5 @@ og_type: article
 date: '2022-03-31T06:33:44Z'
 duration: '3:02:32'
 duration_iso8601: PT3H2M32S
+thumb: "/assets/episode-thumbs/hallgeir-skretting-enoksen-purified-in-blood-ultraloping-c4e60fcc13.webp"
 ---

@@ -10,4 +10,5 @@ og_type: article
 date: '2021-11-08T06:00:03Z'
 duration: '47:47'
 duration_iso8601: PT47M47S
+thumb: "/assets/episode-thumbs/clubhouse-session-07112021-simen-holvik-patrick-stangbye-eeb4ba8f77.webp"
 ---

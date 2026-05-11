@@ -10,4 +10,5 @@ og_type: article
 date: '2024-10-16T11:22:52Z'
 duration: '1:30:56'
 duration_iso8601: PT1H30M56S
+thumb: "/assets/episode-thumbs/sebastian-mamaj-black-lake-race-skoanmeldelser-med-mariu-e1edd9ec8b.webp"
 ---

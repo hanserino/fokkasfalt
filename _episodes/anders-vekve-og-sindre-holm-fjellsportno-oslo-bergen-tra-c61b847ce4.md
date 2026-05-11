@@ -11,4 +11,5 @@ og_type: article
 date: '2024-06-14T03:00:02Z'
 duration: '2:34:21'
 duration_iso8601: PT2H34M21S
+thumb: "/assets/episode-thumbs/anders-vekve-og-sindre-holm-fjellsportno-oslo-bergen-tra-c61b847ce4.webp"
 ---

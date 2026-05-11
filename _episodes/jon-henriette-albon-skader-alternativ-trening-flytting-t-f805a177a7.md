@@ -11,4 +11,5 @@ og_type: article
 date: '2020-08-13T08:29:39Z'
 duration: '46:32'
 duration_iso8601: PT46M32S
+thumb: "/assets/episode-thumbs/jon-henriette-albon-skader-alternativ-trening-flytting-t-f805a177a7.webp"
 ---

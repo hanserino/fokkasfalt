@@ -9,4 +9,5 @@ og_type: article
 date: '2023-05-18T09:47:56Z'
 duration: '16:36'
 duration_iso8601: PT16M36S
+thumb: "/assets/episode-thumbs/sylvia-nordskar-4-plass-zegama-aizkorri-2023-b2e2ee0846.webp"
 ---

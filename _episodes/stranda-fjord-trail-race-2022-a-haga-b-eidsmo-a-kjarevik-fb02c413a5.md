@@ -9,4 +9,5 @@ patreon_url: https://www.patreon.com/posts/stranda-fjord-b-70417082
 cover: https://c10.patreonusercontent.com/4/patreon-media/p/post/70417082/46347ce1e47f48e380b501a78fddbe58/eyJkIjo3MiwiaCI6MzAwMCwic3RyaXBfYWxwaGEiOjEsInciOjMwMDAsIndlYnAiOjB9/1.jpg?token-hash=aYiV3RMI2GYSAudZ9ItS4ie5kMf9vaZVfMei0wLaqR8%3D
 og_type: article
 date: '2022-08-12T09:31:24Z'
+thumb: "/assets/episode-thumbs/stranda-fjord-trail-race-2022-a-haga-b-eidsmo-a-kjarevik-fb02c413a5.webp"
 ---

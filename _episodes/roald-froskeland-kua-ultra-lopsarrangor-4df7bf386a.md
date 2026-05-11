@@ -10,4 +10,5 @@ og_type: article
 date: '2025-01-01T04:00:05Z'
 duration: '1:32:55'
 duration_iso8601: PT1H32M55S
+thumb: "/assets/episode-thumbs/roald-froskeland-kua-ultra-lopsarrangor-4df7bf386a.webp"
 ---

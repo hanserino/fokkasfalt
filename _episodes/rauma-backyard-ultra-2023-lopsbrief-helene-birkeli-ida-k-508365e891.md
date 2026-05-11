@@ -10,4 +10,5 @@ og_type: article
 date: '2023-08-31T03:55:51Z'
 duration: '1:00:38'
 duration_iso8601: PT1H0M38S
+thumb: "/assets/episode-thumbs/rauma-backyard-ultra-2023-lopsbrief-helene-birkeli-ida-k-508365e891.webp"
 ---

@@ -8,4 +8,5 @@ og_type: article
 date: '2025-08-31T15:44:06Z'
 duration: '1:36:41'
 duration_iso8601: PT1H36M41S
+thumb: "/assets/episode-thumbs/utmb-2025-lopsrapport-bonanza-are-fetveit-gro-siljan-hju-9341db77ad.webp"
 ---

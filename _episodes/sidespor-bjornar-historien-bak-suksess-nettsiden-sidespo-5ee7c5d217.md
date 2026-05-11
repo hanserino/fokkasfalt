@@ -11,4 +11,5 @@ og_type: article
 date: '2021-04-02T05:09:33Z'
 duration: '1:46:53'
 duration_iso8601: PT1H46M53S
+thumb: "/assets/episode-thumbs/sidespor-bjornar-historien-bak-suksess-nettsiden-sidespo-5ee7c5d217.webp"
 ---

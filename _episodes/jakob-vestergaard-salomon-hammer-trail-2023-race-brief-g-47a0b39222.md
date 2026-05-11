@@ -11,4 +11,5 @@ og_type: article
 date: '2023-05-09T18:03:10Z'
 duration: '28:04'
 duration_iso8601: PT28M4S
+thumb: "/assets/episode-thumbs/jakob-vestergaard-salomon-hammer-trail-2023-race-brief-g-47a0b39222.webp"
 ---

@@ -10,4 +10,5 @@ og_type: article
 date: '2026-01-22T04:00:08Z'
 duration: '1:30:57'
 duration_iso8601: PT1H30M57S
+thumb: "/assets/episode-thumbs/robin-larsen-bli-kjent-med-en-fokk-asfalter-012-b809b00a14.webp"
 ---

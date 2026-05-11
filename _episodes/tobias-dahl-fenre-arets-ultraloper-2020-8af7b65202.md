@@ -10,4 +10,5 @@ og_type: article
 date: '2021-01-11T07:02:53Z'
 duration: '1:05:50'
 duration_iso8601: PT1H5M50S
+thumb: "/assets/episode-thumbs/tobias-dahl-fenre-arets-ultraloper-2020-8af7b65202.webp"
 ---

@@ -11,4 +11,5 @@ og_type: article
 date: '2023-09-16T07:08:06Z'
 duration: '30:43'
 duration_iso8601: PT30M43S
+thumb: "/assets/episode-thumbs/fyri-trail-live-podcast-jonas-hesthaug-juho-ylinen-krist-21b52a4d1b.webp"
 ---

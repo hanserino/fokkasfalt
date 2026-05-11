@@ -10,4 +10,5 @@ og_type: article
 date: '2026-03-27T11:25:39Z'
 duration: '1:21:19'
 duration_iso8601: PT1H21M19S
+thumb: "/assets/episode-thumbs/bergtatt-aniek-lith-suser-gjennom-harryland-9347f81380.webp"
 ---

@@ -11,4 +11,5 @@ og_type: article
 date: '2018-06-23T08:11:08Z'
 duration: '33:05'
 duration_iso8601: PT33M5S
+thumb: "/assets/episode-thumbs/raw-uncut-recording-fra-fjellheimen-i-gran-canaria-med-w-f7b41dd174.webp"
 ---

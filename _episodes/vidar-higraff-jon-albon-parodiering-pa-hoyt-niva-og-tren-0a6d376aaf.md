@@ -11,4 +11,5 @@ og_type: article
 date: '2024-01-18T04:00:02Z'
 duration: '1:50:33'
 duration_iso8601: PT1H50M33S
+thumb: "/assets/episode-thumbs/vidar-higraff-jon-albon-parodiering-pa-hoyt-niva-og-tren-0a6d376aaf.webp"
 ---

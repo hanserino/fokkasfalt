@@ -10,4 +10,5 @@ og_type: article
 date: '2024-08-07T05:53:40Z'
 duration: '34:19'
 duration_iso8601: PT34M19S
+thumb: "/assets/episode-thumbs/kilian-jornet-western-states-doku-intervju-4cfcb7239f.webp"
 ---

@@ -11,4 +11,5 @@ og_type: article
 date: '2023-03-30T06:56:37Z'
 duration: '1:45:26'
 duration_iso8601: PT1H45M26S
+thumb: "/assets/episode-thumbs/tom-edward-simonsen-brage-haugen-lopsrapporter-fra-cinqu-495cde726c.webp"
 ---

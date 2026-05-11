@@ -10,4 +10,5 @@ og_type: article
 date: '2021-10-01T10:31:47Z'
 duration: '1:13:59'
 duration_iso8601: PT1H13M59S
+thumb: "/assets/episode-thumbs/odd-edoy-64-aringen-som-gruser-deg-pa-stien-intro-med-kj-0000e5727c.webp"
 ---

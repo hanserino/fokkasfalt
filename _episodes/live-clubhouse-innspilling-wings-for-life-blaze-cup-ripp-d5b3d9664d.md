@@ -10,4 +10,5 @@ og_type: article
 date: '2021-05-10T07:45:12Z'
 duration: '1:02:16'
 duration_iso8601: PT1H2M16S
+thumb: "/assets/episode-thumbs/live-clubhouse-innspilling-wings-for-life-blaze-cup-ripp-d5b3d9664d.webp"
 ---

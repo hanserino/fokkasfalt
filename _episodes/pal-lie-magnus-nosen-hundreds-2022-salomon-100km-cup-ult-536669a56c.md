@@ -11,4 +11,5 @@ og_type: article
 date: '2021-11-19T16:43:47Z'
 duration: '1:18:55'
 duration_iso8601: PT1H18M55S
+thumb: "/assets/episode-thumbs/pal-lie-magnus-nosen-hundreds-2022-salomon-100km-cup-ult-536669a56c.webp"
 ---

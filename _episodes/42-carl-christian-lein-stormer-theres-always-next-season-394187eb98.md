@@ -10,4 +10,5 @@ og_type: article
 date: '2018-12-27T11:29:16Z'
 duration: '2:26:58'
 duration_iso8601: PT2H26M58S
+thumb: "/assets/episode-thumbs/42-carl-christian-lein-stormer-theres-always-next-season-394187eb98.webp"
 ---

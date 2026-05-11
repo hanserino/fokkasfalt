@@ -10,4 +10,5 @@ og_type: article
 date: '2026-01-30T04:29:49Z'
 duration: '1:06:15'
 duration_iso8601: PT1H6M15S
+thumb: "/assets/episode-thumbs/hedda-krogh-meidal-bli-kjent-med-en-fokk-asfalter-013-cd19da384c.webp"
 ---

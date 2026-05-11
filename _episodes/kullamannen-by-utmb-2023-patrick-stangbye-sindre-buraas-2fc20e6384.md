@@ -11,4 +11,5 @@ og_type: article
 date: '2023-11-09T05:00:02Z'
 duration: '1:33:37'
 duration_iso8601: PT1H33M37S
+thumb: "/assets/episode-thumbs/kullamannen-by-utmb-2023-patrick-stangbye-sindre-buraas-2fc20e6384.webp"
 ---

@@ -10,4 +10,5 @@ og_type: article
 date: '2020-03-29T12:27:38Z'
 duration: '3:45'
 duration_iso8601: PT3M45S
+thumb: "/assets/episode-thumbs/slampoesti-dette-er-neda-ada6739b49.webp"
 ---

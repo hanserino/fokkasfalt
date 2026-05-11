@@ -11,4 +11,5 @@ og_type: article
 date: '2024-05-16T03:00:03Z'
 duration: '2:34:13'
 duration_iso8601: PT2H34M13S
+thumb: "/assets/episode-thumbs/marius-brevik-krister-kopala-treningsstatus-ecotrail-osl-b6096827e0.webp"
 ---

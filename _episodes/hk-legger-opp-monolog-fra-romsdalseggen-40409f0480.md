@@ -10,4 +10,5 @@ og_type: article
 date: '2023-06-09T04:05:23Z'
 duration: '46:27'
 duration_iso8601: PT46M27S
+thumb: "/assets/episode-thumbs/hk-legger-opp-monolog-fra-romsdalseggen-40409f0480.webp"
 ---

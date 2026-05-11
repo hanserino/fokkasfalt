@@ -8,4 +8,5 @@ og_type: article
 date: '2019-07-05T07:11:09Z'
 duration: '2:22'
 duration_iso8601: PT2M22S
+thumb: "/assets/episode-thumbs/outro-sangen-i-episode-62-5ed2a162cc.webp"
 ---

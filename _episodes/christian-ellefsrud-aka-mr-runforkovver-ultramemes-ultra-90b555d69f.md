@@ -11,4 +11,5 @@ og_type: article
 date: '2024-03-07T04:00:03Z'
 duration: '2:16:53'
 duration_iso8601: PT2H16M53S
+thumb: "/assets/episode-thumbs/christian-ellefsrud-aka-mr-runforkovver-ultramemes-ultra-90b555d69f.webp"
 ---

@@ -10,4 +10,5 @@ og_type: article
 date: '2024-12-19T09:08:25Z'
 duration: '1:45:48'
 duration_iso8601: PT1H45M48S
+thumb: "/assets/episode-thumbs/simen-holvik-tilbake-i-jobb-etter-to-ar-som-heltidsutove-5f431b7e44.webp"
 ---

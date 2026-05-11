@@ -11,4 +11,5 @@ og_type: article
 date: '2025-08-20T05:16:48Z'
 duration: '1:16:33'
 duration_iso8601: PT1H16M33S
+thumb: "/assets/episode-thumbs/miriam-myhren-bouchleh-kristiansand-oslo-250k-romeriksas-ee57bfd45d.webp"
 ---

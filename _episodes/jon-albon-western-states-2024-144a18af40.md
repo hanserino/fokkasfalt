@@ -10,4 +10,5 @@ og_type: article
 date: '2024-07-25T03:00:06Z'
 duration: '32:54'
 duration_iso8601: PT32M54S
+thumb: "/assets/episode-thumbs/jon-albon-western-states-2024-144a18af40.webp"
 ---

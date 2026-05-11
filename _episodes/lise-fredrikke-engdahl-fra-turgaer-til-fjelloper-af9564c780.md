@@ -10,4 +10,5 @@ og_type: article
 date: '2022-12-15T18:45:08Z'
 duration: '2:17:27'
 duration_iso8601: PT2H17M27S
+thumb: "/assets/episode-thumbs/lise-fredrikke-engdahl-fra-turgaer-til-fjelloper-af9564c780.webp"
 ---

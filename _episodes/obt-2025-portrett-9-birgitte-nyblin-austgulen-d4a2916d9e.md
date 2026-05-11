@@ -7,4 +7,5 @@ og_type: article
 date: '2025-02-13T05:00:06Z'
 duration: '19:52'
 duration_iso8601: PT19M52S
+thumb: "/assets/episode-thumbs/obt-2025-portrett-9-birgitte-nyblin-austgulen-d4a2916d9e.webp"
 ---

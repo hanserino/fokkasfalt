@@ -10,4 +10,5 @@ og_type: article
 date: '2020-07-17T15:25:54Z'
 duration: '1:29:59'
 duration_iso8601: PT1H29M59S
+thumb: "/assets/episode-thumbs/mona-kjeldsberg-ekstrem-ultraloper-idrettslege-lopsarran-71ac255f0c.webp"
 ---

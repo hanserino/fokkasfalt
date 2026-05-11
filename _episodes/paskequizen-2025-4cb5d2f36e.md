@@ -7,4 +7,5 @@ og_type: article
 date: '2025-04-16T06:04:32Z'
 duration: '2:23:24'
 duration_iso8601: PT2H23M24S
+thumb: "/assets/episode-thumbs/paskequizen-2025-4cb5d2f36e.webp"
 ---

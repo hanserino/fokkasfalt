@@ -10,4 +10,5 @@ og_type: article
 date: '2022-01-27T06:01:00Z'
 duration: '1:53:57'
 duration_iso8601: PT1H53M57S
+thumb: "/assets/episode-thumbs/magne-klann-norge-pa-langs-i-en-enmannsjolle-pa-30kg-4f2b064838.webp"
 ---

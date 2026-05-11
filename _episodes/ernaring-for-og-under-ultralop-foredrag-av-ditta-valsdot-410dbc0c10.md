@@ -11,4 +11,5 @@ og_type: article
 date: '2026-03-26T04:00:04Z'
 duration: '46:02'
 duration_iso8601: PT46M2S
+thumb: "/assets/episode-thumbs/ernaring-for-og-under-ultralop-foredrag-av-ditta-valsdot-410dbc0c10.webp"
 ---

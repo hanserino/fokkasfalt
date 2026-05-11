@@ -11,4 +11,5 @@ og_type: article
 date: '2019-08-19T08:12:47Z'
 duration: '1:25:40'
 duration_iso8601: PT1H25M40S
+thumb: "/assets/episode-thumbs/i-recorded-a-podcast-with-a-complete-stranger-i-found-on-b5625d1564.webp"
 ---

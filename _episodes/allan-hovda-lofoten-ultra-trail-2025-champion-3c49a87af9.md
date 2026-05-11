@@ -10,4 +10,5 @@ og_type: article
 date: '2025-06-05T11:50:51Z'
 duration: '2:25:20'
 duration_iso8601: PT2H25M20S
+thumb: "/assets/episode-thumbs/allan-hovda-lofoten-ultra-trail-2025-champion-3c49a87af9.webp"
 ---

@@ -10,4 +10,5 @@ og_type: article
 date: '2021-01-02T09:08:39Z'
 duration: '1:11:09'
 duration_iso8601: PT1H11M9S
+thumb: "/assets/episode-thumbs/sverre-kjerpeset-kjeppen86_-fra-150kg-til-sub-330-pa-mar-c3652a77e6.webp"
 ---

@@ -10,4 +10,5 @@ og_type: article
 date: '2024-02-29T04:00:02Z'
 duration: '1:28:13'
 duration_iso8601: PT1H28M13S
+thumb: "/assets/episode-thumbs/thomas-stordalen-transgrancanaria-advanced-lopsrapport-7786d93441.webp"
 ---

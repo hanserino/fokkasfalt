@@ -10,4 +10,5 @@ og_type: article
 date: '2019-12-13T19:10:53Z'
 duration: '1:24:56'
 duration_iso8601: PT1H24M56S
+thumb: "/assets/episode-thumbs/episode-81-pct-kristine-oppsummerer-fem-maneder-pa-stien-8f1f9ff823.webp"
 ---

@@ -10,4 +10,5 @@ og_type: article
 date: '2018-10-08T08:22:15Z'
 duration: '2:11:21'
 duration_iso8601: PT2H11M21S
+thumb: "/assets/episode-thumbs/early-access-til-episode-33-12c32087ea.webp"
 ---

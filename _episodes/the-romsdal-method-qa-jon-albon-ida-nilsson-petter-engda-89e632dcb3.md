@@ -7,4 +7,5 @@ og_type: article
 date: '2025-05-01T10:35:12Z'
 duration: '48:59'
 duration_iso8601: PT48M59S
+thumb: "/assets/episode-thumbs/the-romsdal-method-qa-jon-albon-ida-nilsson-petter-engda-89e632dcb3.webp"
 ---

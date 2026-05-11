@@ -10,4 +10,5 @@ og_type: article
 date: '2018-12-15T17:39:40Z'
 duration: '3:36:00'
 duration_iso8601: PT3H36M
+thumb: "/assets/episode-thumbs/40-thomas-stordalen-hans-forste-opptreden-i-neda-177d884205.webp"
 ---

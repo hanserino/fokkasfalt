@@ -10,4 +10,5 @@ og_type: article
 date: '2024-11-27T04:00:02Z'
 duration: '1:57:35'
 duration_iso8601: PT1H57M35S
+thumb: "/assets/episode-thumbs/patrick-stangbye-oppsummering-av-2024-sesongen-trender-o-70d14b9b18.webp"
 ---

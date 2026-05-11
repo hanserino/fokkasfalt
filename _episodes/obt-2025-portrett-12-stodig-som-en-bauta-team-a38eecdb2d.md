@@ -8,4 +8,5 @@ og_type: article
 date: '2025-02-20T04:00:03Z'
 duration: '32:24'
 duration_iso8601: PT32M24S
+thumb: "/assets/episode-thumbs/obt-2025-portrett-12-stodig-som-en-bauta-team-a38eecdb2d.webp"
 ---

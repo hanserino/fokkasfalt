@@ -10,4 +10,5 @@ og_type: article
 date: '2024-08-01T03:00:03Z'
 duration: '1:40:42'
 duration_iso8601: PT1H40M42S
+thumb: "/assets/episode-thumbs/askild-vatnbakk-larsen-hvordan-trene-til-et-ultralop-912a4e17bd.webp"
 ---

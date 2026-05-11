@@ -11,4 +11,5 @@ og_type: article
 date: '2023-03-23T05:00:02Z'
 duration: '1:49:24'
 duration_iso8601: PT1H49M24S
+thumb: "/assets/episode-thumbs/golden-trail-national-series-2023-nordics-joakim-dokka-s-09fabcd889.webp"
 ---

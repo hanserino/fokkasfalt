@@ -10,4 +10,5 @@ og_type: article
 date: '2020-08-11T15:30:26Z'
 duration: '1:14:46'
 duration_iso8601: PT1H14M46S
+thumb: "/assets/episode-thumbs/jonas-hesthaug-tretthetsbrudd-comeback-bikepacking-fjell-e537ca16d8.webp"
 ---

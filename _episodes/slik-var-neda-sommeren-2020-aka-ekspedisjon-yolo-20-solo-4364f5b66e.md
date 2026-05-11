@@ -10,4 +10,5 @@ og_type: article
 date: '2020-09-09T10:56:42Z'
 duration: '1:36:06'
 duration_iso8601: PT1H36M6S
+thumb: "/assets/episode-thumbs/slik-var-neda-sommeren-2020-aka-ekspedisjon-yolo-20-solo-4364f5b66e.webp"
 ---

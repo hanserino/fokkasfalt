@@ -10,4 +10,5 @@ og_type: article
 date: '2022-04-22T05:34:36Z'
 duration: '2:47:03'
 duration_iso8601: PT2H47M3S
+thumb: "/assets/episode-thumbs/thor-gotaas-jogging-ultra-intro-og-outro-med-ultraloper-6120d436fe.webp"
 ---

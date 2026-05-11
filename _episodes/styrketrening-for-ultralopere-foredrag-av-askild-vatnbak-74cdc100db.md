@@ -11,4 +11,5 @@ og_type: article
 date: '2026-03-20T10:57:49Z'
 duration: '22:23'
 duration_iso8601: PT22M23S
+thumb: "/assets/episode-thumbs/styrketrening-for-ultralopere-foredrag-av-askild-vatnbak-74cdc100db.webp"
 ---

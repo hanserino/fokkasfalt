@@ -11,4 +11,5 @@ og_type: article
 date: '2018-08-02T16:17:52Z'
 duration: '2:32:53'
 duration_iso8601: PT2H32M53S
+thumb: "/assets/episode-thumbs/early-access-til-en-blazing-terreng-ultra-geekdown-episo-e8f5b69771.webp"
 ---

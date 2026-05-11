@@ -11,4 +11,5 @@ og_type: article
 date: '2022-04-13T04:01:00Z'
 duration: '1:06:21'
 duration_iso8601: PT1H6M21S
+thumb: "/assets/episode-thumbs/krsultra-2022-lopsrapport-fra-steffen-brufladt-hk-kim-jo-f1dab22cae.webp"
 ---

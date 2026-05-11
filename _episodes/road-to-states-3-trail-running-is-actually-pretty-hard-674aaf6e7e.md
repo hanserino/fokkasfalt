@@ -8,4 +8,5 @@ og_type: article
 date: '2025-12-15T04:00:04Z'
 duration: '27:42'
 duration_iso8601: PT27M42S
+thumb: "/assets/episode-thumbs/road-to-states-3-trail-running-is-actually-pretty-hard-674aaf6e7e.webp"
 ---

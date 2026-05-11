@@ -10,4 +10,5 @@ og_type: article
 date: '2021-02-23T07:54:33Z'
 duration: '1:08:29'
 duration_iso8601: PT1H8M29S
+thumb: "/assets/episode-thumbs/clubhouse-sessions-2-lopeskader-5abee3cf98.webp"
 ---

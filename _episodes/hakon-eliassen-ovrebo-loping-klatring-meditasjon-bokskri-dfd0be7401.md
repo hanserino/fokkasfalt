@@ -10,4 +10,5 @@ og_type: article
 date: '2023-05-18T04:00:02Z'
 duration: '2:14:46'
 duration_iso8601: PT2H14M46S
+thumb: "/assets/episode-thumbs/hakon-eliassen-ovrebo-loping-klatring-meditasjon-bokskri-dfd0be7401.webp"
 ---

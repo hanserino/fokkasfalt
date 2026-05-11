@@ -10,4 +10,5 @@ og_type: article
 date: '2021-10-16T07:11:57Z'
 duration: '1:03:00'
 duration_iso8601: PT1H3M
+thumb: "/assets/episode-thumbs/stian-angermund-pre-golden-trail-series-final-a57d81e987.webp"
 ---

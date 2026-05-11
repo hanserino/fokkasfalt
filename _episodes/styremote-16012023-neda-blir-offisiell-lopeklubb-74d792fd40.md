@@ -10,4 +10,5 @@ og_type: article
 date: '2023-01-16T20:09:21Z'
 duration: '1:09:26'
 duration_iso8601: PT1H9M26S
+thumb: "/assets/episode-thumbs/styremote-16012023-neda-blir-offisiell-lopeklubb-74d792fd40.webp"
 ---

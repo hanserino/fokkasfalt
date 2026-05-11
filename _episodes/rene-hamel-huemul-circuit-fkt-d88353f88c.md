@@ -10,4 +10,5 @@ og_type: article
 date: '2020-03-12T12:24:22Z'
 duration: '1:25:15'
 duration_iso8601: PT1H25M15S
+thumb: "/assets/episode-thumbs/rene-hamel-huemul-circuit-fkt-d88353f88c.webp"
 ---

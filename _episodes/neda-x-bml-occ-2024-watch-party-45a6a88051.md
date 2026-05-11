@@ -9,4 +9,5 @@ og_type: article
 date: '2024-08-29T14:25:17Z'
 duration: '3:42:47'
 duration_iso8601: PT3H42M47S
+thumb: "/assets/episode-thumbs/neda-x-bml-occ-2024-watch-party-45a6a88051.webp"
 ---

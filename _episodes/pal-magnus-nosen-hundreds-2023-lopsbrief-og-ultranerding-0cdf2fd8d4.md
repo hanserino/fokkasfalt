@@ -10,4 +10,5 @@ og_type: article
 date: '2023-05-25T04:00:02Z'
 duration: '1:14:32'
 duration_iso8601: PT1H14M32S
+thumb: "/assets/episode-thumbs/pal-magnus-nosen-hundreds-2023-lopsbrief-og-ultranerding-0cdf2fd8d4.webp"
 ---

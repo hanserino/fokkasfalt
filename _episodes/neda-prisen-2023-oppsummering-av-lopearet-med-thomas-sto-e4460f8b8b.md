@@ -10,4 +10,5 @@ og_type: article
 date: '2023-12-14T05:00:02Z'
 duration: '2:49:02'
 duration_iso8601: PT2H49M2S
+thumb: "/assets/episode-thumbs/neda-prisen-2023-oppsummering-av-lopearet-med-thomas-sto-e4460f8b8b.webp"
 ---

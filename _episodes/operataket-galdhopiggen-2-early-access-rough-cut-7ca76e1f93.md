@@ -8,4 +8,5 @@ og_type: article
 date: '2018-09-03T06:05:17Z'
 duration: '1:28:52'
 duration_iso8601: PT1H28M52S
+thumb: "/assets/episode-thumbs/operataket-galdhopiggen-2-early-access-rough-cut-7ca76e1f93.webp"
 ---

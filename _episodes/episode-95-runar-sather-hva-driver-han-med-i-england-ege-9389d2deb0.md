@@ -10,4 +10,5 @@ og_type: article
 date: '2020-04-15T07:16:44Z'
 duration: '2:00:20'
 duration_iso8601: PT2H0M20S
+thumb: "/assets/episode-thumbs/episode-95-runar-sather-hva-driver-han-med-i-england-ege-9389d2deb0.webp"
 ---

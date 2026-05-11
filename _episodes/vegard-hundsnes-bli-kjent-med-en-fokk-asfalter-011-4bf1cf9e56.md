@@ -10,4 +10,5 @@ og_type: article
 date: '2025-10-23T03:00:05Z'
 duration: '1:00:33'
 duration_iso8601: PT1H0M33S
+thumb: "/assets/episode-thumbs/vegard-hundsnes-bli-kjent-med-en-fokk-asfalter-011-4bf1cf9e56.webp"
 ---

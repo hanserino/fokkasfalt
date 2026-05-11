@@ -11,4 +11,5 @@ og_type: article
 date: '2019-12-13T07:11:26Z'
 duration: '2:59:26'
 duration_iso8601: PT2H59M26S
+thumb: "/assets/episode-thumbs/episode-80-jule-spesial-med-thomas-stordalen-lopesnakk-o-bf82558898.webp"
 ---

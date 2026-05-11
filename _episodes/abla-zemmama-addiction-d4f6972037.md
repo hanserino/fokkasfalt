@@ -10,4 +10,5 @@ og_type: article
 date: '2020-08-04T12:46:56Z'
 duration: '1:38:58'
 duration_iso8601: PT1H38M58S
+thumb: "/assets/episode-thumbs/abla-zemmama-addiction-d4f6972037.webp"
 ---

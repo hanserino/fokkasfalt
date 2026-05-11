@@ -9,4 +9,5 @@ og_type: article
 date: '2024-11-20T04:00:02Z'
 duration: '46:21'
 duration_iso8601: PT46M21S
+thumb: "/assets/episode-thumbs/bli-kjent-med-en-fokk-asfalter-006-rikke-bratt-e0e9b276cd.webp"
 ---

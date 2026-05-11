@@ -11,4 +11,5 @@ og_type: article
 date: '2023-01-26T08:38:27Z'
 duration: '1:19:56'
 duration_iso8601: PT1H19M56S
+thumb: "/assets/episode-thumbs/nikolai-schirmer-filmproduksjon-risiko-doden-kreativ-pro-b6080d99c4.webp"
 ---

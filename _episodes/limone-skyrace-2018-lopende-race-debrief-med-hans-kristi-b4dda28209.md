@@ -10,4 +10,5 @@ og_type: article
 date: '2018-10-17T16:58:21Z'
 duration: '1:07:33'
 duration_iso8601: PT1H7M33S
+thumb: "/assets/episode-thumbs/limone-skyrace-2018-lopende-race-debrief-med-hans-kristi-b4dda28209.webp"
 ---

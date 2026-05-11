@@ -11,4 +11,5 @@ og_type: article
 date: '2023-05-09T06:45:07Z'
 duration: '17:29'
 duration_iso8601: PT17M29S
+thumb: "/assets/episode-thumbs/minna-kauppi-bodom-trail-champion-golden-trail-national-43d8aed2ec.webp"
 ---

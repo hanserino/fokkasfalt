@@ -10,4 +10,5 @@ og_type: article
 date: '2019-06-21T06:39:50Z'
 duration: '1:19:48'
 duration_iso8601: PT1H19M48S
+thumb: "/assets/episode-thumbs/episode-60-ingvill-makestad-bovim-loping-mat-ernaring-pr-0fa7f32d3d.webp"
 ---

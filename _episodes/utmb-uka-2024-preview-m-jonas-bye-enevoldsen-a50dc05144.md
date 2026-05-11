@@ -9,4 +9,5 @@ og_type: article
 date: '2024-08-22T03:00:05Z'
 duration: '2:46:33'
 duration_iso8601: PT2H46M33S
+thumb: "/assets/episode-thumbs/utmb-uka-2024-preview-m-jonas-bye-enevoldsen-a50dc05144.webp"
 ---

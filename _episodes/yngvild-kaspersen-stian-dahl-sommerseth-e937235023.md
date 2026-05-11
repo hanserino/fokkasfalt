@@ -10,4 +10,5 @@ og_type: article
 date: '2020-09-28T12:44:57Z'
 duration: '1:33:00'
 duration_iso8601: PT1H33M
+thumb: "/assets/episode-thumbs/yngvild-kaspersen-stian-dahl-sommerseth-e937235023.webp"
 ---

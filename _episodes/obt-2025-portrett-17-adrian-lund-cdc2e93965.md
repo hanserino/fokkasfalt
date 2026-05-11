@@ -7,4 +7,5 @@ og_type: article
 date: '2025-03-05T04:01:00Z'
 duration: '34:00'
 duration_iso8601: PT34M
+thumb: "/assets/episode-thumbs/obt-2025-portrett-17-adrian-lund-cdc2e93965.webp"
 ---

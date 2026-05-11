@@ -10,4 +10,5 @@ og_type: article
 date: '2019-06-13T05:43:58Z'
 duration: '1:05:33'
 duration_iso8601: PT1H5M33S
+thumb: "/assets/episode-thumbs/episode-58-kristian-oye-d27cbb870a.webp"
 ---

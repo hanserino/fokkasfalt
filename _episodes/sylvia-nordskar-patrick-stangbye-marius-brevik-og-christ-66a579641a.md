@@ -11,4 +11,5 @@ og_type: article
 date: '2024-05-29T08:24:16Z'
 duration: '2:39:41'
 duration_iso8601: PT2H39M41S
+thumb: "/assets/episode-thumbs/sylvia-nordskar-patrick-stangbye-marius-brevik-og-christ-66a579641a.webp"
 ---

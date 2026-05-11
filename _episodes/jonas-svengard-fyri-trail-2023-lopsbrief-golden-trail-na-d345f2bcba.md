@@ -11,4 +11,5 @@ og_type: article
 date: '2023-09-11T06:44:08Z'
 duration: '47:24'
 duration_iso8601: PT47M24S
+thumb: "/assets/episode-thumbs/jonas-svengard-fyri-trail-2023-lopsbrief-golden-trail-na-d345f2bcba.webp"
 ---

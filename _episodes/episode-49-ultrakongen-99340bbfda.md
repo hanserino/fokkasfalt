@@ -10,4 +10,5 @@ og_type: article
 date: '2019-04-05T13:00:04Z'
 duration: '1:48:35'
 duration_iso8601: PT1H48M35S
+thumb: "/assets/episode-thumbs/episode-49-ultrakongen-99340bbfda.webp"
 ---

@@ -9,4 +9,5 @@ og_type: article
 date: '2024-11-14T04:00:03Z'
 duration: '1:27:04'
 duration_iso8601: PT1H27M4S
+thumb: "/assets/episode-thumbs/bli-kjent-med-en-fokk-asfalter-005-aleksander-skalevik-ba2000cf9b.webp"
 ---

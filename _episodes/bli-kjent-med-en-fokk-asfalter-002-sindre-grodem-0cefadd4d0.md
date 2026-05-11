@@ -10,4 +10,5 @@ og_type: article
 date: '2024-06-27T05:00:03Z'
 duration: '54:58'
 duration_iso8601: PT54M58S
+thumb: "/assets/episode-thumbs/bli-kjent-med-en-fokk-asfalter-002-sindre-grodem-0cefadd4d0.webp"
 ---

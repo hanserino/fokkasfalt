@@ -10,4 +10,5 @@ og_type: article
 date: '2021-09-13T06:49:31Z'
 duration: '1:51:04'
 duration_iso8601: PT1H51M4S
+thumb: "/assets/episode-thumbs/sindre-kolbjornsgard-alle-2000m-toppene-pa-73-dager-intr-deae96dc20.webp"
 ---

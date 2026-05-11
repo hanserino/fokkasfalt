@@ -10,4 +10,5 @@ og_type: article
 date: '2024-10-09T03:00:03Z'
 duration: '2:01:41'
 duration_iso8601: PT2H1M41S
+thumb: "/assets/episode-thumbs/finn-isaksen-kungsleden-med-trailslots-fkt-gullruta-64b0049b79.webp"
 ---

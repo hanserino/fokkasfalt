@@ -12,4 +12,5 @@ og_type: article
 date: '2024-03-14T04:00:04Z'
 duration: '2:58:33'
 duration_iso8601: PT2H58M33S
+thumb: "/assets/episode-thumbs/aniek-lith-askild-vatnbakk-larsen-alpinklatring-laktat-u-04c5603f99.webp"
 ---

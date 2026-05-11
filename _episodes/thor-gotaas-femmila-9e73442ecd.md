@@ -10,4 +10,5 @@ og_type: article
 date: '2022-01-20T08:57:46Z'
 duration: '1:28:53'
 duration_iso8601: PT1H28M53S
+thumb: "/assets/episode-thumbs/thor-gotaas-femmila-9e73442ecd.webp"
 ---

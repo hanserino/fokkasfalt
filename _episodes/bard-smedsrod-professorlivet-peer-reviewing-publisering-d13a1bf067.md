@@ -11,4 +11,5 @@ og_type: article
 date: '2020-12-28T08:27:56Z'
 duration: '1:50:41'
 duration_iso8601: PT1H50M41S
+thumb: "/assets/episode-thumbs/bard-smedsrod-professorlivet-peer-reviewing-publisering-d13a1bf067.webp"
 ---

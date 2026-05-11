@@ -10,4 +10,5 @@ og_type: article
 date: '2021-05-15T04:00:02Z'
 duration: '2:08:09'
 duration_iso8601: PT2H8M9S
+thumb: "/assets/episode-thumbs/skogvokteren-ultra-2021-b5b7fae5ab.webp"
 ---

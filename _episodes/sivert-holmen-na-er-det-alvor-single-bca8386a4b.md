@@ -10,4 +10,5 @@ og_type: article
 date: '2021-01-25T11:31:37Z'
 duration: '1:28'
 duration_iso8601: PT1M28S
+thumb: "/assets/episode-thumbs/sivert-holmen-na-er-det-alvor-single-bca8386a4b.webp"
 ---

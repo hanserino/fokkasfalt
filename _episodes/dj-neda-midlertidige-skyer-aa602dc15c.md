@@ -10,4 +10,5 @@ og_type: article
 date: '2021-04-02T08:00:03Z'
 duration: '4:10'
 duration_iso8601: PT4M10S
+thumb: "/assets/episode-thumbs/dj-neda-midlertidige-skyer-aa602dc15c.webp"
 ---

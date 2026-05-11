@@ -9,4 +9,5 @@ og_type: article
 date: '2021-12-22T09:07:29Z'
 duration: '2:28:59'
 duration_iso8601: PT2H28M59S
+thumb: "/assets/episode-thumbs/thomas-stordalen-karing-av-neda-prisen-2021-3030-oppsumm-5fdfcec15c.webp"
 ---

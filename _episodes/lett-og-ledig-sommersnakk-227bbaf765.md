@@ -10,4 +10,5 @@ og_type: article
 date: '2018-07-21T06:57:04Z'
 duration: '52:04'
 duration_iso8601: PT52M4S
+thumb: "/assets/episode-thumbs/lett-og-ledig-sommersnakk-227bbaf765.webp"
 ---

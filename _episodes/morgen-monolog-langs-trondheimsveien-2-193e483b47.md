@@ -8,4 +8,5 @@ og_type: article
 date: '2018-06-28T14:47:07Z'
 duration: '35:00'
 duration_iso8601: PT35M
+thumb: "/assets/episode-thumbs/morgen-monolog-langs-trondheimsveien-2-193e483b47.webp"
 ---

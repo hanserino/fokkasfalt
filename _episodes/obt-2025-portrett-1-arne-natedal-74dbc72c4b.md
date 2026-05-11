@@ -9,4 +9,5 @@ og_type: article
 date: '2025-02-06T07:50:09Z'
 duration: '31:20'
 duration_iso8601: PT31M20S
+thumb: "/assets/episode-thumbs/obt-2025-portrett-1-arne-natedal-74dbc72c4b.webp"
 ---

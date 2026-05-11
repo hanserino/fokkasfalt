@@ -9,4 +9,5 @@ og_type: article
 date: '2022-05-17T11:10:53Z'
 duration: '4:33'
 duration_iso8601: PT4M33S
+thumb: "/assets/episode-thumbs/bare-lop-ffs-5a825dd253.webp"
 ---

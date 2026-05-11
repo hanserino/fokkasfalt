@@ -7,4 +7,5 @@ og_type: article
 date: '2021-10-08T10:58:50Z'
 duration: '41:04'
 duration_iso8601: PT41M4S
+thumb: "/assets/episode-thumbs/chili-cheese-3319c2c7d9.webp"
 ---

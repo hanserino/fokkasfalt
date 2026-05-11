@@ -10,4 +10,5 @@ og_type: article
 date: '2023-08-03T05:06:46Z'
 duration: '1:03:13'
 duration_iso8601: PT1H3M13S
+thumb: "/assets/episode-thumbs/lise-fredrikke-hk-hyttevakt-uke-pa-masvassbu-5d324b330b.webp"
 ---

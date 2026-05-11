@@ -10,4 +10,5 @@ og_type: article
 date: '2023-04-20T04:01:00Z'
 duration: '38:53'
 duration_iso8601: PT38M53S
+thumb: "/assets/episode-thumbs/innika-de-rosa-fra-the-land-down-under-til-nordens-paris-40f2d11714.webp"
 ---

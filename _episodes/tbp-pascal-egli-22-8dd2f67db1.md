@@ -10,4 +10,5 @@ og_type: article
 date: '2020-11-24T08:18:33Z'
 duration: '1:24:20'
 duration_iso8601: PT1H24M20S
+thumb: "/assets/episode-thumbs/tbp-pascal-egli-22-8dd2f67db1.webp"
 ---

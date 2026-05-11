@@ -10,4 +10,5 @@ og_type: article
 date: '2024-12-11T06:29:04Z'
 duration: '1:26:41'
 duration_iso8601: PT1H26M41S
+thumb: "/assets/episode-thumbs/even-brondbo-dahl-varmetrening-hoydetrening-og-bicarb-27a6bd04a6.webp"
 ---

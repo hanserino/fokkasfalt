@@ -10,4 +10,5 @@ og_type: article
 date: '2021-07-12T05:00:05Z'
 duration: '49:28'
 duration_iso8601: PT49M28S
+thumb: "/assets/episode-thumbs/69-reisebrev-fra-andorra-22072019-oldie-but-goodie-dde4269f12.webp"
 ---

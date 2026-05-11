@@ -7,4 +7,5 @@ og_type: article
 date: '2025-02-27T04:00:02Z'
 duration: '28:03'
 duration_iso8601: PT28M3S
+thumb: "/assets/episode-thumbs/obt-2025-portrett-15-robin-stenberg-ea2ffe1f03.webp"
 ---

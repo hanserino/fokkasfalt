@@ -10,4 +10,5 @@ og_type: article
 date: '2025-07-16T07:06:56Z'
 duration: '50:36'
 duration_iso8601: PT50M36S
+thumb: "/assets/episode-thumbs/gro-siljan-hjukse-obt-2025-champion-d8d9c779c5.webp"
 ---

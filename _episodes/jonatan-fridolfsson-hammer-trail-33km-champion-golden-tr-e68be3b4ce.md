@@ -11,4 +11,5 @@ og_type: article
 date: '2023-05-19T08:09:32Z'
 duration: '23:21'
 duration_iso8601: PT23M21S
+thumb: "/assets/episode-thumbs/jonatan-fridolfsson-hammer-trail-33km-champion-golden-tr-e68be3b4ce.webp"
 ---

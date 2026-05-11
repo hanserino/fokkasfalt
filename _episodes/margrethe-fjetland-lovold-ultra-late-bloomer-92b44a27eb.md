@@ -10,4 +10,5 @@ og_type: article
 date: '2021-11-26T13:24:35Z'
 duration: '1:47:49'
 duration_iso8601: PT1H47M49S
+thumb: "/assets/episode-thumbs/margrethe-fjetland-lovold-ultra-late-bloomer-92b44a27eb.webp"
 ---

@@ -10,4 +10,5 @@ og_type: article
 date: '2020-10-16T07:44:24Z'
 duration: '2:13:52'
 duration_iso8601: PT2H13M52S
+thumb: "/assets/episode-thumbs/skada-askild-vatnbakk-larsen-e7d9156eac.webp"
 ---

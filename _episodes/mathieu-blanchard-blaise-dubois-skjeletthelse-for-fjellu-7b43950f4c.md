@@ -10,4 +10,5 @@ og_type: article
 date: '2022-12-07T08:35:24Z'
 duration: '1:22:47'
 duration_iso8601: PT1H22M47S
+thumb: "/assets/episode-thumbs/mathieu-blanchard-blaise-dubois-skjeletthelse-for-fjellu-7b43950f4c.webp"
 ---

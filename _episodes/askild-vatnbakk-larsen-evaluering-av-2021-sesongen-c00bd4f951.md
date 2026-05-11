@@ -10,4 +10,5 @@ og_type: article
 date: '2021-10-12T04:20:42Z'
 duration: '1:47:14'
 duration_iso8601: PT1H47M14S
+thumb: "/assets/episode-thumbs/askild-vatnbakk-larsen-evaluering-av-2021-sesongen-c00bd4f951.webp"
 ---

@@ -11,4 +11,5 @@ og_type: article
 date: '2022-10-13T07:10:34Z'
 duration: '1:19:36'
 duration_iso8601: PT1H19M36S
+thumb: "/assets/episode-thumbs/trygve-ugelstad-ivar-formos-minnelop-race-brief-gjenhor-d5807dcbcd.webp"
 ---

@@ -8,4 +8,5 @@ patreon_url: https://www.patreon.com/posts/na-er-det-alvor-47551286
 cover: https://c10.patreonusercontent.com/4/patreon-media/p/post/47551286/faca3477632a4faa885984716d554aa3/eyJkIjo3MiwiaCI6MzAwMCwic3RyaXBfYWxwaGEiOjEsInciOjMwMDAsIndlYnAiOjB9/1.jpg?token-hash=wnCallyItzPmnSImuwZzgr5oZEq_ucEMmHwse2D_-uE%3D
 og_type: article
 date: '2021-02-15T07:35:41Z'
+thumb: "/assets/episode-thumbs/na-er-det-alvor-pa-clubhouse-pilot-episode-ea024d32ea.webp"
 ---

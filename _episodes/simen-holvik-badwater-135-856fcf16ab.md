@@ -10,4 +10,5 @@ og_type: article
 date: '2023-07-20T07:56:11Z'
 duration: '1:26:55'
 duration_iso8601: PT1H26M55S
+thumb: "/assets/episode-thumbs/simen-holvik-badwater-135-856fcf16ab.webp"
 ---

@@ -10,4 +10,5 @@ og_type: article
 date: '2019-08-02T09:03:39Z'
 duration: '1:25:16'
 duration_iso8601: PT1H25M16S
+thumb: "/assets/episode-thumbs/the-blazin-podcast-4-pascal-egli-9399573762.webp"
 ---

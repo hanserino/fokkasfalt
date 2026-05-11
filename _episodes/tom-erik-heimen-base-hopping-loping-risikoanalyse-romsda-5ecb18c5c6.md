@@ -10,4 +10,5 @@ og_type: article
 date: '2021-03-17T05:55:30Z'
 duration: '1:38:47'
 duration_iso8601: PT1H38M47S
+thumb: "/assets/episode-thumbs/tom-erik-heimen-base-hopping-loping-risikoanalyse-romsda-5ecb18c5c6.webp"
 ---

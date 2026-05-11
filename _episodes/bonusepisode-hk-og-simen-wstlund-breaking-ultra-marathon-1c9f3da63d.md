@@ -11,4 +11,5 @@ og_type: article
 date: '2022-09-08T04:53:15Z'
 duration: '48:56'
 duration_iso8601: PT48M56S
+thumb: "/assets/episode-thumbs/bonusepisode-hk-og-simen-wstlund-breaking-ultra-marathon-1c9f3da63d.webp"
 ---

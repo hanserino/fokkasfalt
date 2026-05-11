@@ -10,4 +10,5 @@ og_type: article
 date: '2022-07-22T04:04:20Z'
 duration: '2:09:48'
 duration_iso8601: PT2H9M48S
+thumb: "/assets/episode-thumbs/aasmund-kjollmoen-steien-rondane-100-race-brief-ultraner-8141527cb7.webp"
 ---

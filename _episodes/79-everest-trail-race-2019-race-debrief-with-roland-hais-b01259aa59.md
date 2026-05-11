@@ -11,4 +11,5 @@ og_type: article
 date: '2021-08-11T14:00:01Z'
 duration: '1:40:30'
 duration_iso8601: PT1H40M30S
+thumb: "/assets/episode-thumbs/79-everest-trail-race-2019-race-debrief-with-roland-hais-b01259aa59.webp"
 ---

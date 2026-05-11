@@ -10,4 +10,5 @@ og_type: article
 date: '2023-04-18T04:00:02Z'
 duration: '58:49'
 duration_iso8601: PT58M49S
+thumb: "/assets/episode-thumbs/jim-werner-amdal-del-1-lopsarrangor-sandnes-ultratrail-g-d76ad3e4d0.webp"
 ---

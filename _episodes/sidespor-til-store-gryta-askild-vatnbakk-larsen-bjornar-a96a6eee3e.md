@@ -11,4 +11,5 @@ og_type: article
 date: '2020-06-29T07:43:24Z'
 duration: '1:05:51'
 duration_iso8601: PT1H5M51S
+thumb: "/assets/episode-thumbs/sidespor-til-store-gryta-askild-vatnbakk-larsen-bjornar-a96a6eee3e.webp"
 ---

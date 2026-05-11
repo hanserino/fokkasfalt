@@ -7,4 +7,5 @@ og_type: article
 date: '2025-02-13T04:00:02Z'
 duration: '26:59'
 duration_iso8601: PT26M59S
+thumb: "/assets/episode-thumbs/obt-2025-portrett-8-fredrik-berentsen-ae19d94b54.webp"
 ---

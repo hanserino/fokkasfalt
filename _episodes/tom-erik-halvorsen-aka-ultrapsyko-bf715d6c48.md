@@ -10,4 +10,5 @@ og_type: article
 date: '2022-05-20T03:28:33Z'
 duration: '1:38:56'
 duration_iso8601: PT1H38M56S
+thumb: "/assets/episode-thumbs/tom-erik-halvorsen-aka-ultrapsyko-bf715d6c48.webp"
 ---

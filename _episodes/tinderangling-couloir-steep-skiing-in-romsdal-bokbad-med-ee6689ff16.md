@@ -11,4 +11,5 @@ og_type: article
 date: '2023-02-20T15:02:58Z'
 duration: '1:26:15'
 duration_iso8601: PT1H26M15S
+thumb: "/assets/episode-thumbs/tinderangling-couloir-steep-skiing-in-romsdal-bokbad-med-ee6689ff16.webp"
 ---

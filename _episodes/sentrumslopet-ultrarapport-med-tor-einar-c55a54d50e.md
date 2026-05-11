@@ -10,4 +10,5 @@ og_type: article
 date: '2022-04-29T06:21:59Z'
 duration: '1:31:35'
 duration_iso8601: PT1H31M35S
+thumb: "/assets/episode-thumbs/sentrumslopet-ultrarapport-med-tor-einar-c55a54d50e.webp"
 ---

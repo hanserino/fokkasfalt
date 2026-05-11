@@ -9,4 +9,5 @@ og_type: article
 date: '2023-12-21T04:00:02Z'
 duration: '2:03:25'
 duration_iso8601: PT2H3M25S
+thumb: "/assets/episode-thumbs/sesongoppsummering-didrik-hermansen-gro-siljan-hjukse-cf4abefba2.webp"
 ---

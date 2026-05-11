@@ -11,4 +11,5 @@ og_type: article
 date: '2020-07-21T08:21:51Z'
 duration: '1:05:53'
 duration_iso8601: PT1H5M53S
+thumb: "/assets/episode-thumbs/stig-morken-luca-roncoroni-bilal-chaudhry-race-debrief-f-76fe32e76d.webp"
 ---

@@ -10,4 +10,5 @@ og_type: article
 date: '2020-04-03T11:12:22Z'
 duration: '1:40:34'
 duration_iso8601: PT1H40M34S
+thumb: "/assets/episode-thumbs/early-access-episode-94-leif-abrahamsen-norges-droyeste-0cc9d0bc9e.webp"
 ---

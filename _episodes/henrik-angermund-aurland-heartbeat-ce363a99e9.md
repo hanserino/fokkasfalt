@@ -10,4 +10,5 @@ og_type: article
 date: '2020-07-31T09:21:39Z'
 duration: '2:03:37'
 duration_iso8601: PT2H3M37S
+thumb: "/assets/episode-thumbs/henrik-angermund-aurland-heartbeat-ce363a99e9.webp"
 ---

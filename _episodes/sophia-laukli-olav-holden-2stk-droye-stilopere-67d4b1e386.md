@@ -10,4 +10,5 @@ og_type: article
 date: '2022-09-14T11:38:37Z'
 duration: '1:59:42'
 duration_iso8601: PT1H59M42S
+thumb: "/assets/episode-thumbs/sophia-laukli-olav-holden-2stk-droye-stilopere-67d4b1e386.webp"
 ---

@@ -10,4 +10,5 @@ og_type: article
 date: '2020-12-30T12:31:22Z'
 duration: '2:08:28'
 duration_iso8601: PT2H8M28S
+thumb: "/assets/episode-thumbs/ultra-ringerunde-til-ultra-patreons-6bb3c57484.webp"
 ---

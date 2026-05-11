@@ -7,4 +7,5 @@ og_type: article
 date: '2025-02-26T04:00:03Z'
 duration: '28:57'
 duration_iso8601: PT28M57S
+thumb: "/assets/episode-thumbs/obt-2025-portrett-13-lars-aurtande-29228e1df2.webp"
 ---

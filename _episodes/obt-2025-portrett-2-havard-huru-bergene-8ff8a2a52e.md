@@ -7,4 +7,5 @@ og_type: article
 date: '2025-02-06T07:52:41Z'
 duration: '33:41'
 duration_iso8601: PT33M41S
+thumb: "/assets/episode-thumbs/obt-2025-portrett-2-havard-huru-bergene-8ff8a2a52e.webp"
 ---

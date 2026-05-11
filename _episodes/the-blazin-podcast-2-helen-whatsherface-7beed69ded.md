@@ -10,4 +10,5 @@ og_type: article
 date: '2020-10-12T12:55:40Z'
 duration: '1:12:10'
 duration_iso8601: PT1H12M10S
+thumb: "/assets/episode-thumbs/the-blazin-podcast-2-helen-whatsherface-7beed69ded.webp"
 ---

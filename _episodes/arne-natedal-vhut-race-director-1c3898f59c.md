@@ -10,4 +10,5 @@ og_type: article
 date: '2025-05-26T09:26:12Z'
 duration: '1:11:33'
 duration_iso8601: PT1H11M33S
+thumb: "/assets/episode-thumbs/arne-natedal-vhut-race-director-1c3898f59c.webp"
 ---

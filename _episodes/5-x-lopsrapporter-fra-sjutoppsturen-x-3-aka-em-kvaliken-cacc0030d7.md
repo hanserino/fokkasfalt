@@ -10,4 +10,5 @@ og_type: article
 date: '2024-04-04T03:00:04Z'
 duration: '2:09:05'
 duration_iso8601: PT2H9M5S
+thumb: "/assets/episode-thumbs/5-x-lopsrapporter-fra-sjutoppsturen-x-3-aka-em-kvaliken-cacc0030d7.webp"
 ---

@@ -10,4 +10,5 @@ og_type: article
 date: '2023-09-14T05:00:02Z'
 duration: '2:26:42'
 duration_iso8601: PT2H26M42S
+thumb: "/assets/episode-thumbs/blaise-dubois-myteknusende-foredrag-neda-experience-2023-bb799272a8.webp"
 ---

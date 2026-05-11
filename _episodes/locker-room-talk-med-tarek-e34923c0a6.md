@@ -10,4 +10,5 @@ og_type: article
 date: '2020-06-26T12:24:56Z'
 duration: '48:01'
 duration_iso8601: PT48M1S
+thumb: "/assets/episode-thumbs/locker-room-talk-med-tarek-e34923c0a6.webp"
 ---

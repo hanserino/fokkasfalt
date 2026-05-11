@@ -10,4 +10,5 @@ og_type: article
 date: '2019-07-23T10:00:57Z'
 duration: '59:20'
 duration_iso8601: PT59M20S
+thumb: "/assets/episode-thumbs/the-blazin-podcast-episode-2-helen-is-in-it-for-the-righ-647e39cabf.webp"
 ---

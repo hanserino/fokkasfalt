@@ -7,4 +7,5 @@ og_type: article
 date: '2023-04-18T04:01:03Z'
 duration: '32:56'
 duration_iso8601: PT32M56S
+thumb: "/assets/episode-thumbs/jim-werner-amdal-del-2-patreon-exclusive-krs-ultra-lopsr-1ba07d1f5b.webp"
 ---

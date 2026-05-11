@@ -10,4 +10,5 @@ og_type: article
 date: '2024-01-04T04:00:02Z'
 duration: '4:03:53'
 duration_iso8601: PT4H3M53S
+thumb: "/assets/episode-thumbs/frode-lein-gobi-yukon-iditarod-namibia-kilimanjaro-musta-6737f1778b.webp"
 ---

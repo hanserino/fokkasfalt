@@ -10,4 +10,5 @@ og_type: article
 date: '2023-04-25T08:09:53Z'
 duration: '1:00:01'
 duration_iso8601: PT1H0M1S
+thumb: "/assets/episode-thumbs/gtnsn-sandnes-ultratrail-23km-hove-brangeflt-hultegard-c-5cd617df5b.webp"
 ---

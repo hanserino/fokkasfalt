@@ -10,4 +10,5 @@ og_type: article
 date: '2020-07-29T09:54:37Z'
 duration: '59:11'
 duration_iso8601: PT59M11S
+thumb: "/assets/episode-thumbs/gjermund-nordskar-ekstrem-eventyrer-og-forfatter-8df258a312.webp"
 ---

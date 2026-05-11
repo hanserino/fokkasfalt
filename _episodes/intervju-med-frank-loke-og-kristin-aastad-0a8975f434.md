@@ -10,4 +10,5 @@ og_type: article
 date: '2019-10-06T09:10:26Z'
 duration: '18:25'
 duration_iso8601: PT18M25S
+thumb: "/assets/episode-thumbs/intervju-med-frank-loke-og-kristin-aastad-0a8975f434.webp"
 ---

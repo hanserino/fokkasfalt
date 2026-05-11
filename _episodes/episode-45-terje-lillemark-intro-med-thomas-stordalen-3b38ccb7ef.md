@@ -10,4 +10,5 @@ og_type: article
 date: '2019-02-17T09:40:11Z'
 duration: '4:23:39'
 duration_iso8601: PT4H23M39S
+thumb: "/assets/episode-thumbs/episode-45-terje-lillemark-intro-med-thomas-stordalen-3b38ccb7ef.webp"
 ---

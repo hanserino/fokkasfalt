@@ -9,4 +9,5 @@ og_type: article
 date: '2024-03-21T04:00:03Z'
 duration: '1:37:44'
 duration_iso8601: PT1H37M44S
+thumb: "/assets/episode-thumbs/kor-skal-vi-reis-nedas-paskelabyrint-2024-7bbf81f7a6.webp"
 ---

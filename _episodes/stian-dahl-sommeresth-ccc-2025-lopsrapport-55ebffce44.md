@@ -10,4 +10,5 @@ og_type: article
 date: '2025-09-01T18:04:00Z'
 duration: '44:00'
 duration_iso8601: PT44M
+thumb: "/assets/episode-thumbs/stian-dahl-sommeresth-ccc-2025-lopsrapport-55ebffce44.webp"
 ---

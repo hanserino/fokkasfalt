@@ -10,4 +10,5 @@ og_type: article
 date: '2020-11-07T08:14:48Z'
 duration: '4:18:07'
 duration_iso8601: PT4H18M7S
+thumb: "/assets/episode-thumbs/podcasten-som-aldri-ble-publisert-6a3c51b8e2.webp"
 ---

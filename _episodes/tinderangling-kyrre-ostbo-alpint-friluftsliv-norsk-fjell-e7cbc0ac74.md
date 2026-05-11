@@ -10,4 +10,5 @@ og_type: article
 date: '2023-03-14T13:16:55Z'
 duration: '1:39:33'
 duration_iso8601: PT1H39M33S
+thumb: "/assets/episode-thumbs/tinderangling-kyrre-ostbo-alpint-friluftsliv-norsk-fjell-e7cbc0ac74.webp"
 ---

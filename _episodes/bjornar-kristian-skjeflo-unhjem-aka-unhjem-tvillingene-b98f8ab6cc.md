@@ -10,4 +10,5 @@ og_type: article
 date: '2025-07-30T03:00:09Z'
 duration: '58:03'
 duration_iso8601: PT58M3S
+thumb: "/assets/episode-thumbs/bjornar-kristian-skjeflo-unhjem-aka-unhjem-tvillingene-b98f8ab6cc.webp"
 ---

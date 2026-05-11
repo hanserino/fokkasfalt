@@ -11,4 +11,5 @@ og_type: article
 date: '2020-11-26T13:15:13Z'
 duration: '1:37:11'
 duration_iso8601: PT1H37M11S
+thumb: "/assets/episode-thumbs/elisabet-barnes-sexterapi-coaching-ultraloping-mensen-re-fc903762fb.webp"
 ---

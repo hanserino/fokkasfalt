@@ -10,4 +10,5 @@ og_type: article
 date: '2018-11-07T07:21:36Z'
 duration: '2:28:04'
 duration_iso8601: PT2H28M4S
+thumb: "/assets/episode-thumbs/episode-36-styrketrening-for-terrengultrafjell-lopere-9af95c7476.webp"
 ---

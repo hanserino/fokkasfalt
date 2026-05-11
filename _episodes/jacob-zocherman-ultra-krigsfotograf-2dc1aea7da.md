@@ -10,4 +10,5 @@ og_type: article
 date: '2025-01-22T07:34:30Z'
 duration: '1:25:24'
 duration_iso8601: PT1H25M24S
+thumb: "/assets/episode-thumbs/jacob-zocherman-ultra-krigsfotograf-2dc1aea7da.webp"
 ---

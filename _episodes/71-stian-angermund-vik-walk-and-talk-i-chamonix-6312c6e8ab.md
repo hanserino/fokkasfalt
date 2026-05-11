@@ -10,4 +10,5 @@ og_type: article
 date: '2019-09-03T10:50:12Z'
 duration: '40:56'
 duration_iso8601: PT40M56S
+thumb: "/assets/episode-thumbs/71-stian-angermund-vik-walk-and-talk-i-chamonix-6312c6e8ab.webp"
 ---

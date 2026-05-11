@@ -10,4 +10,5 @@ og_type: article
 date: '2025-07-02T07:32:57Z'
 duration: '3:11:41'
 duration_iso8601: PT3H11M41S
+thumb: "/assets/episode-thumbs/henrik-rostrup-kadens-journal-a0104949d7.webp"
 ---

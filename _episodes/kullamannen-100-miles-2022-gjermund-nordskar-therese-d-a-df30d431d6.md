@@ -11,4 +11,5 @@ og_type: article
 date: '2022-11-10T08:23:12Z'
 duration: '2:58:38'
 duration_iso8601: PT2H58M38S
+thumb: "/assets/episode-thumbs/kullamannen-100-miles-2022-gjermund-nordskar-therese-d-a-df30d431d6.webp"
 ---

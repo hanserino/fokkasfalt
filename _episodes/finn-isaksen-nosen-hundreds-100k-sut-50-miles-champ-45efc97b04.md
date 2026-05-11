@@ -10,4 +10,5 @@ og_type: article
 date: '2023-06-29T03:57:53Z'
 duration: '59:51'
 duration_iso8601: PT59M51S
+thumb: "/assets/episode-thumbs/finn-isaksen-nosen-hundreds-100k-sut-50-miles-champ-45efc97b04.webp"
 ---

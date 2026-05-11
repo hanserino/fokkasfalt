@@ -11,4 +11,5 @@ og_type: article
 date: '2022-02-13T14:34:53Z'
 duration: '1:34:53'
 duration_iso8601: PT1H34M53S
+thumb: "/assets/episode-thumbs/kenneth-melin-grodahl-askild-vatnbakk-larsen-mindset-nor-c1e4fde79a.webp"
 ---

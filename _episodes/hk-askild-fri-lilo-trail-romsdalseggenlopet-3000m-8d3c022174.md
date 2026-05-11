@@ -8,4 +8,5 @@ og_type: article
 date: '2025-10-02T03:00:04Z'
 duration: '2:19:01'
 duration_iso8601: PT2H19M1S
+thumb: "/assets/episode-thumbs/hk-askild-fri-lilo-trail-romsdalseggenlopet-3000m-8d3c022174.webp"
 ---

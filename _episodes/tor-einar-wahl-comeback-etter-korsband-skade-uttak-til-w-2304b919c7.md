@@ -11,4 +11,5 @@ og_type: article
 date: '2023-05-11T04:01:00Z'
 duration: '1:45:37'
 duration_iso8601: PT1H45M37S
+thumb: "/assets/episode-thumbs/tor-einar-wahl-comeback-etter-korsband-skade-uttak-til-w-2304b919c7.webp"
 ---

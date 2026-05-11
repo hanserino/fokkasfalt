@@ -10,4 +10,5 @@ og_type: article
 date: '2024-02-01T04:00:06Z'
 duration: '1:33:19'
 duration_iso8601: PT1H33M19S
+thumb: "/assets/episode-thumbs/henriette-albon-bob-graham-winter-record-07a593c24c.webp"
 ---

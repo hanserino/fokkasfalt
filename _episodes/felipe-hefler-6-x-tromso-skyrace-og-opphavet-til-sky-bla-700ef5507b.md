@@ -10,4 +10,5 @@ og_type: article
 date: '2024-03-28T04:00:05Z'
 duration: '1:39:56'
 duration_iso8601: PT1H39M56S
+thumb: "/assets/episode-thumbs/felipe-hefler-6-x-tromso-skyrace-og-opphavet-til-sky-bla-700ef5507b.webp"
 ---

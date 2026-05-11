@@ -10,4 +10,5 @@ og_type: article
 date: '2023-04-13T04:00:02Z'
 duration: '56:36'
 duration_iso8601: PT56M36S
+thumb: "/assets/episode-thumbs/thor-gotaas-fads-26049ccb80.webp"
 ---

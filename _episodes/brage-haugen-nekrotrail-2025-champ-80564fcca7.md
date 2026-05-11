@@ -8,4 +8,5 @@ og_type: article
 date: '2025-05-22T03:00:05Z'
 duration: '1:06:06'
 duration_iso8601: PT1H6M6S
+thumb: "/assets/episode-thumbs/brage-haugen-nekrotrail-2025-champ-80564fcca7.webp"
 ---

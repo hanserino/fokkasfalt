@@ -7,4 +7,5 @@ og_type: article
 date: '2025-02-06T08:03:36Z'
 duration: '40:01'
 duration_iso8601: PT40M1S
+thumb: "/assets/episode-thumbs/obt-2025-portrett-5-anders-vekve-4a3bff46bb.webp"
 ---

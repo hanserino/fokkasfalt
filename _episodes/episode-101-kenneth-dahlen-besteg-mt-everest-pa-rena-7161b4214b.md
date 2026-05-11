@@ -10,4 +10,5 @@ og_type: article
 date: '2020-05-26T15:55:33Z'
 duration: '2:05:48'
 duration_iso8601: PT2H5M48S
+thumb: "/assets/episode-thumbs/episode-101-kenneth-dahlen-besteg-mt-everest-pa-rena-7161b4214b.webp"
 ---

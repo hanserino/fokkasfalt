@@ -11,4 +11,5 @@ og_type: article
 date: '2026-03-20T10:47:25Z'
 duration: '18:43'
 duration_iso8601: PT18M43S
+thumb: "/assets/episode-thumbs/utholdenhetstrening-for-ultralopere-foredrag-av-steffen-2b3fce551c.webp"
 ---

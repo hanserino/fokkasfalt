@@ -10,4 +10,5 @@ og_type: article
 date: '2018-08-30T14:33:52Z'
 duration: '1:05:31'
 duration_iso8601: PT1H5M31S
+thumb: "/assets/episode-thumbs/eksklusiv-episode-med-christel-marie-blunck-0169620e78.webp"
 ---

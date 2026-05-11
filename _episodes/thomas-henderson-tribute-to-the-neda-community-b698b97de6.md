@@ -10,4 +10,5 @@ og_type: article
 date: '2021-04-26T05:55:39Z'
 duration: '2:01:38'
 duration_iso8601: PT2H1M38S
+thumb: "/assets/episode-thumbs/thomas-henderson-tribute-to-the-neda-community-b698b97de6.webp"
 ---

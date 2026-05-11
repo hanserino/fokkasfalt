@@ -10,4 +10,5 @@ og_type: article
 date: '2020-07-20T06:07:37Z'
 duration: '1:05:14'
 duration_iso8601: PT1H5M14S
+thumb: "/assets/episode-thumbs/jon-ilseng-blefjells-beste-terskeltrening-janteloven-ol-1263fca9ab.webp"
 ---

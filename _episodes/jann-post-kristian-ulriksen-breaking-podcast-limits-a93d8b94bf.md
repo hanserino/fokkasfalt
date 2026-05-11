@@ -10,4 +10,5 @@ og_type: article
 date: '2021-02-01T07:53:59Z'
 duration: '1:24:06'
 duration_iso8601: PT1H24M6S
+thumb: "/assets/episode-thumbs/jann-post-kristian-ulriksen-breaking-podcast-limits-a93d8b94bf.webp"
 ---

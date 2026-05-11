@@ -7,4 +7,5 @@ og_type: article
 date: '2025-05-16T12:15:22Z'
 duration: '17:26'
 duration_iso8601: PT17M26S
+thumb: "/assets/episode-thumbs/en-liten-monolog-fra-hurtigbaten-lyder-fra-the-romsdal-m-d5220a8d03.webp"
 ---

@@ -9,4 +9,5 @@ og_type: article
 date: '2018-06-26T07:31:44Z'
 duration: '30:33'
 duration_iso8601: PT30M33S
+thumb: "/assets/episode-thumbs/tirsdag-morgen-ga-til-jobb-ramble-9098f1988d.webp"
 ---

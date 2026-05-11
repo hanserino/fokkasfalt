@@ -10,4 +10,5 @@ og_type: article
 date: '2020-08-22T14:35:54Z'
 duration: '23:17'
 duration_iso8601: PT23M17S
+thumb: "/assets/episode-thumbs/tromso-mountain-challenge-stian-dahl-sommerseth-robin-am-33b42aa6c9.webp"
 ---

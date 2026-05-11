@@ -10,4 +10,5 @@ og_type: article
 date: '2019-08-06T06:36:59Z'
 duration: '1:47:14'
 duration_iso8601: PT1H47M14S
+thumb: "/assets/episode-thumbs/66-utstyr-patrick-stangbye-d8cf2c4b13.webp"
 ---

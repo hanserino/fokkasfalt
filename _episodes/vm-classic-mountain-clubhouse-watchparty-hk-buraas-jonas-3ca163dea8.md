@@ -8,4 +8,5 @@ og_type: article
 date: '2023-06-10T12:50:55Z'
 duration: '1:15:10'
 duration_iso8601: PT1H15M10S
+thumb: "/assets/episode-thumbs/vm-classic-mountain-clubhouse-watchparty-hk-buraas-jonas-3ca163dea8.webp"
 ---

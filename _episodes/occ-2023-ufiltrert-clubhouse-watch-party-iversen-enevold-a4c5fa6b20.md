@@ -8,4 +8,5 @@ og_type: article
 date: '2023-08-31T12:06:13Z'
 duration: '4:50:07'
 duration_iso8601: PT4H50M7S
+thumb: "/assets/episode-thumbs/occ-2023-ufiltrert-clubhouse-watch-party-iversen-enevold-a4c5fa6b20.webp"
 ---

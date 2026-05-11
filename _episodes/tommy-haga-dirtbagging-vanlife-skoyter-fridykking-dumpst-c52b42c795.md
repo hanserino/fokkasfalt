@@ -11,4 +11,5 @@ og_type: article
 date: '2021-02-16T13:50:55Z'
 duration: '1:23:27'
 duration_iso8601: PT1H23M27S
+thumb: "/assets/episode-thumbs/tommy-haga-dirtbagging-vanlife-skoyter-fridykking-dumpst-c52b42c795.webp"
 ---

@@ -11,4 +11,5 @@ og_type: article
 date: '2020-12-16T06:29:09Z'
 duration: '1:22:26'
 duration_iso8601: PT1H22M26S
+thumb: "/assets/episode-thumbs/thor-gotaas-loping-ultraloping-idrettshistorie-langrenn-9675cdef6e.webp"
 ---

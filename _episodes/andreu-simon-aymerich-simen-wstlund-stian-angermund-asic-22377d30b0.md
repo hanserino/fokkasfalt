@@ -11,4 +11,5 @@ og_type: article
 date: '2023-03-09T05:00:01Z'
 duration: '2:03:02'
 duration_iso8601: PT2H3M2S
+thumb: "/assets/episode-thumbs/andreu-simon-aymerich-simen-wstlund-stian-angermund-asic-22377d30b0.webp"
 ---

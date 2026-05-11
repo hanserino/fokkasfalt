@@ -10,4 +10,5 @@ og_type: article
 date: '2023-02-09T05:50:22Z'
 duration: '1:11:03'
 duration_iso8601: PT1H11M3S
+thumb: "/assets/episode-thumbs/gro-siljan-hjukse-ultranerding-pa-hoyt-niva-f0fb5d94ed.webp"
 ---

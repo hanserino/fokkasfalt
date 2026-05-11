@@ -7,4 +7,5 @@ og_type: article
 date: '2025-02-19T04:00:02Z'
 duration: '24:45'
 duration_iso8601: PT24M45S
+thumb: "/assets/episode-thumbs/obt-2025-portrett-10-lars-vadeled-roed-fb36ad0b16.webp"
 ---

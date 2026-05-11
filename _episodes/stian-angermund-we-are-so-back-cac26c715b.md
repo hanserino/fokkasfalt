@@ -10,4 +10,5 @@ og_type: article
 date: '2026-02-04T05:00:00Z'
 duration: '1:14:37'
 duration_iso8601: PT1H14M37S
+thumb: "/assets/episode-thumbs/stian-angermund-we-are-so-back-cac26c715b.webp"
 ---

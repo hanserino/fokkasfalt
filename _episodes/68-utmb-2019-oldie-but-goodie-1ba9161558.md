@@ -10,4 +10,5 @@ og_type: article
 date: '2021-07-20T05:01:01Z'
 duration: '1:47:47'
 duration_iso8601: PT1H47M47S
+thumb: "/assets/episode-thumbs/68-utmb-2019-oldie-but-goodie-1ba9161558.webp"
 ---

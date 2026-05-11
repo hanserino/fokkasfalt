@@ -10,4 +10,5 @@ og_type: article
 date: '2024-12-06T09:10:58Z'
 duration: '1:45:26'
 duration_iso8601: PT1H45M26S
+thumb: "/assets/episode-thumbs/askild-vatnbakk-larsen-sesongoppsummering-og-lopsrapport-beef8382c6.webp"
 ---

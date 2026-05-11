@@ -10,4 +10,5 @@ og_type: article
 date: '2020-01-15T15:58:50Z'
 duration: '1:59:13'
 duration_iso8601: PT1H59M13S
+thumb: "/assets/episode-thumbs/askild-vatnbakk-larsen-og-steffen-brufladt-614cb5dbed.webp"
 ---

@@ -10,4 +10,5 @@ og_type: article
 date: '2024-10-23T03:00:06Z'
 duration: '1:08:13'
 duration_iso8601: PT1H8M13S
+thumb: "/assets/episode-thumbs/gran-winblad-rockstar-youtuber-og-ostfold-ultra-trail-ch-34d1d1db28.webp"
 ---

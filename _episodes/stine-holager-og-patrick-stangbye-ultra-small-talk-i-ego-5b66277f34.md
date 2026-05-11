@@ -10,4 +10,5 @@ og_type: article
 date: '2020-06-05T14:51:45Z'
 duration: '55:16'
 duration_iso8601: PT55M16S
+thumb: "/assets/episode-thumbs/stine-holager-og-patrick-stangbye-ultra-small-talk-i-ego-5b66277f34.webp"
 ---

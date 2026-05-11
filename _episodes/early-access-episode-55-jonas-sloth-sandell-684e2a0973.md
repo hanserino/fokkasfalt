@@ -10,4 +10,5 @@ og_type: article
 date: '2019-05-19T06:50:35Z'
 duration: '2:05:45'
 duration_iso8601: PT2H5M45S
+thumb: "/assets/episode-thumbs/early-access-episode-55-jonas-sloth-sandell-684e2a0973.webp"
 ---

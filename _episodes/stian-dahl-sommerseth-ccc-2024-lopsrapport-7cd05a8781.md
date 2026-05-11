@@ -9,4 +9,5 @@ og_type: article
 date: '2024-09-06T03:00:04Z'
 duration: '55:05'
 duration_iso8601: PT55M5S
+thumb: "/assets/episode-thumbs/stian-dahl-sommerseth-ccc-2024-lopsrapport-7cd05a8781.webp"
 ---

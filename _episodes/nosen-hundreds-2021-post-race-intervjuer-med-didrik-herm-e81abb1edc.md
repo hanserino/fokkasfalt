@@ -11,4 +11,5 @@ og_type: article
 date: '2021-06-19T05:01:00Z'
 duration: '2:01:26'
 duration_iso8601: PT2H1M26S
+thumb: "/assets/episode-thumbs/nosen-hundreds-2021-post-race-intervjuer-med-didrik-herm-e81abb1edc.webp"
 ---

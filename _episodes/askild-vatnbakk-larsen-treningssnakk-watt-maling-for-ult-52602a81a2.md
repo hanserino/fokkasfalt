@@ -11,4 +11,5 @@ og_type: article
 date: '2021-03-26T05:37:32Z'
 duration: '2:28:57'
 duration_iso8601: PT2H28M57S
+thumb: "/assets/episode-thumbs/askild-vatnbakk-larsen-treningssnakk-watt-maling-for-ult-52602a81a2.webp"
 ---

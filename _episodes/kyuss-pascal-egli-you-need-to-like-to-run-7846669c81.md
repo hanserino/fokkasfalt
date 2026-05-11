@@ -10,4 +10,5 @@ og_type: article
 date: '2019-08-19T18:15:15Z'
 duration: '7:37'
 duration_iso8601: PT7M37S
+thumb: "/assets/episode-thumbs/kyuss-pascal-egli-you-need-to-like-to-run-7846669c81.webp"
 ---

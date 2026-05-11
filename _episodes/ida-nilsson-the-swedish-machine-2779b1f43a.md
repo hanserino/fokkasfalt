@@ -10,4 +10,5 @@ og_type: article
 date: '2023-12-28T04:00:03Z'
 duration: '2:15:14'
 duration_iso8601: PT2H15M14S
+thumb: "/assets/episode-thumbs/ida-nilsson-the-swedish-machine-2779b1f43a.webp"
 ---

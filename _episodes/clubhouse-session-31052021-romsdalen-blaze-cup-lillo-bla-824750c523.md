@@ -11,4 +11,5 @@ og_type: article
 date: '2021-06-01T09:01:14Z'
 duration: '1:15:03'
 duration_iso8601: PT1H15M3S
+thumb: "/assets/episode-thumbs/clubhouse-session-31052021-romsdalen-blaze-cup-lillo-bla-824750c523.webp"
 ---

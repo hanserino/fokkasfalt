@@ -10,4 +10,5 @@ og_type: article
 date: '2019-09-10T06:05:41Z'
 duration: '33:24'
 duration_iso8601: PT33M24S
+thumb: "/assets/episode-thumbs/casual-ultra-chat-with-dr-klaus-vom-brocke-and-paul-from-90d0664a49.webp"
 ---

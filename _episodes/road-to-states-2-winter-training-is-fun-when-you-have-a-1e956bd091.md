@@ -8,4 +8,5 @@ og_type: article
 date: '2025-12-08T04:00:04Z'
 duration: '24:46'
 duration_iso8601: PT24M46S
+thumb: "/assets/episode-thumbs/road-to-states-2-winter-training-is-fun-when-you-have-a-1e956bd091.webp"
 ---

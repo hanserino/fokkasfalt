@@ -11,4 +11,5 @@ og_type: article
 date: '2021-07-17T05:01:00Z'
 duration: '2:30:19'
 duration_iso8601: PT2H30M19S
+thumb: "/assets/episode-thumbs/wolfgang-wee-podcasting-idrett-doping-nrk-magnus-carlsen-7105179a99.webp"
 ---

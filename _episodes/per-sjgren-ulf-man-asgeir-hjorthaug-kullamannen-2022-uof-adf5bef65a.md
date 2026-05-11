@@ -11,4 +11,5 @@ og_type: article
 date: '2022-10-07T05:27:00Z'
 duration: '2:02:50'
 duration_iso8601: PT2H2M50S
+thumb: "/assets/episode-thumbs/per-sjgren-ulf-man-asgeir-hjorthaug-kullamannen-2022-uof-adf5bef65a.webp"
 ---

@@ -11,4 +11,5 @@ og_type: article
 date: '2023-10-26T06:38:02Z'
 duration: '1:45:39'
 duration_iso8601: PT1H45M39S
+thumb: "/assets/episode-thumbs/golden-trail-series-2023-finale-oscar-claesson-ida-ameli-cd021f6277.webp"
 ---

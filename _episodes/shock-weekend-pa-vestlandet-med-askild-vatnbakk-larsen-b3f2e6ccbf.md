@@ -10,4 +10,5 @@ og_type: article
 date: '2022-06-09T08:00:04Z'
 duration: '1:49:23'
 duration_iso8601: PT1H49M23S
+thumb: "/assets/episode-thumbs/shock-weekend-pa-vestlandet-med-askild-vatnbakk-larsen-b3f2e6ccbf.webp"
 ---

@@ -10,4 +10,5 @@ og_type: article
 date: '2019-07-25T08:37:06Z'
 duration: '1:15:59'
 duration_iso8601: PT1H15M59S
+thumb: "/assets/episode-thumbs/episode-65-thomas-stordalen-eiger-ultra-trail-dnf-483f48185f.webp"
 ---

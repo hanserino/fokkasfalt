@@ -11,4 +11,5 @@ og_type: article
 date: '2023-04-27T04:00:03Z'
 duration: '1:41:58'
 duration_iso8601: PT1H41M58S
+thumb: "/assets/episode-thumbs/ingrid-lid-askild-vatnbakk-larsen-fredrik-askeland-rekor-a5afe3b9a0.webp"
 ---

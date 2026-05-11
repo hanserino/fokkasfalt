@@ -10,4 +10,5 @@ og_type: article
 date: '2019-04-15T02:30:51Z'
 duration: '59:58'
 duration_iso8601: PT59M58S
+thumb: "/assets/episode-thumbs/live-fra-japan-intervju-med-race-director-og-ultraloper-df8ba80848.webp"
 ---

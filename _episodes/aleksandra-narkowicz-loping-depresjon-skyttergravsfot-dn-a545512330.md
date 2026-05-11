@@ -10,4 +10,5 @@ og_type: article
 date: '2023-10-05T04:45:00Z'
 duration: '1:45:03'
 duration_iso8601: PT1H45M3S
+thumb: "/assets/episode-thumbs/aleksandra-narkowicz-loping-depresjon-skyttergravsfot-dn-a545512330.webp"
 ---

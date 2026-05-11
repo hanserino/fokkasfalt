@@ -11,4 +11,5 @@ og_type: article
 date: '2023-01-17T05:17:19Z'
 duration: '1:00:20'
 duration_iso8601: PT1H0M20S
+thumb: "/assets/episode-thumbs/bjorn-kruse-asgeir-rusti-romsdal-selected-ice-and-winter-6cd4f8011f.webp"
 ---

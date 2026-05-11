@@ -10,4 +10,5 @@ og_type: article
 date: '2021-02-04T08:58:52Z'
 duration: '1:17:39'
 duration_iso8601: PT1H17M39S
+thumb: "/assets/episode-thumbs/thor-gotaas-3-loping-en-norgeshistorie-12a3e71876.webp"
 ---

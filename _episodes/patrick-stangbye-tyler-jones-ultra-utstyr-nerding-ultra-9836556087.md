@@ -11,4 +11,5 @@ og_type: article
 date: '2021-03-04T08:13:21Z'
 duration: '2:09:55'
 duration_iso8601: PT2H9M55S
+thumb: "/assets/episode-thumbs/patrick-stangbye-tyler-jones-ultra-utstyr-nerding-ultra-9836556087.webp"
 ---

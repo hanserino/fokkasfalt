@@ -11,4 +11,5 @@ og_type: article
 date: '2023-04-06T08:05:45Z'
 duration: '1:22:51'
 duration_iso8601: PT1H22M51S
+thumb: "/assets/episode-thumbs/thor-gotaas-besoker-andalsnes-foredraget-et-muntert-blik-d1d6a35e8e.webp"
 ---

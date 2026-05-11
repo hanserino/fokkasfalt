@@ -9,4 +9,5 @@ og_type: article
 date: '2020-03-22T08:00:08Z'
 duration: '56:14'
 duration_iso8601: PT56M14S
+thumb: "/assets/episode-thumbs/sky-blazers-vs-korona-22-johannes-rummelhoff-aka-dr-sti-cc69600297.webp"
 ---

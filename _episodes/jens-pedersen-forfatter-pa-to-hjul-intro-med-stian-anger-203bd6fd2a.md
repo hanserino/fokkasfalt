@@ -10,4 +10,5 @@ og_type: article
 date: '2020-07-28T08:29:39Z'
 duration: '1:05:34'
 duration_iso8601: PT1H5M34S
+thumb: "/assets/episode-thumbs/jens-pedersen-forfatter-pa-to-hjul-intro-med-stian-anger-203bd6fd2a.webp"
 ---

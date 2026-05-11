@@ -11,4 +11,5 @@ og_type: article
 date: '2023-06-15T07:29:44Z'
 duration: '1:11:11'
 duration_iso8601: PT1H11M11S
+thumb: "/assets/episode-thumbs/hallvard-schjolberg-snowdownia-by-utmb-lofoten-arctic-tr-f4fb05a1a9.webp"
 ---

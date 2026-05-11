@@ -11,4 +11,5 @@ og_type: article
 date: '2022-11-28T06:16:06Z'
 duration: '55:59'
 duration_iso8601: PT55M59S
+thumb: "/assets/episode-thumbs/gabriella-mathisen-racing-the-planet-lope-med-n-arm-foll-868099b422.webp"
 ---

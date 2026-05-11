@@ -10,4 +10,5 @@ og_type: article
 date: '2025-10-30T04:00:06Z'
 duration: '1:28:20'
 duration_iso8601: PT1H28M20S
+thumb: "/assets/episode-thumbs/eivind-svellingen-bigs-backyard-ultra-lopsrapport-1b3482651d.webp"
 ---

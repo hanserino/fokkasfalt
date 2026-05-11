@@ -10,4 +10,5 @@ og_type: article
 date: '2023-06-09T06:14:48Z'
 duration: '24:51'
 duration_iso8601: PT24M51S
+thumb: "/assets/episode-thumbs/jonas-the-fjord-ranger-hesthaug-lopsrapport-fra-vm-short-c8caa3f90c.webp"
 ---

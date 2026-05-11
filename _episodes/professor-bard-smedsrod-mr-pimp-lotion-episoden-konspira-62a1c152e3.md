@@ -11,4 +11,5 @@ og_type: article
 date: '2021-07-10T05:00:03Z'
 duration: '1:25:47'
 duration_iso8601: PT1H25M47S
+thumb: "/assets/episode-thumbs/professor-bard-smedsrod-mr-pimp-lotion-episoden-konspira-62a1c152e3.webp"
 ---

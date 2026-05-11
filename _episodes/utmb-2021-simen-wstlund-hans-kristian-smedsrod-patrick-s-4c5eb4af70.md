@@ -11,4 +11,5 @@ og_type: article
 date: '2021-09-03T07:48:50Z'
 duration: '4:07:53'
 duration_iso8601: PT4H7M53S
+thumb: "/assets/episode-thumbs/utmb-2021-simen-wstlund-hans-kristian-smedsrod-patrick-s-4c5eb4af70.webp"
 ---

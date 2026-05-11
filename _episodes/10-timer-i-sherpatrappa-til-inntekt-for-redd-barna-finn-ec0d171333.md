@@ -12,4 +12,5 @@ og_type: article
 date: '2023-12-07T05:00:04Z'
 duration: '1:26:07'
 duration_iso8601: PT1H26M7S
+thumb: "/assets/episode-thumbs/10-timer-i-sherpatrappa-til-inntekt-for-redd-barna-finn-ec0d171333.webp"
 ---

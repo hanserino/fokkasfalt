@@ -10,4 +10,5 @@ og_type: article
 date: '2025-11-27T04:00:03Z'
 duration: '1:54:40'
 duration_iso8601: PT1H54M40S
+thumb: "/assets/episode-thumbs/anna-carlsson-4-plass-utmb-2025-be5ba76297.webp"
 ---

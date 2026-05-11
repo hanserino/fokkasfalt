@@ -10,4 +10,5 @@ og_type: article
 date: '2020-07-09T15:24:33Z'
 duration: '1:46:37'
 duration_iso8601: PT1H46M37S
+thumb: "/assets/episode-thumbs/jon-atle-eskedal-klatrer-trombonespillende-skikjorer-ode-d742865d7d.webp"
 ---

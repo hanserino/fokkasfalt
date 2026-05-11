@@ -10,4 +10,5 @@ og_type: article
 date: '2019-02-01T10:22:47Z'
 duration: '29:13'
 duration_iso8601: PT29M13S
+thumb: "/assets/episode-thumbs/freaky-friday-01022019-patreon-ramble-d4b864446d.webp"
 ---

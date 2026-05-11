@@ -10,4 +10,5 @@ og_type: article
 date: '2019-04-26T14:42:31Z'
 duration: '2:56:31'
 duration_iso8601: PT2H56M31S
+thumb: "/assets/episode-thumbs/episode-50-japan-0dae312f88.webp"
 ---

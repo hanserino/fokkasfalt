@@ -11,4 +11,5 @@ og_type: article
 date: '2020-07-26T10:27:52Z'
 duration: '2:29:09'
 duration_iso8601: PT2H29M9S
+thumb: "/assets/episode-thumbs/morten-urdal-bakke-provde-seg-pa-fkten-fra-operataket-ti-a6a4913ffb.webp"
 ---

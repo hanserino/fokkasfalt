@@ -10,4 +10,5 @@ og_type: article
 date: '2024-08-31T07:42:27Z'
 duration: '4:38:33'
 duration_iso8601: PT4H38M33S
+thumb: "/assets/episode-thumbs/ccc-utmb-watch-party-a5cfbcd7a0.webp"
 ---

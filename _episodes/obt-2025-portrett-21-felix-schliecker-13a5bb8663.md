@@ -9,4 +9,5 @@ og_type: article
 date: '2025-04-02T07:31:48Z'
 duration: '36:31'
 duration_iso8601: PT36M31S
+thumb: "/assets/episode-thumbs/obt-2025-portrett-21-felix-schliecker-13a5bb8663.webp"
 ---

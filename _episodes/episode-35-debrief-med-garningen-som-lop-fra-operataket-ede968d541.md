@@ -10,4 +10,5 @@ og_type: article
 date: '2018-10-28T13:06:43Z'
 duration: '1:22:43'
 duration_iso8601: PT1H22M43S
+thumb: "/assets/episode-thumbs/episode-35-debrief-med-garningen-som-lop-fra-operataket-ede968d541.webp"
 ---

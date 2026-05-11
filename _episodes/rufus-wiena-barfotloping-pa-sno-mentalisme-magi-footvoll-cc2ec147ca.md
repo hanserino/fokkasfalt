@@ -10,4 +10,5 @@ og_type: article
 date: '2023-11-30T09:50:13Z'
 duration: '1:17:47'
 duration_iso8601: PT1H17M47S
+thumb: "/assets/episode-thumbs/rufus-wiena-barfotloping-pa-sno-mentalisme-magi-footvoll-cc2ec147ca.webp"
 ---

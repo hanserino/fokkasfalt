@@ -10,4 +10,5 @@ og_type: article
 date: '2024-07-18T13:27:42Z'
 duration: '47:43'
 duration_iso8601: PT47M43S
+thumb: "/assets/episode-thumbs/gjermund-nordskar-jotunheimen-trail-run-6eede49634.webp"
 ---

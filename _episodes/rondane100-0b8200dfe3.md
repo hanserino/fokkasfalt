@@ -10,4 +10,5 @@ og_type: article
 date: '2020-08-30T11:55:18Z'
 duration: '2:37:52'
 duration_iso8601: PT2H37M52S
+thumb: "/assets/episode-thumbs/rondane100-0b8200dfe3.webp"
 ---

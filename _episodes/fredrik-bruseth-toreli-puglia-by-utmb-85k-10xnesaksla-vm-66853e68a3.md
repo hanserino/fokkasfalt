@@ -11,4 +11,5 @@ og_type: article
 date: '2025-11-20T04:00:05Z'
 duration: '1:53:58'
 duration_iso8601: PT1H53M58S
+thumb: "/assets/episode-thumbs/fredrik-bruseth-toreli-puglia-by-utmb-85k-10xnesaksla-vm-66853e68a3.webp"
 ---

@@ -12,4 +12,5 @@ og_type: article
 date: '2023-09-03T12:32:01Z'
 duration: '34:14'
 duration_iso8601: PT34M14S
+thumb: "/assets/episode-thumbs/romsdalseggenlopet-2023-lopsrapport-johanna-astrom-ola-j-5272166d6c.webp"
 ---

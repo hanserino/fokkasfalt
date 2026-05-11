@@ -10,4 +10,5 @@ og_type: article
 date: '2024-07-26T08:00:47Z'
 duration: '49:33'
 duration_iso8601: PT49M33S
+thumb: "/assets/episode-thumbs/bernt-marius-rorstad-jotunheimen-trail-run-med-protese-i-864911457d.webp"
 ---

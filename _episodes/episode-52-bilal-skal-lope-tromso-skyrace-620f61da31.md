@@ -10,4 +10,5 @@ og_type: article
 date: '2019-05-02T06:57:28Z'
 duration: '2:04:10'
 duration_iso8601: PT2H4M10S
+thumb: "/assets/episode-thumbs/episode-52-bilal-skal-lope-tromso-skyrace-620f61da31.webp"
 ---

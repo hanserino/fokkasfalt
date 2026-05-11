@@ -11,4 +11,5 @@ og_type: article
 date: '2022-01-13T07:25:30Z'
 duration: '1:21:56'
 duration_iso8601: PT1H21M56S
+thumb: "/assets/episode-thumbs/frank-loke-k2-everest-ultraloping-handball-ultrasvomming-17a6e600c5.webp"
 ---

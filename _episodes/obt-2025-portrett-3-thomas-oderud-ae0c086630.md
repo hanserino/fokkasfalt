@@ -7,4 +7,5 @@ og_type: article
 date: '2025-02-06T07:54:40Z'
 duration: '28:45'
 duration_iso8601: PT28M45S
+thumb: "/assets/episode-thumbs/obt-2025-portrett-3-thomas-oderud-ae0c086630.webp"
 ---

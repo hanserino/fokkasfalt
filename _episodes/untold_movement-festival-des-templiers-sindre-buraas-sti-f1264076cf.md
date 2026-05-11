@@ -11,4 +11,5 @@ og_type: article
 date: '2022-10-27T08:54:14Z'
 duration: '1:42:38'
 duration_iso8601: PT1H42M38S
+thumb: "/assets/episode-thumbs/untold_movement-festival-des-templiers-sindre-buraas-sti-f1264076cf.webp"
 ---

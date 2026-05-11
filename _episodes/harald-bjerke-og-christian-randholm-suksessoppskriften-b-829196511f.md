@@ -10,4 +10,5 @@ og_type: article
 date: '2020-12-07T08:01:06Z'
 duration: '1:10:44'
 duration_iso8601: PT1H10M44S
+thumb: "/assets/episode-thumbs/harald-bjerke-og-christian-randholm-suksessoppskriften-b-829196511f.webp"
 ---

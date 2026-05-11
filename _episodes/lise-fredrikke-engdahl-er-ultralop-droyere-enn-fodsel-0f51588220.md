@@ -9,4 +9,5 @@ og_type: article
 date: '2025-01-09T09:08:44Z'
 duration: '1:32:24'
 duration_iso8601: PT1H32M24S
+thumb: "/assets/episode-thumbs/lise-fredrikke-engdahl-er-ultralop-droyere-enn-fodsel-0f51588220.webp"
 ---

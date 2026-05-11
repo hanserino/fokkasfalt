@@ -63,14 +63,20 @@ layout: default
       <li class="ep-list__item">
         <a class="ep-list__link" href="{{ ep.url | relative_url }}">
           {% if ep.cover %}
+          {% if ep.thumb %}
+            {% assign home_thumb_src = ep.thumb | relative_url %}
+          {% else %}
+            {% assign home_thumb_src = ep.cover %}
+          {% endif %}
           <img
             class="ep-list__thumb"
-            src="{{ ep.cover }}"
+            src="{{ home_thumb_src }}"
             alt=""
             width="80"
             height="80"
             {% if forloop.index > 3 %}loading="lazy"{% endif %}
             decoding="async"
+            fetchpriority="low"
           />
           {% else %}
           <div class="ep-list__thumb ep-list__thumb--empty" aria-hidden="true"></div>

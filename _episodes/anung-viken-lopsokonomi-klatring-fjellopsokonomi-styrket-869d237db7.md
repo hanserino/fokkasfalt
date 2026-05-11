@@ -10,4 +10,5 @@ og_type: article
 date: '2022-02-03T05:34:00Z'
 duration: '1:51:45'
 duration_iso8601: PT1H51M45S
+thumb: "/assets/episode-thumbs/anung-viken-lopsokonomi-klatring-fjellopsokonomi-styrket-869d237db7.webp"
 ---

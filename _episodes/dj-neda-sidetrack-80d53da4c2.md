@@ -8,4 +8,5 @@ og_type: article
 date: '2019-09-04T12:43:07Z'
 duration: '2:27'
 duration_iso8601: PT2M27S
+thumb: "/assets/episode-thumbs/dj-neda-sidetrack-80d53da4c2.webp"
 ---

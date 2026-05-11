@@ -11,4 +11,5 @@ og_type: article
 date: '2021-08-31T05:00:02Z'
 duration: '1:41:17'
 duration_iso8601: PT1H41M17S
+thumb: "/assets/episode-thumbs/87-emily-hawgood-lyn-vanschoiack-katherine-de-las-nieves-ee42096517.webp"
 ---

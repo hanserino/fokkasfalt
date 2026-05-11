@@ -9,4 +9,5 @@ og_type: article
 date: '2024-09-05T06:47:46Z'
 duration: '29:46'
 duration_iso8601: PT29M46S
+thumb: "/assets/episode-thumbs/mari-klakegg-fenre-utmb-2024-lopsrapport-e3583cf9f4.webp"
 ---

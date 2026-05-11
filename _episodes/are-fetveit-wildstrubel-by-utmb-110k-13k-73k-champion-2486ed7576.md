@@ -9,4 +9,5 @@ og_type: article
 date: '2024-09-17T10:30:00Z'
 duration: '1:22:51'
 duration_iso8601: PT1H22M51S
+thumb: "/assets/episode-thumbs/are-fetveit-wildstrubel-by-utmb-110k-13k-73k-champion-2486ed7576.webp"
 ---
