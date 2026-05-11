@@ -26,19 +26,40 @@ concurrency:
 
 jobs:
   episodes:
-    runs-on: ubuntu-latest
+    # Pinned runner reduces surprises vs ubuntu-latest (packages/IM delegates).
+    runs-on: ubuntu-22.04
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3"
+          # Lockfile was BUNDLED WITH 2.3.x; Bundler 2.3 on Ruby 3.3 often fails CI (e.g. exit 5).
+          bundler: "2.5.23"
           bundler-cache: true
+          # Bump after bundler/cache changes (invalidate corrupt installer cache).
+          cache-version: 3
 
       - name: Install ImageMagick
-        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends imagemagick
+        env:
+          DEBIAN_FRONTEND: noninteractive
+        run: |
+          set -eu
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends imagemagick
+
+      - name: Verify ImageMagick (MiniMagick expects magick or convert on PATH)
+        run: |
+          set -eu
+          if command -v magick >/dev/null 2>&1; then
+            magick -version | head -1
+          elif command -v convert >/dev/null 2>&1; then
+            convert -version | head -1
+          else
+            echo "No magick or convert after apt install"; exit 1
+          fi
 
       - name: Fetch RSS and write Jekyll collection files
         env:

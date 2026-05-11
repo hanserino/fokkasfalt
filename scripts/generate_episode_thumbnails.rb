@@ -86,8 +86,8 @@ def parse_md(path)
     aliases: true
   )
   [fm, body]
-rescue Psych::SyntaxError, ArgumentError => e
-  warn "Skip #{path}: #{e.message}"
+rescue Psych::Exception, ArgumentError => e
+  warn "Skip #{path}: #{e.class}: #{e.message}"
   [nil, nil]
 end
 
@@ -158,8 +158,8 @@ paths.each do |path|
       image.quality quality.to_s
       image.write out_file
       image.destroy!
-    rescue OpenURI::HTTPError, SocketError, SystemCallError, MiniMagick::Error => e
-      warn "Thumb failed #{slug}: #{e.message}"
+    rescue StandardError => e
+      warn "Thumb failed #{slug}: #{e.class}: #{e.message}"
       failed += 1
       FileUtils.rm_f(out_file)
       fm.delete("thumb")

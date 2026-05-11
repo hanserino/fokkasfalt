@@ -21,10 +21,6 @@ layout: default
 
 <main id="main" class="ep-main wrap ep-main--wide">
   <h1 class="ep-page-title">Alle episoder av podcasten Føkk Asfalt</h1>
-  <p class="ep-intro wrap">
-    Alle episodene som er publisert på Patreon — oppdatert ukentlig via RSS.
-    <span class="ep-intro__side-note"><a href="{{ '/tilgjengelighet/' | relative_url }}">Sammenlign med Buzzsprout (beta)</a></span>
-  </p>
 
   {% assign eps = site.episodes | sort: 'date' | reverse %}
   {% if eps.size == 0 %}
