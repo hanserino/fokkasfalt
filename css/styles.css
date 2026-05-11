@@ -458,7 +458,7 @@ a:focus-visible {
 
 .ep-search {
   margin: 0 0 1.5rem;
-  width: 100%;
+  max-width: min(100%, 36rem);
 }
 
 .ep-search__label {

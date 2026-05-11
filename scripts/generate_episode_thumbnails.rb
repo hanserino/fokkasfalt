@@ -19,6 +19,8 @@
 # Loads project .env when present (same pattern as fetch_episodes.rb).
 
 require "fileutils"
+require "net/http"
+require "openssl"
 require "open-uri"
 require "yaml"
 
