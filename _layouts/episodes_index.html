@@ -44,6 +44,7 @@ layout: default
 
   {% if eps.size > 0 %}
   {% assign av = site.data.episode_availability %}
+  <div class="ep-episode-controls">
   <div class="ep-search" role="search" aria-label="Søk i episoder">
     <label class="ep-search__label" for="ep-search-input">Søk i episoder</label>
     <div class="ep-search__field">
@@ -77,6 +78,89 @@ layout: default
     </div>
     <p id="ep-search-status" class="ep-search__status" role="status" aria-live="polite"></p>
   </div>
+
+  <div class="ep-filters" id="ep-filters-shell">
+    <div class="ep-filters-toolbar">
+      <button
+        type="button"
+        id="ep-filters-toggle"
+        class="ep-filters-toggle"
+        aria-expanded="false"
+        aria-controls="ep-filters-panel"
+      >
+        <span class="ep-filters-toggle__ic" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 6h18M7 12h10M10 18h4" />
+          </svg>
+        </span>
+        <span id="ep-filters-toggle-label" class="ep-filters-toggle__text">Filtre</span>
+        <span class="ep-filters-toggle__chev" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </span>
+        <span id="ep-filters-dot" class="ep-filters-dot" aria-hidden="true" hidden></span>
+      </button>
+    </div>
+
+    <div id="ep-filters-panel" class="ep-filters-panel" aria-hidden="true">
+      <div class="ep-filter-year" role="group" aria-labelledby="ep-filter-year-label">
+        <label id="ep-filter-year-label" class="ep-filter-year__label" for="ep-filter-year">År</label>
+        <select
+          id="ep-filter-year"
+          class="ep-filter-year__select"
+          aria-controls="ep-episode-list"
+        >
+          <option value="">Alle år</option>
+        </select>
+      </div>
+      <div class="ep-sort" role="group" aria-labelledby="ep-sort-label" aria-describedby="ep-sort-hint">
+        <span id="ep-sort-label" class="ep-sort__label">Sorter liste</span>
+        <div id="ep-sort-toggle" class="ep-sort__toggle" data-order="desc">
+          <span class="ep-sort__thumb" aria-hidden="true"></span>
+          <button
+            type="button"
+            id="ep-sort-desc"
+            class="ep-sort__btn is-active"
+            aria-pressed="true"
+            aria-controls="ep-episode-list"
+            data-order="desc"
+          >
+            <span class="ep-sort__btn-inner">
+              <span class="ep-sort__btn-ic" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="7 13 12 18 17 13" />
+                  <polyline points="7 7 12 12 17 7" />
+                </svg>
+              </span>
+              <span class="ep-sort__btn-label">Nyeste øverst</span>
+            </span>
+          </button>
+          <button
+            type="button"
+            id="ep-sort-asc"
+            class="ep-sort__btn"
+            aria-pressed="false"
+            aria-controls="ep-episode-list"
+            data-order="asc"
+          >
+            <span class="ep-sort__btn-inner">
+              <span class="ep-sort__btn-ic" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="7 11 12 6 17 11" />
+                  <polyline points="7 17 12 12 17 17" />
+                </svg>
+              </span>
+              <span class="ep-sort__btn-label">Eldste øverst</span>
+            </span>
+          </button>
+        </div>
+        <p id="ep-sort-hint" class="ep-sort__hint">Utgivelsesår · samme rekkefølge som over.</p>
+      </div>
+    </div>
+  </div>
+  </div>
+
   <ul id="ep-episode-list" class="ep-list ep-list--single ep-list--filterable">
     {% for ep in eps %}
       {% assign slug_key = ep.name | default: '' | replace: '.md', '' %}
@@ -90,15 +174,56 @@ layout: default
       {% include episode_list_row.html ep=ep row=row slug_key=slug_key %}
     {% endfor %}
   </ul>
-  <p id="ep-search-empty" class="ep-search__empty" hidden>Ingen episoder matcher søket.</p>
+  <p id="ep-search-empty" class="ep-search__empty" hidden>Ingen episoder matcher filtrene.</p>
   <script>
     (function () {
       var list = document.getElementById("ep-episode-list");
       var input = document.getElementById("ep-search-input");
+      var sortToggle = document.getElementById("ep-sort-toggle");
+      var sortBtnDesc = document.getElementById("ep-sort-desc");
+      var sortBtnAsc = document.getElementById("ep-sort-asc");
       var statusEl = document.getElementById("ep-search-status");
       var emptyEl = document.getElementById("ep-search-empty");
       var clearBtn = document.getElementById("ep-search-clear");
-      if (!list || !input) return;
+      var filtersPanel = document.getElementById("ep-filters-panel");
+      var filtersToggle = document.getElementById("ep-filters-toggle");
+      var filtersLabel = document.getElementById("ep-filters-toggle-label");
+      var filtersDot = document.getElementById("ep-filters-dot");
+      var yearSelect = document.getElementById("ep-filter-year");
+      if (!list || !input || !sortToggle || !sortBtnDesc || !sortBtnAsc) return;
+      if (!filtersPanel || !filtersToggle || !filtersLabel || !yearSelect) return;
+
+      function filtersPanelExpanded() {
+        return filtersPanel.classList.contains("is-open");
+      }
+
+      function currentYearFilter() {
+        return yearSelect.value ? yearSelect.value : "";
+      }
+
+      function filtersAreNonDefault() {
+        return (
+          sortBtnAsc.classList.contains("is-active") || !!currentYearFilter()
+        );
+      }
+
+      function updateFiltersChrome() {
+        var open = filtersPanelExpanded();
+        filtersToggle.setAttribute("aria-expanded", open ? "true" : "false");
+        filtersLabel.textContent = open ? "Skjul filtre" : "Filtre";
+        filtersToggle.classList.toggle("ep-filters-toggle--open", open);
+        if (filtersDot) {
+          filtersDot.hidden = !filtersAreNonDefault() || open;
+        }
+        filtersToggle.classList.toggle("ep-filters-toggle--dirty", filtersAreNonDefault());
+      }
+
+      function setFiltersPanelOpen(open) {
+        var on = !!open;
+        filtersPanel.classList.toggle("is-open", on);
+        filtersPanel.setAttribute("aria-hidden", on ? "false" : "true");
+        updateFiltersChrome();
+      }
 
       var urlTimer = null;
       function syncQueryToUrl() {
@@ -108,6 +233,17 @@ layout: default
           params.set("q", v);
         } else {
           params.delete("q");
+        }
+        if (currentSortOrder() === "asc") {
+          params.set("order", "asc");
+        } else {
+          params.delete("order");
+        }
+        var y = currentYearFilter();
+        if (y) {
+          params.set("year", y);
+        } else {
+          params.delete("year");
         }
         var qs = params.toString();
         var next = window.location.pathname + (qs ? "?" + qs : "") + window.location.hash;
@@ -140,22 +276,172 @@ layout: default
 
       var stacks = items.map(haystack);
 
+      function listItemTimestamp(li) {
+        var iso = li.getAttribute("data-sort-date");
+        if (!iso) return 0;
+        var t = new Date(iso).getTime();
+        return Number.isNaN(t) ? 0 : t;
+      }
+
+      function currentSortOrder() {
+        return sortBtnAsc.classList.contains("is-active") ? "asc" : "desc";
+      }
+
+      function setSortOrder(order) {
+        var asc = order === "asc";
+        sortBtnAsc.classList.toggle("is-active", asc);
+        sortBtnDesc.classList.toggle("is-active", !asc);
+        sortBtnAsc.setAttribute("aria-pressed", asc ? "true" : "false");
+        sortBtnDesc.setAttribute("aria-pressed", !asc ? "true" : "false");
+        sortToggle.setAttribute("data-order", asc ? "asc" : "desc");
+      }
+
+      function stripYearSeparators() {
+        var ys = Array.prototype.slice.call(list.querySelectorAll("li.ep-list__year"));
+        ys.forEach(function (el) {
+          if (el.parentNode === list) list.removeChild(el);
+        });
+      }
+
+      function episodeYearKey(li) {
+        var iso = li.getAttribute("data-sort-date");
+        if (!iso) return "nodate";
+        var d = new Date(iso);
+        var t = d.getTime();
+        return Number.isNaN(t) ? "nodate" : String(d.getFullYear());
+      }
+
+      function yearSeparatorLabel(yearKey) {
+        return yearKey === "nodate" ? "Uten dato" : yearKey;
+      }
+
+      function setYearFilterFromParams(yrRaw) {
+        if (yrRaw === null || yrRaw === undefined) return;
+        var yr = String(yrRaw).trim();
+        if (
+          yr !== "nodate" &&
+          yr.length > 0 &&
+          !/^\d{4}$/.test(yr)
+        )
+          return;
+        for (var oi = 0; oi < yearSelect.options.length; oi++) {
+          if (yearSelect.options[oi].value === yr) {
+            yearSelect.value = yr;
+            return;
+          }
+        }
+      }
+
+      function populateYearDropdown() {
+        var seen = {};
+        items.forEach(function (li) {
+          seen[episodeYearKey(li)] = true;
+        });
+        while (yearSelect.firstChild)
+          yearSelect.removeChild(yearSelect.firstChild);
+        var o0 = document.createElement("option");
+        o0.value = "";
+        o0.textContent = "Alle år";
+        yearSelect.appendChild(o0);
+        Object.keys(seen)
+          .filter(function (k) {
+            return k !== "nodate";
+          })
+          .sort(function (a, b) {
+            return parseInt(b, 10) - parseInt(a, 10);
+          })
+          .forEach(function (y) {
+            var o = document.createElement("option");
+            o.value = y;
+            o.textContent = y;
+            yearSelect.appendChild(o);
+          });
+        if (seen.nodate) {
+          var on = document.createElement("option");
+          on.value = "nodate";
+          on.textContent = "Uten dato";
+          yearSelect.appendChild(on);
+        }
+      }
+
+      function rebuildYearSeparators() {
+        var epis = Array.prototype.slice.call(list.querySelectorAll(".ep-list__item"));
+        var prev = "__none__";
+        for (var i = 0; i < epis.length; i++) {
+          var ep = epis[i];
+          var ky = episodeYearKey(ep);
+          if (ky !== prev) {
+            prev = ky;
+            var sep = document.createElement("li");
+            sep.className = "ep-list__year";
+            sep.setAttribute("data-year", ky);
+            sep.setAttribute(
+              "aria-label",
+              ky === "nodate"
+                ? "Episoder uten registrert utgivelsesdato"
+                : "Episoder fra år " + ky
+            );
+            var inn = document.createElement("span");
+            inn.className = "ep-list__year-inner";
+            inn.textContent = yearSeparatorLabel(ky);
+            sep.appendChild(inn);
+            list.insertBefore(sep, ep);
+          }
+        }
+      }
+
+      function refreshYearSeparatorVisibility() {
+        var ch = Array.prototype.slice.call(list.children);
+        for (var i = 0; i < ch.length; i++) {
+          var node = ch[i];
+          if (!node.classList.contains("ep-list__year")) continue;
+          var j = i + 1;
+          var any = false;
+          while (j < ch.length) {
+            var n = ch[j];
+            if (n.classList.contains("ep-list__year")) break;
+            if (n.classList.contains("ep-list__item") && !n.hidden) any = true;
+            j++;
+          }
+          node.hidden = !any;
+        }
+      }
+
+      function applySort() {
+        stripYearSeparators();
+        var desc = currentSortOrder() !== "asc";
+        var nodes = Array.prototype.slice.call(items);
+        nodes.sort(function (a, b) {
+          var da = listItemTimestamp(a);
+          var db = listItemTimestamp(b);
+          return desc ? db - da : da - db;
+        });
+        nodes.forEach(function (li) {
+          list.appendChild(li);
+        });
+        rebuildYearSeparators();
+      }
+
       function filter() {
         var raw = input.value.trim();
         var terms = raw ? raw.toLowerCase().split(/\s+/) : [];
+        var yf = currentYearFilter();
+        var hasNarrowFilter = terms.length > 0 || !!yf;
         var visible = 0;
         for (var i = 0; i < items.length; i++) {
-          var show =
+          var matchTerms =
             terms.length === 0 ||
             terms.every(function (t) {
               return stacks[i].indexOf(t) !== -1;
             });
+          var matchYear = !yf || episodeYearKey(items[i]) === yf;
+          var show = matchTerms && matchYear;
           items[i].hidden = !show;
           if (show) visible++;
         }
 
         if (statusEl) {
-          if (terms.length === 0) {
+          if (!hasNarrowFilter) {
             statusEl.textContent = "";
           } else if (visible === 0) {
             statusEl.textContent = "Ingen treff.";
@@ -165,15 +451,50 @@ layout: default
           }
         }
         if (emptyEl) {
-          emptyEl.hidden = terms.length === 0 || visible > 0;
+          emptyEl.hidden = visible > 0;
         }
         if (clearBtn) {
           clearBtn.hidden = !input.value;
         }
         scheduleUrlSync();
+        refreshYearSeparatorVisibility();
+        updateFiltersChrome();
       }
 
       input.addEventListener("input", filter);
+      yearSelect.addEventListener("change", filter);
+      filtersToggle.addEventListener("click", function () {
+        setFiltersPanelOpen(!filtersPanelExpanded());
+        if (filtersPanelExpanded()) sortBtnDesc.focus();
+      });
+      document.addEventListener(
+        "keydown",
+        function (e) {
+          if (e.key !== "Escape" || !filtersPanelExpanded()) return;
+          e.preventDefault();
+          setFiltersPanelOpen(false);
+          filtersToggle.focus();
+        },
+        false
+      );
+      sortToggle.addEventListener("click", function (e) {
+        var btn = e.target.closest(".ep-sort__btn");
+        if (!btn || !sortToggle.contains(btn)) return;
+        var next = btn.getAttribute("data-order");
+        if (!next || next === currentSortOrder()) return;
+        setSortOrder(next);
+        applySort();
+        filter();
+      });
+      function onSortArrowKey(e) {
+        if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+        e.preventDefault();
+        setSortOrder(e.key === "ArrowLeft" ? "desc" : "asc");
+        applySort();
+        filter();
+      }
+      sortBtnDesc.addEventListener("keydown", onSortArrowKey);
+      sortBtnAsc.addEventListener("keydown", onSortArrowKey);
       if (clearBtn) {
         clearBtn.addEventListener("click", function () {
           input.value = "";
@@ -183,12 +504,32 @@ layout: default
       }
 
       try {
-        var q = new URLSearchParams(window.location.search).get("q");
+        var paramsInit = new URLSearchParams(window.location.search);
+        var orderRaw = paramsInit.get("order");
+        var yrQ = paramsInit.get("year");
+        populateYearDropdown();
+        if (orderRaw === "asc") setSortOrder("asc");
+
+        applySort();
+
+        setYearFilterFromParams(yrQ);
+
+        var q = paramsInit.get("q");
         if (q) {
           input.value = q;
-          filter();
         }
-      } catch (e) {}
+
+        var yrTrim = yrQ ? String(yrQ).trim() : "";
+        var yrParamOpens =
+          (yrTrim === "nodate" && yearSelect.value === "nodate") ||
+          (/^\d{4}$/.test(yrTrim) && yearSelect.value === yrTrim);
+        var openPanel = orderRaw === "asc" || yrParamOpens;
+        setFiltersPanelOpen(openPanel);
+      } catch (e) {
+        updateFiltersChrome();
+      }
+
+      filter();
     })();
   </script>
   {% endif %}

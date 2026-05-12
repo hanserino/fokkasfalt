@@ -2,7 +2,7 @@
   episode_list_row.html — én rad: lenke til episode + høyrekolonne (badge, ev. Spotify/Apple).
   Parametre: ep, row, hint (valgfri), slug_key (for unike SVG-id-er i lytteikoner)
 {% endcomment %}
-<li class="ep-list__item ep-list__item--row">
+<li class="ep-list__item ep-list__item--row" {% if include.ep.date %}data-sort-date="{{ include.ep.date | date_to_xmlschema }}"{% endif %}>
   <div class="ep-list__row">
     <a class="ep-list__main" href="{{ include.ep.url | relative_url }}">
       {% if include.ep.cover %}
