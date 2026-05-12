@@ -14,6 +14,7 @@ on:
     branches: [main]
     paths:
       - "scripts/fetch_episodes.rb"
+      - "scripts/import_buzzsprout_only_episodes.rb"
       - "scripts/generate_episode_thumbnails.rb"
       - "scripts/match_episode_availability.rb"
       - "scripts/buzzsprout_match_core.rb"
@@ -70,6 +71,9 @@ jobs:
             exit 0
           fi
           ruby scripts/fetch_episodes.rb
+
+      - name: Import Buzzsprout-only episodes missing from arkivet
+        run: ruby scripts/import_buzzsprout_only_episodes.rb
 
       - name: Generate episode list thumbnails (WebP)
         env:

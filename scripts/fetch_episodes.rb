@@ -4,6 +4,9 @@
 # Fetches Patreon master RSS and writes one Markdown file per item under _episodes/.
 # Jekyll builds static HTML from the collection. Run locally or via GitHub Actions.
 #
+# Sletter ikke filer der front matter har buzzsprout_only: true (Buzzsprout-episoder
+# som ikke finnes i Patreon-feeden — se scripts/import_buzzsprout_only_episodes.rb ).
+#
 # Env: PATREON_RSS_URL (required), EPISODE_LIMIT (optional, integer)
 # Laster automatisk `/.env` i prosjektroten hvis den finnes (kun nøkler som ikke allerede er satt).
 
@@ -288,6 +291,23 @@ def write_episode_file(path, fm)
   File.write(path, "#{YAML.dump(fm)}---\n")
 end
 
+def load_front_matter(path)
+  s = File.read(path, encoding: "UTF-8")
+  lines = s.lines
+  return {} unless lines.first&.strip == "---"
+
+  buf = []
+  lines[1..]&.each do |line|
+    break if line.strip == "---"
+
+    buf << line
+  end
+  YAML.safe_load(buf.join) || {}
+rescue Psych::SyntaxError => e
+  warn "#{path}: could not parse front matter (#{e.message}), treating as replaceable."
+  {}
+end
+
 # Safe ISO8601 for RSS/Atom date values; never raises.
 def date_to_iso8601(d)
   case d
@@ -347,8 +367,15 @@ unless items.any? { |it| !it[:title].to_s.strip.empty? }
   exit 1
 end
 
+# Alle Patreon-derivede arkivfiler slettes før reskriving. Filer fra Buzzsprout som ikke matcher
+# Patreon (`buzzsprout_only: true` i front matter) beholdes — de finnes ikke i Patreon-master-RSS.
 FileUtils.mkdir_p(OUT_DIR)
-Dir[File.join(OUT_DIR, "*.md")].each { |f| FileUtils.rm_f(f) }
+Dir[File.join(OUT_DIR, "*.md")].each do |f|
+  fm = load_front_matter(f)
+  next if fm["buzzsprout_only"] == true
+
+  FileUtils.rm_f(f)
+end
 
 items.each do |it|
   title = it[:title].to_s
