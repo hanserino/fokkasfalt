@@ -298,7 +298,7 @@ layout: default
 
       function stripDateSeparators() {
         var ys = Array.prototype.slice.call(
-          list.querySelectorAll("li.ep-list__year, li.ep-list__month")
+          list.querySelectorAll("li.ep-list__period")
         );
         ys.forEach(function (el) {
           if (el.parentNode === list) list.removeChild(el);
@@ -339,25 +339,26 @@ layout: default
         return String(d.getFullYear()) + "-" + pad;
       }
 
-      function monthSeparatorLabel(ymKey) {
-        if (ymKey === "nodate") return "Uten måned";
+      /** Visning: «Mai - 2026» (måned med stor forbokstav) */
+      function periodStickyLabel(ymKey) {
+        if (ymKey === "nodate") return "Uten dato";
         var p = ymKey.split("-");
         if (p.length < 2) return ymKey;
+        var y = p[0];
         var mi = parseInt(p[1], 10) - 1;
         if (mi < 0 || mi > 11) return ymKey;
-        return MONTH_NAMES_NB[mi];
+        var mLow = MONTH_NAMES_NB[mi];
+        var mVis = mLow.charAt(0).toUpperCase() + mLow.slice(1);
+        return mVis + " - " + y;
       }
 
-      function monthSeparatorAria(ymKey) {
-        if (ymKey === "nodate") return "Episoder uten måned";
+      function periodStickyAria(ymKey) {
+        if (ymKey === "nodate") return "Episoder uten registrert utgivelsesdato";
         var p = ymKey.split("-");
         var y = p[0];
-        var lab = monthSeparatorLabel(ymKey);
-        return "Episoder fra " + lab + " " + y;
-      }
-
-      function yearSeparatorLabel(yearKey) {
-        return yearKey === "nodate" ? "Uten dato" : yearKey;
+        var mi = parseInt(p[1], 10) - 1;
+        if (mi < 0 || mi > 11) return "Episoder";
+        return "Episoder fra " + MONTH_NAMES_NB[mi] + " " + y;
       }
 
       function setYearFilterFromParams(yrRaw) {
@@ -411,42 +412,23 @@ layout: default
 
       function rebuildDateSeparators() {
         var epis = Array.prototype.slice.call(list.querySelectorAll(".ep-list__item"));
-        var prevY = "__none__";
-        var prevYM = "__none__";
+        var prevPeriod = "__none__";
         for (var i = 0; i < epis.length; i++) {
           var ep = epis[i];
-          var ky = episodeYearKey(ep);
           var ym = episodeYMKey(ep);
-          if (ky !== prevY) {
-            prevY = ky;
-            prevYM = "__none__";
-            var sep = document.createElement("li");
-            sep.className = "ep-list__year";
-            sep.setAttribute("data-year", ky);
-            sep.setAttribute(
-              "aria-label",
-              ky === "nodate"
-                ? "Episoder uten registrert utgivelsesdato"
-                : "Episoder fra år " + ky
-            );
-            var inn = document.createElement("span");
-            inn.className = "ep-list__year-inner";
-            inn.textContent = yearSeparatorLabel(ky);
-            sep.appendChild(inn);
-            list.insertBefore(sep, ep);
-          }
-          if (ym !== "nodate" && ym !== prevYM) {
-            prevYM = ym;
-            var msep = document.createElement("li");
-            msep.className = "ep-list__month";
-            msep.setAttribute("data-ym", ym);
-            msep.setAttribute("aria-label", monthSeparatorAria(ym));
-            var minn = document.createElement("span");
-            minn.className = "ep-list__month-inner";
-            minn.textContent = monthSeparatorLabel(ym);
-            msep.appendChild(minn);
-            list.insertBefore(msep, ep);
-          }
+          var periodKey = ym;
+          if (periodKey === prevPeriod) continue;
+          prevPeriod = periodKey;
+          var row = document.createElement("li");
+          row.className = "ep-list__period";
+          row.setAttribute("data-period", periodKey);
+          if (ym !== "nodate") row.setAttribute("data-ym", ym);
+          row.setAttribute("aria-label", periodStickyAria(periodKey));
+          var inn = document.createElement("span");
+          inn.className = "ep-list__period-inner";
+          inn.textContent = periodStickyLabel(periodKey);
+          row.appendChild(inn);
+          list.insertBefore(row, ep);
         }
       }
 
@@ -454,20 +436,12 @@ layout: default
         var ch = Array.prototype.slice.call(list.children);
         for (var i = 0; i < ch.length; i++) {
           var node = ch[i];
-          if (
-            !node.classList.contains("ep-list__year") &&
-            !node.classList.contains("ep-list__month")
-          )
-            continue;
+          if (!node.classList.contains("ep-list__period")) continue;
           var j = i + 1;
           var any = false;
           while (j < ch.length) {
             var n = ch[j];
-            if (
-              n.classList.contains("ep-list__year") ||
-              n.classList.contains("ep-list__month")
-            )
-              break;
+            if (n.classList.contains("ep-list__period")) break;
             if (n.classList.contains("ep-list__item") && !n.hidden) any = true;
             j++;
           }

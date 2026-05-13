@@ -1054,16 +1054,14 @@ a:focus-visible {
 
 /* Én episode per rad + høyrekolonne (badge / Spotify / Apple) */
 .ep-list--single {
-  --ep-sticky-year-h: 2.35rem;
+  --ep-sticky-period-h: 2.35rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-/* Sticky på selve <li> (ikke inner-span): flex-items med default stretch
-   gir ofte ikke «ekte» sticky mot viewport i flere nettlesere. */
-.ep-list--single > .ep-list__year,
-.ep-list--single > .ep-list__month {
+/* Én sticky-rad per måned: «Mai - 2026» */
+.ep-list--single > .ep-list__period {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1072,67 +1070,38 @@ a:focus-visible {
   max-width: 100%;
   box-sizing: border-box;
   position: sticky;
+  top: env(safe-area-inset-top, 0);
+  z-index: 3;
+  min-height: var(--ep-sticky-period-h);
   border-bottom: 1px solid var(--border);
-  background-color: color-mix(in srgb, var(--bg) 78%, transparent);
+  background-color: color-mix(in srgb, var(--bg) 82%, transparent);
   backdrop-filter: blur(12px) saturate(120%);
   -webkit-backdrop-filter: blur(12px) saturate(120%);
 }
 
-.ep-list--single > .ep-list__year {
-  top: env(safe-area-inset-top, 0);
-  z-index: 3;
-  min-height: var(--ep-sticky-year-h);
-}
-
-.ep-list--single > .ep-list__month {
-  top: calc(env(safe-area-inset-top, 0px) + var(--ep-sticky-year-h));
-  z-index: 2;
-  background-color: color-mix(in srgb, var(--bg) 85%, transparent);
-  backdrop-filter: blur(10px) saturate(115%);
-  -webkit-backdrop-filter: blur(10px) saturate(115%);
-}
-
-.ep-list--single > .ep-list__year:first-child .ep-list__year-inner {
+.ep-list--single > .ep-list__period:first-child .ep-list__period-inner {
   padding-top: 0;
 }
 
-.ep-list--single > .ep-list__year:first-child + .ep-list__month .ep-list__month-inner {
-  padding-top: 0;
-}
-
-.ep-list__year-inner {
-  display: block;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  text-align: left;
-  color: var(--text-muted);
-  padding: 0.5rem 0.15rem 0.32rem;
-  box-sizing: border-box;
-}
-
-.ep-list__month-inner {
+.ep-list__period-inner {
   display: block;
   font-size: 0.8125rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   text-align: left;
-  color: var(--text-subtle);
-  padding: 0.35rem 0.15rem 0.28rem;
+  color: var(--text-muted);
+  padding: 0.45rem 0.15rem 0.32rem;
   box-sizing: border-box;
 }
 
 @supports not (backdrop-filter: blur(1px)) {
-  .ep-list--single > .ep-list__year,
-  .ep-list--single > .ep-list__month {
+  .ep-list--single > .ep-list__period {
     background-color: var(--bg);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ep-list--single > .ep-list__year,
-  .ep-list--single > .ep-list__month {
+  .ep-list--single > .ep-list__period {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     background-color: var(--bg);
