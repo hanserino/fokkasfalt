@@ -296,12 +296,29 @@ layout: default
         sortToggle.setAttribute("data-order", asc ? "asc" : "desc");
       }
 
-      function stripYearSeparators() {
-        var ys = Array.prototype.slice.call(list.querySelectorAll("li.ep-list__year"));
+      function stripDateSeparators() {
+        var ys = Array.prototype.slice.call(
+          list.querySelectorAll("li.ep-list__year, li.ep-list__month")
+        );
         ys.forEach(function (el) {
           if (el.parentNode === list) list.removeChild(el);
         });
       }
+
+      var MONTH_NAMES_NB = [
+        "januar",
+        "februar",
+        "mars",
+        "april",
+        "mai",
+        "juni",
+        "juli",
+        "august",
+        "september",
+        "oktober",
+        "november",
+        "desember",
+      ];
 
       function episodeYearKey(li) {
         var iso = li.getAttribute("data-sort-date");
@@ -309,6 +326,34 @@ layout: default
         var d = new Date(iso);
         var t = d.getTime();
         return Number.isNaN(t) ? "nodate" : String(d.getFullYear());
+      }
+
+      function episodeYMKey(li) {
+        var iso = li.getAttribute("data-sort-date");
+        if (!iso) return "nodate";
+        var d = new Date(iso);
+        var t = d.getTime();
+        if (Number.isNaN(t)) return "nodate";
+        var m = d.getMonth() + 1;
+        var pad = m < 10 ? "0" + m : String(m);
+        return String(d.getFullYear()) + "-" + pad;
+      }
+
+      function monthSeparatorLabel(ymKey) {
+        if (ymKey === "nodate") return "Uten måned";
+        var p = ymKey.split("-");
+        if (p.length < 2) return ymKey;
+        var mi = parseInt(p[1], 10) - 1;
+        if (mi < 0 || mi > 11) return ymKey;
+        return MONTH_NAMES_NB[mi];
+      }
+
+      function monthSeparatorAria(ymKey) {
+        if (ymKey === "nodate") return "Episoder uten måned";
+        var p = ymKey.split("-");
+        var y = p[0];
+        var lab = monthSeparatorLabel(ymKey);
+        return "Episoder fra " + lab + " " + y;
       }
 
       function yearSeparatorLabel(yearKey) {
@@ -364,14 +409,17 @@ layout: default
         }
       }
 
-      function rebuildYearSeparators() {
+      function rebuildDateSeparators() {
         var epis = Array.prototype.slice.call(list.querySelectorAll(".ep-list__item"));
-        var prev = "__none__";
+        var prevY = "__none__";
+        var prevYM = "__none__";
         for (var i = 0; i < epis.length; i++) {
           var ep = epis[i];
           var ky = episodeYearKey(ep);
-          if (ky !== prev) {
-            prev = ky;
+          var ym = episodeYMKey(ep);
+          if (ky !== prevY) {
+            prevY = ky;
+            prevYM = "__none__";
             var sep = document.createElement("li");
             sep.className = "ep-list__year";
             sep.setAttribute("data-year", ky);
@@ -387,19 +435,39 @@ layout: default
             sep.appendChild(inn);
             list.insertBefore(sep, ep);
           }
+          if (ym !== "nodate" && ym !== prevYM) {
+            prevYM = ym;
+            var msep = document.createElement("li");
+            msep.className = "ep-list__month";
+            msep.setAttribute("data-ym", ym);
+            msep.setAttribute("aria-label", monthSeparatorAria(ym));
+            var minn = document.createElement("span");
+            minn.className = "ep-list__month-inner";
+            minn.textContent = monthSeparatorLabel(ym);
+            msep.appendChild(minn);
+            list.insertBefore(msep, ep);
+          }
         }
       }
 
-      function refreshYearSeparatorVisibility() {
+      function refreshSeparatorVisibility() {
         var ch = Array.prototype.slice.call(list.children);
         for (var i = 0; i < ch.length; i++) {
           var node = ch[i];
-          if (!node.classList.contains("ep-list__year")) continue;
+          if (
+            !node.classList.contains("ep-list__year") &&
+            !node.classList.contains("ep-list__month")
+          )
+            continue;
           var j = i + 1;
           var any = false;
           while (j < ch.length) {
             var n = ch[j];
-            if (n.classList.contains("ep-list__year")) break;
+            if (
+              n.classList.contains("ep-list__year") ||
+              n.classList.contains("ep-list__month")
+            )
+              break;
             if (n.classList.contains("ep-list__item") && !n.hidden) any = true;
             j++;
           }
@@ -408,7 +476,7 @@ layout: default
       }
 
       function applySort() {
-        stripYearSeparators();
+        stripDateSeparators();
         var desc = currentSortOrder() !== "asc";
         var nodes = Array.prototype.slice.call(items);
         nodes.sort(function (a, b) {
@@ -419,7 +487,7 @@ layout: default
         nodes.forEach(function (li) {
           list.appendChild(li);
         });
-        rebuildYearSeparators();
+        rebuildDateSeparators();
       }
 
       function filter() {
@@ -457,7 +525,7 @@ layout: default
           clearBtn.hidden = !input.value;
         }
         scheduleUrlSync();
-        refreshYearSeparatorVisibility();
+        refreshSeparatorVisibility();
         updateFiltersChrome();
       }
 

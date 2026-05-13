@@ -1054,18 +1054,24 @@ a:focus-visible {
 
 /* Én episode per rad + høyrekolonne (badge / Spotify / Apple) */
 .ep-list--single {
+  --ep-sticky-year-h: 2.35rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.ep-list--single > .ep-list__year {
+.ep-list--single > .ep-list__year,
+.ep-list--single > .ep-list__month {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .ep-list--single > .ep-list__year:first-child > .ep-list__year-inner {
+  padding-top: 0;
+}
+
+.ep-list--single > .ep-list__year:first-child + .ep-list__month > .ep-list__month-inner {
   padding-top: 0;
 }
 
@@ -1080,21 +1086,50 @@ a:focus-visible {
   padding: 0.5rem 0.15rem 0.32rem;
   border-bottom: 1px solid var(--border);
   position: sticky;
-  top: 0;
-  z-index: 2;
+  top: env(safe-area-inset-top, 0);
+  z-index: 3;
+  min-height: var(--ep-sticky-year-h);
+  box-sizing: border-box;
   background-color: color-mix(in srgb, var(--bg) 78%, transparent);
   backdrop-filter: blur(12px) saturate(120%);
   -webkit-backdrop-filter: blur(12px) saturate(120%);
+}
+
+.ep-list__month-inner {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-align: left;
+  color: var(--text-subtle);
+  padding: 0.35rem 0.15rem 0.28rem;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: calc(env(safe-area-inset-top, 0px) + var(--ep-sticky-year-h));
+  z-index: 2;
+  background-color: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(10px) saturate(115%);
+  -webkit-backdrop-filter: blur(10px) saturate(115%);
 }
 
 @supports not (backdrop-filter: blur(1px)) {
   .ep-list__year-inner {
     background-color: var(--bg);
   }
+
+  .ep-list__month-inner {
+    background-color: var(--bg);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .ep-list__year-inner {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: var(--bg);
+  }
+
+  .ep-list__month-inner {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     background-color: var(--bg);
