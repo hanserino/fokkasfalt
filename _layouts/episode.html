@@ -15,6 +15,7 @@ layout: default
 {% if page.buzzsprout_only %}
 {% assign patreon_href = '' %}
 {% endif %}
+{% assign youtube_url = page.youtube_url | default: '' | strip %}
 
 <header class="ep-nav wrap">
   <div class="ep-nav__start">
@@ -61,6 +62,9 @@ layout: default
   </header>
   {% if page.description %}
   <p class="ep-article__excerpt">{{ page.description }}</p>
+  {% endif %}
+  {% if youtube_url != '' %}
+  {% include youtube_embed.html url=youtube_url title=page.title %}
   {% endif %}
   {% if patreon_href != '' or buzz_link != '' %}
   <div class="ep-article__cta">

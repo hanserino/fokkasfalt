@@ -1416,6 +1416,27 @@ a:focus-visible {
   margin: 0 0 1.5rem;
 }
 
+.ep-article__video {
+  position: relative;
+  width: 100%;
+  max-width: 50rem;
+  margin: 0 0 1.5rem;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.ep-article__video-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
 .ep-article__cta {
   margin: 0 0 1.25rem;
   display: flex;

@@ -4,6 +4,9 @@
 # Fetches Patreon master RSS and writes one Markdown file per item under _episodes/.
 # Jekyll builds static HTML from the collection. Run locally or via GitHub Actions.
 #
+# Bevarer valgfri youtube_url per episode (matcher på patreon_url) ved reimport, slik at
+# manuelle YouTube-lenker ikke slettes når RSS kjører på nytt.
+#
 # Sletter ikke filer der front matter har buzzsprout_only: true (Buzzsprout-episoder
 # som ikke finnes i Patreon-feeden — se scripts/import_buzzsprout_only_episodes.rb ).
 #
@@ -308,6 +311,13 @@ rescue Psych::SyntaxError => e
   {}
 end
 
+def episode_listen_key(fm)
+  p = fm["patreon_url"].to_s.strip
+  return p.chomp("/") unless p.empty?
+
+  fm["buzzsprout_url"].to_s.strip.chomp("/")
+end
+
 # Safe ISO8601 for RSS/Atom date values; never raises.
 def date_to_iso8601(d)
   case d
@@ -367,6 +377,19 @@ unless items.any? { |it| !it[:title].to_s.strip.empty? }
   exit 1
 end
 
+# Valgfri youtube_url i eksisterende filer: flettes inn igjen etter patreon_url (evt. buzzsprout_url).
+preserved_youtube = {}
+Dir[File.join(OUT_DIR, "*.md")].each do |f|
+  fm = load_front_matter(f)
+  key = episode_listen_key(fm)
+  next if key.empty?
+
+  yt = fm["youtube_url"].to_s.strip
+  next if yt.empty?
+
+  preserved_youtube[key] = yt
+end
+
 # Alle Patreon-derivede arkivfiler slettes før reskriving. Filer fra Buzzsprout som ikke matcher
 # Patreon (`buzzsprout_only: true` i front matter) beholdes — de finnes ikke i Patreon-master-RSS.
 FileUtils.mkdir_p(OUT_DIR)
@@ -402,6 +425,11 @@ items.each do |it|
     fm["duration"] = lbl if lbl
     iso = iso8601_duration_from_seconds(sec)
     fm["duration_iso8601"] = iso if iso
+  end
+
+  listen_key = link.to_s.strip.chomp("/")
+  if (yt = preserved_youtube[listen_key]) && !yt.to_s.strip.empty?
+    fm["youtube_url"] = yt.to_s.strip
   end
 
   write_episode_file(path, fm)
