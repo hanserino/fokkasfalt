@@ -1,6 +1,6 @@
 ---
 layout: episodes_index
-title_meta: "Podcast-episoder — Føkk Asfalt"
+title_meta: "Podcast-episoder — FØKK ASFALT"
 title: "Podcast-episoder"
 description: "Oversikt over alle episodene av podcasten Føkk Asfalt — dato, varighet og lenke til hver episode."
 permalink: /episoder/
