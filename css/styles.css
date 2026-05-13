@@ -1305,6 +1305,12 @@ a:focus-visible {
   font-variant-numeric: tabular-nums;
 }
 
+.ep-list__comment-count {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
 /* Episode page */
 .ep-article__header {
   margin-bottom: 1.25rem;

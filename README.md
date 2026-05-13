@@ -37,6 +37,8 @@ Episoder (`layout: episode`) kan vise [Giscus](https://github.com/giscus/giscus)
 
 Moderering og varsler skjer via GitHub Discussions. Brukere trenger GitHub-konto for å skrive.
 
+**Kommentartall på `/episoder/`:** Listen kan vise «N kommentarer» per episode når tallet er hentet inn. Fila [`_data/giscus_comment_counts.yml`](_data/giscus_comment_counts.yml) bygges av [`scripts/fetch_giscus_comment_counts.rb`](scripts/fetch_giscus_comment_counts.rb) (GraphQL mot GitHub, filtrert på `giscus.category_id`). Kjør GitHub Actions-workflowen **«Giscus comment counts»** (manuelt eller daglig 06:25 UTC), eller lokalt med `GITHUB_TOKEN` som har **discussions read** på repoet. Statisk Jekyll har ikke tilgang til GitHub uten token ved bygg.
+
 ## Patreon-RSS → episoder (`/episoder/`)
 
 [Ruby-skriptet](scripts/fetch_episodes.rb) `scripts/fetch_episodes.rb` henter master-RSS og skriver én **Markdown-fil per episode** i **`_episodes/`** (Jekyll *collection*). **Jekyll** bygger deretter:
@@ -69,7 +71,7 @@ Mangler `PATREON_RSS_URL` i Actions, hoppes import over (ingen feil).
 | `_layouts/` | HTML-maler |
 | `_includes/giscus.html` | Giscus-innboks (episoder), styrt av `giscus:` i `_config.yml` |
 | `_episodes/*.md` | Episodeinnhold (genereres av Ruby, bygges av Jekyll) |
-| `scripts/fetch_episodes.rb` | RSS → `_episodes/*.md` |
+| `scripts/fetch_giscus_comment_counts.rb` | Oppdaterer `_data/giscus_comment_counts.yml` (Giscus-tall for episodelisten) |
 | `css/styles.css` | Stiler |
 | `Gemfile` / `Gemfile.lock` | Lokalt Jekyll (+ `jekyll-sitemap`) |
 

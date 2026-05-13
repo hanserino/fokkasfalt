@@ -26,7 +26,11 @@
       {% endif %}
       <span class="ep-list__body">
         <span class="ep-list__title">{{ include.ep.title }}</span>
-        {% if include.ep.date or include.ep.duration %}
+        {% assign _comment_n = 0 %}
+        {% if site.data.giscus_comment_counts and site.data.giscus_comment_counts.counts %}
+          {% assign _comment_n = site.data.giscus_comment_counts.counts[include.ep.url] | default: 0 %}
+        {% endif %}
+        {% if include.ep.date or include.ep.duration or _comment_n > 0 %}
         <span class="ep-list__sub">
           {% if include.ep.date %}
           <time class="ep-list__date" datetime="{{ include.ep.date | date_to_xmlschema }}">{% include date-no.html date=include.ep.date %}</time>
@@ -34,6 +38,10 @@
           {% if include.ep.date and include.ep.duration %}<span class="ep-list__sep" aria-hidden="true">·</span>{% endif %}
           {% if include.ep.duration %}
           <span class="ep-list__duration" aria-label="Varighet {{ include.ep.duration }}">{{ include.ep.duration }}</span>
+          {% endif %}
+          {% if _comment_n > 0 %}
+          {% if include.ep.date or include.ep.duration %}<span class="ep-list__sep" aria-hidden="true">·</span>{% endif %}
+          <span class="ep-list__comment-count" title="Giscus-kommentarer på GitHub Discussions">{{ _comment_n }} kommentar{% if _comment_n != 1 %}er{% endif %}</span>
           {% endif %}
         </span>
         {% endif %}
