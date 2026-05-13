@@ -217,6 +217,7 @@ def main() -> None:
                 for r in rows
             ],
         }
+        args.json.parent.mkdir(parents=True, exist_ok=True)
         args.json.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
         print(f"Skrev {args.json}")
 
