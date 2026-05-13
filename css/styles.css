@@ -1131,7 +1131,7 @@ a:focus-visible {
   letter-spacing: 0.04em;
   text-align: left;
   color: var(--text-muted);
-  padding: 0.45rem 0.15rem 0.32rem;
+  padding: 0.45rem 0.15rem 0.32rem var(--space);
   box-sizing: border-box;
 }
 
