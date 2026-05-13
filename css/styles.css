@@ -1374,6 +1374,36 @@ a:focus-visible {
   font-size: 0.9rem;
 }
 
+/* Giscus (episode comments) */
+.ep-comments {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.ep-comments .section-title {
+  margin-bottom: 0.5rem;
+}
+
+.ep-comments__intro {
+  margin: 0 0 1.25rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  max-width: 40rem;
+}
+
+.ep-comments__intro a {
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.ep-comments .giscus {
+  width: 100%;
+}
+
 .ep-hero-funnel {
   margin: 0 0 1.25rem;
   text-align: center;

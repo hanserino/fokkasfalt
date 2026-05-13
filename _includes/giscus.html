@@ -1,0 +1,27 @@
+{% assign gc = site.giscus %}
+{% if gc and gc.repo and gc.repo != "" and gc.repo_id and gc.repo_id != "" and gc.category and gc.category != "" and gc.category_id and gc.category_id != "" %}
+<section class="ep-comments wrap" aria-labelledby="ep-comments-heading">
+  <h2 id="ep-comments-heading" class="section-title">Kommentarer</h2>
+  <p class="ep-comments__intro">
+    Kommentarer krever <a href="https://github.com/login" rel="noopener noreferrer">GitHub-konto</a>. Samtalen lagres som en
+    <a href="https://github.com/{{ gc.repo }}/discussions" rel="noopener noreferrer">GitHub Discussion</a> knyttet til denne episoden.
+  </p>
+  <div class="giscus"></div>
+  <script
+    src="https://giscus.app/client.js"
+    data-repo="{{ gc.repo | xml_escape }}"
+    data-repo-id="{{ gc.repo_id | xml_escape }}"
+    data-category="{{ gc.category | xml_escape }}"
+    data-category-id="{{ gc.category_id | xml_escape }}"
+    data-mapping="{{ gc.mapping | default: 'pathname' | xml_escape }}"
+    data-strict="{{ gc.strict | default: 0 }}"
+    data-reactions-enabled="{{ gc.reactions_enabled | default: 1 }}"
+    data-emit-metadata="{{ gc.emit_metadata | default: 0 }}"
+    data-input-position="{{ gc.input_position | default: 'bottom' | xml_escape }}"
+    data-theme="{{ gc.theme | default: 'dark' | xml_escape }}"
+    data-lang="{{ gc.lang | default: 'en' | xml_escape }}"
+    crossorigin="anonymous"
+    async
+  ></script>
+</section>
+{% endif %}

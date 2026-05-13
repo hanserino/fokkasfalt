@@ -37,3 +37,17 @@ defaults:
     values:
       layout: episode
       og_type: article
+
+# Giscus (GitHub Discussions-kommentarer på episoder). Verdier fra https://giscus.app
+giscus:
+  repo: hanserino/fokkasfalt
+  repo_id: "R_kgDOSXg0eQ"
+  category: "Episode-kommentar"
+  category_id: "DIC_kwDOSXg0ec4C8811"
+  mapping: pathname
+  strict: 0
+  reactions_enabled: 1
+  emit_metadata: 0
+  input_position: bottom
+  theme: noborder_dark
+  lang: en

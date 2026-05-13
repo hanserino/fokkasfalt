@@ -26,6 +26,17 @@ bundle exec jekyll serve
 Jekyll bruker `url` og `baseurl` i `_config.yml`. **`url`** er satt til `https://fokkasfalt.no` (kanoniske lenker og sitemap).
 Oppdater også **`robots.txt`** hvis sitemap-URL skal endres (pluginen **jekyll-sitemap** genererer `/sitemap.xml`).
 
+## Giscus (kommentarer på episoder)
+
+Episoder (`layout: episode`) kan vise [Giscus](https://github.com/giscus/giscus)-kommentarer (bygger på **GitHub Discussions**). Oppsett styres av **`giscus:`** i `_config.yml` (inkl. `category` og `category_id` fra [giscus.app](https://giscus.app)).
+
+1. I GitHub-repoet: **Settings → General → Features → Discussions** (slå på).
+2. Opprett en **Discussion-kategori** til kommentarer (f.eks. **Episode-kommentar**). Navnet må stemme med `giscus.category` i `_config.yml`.
+3. Installer [giscus GitHub App](https://github.com/apps/giscus) på repoet `hanserino/fokkasfalt` (eller det repoet du bruker).
+4. Gå til [giscus.app](https://giscus.app), fyll inn repo og kategori, velg **Page ↔️ Discussions mapping: pathname** (én tråd per episode-URL), kopier **`data-category-id`** inn i `giscus.category_id` i `_config.yml`, og push.
+
+Moderering og varsler skjer via GitHub Discussions. Brukere trenger GitHub-konto for å skrive.
+
 ## Patreon-RSS → episoder (`/episoder/`)
 
 [Ruby-skriptet](scripts/fetch_episodes.rb) `scripts/fetch_episodes.rb` henter master-RSS og skriver én **Markdown-fil per episode** i **`_episodes/`** (Jekyll *collection*). **Jekyll** bygger deretter:
@@ -56,6 +67,7 @@ Mangler `PATREON_RSS_URL` i Actions, hoppes import over (ingen feil).
 | `index.md` | Forside (`layout: home`) |
 | `episoder.md` | Oversikt `/episoder/` |
 | `_layouts/` | HTML-maler |
+| `_includes/giscus.html` | Giscus-innboks (episoder), styrt av `giscus:` i `_config.yml` |
 | `_episodes/*.md` | Episodeinnhold (genereres av Ruby, bygges av Jekyll) |
 | `scripts/fetch_episodes.rb` | RSS → `_episodes/*.md` |
 | `css/styles.css` | Stiler |
