@@ -72,7 +72,33 @@ Mangler `PATREON_RSS_URL` i Actions, hoppes import over (ingen feil).
 | `_includes/giscus.html` | Giscus-innboks (episoder), styrt av `giscus:` i `_config.yml` |
 | `_episodes/*.md` | Episodeinnhold (genereres av Ruby, bygges av Jekyll) |
 | `scripts/fetch_giscus_comment_counts.rb` | Oppdaterer `_data/giscus_comment_counts.yml` (Giscus-tall for episodelisten) |
+| `scripts/extract_guest_names.py` | Lokalt: NER-navn fra episodetitler → `guest_names_report.csv` (se avsnitt under) |
 | `css/styles.css` | Stiler |
 | `Gemfile` / `Gemfile.lock` | Lokalt Jekyll (+ `jekyll-sitemap`) |
 
 **Node** brukes ikke lenger (før brukt til samme import).
+
+## Navn i episodetitler (lokalt NER)
+
+Skriptet [`scripts/extract_guest_names.py`](scripts/extract_guest_names.py) går gjennom `title:` i alle `_episodes/*.md`, kjører **spaCy** med den norske modellen **`nb_core_news_sm`** (valgfritt `nb_core_news_lg` for bedre kvalitet) og samler entiteter merket som person (**`PER` / `PERSON`**). Resultatet skrives til **`scripts/guest_names_report.csv`** (og valgfritt JSON med `--json`).
+
+### Oppsett (én gang per maskin)
+
+```bash
+cd /path/til/ultramarathon   # prosjektrot
+python3 -m venv scripts/.venv-ner
+source scripts/.venv-ner/bin/activate   # Windows: scripts\.venv-ner\Scripts\activate
+pip install -r scripts/requirements-ner.txt
+python -m spacy download nb_core_news_sm
+```
+
+### Kjøre
+
+```bash
+source scripts/.venv-ner/bin/activate
+python scripts/extract_guest_names.py
+# eller: python scripts/extract_guest_names.py --out min_rapport.csv --json min_rapport.json
+# kun gjester som dukker opp i minst 2 episoder: --min-episodes 2
+```
+
+**Merk:** Modellen tar feil av og til (sted, løp, podkast som «person»). Bruk CSV-en som **utkast** og rydd manuelt. `scripts/.venv-ner/` og standard rapportfiler er **`.gitignore`**-et.

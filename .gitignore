@@ -3,3 +3,8 @@ _site/
 node_modules/
 .env
 .DS_Store
+
+# Lokalt Python-miljø + NER-rapporter (scripts/extract_guest_names.py)
+scripts/.venv-ner/
+scripts/guest_names_report.csv
+scripts/guest_names_report.json
