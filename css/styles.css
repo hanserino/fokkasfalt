@@ -1244,6 +1244,10 @@ a:focus-visible {
   color: #1ed760;
 }
 
+.listen-icon--youtube {
+  color: #ff0033;
+}
+
 .listen-icon svg {
   display: block;
 }

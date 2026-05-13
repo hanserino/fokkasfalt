@@ -1,9 +1,17 @@
 {% comment %}
-  Lytte-ikoner (Spotify, Apple Podcasts).
+  Lytte-ikoner (Spotify, Apple Podcasts, valgfritt YouTube).
   Valgfritt: listen_spotify / listen_apple (episode-URLer). Tomme = show-URLer fra site.listen_links.
+  Valgfritt: listen_youtube (episode-URL eller ID) — vises etter Apple når satt.
   Valgfritt: listen_uid (episode-slug) for unike gradient-id i Apple-SVG når mange rader på én side; ellers hashes fra apple_href.
   Ikoner vises når den endelige href er satt — ikke avhengig av at show-feltene er satt hvis episode-URL finnes.
 {% endcomment %}
+{% assign yt_href = include.listen_youtube | default: '' | strip %}
+{% assign yt_link = yt_href %}
+{% if yt_href != '' %}
+{% unless yt_href contains '://' %}
+{% assign yt_link = 'https://www.youtube.com/watch?v=' | append: yt_href %}
+{% endunless %}
+{% endif %}
 {% assign spotify_href = '' %}
 {% assign apple_href = '' %}
 {% if site.listen_links %}
@@ -68,6 +76,22 @@
       <path d="M149.7,33.2C92.3,33.4,45.3,80,44.5,137.4c-0.6,46.5,29.1,86.3,70.6,100.9c1,0.4,2-0.5,1.9-1.5c-0.5-3.6-1.1-7.2-1.5-10.8c-0.2-1.3-1-2.3-2.1-2.9c-32.8-14.3-55.7-47.2-55.3-85.3c0.5-50,41.3-90.7,91.2-91.1c51.1-0.4,92.8,41,92.8,92c0,37.7-22.8,70.1-55.3,84.4c-1.2,0.5-2,1.6-2.1,2.9c-0.5,3.6-1,7.2-1.5,10.8c-0.2,1.1,0.9,1.9,1.9,1.5c41.1-14.4,70.6-53.6,70.6-99.6C255.5,80.5,208,33.1,149.7,33.2z" />
       <path d="M147.3,68.2c-37.4,1.4-67.4,32.3-67.9,69.7c-0.3,24.6,12,46.4,30.9,59.3c0.9,0.6,2.2-0.1,2.2-1.2c-0.3-4.3-0.3-8.1-0.1-12.1c0.1-1.3-0.4-2.5-1.4-3.4c-11.5-10.8-18.5-26.2-18.1-43.2c0.8-30,24.9-54.4,54.9-55.6c32.6-1.3,59.4,24.9,59.4,57.1c0,16.4-7,31.2-18.1,41.7c-0.9,0.9-1.4,2.1-1.4,3.4c0.2,3.9,0.1,7.7-0.1,12c-0.1,1.1,1.2,1.9,2.2,1.2c18.6-12.7,30.9-34.2,30.9-58.4C220.8,98.9,187.5,66.6,147.3,68.2z" />
     </g>
+  </svg>
+</a>
+{% endif %}
+{% if yt_href != '' %}
+<a
+  class="listen-icon listen-icon--youtube"
+  href="{{ yt_link }}"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Se episoden på YouTube"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+    <path
+      fill="currentColor"
+      d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+    />
   </svg>
 </a>
 {% endif %}

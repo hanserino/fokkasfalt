@@ -62,8 +62,11 @@
         <span class="avail-pill avail-pill--pat" title="Kun Patreon i praksis">Patreon</span>
         {% endunless %}
       </div>
+      {% assign ep_youtube = include.ep.youtube_url | default: '' | strip %}
       {% if include.row and include.row.availability == 'also_free' %}
-      <div class="ep-list__tail-listen">{% include listen-icons.html listen_spotify=include.row.listen_spotify_episode_url listen_apple=include.row.listen_apple_episode_url listen_uid=include.slug_key %}</div>
+      <div class="ep-list__tail-listen">{% include listen-icons.html listen_spotify=include.row.listen_spotify_episode_url listen_apple=include.row.listen_apple_episode_url listen_youtube=include.ep.youtube_url listen_uid=include.slug_key %}</div>
+      {% elsif ep_youtube != '' %}
+      <div class="ep-list__tail-listen">{% include listen-icons.html listen_youtube=include.ep.youtube_url listen_uid=include.slug_key %}</div>
       {% endif %}
     </div>
   </div>
