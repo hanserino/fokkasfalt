@@ -1,0 +1,17 @@
+{% comment %}
+  GA4 via gtag.js (ikke Google Tag Manager). Sett site.google_analytics i _config.yml til måle-ID, f.eks. G-XXXXXXXXXX.
+  Tom / utelatt = ingen sporingskode.
+{% endcomment %}
+{% assign _ga = site.google_analytics | default: '' | strip %}
+{% if _ga != '' %}
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ _ga }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", {{ _ga | jsonify }});
+</script>
+{% endif %}
