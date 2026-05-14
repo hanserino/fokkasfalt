@@ -379,6 +379,17 @@ layout: default
         return "";
       }
 
+      function narrowFilterActive() {
+        var raw = input.value.trim();
+        var terms = raw ? raw.toLowerCase().split(/\s+/) : [];
+        return (
+          terms.length > 0 ||
+          !!currentYearFilter() ||
+          !!currentYoutubeFilter() ||
+          !!currentAccessFilter()
+        );
+      }
+
       function filtersAreNonDefault() {
         return (
           sortBtnAsc.classList.contains("is-active") ||
@@ -608,10 +619,15 @@ layout: default
       }
 
       function rebuildDateSeparators() {
-        var epis = Array.prototype.slice.call(list.querySelectorAll(".ep-list__item"));
+        stripDateSeparators();
+        var epis = Array.prototype.slice.call(
+          list.querySelectorAll(".ep-list__item")
+        );
         var prevPeriod = "__none__";
+        var narrow = narrowFilterActive();
         for (var i = 0; i < epis.length; i++) {
           var ep = epis[i];
+          if (narrow && ep.hidden) continue;
           var ym = episodeYMKey(ep);
           var periodKey = ym;
           if (periodKey === prevPeriod) continue;
@@ -629,25 +645,7 @@ layout: default
         }
       }
 
-      function refreshSeparatorVisibility() {
-        var ch = Array.prototype.slice.call(list.children);
-        for (var i = 0; i < ch.length; i++) {
-          var node = ch[i];
-          if (!node.classList.contains("ep-list__period")) continue;
-          var j = i + 1;
-          var any = false;
-          while (j < ch.length) {
-            var n = ch[j];
-            if (n.classList.contains("ep-list__period")) break;
-            if (n.classList.contains("ep-list__item") && !n.hidden) any = true;
-            j++;
-          }
-          node.hidden = !any;
-        }
-      }
-
       function applySort() {
-        stripDateSeparators();
         var desc = currentSortOrder() !== "asc";
         var nodes = Array.prototype.slice.call(items);
         nodes.sort(function (a, b) {
@@ -704,7 +702,7 @@ layout: default
           clearBtn.hidden = !input.value;
         }
         scheduleUrlSync();
-        refreshSeparatorVisibility();
+        rebuildDateSeparators();
         updateFiltersChrome();
       }
 
