@@ -774,23 +774,28 @@ a:focus-visible {
   transition: transform 0.25s ease;
 }
 
-.ep-sort__toggle[data-order="asc"] .ep-sort__thumb {
+.ep-sort__toggle:not(.ep-sort__toggle--thumb-dynamic)[data-order="asc"] .ep-sort__thumb {
   transform: translateX(calc(100% + var(--sort-gap)));
 }
 
-/* Episodfiltre: tre knapper (Alle | … | …), samme stil som sortering */
-.ep-sort__toggle--filter.ep-sort__toggle--triple .ep-sort__thumb {
-  width: calc((100% - 2 * var(--sort-pad) - 2 * var(--sort-gap)) / 3);
-  opacity: 1;
-  transform: none;
+.ep-sort__toggle--thumb-dynamic {
+  align-self: flex-start;
+  max-width: 100%;
 }
 
-.ep-sort__toggle--filter.ep-sort__toggle--triple[data-slot="1"] .ep-sort__thumb {
-  transform: translateX(calc(100% + var(--sort-gap)));
+.ep-sort__toggle--thumb-dynamic .ep-sort__btn {
+  flex: 0 1 auto;
+  min-width: 0;
 }
 
-.ep-sort__toggle--filter.ep-sort__toggle--triple[data-slot="2"] .ep-sort__thumb {
-  transform: translateX(calc(2 * (100% + var(--sort-gap))));
+.ep-sort__toggle--thumb-dynamic .ep-sort__thumb {
+  width: auto;
+  min-width: 2rem;
+  transform: none !important;
+  transition:
+    left 0.22s ease,
+    width 0.22s ease,
+    opacity 0.18s ease;
 }
 
 .ep-sort__toggle--triple .ep-sort__btn-inner {

@@ -118,7 +118,7 @@ layout: default
         <span id="ep-filter-youtube-label" class="ep-sort__label">YouTube</span>
         <div
           id="ep-youtube-toggle"
-          class="ep-sort__toggle ep-sort__toggle--filter ep-sort__toggle--triple"
+          class="ep-sort__toggle ep-sort__toggle--filter ep-sort__toggle--triple ep-sort__toggle--thumb-dynamic"
           data-slot="0"
           role="group"
           aria-label="Filtrer på YouTube-video"
@@ -166,7 +166,7 @@ layout: default
         <span id="ep-filter-access-label" class="ep-sort__label">Tilgang</span>
         <div
           id="ep-access-toggle"
-          class="ep-sort__toggle ep-sort__toggle--filter ep-sort__toggle--triple"
+          class="ep-sort__toggle ep-sort__toggle--filter ep-sort__toggle--triple ep-sort__toggle--thumb-dynamic"
           data-slot="0"
           role="group"
           aria-label="Filtrer på tilgang"
@@ -212,7 +212,7 @@ layout: default
       </div>
       <div class="ep-sort" role="group" aria-labelledby="ep-sort-label" aria-describedby="ep-sort-hint">
         <span id="ep-sort-label" class="ep-sort__label">Sorter liste</span>
-        <div id="ep-sort-toggle" class="ep-sort__toggle" data-order="desc">
+        <div id="ep-sort-toggle" class="ep-sort__toggle ep-sort__toggle--thumb-dynamic" data-order="desc">
           <span class="ep-sort__thumb" aria-hidden="true"></span>
           <button
             type="button"
@@ -312,6 +312,33 @@ layout: default
         return filtersPanel.classList.contains("is-open");
       }
 
+      var elasticThumbToggles = [sortToggle, ytToggle, accToggle];
+      var resizeThumbTimer = null;
+
+      function scheduleElasticThumbs() {
+        if (!filtersPanelExpanded()) return;
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            elasticThumbToggles.forEach(syncElasticThumb);
+          });
+        });
+      }
+
+      function syncElasticThumb(toggleEl) {
+        if (!toggleEl || !toggleEl.classList.contains("ep-sort__toggle--thumb-dynamic")) return;
+        if (!filtersPanelExpanded()) return;
+        var thumb = toggleEl.querySelector(".ep-sort__thumb");
+        if (!thumb) return;
+        var active = toggleEl.querySelector(".ep-sort__btn.is-active");
+        if (!active) return;
+        var tr = toggleEl.getBoundingClientRect();
+        var br = active.getBoundingClientRect();
+        if (tr.width < 2 || br.width < 2) return;
+        thumb.style.left = br.left - tr.left + "px";
+        thumb.style.width = br.width + "px";
+        thumb.style.transform = "none";
+      }
+
       function currentYearFilter() {
         return yearSelect.value ? yearSelect.value : "";
       }
@@ -325,6 +352,7 @@ layout: default
         ytBtnYes.setAttribute("aria-pressed", val === "yes" ? "true" : "false");
         ytBtnNo.setAttribute("aria-pressed", val === "no" ? "true" : "false");
         ytToggle.setAttribute("data-slot", all ? "0" : val === "yes" ? "1" : "2");
+        scheduleElasticThumbs();
       }
 
       function setAccessFilter(val) {
@@ -336,6 +364,7 @@ layout: default
         accBtnFree.setAttribute("aria-pressed", val === "free" ? "true" : "false");
         accBtnPat.setAttribute("aria-pressed", val === "patreon" ? "true" : "false");
         accToggle.setAttribute("data-slot", all ? "0" : val === "free" ? "1" : "2");
+        scheduleElasticThumbs();
       }
 
       function currentYoutubeFilter() {
@@ -375,6 +404,9 @@ layout: default
         filtersPanel.classList.toggle("is-open", on);
         filtersPanel.setAttribute("aria-hidden", on ? "false" : "true");
         updateFiltersChrome();
+        if (on) {
+          scheduleElasticThumbs();
+        }
       }
 
       var urlTimer = null;
@@ -458,6 +490,7 @@ layout: default
         sortBtnAsc.setAttribute("aria-pressed", asc ? "true" : "false");
         sortBtnDesc.setAttribute("aria-pressed", !asc ? "true" : "false");
         sortToggle.setAttribute("data-order", asc ? "asc" : "desc");
+        scheduleElasticThumbs();
       }
 
       function stripDateSeparators() {
@@ -770,6 +803,11 @@ layout: default
           filter();
         });
       }
+
+      window.addEventListener("resize", function () {
+        if (resizeThumbTimer) clearTimeout(resizeThumbTimer);
+        resizeThumbTimer = setTimeout(scheduleElasticThumbs, 100);
+      });
 
       try {
         var paramsInit = new URLSearchParams(window.location.search);
