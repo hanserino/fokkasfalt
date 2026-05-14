@@ -12,4 +12,5 @@ og_type: article
 date: '2019-03-22T23:00:00Z'
 duration: '3:34:58'
 duration_iso8601: PT3H34M58S
+thumb: "/assets/episode-thumbs/48-lorenza-walker-skal-sykle-rundt-jorda-pa-100-dager-5daf57658c.webp"
 ---

@@ -14,4 +14,5 @@ og_type: article
 date: '2021-04-08T18:00:00Z'
 duration: '1:03:41'
 duration_iso8601: PT1H3M41S
+thumb: "/assets/episode-thumbs/133-karsten-warholm-lego-bygging-kosthold-wings-for-life-ae2b34a486.webp"
 ---

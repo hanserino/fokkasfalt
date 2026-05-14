@@ -12,4 +12,5 @@ og_type: article
 date: '2018-02-02T23:00:00Z'
 duration: '56:05'
 duration_iso8601: PT56M5S
+thumb: "/assets/episode-thumbs/5-dumpster-diving-det-er-en-greie-8a36695b32.webp"
 ---

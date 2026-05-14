@@ -12,4 +12,5 @@ og_type: article
 date: '2021-03-06T06:00:00Z'
 duration: '38:24'
 duration_iso8601: PT38M24S
+thumb: "/assets/episode-thumbs/126-elov-olsson-ockelbomaffian-ultraloping-i-sverige-ol-cd8f160ebd.webp"
 ---

@@ -13,4 +13,5 @@ og_type: article
 date: '2022-12-13T12:00:00Z'
 duration: '1:02:52'
 duration_iso8601: PT1H2M52S
+thumb: "/assets/episode-thumbs/170-mathieu-blanchard-blaise-dubois-bone-health-for-moun-131c3b862d.webp"
 ---

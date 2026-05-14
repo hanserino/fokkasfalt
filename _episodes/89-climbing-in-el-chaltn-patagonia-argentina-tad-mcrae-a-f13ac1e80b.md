@@ -13,4 +13,5 @@ og_type: article
 date: '2020-03-06T14:00:00Z'
 duration: '1:12:51'
 duration_iso8601: PT1H12M51S
+thumb: "/assets/episode-thumbs/89-climbing-in-el-chaltn-patagonia-argentina-tad-mcrae-a-f13ac1e80b.webp"
 ---

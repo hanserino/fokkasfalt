@@ -12,4 +12,5 @@ og_type: article
 date: '2020-09-17T10:00:00Z'
 duration: '31:54'
 duration_iso8601: PT31M54S
+thumb: "/assets/episode-thumbs/107-patrick-stangbye-lillo-blaze-cup-2020-dokumentarfilm-e3cf76b51b.webp"
 ---

@@ -13,4 +13,5 @@ og_type: article
 date: '2019-10-06T11:00:00Z'
 duration: '2:14:02'
 duration_iso8601: PT2H14M2S
+thumb: "/assets/episode-thumbs/74-en-helg-i-skabu-forpremiere-av-besatt-intervjuer-med-6c9b156388.webp"
 ---

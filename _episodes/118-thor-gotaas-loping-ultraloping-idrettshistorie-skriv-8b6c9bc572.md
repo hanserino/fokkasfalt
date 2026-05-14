@@ -13,4 +13,5 @@ og_type: article
 date: '2021-01-14T20:00:00Z'
 duration: '46:20'
 duration_iso8601: PT46M20S
+thumb: "/assets/episode-thumbs/118-thor-gotaas-loping-ultraloping-idrettshistorie-skriv-8b6c9bc572.webp"
 ---

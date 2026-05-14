@@ -13,4 +13,5 @@ og_type: article
 date: '2019-11-08T01:00:00Z'
 duration: '2:38:53'
 duration_iso8601: PT2H38M53S
+thumb: "/assets/episode-thumbs/77-nepal-litt-av-et-land-reisebrev-og-intervju-med-fanny-c79e9f4779.webp"
 ---

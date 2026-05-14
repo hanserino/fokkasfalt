@@ -9,4 +9,5 @@ og_type: article
 date: '2025-05-30T04:00:00Z'
 duration: '14:36'
 duration_iso8601: PT14M36S
+thumb: "/assets/episode-thumbs/the-romsdal-method-kan-herved-streames-99050debe4.webp"
 ---

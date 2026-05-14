@@ -12,4 +12,5 @@ og_type: article
 date: '2018-02-09T23:00:00Z'
 duration: '2:11:33'
 duration_iso8601: PT2H11M33S
+thumb: "/assets/episode-thumbs/6-i-snikkerbua-med-sindre-buraas-a7fef22c9c.webp"
 ---

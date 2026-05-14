@@ -13,4 +13,5 @@ og_type: article
 date: '2020-02-18T22:00:00Z'
 duration: '1:41:16'
 duration_iso8601: PT1H41M16S
+thumb: "/assets/episode-thumbs/87-mountain-running-magazine-mashup-with-emily-hawgood-a-e4bb692005.webp"
 ---

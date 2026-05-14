@@ -13,4 +13,5 @@ og_type: article
 date: '2023-06-28T05:00:00Z'
 duration: '28:44'
 duration_iso8601: PT28M44S
+thumb: "/assets/episode-thumbs/193-nosen-hundreds-21km-eivind-klokkehaug-anders-ponny-k-d14aa81291.webp"
 ---

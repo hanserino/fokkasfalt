@@ -13,4 +13,5 @@ og_type: article
 date: '2018-09-19T22:00:00Z'
 duration: '1:47:17'
 duration_iso8601: PT1H47M17S
+thumb: "/assets/episode-thumbs/31-vm-skyrunning-2018-reportasje-og-intervjuer-stian-ang-1c1d44597a.webp"
 ---

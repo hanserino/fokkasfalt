@@ -10,4 +10,5 @@ og_type: article
 date: '2022-09-06T05:00:00Z'
 duration: '4:34'
 duration_iso8601: PT4M34S
+thumb: "/assets/episode-thumbs/utmb-2022-teaser-876a21c6de.webp"
 ---

@@ -13,4 +13,5 @@ og_type: article
 date: '2018-08-14T22:00:00Z'
 duration: '1:39:31'
 duration_iso8601: PT1H39M31S
+thumb: "/assets/episode-thumbs/28-fra-operataket-til-galdhopiggen-hva-spiser-man-nar-ma-d1d04cb347.webp"
 ---

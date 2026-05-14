@@ -13,4 +13,5 @@ og_type: article
 date: '2019-07-16T08:00:00Z'
 duration: '53:43'
 duration_iso8601: PT53M43S
+thumb: "/assets/episode-thumbs/63-buff-epic-trail-2019-race-brief-med-professoren-og-so-d0d5015c1e.webp"
 ---

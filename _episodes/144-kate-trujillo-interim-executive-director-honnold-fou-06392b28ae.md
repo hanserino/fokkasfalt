@@ -12,4 +12,5 @@ og_type: article
 date: '2021-09-23T08:00:00Z'
 duration: '45:37'
 duration_iso8601: PT45M37S
+thumb: "/assets/episode-thumbs/144-kate-trujillo-interim-executive-director-honnold-fou-06392b28ae.webp"
 ---

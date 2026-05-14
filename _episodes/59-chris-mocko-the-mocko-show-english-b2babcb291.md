@@ -12,4 +12,5 @@ og_type: article
 date: '2019-06-18T05:00:00Z'
 duration: '1:10:25'
 duration_iso8601: PT1H10M25S
+thumb: "/assets/episode-thumbs/59-chris-mocko-the-mocko-show-english-b2babcb291.webp"
 ---

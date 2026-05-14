@@ -12,4 +12,5 @@ og_type: article
 date: '2019-09-02T12:00:00Z'
 duration: '40:22'
 duration_iso8601: PT40M22S
+thumb: "/assets/episode-thumbs/70-utmb-race-debrief-med-sidespor-bjornar-85c366e3de.webp"
 ---

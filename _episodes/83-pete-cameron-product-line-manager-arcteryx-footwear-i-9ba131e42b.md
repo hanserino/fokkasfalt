@@ -13,4 +13,5 @@ og_type: article
 date: '2020-01-14T20:00:00Z'
 duration: '1:46:09'
 duration_iso8601: PT1H46M9S
+thumb: "/assets/episode-thumbs/83-pete-cameron-product-line-manager-arcteryx-footwear-i-9ba131e42b.webp"
 ---

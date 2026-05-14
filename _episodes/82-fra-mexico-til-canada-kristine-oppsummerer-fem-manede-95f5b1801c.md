@@ -12,4 +12,5 @@ og_type: article
 date: '2019-12-30T15:00:00Z'
 duration: '1:47:06'
 duration_iso8601: PT1H47M6S
+thumb: "/assets/episode-thumbs/82-fra-mexico-til-canada-kristine-oppsummerer-fem-manede-95f5b1801c.webp"
 ---

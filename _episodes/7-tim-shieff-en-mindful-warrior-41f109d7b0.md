@@ -12,4 +12,5 @@ og_type: article
 date: '2018-02-20T23:00:00Z'
 duration: '1:08:07'
 duration_iso8601: PT1H8M7S
+thumb: "/assets/episode-thumbs/7-tim-shieff-en-mindful-warrior-41f109d7b0.webp"
 ---

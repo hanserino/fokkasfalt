@@ -14,4 +14,5 @@ og_type: article
 date: '2020-09-23T07:00:00Z'
 duration: '52:32'
 duration_iso8601: PT52M32S
+thumb: "/assets/episode-thumbs/109-isak-buhl-mortensen-phd-i-teoretisk-fysikk-impostor-991fb0dee3.webp"
 ---

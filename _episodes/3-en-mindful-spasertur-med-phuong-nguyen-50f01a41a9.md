@@ -12,4 +12,5 @@ og_type: article
 date: '2018-01-19T23:00:00Z'
 duration: '1:07:03'
 duration_iso8601: PT1H7M3S
+thumb: "/assets/episode-thumbs/3-en-mindful-spasertur-med-phuong-nguyen-50f01a41a9.webp"
 ---

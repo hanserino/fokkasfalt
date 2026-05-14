@@ -13,4 +13,5 @@ og_type: article
 date: '2020-02-04T11:00:00Z'
 duration: '3:32:56'
 duration_iso8601: PT3H32M56S
+thumb: "/assets/episode-thumbs/86-ultra-samtaler-med-ultra-patreons-dennis-reidun-ingri-d0036d8bbb.webp"
 ---

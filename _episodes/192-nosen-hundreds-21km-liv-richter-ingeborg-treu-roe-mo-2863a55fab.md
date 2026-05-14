@@ -13,4 +13,5 @@ og_type: article
 date: '2023-06-27T12:00:00Z'
 duration: '35:57'
 duration_iso8601: PT35M57S
+thumb: "/assets/episode-thumbs/192-nosen-hundreds-21km-liv-richter-ingeborg-treu-roe-mo-2863a55fab.webp"
 ---

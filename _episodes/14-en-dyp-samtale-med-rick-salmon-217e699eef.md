@@ -12,4 +12,5 @@ og_type: article
 date: '2018-04-19T22:00:00Z'
 duration: '1:59:26'
 duration_iso8601: PT1H59M26S
+thumb: "/assets/episode-thumbs/14-en-dyp-samtale-med-rick-salmon-217e699eef.webp"
 ---

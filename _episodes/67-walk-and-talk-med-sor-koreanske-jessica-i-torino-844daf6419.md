@@ -12,4 +12,5 @@ og_type: article
 date: '2019-08-24T08:00:00Z'
 duration: '1:37:15'
 duration_iso8601: PT1H37M15S
+thumb: "/assets/episode-thumbs/67-walk-and-talk-med-sor-koreanske-jessica-i-torino-844daf6419.webp"
 ---

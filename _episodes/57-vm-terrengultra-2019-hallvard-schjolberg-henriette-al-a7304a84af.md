@@ -14,4 +14,5 @@ og_type: article
 date: '2019-06-10T18:00:00Z'
 duration: '3:22:01'
 duration_iso8601: PT3H22M1S
+thumb: "/assets/episode-thumbs/57-vm-terrengultra-2019-hallvard-schjolberg-henriette-al-a7304a84af.webp"
 ---

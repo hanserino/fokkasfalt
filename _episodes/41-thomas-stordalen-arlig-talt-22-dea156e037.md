@@ -12,4 +12,5 @@ og_type: article
 date: '2018-12-29T14:00:00Z'
 duration: '1:46:19'
 duration_iso8601: PT1H46M19S
+thumb: "/assets/episode-thumbs/41-thomas-stordalen-arlig-talt-22-dea156e037.webp"
 ---

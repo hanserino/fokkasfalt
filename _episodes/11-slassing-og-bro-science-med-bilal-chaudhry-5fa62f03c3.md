@@ -12,4 +12,5 @@ og_type: article
 date: '2018-03-16T23:00:00Z'
 duration: '3:47:25'
 duration_iso8601: PT3H47M25S
+thumb: "/assets/episode-thumbs/11-slassing-og-bro-science-med-bilal-chaudhry-5fa62f03c3.webp"
 ---

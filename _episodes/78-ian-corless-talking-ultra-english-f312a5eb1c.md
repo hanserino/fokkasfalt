@@ -12,4 +12,5 @@ og_type: article
 date: '2019-11-21T10:00:00Z'
 duration: '1:48:41'
 duration_iso8601: PT1H48M41S
+thumb: "/assets/episode-thumbs/78-ian-corless-talking-ultra-english-f312a5eb1c.webp"
 ---

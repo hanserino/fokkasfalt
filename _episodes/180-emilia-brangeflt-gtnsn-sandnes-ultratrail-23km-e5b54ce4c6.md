@@ -12,4 +12,5 @@ og_type: article
 date: '2023-04-25T09:00:00Z'
 duration: '13:37'
 duration_iso8601: PT13M37S
+thumb: "/assets/episode-thumbs/180-emilia-brangeflt-gtnsn-sandnes-ultratrail-23km-e5b54ce4c6.webp"
 ---

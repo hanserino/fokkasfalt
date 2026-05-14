@@ -12,4 +12,5 @@ og_type: article
 date: '2018-09-07T22:00:00Z'
 duration: '1:49:57'
 duration_iso8601: PT1H49M57S
+thumb: "/assets/episode-thumbs/30-utmb-spesial-med-patrick-stangbye-825ea18c47.webp"
 ---

@@ -12,4 +12,5 @@ og_type: article
 date: '2025-06-22T04:00:00Z'
 duration: '1:26:53'
 duration_iso8601: PT1H26M53S
+thumb: "/assets/episode-thumbs/obt-2025-portrett-23-harald-bjerke-41f2545a90.webp"
 ---

@@ -13,4 +13,5 @@ og_type: article
 date: '2024-08-23T11:00:00Z'
 duration: '3:38:37'
 duration_iso8601: PT3H38M37S
+thumb: "/assets/episode-thumbs/228-utmb-2022-fenre-stangbye-reiterer-albon-ogier-borger-b2caee655e.webp"
 ---

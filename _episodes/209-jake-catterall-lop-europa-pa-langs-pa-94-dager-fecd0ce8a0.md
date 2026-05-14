@@ -12,4 +12,5 @@ og_type: article
 date: '2023-12-15T16:00:00Z'
 duration: '2:04:07'
 duration_iso8601: PT2H4M7S
+thumb: "/assets/episode-thumbs/209-jake-catterall-lop-europa-pa-langs-pa-94-dager-fecd0ce8a0.webp"
 ---

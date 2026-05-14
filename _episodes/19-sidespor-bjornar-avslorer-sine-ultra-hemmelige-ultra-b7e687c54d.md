@@ -12,4 +12,5 @@ og_type: article
 date: '2018-06-02T22:00:00Z'
 duration: '2:10:08'
 duration_iso8601: PT2H10M8S
+thumb: "/assets/episode-thumbs/19-sidespor-bjornar-avslorer-sine-ultra-hemmelige-ultra-b7e687c54d.webp"
 ---

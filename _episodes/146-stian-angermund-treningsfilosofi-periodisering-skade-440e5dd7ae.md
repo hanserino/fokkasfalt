@@ -13,4 +13,5 @@ og_type: article
 date: '2021-11-02T13:00:00Z'
 duration: '1:20:21'
 duration_iso8601: PT1H20M21S
+thumb: "/assets/episode-thumbs/146-stian-angermund-treningsfilosofi-periodisering-skade-440e5dd7ae.webp"
 ---

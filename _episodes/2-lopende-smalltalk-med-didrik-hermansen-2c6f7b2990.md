@@ -12,4 +12,5 @@ og_type: article
 date: '2018-01-15T23:00:00Z'
 duration: '1:05:05'
 duration_iso8601: PT1H5M5S
+thumb: "/assets/episode-thumbs/2-lopende-smalltalk-med-didrik-hermansen-2c6f7b2990.webp"
 ---

@@ -12,4 +12,5 @@ og_type: article
 date: '2025-06-23T04:00:00Z'
 duration: '1:48:43'
 duration_iso8601: PT1H48M43S
+thumb: "/assets/episode-thumbs/obt-2025-portrett-24-finn-isaksen-ekstrem-utstyrsnerding-52fc3b2666.webp"
 ---

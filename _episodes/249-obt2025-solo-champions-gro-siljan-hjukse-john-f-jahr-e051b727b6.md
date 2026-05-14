@@ -13,4 +13,5 @@ og_type: article
 date: '2025-07-24T03:00:00Z'
 duration: '1:52:45'
 duration_iso8601: PT1H52M45S
+thumb: "/assets/episode-thumbs/249-obt2025-solo-champions-gro-siljan-hjukse-john-f-jahr-e051b727b6.webp"
 ---

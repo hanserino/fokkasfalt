@@ -14,4 +14,5 @@ og_type: article
 date: '2022-09-16T06:00:00Z'
 duration: '49:15'
 duration_iso8601: PT49M15S
+thumb: "/assets/episode-thumbs/166-sophia-laukli-victory-at-stranda-fjord-trail-race-tr-42b0c13b41.webp"
 ---

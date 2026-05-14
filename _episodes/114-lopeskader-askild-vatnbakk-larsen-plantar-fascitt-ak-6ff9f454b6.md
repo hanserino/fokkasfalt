@@ -13,4 +13,5 @@ og_type: article
 date: '2020-11-11T07:00:00Z'
 duration: '2:24:58'
 duration_iso8601: PT2H24M58S
+thumb: "/assets/episode-thumbs/114-lopeskader-askild-vatnbakk-larsen-plantar-fascitt-ak-6ff9f454b6.webp"
 ---

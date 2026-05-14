@@ -12,4 +12,5 @@ og_type: article
 date: '2020-03-26T08:00:00Z'
 duration: '2:29:07'
 duration_iso8601: PT2H29M7S
+thumb: "/assets/episode-thumbs/92-sky-blazers-vs-korona-patrick-johannes-felipe-og-hk-57ae31bb0b.webp"
 ---

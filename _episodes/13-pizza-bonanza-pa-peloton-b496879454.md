@@ -12,4 +12,5 @@ og_type: article
 date: '2018-04-11T22:00:00Z'
 duration: '1:27:32'
 duration_iso8601: PT1H27M32S
+thumb: "/assets/episode-thumbs/13-pizza-bonanza-pa-peloton-b496879454.webp"
 ---

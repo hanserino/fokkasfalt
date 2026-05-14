@@ -13,4 +13,5 @@ og_type: article
 date: '2019-03-06T16:00:00Z'
 duration: '2:27:02'
 duration_iso8601: PT2H27M2S
+thumb: "/assets/episode-thumbs/46-kristine-gjor-seg-klar-til-pct-pacific-crest-trail-ut-1a3c4a3d0c.webp"
 ---

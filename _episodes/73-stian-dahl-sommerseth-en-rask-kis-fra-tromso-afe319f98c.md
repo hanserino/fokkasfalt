@@ -12,4 +12,5 @@ og_type: article
 date: '2019-10-04T14:00:00Z'
 duration: '2:01:57'
 duration_iso8601: PT2H1M57S
+thumb: "/assets/episode-thumbs/73-stian-dahl-sommerseth-en-rask-kis-fra-tromso-afe319f98c.webp"
 ---

@@ -13,4 +13,5 @@ og_type: article
 date: '2018-05-02T22:00:00Z'
 duration: '1:14:21'
 duration_iso8601: PT1H14M21S
+thumb: "/assets/episode-thumbs/16-den-der-sjukt-kontroversielle-episoden-med-christel-o-3b384f4e11.webp"
 ---

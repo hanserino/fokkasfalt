@@ -13,4 +13,5 @@ og_type: article
 date: '2018-10-13T22:00:00Z'
 duration: '2:19:48'
 duration_iso8601: PT2H19M48S
+thumb: "/assets/episode-thumbs/33-sanjin-filipovic-krig-tegneserier-hip-hop-og-graffiti-eb8fc0b4e2.webp"
 ---

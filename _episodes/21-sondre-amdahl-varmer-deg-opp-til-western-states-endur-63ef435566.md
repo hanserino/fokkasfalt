@@ -12,4 +12,5 @@ og_type: article
 date: '2018-06-20T22:00:00Z'
 duration: '1:01:16'
 duration_iso8601: PT1H1M16S
+thumb: "/assets/episode-thumbs/21-sondre-amdahl-varmer-deg-opp-til-western-states-endur-63ef435566.webp"
 ---

@@ -12,4 +12,5 @@ og_type: article
 date: '2021-06-17T07:00:00Z'
 duration: '2:08:08'
 duration_iso8601: PT2H8M8S
+thumb: "/assets/episode-thumbs/137-skogvokteren-ultra-2021-stemningsrapport-og-intervju-8a6f38709a.webp"
 ---

@@ -13,4 +13,5 @@ og_type: article
 date: '2018-09-27T22:00:00Z'
 duration: '1:35:47'
 duration_iso8601: PT1H35M47S
+thumb: "/assets/episode-thumbs/32-la-oss-snakke-om-proteiner-askild-vatnbakk-larsen-27866417d0.webp"
 ---

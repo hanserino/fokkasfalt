@@ -12,4 +12,5 @@ og_type: article
 date: '2020-05-16T07:00:00Z'
 duration: '1:06:14'
 duration_iso8601: PT1H6M14S
+thumb: "/assets/episode-thumbs/99-sindre-buraas-og-patrick-stangbye-lillo-blaze-cup-sta-69ac11347c.webp"
 ---

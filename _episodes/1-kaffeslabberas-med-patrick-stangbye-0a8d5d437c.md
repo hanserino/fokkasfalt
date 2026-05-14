@@ -12,4 +12,5 @@ og_type: article
 date: '2018-01-06T23:00:00Z'
 duration: '1:40:04'
 duration_iso8601: PT1H40M4S
+thumb: "/assets/episode-thumbs/1-kaffeslabberas-med-patrick-stangbye-0a8d5d437c.webp"
 ---

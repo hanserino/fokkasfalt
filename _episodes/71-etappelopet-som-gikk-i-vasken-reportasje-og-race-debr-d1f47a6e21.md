@@ -13,4 +13,5 @@ og_type: article
 date: '2019-09-13T14:00:00Z'
 duration: '2:03:35'
 duration_iso8601: PT2H3M35S
+thumb: "/assets/episode-thumbs/71-etappelopet-som-gikk-i-vasken-reportasje-og-race-debr-d1f47a6e21.webp"
 ---

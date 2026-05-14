@@ -12,4 +12,5 @@ og_type: article
 date: '2018-11-23T16:00:00Z'
 duration: '2:44:58'
 duration_iso8601: PT2H44M58S
+thumb: "/assets/episode-thumbs/38-5stk-bad-ass-ultralopende-kvinner-09acb60630.webp"
 ---

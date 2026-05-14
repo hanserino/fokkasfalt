@@ -14,4 +14,5 @@ og_type: article
 date: '2021-07-06T07:00:00Z'
 duration: '1:43:43'
 duration_iso8601: PT1H43M43S
+thumb: "/assets/episode-thumbs/139-yngvild-kaspersen-stian-dahl-sommerseth-lysforurensn-aa85440a2c.webp"
 ---

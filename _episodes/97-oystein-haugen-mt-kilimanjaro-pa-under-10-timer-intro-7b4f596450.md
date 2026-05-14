@@ -14,4 +14,5 @@ og_type: article
 date: '2020-04-25T06:00:00Z'
 duration: '3:13:36'
 duration_iso8601: PT3H13M36S
+thumb: "/assets/episode-thumbs/97-oystein-haugen-mt-kilimanjaro-pa-under-10-timer-intro-7b4f596450.webp"
 ---

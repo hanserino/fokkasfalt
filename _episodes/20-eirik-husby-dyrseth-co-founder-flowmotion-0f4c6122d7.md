@@ -12,4 +12,5 @@ og_type: article
 date: '2018-06-09T22:00:00Z'
 duration: '1:28:28'
 duration_iso8601: PT1H28M28S
+thumb: "/assets/episode-thumbs/20-eirik-husby-dyrseth-co-founder-flowmotion-0f4c6122d7.webp"
 ---

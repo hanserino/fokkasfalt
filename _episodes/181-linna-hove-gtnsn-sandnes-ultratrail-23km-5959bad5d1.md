@@ -12,4 +12,5 @@ og_type: article
 date: '2023-04-25T09:00:00Z'
 duration: '14:21'
 duration_iso8601: PT14M21S
+thumb: "/assets/episode-thumbs/181-linna-hove-gtnsn-sandnes-ultratrail-23km-5959bad5d1.webp"
 ---

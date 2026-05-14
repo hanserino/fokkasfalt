@@ -12,4 +12,5 @@ og_type: article
 date: '2020-04-02T07:00:00Z'
 duration: '1:07:16'
 duration_iso8601: PT1H7M16S
+thumb: "/assets/episode-thumbs/93-johanna-astrm-koronafast-i-sverige-95b96b8dc8.webp"
 ---

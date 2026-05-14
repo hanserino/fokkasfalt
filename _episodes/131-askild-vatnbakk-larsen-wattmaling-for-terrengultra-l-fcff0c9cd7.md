@@ -13,4 +13,5 @@ og_type: article
 date: '2021-03-31T06:00:00Z'
 duration: '1:13:58'
 duration_iso8601: PT1H13M58S
+thumb: "/assets/episode-thumbs/131-askild-vatnbakk-larsen-wattmaling-for-terrengultra-l-fcff0c9cd7.webp"
 ---

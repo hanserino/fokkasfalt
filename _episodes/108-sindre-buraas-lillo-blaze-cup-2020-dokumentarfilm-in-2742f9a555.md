@@ -12,4 +12,5 @@ og_type: article
 date: '2020-09-21T08:00:00Z'
 duration: '30:13'
 duration_iso8601: PT30M13S
+thumb: "/assets/episode-thumbs/108-sindre-buraas-lillo-blaze-cup-2020-dokumentarfilm-in-2742f9a555.webp"
 ---

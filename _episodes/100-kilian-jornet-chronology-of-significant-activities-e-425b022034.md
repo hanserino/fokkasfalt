@@ -13,4 +13,5 @@ og_type: article
 date: '2020-05-24T16:00:00Z'
 duration: '1:48:50'
 duration_iso8601: PT1H48M50S
+thumb: "/assets/episode-thumbs/100-kilian-jornet-chronology-of-significant-activities-e-425b022034.webp"
 ---

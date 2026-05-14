@@ -10,4 +10,5 @@ og_type: article
 date: '2022-05-28T08:00:00Z'
 duration: '4:32'
 duration_iso8601: PT4M32S
+thumb: "/assets/episode-thumbs/dj-granite-run-ffs-58d2283a21.webp"
 ---

@@ -13,4 +13,5 @@ og_type: article
 date: '2019-05-24T06:00:00Z'
 duration: '3:42:35'
 duration_iso8601: PT3H42M35S
+thumb: "/assets/episode-thumbs/55-jonas-sloth-sandell-skihopping-toppidrett-mindset-out-c796cb30b4.webp"
 ---

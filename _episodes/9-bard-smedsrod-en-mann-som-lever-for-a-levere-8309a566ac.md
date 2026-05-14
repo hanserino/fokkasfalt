@@ -12,4 +12,5 @@ og_type: article
 date: '2018-03-02T23:00:00Z'
 duration: '2:26:48'
 duration_iso8601: PT2H26M48S
+thumb: "/assets/episode-thumbs/9-bard-smedsrod-en-mann-som-lever-for-a-levere-8309a566ac.webp"
 ---

@@ -13,4 +13,5 @@ og_type: article
 date: '2021-09-17T11:00:00Z'
 duration: '1:42:11'
 duration_iso8601: PT1H42M11S
+thumb: "/assets/episode-thumbs/143-kristin-harila-mount-everest-lhotse-7-summits-khumbu-d39343e950.webp"
 ---

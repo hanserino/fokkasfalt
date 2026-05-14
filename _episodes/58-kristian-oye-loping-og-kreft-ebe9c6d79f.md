@@ -12,4 +12,5 @@ og_type: article
 date: '2019-06-14T05:00:00Z'
 duration: '54:18'
 duration_iso8601: PT54M18S
+thumb: "/assets/episode-thumbs/58-kristian-oye-loping-og-kreft-ebe9c6d79f.webp"
 ---

@@ -13,4 +13,5 @@ og_type: article
 date: '2021-04-16T08:00:00Z'
 duration: '24:21'
 duration_iso8601: PT24M21S
+thumb: "/assets/episode-thumbs/134-olav-engen-kondisno-ultralopingens-opphav-i-norge-ul-2a25324ca1.webp"
 ---

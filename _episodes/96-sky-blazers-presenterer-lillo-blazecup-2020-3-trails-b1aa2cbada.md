@@ -12,4 +12,5 @@ og_type: article
 date: '2020-04-21T04:00:00Z'
 duration: '1:08:57'
 duration_iso8601: PT1H8M57S
+thumb: "/assets/episode-thumbs/96-sky-blazers-presenterer-lillo-blazecup-2020-3-trails-b1aa2cbada.webp"
 ---

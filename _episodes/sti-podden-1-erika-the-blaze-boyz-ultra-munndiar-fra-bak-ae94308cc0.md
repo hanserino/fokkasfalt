@@ -13,4 +13,5 @@ og_type: article
 date: '2018-07-09T22:00:00Z'
 duration: '2:33:58'
 duration_iso8601: PT2H33M58S
+thumb: "/assets/episode-thumbs/sti-podden-1-erika-the-blaze-boyz-ultra-munndiar-fra-bak-ae94308cc0.webp"
 ---

@@ -13,4 +13,5 @@ og_type: article
 date: '2020-03-24T05:00:00Z'
 duration: '1:37:12'
 duration_iso8601: PT1H37M12S
+thumb: "/assets/episode-thumbs/91-paolo-marazzi-ragni-di-lecco-and-arcteryx-climbermoun-dc4e28b30f.webp"
 ---

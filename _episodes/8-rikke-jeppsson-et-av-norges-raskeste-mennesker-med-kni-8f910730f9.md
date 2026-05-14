@@ -12,4 +12,5 @@ og_type: article
 date: '2018-02-25T23:00:00Z'
 duration: '1:40:13'
 duration_iso8601: PT1H40M13S
+thumb: "/assets/episode-thumbs/8-rikke-jeppsson-et-av-norges-raskeste-mennesker-med-kni-8f910730f9.webp"
 ---

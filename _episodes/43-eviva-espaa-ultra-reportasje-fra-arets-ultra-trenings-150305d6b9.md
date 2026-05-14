@@ -13,4 +13,5 @@ og_type: article
 date: '2019-01-27T07:00:00Z'
 duration: '3:14:37'
 duration_iso8601: PT3H14M37S
+thumb: "/assets/episode-thumbs/43-eviva-espaa-ultra-reportasje-fra-arets-ultra-trenings-150305d6b9.webp"
 ---

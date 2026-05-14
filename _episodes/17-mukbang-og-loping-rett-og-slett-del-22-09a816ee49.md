@@ -12,4 +12,5 @@ og_type: article
 date: '2018-05-14T22:00:00Z'
 duration: '58:10'
 duration_iso8601: PT58M10S
+thumb: "/assets/episode-thumbs/17-mukbang-og-loping-rett-og-slett-del-22-09a816ee49.webp"
 ---

@@ -12,4 +12,5 @@ og_type: article
 date: '2019-06-01T16:00:00Z'
 duration: '32:55'
 duration_iso8601: PT32M55S
+thumb: "/assets/episode-thumbs/56-ola-skatvedt-ecotrail-oslo-80km-2019-champion-d5ce73f33c.webp"
 ---

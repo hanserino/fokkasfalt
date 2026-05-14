@@ -13,4 +13,5 @@ og_type: article
 date: '2018-11-03T23:00:00Z'
 duration: '1:50:07'
 duration_iso8601: PT1H50M7S
+thumb: "/assets/episode-thumbs/35-nar-du-loper-sa-langt-at-underlivet-blir-et-kjottsar-6e69178d26.webp"
 ---

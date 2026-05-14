@@ -12,4 +12,5 @@ og_type: article
 date: '2018-03-23T23:00:00Z'
 duration: '3:16:03'
 duration_iso8601: PT3H16M3S
+thumb: "/assets/episode-thumbs/12-ultraloping-geek-down-med-margrethe-fjetland-lovold-o-9bf06eb2c3.webp"
 ---

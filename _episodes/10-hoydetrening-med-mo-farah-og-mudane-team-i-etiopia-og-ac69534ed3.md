@@ -12,4 +12,5 @@ og_type: article
 date: '2018-03-09T23:00:00Z'
 duration: '2:30:18'
 duration_iso8601: PT2H30M18S
+thumb: "/assets/episode-thumbs/10-hoydetrening-med-mo-farah-og-mudane-team-i-etiopia-og-ac69534ed3.webp"
 ---

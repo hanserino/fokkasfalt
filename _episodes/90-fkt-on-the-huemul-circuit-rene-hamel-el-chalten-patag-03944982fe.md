@@ -13,4 +13,5 @@ og_type: article
 date: '2020-03-15T07:00:00Z'
 duration: '1:30:30'
 duration_iso8601: PT1H30M30S
+thumb: "/assets/episode-thumbs/90-fkt-on-the-huemul-circuit-rene-hamel-el-chalten-patag-03944982fe.webp"
 ---

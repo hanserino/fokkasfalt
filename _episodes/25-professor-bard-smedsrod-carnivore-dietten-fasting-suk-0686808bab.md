@@ -13,4 +13,5 @@ og_type: article
 date: '2018-07-21T22:00:00Z'
 duration: '1:50:44'
 duration_iso8601: PT1H50M44S
+thumb: "/assets/episode-thumbs/25-professor-bard-smedsrod-carnivore-dietten-fasting-suk-0686808bab.webp"
 ---

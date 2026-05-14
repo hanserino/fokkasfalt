@@ -13,4 +13,5 @@ og_type: article
 date: '2019-05-02T06:00:00Z'
 duration: '57:39'
 duration_iso8601: PT57M39S
+thumb: "/assets/episode-thumbs/51-english-mt-awa-skyrace-interviews-jon-albon-hiroaki-m-20f34d045d.webp"
 ---

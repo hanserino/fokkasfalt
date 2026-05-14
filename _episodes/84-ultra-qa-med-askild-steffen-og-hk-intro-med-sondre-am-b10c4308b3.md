@@ -12,4 +12,5 @@ og_type: article
 date: '2020-01-21T14:00:00Z'
 duration: '2:08:35'
 duration_iso8601: PT2H8M35S
+thumb: "/assets/episode-thumbs/84-ultra-qa-med-askild-steffen-og-hk-intro-med-sondre-am-b10c4308b3.webp"
 ---

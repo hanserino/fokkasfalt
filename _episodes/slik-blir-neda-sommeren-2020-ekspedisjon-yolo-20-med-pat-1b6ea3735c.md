@@ -12,4 +12,5 @@ og_type: article
 date: '2020-06-19T08:00:00Z'
 duration: '26:22'
 duration_iso8601: PT26M22S
+thumb: "/assets/episode-thumbs/slik-blir-neda-sommeren-2020-ekspedisjon-yolo-20-med-pat-1b6ea3735c.webp"
 ---

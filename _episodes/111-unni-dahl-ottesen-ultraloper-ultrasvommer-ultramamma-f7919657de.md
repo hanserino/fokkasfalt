@@ -12,4 +12,5 @@ og_type: article
 date: '2020-10-12T06:00:00Z'
 duration: '2:24:32'
 duration_iso8601: PT2H24M32S
+thumb: "/assets/episode-thumbs/111-unni-dahl-ottesen-ultraloper-ultrasvommer-ultramamma-f7919657de.webp"
 ---

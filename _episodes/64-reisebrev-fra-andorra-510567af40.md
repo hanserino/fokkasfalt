@@ -12,4 +12,5 @@ og_type: article
 date: '2019-07-22T13:00:00Z'
 duration: '45:48'
 duration_iso8601: PT45M48S
+thumb: "/assets/episode-thumbs/64-reisebrev-fra-andorra-510567af40.webp"
 ---

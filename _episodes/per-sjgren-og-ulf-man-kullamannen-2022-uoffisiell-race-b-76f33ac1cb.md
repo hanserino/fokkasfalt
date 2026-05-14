@@ -12,4 +12,5 @@ og_type: article
 date: '2022-10-12T15:00:00Z'
 duration: '1:35:51'
 duration_iso8601: PT1H35M51S
+thumb: "/assets/episode-thumbs/per-sjgren-og-ulf-man-kullamannen-2022-uoffisiell-race-b-76f33ac1cb.webp"
 ---

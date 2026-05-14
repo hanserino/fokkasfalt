@@ -13,4 +13,5 @@ og_type: article
 date: '2020-05-11T12:00:00Z'
 duration: '1:24:44'
 duration_iso8601: PT1H24M44S
+thumb: "/assets/episode-thumbs/98-andrew-tunstalls-story-will-change-your-life-intro-wi-1cbaa5883a.webp"
 ---

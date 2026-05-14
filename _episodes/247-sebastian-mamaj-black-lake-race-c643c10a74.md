@@ -12,4 +12,5 @@ og_type: article
 date: '2025-05-12T08:00:00Z'
 duration: '42:43'
 duration_iso8601: PT42M43S
+thumb: "/assets/episode-thumbs/247-sebastian-mamaj-black-lake-race-c643c10a74.webp"
 ---

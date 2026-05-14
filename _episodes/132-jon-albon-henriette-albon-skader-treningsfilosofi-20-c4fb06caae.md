@@ -13,4 +13,5 @@ og_type: article
 date: '2021-04-02T05:00:00Z'
 duration: '51:48'
 duration_iso8601: PT51M48S
+thumb: "/assets/episode-thumbs/132-jon-albon-henriette-albon-skader-treningsfilosofi-20-c4fb06caae.webp"
 ---

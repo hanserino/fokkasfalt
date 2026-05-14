@@ -12,4 +12,5 @@ og_type: article
 date: '2019-07-02T10:00:00Z'
 duration: '1:59:07'
 duration_iso8601: PT1H59M7S
+thumb: "/assets/episode-thumbs/61-det-narmer-seg-for-bilal-tromso-skyrace-trening-oppkj-097bfeabf3.webp"
 ---

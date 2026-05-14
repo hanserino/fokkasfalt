@@ -12,4 +12,5 @@ og_type: article
 date: '2023-04-25T09:00:00Z'
 duration: '25:28'
 duration_iso8601: PT25M28S
+thumb: "/assets/episode-thumbs/179-linus-hultegard-gtnsn-sandnes-ultratrail-23km-89a207f294.webp"
 ---

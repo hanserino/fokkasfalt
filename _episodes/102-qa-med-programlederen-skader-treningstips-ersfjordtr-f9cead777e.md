@@ -14,4 +14,5 @@ og_type: article
 date: '2020-06-13T09:00:00Z'
 duration: '3:07:20'
 duration_iso8601: PT3H7M20S
+thumb: "/assets/episode-thumbs/102-qa-med-programlederen-skader-treningstips-ersfjordtr-f9cead777e.webp"
 ---

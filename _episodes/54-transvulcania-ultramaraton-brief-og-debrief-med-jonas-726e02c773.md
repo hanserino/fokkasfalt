@@ -13,4 +13,5 @@ og_type: article
 date: '2019-05-17T05:00:00Z'
 duration: '2:57:54'
 duration_iso8601: PT2H57M54S
+thumb: "/assets/episode-thumbs/54-transvulcania-ultramaraton-brief-og-debrief-med-jonas-726e02c773.webp"
 ---

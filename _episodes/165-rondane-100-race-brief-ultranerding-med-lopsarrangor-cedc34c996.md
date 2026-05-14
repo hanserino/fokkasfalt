@@ -13,4 +13,5 @@ og_type: article
 date: '2022-08-08T13:00:00Z'
 duration: '2:18:02'
 duration_iso8601: PT2H18M2S
+thumb: "/assets/episode-thumbs/165-rondane-100-race-brief-ultranerding-med-lopsarrangor-cedc34c996.webp"
 ---
