@@ -2,7 +2,17 @@
   episode_list_row.html — én rad: lenke til episode + høyrekolonne (badge, ev. Spotify/Apple).
   Parametre: ep, row, hint (valgfri), slug_key (for unike SVG-id-er i lytteikoner)
 {% endcomment %}
-<li class="ep-list__item ep-list__item--row" {% if include.ep.date %}data-sort-date="{{ include.ep.date | date_to_xmlschema }}"{% endif %}>
+{% assign _yt = include.ep.youtube_url | default: '' | strip %}
+{% assign _acc = 'patreon' %}
+{% if include.row and include.row.availability == 'also_free' %}
+{% assign _acc = 'free' %}
+{% endif %}
+<li
+  class="ep-list__item ep-list__item--row"
+  {% if include.ep.date %}data-sort-date="{{ include.ep.date | date_to_xmlschema }}"{% endif %}
+  data-has-youtube="{% if _yt != '' %}1{% else %}0{% endif %}"
+  data-access="{{ _acc }}"
+>
   <div class="ep-list__row">
     <a class="ep-list__main" href="{{ include.ep.url | relative_url }}">
       {% if include.ep.cover %}

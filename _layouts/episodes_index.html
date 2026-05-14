@@ -114,6 +114,30 @@ layout: default
           <option value="">Alle år</option>
         </select>
       </div>
+      <div class="ep-filter-year" role="group" aria-labelledby="ep-filter-youtube-label">
+        <label id="ep-filter-youtube-label" class="ep-filter-year__label" for="ep-filter-youtube">YouTube</label>
+        <select
+          id="ep-filter-youtube"
+          class="ep-filter-year__select"
+          aria-controls="ep-episode-list"
+        >
+          <option value="">Alle</option>
+          <option value="yes">Med video</option>
+          <option value="no">Uten video</option>
+        </select>
+      </div>
+      <div class="ep-filter-year" role="group" aria-labelledby="ep-filter-access-label">
+        <label id="ep-filter-access-label" class="ep-filter-year__label" for="ep-filter-access">Tilgang</label>
+        <select
+          id="ep-filter-access"
+          class="ep-filter-year__select"
+          aria-controls="ep-episode-list"
+        >
+          <option value="">Alle</option>
+          <option value="free">Gratis eller åpen</option>
+          <option value="patreon">Patreon eller usikker</option>
+        </select>
+      </div>
       <div class="ep-sort" role="group" aria-labelledby="ep-sort-label" aria-describedby="ep-sort-hint">
         <span id="ep-sort-label" class="ep-sort__label">Sorter liste</span>
         <div id="ep-sort-toggle" class="ep-sort__toggle" data-order="desc">
@@ -190,8 +214,11 @@ layout: default
       var filtersLabel = document.getElementById("ep-filters-toggle-label");
       var filtersDot = document.getElementById("ep-filters-dot");
       var yearSelect = document.getElementById("ep-filter-year");
+      var youtubeSelect = document.getElementById("ep-filter-youtube");
+      var accessSelect = document.getElementById("ep-filter-access");
       if (!list || !input || !sortToggle || !sortBtnDesc || !sortBtnAsc) return;
       if (!filtersPanel || !filtersToggle || !filtersLabel || !yearSelect) return;
+      if (!youtubeSelect || !accessSelect) return;
 
       function filtersPanelExpanded() {
         return filtersPanel.classList.contains("is-open");
@@ -201,9 +228,20 @@ layout: default
         return yearSelect.value ? yearSelect.value : "";
       }
 
+      function currentYoutubeFilter() {
+        return youtubeSelect.value ? youtubeSelect.value : "";
+      }
+
+      function currentAccessFilter() {
+        return accessSelect.value ? accessSelect.value : "";
+      }
+
       function filtersAreNonDefault() {
         return (
-          sortBtnAsc.classList.contains("is-active") || !!currentYearFilter()
+          sortBtnAsc.classList.contains("is-active") ||
+          !!currentYearFilter() ||
+          !!currentYoutubeFilter() ||
+          !!currentAccessFilter()
         );
       }
 
@@ -244,6 +282,18 @@ layout: default
           params.set("year", y);
         } else {
           params.delete("year");
+        }
+        var yt = currentYoutubeFilter();
+        if (yt) {
+          params.set("yt", yt);
+        } else {
+          params.delete("yt");
+        }
+        var ac = currentAccessFilter();
+        if (ac) {
+          params.set("access", ac);
+        } else {
+          params.delete("access");
         }
         var qs = params.toString();
         var next = window.location.pathname + (qs ? "?" + qs : "") + window.location.hash;
@@ -410,6 +460,19 @@ layout: default
         }
       }
 
+      function setSelectFromAllowed(selectEl, raw, allowed) {
+        if (!selectEl || !allowed || !allowed.length) return;
+        if (raw === null || raw === undefined) return;
+        var v = String(raw).trim();
+        if (allowed.indexOf(v) === -1) return;
+        for (var oi = 0; oi < selectEl.options.length; oi++) {
+          if (selectEl.options[oi].value === v) {
+            selectEl.value = v;
+            return;
+          }
+        }
+      }
+
       function rebuildDateSeparators() {
         var epis = Array.prototype.slice.call(list.querySelectorAll(".ep-list__item"));
         var prevPeriod = "__none__";
@@ -468,7 +531,10 @@ layout: default
         var raw = input.value.trim();
         var terms = raw ? raw.toLowerCase().split(/\s+/) : [];
         var yf = currentYearFilter();
-        var hasNarrowFilter = terms.length > 0 || !!yf;
+        var yt = currentYoutubeFilter();
+        var ac = currentAccessFilter();
+        var hasNarrowFilter =
+          terms.length > 0 || !!yf || !!yt || !!ac;
         var visible = 0;
         for (var i = 0; i < items.length; i++) {
           var matchTerms =
@@ -477,7 +543,12 @@ layout: default
               return stacks[i].indexOf(t) !== -1;
             });
           var matchYear = !yf || episodeYearKey(items[i]) === yf;
-          var show = matchTerms && matchYear;
+          var hasYt = items[i].getAttribute("data-has-youtube") === "1";
+          var matchYt =
+            !yt || (yt === "yes" ? hasYt : yt === "no" ? !hasYt : true);
+          var rowAccess = items[i].getAttribute("data-access") || "patreon";
+          var matchAccess = !ac || rowAccess === ac;
+          var show = matchTerms && matchYear && matchYt && matchAccess;
           items[i].hidden = !show;
           if (show) visible++;
         }
@@ -505,6 +576,8 @@ layout: default
 
       input.addEventListener("input", filter);
       yearSelect.addEventListener("change", filter);
+      youtubeSelect.addEventListener("change", filter);
+      accessSelect.addEventListener("change", filter);
       filtersToggle.addEventListener("click", function () {
         setFiltersPanelOpen(!filtersPanelExpanded());
         if (filtersPanelExpanded()) sortBtnDesc.focus();
@@ -549,12 +622,16 @@ layout: default
         var paramsInit = new URLSearchParams(window.location.search);
         var orderRaw = paramsInit.get("order");
         var yrQ = paramsInit.get("year");
+        var ytQ = paramsInit.get("yt");
+        var accessQ = paramsInit.get("access");
         populateYearDropdown();
         if (orderRaw === "asc") setSortOrder("asc");
 
         applySort();
 
         setYearFilterFromParams(yrQ);
+        setSelectFromAllowed(youtubeSelect, ytQ, ["yes", "no"]);
+        setSelectFromAllowed(accessSelect, accessQ, ["free", "patreon"]);
 
         var q = paramsInit.get("q");
         if (q) {
@@ -565,7 +642,19 @@ layout: default
         var yrParamOpens =
           (yrTrim === "nodate" && yearSelect.value === "nodate") ||
           (/^\d{4}$/.test(yrTrim) && yearSelect.value === yrTrim);
-        var openPanel = orderRaw === "asc" || yrParamOpens;
+        var ytTrim = ytQ ? String(ytQ).trim() : "";
+        var ytParamOpens =
+          (ytTrim === "yes" || ytTrim === "no") &&
+          youtubeSelect.value === ytTrim;
+        var acTrim = accessQ ? String(accessQ).trim() : "";
+        var acParamOpens =
+          (acTrim === "free" || acTrim === "patreon") &&
+          accessSelect.value === acTrim;
+        var openPanel =
+          orderRaw === "asc" ||
+          yrParamOpens ||
+          ytParamOpens ||
+          acParamOpens;
         setFiltersPanelOpen(openPanel);
       } catch (e) {
         updateFiltersChrome();
