@@ -84,6 +84,19 @@ a:focus-visible {
   top: var(--space);
 }
 
+/* Tekst i DOM for søk og skjermleser; logo vises som vanlig (se .logo-heading). */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .wrap {
   width: min(100% - var(--space) * 2, var(--max));
   margin-inline: auto;
@@ -137,6 +150,7 @@ a:focus-visible {
 }
 
 .logo-heading {
+  position: relative;
   margin: 0 0 0.75rem;
   line-height: 0;
 }
