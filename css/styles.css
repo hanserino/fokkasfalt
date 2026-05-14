@@ -25,6 +25,21 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Unngå 1–2px horisontal «jitter» fra 100vw-breakout på /episoder/ (Safari + sticky). */
+@supports (overflow-x: clip) {
+  @media (max-width: 48rem) {
+    html {
+      overflow-x: clip;
+    }
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -1115,10 +1130,22 @@ a:focus-visible {
   gap: 0.5rem;
 }
 
-/* Lang liste: utsett layout/paint for rader utenfor viewport (bedrer scroll på mobil). */
+/* Lang liste: utsett layout/paint for rader utenfor viewport (skrivebord). */
 .ep-list--single > .ep-list__item {
   content-visibility: auto;
   contain-intrinsic-size: auto 10rem;
+}
+
+/*
+ * På mobil: ikke bruk content-visibility på listerader. Det gir bl.a. paint containment
+ * som kan ødelegge/interferere med position:sticky på .ep-list__period, og
+ * contain-intrinsic-size (10rem) ≠ reell radhøyde → hopp/flicker under scroll.
+ */
+@media (hover: none) and (pointer: coarse) {
+  .ep-list--single > .ep-list__item {
+    content-visibility: visible;
+    contain-intrinsic-size: unset;
+  }
 }
 
 /* Én sticky-rad per måned: «Mai - 2026» */
@@ -1126,7 +1153,6 @@ a:focus-visible {
   list-style: none;
   margin: 0;
   padding: 0;
-  align-self: flex-start;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
