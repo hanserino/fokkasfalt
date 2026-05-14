@@ -1134,6 +1134,8 @@ a:focus-visible {
   top: env(safe-area-inset-top, 0);
   z-index: 3;
   min-height: var(--ep-sticky-period-h);
+  display: flex;
+  align-items: center;
   border-bottom: 1px solid var(--border);
   background-color: color-mix(in srgb, var(--bg) 82%, transparent);
   backdrop-filter: blur(12px) saturate(120%);
@@ -1149,12 +1151,9 @@ a:focus-visible {
   }
 }
 
-.ep-list--single > .ep-list__period:first-child .ep-list__period-inner {
-  padding-top: 0;
-}
-
 .ep-list__period-inner {
   display: block;
+  width: 100%;
   font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.04em;
