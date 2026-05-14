@@ -4,6 +4,7 @@ description: 'Which achievements in the history of alpinism, running, climbing a
   skimo has had a significant impact on the way we practice our sport? Join one of
   the people that has had the biggest impacts as he breaks down the spreadsheet he
   calls &quot; Chronology of sigificant activities '
+youtube_url: https://youtu.be/VjRlvUezHiU
 buzzsprout_url: https://www.buzzsprout.com/145661/episodes/3887480-100-kilian-jornet-chronology-of-significant-activities-english
 buzzsprout_guid: Buzzsprout-3887480
 buzzsprout_only: true

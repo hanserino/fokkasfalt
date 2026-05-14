@@ -8,6 +8,7 @@ description: Jonathan Albon (33) has been a dominating figure in mountain/ultra/
 patreon_url: https://www.patreon.com/posts/jonathan-albon-66364847
 cover: https://c10.patreonusercontent.com/4/patreon-media/p/post/66364847/deb5bb8db79548b2b2d5d7c4563adcab/eyJkIjo3MiwiaCI6MzAwMCwic3RyaXBfYWxwaGEiOjEsInciOjMwMDAsIndlYnAiOjB9/1.jpg?token-hash=ZoCxRI0TD1ytREwf6LU4iJIhCfQiEHbcZuwS5HlzARA%3D
 og_type: article
+youtube_url: https://youtu.be/23qJNRycKIw
 date: '2022-05-13T05:47:10Z'
 duration: '1:18:25'
 duration_iso8601: PT1H18M25S
