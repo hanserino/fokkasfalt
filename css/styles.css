@@ -778,6 +778,20 @@ a:focus-visible {
   transform: translateX(calc(100% + var(--sort-gap)));
 }
 
+/* Binære episodfiltre (samme modul som sortering); «alle» = ingen knapp aktiv */
+.ep-sort__toggle--filter.ep-sort__toggle--neutral .ep-sort__thumb {
+  opacity: 0;
+  transform: none;
+}
+
+.ep-sort__toggle--filter:not(.ep-sort__toggle--neutral)[data-slot="1"] .ep-sort__thumb {
+  transform: translateX(calc(100% + var(--sort-gap)));
+}
+
+.ep-filter-year--toggle {
+  width: min(100%, 26rem);
+}
+
 .ep-sort__toggle:focus-within {
   border-color: rgba(255, 255, 255, 0.22);
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1), 0 2px 12px rgba(0, 0, 0, 0.32);
