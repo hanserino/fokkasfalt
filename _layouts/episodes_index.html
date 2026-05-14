@@ -118,11 +118,24 @@ layout: default
         <span id="ep-filter-youtube-label" class="ep-sort__label">YouTube</span>
         <div
           id="ep-youtube-toggle"
-          class="ep-sort__toggle ep-sort__toggle--filter ep-sort__toggle--neutral"
+          class="ep-sort__toggle ep-sort__toggle--filter ep-sort__toggle--triple"
+          data-slot="0"
           role="group"
           aria-label="Filtrer på YouTube-video"
         >
           <span class="ep-sort__thumb" aria-hidden="true"></span>
+          <button
+            type="button"
+            id="ep-yt-all"
+            class="ep-sort__btn is-active"
+            aria-pressed="true"
+            aria-controls="ep-episode-list"
+            data-yt="all"
+          >
+            <span class="ep-sort__btn-inner">
+              <span class="ep-sort__btn-label">Alle</span>
+            </span>
+          </button>
           <button
             type="button"
             id="ep-yt-yes"
@@ -153,11 +166,24 @@ layout: default
         <span id="ep-filter-access-label" class="ep-sort__label">Tilgang</span>
         <div
           id="ep-access-toggle"
-          class="ep-sort__toggle ep-sort__toggle--filter ep-sort__toggle--neutral"
+          class="ep-sort__toggle ep-sort__toggle--filter ep-sort__toggle--triple"
+          data-slot="0"
           role="group"
           aria-label="Filtrer på tilgang"
         >
           <span class="ep-sort__thumb" aria-hidden="true"></span>
+          <button
+            type="button"
+            id="ep-access-all"
+            class="ep-sort__btn is-active"
+            aria-pressed="true"
+            aria-controls="ep-episode-list"
+            data-access="all"
+          >
+            <span class="ep-sort__btn-inner">
+              <span class="ep-sort__btn-label">Alle</span>
+            </span>
+          </button>
           <button
             type="button"
             id="ep-access-free"
@@ -183,7 +209,6 @@ layout: default
             </span>
           </button>
         </div>
-        <p class="ep-sort__hint">Klikk valgt knapp igjen for å vise alle.</p>
       </div>
       <div class="ep-sort" role="group" aria-labelledby="ep-sort-label" aria-describedby="ep-sort-hint">
         <span id="ep-sort-label" class="ep-sort__label">Sorter liste</span>
@@ -262,14 +287,26 @@ layout: default
       var filtersDot = document.getElementById("ep-filters-dot");
       var yearSelect = document.getElementById("ep-filter-year");
       var ytToggle = document.getElementById("ep-youtube-toggle");
+      var ytBtnAll = document.getElementById("ep-yt-all");
       var ytBtnYes = document.getElementById("ep-yt-yes");
       var ytBtnNo = document.getElementById("ep-yt-no");
       var accToggle = document.getElementById("ep-access-toggle");
+      var accBtnAll = document.getElementById("ep-access-all");
       var accBtnFree = document.getElementById("ep-access-free");
       var accBtnPat = document.getElementById("ep-access-patreon");
       if (!list || !input || !sortToggle || !sortBtnDesc || !sortBtnAsc) return;
       if (!filtersPanel || !filtersToggle || !filtersLabel || !yearSelect) return;
-      if (!ytToggle || !ytBtnYes || !ytBtnNo || !accToggle || !accBtnFree || !accBtnPat) return;
+      if (
+        !ytToggle ||
+        !ytBtnAll ||
+        !ytBtnYes ||
+        !ytBtnNo ||
+        !accToggle ||
+        !accBtnAll ||
+        !accBtnFree ||
+        !accBtnPat
+      )
+        return;
 
       function filtersPanelExpanded() {
         return filtersPanel.classList.contains("is-open");
@@ -280,41 +317,25 @@ layout: default
       }
 
       function setYoutubeFilter(val) {
-        var v = val === "yes" || val === "no" ? val : "";
-        if (!v) {
-          ytToggle.classList.add("ep-sort__toggle--neutral");
-          ytToggle.removeAttribute("data-slot");
-          ytBtnYes.classList.remove("is-active");
-          ytBtnNo.classList.remove("is-active");
-          ytBtnYes.setAttribute("aria-pressed", "false");
-          ytBtnNo.setAttribute("aria-pressed", "false");
-          return;
-        }
-        ytToggle.classList.remove("ep-sort__toggle--neutral");
-        ytToggle.setAttribute("data-slot", v === "yes" ? "0" : "1");
-        ytBtnYes.classList.toggle("is-active", v === "yes");
-        ytBtnNo.classList.toggle("is-active", v === "no");
-        ytBtnYes.setAttribute("aria-pressed", v === "yes" ? "true" : "false");
-        ytBtnNo.setAttribute("aria-pressed", v === "no" ? "true" : "false");
+        var all = val !== "yes" && val !== "no";
+        ytBtnAll.classList.toggle("is-active", all);
+        ytBtnYes.classList.toggle("is-active", val === "yes");
+        ytBtnNo.classList.toggle("is-active", val === "no");
+        ytBtnAll.setAttribute("aria-pressed", all ? "true" : "false");
+        ytBtnYes.setAttribute("aria-pressed", val === "yes" ? "true" : "false");
+        ytBtnNo.setAttribute("aria-pressed", val === "no" ? "true" : "false");
+        ytToggle.setAttribute("data-slot", all ? "0" : val === "yes" ? "1" : "2");
       }
 
       function setAccessFilter(val) {
-        var v = val === "free" || val === "patreon" ? val : "";
-        if (!v) {
-          accToggle.classList.add("ep-sort__toggle--neutral");
-          accToggle.removeAttribute("data-slot");
-          accBtnFree.classList.remove("is-active");
-          accBtnPat.classList.remove("is-active");
-          accBtnFree.setAttribute("aria-pressed", "false");
-          accBtnPat.setAttribute("aria-pressed", "false");
-          return;
-        }
-        accToggle.classList.remove("ep-sort__toggle--neutral");
-        accToggle.setAttribute("data-slot", v === "free" ? "0" : "1");
-        accBtnFree.classList.toggle("is-active", v === "free");
-        accBtnPat.classList.toggle("is-active", v === "patreon");
-        accBtnFree.setAttribute("aria-pressed", v === "free" ? "true" : "false");
-        accBtnPat.setAttribute("aria-pressed", v === "patreon" ? "true" : "false");
+        var all = val !== "free" && val !== "patreon";
+        accBtnAll.classList.toggle("is-active", all);
+        accBtnFree.classList.toggle("is-active", val === "free");
+        accBtnPat.classList.toggle("is-active", val === "patreon");
+        accBtnAll.setAttribute("aria-pressed", all ? "true" : "false");
+        accBtnFree.setAttribute("aria-pressed", val === "free" ? "true" : "false");
+        accBtnPat.setAttribute("aria-pressed", val === "patreon" ? "true" : "false");
+        accToggle.setAttribute("data-slot", all ? "0" : val === "free" ? "1" : "2");
       }
 
       function currentYoutubeFilter() {
@@ -660,10 +681,9 @@ layout: default
         var btn = e.target.closest(".ep-sort__btn");
         if (!btn || !ytToggle.contains(btn)) return;
         var v = btn.getAttribute("data-yt");
-        if (!v) return;
-        if (currentYoutubeFilter() === v) {
+        if (v === "all") {
           setYoutubeFilter("");
-        } else {
+        } else if (v === "yes" || v === "no") {
           setYoutubeFilter(v);
         }
         filter();
@@ -672,10 +692,9 @@ layout: default
         var btn = e.target.closest(".ep-sort__btn");
         if (!btn || !accToggle.contains(btn)) return;
         var v = btn.getAttribute("data-access");
-        if (!v) return;
-        if (currentAccessFilter() === v) {
+        if (v === "all") {
           setAccessFilter("");
-        } else {
+        } else if (v === "free" || v === "patreon") {
           setAccessFilter(v);
         }
         filter();
@@ -712,20 +731,36 @@ layout: default
       }
       sortBtnDesc.addEventListener("keydown", onSortArrowKey);
       sortBtnAsc.addEventListener("keydown", onSortArrowKey);
+      function ytSlotIndex() {
+        if (ytBtnAll.classList.contains("is-active")) return 0;
+        if (ytBtnYes.classList.contains("is-active")) return 1;
+        return 2;
+      }
       function onYtArrowKey(e) {
         if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
         e.preventDefault();
-        setYoutubeFilter(e.key === "ArrowLeft" ? "yes" : "no");
+        var i = ytSlotIndex();
+        var ni = e.key === "ArrowLeft" ? Math.max(0, i - 1) : Math.min(2, i + 1);
+        setYoutubeFilter(ni === 0 ? "" : ni === 1 ? "yes" : "no");
         filter();
+      }
+      function accSlotIndex() {
+        if (accBtnAll.classList.contains("is-active")) return 0;
+        if (accBtnFree.classList.contains("is-active")) return 1;
+        return 2;
       }
       function onAccArrowKey(e) {
         if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
         e.preventDefault();
-        setAccessFilter(e.key === "ArrowLeft" ? "free" : "patreon");
+        var i = accSlotIndex();
+        var ni = e.key === "ArrowLeft" ? Math.max(0, i - 1) : Math.min(2, i + 1);
+        setAccessFilter(ni === 0 ? "" : ni === 1 ? "free" : "patreon");
         filter();
       }
+      ytBtnAll.addEventListener("keydown", onYtArrowKey);
       ytBtnYes.addEventListener("keydown", onYtArrowKey);
       ytBtnNo.addEventListener("keydown", onYtArrowKey);
+      accBtnAll.addEventListener("keydown", onAccArrowKey);
       accBtnFree.addEventListener("keydown", onAccArrowKey);
       accBtnPat.addEventListener("keydown", onAccArrowKey);
       if (clearBtn) {

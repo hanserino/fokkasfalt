@@ -778,18 +778,28 @@ a:focus-visible {
   transform: translateX(calc(100% + var(--sort-gap)));
 }
 
-/* Binære episodfiltre (samme modul som sortering); «alle» = ingen knapp aktiv */
-.ep-sort__toggle--filter.ep-sort__toggle--neutral .ep-sort__thumb {
-  opacity: 0;
+/* Episodfiltre: tre knapper (Alle | … | …), samme stil som sortering */
+.ep-sort__toggle--filter.ep-sort__toggle--triple .ep-sort__thumb {
+  width: calc((100% - 2 * var(--sort-pad) - 2 * var(--sort-gap)) / 3);
+  opacity: 1;
   transform: none;
 }
 
-.ep-sort__toggle--filter:not(.ep-sort__toggle--neutral)[data-slot="1"] .ep-sort__thumb {
+.ep-sort__toggle--filter.ep-sort__toggle--triple[data-slot="1"] .ep-sort__thumb {
   transform: translateX(calc(100% + var(--sort-gap)));
 }
 
+.ep-sort__toggle--filter.ep-sort__toggle--triple[data-slot="2"] .ep-sort__thumb {
+  transform: translateX(calc(2 * (100% + var(--sort-gap))));
+}
+
+.ep-sort__toggle--triple .ep-sort__btn-inner {
+  padding-left: 0.42rem;
+  padding-right: 0.42rem;
+}
+
 .ep-filter-year--toggle {
-  width: min(100%, 26rem);
+  width: min(100%, 34rem);
 }
 
 .ep-sort__toggle:focus-within {
