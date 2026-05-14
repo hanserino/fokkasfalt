@@ -36,12 +36,13 @@ jobs:
 
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.3"
-          # Lockfile was BUNDLED WITH 2.3.x; Bundler 2.3 on Ruby 3.3 often fails CI (e.g. exit 5).
+          # google-protobuf 3.23.x (via sass-embedded / Jekyll) requires ruby < 3.3.dev on linux;
+          # setup-ruby "3.3" resolves to 3.3.11 → bundle install exit 5. Bruk 3.2 til lockfile oppgraderes.
+          ruby-version: "3.2"
           bundler: "2.5.23"
           bundler-cache: true
           # Bump after bundler/cache changes (invalidate corrupt installer cache).
-          cache-version: 3
+          cache-version: 4
 
       - name: Install ImageMagick
         env:
