@@ -5,7 +5,7 @@ baseurl: ""
 lang: nb
 
 # GA4 måle-ID (gtag.js). Finn under Admin → Datastrømmer i Google Analytics. Tom = ingen tracking.
-google_analytics: ""
+google_analytics: "G-VFJFKSRCG0"
 
 # Offentlige lytte-lenker (show-nivå) — brukes når episode matcher «also_free» i episode_availability.yml
 # (Nøkkel «listen_links» unngår konflikt med Liquid/site — ikke bruk nøkkelen «listen».)
