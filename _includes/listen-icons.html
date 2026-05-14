@@ -3,6 +3,7 @@
   Valgfritt: listen_spotify / listen_apple (episode-URLer). Tomme = show-URLer fra site.listen_links.
   Valgfritt: listen_youtube (episode-URL eller ID) — vises etter Apple når satt.
   Valgfritt: listen_uid (episode-slug) for unike gradient-id i Apple-SVG når mange rader på én side; ellers hashes fra apple_href.
+  Valgfritt: listen_only_youtube (true) — ikke bruk Spotify/Apple show-fallback (kun for rader med YouTube uten also_free).
   Ikoner vises når den endelige href er satt — ikke avhengig av at show-feltene er satt hvis episode-URL finnes.
 {% endcomment %}
 {% assign yt_href = include.listen_youtube | default: '' | strip %}
@@ -14,10 +15,16 @@
 {% endif %}
 {% assign spotify_href = '' %}
 {% assign apple_href = '' %}
+{% assign listen_yt_only = false %}
+{% if include.listen_only_youtube == true or include.listen_only_youtube == 'true' %}
+  {% assign listen_yt_only = true %}
+{% endif %}
+{% unless listen_yt_only %}
 {% if site.listen_links %}
   {% assign spotify_href = site.listen_links.spotify_show | default: '' %}
   {% assign apple_href = site.listen_links.apple_show | default: '' %}
 {% endif %}
+{% endunless %}
 {% if include.listen_spotify != nil and include.listen_spotify != '' %}
   {% assign spotify_href = include.listen_spotify %}
 {% endif %}

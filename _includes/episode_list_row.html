@@ -66,7 +66,7 @@
       {% if include.row and include.row.availability == 'also_free' %}
       <div class="ep-list__tail-listen">{% include listen-icons.html listen_spotify=include.row.listen_spotify_episode_url listen_apple=include.row.listen_apple_episode_url listen_youtube=include.ep.youtube_url listen_uid=include.slug_key %}</div>
       {% elsif ep_youtube != '' %}
-      <div class="ep-list__tail-listen">{% include listen-icons.html listen_youtube=include.ep.youtube_url listen_uid=include.slug_key %}</div>
+      <div class="ep-list__tail-listen">{% include listen-icons.html listen_youtube=include.ep.youtube_url listen_uid=include.slug_key listen_only_youtube=true %}</div>
       {% endif %}
     </div>
   </div>
