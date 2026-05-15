@@ -7,6 +7,7 @@ description: Dylan Bowman (36) er en av de mest meritterte ultraløperne i nyere
   Leadville 100.  I tillegg til å være en dyk
 patreon_url: https://www.patreon.com/posts/dylan-bowman-100-59663526
 cover: https://c10.patreonusercontent.com/4/patreon-media/p/post/59663526/1ad8f8f2ded540af98813eb614d1ae22/eyJkIjo3MiwiaCI6MzAwMCwic3RyaXBfYWxwaGEiOjEsInciOjMwMDAsIndlYnAiOjB9/1.jpg?token-hash=FAOU7XbCWrsgQHjfgYbJpK_Ox8nPNFVWR-S1eDoaBdo%3D
+youtube_url: https://youtu.be/qixpR6_59aM
 og_type: article
 date: '2021-12-08T11:00:29Z'
 duration: '1:21:40'

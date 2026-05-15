@@ -4,6 +4,7 @@ description: 'Jeg og Mads dro ned til tjukkeste byen på selveste 1. mai og kjø
   de sjukeste grønnsakene og den sprøeste hermetikken vi kunne finne på innvandrersjappene
   på, dro hjem til meg på Disen og gjorde følgende:  Tilberedte maten Spiste den Streamet
   alt sammen på Twitch Dro ut og løp '
+youtube_url: https://youtu.be/VQH0HlPINuM
 buzzsprout_url: https://www.buzzsprout.com/145661/episodes/703777-17-mukbang-og-loping-rett-og-slett-del-2-2
 buzzsprout_guid: Buzzsprout-703777
 buzzsprout_only: true

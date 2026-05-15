@@ -4,6 +4,7 @@ description: 'Sondre Amdahl er en av Norges mest meritterte ultraløpere. I denn
   breaker vi ned Western States Endurance 2018 for deg. I tillegg toucher vi bortom
   et par andre løpe/trenings-relaterte temaer.  Video-versjon av episoden (YouTube)
   Her finner du Sondre: Instagram: @sondre'
+youtube_url: https://youtu.be/l-q0eKNb_7Y
 buzzsprout_url: https://www.buzzsprout.com/145661/episodes/732461-21-sondre-amdahl-varmer-deg-opp-til-western-states-endurance-run-2018
 buzzsprout_guid: Buzzsprout-732461
 buzzsprout_only: true
