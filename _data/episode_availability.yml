@@ -1,16 +1,27 @@
 ---
 meta:
-  generated_at: '2026-05-20T06:39:56Z'
+  generated_at: '2026-05-21T05:33:15Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
-  total: 622
+  total: 623
   also_free: 269
   uncertain: 21
-  patreon_only: 332
+  patreon_only: 333
   unmatched_buzzsprout: 0
 episodes:
+- slug: eli-anne-dvergsdal-tilbakeblikk-pa-karrieren-trening-und-efc3adea6b
+  title: Eli Anne Dvergsdal | Tilbakeblikk på karrieren, trening under og etter graviditet, comeback etter fødsel ++
+  episode_url: "/episoder/eli-anne-dvergsdal-tilbakeblikk-pa-karrieren-trening-und-efc3adea6b/"
+  date: '2026-05-21'
+  availability: patreon_only
+  match_score: 
+  buzzsprout_title: 
+  buzzsprout_pubdate: 
+  buzzsprout_url: 
+  buzzsprout_guid: 
+  buzzsprout_duration_hint_sec: 
 - slug: sebastian-mattisgaard-hennig-bli-kjent-med-en-fokk-asfal-7a800386f3
   title: Sebastian Mattisgaard Hennig | Bli kjent med en Føkk Asfalter 016
   episode_url: "/episoder/sebastian-mattisgaard-hennig-bli-kjent-med-en-fokk-asfal-7a800386f3/"
