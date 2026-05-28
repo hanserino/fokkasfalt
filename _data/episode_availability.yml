@@ -1,16 +1,27 @@
 ---
 meta:
-  generated_at: '2026-05-27T06:51:01Z'
+  generated_at: '2026-05-28T05:49:32Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
-  total: 623
+  total: 624
   also_free: 269
   uncertain: 21
-  patreon_only: 333
+  patreon_only: 334
   unmatched_buzzsprout: 0
 episodes:
+- slug: astrid-nome-bli-kjent-med-en-fokk-asfalter-017-46c7934823
+  title: Astrid Nome | Bli kjent med en Føkk Asfalter 017
+  episode_url: "/episoder/astrid-nome-bli-kjent-med-en-fokk-asfalter-017-46c7934823/"
+  date: '2026-05-28'
+  availability: patreon_only
+  match_score: 
+  buzzsprout_title: 
+  buzzsprout_pubdate: 
+  buzzsprout_url: 
+  buzzsprout_guid: 
+  buzzsprout_duration_hint_sec: 
 - slug: eli-anne-dvergsdal-tilbakeblikk-pa-karrieren-trening-und-efc3adea6b
   title: Eli Anne Dvergsdal | Tilbakeblikk på karrieren, trening under og etter graviditet, comeback etter fødsel ++
   episode_url: "/episoder/eli-anne-dvergsdal-tilbakeblikk-pa-karrieren-trening-und-efc3adea6b/"
