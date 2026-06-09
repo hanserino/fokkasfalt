@@ -1,16 +1,29 @@
 ---
 meta:
-  generated_at: '2026-06-08T07:02:14Z'
+  generated_at: '2026-06-09T05:59:07Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
-  total: 624
-  also_free: 269
+  total: 625
+  also_free: 270
   uncertain: 21
   patreon_only: 334
   unmatched_buzzsprout: 0
 episodes:
+- slug: 253-kadens-journal-issue-01-90f0b0cd6f
+  title: "#253 - Kadens Journal Issue 01"
+  episode_url: "/episoder/253-kadens-journal-issue-01-90f0b0cd6f/"
+  date: '2026-06-08'
+  availability: also_free
+  match_score: 100.0
+  buzzsprout_title: "#253 - Kadens Journal Issue 01"
+  buzzsprout_pubdate: '2026-06-08'
+  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/19310966-253-kadens-journal-issue-01
+  buzzsprout_guid: Buzzsprout-19310966
+  buzzsprout_duration_hint_sec: 6167
+  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/253-kadens-journal-issue-01/id1332829214?i=1000771648749&uo=4
+  listen_spotify_episode_url: https://open.spotify.com/episode/1ZWxBMa8kZX8wPjhfqnwH1
 - slug: astrid-nome-bli-kjent-med-en-fokk-asfalter-017-46c7934823
   title: Astrid Nome | Bli kjent med en Føkk Asfalter 017
   episode_url: "/episoder/astrid-nome-bli-kjent-med-en-fokk-asfalter-017-46c7934823/"
@@ -5795,7 +5808,6 @@ episodes:
   buzzsprout_url: https://www.buzzsprout.com/145661/episodes/3065281-91-paolo-marazzi-ragni-di-lecco-and-arc-teryx-climber-mountaineer-intro-with-tim-dunham-english
   buzzsprout_guid: Buzzsprout-3065281
   buzzsprout_duration_hint_sec: 5832
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/91-paolo-marazzi-ragni-di-lecco-and-arcteryx-climber/id1332829214?i=1000469380127&uo=4
   listen_spotify_episode_url: https://open.spotify.com/episode/5840oV0eXyuVCIam0LgADr
 - slug: sky-blazers-vs-korona-22-johannes-rummelhoff-aka-dr-sti-cc69600297
   title: Sky Blazers vs. korona 2/2 | Johannes Rummelhoff, aka Dr. Sti
