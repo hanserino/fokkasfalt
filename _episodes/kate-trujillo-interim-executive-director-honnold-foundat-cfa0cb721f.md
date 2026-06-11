@@ -5,7 +5,7 @@ description: Kate Trujillo er Interim Executive Director i Honnold Foundation .Â
   er Honnold Foundation? Honnold Foundation er en veldedighetsorganisasjonen dannet
   av klatreren Alex Honnold . Du vet, han der karen i filmen Free Solo ? FÃ¸r Free
   Solo var Alex Honnold en helt vanlig klatrebum
-patreon_url: https://www.patreon.com/posts/kate-trujillo-55912472
+patreon_url: https://www.patreon.com/nedaproject/posts/kate-trujillo-55912472
 cover: https://c10.patreonusercontent.com/4/patreon-media/p/post/55912472/07ce1b8eb88d42f18e9302252374ce1b/eyJkIjo3MiwiaCI6MzAwMCwic3RyaXBfYWxwaGEiOjEsInciOjMwMDAsIndlYnAiOjB9/1.jpg?token-hash=NtOpCNTJo9xSXPAiog2BJyLIoWLvYqBDHjJvgWtfQ7c%3D
 og_type: article
 date: '2021-09-11T04:52:36Z'

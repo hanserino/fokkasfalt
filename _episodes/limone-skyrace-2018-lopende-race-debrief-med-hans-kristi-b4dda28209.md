@@ -4,7 +4,7 @@ description: Heisann sveisann! Nå er jeg tilbake på norsk jord etter en heftig
   i Italia. Jeg tenkte egentlig å skrive en bloggpost som oppsummerte hele racet,
   men fant ut at det er podcasting som er greia. Er du ikke enig? I dag tok jeg min
   første løpetur etter racet, og siden jeg s
-patreon_url: https://www.patreon.com/posts/limone-skyrace-22122718
+patreon_url: https://www.patreon.com/nedaproject/posts/limone-skyrace-22122718
 cover: https://c10.patreonusercontent.com/4/patreon-media/p/post/22122718/a4e0cf3fef7d4260a55dd6f2d4d2ba3c/eyJkIjo3MiwiaCI6MzAwMCwic3RyaXBfYWxwaGEiOjEsInciOjMwMDAsIndlYnAiOjB9/1.jpg?token-hash=33LPDLL7KiI9HEN9VQh7tBtnKLS7rPRGFPUvEd_yOv0%3D
 og_type: article
 date: '2018-10-17T16:58:21Z'

@@ -4,7 +4,7 @@ description: 'Heidi Bye Svartangen  er hundeeier, ultraløper, og jobber som mu
   for dyr i Revetal i Vestfold.  I denne episoden lærer du alt om: Hvordam det var
   å løpe Tor des Géants 330km Hvordan du kan trene opp hunden din til å bli den ultimate
   løpekompisen Hvilken rase du burde '
-patreon_url: https://www.patreon.com/posts/heidi-bye-bikkje-82448684
+patreon_url: https://www.patreon.com/nedaproject/posts/heidi-bye-bikkje-82448684
 cover: https://c10.patreonusercontent.com/4/patreon-media/p/post/82448684/bda7213028884bf1b7c086e01652deac/eyJkIjo3MiwiaCI6MzAwMCwic3RyaXBfYWxwaGEiOjEsInciOjMwMDAsIndlYnAiOjB9/1.jpg?token-hash=zlheBCyJExg8hN1aOTvs353GzBR6Mg7XSWodck2kepA%3D
 og_type: article
 date: '2023-05-04T04:00:02Z'

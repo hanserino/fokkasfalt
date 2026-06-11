@@ -4,7 +4,7 @@ description: Arne (66) er en tidligere 800m-løper fra Bærum som løp i fjellet
   det var noe som het skyrunning. I godt voksen alder fikk han øynene opp for terrengultra
   og klarte i fjor å bli norgesmester i sin aldersklasse under NM Terrengultra / Skogvokteren
   Ultra. Arne har en finfin YouT
-patreon_url: https://www.patreon.com/posts/arne-kluge-bli-135840440
+patreon_url: https://www.patreon.com/nedaproject/posts/arne-kluge-bli-135840440
 cover: https://c10.patreonusercontent.com/4/patreon-media/p/post/135840440/7802cd566d1c4e419ddbc8cab46829f6/eyJkIjo3MiwiaCI6MzAwMCwic3RyaXBfYWxwaGEiOjEsInciOjMwMDAsIndlYnAiOjB9/1.jpg?token-hash=WR__qdQ3uOhBcD5ECRbtBcDa5KlF_05ugwSfY6vPOLg%3D
 og_type: article
 date: '2025-08-14T03:00:04Z'

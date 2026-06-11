@@ -4,7 +4,7 @@ description: 'Hei, folkens!  Neste episode Galdhøpiggen-prosjektet er rett run
   I mellomtiden får du her en episode jeg recordet med Christel, aka "dama til Johannes"
   (han som løp fra Operataket til Galdhøpiggen i sommer). Du husker kanskje Christel
   fra episode #16? Tittelen på den v'
-patreon_url: https://www.patreon.com/posts/eksklusiv-med-21084514
+patreon_url: https://www.patreon.com/nedaproject/posts/eksklusiv-med-21084514
 cover: https://c10.patreonusercontent.com/4/patreon-media/p/post/21084514/aec25749e2884ed6b93cce4d394824f9/eyJkIjo3MiwiaCI6MzAwMCwic3RyaXBfYWxwaGEiOjEsInciOjMwMDAsIndlYnAiOjB9/1.jpg?token-hash=cBrOeFL50U58O_p9i9MosSORWLYloGOjmvq46Eg2SnU%3D
 og_type: article
 date: '2018-08-30T14:33:52Z'

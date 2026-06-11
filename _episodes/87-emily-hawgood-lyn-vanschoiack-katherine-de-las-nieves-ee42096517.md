@@ -5,7 +5,7 @@ description: '18. februar 2020 ble denne godbiten av en podcast sluppet på iTun
   og Spotify. Det var rett før covid-19 ødela for moroa og lenge før Emily Hawgood
   løp inn til 7. plass på Western States juni 2021.  På den tiden lastet jeg ikke
   alle episodene opp på Patreon, noe som har medført '
-patreon_url: https://www.patreon.com/posts/87-emily-hawgood-53451348
+patreon_url: https://www.patreon.com/nedaproject/posts/87-emily-hawgood-53451348
 cover: https://c10.patreonusercontent.com/4/patreon-media/p/post/53451348/4ea25b4a71b641dd925f2db0e102ba54/eyJkIjo3MiwiaCI6MzAwMCwic3RyaXBfYWxwaGEiOjEsInciOjMwMDAsIndlYnAiOjB9/1.jpg?token-hash=B_4fTpKIx00jCN-XN5uadGAUc4VQqV2GhRqT78Ij7rU%3D
 og_type: article
 date: '2021-08-31T05:00:02Z'

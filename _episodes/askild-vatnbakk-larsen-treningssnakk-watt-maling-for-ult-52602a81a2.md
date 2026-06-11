@@ -5,7 +5,7 @@ description: Askild Vatnbakk Larsen har en master i biomekanikk og idrettsfysiol
   Han jobber som lærer på Wang og er ultra-trener for ultraløpere. Han er skribent
   i Runner's World og fungerer også som deres "coach-som-coacher-coacher". Han har
   tidligere vært en av Norges beste sykkelrytter
-patreon_url: https://www.patreon.com/posts/askild-vatnbakk-48859147
+patreon_url: https://www.patreon.com/nedaproject/posts/askild-vatnbakk-48859147
 cover: https://c10.patreonusercontent.com/4/patreon-media/p/post/48859147/3fbdfdbf514f49b9ba49fdecc1e6b16b/eyJkIjo3MiwiaCI6MzAwMCwic3RyaXBfYWxwaGEiOjEsInciOjMwMDAsIndlYnAiOjB9/1.jpg?token-hash=eMbuOCSXCUyxYwiwKji54WkUl5W2k8nB4QL5VxmIevA%3D
 og_type: article
 date: '2021-03-26T05:37:32Z'

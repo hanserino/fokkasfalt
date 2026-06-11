@@ -4,7 +4,7 @@ description: Pål Magnus (34) er race director for ultraløpet Nøsen Hundreds s
   for første gang 11. juni 2021.  Siden programlederen etter planen skal delta selv,
   benyttet han seg av podcast-plattformen til å ringe RD'en for å få en personlig
   race brief. På denne måten vil også lyt
-patreon_url: https://www.patreon.com/posts/pal-lie-magnus-48359243
+patreon_url: https://www.patreon.com/nedaproject/posts/pal-lie-magnus-48359243
 cover: https://c10.patreonusercontent.com/4/patreon-media/p/post/48359243/078b442e4da24ad093c4b049b84b83ab/eyJkIjo3MiwiaCI6MzAwMCwic3RyaXBfYWxwaGEiOjEsInciOjMwMDAsIndlYnAiOjB9/1.jpg?token-hash=M1dXUzHUAmvpc9YijgQJNIcjDseFRk6GNNLHO-LVFno%3D
 og_type: article
 date: '2021-03-08T07:00:01Z'

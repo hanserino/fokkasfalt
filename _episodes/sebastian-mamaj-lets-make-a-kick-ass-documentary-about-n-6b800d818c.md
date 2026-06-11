@@ -5,7 +5,7 @@ description: Sebastian er en polsk fotograf og fjellsport-entusiast som har bodd
   Norge i drøyt fire år. Han kom hit pga fjellene og naturen og har deltatt i flere
   ultra- og skyrace. Han er Salomon-ambassadør og har gjort fotografijobber for race
   de siste par årene, deriblant SMVE og Blefjel
-patreon_url: https://www.patreon.com/posts/sebastian-mamaj-48855671
+patreon_url: https://www.patreon.com/nedaproject/posts/sebastian-mamaj-48855671
 cover: https://c10.patreonusercontent.com/4/patreon-media/p/post/48855671/9e03075e7c6d4d04ae2db2904a6dc983/eyJkIjo3MiwiaCI6MzAwMCwic3RyaXBfYWxwaGEiOjEsInciOjMwMDAsIndlYnAiOjB9/1.jpg?token-hash=9J2cLy7cf58yCioE2PnZTZMwgX5Qijx68tPJCQom2rQ%3D
 og_type: article
 date: '2021-03-20T07:00:02Z'

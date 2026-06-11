@@ -4,7 +4,7 @@ description: 'Fredag 29. april 2024 ble det arrangert et 45km langt løp på San
   med 3000 høydemeter. Navnet på dette løpet er Sjutoppsturen, og det ble i år brukt
   som kvalifisering til EM terrengultra, som for øvrig skal arrangeres i starten av
   juni i Annecy i Frankrike. På herresiden var '
-patreon_url: https://www.patreon.com/posts/5-x-fra-x-3-aka-101646583
+patreon_url: https://www.patreon.com/nedaproject/posts/5-x-fra-x-3-aka-101646583
 cover: https://c10.patreonusercontent.com/4/patreon-media/p/post/101646583/6d0bdf9a8d3148328a2467b14102d0e7/eyJkIjo3MiwiaCI6MzAwMCwic3RyaXBfYWxwaGEiOjEsInciOjMwMDAsIndlYnAiOjB9/1.jpg?token-hash=-RzBJAPupAzxT9i1Q5cV-FA4K6abIvveEHOHObbMfKo%3D
 og_type: article
 date: '2024-04-04T03:00:04Z'

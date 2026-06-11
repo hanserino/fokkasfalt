@@ -4,7 +4,7 @@ description: August 2024 vant Frode Lein  på etappeløpet Tian Shan Mountain U
    i Kirgisistan. I dagens episode tar han deg med på innsiden av løpet i tillegg
   til å ta noen nerdete sidespor om utstyr og trening. Nok en instant classic! Les
   frodes løpsrapport på nettsiden hans, exploringthe
-patreon_url: https://www.patreon.com/posts/frode-lein-frode-120533487
+patreon_url: https://www.patreon.com/nedaproject/posts/frode-lein-frode-120533487
 cover: https://c10.patreonusercontent.com/4/patreon-media/p/post/120533487/4f743700e4cc4be5b8c07f81d27389c8/eyJkIjo3MiwiaCI6MzAwMCwic3RyaXBfYWxwaGEiOjEsInciOjMwMDAsIndlYnAiOjB9/1.jpg?token-hash=6DvOWp9WCxH8mtK9OpVuAXzk-ivOxBq0KhkhEPEcxI0%3D
 og_type: article
 date: '2025-01-29T04:00:10Z'

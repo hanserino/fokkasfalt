@@ -4,7 +4,7 @@ description: 'Første utgave av Rauma Backyard Ultra går av stabelen 7. oktober
   I dagens episode tar vi en prat med tre av de fire løpsarrangørene, nemlig Ida Kjørholt
   , Helene Birkeli og Paul Ogier (på telefon direkte fra Chamonix). Lenker: Insta:
   @rauma_backyard_ultra Facebook-event: ht'
-patreon_url: https://www.patreon.com/posts/rauma-backyard-88421583
+patreon_url: https://www.patreon.com/nedaproject/posts/rauma-backyard-88421583
 cover: https://c10.patreonusercontent.com/4/patreon-media/p/post/88421583/f0a33368a3fa4c16bbf1b1a59994f027/eyJkIjo3MiwiaCI6MzAwMCwic3RyaXBfYWxwaGEiOjEsInciOjMwMDAsIndlYnAiOjB9/1.jpg?token-hash=aga0MqgOXI5byzRHDQmvIKTJcYuYFvTed2WsHPiNOSc%3D
 og_type: article
 date: '2023-08-31T03:55:51Z'

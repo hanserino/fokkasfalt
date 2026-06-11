@@ -1,16 +1,27 @@
 ---
 meta:
-  generated_at: '2026-06-10T06:52:33Z'
+  generated_at: '2026-06-11T06:33:58Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
-  total: 625
+  total: 626
   also_free: 270
   uncertain: 21
-  patreon_only: 334
+  patreon_only: 335
   unmatched_buzzsprout: 0
 episodes:
+- slug: askild-vatnbakk-larsen-proteinbehov-for-ultralopere-bpc-3e253faf22
+  title: Askild Vatnbakk Larsen | Proteinbehov for ultraløpere, BPC-157, Enhanced Games, TRT, Smartfish, Sage vs Hanes ++
+  episode_url: "/episoder/askild-vatnbakk-larsen-proteinbehov-for-ultralopere-bpc-3e253faf22/"
+  date: '2026-06-11'
+  availability: patreon_only
+  match_score: 
+  buzzsprout_title: 
+  buzzsprout_pubdate: 
+  buzzsprout_url: 
+  buzzsprout_guid: 
+  buzzsprout_duration_hint_sec: 
 - slug: 253-kadens-journal-issue-01-90f0b0cd6f
   title: "#253 - Kadens Journal Issue 01"
   episode_url: "/episoder/253-kadens-journal-issue-01-90f0b0cd6f/"

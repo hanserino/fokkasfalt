@@ -4,7 +4,7 @@ description: This whole episode is 100% english! We get to know Tyler - a solid 
   runner and rocket scientist from Boise, Idaho. He's been struggling with the same
   kind of running injury I'm personally dealing with right now. We met up and talked
   about injuries, trail running, ultra runni
-patreon_url: https://www.patreon.com/posts/sti-podden-2-of-20062822
+patreon_url: https://www.patreon.com/nedaproject/posts/sti-podden-2-of-20062822
 cover: https://c10.patreonusercontent.com/4/patreon-media/p/post/20062822/460002016a6249fcb874e4e7d815581b/eyJkIjo3MiwiaCI6MzAwMCwic3RyaXBfYWxwaGEiOjEsInciOjMwMDAsIndlYnAiOjB9/1.jpg?token-hash=ob3-KYUFstSt5Bb9duVAvwGrTpRCqjFcqEUKWHJvvL8%3D
 og_type: article
 date: '2018-07-14T10:51:45Z'

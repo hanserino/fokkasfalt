@@ -6,7 +6,7 @@ description: Nederlandske Aniek Lith bor i Tromsø og herjer vilt fra seg med al
   fjelløping, rando og isklatring. Hun har klatret 8B sport, gått Blåmann på vinterstid,
   løpt Tromsø Skyrace Hamperokken, padlet kajakk + klatret i Oman, gått Svalbard på
   langs, og planlegger å løpe Japa
-patreon_url: https://www.patreon.com/posts/aniek-lith-oman-100280328
+patreon_url: https://www.patreon.com/nedaproject/posts/aniek-lith-oman-100280328
 cover: https://c10.patreonusercontent.com/4/patreon-media/p/post/100280328/f05416046b18474587f32797358cc7c5/eyJkIjo3MiwiaCI6MzAwMCwic3RyaXBfYWxwaGEiOjEsInciOjMwMDAsIndlYnAiOjB9/1.png?token-hash=W54DdDNhSE8tGjuItfwpHZWgbKWlq5CTQOh5xc2BI9w%3D
 og_type: article
 date: '2024-03-14T04:00:04Z'

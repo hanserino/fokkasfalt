@@ -4,7 +4,7 @@ description: Når stort sett alle konkurranser på vårparten ble kansellert bes
   trebarnsfaren Kenneth (41) seg for å gjøre sin lokale skrent hjemme i Rena om til
   verdens høyeste fjell. Bakken i Digeråsen er ca 1km lang. Her går det an å samle
   litt over 200 høydemeter fra bunnen av bakken t
-patreon_url: https://www.patreon.com/posts/episode-101-mt-37548265
+patreon_url: https://www.patreon.com/nedaproject/posts/episode-101-mt-37548265
 cover: https://c10.patreonusercontent.com/4/patreon-media/p/post/37548265/015c4025af3d4e69be4fd71a83ff5f46/eyJkIjo3MiwiaCI6MzAwMCwic3RyaXBfYWxwaGEiOjEsInciOjMwMDAsIndlYnAiOjB9/1.jpg?token-hash=Ba-W2JYROYmiUts-Eohdkecq-6my1mQJ3Qm8yGnjnHE%3D
 og_type: article
 date: '2020-05-26T15:55:33Z'
