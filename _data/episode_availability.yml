@@ -1,16 +1,27 @@
 ---
 meta:
-  generated_at: '2026-06-17T07:06:31Z'
+  generated_at: '2026-06-18T06:50:41Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
-  total: 626
+  total: 627
   also_free: 270
   uncertain: 21
-  patreon_only: 335
+  patreon_only: 336
   unmatched_buzzsprout: 0
 episodes:
+- slug: jorgen-jevne-skal-lope-western-states-def205f86d
+  title: Jørgen Jevne skal løpe Western States
+  episode_url: "/episoder/jorgen-jevne-skal-lope-western-states-def205f86d/"
+  date: '2026-06-18'
+  availability: patreon_only
+  match_score: 
+  buzzsprout_title: 
+  buzzsprout_pubdate: 
+  buzzsprout_url: 
+  buzzsprout_guid: 
+  buzzsprout_duration_hint_sec: 
 - slug: askild-vatnbakk-larsen-proteinbehov-for-ultralopere-bpc-3e253faf22
   title: Askild Vatnbakk Larsen | Proteinbehov for ultraløpere, BPC-157, Enhanced Games, TRT, Smartfish, Sage vs Hanes ++
   episode_url: "/episoder/askild-vatnbakk-larsen-proteinbehov-for-ultralopere-bpc-3e253faf22/"
