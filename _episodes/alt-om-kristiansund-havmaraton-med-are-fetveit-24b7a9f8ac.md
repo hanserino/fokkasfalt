@@ -1,6 +1,6 @@
 ---
 title: Alt om Kristiansund Havmaraton med Are Fetveit
-description: I tillegg til å være med i arrangementskomitéen til Kristiansund Havmaraton er Are Fetveit også innehaveren av den solide løyperekorden på 1:44:59 på 23K-distansen.
+description: I tillegg til å være med i arrangementskomitéen til Kristiansund Havmaraton er Are Fetveit også innehaveren av den solide løyperekorden på 1t44m59s på 23K-distansen.
 
 Siden HK og Lise stiller til start på lørdag var dette en gylden anledning til å catche opp med denne gamle NEDA-ørnen, gå litt til verks på detaljene rundt løpet + nerde på utstyr og det som skjer i ultra-verden for tida.
 
