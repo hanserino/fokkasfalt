@@ -1,16 +1,27 @@
 ---
 meta:
-  generated_at: '2026-06-24T06:37:59Z'
+  generated_at: '2026-06-25T06:09:40Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
-  total: 627
+  total: 628
   also_free: 270
   uncertain: 21
-  patreon_only: 336
+  patreon_only: 337
   unmatched_buzzsprout: 0
 episodes:
+- slug: alt-om-kristiansund-havmaraton-med-are-fetveit-24b7a9f8ac
+  title: Alt om Kristiansund Havmaraton med Are Fetveit
+  episode_url: "/episoder/alt-om-kristiansund-havmaraton-med-are-fetveit-24b7a9f8ac/"
+  date: '2026-06-25'
+  availability: patreon_only
+  match_score: 
+  buzzsprout_title: 
+  buzzsprout_pubdate: 
+  buzzsprout_url: 
+  buzzsprout_guid: 
+  buzzsprout_duration_hint_sec: 
 - slug: jorgen-jevne-skal-lope-western-states-def205f86d
   title: Jørgen Jevne skal løpe Western States
   episode_url: "/episoder/jorgen-jevne-skal-lope-western-states-def205f86d/"
