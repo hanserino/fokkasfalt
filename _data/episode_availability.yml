@@ -1,6 +1,6 @@
 ---
 meta:
-  generated_at: '2026-06-25T11:48:19Z'
+  generated_at: '2026-06-26T06:42:10Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
@@ -22,6 +22,7 @@ episodes:
   buzzsprout_url: https://www.buzzsprout.com/145661/episodes/19400929-254-alt-om-kristiansund-havmaraton-med-are-fetveit
   buzzsprout_guid: Buzzsprout-19400929
   buzzsprout_duration_hint_sec: 6070
+  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/254-alt-om-kristiansund-havmaraton-med-are-fetveit/id1332829214?i=1000774182599&uo=4
   listen_spotify_episode_url: https://open.spotify.com/episode/3kM9bEbueZxF70tTUX2wtY
 - slug: jorgen-jevne-skal-lope-western-states-def205f86d
   title: Jørgen Jevne skal løpe Western States
@@ -5818,7 +5819,6 @@ episodes:
   buzzsprout_url: https://www.buzzsprout.com/145661/episodes/3128962-92-sky-blazers-vs-korona-patrick-johannes-felipe-og-hk
   buzzsprout_guid: Buzzsprout-3128962
   buzzsprout_duration_hint_sec: 8947
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/92-sky-blazers-vs-korona-patrick-johannes-felipe-og-hk/id1332829214?i=1000469625208&uo=4
   listen_spotify_episode_url: https://open.spotify.com/episode/7sNezV2gPl42lHCTfHtDZE
 - slug: intervju-med-skyrunner-johanna-astrm-audio-video-79665d73eb
   title: Intervju med skyrunner Johanna Åström | audio + video
