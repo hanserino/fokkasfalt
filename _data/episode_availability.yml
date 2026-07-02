@@ -1,16 +1,29 @@
 ---
 meta:
-  generated_at: '2026-07-01T06:53:00Z'
+  generated_at: '2026-07-02T06:37:34Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
-  total: 628
+  total: 629
   also_free: 271
   uncertain: 21
-  patreon_only: 336
+  patreon_only: 337
   unmatched_buzzsprout: 0
 episodes:
+- slug: jorgen-jevne-lopsrapport-fra-western-states-2026-9a53f8857e
+  title: Jørgen Jevne | Løpsrapport fra Western States 2026
+  episode_url: "/episoder/jorgen-jevne-lopsrapport-fra-western-states-2026-9a53f8857e/"
+  date: '2026-07-02'
+  availability: uncertain
+  match_score: 56.7
+  buzzsprout_title: "#222 - Yngvild Kaspersen | Løpsrapport Fra Western States 2024"
+  buzzsprout_pubdate: '2024-07-12'
+  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/15398274-222-yngvild-kaspersen-lopsrapport-fra-western-states-2024
+  buzzsprout_guid: Buzzsprout-15398274
+  buzzsprout_duration_hint_sec: 2359
+  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/222-yngvild-kaspersen-l%C3%B8psrapport-fra-western-states-2024/id1332829214?i=1000661985617&uo=4
+  listen_spotify_episode_url: https://open.spotify.com/episode/0kKIy6h0t2Vw5tivL2ALH2
 - slug: alt-om-kristiansund-havmaraton-med-are-fetveit-24b7a9f8ac
   title: Alt om Kristiansund Havmaraton med Are Fetveit
   episode_url: "/episoder/alt-om-kristiansund-havmaraton-med-are-fetveit-24b7a9f8ac/"
@@ -1696,15 +1709,13 @@ episodes:
   title: Ida Nilsson | Western States 2024
   episode_url: "/episoder/ida-nilsson-western-states-2024-43ac0d8709/"
   date: '2024-07-31'
-  availability: uncertain
-  match_score: 55.9
-  buzzsprout_title: "#222 - Yngvild Kaspersen | Løpsrapport Fra Western States 2024"
-  buzzsprout_pubdate: '2024-07-12'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/15398274-222-yngvild-kaspersen-lopsrapport-fra-western-states-2024
-  buzzsprout_guid: Buzzsprout-15398274
-  buzzsprout_duration_hint_sec: 2359
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/222-yngvild-kaspersen-l%C3%B8psrapport-fra-western-states-2024/id1332829214?i=1000661985617&uo=4
-  listen_spotify_episode_url: https://open.spotify.com/episode/0kKIy6h0t2Vw5tivL2ALH2
+  availability: patreon_only
+  match_score: 
+  buzzsprout_title: 
+  buzzsprout_pubdate: 
+  buzzsprout_url: 
+  buzzsprout_guid: 
+  buzzsprout_duration_hint_sec: 
 - slug: bernt-marius-rorstad-jotunheimen-trail-run-med-protese-i-864911457d
   title: Bernt Marius Rørstad | Jotunheimen Trail Run Med Protese + Innsamlingsaksjon
   episode_url: "/episoder/bernt-marius-rorstad-jotunheimen-trail-run-med-protese-i-864911457d/"
