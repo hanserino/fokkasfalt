@@ -7,7 +7,7 @@ description: Lørdag 27. juni løp Jørgen Jevne sitt livs løp på den 100 mile
 patreon_url: https://www.patreon.com/nedaproject/posts/jorgen-jevne-fra-162591756
 cover: https://c10.patreonusercontent.com/4/patreon-media/p/post/162591756/580d50f7e1314a84829d959d9c7c1ae4/eyJkIjo3MiwiaCI6MzAwMCwic3RyaXBfYWxwaGEiOjEsInciOjMwMDAsIndlYnAiOjB9/1.jpg?token-hash=xLAHxNGCVFgfkBxklCNMuefzlse0WCYsq1r3yHZYFvE%3D
 og_type: article
-date: '2026-07-02T03:00:00Z'
+date: '2026-07-01T03:00:00Z'
 duration: '1:41:10'
 duration_iso8601: PT1H41M10S
 thumb: "/assets/episode-thumbs/jorgen-jevne-lopsrapport-fra-western-states-2026-9a53f8857e.webp"
