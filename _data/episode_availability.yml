@@ -1,16 +1,27 @@
 ---
 meta:
-  generated_at: '2026-07-08T06:17:30Z'
+  generated_at: '2026-07-09T06:38:10Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
-  total: 629
+  total: 630
   also_free: 271
   uncertain: 21
-  patreon_only: 337
+  patreon_only: 338
   unmatched_buzzsprout: 0
 episodes:
+- slug: arne-natedal-vhut-lopsarrangor-bli-kjent-med-en-fokk-asf-74d476b244
+  title: Arne Nåtedal | VHUT Løpsarrangør / Bli kjent med en Føkk Asfalter 018
+  episode_url: "/episoder/arne-natedal-vhut-lopsarrangor-bli-kjent-med-en-fokk-asf-74d476b244/"
+  date: '2026-07-09'
+  availability: patreon_only
+  match_score: 
+  buzzsprout_title: 
+  buzzsprout_pubdate: 
+  buzzsprout_url: 
+  buzzsprout_guid: 
+  buzzsprout_duration_hint_sec: 
 - slug: jorgen-jevne-lopsrapport-fra-western-states-2026-9a53f8857e
   title: Jørgen Jevne | Løpsrapport fra Western States 2026
   episode_url: "/episoder/jorgen-jevne-lopsrapport-fra-western-states-2026-9a53f8857e/"
