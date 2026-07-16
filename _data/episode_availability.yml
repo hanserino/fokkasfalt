@@ -1,16 +1,27 @@
 ---
 meta:
-  generated_at: '2026-07-15T06:08:14Z'
+  generated_at: '2026-07-16T05:29:47Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
-  total: 630
+  total: 631
   also_free: 271
   uncertain: 21
-  patreon_only: 338
+  patreon_only: 339
   unmatched_buzzsprout: 0
 episodes:
+- slug: kim-andr-boe-dfl-rapport-fra-black-lake-race-ultratrail-2cf2c14b6c
+  title: Kim André Bøe | DFL-rapport fra Black Lake Race + ultra/trail skitsnakk
+  episode_url: "/episoder/kim-andr-boe-dfl-rapport-fra-black-lake-race-ultratrail-2cf2c14b6c/"
+  date: '2026-07-16'
+  availability: patreon_only
+  match_score: 
+  buzzsprout_title: 
+  buzzsprout_pubdate: 
+  buzzsprout_url: 
+  buzzsprout_guid: 
+  buzzsprout_duration_hint_sec: 
 - slug: arne-natedal-vhut-lopsarrangor-bli-kjent-med-en-fokk-asf-74d476b244
   title: Arne Nåtedal | VHUT Løpsarrangør / Bli kjent med en Føkk Asfalter 018
   episode_url: "/episoder/arne-natedal-vhut-lopsarrangor-bli-kjent-med-en-fokk-asf-74d476b244/"
