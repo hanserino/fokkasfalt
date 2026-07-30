@@ -1,16 +1,27 @@
 ---
 meta:
-  generated_at: '2026-07-29T06:19:01Z'
+  generated_at: '2026-07-30T06:15:18Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
-  total: 632
+  total: 633
   also_free: 271
   uncertain: 21
-  patreon_only: 340
+  patreon_only: 341
   unmatched_buzzsprout: 0
 episodes:
+- slug: elia-thorvik-black-lake-race-2026-champ-6050d5faaf
+  title: "Elia Thorvik | Black Lake Race 2026 champ \U0001F947"
+  episode_url: "/episoder/elia-thorvik-black-lake-race-2026-champ-6050d5faaf/"
+  date: '2026-07-30'
+  availability: patreon_only
+  match_score: 
+  buzzsprout_title: 
+  buzzsprout_pubdate: 
+  buzzsprout_url: 
+  buzzsprout_guid: 
+  buzzsprout_duration_hint_sec: 
 - slug: marius-brevik-fkt-pa-pilegrimsleden-683e8706fa
   title: Marius Brevik | FKT på Pilegrimsleden
   episode_url: "/episoder/marius-brevik-fkt-pa-pilegrimsleden-683e8706fa/"
