@@ -1,16 +1,27 @@
 ---
 meta:
-  generated_at: '2026-08-12T06:49:49Z'
+  generated_at: '2026-08-13T06:52:51Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
-  total: 634
+  total: 635
   also_free: 271
   uncertain: 21
-  patreon_only: 342
+  patreon_only: 343
   unmatched_buzzsprout: 0
 episodes:
+- slug: quiz-gjengen-slar-til-igjen-856d69cbde
+  title: Quiz-gjengen slår til igjen
+  episode_url: "/episoder/quiz-gjengen-slar-til-igjen-856d69cbde/"
+  date: '2026-08-13'
+  availability: patreon_only
+  match_score: 
+  buzzsprout_title: 
+  buzzsprout_pubdate: 
+  buzzsprout_url: 
+  buzzsprout_guid: 
+  buzzsprout_duration_hint_sec: 
 - slug: jens-christoffer-gjolme-bli-kjent-med-en-fokk-asfalter-0-983d8a318f
   title: Jens Christoffer Gjølme | Bli kjent med en Føkk Asfalter 019
   episode_url: "/episoder/jens-christoffer-gjolme-bli-kjent-med-en-fokk-asfalter-0-983d8a318f/"
