@@ -4,7 +4,7 @@ title: 'Styrketrening For Ultraløpere | Foredrag av Askild Vatnbakk Larsen @ OB
 description: Askild har en mastergrad i biomekanikk og løping fra Norges idrettshøgskole
   i tillegg til å være en av landets beste terrengultraløpere. Han kan blant annet
   vise til en 1. plass i Hardangerjøkulen rundt og 2. plasser i både Sandnes ultra
-  trail og X-reid. Til daglig jobber han som
+  trail og X-reid. Til daglig jobber han som…
 patreon_url: https://www.patreon.com/nedaproject/posts/styrketrening-av-153497988
 cover: https://c10.patreonusercontent.com/4/patreon-media/p/post/153497988/13b161dc5159431fbfb94f193b274642/eyJkIjo3MiwiaCI6MzAwMCwic3RyaXBfYWxwaGEiOjEsInciOjMwMDAsIndlYnAiOjB9/1.jpg?token-hash=4-6pMPvZCHd765gsPi3VgeOd4B8rfCjUl87NkTVwRig%3D
 og_type: article

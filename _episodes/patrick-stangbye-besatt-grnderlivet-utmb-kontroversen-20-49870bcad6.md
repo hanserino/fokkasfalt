@@ -3,7 +3,7 @@ title: Patrick Stangbye | Besatt, Gründerlivet, UTMB-kontroversen, 2024-sesong
 description: Det er drøye 6 år siden jeg og Patrick Stangbye satt oss ned ved kjøkkenbordet
   i Studio Disen og spilte inn første episode av NEDA. I dag gjester Patrick podden
   igjen og reflekterer rundt idretten, kultfilmen Besatt, UTMB-kontroversen, gründerlivet,
-  outdoor-bransjen, og hva han t
+  outdoor-bransjen, og hva han t…
 patreon_url: https://www.patreon.com/nedaproject/posts/patrick-stangbye-97877610
 cover: https://c10.patreonusercontent.com/4/patreon-media/p/post/97877610/baab44d23cd34696aabe9009b2f1b4a0/eyJkIjo3MiwiaCI6MzAwMCwic3RyaXBfYWxwaGEiOjEsInciOjMwMDAsIndlYnAiOjB9/1.jpg?token-hash=4cLsU0nizI3CaxltIWo5yGRbJBCsF8VZjiMZ1PNmj_M%3D
 og_type: article

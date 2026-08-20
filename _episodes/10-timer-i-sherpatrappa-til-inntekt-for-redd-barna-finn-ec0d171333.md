@@ -5,7 +5,7 @@ title: 10 Timer I Sherpatrappa Til Inntekt For Redd Barna | Finn Hovem, Sigurd 
 description: 'Onsdag 29. november ble det arrangert nok en vertikal innsamlingsaksjon
   til Redd Barna. Denne gang i Sherpatrappa i Tromsø. Dagens episode er en stemningsrapport
   og debrief med følgende mennesker: Finn Hovem Sigurd Salberg Pedersen Innika De
-  Rosa Aniek Lith Nils-Marius Benjaminse'
+  Rosa Aniek Lith Nils-Marius Benjaminse…'
 patreon_url: https://www.patreon.com/nedaproject/posts/10-timer-i-til-94177821
 cover: https://c10.patreonusercontent.com/4/patreon-media/p/post/94177821/24bd7f7f0966483980555286ca8175ce/eyJkIjo3MiwiaCI6MzAwMCwic3RyaXBfYWxwaGEiOjEsInciOjMwMDAsIndlYnAiOjB9/1.jpg?token-hash=gd1dwe4pN1dQ2GpM9iGgwiU77q2NLcQag3fC-l3KdEU%3D
 og_type: article

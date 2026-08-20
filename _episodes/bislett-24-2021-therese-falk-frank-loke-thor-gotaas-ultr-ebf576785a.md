@@ -4,7 +4,7 @@ title: Bislett 24 2021 | Therese Falk, Frank Løke, Thor Gotaas, Ultrakongen, Ha
 description: 'En kronologisk reportasjeepisode fra årets rekordrasarrangement i kjelleren
   på Bislett.  Intervjuer med følgende mennesker: Marius Hauge (Captare-duden) Harald
   Bjerke (Phantasm 24-vinneren) Henning Lauridsen (Speaker og bad ass) Patrick Stangbye
-  (bad ass ultraløper) Thor Gotaas ('
+  (bad ass ultraløper) Thor Gotaas (…'
 patreon_url: https://www.patreon.com/nedaproject/posts/bislett-24-2021-59123083
 cover: https://c10.patreonusercontent.com/4/patreon-media/p/post/59123083/1119713cc3534f37b25bd5af5acfaba3/eyJkIjo3MiwiaCI6MzAwMCwic3RyaXBfYWxwaGEiOjEsInciOjMwMDAsIndlYnAiOjB9/1.jpg?token-hash=p5MyrwijFsg0IIkL8XhESEnajnaqEhiy6Vfh-TxoBQY%3D
 og_type: article
