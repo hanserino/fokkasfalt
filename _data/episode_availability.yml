@@ -1,16 +1,29 @@
 ---
 meta:
-  generated_at: '2026-08-19T05:53:41Z'
+  generated_at: '2026-08-20T05:39:13Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
-  total: 635
-  also_free: 271
+  total: 636
+  also_free: 272
   uncertain: 21
   patreon_only: 343
   unmatched_buzzsprout: 0
 episodes:
+- slug: alt-som-er-bra-954101b6f6
+  title: Alt som er bra
+  episode_url: "/episoder/alt-som-er-bra-954101b6f6/"
+  date: '2026-08-20'
+  availability: also_free
+  match_score: 100.0
+  buzzsprout_title: Alt som er bra
+  buzzsprout_pubdate: '2026-08-20'
+  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/19669076-alt-som-er-bra
+  buzzsprout_guid: Buzzsprout-19669076
+  buzzsprout_duration_hint_sec: 248
+  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/alt-som-er-bra/id1332829214?i=1000784469059&uo=4
+  listen_spotify_episode_url: https://open.spotify.com/episode/3BKvlvZFJQon6ArbHIdPrv
 - slug: quiz-gjengen-slar-til-igjen-856d69cbde
   title: Quiz-gjengen slår til igjen
   episode_url: "/episoder/quiz-gjengen-slar-til-igjen-856d69cbde/"
@@ -5883,7 +5896,6 @@ episodes:
   buzzsprout_url: https://www.buzzsprout.com/145661/episodes/3170890-slampoesti-dette-er-neda
   buzzsprout_guid: Buzzsprout-3170890
   buzzsprout_duration_hint_sec: 225
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/slampoesti-dette-er-neda/id1332829214?i=1000470012804&uo=4
   listen_spotify_episode_url: https://open.spotify.com/episode/04RQdZuek2XFVAbo1E3diG
 - slug: 92-sky-blazers-vs-korona-patrick-johannes-felipe-og-hk-57ae31bb0b
   title: "#92 - Sky Blazers vs. Korona | Patrick, Johannes, Felipe og HK"
