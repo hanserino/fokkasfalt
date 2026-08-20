@@ -60,7 +60,16 @@ layout: default
     {% endif %}
   </header>
   {% if page.description %}
-  <p class="ep-article__excerpt">{{ page.description }}</p>
+  {% assign _excerpt = page.description | strip %}
+  {% assign _excerpt_cut = false %}
+  {% if _excerpt.size >= 275 %}
+    {% assign _excerpt_tail = _excerpt | slice: -3, 3 %}
+    {% assign _excerpt_last = _excerpt | slice: -1, 1 %}
+    {% unless _excerpt_last == '…' or _excerpt_tail == '...' %}
+      {% assign _excerpt_cut = true %}
+    {% endunless %}
+  {% endif %}
+  <p class="ep-article__excerpt">{{ _excerpt }}{% if _excerpt_cut %}…{% endif %}</p>
   {% endif %}
   {% if youtube_url != '' %}
   {% include youtube_embed.html url=youtube_url title=page.title %}

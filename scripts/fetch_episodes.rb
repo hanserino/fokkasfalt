@@ -76,6 +76,13 @@ def strip_html(html)
   html.to_s.gsub(/<[^>]+>/, " ").gsub(/\s+/, " ").strip
 end
 
+def excerpt_text(html, max = 280)
+  s = strip_html(html)
+  return s if s.length <= max
+
+  "#{s[0, max].rstrip}…"
+end
+
 def pick_image_from_html(html)
   return "" if html.nil? || html.empty?
   m = html.match(%r{<img[^>]+src=["']([^"']+)["']}i)
@@ -233,7 +240,7 @@ def atom_items(feed, itunes_map, duration_map)
     eid = entry.id&.content&.to_s
     image = find_itunes_cover(itunes_map, link.to_s, eid) if image.to_s.empty?
     dur_raw = find_in_item_map(duration_map, link.to_s, eid)
-    excerpt = strip_html(desc)[0, 280]
+    excerpt = excerpt_text(desc)
     out << {
       title: title,
       link: link.to_s,
@@ -258,7 +265,7 @@ def rss20_items(channel, itunes_map, duration_map)
     image = find_itunes_cover(itunes_map, link, guid)
     image = pick_image(item, desc) if image.to_s.empty?
     dur_raw = find_in_item_map(duration_map, link, guid)
-    excerpt = strip_html(desc)[0, 280]
+    excerpt = excerpt_text(desc)
     out << {
       title: title,
       link: link,

@@ -22,6 +22,13 @@ module BuzzsproutMatchCore
       html.to_s.gsub(/<[^>]+>/, " ").gsub(/\s+/, " ").strip
     end
 
+    def excerpt_text(html, max = 280)
+      s = strip_html(html)
+      return s if s.length <= max
+
+      "#{s[0, max].rstrip}…"
+    end
+
     def pick_image_from_html(html)
       return "" if html.nil? || html.empty?
       m = html.match(%r{<img[^>]+src=["']([^"']+)["']}i)
@@ -157,7 +164,7 @@ module BuzzsproutMatchCore
         image = find_itunes_cover(itunes_map, link, guid)
         image = pick_image(item, desc) if image.to_s.empty?
         dur_raw = find_in_item_map(duration_map, link, guid)
-        excerpt = strip_html(desc)[0, 280]
+        excerpt = excerpt_text(desc)
         out << {
           title: title,
           link: link,
