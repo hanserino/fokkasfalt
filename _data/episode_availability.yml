@@ -1,16 +1,27 @@
 ---
 meta:
-  generated_at: '2026-08-20T05:53:12Z'
+  generated_at: '2026-08-20T06:02:46Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
-  total: 636
+  total: 637
   also_free: 272
   uncertain: 21
-  patreon_only: 343
+  patreon_only: 344
   unmatched_buzzsprout: 0
 episodes:
+- slug: andr-jonsson-utmb-ekstreme-gravel-eventyr-bikepacking-gl-ffd6e45ea1
+  title: André Jonsson | UTMB, ekstreme gravel-eventyr, bikepacking, glory days of Skyrunning ++
+  episode_url: "/episoder/andr-jonsson-utmb-ekstreme-gravel-eventyr-bikepacking-gl-ffd6e45ea1/"
+  date: '2026-08-20'
+  availability: patreon_only
+  match_score: 
+  buzzsprout_title: 
+  buzzsprout_pubdate: 
+  buzzsprout_url: 
+  buzzsprout_guid: 
+  buzzsprout_duration_hint_sec: 
 - slug: alt-som-er-bra-954101b6f6
   title: Alt som er bra
   episode_url: "/episoder/alt-som-er-bra-954101b6f6/"
