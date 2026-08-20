@@ -4,7 +4,7 @@ description: 'Bli patreon her: https://www.patreon.com/nedaproject Support the s
 buzzsprout_url: https://www.buzzsprout.com/145661/episodes/15268334-teaser-nosen-hundreds-2024
 buzzsprout_guid: Buzzsprout-15268334
 buzzsprout_only: true
-cover: ''
+cover: "/assets/fokkasfalt.png"
 og_type: article
 date: '2024-06-18T08:00:00Z'
 duration: '1:58'

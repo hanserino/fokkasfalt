@@ -63,15 +63,10 @@ layout: default
       {% for ep in eps_all limit: 10 %}
       <li class="ep-list__item">
         <a class="ep-list__link" href="{{ ep.url | relative_url }}">
-          {% if ep.cover %}
-          {% if ep.thumb %}
-            {% assign home_thumb_src = ep.thumb | relative_url %}
-          {% else %}
-            {% assign home_thumb_src = ep.cover %}
-          {% endif %}
+          {% include episode_cover_src.html cover=ep.cover thumb=ep.thumb %}
           <img
             class="ep-list__thumb"
-            src="{{ home_thumb_src }}"
+            src="{{ episode_cover_src }}"
             alt=""
             width="80"
             height="80"
@@ -79,9 +74,6 @@ layout: default
             decoding="async"
             fetchpriority="low"
           />
-          {% else %}
-          <div class="ep-list__thumb ep-list__thumb--empty" aria-hidden="true"></div>
-          {% endif %}
           <span class="ep-list__meta">
             <span class="ep-list__title">{{ ep.title }}</span>
             {% if ep.date or ep.duration %}

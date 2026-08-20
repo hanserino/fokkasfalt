@@ -6,7 +6,7 @@ description: 'Sample av Sofie Aschjem&apos;s virale Insta-video fra Østmarka Tr
 buzzsprout_url: https://www.buzzsprout.com/145661/episodes/15720198-dj-granite-jeg-haaaaaater-det
 buzzsprout_guid: Buzzsprout-15720198
 buzzsprout_only: true
-cover: ''
+cover: "/assets/fokkasfalt.png"
 og_type: article
 date: '2024-10-06T14:00:00Z'
 duration: '1:34'

@@ -7,7 +7,7 @@ description: "Join meg mens jeg spaserer alene fra Jernbanetorget til Torshov en
 buzzsprout_url: https://www.buzzsprout.com/145661/episodes/994965-47-solo-improv-spasertur-fra-jernbanetorget-til-torshov
 buzzsprout_guid: Buzzsprout-994965
 buzzsprout_only: true
-cover: ''
+cover: "/assets/fokkasfalt.png"
 og_type: article
 date: '2019-03-14T15:00:00Z'
 duration: '1:08:15'

@@ -1144,8 +1144,100 @@ a:focus-visible {
   gap: 0.5rem;
 }
 
-/* Lang liste: utsett layout/paint for rader utenfor viewport (skrivebord). */
-.ep-list--single > .ep-list__item {
+/* Virtualisert /episoder/-liste: kun synlige rader i DOM */
+.ep-list-shell {
+  position: relative;
+}
+
+.ep-list__period--sticky-overlay {
+  position: sticky;
+  top: env(safe-area-inset-top, 0);
+  z-index: 6;
+  margin: 0 0 0.5rem;
+  pointer-events: none;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--border);
+  background-color: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  min-height: var(--ep-sticky-period-h, 2.35rem);
+  display: flex;
+  align-items: center;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .ep-list__period--sticky-overlay {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: var(--bg);
+  }
+}
+
+.ep-list--virtual {
+  --ep-virt-row-h: 6.75rem;
+  --ep-virt-period-h: 2.35rem;
+  --ep-virt-gap: 0.5rem;
+  position: relative;
+  display: block;
+  gap: 0;
+  contain: layout style;
+}
+
+.ep-virt-window {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  will-change: transform;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ep-virt-gap);
+}
+
+.ep-list--virtual .ep-list__item,
+.ep-list--virtual .ep-list__period {
+  flex-shrink: 0;
+  content-visibility: visible;
+  contain-intrinsic-size: unset;
+}
+
+.ep-list--virtual .ep-list__item {
+  height: var(--ep-virt-row-h);
+}
+
+.ep-list--virtual .ep-list__period {
+  position: static;
+  height: var(--ep-virt-period-h);
+  top: auto;
+}
+
+.ep-list--virtual .ep-list__row {
+  height: 100%;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.ep-list--virtual .ep-list__title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+@media (max-width: 32rem) {
+  .ep-list--virtual {
+    --ep-virt-row-h: 9.25rem;
+  }
+
+  .ep-list--virtual .ep-list__row {
+    align-items: stretch;
+  }
+}
+
+/* Lang liste (ikke-virtualisert, f.eks. forside): utsett layout/paint utenfor viewport. */
+.ep-list--single:not(.ep-list--virtual) > .ep-list__item {
   content-visibility: auto;
   contain-intrinsic-size: auto 10rem;
 }
@@ -1156,14 +1248,14 @@ a:focus-visible {
  * contain-intrinsic-size (10rem) ≠ reell radhøyde → hopp/flicker under scroll.
  */
 @media (hover: none) and (pointer: coarse) {
-  .ep-list--single > .ep-list__item {
+  .ep-list--single:not(.ep-list--virtual) > .ep-list__item {
     content-visibility: visible;
     contain-intrinsic-size: unset;
   }
 }
 
 /* Én sticky-rad per måned: «Mai - 2026» */
-.ep-list--single > .ep-list__period {
+.ep-list--single .ep-list__period {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1184,7 +1276,7 @@ a:focus-visible {
 
 /* Blur under sticky er tungt på mobil-GPU */
 @media (hover: none) and (pointer: coarse) {
-  .ep-list--single > .ep-list__period {
+  .ep-list--single .ep-list__period {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     background-color: var(--bg);
@@ -1204,13 +1296,15 @@ a:focus-visible {
 }
 
 @supports not (backdrop-filter: blur(1px)) {
-  .ep-list--single > .ep-list__period {
+  .ep-list--single .ep-list__period,
+  .ep-list__period--sticky-overlay {
     background-color: var(--bg);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ep-list--single > .ep-list__period {
+  .ep-list--single .ep-list__period,
+  .ep-list__period--sticky-overlay {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     background-color: var(--bg);
@@ -1318,6 +1412,8 @@ a:focus-visible {
 
 .listen-icon svg {
   display: block;
+  width: 22px;
+  height: 22px;
 }
 
 .listen-icon__apple-mark {
@@ -1433,12 +1529,6 @@ a:focus-visible {
   font-variant-numeric: tabular-nums;
 }
 
-.ep-list__comment-count {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  font-variant-numeric: tabular-nums;
-}
-
 /* Episode page */
 .ep-article__header {
   margin-bottom: 1.25rem;
@@ -1527,36 +1617,6 @@ a:focus-visible {
 .ep-article__back {
   margin: 0;
   font-size: 0.9rem;
-}
-
-/* Giscus (episode comments) */
-.ep-comments {
-  margin-top: 2.5rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--border);
-}
-
-.ep-comments .section-title {
-  margin-bottom: 0.5rem;
-}
-
-.ep-comments__intro {
-  margin: 0 0 1.25rem;
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  line-height: 1.5;
-  max-width: 40rem;
-}
-
-.ep-comments__intro a {
-  color: var(--text);
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 0.12em;
-}
-
-.ep-comments .giscus {
-  width: 100%;
 }
 
 .ep-hero-funnel {

@@ -18,6 +18,8 @@ require_relative "buzzsprout_match_core"
 ROOT = File.expand_path("..", __dir__)
 EP_DIR = File.join(ROOT, "_episodes")
 CORE = BuzzsproutMatchCore
+# Show-level artwork when an episode has no cover of its own (keep in sync with _config.yml podcast_artwork)
+DEFAULT_COVER = "/assets/fokkasfalt.png"
 
 def slugify(title)
   s = title.to_s.downcase.tr("æ", "ae").tr("ø", "o").tr("å", "aa")
@@ -138,13 +140,16 @@ pool.keys.sort.each do |idx|
 
   date_iso = date_to_iso8601(raw[:date])
 
+  cover = raw[:image].to_s.strip
+  cover = DEFAULT_COVER if cover.empty?
+
   fm = {
     "title" => title,
     "description" => raw[:excerpt].to_s,
     "buzzsprout_url" => link,
     "buzzsprout_guid" => raw[:guid].to_s,
     "buzzsprout_only" => true,
-    "cover" => raw[:image].to_s,
+    "cover" => cover,
     "og_type" => "article"
   }
   fm["date"] = date_iso if date_iso

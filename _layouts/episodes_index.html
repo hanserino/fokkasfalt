@@ -257,611 +257,88 @@ layout: default
   </div>
   </div>
 
-  <ul id="ep-episode-list" class="ep-list ep-list--single ep-list--filterable">
-    {% for ep in eps %}
-      {% assign slug_key = ep.name | default: '' | replace: '.md', '' %}
-      {% if slug_key == '' %}
-        {% assign slug_key = ep.path | split: '/' | last | replace: '.md', '' %}
-      {% endif %}
-      {% assign row = nil %}
-      {% if av %}
-        {% assign row = av.episodes | where: 'slug', slug_key | first %}
-      {% endif %}
-      {% include episode_list_row.html ep=ep row=row slug_key=slug_key %}
-    {% endfor %}
-  </ul>
+  <div class="ep-list-shell">
+    <div id="ep-sticky-period" class="ep-list__period ep-list__period--sticky-overlay" hidden>
+      <span class="ep-list__period-inner"></span>
+    </div>
+    <div
+      id="ep-episode-list"
+      class="ep-list ep-list--single ep-list--filterable ep-list--virtual"
+      role="list"
+      aria-label="Episodeliste"
+    >
+      <div id="ep-virt-window" class="ep-virt-window"></div>
+    </div>
+  </div>
   <p id="ep-search-empty" class="ep-search__empty" hidden>Ingen episoder matcher filtrene.</p>
-  <script>
-    (function () {
-      var list = document.getElementById("ep-episode-list");
-      var input = document.getElementById("ep-search-input");
-      var sortToggle = document.getElementById("ep-sort-toggle");
-      var sortBtnDesc = document.getElementById("ep-sort-desc");
-      var sortBtnAsc = document.getElementById("ep-sort-asc");
-      var statusEl = document.getElementById("ep-search-status");
-      var emptyEl = document.getElementById("ep-search-empty");
-      var clearBtn = document.getElementById("ep-search-clear");
-      var filtersPanel = document.getElementById("ep-filters-panel");
-      var filtersToggle = document.getElementById("ep-filters-toggle");
-      var filtersLabel = document.getElementById("ep-filters-toggle-label");
-      var filtersDot = document.getElementById("ep-filters-dot");
-      var yearSelect = document.getElementById("ep-filter-year");
-      var ytToggle = document.getElementById("ep-youtube-toggle");
-      var ytBtnAll = document.getElementById("ep-yt-all");
-      var ytBtnYes = document.getElementById("ep-yt-yes");
-      var ytBtnNo = document.getElementById("ep-yt-no");
-      var accToggle = document.getElementById("ep-access-toggle");
-      var accBtnAll = document.getElementById("ep-access-all");
-      var accBtnFree = document.getElementById("ep-access-free");
-      var accBtnPat = document.getElementById("ep-access-patreon");
-      if (!list || !input || !sortToggle || !sortBtnDesc || !sortBtnAsc) return;
-      if (!filtersPanel || !filtersToggle || !filtersLabel || !yearSelect) return;
-      if (
-        !ytToggle ||
-        !ytBtnAll ||
-        !ytBtnYes ||
-        !ytBtnNo ||
-        !accToggle ||
-        !accBtnAll ||
-        !accBtnFree ||
-        !accBtnPat
-      )
-        return;
 
-      function filtersPanelExpanded() {
-        return filtersPanel.classList.contains("is-open");
-      }
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false">
+    <symbol id="ep-icon-spotify" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+    </symbol>
+    <symbol id="ep-icon-youtube" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+    </symbol>
+    <symbol id="ep-icon-apple" viewBox="0 0 300 300">
+      <path fill-rule="evenodd" clip-rule="evenodd" fill="#832BC1" d="M294.1,260c-2.9,7.4-9.6,17.8-19.2,25.2c-5.5,4.2-12.1,8.3-21.1,11c-9.6,2.9-21.5,3.8-36.3,3.8h-135c-14.8,0-26.6-1-36.3-3.8c-9-2.7-15.6-6.7-21.1-11c-9.5-7.3-16.3-17.8-19.2-25.2C0.1,245.1,0,228.2,0,217.5v-135C0,71.8,0.1,54.9,5.9,40c2.9-7.4,9.6-17.8,19.2-25.2c5.5-4.2,12.1-8.3,21.1-11C55.9,1,67.7,0,82.5,0h135c14.8,0,26.6,1,36.3,3.8c9,2.7,15.6,6.7,21.1,11c9.5,7.3,16.3,17.8,19.2,25.2c5.9,14.9,5.9,31.9,5.9,42.5v135C300,228.2,299.9,245.1,294.1,260z"/>
+      <g fill="#FFFFFF">
+        <path d="M175.7,181.1c-0.4-3.6-1.6-6.2-4-8.6c-4.5-4.7-12.4-7.8-21.7-7.8c-9.3,0-17.2,3-21.7,7.8c-2.3,2.5-3.6,5-4,8.6c-0.8,7-0.3,13,0.5,22.7c0.8,9.2,2.3,21.5,4.2,33.9c1.4,8.9,2.5,13.7,3.5,17.1c1.7,5.6,7.8,10.4,17.5,10.4c9.7,0,15.9-4.9,17.5-10.4c1-3.4,2.1-8.2,3.5-17.1c1.9-12.5,3.4-24.7,4.2-33.9C176.1,194.1,176.5,188.1,175.7,181.1z"/>
+        <path d="M174.6,130.1c0,13.6-11,24.6-24.6,24.6s-24.6-11-24.6-24.6c0-13.6,11-24.6,24.6-24.6S174.6,116.6,174.6,130.1z"/>
+        <path d="M149.7,33.2C92.3,33.4,45.3,80,44.5,137.4c-0.6,46.5,29.1,86.3,70.6,100.9c1,0.4,2-0.5,1.9-1.5c-0.5-3.6-1.1-7.2-1.5-10.8c-0.2-1.3-1-2.3-2.1-2.9c-32.8-14.3-55.7-47.2-55.3-85.3c0.5-50,41.3-90.7,91.2-91.1c51.1-0.4,92.8,41,92.8,92c0,37.7-22.8,70.1-55.3,84.4c-1.2,0.5-2,1.6-2.1,2.9c-0.5,3.6-1,7.2-1.5,10.8c-0.2,1.1,0.9,1.9,1.9,1.5c41.1-14.4,70.6-53.6,70.6-99.6C255.5,80.5,208,33.1,149.7,33.2z"/>
+        <path d="M147.3,68.2c-37.4,1.4-67.4,32.3-67.9,69.7c-0.3,24.6,12,46.4,30.9,59.3c0.9,0.6,2.2-0.1,2.2-1.2c-0.3-4.3-0.3-8.1-0.1-12.1c0.1-1.3-0.4-2.5-1.4-3.4c-11.5-10.8-18.5-26.2-18.1-43.2c0.8-30,24.9-54.4,54.9-55.6c32.6-1.3,59.4,24.9,59.4,57.1c0,16.4-7,31.2-18.1,41.7c-0.9,0.9-1.4,2.1-1.4,3.4c0.2,3.9,0.1,7.7-0.1,12c-0.1,1.1,1.2,1.9,2.2,1.2c18.6-12.7,30.9-34.2,30.9-58.4C220.8,98.9,187.5,66.6,147.3,68.2z"/>
+      </g>
+    </symbol>
+  </svg>
 
-      var elasticThumbToggles = [sortToggle, ytToggle, accToggle];
-      var resizeThumbTimer = null;
-
-      function scheduleElasticThumbs() {
-        if (!filtersPanelExpanded()) return;
-        requestAnimationFrame(function () {
-          requestAnimationFrame(function () {
-            elasticThumbToggles.forEach(syncElasticThumb);
-          });
-        });
-      }
-
-      function syncElasticThumb(toggleEl) {
-        if (!toggleEl || !toggleEl.classList.contains("ep-sort__toggle--thumb-dynamic")) return;
-        if (!filtersPanelExpanded()) return;
-        var thumb = toggleEl.querySelector(".ep-sort__thumb");
-        if (!thumb) return;
-        var active = toggleEl.querySelector(".ep-sort__btn.is-active");
-        if (!active) return;
-        var tr = toggleEl.getBoundingClientRect();
-        var br = active.getBoundingClientRect();
-        if (tr.width < 2 || br.width < 2) return;
-        thumb.style.left = br.left - tr.left + "px";
-        thumb.style.width = br.width + "px";
-        thumb.style.transform = "none";
-      }
-
-      function currentYearFilter() {
-        return yearSelect.value ? yearSelect.value : "";
-      }
-
-      function setYoutubeFilter(val) {
-        var all = val !== "yes" && val !== "no";
-        ytBtnAll.classList.toggle("is-active", all);
-        ytBtnYes.classList.toggle("is-active", val === "yes");
-        ytBtnNo.classList.toggle("is-active", val === "no");
-        ytBtnAll.setAttribute("aria-pressed", all ? "true" : "false");
-        ytBtnYes.setAttribute("aria-pressed", val === "yes" ? "true" : "false");
-        ytBtnNo.setAttribute("aria-pressed", val === "no" ? "true" : "false");
-        ytToggle.setAttribute("data-slot", all ? "0" : val === "yes" ? "1" : "2");
-        scheduleElasticThumbs();
-      }
-
-      function setAccessFilter(val) {
-        var all = val !== "free" && val !== "patreon";
-        accBtnAll.classList.toggle("is-active", all);
-        accBtnFree.classList.toggle("is-active", val === "free");
-        accBtnPat.classList.toggle("is-active", val === "patreon");
-        accBtnAll.setAttribute("aria-pressed", all ? "true" : "false");
-        accBtnFree.setAttribute("aria-pressed", val === "free" ? "true" : "false");
-        accBtnPat.setAttribute("aria-pressed", val === "patreon" ? "true" : "false");
-        accToggle.setAttribute("data-slot", all ? "0" : val === "free" ? "1" : "2");
-        scheduleElasticThumbs();
-      }
-
-      function currentYoutubeFilter() {
-        if (ytBtnYes.classList.contains("is-active")) return "yes";
-        if (ytBtnNo.classList.contains("is-active")) return "no";
-        return "";
-      }
-
-      function currentAccessFilter() {
-        if (accBtnFree.classList.contains("is-active")) return "free";
-        if (accBtnPat.classList.contains("is-active")) return "patreon";
-        return "";
-      }
-
-      function narrowFilterActive() {
-        var raw = input.value.trim();
-        var terms = raw ? raw.toLowerCase().split(/\s+/) : [];
-        return (
-          terms.length > 0 ||
-          !!currentYearFilter() ||
-          !!currentYoutubeFilter() ||
-          !!currentAccessFilter()
-        );
-      }
-
-      function filtersAreNonDefault() {
-        return (
-          sortBtnAsc.classList.contains("is-active") ||
-          !!currentYearFilter() ||
-          !!currentYoutubeFilter() ||
-          !!currentAccessFilter()
-        );
-      }
-
-      function updateFiltersChrome() {
-        var open = filtersPanelExpanded();
-        filtersToggle.setAttribute("aria-expanded", open ? "true" : "false");
-        filtersLabel.textContent = open ? "Skjul filtre" : "Filtre";
-        filtersToggle.classList.toggle("ep-filters-toggle--open", open);
-        if (filtersDot) {
-          filtersDot.hidden = !filtersAreNonDefault() || open;
-        }
-        filtersToggle.classList.toggle("ep-filters-toggle--dirty", filtersAreNonDefault());
-      }
-
-      function setFiltersPanelOpen(open) {
-        var on = !!open;
-        filtersPanel.classList.toggle("is-open", on);
-        filtersPanel.setAttribute("aria-hidden", on ? "false" : "true");
-        updateFiltersChrome();
-        if (on) {
-          scheduleElasticThumbs();
-        }
-      }
-
-      var urlTimer = null;
-      function syncQueryToUrl() {
-        var v = input.value.trim();
-        var params = new URLSearchParams(window.location.search);
-        if (v) {
-          params.set("q", v);
-        } else {
-          params.delete("q");
-        }
-        if (currentSortOrder() === "asc") {
-          params.set("order", "asc");
-        } else {
-          params.delete("order");
-        }
-        var y = currentYearFilter();
-        if (y) {
-          params.set("year", y);
-        } else {
-          params.delete("year");
-        }
-        var yt = currentYoutubeFilter();
-        if (yt) {
-          params.set("yt", yt);
-        } else {
-          params.delete("yt");
-        }
-        var ac = currentAccessFilter();
-        if (ac) {
-          params.set("access", ac);
-        } else {
-          params.delete("access");
-        }
-        var qs = params.toString();
-        var next = window.location.pathname + (qs ? "?" + qs : "") + window.location.hash;
-        var cur = window.location.pathname + window.location.search + window.location.hash;
-        if (next !== cur) {
-          history.replaceState(null, "", next);
-        }
-      }
-      function scheduleUrlSync() {
-        if (urlTimer) clearTimeout(urlTimer);
-        urlTimer = setTimeout(function () {
-          urlTimer = null;
-          syncQueryToUrl();
-        }, 200);
-      }
-
-      var items = Array.prototype.slice.call(list.querySelectorAll(".ep-list__item"));
-      var total = items.length;
-
-      function haystack(li) {
-        var parts = [];
-        var title = li.querySelector(".ep-list__title");
-        var sub = li.querySelector(".ep-list__sub");
-        var hint = li.querySelector(".avail-match-hint");
-        if (title) parts.push(title.textContent);
-        if (sub) parts.push(sub.textContent);
-        if (hint) parts.push(hint.textContent);
-        return parts.join(" ").toLowerCase();
-      }
-
-      var stacks = items.map(haystack);
-
-      function listItemTimestamp(li) {
-        var iso = li.getAttribute("data-sort-date");
-        if (!iso) return 0;
-        var t = new Date(iso).getTime();
-        return Number.isNaN(t) ? 0 : t;
-      }
-
-      function currentSortOrder() {
-        return sortBtnAsc.classList.contains("is-active") ? "asc" : "desc";
-      }
-
-      function setSortOrder(order) {
-        var asc = order === "asc";
-        sortBtnAsc.classList.toggle("is-active", asc);
-        sortBtnDesc.classList.toggle("is-active", !asc);
-        sortBtnAsc.setAttribute("aria-pressed", asc ? "true" : "false");
-        sortBtnDesc.setAttribute("aria-pressed", !asc ? "true" : "false");
-        sortToggle.setAttribute("data-order", asc ? "asc" : "desc");
-        scheduleElasticThumbs();
-      }
-
-      function stripDateSeparators() {
-        var ys = Array.prototype.slice.call(
-          list.querySelectorAll("li.ep-list__period")
-        );
-        ys.forEach(function (el) {
-          if (el.parentNode === list) list.removeChild(el);
-        });
-      }
-
-      var MONTH_NAMES_NB = [
-        "januar",
-        "februar",
-        "mars",
-        "april",
-        "mai",
-        "juni",
-        "juli",
-        "august",
-        "september",
-        "oktober",
-        "november",
-        "desember",
-      ];
-
-      function episodeYearKey(li) {
-        var iso = li.getAttribute("data-sort-date");
-        if (!iso) return "nodate";
-        var d = new Date(iso);
-        var t = d.getTime();
-        return Number.isNaN(t) ? "nodate" : String(d.getFullYear());
-      }
-
-      function episodeYMKey(li) {
-        var iso = li.getAttribute("data-sort-date");
-        if (!iso) return "nodate";
-        var d = new Date(iso);
-        var t = d.getTime();
-        if (Number.isNaN(t)) return "nodate";
-        var m = d.getMonth() + 1;
-        var pad = m < 10 ? "0" + m : String(m);
-        return String(d.getFullYear()) + "-" + pad;
-      }
-
-      /** Visning: «Mai - 2026» (måned med stor forbokstav) */
-      function periodStickyLabel(ymKey) {
-        if (ymKey === "nodate") return "Uten dato";
-        var p = ymKey.split("-");
-        if (p.length < 2) return ymKey;
-        var y = p[0];
-        var mi = parseInt(p[1], 10) - 1;
-        if (mi < 0 || mi > 11) return ymKey;
-        var mLow = MONTH_NAMES_NB[mi];
-        var mVis = mLow.charAt(0).toUpperCase() + mLow.slice(1);
-        return mVis + " - " + y;
-      }
-
-      function periodStickyAria(ymKey) {
-        if (ymKey === "nodate") return "Episoder uten registrert utgivelsesdato";
-        var p = ymKey.split("-");
-        var y = p[0];
-        var mi = parseInt(p[1], 10) - 1;
-        if (mi < 0 || mi > 11) return "Episoder";
-        return "Episoder fra " + MONTH_NAMES_NB[mi] + " " + y;
-      }
-
-      function setYearFilterFromParams(yrRaw) {
-        if (yrRaw === null || yrRaw === undefined) return;
-        var yr = String(yrRaw).trim();
-        if (
-          yr !== "nodate" &&
-          yr.length > 0 &&
-          !/^\d{4}$/.test(yr)
-        )
-          return;
-        for (var oi = 0; oi < yearSelect.options.length; oi++) {
-          if (yearSelect.options[oi].value === yr) {
-            yearSelect.value = yr;
-            return;
-          }
-        }
-      }
-
-      function populateYearDropdown() {
-        var seen = {};
-        items.forEach(function (li) {
-          seen[episodeYearKey(li)] = true;
-        });
-        while (yearSelect.firstChild)
-          yearSelect.removeChild(yearSelect.firstChild);
-        var o0 = document.createElement("option");
-        o0.value = "";
-        o0.textContent = "Alle år";
-        yearSelect.appendChild(o0);
-        Object.keys(seen)
-          .filter(function (k) {
-            return k !== "nodate";
-          })
-          .sort(function (a, b) {
-            return parseInt(b, 10) - parseInt(a, 10);
-          })
-          .forEach(function (y) {
-            var o = document.createElement("option");
-            o.value = y;
-            o.textContent = y;
-            yearSelect.appendChild(o);
-          });
-        if (seen.nodate) {
-          var on = document.createElement("option");
-          on.value = "nodate";
-          on.textContent = "Uten dato";
-          yearSelect.appendChild(on);
-        }
-      }
-
-      function rebuildDateSeparators() {
-        stripDateSeparators();
-        var epis = Array.prototype.slice.call(
-          list.querySelectorAll(".ep-list__item")
-        );
-        var prevPeriod = "__none__";
-        var narrow = narrowFilterActive();
-        for (var i = 0; i < epis.length; i++) {
-          var ep = epis[i];
-          if (narrow && ep.hidden) continue;
-          var ym = episodeYMKey(ep);
-          var periodKey = ym;
-          if (periodKey === prevPeriod) continue;
-          prevPeriod = periodKey;
-          var row = document.createElement("li");
-          row.className = "ep-list__period";
-          row.setAttribute("data-period", periodKey);
-          if (ym !== "nodate") row.setAttribute("data-ym", ym);
-          row.setAttribute("aria-label", periodStickyAria(periodKey));
-          var inn = document.createElement("span");
-          inn.className = "ep-list__period-inner";
-          inn.textContent = periodStickyLabel(periodKey);
-          row.appendChild(inn);
-          list.insertBefore(row, ep);
-        }
-      }
-
-      function applySort() {
-        var desc = currentSortOrder() !== "asc";
-        var nodes = Array.prototype.slice.call(items);
-        nodes.sort(function (a, b) {
-          var da = listItemTimestamp(a);
-          var db = listItemTimestamp(b);
-          return desc ? db - da : da - db;
-        });
-        nodes.forEach(function (li) {
-          list.appendChild(li);
-        });
-        rebuildDateSeparators();
-      }
-
-      function filter() {
-        var raw = input.value.trim();
-        var terms = raw ? raw.toLowerCase().split(/\s+/) : [];
-        var yf = currentYearFilter();
-        var yt = currentYoutubeFilter();
-        var ac = currentAccessFilter();
-        var hasNarrowFilter =
-          terms.length > 0 || !!yf || !!yt || !!ac;
-        var visible = 0;
-        for (var i = 0; i < items.length; i++) {
-          var matchTerms =
-            terms.length === 0 ||
-            terms.every(function (t) {
-              return stacks[i].indexOf(t) !== -1;
-            });
-          var matchYear = !yf || episodeYearKey(items[i]) === yf;
-          var hasYt = items[i].getAttribute("data-has-youtube") === "1";
-          var matchYt =
-            !yt || (yt === "yes" ? hasYt : yt === "no" ? !hasYt : true);
-          var rowAccess = items[i].getAttribute("data-access") || "patreon";
-          var matchAccess = !ac || rowAccess === ac;
-          var show = matchTerms && matchYear && matchYt && matchAccess;
-          items[i].hidden = !show;
-          if (show) visible++;
-        }
-
-        if (statusEl) {
-          if (!hasNarrowFilter) {
-            statusEl.textContent = "";
-          } else if (visible === 0) {
-            statusEl.textContent = "Ingen treff.";
-          } else {
-            statusEl.textContent =
-              "Viser " + visible + " av " + total + " episoder.";
-          }
-        }
-        if (emptyEl) {
-          emptyEl.hidden = visible > 0;
-        }
-        if (clearBtn) {
-          clearBtn.hidden = !input.value;
-        }
-        scheduleUrlSync();
-        rebuildDateSeparators();
-        updateFiltersChrome();
-      }
-
-      input.addEventListener("input", filter);
-      yearSelect.addEventListener("change", filter);
-      ytToggle.addEventListener("click", function (e) {
-        var btn = e.target.closest(".ep-sort__btn");
-        if (!btn || !ytToggle.contains(btn)) return;
-        var v = btn.getAttribute("data-yt");
-        if (v === "all") {
-          setYoutubeFilter("");
-        } else if (v === "yes" || v === "no") {
-          setYoutubeFilter(v);
-        }
-        filter();
-      });
-      accToggle.addEventListener("click", function (e) {
-        var btn = e.target.closest(".ep-sort__btn");
-        if (!btn || !accToggle.contains(btn)) return;
-        var v = btn.getAttribute("data-access");
-        if (v === "all") {
-          setAccessFilter("");
-        } else if (v === "free" || v === "patreon") {
-          setAccessFilter(v);
-        }
-        filter();
-      });
-      filtersToggle.addEventListener("click", function () {
-        setFiltersPanelOpen(!filtersPanelExpanded());
-        if (filtersPanelExpanded()) sortBtnDesc.focus();
-      });
-      document.addEventListener(
-        "keydown",
-        function (e) {
-          if (e.key !== "Escape" || !filtersPanelExpanded()) return;
-          e.preventDefault();
-          setFiltersPanelOpen(false);
-          filtersToggle.focus();
-        },
-        false
-      );
-      sortToggle.addEventListener("click", function (e) {
-        var btn = e.target.closest(".ep-sort__btn");
-        if (!btn || !sortToggle.contains(btn)) return;
-        var next = btn.getAttribute("data-order");
-        if (!next || next === currentSortOrder()) return;
-        setSortOrder(next);
-        applySort();
-        filter();
-      });
-      function onSortArrowKey(e) {
-        if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
-        e.preventDefault();
-        setSortOrder(e.key === "ArrowLeft" ? "desc" : "asc");
-        applySort();
-        filter();
-      }
-      sortBtnDesc.addEventListener("keydown", onSortArrowKey);
-      sortBtnAsc.addEventListener("keydown", onSortArrowKey);
-      function ytSlotIndex() {
-        if (ytBtnAll.classList.contains("is-active")) return 0;
-        if (ytBtnYes.classList.contains("is-active")) return 1;
-        return 2;
-      }
-      function onYtArrowKey(e) {
-        if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
-        e.preventDefault();
-        var i = ytSlotIndex();
-        var ni = e.key === "ArrowLeft" ? Math.max(0, i - 1) : Math.min(2, i + 1);
-        setYoutubeFilter(ni === 0 ? "" : ni === 1 ? "yes" : "no");
-        filter();
-      }
-      function accSlotIndex() {
-        if (accBtnAll.classList.contains("is-active")) return 0;
-        if (accBtnFree.classList.contains("is-active")) return 1;
-        return 2;
-      }
-      function onAccArrowKey(e) {
-        if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
-        e.preventDefault();
-        var i = accSlotIndex();
-        var ni = e.key === "ArrowLeft" ? Math.max(0, i - 1) : Math.min(2, i + 1);
-        setAccessFilter(ni === 0 ? "" : ni === 1 ? "free" : "patreon");
-        filter();
-      }
-      ytBtnAll.addEventListener("keydown", onYtArrowKey);
-      ytBtnYes.addEventListener("keydown", onYtArrowKey);
-      ytBtnNo.addEventListener("keydown", onYtArrowKey);
-      accBtnAll.addEventListener("keydown", onAccArrowKey);
-      accBtnFree.addEventListener("keydown", onAccArrowKey);
-      accBtnPat.addEventListener("keydown", onAccArrowKey);
-      if (clearBtn) {
-        clearBtn.addEventListener("click", function () {
-          input.value = "";
-          input.focus();
-          filter();
-        });
-      }
-
-      window.addEventListener("resize", function () {
-        if (resizeThumbTimer) clearTimeout(resizeThumbTimer);
-        resizeThumbTimer = setTimeout(scheduleElasticThumbs, 100);
-      });
-
-      try {
-        var paramsInit = new URLSearchParams(window.location.search);
-        var orderRaw = paramsInit.get("order");
-        var yrQ = paramsInit.get("year");
-        var ytQ = paramsInit.get("yt");
-        var accessQ = paramsInit.get("access");
-        populateYearDropdown();
-        if (orderRaw === "asc") setSortOrder("asc");
-
-        applySort();
-
-        setYearFilterFromParams(yrQ);
-        var ytTrimInit = ytQ ? String(ytQ).trim() : "";
-        if (ytTrimInit === "yes" || ytTrimInit === "no") {
-          setYoutubeFilter(ytTrimInit);
-        } else {
-          setYoutubeFilter("");
-        }
-        var acTrimInit = accessQ ? String(accessQ).trim() : "";
-        if (acTrimInit === "free" || acTrimInit === "patreon") {
-          setAccessFilter(acTrimInit);
-        } else {
-          setAccessFilter("");
-        }
-
-        var q = paramsInit.get("q");
-        if (q) {
-          input.value = q;
-        }
-
-        var yrTrim = yrQ ? String(yrQ).trim() : "";
-        var yrParamOpens =
-          (yrTrim === "nodate" && yearSelect.value === "nodate") ||
-          (/^\d{4}$/.test(yrTrim) && yearSelect.value === yrTrim);
-        var ytTrim = ytQ ? String(ytQ).trim() : "";
-        var ytParamOpens =
-          (ytTrim === "yes" && ytBtnYes.classList.contains("is-active")) ||
-          (ytTrim === "no" && ytBtnNo.classList.contains("is-active"));
-        var acTrim = accessQ ? String(accessQ).trim() : "";
-        var acParamOpens =
-          (acTrim === "free" && accBtnFree.classList.contains("is-active")) ||
-          (acTrim === "patreon" && accBtnPat.classList.contains("is-active"));
-        var openPanel =
-          orderRaw === "asc" ||
-          yrParamOpens ||
-          ytParamOpens ||
-          acParamOpens;
-        setFiltersPanelOpen(openPanel);
-      } catch (e) {
-        updateFiltersChrome();
-      }
-
-      filter();
-    })();
+  <script type="application/json" id="ep-list-config">
+    {
+      "spotifyShow": {{ site.listen_links.spotify_show | default: '' | jsonify }},
+      "appleShow": {{ site.listen_links.apple_show | default: '' | jsonify }},
+      "defaultCover": {{ site.podcast_artwork | default: '/assets/fokkasfalt.png' | relative_url | jsonify }}
+    }
   </script>
+  <script type="application/json" id="ep-avail-data">
+{
+{% if av and av.episodes %}
+{% for row in av.episodes %}
+  {{ row.slug | jsonify }}:{"a":{{ row.availability | jsonify }},"sp":{{ row.listen_spotify_episode_url | default: '' | jsonify }},"ap":{{ row.listen_apple_episode_url | default: '' | jsonify }}}{% unless forloop.last %},{% endunless %}
+{% endfor %}
+{% endif %}
+}
+  </script>
+  <script type="application/json" id="ep-list-data">
+[
+{% for ep in eps %}
+{% assign slug_key = ep.name | default: '' | replace: '.md', '' %}
+{% if slug_key == '' %}
+  {% assign slug_key = ep.path | split: '/' | last | replace: '.md', '' %}
+{% endif %}
+{% assign _img = '' %}
+{% if ep.thumb and ep.thumb != '' %}
+  {% assign _img = ep.thumb | relative_url %}
+{% elsif ep.cover and ep.cover != '' %}
+  {% if ep.cover contains '://' %}
+    {% assign _img = ep.cover %}
+  {% else %}
+    {% assign _img = ep.cover | relative_url %}
+  {% endif %}
+{% endif %}
+{% capture _dl %}{% include date-no.html date=ep.date %}{% endcapture %}
+{"s":{{ slug_key | jsonify }},"u":{{ ep.url | relative_url | jsonify }},"t":{{ ep.title | jsonify }},"d":{{ ep.date | date_to_xmlschema | jsonify }},"dl":{{ _dl | strip | jsonify }},"dur":{{ ep.duration | default: '' | jsonify }},"img":{{ _img | jsonify }},"yt":{{ ep.youtube_url | default: '' | jsonify }}}{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]
+  </script>
+  <noscript>
+    <ul class="ep-list ep-list--single">
+      {% for ep in eps limit: 40 %}
+      <li class="ep-list__item">
+        <a class="ep-list__main" href="{{ ep.url | relative_url }}">{{ ep.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+    <p class="ep-search__status">Slå på JavaScript for full søkbar liste ({{ eps.size }} episoder).</p>
+  </noscript>
+  <script src="{{ '/assets/js/episodes-list.js' | relative_url }}" defer></script>
   {% endif %}
 </main>
 

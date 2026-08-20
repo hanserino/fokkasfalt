@@ -7,7 +7,7 @@ description: "&quot;Alt som er bra&quot; er en ansamling av ord, navn og ting so
 buzzsprout_url: https://www.buzzsprout.com/145661/episodes/19669076-alt-som-er-bra
 buzzsprout_guid: Buzzsprout-19669076
 buzzsprout_only: true
-cover: ''
+cover: "/assets/fokkasfalt.png"
 og_type: article
 date: '2026-08-20T03:00:00Z'
 duration: '4:08'

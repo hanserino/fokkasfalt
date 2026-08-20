@@ -23,6 +23,8 @@ require "yaml"
 ROOT = File.expand_path("..", __dir__)
 OUT_DIR = File.join(ROOT, "_episodes")
 UA = "Mozilla/5.0 (compatible; FokkAsfaltJekyll/1.0; +https://fokkasfalt.no)"
+# Show-level artwork when an episode has no cover of its own (keep in sync with _config.yml podcast_artwork)
+DEFAULT_COVER = "/assets/fokkasfalt.png"
 
 # Load optional project .env (does not override vars already set in the shell or CI)
 def load_env_file(path)
@@ -410,11 +412,14 @@ items.each do |it|
 
   date_iso = date_to_iso8601(it[:date])
 
+  cover = it[:image].to_s.strip
+  cover = DEFAULT_COVER if cover.empty?
+
   fm = {
     "title" => title,
     "description" => it[:excerpt].to_s,
     "patreon_url" => link,
-    "cover" => it[:image].to_s,
+    "cover" => cover,
     "og_type" => "article"
   }
   fm["date"] = date_iso if date_iso

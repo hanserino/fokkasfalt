@@ -28,6 +28,8 @@ ROOT = File.expand_path("..", __dir__)
 EPISODES_DIR = File.join(ROOT, "_episodes")
 THUMBS_DIR = File.join(ROOT, "assets", "episode-thumbs")
 UA = "Mozilla/5.0 (compatible; FokkAsfaltJekyll/1.1; +https://fokkasfalt.no)"
+# Local show artwork is used as cover fallback — not a remote URL to thumbnail
+DEFAULT_COVER = "/assets/fokkasfalt.png"
 
 def load_env_file(path)
   return unless File.file?(path)
@@ -132,7 +134,8 @@ paths.each do |path|
   thumb_rel = "/assets/episode-thumbs/#{slug}.webp"
   out_file = File.join(THUMBS_DIR, "#{slug}.webp")
 
-  if cover.empty?
+  # Skip empty covers and show-level fallback art (local path / non-http)
+  if cover.empty? || cover == DEFAULT_COVER || !cover.match?(%r{\Ahttps?://}i)
     fm.delete("thumb")
     write_md(path, fm, body)
     skipped += 1

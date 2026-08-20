@@ -8,7 +8,7 @@ description: Strava-debatten på Lofthus Lørdag 23. juni 2018 samlet det seg 12
 buzzsprout_url: https://www.buzzsprout.com/145661/episodes/741408-22-la-oss-snakke-om-strava-paneldebatt-med-sky-blazers-og-intervju-med-ainhoa-ostolaza
 buzzsprout_guid: Buzzsprout-741408
 buzzsprout_only: true
-cover: ''
+cover: "/assets/fokkasfalt.png"
 og_type: article
 date: '2018-07-02T22:00:00Z'
 duration: '1:43:26'

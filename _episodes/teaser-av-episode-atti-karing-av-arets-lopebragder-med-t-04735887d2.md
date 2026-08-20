@@ -6,7 +6,7 @@ description: I neste episode av NEDA kårer jeg og Thomas årets løpebragder og
 buzzsprout_url: https://www.buzzsprout.com/145661/episodes/2286479-teaser-av-episode-atti-karing-av-arets-lopebragder-med-thomas-stordalen
 buzzsprout_guid: Buzzsprout-2286479
 buzzsprout_only: true
-cover: ''
+cover: "/assets/fokkasfalt.png"
 og_type: article
 date: '2019-12-15T17:00:00Z'
 duration: '6:22'

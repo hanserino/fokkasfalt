@@ -44,15 +44,13 @@
     <meta property="og:url" content="{{ page.url | absolute_url }}" />
     <meta property="og:site_name" content="{{ site.title | xml_escape }}" />
     <meta property="og:locale" content="nb_NO" />
-    {% assign _share = page.og_image | default: page.cover %}
-    {% if _share %}
-      {% if _share contains 'http' %}
-        {% assign _ogi = _share %}
-      {% else %}
-        {% assign _ogi = _share | absolute_url %}
-      {% endif %}
+    {% assign _share = page.og_image | default: page.cover | default: '' | strip %}
+    {% if _share == '' %}
+      {% assign _ogi = site.podcast_artwork | default: '/assets/fokkasfalt.png' | absolute_url %}
+    {% elsif _share contains '://' %}
+      {% assign _ogi = _share %}
     {% else %}
-      {% assign _ogi = '/assets/fokkasfalt.png' | absolute_url %}
+      {% assign _ogi = _share | absolute_url %}
     {% endif %}
     <meta property="og:image" content="{{ _ogi }}" />
     {% if _ogi contains 'fokkasfalt.png' %}

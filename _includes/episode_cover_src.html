@@ -1,0 +1,18 @@
+{% comment %}
+  Resolves episode artwork into `episode_cover_src`.
+  Prefer thumb (list), else episode cover, else site.podcast_artwork.
+  Params: cover (required), thumb (optional)
+{% endcomment %}
+{% assign _ep_thumb = include.thumb | default: '' | strip %}
+{% if _ep_thumb != '' %}
+  {% assign episode_cover_src = _ep_thumb | relative_url %}
+{% else %}
+  {% assign _ep_cover = include.cover | default: '' | strip %}
+  {% if _ep_cover == '' %}
+    {% assign episode_cover_src = site.podcast_artwork | default: '/assets/fokkasfalt.png' | relative_url %}
+  {% elsif _ep_cover contains '://' %}
+    {% assign episode_cover_src = _ep_cover %}
+  {% else %}
+    {% assign episode_cover_src = _ep_cover | relative_url %}
+  {% endif %}
+{% endif %}
