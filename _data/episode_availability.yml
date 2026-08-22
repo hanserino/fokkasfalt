@@ -1,16 +1,27 @@
 ---
 meta:
-  generated_at: '2026-08-21T05:54:28Z'
+  generated_at: '2026-08-22T05:50:08Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
-  total: 637
+  total: 638
   also_free: 272
   uncertain: 21
-  patreon_only: 344
+  patreon_only: 345
   unmatched_buzzsprout: 0
 episodes:
+- slug: utmb-ccc-og-occ-2026-preview-med-sindre-buraas-og-patric-0e5f33a92d
+  title: UTMB, CCC og OCC 2026 preview med Sindre Buraas og Patrick Stangbye
+  episode_url: "/episoder/utmb-ccc-og-occ-2026-preview-med-sindre-buraas-og-patric-0e5f33a92d/"
+  date: '2026-08-21'
+  availability: patreon_only
+  match_score: 
+  buzzsprout_title: 
+  buzzsprout_pubdate: 
+  buzzsprout_url: 
+  buzzsprout_guid: 
+  buzzsprout_duration_hint_sec: 
 - slug: andr-jonsson-utmb-ekstreme-gravel-eventyr-bikepacking-gl-ffd6e45ea1
   title: André Jonsson | UTMB, ekstreme gravel-eventyr, bikepacking, glory days of Skyrunning ++
   episode_url: "/episoder/andr-jonsson-utmb-ekstreme-gravel-eventyr-bikepacking-gl-ffd6e45ea1/"
