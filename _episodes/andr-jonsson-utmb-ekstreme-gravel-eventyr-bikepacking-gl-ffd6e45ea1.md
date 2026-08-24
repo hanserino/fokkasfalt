@@ -8,7 +8,7 @@ description: André Jonsson (41) var en av "de store gutta" da skyrunning peaket
 patreon_url: https://www.patreon.com/nedaproject/posts/andre-jonsson-of-167083915
 cover: https://c10.patreonusercontent.com/4/patreon-media/p/post/167083915/ab5495dbf69a4a588c8f40c48ea5d19d/eyJkIjo3MiwiaCI6MzAwMCwic3RyaXBfYWxwaGEiOjEsInciOjMwMDAsIndlYnAiOjB9/1.jpg?token-hash=XOqLpje1ywWRARkcpjaskPKwIQOm5iv983C8M7xrPBw%3D
 og_type: article
-date: '2026-08-20T03:00:00Z'
+date: '2026-08-19T03:00:00Z'
 duration: '1:30:38'
 duration_iso8601: PT1H30M38S
 thumb: "/assets/episode-thumbs/andr-jonsson-utmb-ekstreme-gravel-eventyr-bikepacking-gl-ffd6e45ea1.webp"

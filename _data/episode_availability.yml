@@ -1,6 +1,6 @@
 ---
 meta:
-  generated_at: '2026-08-23T05:52:52Z'
+  generated_at: '2026-08-24T06:00:35Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
@@ -22,17 +22,6 @@ episodes:
   buzzsprout_url: 
   buzzsprout_guid: 
   buzzsprout_duration_hint_sec: 
-- slug: andr-jonsson-utmb-ekstreme-gravel-eventyr-bikepacking-gl-ffd6e45ea1
-  title: André Jonsson | UTMB, ekstreme gravel-eventyr, bikepacking, glory days of Skyrunning ++
-  episode_url: "/episoder/andr-jonsson-utmb-ekstreme-gravel-eventyr-bikepacking-gl-ffd6e45ea1/"
-  date: '2026-08-20'
-  availability: patreon_only
-  match_score: 
-  buzzsprout_title: 
-  buzzsprout_pubdate: 
-  buzzsprout_url: 
-  buzzsprout_guid: 
-  buzzsprout_duration_hint_sec: 
 - slug: alt-som-er-bra-954101b6f6
   title: Alt som er bra
   episode_url: "/episoder/alt-som-er-bra-954101b6f6/"
@@ -46,6 +35,17 @@ episodes:
   buzzsprout_duration_hint_sec: 248
   listen_apple_episode_url: https://podcasts.apple.com/no/podcast/alt-som-er-bra/id1332829214?i=1000784469059&uo=4
   listen_spotify_episode_url: https://open.spotify.com/episode/3BKvlvZFJQon6ArbHIdPrv
+- slug: andr-jonsson-utmb-ekstreme-gravel-eventyr-bikepacking-gl-ffd6e45ea1
+  title: André Jonsson | UTMB, ekstreme gravel-eventyr, bikepacking, glory days of Skyrunning ++
+  episode_url: "/episoder/andr-jonsson-utmb-ekstreme-gravel-eventyr-bikepacking-gl-ffd6e45ea1/"
+  date: '2026-08-19'
+  availability: patreon_only
+  match_score: 
+  buzzsprout_title: 
+  buzzsprout_pubdate: 
+  buzzsprout_url: 
+  buzzsprout_guid: 
+  buzzsprout_duration_hint_sec: 
 - slug: quiz-gjengen-slar-til-igjen-856d69cbde
   title: Quiz-gjengen slår til igjen
   episode_url: "/episoder/quiz-gjengen-slar-til-igjen-856d69cbde/"
