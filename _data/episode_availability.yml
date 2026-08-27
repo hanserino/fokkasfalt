@@ -1,16 +1,27 @@
 ---
 meta:
-  generated_at: '2026-08-26T05:56:51Z'
+  generated_at: '2026-08-27T16:36:36Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
-  total: 638
+  total: 639
   also_free: 272
   uncertain: 21
-  patreon_only: 345
+  patreon_only: 346
   unmatched_buzzsprout: 0
 episodes:
+- slug: opptak-av-occ-2026-watch-party-m-anders-haga-kim-l-sylvi-566d3021d4
+  title: Opptak av OCC 2026 Watch Party m/ Anders Haga, Kim L, Sylvia Nordskar, Tom, Jonas 2.0, Kim André og HK
+  episode_url: "/episoder/opptak-av-occ-2026-watch-party-m-anders-haga-kim-l-sylvi-566d3021d4/"
+  date: '2026-08-27'
+  availability: patreon_only
+  match_score: 
+  buzzsprout_title: 
+  buzzsprout_pubdate: 
+  buzzsprout_url: 
+  buzzsprout_guid: 
+  buzzsprout_duration_hint_sec: 
 - slug: utmb-ccc-og-occ-2026-preview-med-sindre-buraas-og-patric-0e5f33a92d
   title: UTMB, CCC og OCC 2026 preview med Sindre Buraas og Patrick Stangbye
   episode_url: "/episoder/utmb-ccc-og-occ-2026-preview-med-sindre-buraas-og-patric-0e5f33a92d/"
