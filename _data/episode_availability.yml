@@ -1,16 +1,27 @@
 ---
 meta:
-  generated_at: '2026-08-31T11:43:03Z'
+  generated_at: '2026-09-01T10:15:03Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
-  total: 639
+  total: 640
   also_free: 272
   uncertain: 21
-  patreon_only: 346
+  patreon_only: 347
   unmatched_buzzsprout: 0
 episodes:
+- slug: utmb-wrap-up-med-patrick-stangbye-og-sindre-buraas-c155dadda6
+  title: UTMB wrap-up med Patrick Stangbye og Sindre Buraas
+  episode_url: "/episoder/utmb-wrap-up-med-patrick-stangbye-og-sindre-buraas-c155dadda6/"
+  date: '2026-09-01'
+  availability: patreon_only
+  match_score: 
+  buzzsprout_title: 
+  buzzsprout_pubdate: 
+  buzzsprout_url: 
+  buzzsprout_guid: 
+  buzzsprout_duration_hint_sec: 
 - slug: opptak-av-occ-2026-watch-party-m-anders-haga-kim-l-sylvi-566d3021d4
   title: Opptak av OCC 2026 Watch Party m/ Anders Haga, Kim L, Sylvia Nordskar, Tom, Jonas 2.0, Kim André og HK
   episode_url: "/episoder/opptak-av-occ-2026-watch-party-m-anders-haga-kim-l-sylvi-566d3021d4/"
