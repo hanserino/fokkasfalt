@@ -1,14 +1,14 @@
 ---
 meta:
-  generated_at: '2026-09-07T10:31:14Z'
+  generated_at: '2026-09-08T09:52:08Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
   total: 640
-  also_free: 272
+  also_free: 273
   uncertain: 21
-  patreon_only: 347
+  patreon_only: 346
   unmatched_buzzsprout: 0
 episodes:
 - slug: utmb-wrap-up-med-patrick-stangbye-og-sindre-buraas-c155dadda6
@@ -105,13 +105,15 @@ episodes:
   title: Marius Brevik | FKT på Pilegrimsleden
   episode_url: "/episoder/marius-brevik-fkt-pa-pilegrimsleden-683e8706fa/"
   date: '2026-07-23'
-  availability: patreon_only
-  match_score: 
-  buzzsprout_title: 
-  buzzsprout_pubdate: 
-  buzzsprout_url: 
-  buzzsprout_guid: 
-  buzzsprout_duration_hint_sec: 
+  availability: also_free
+  match_score: 100.0
+  buzzsprout_title: "#255 - Marius Brevik | FKT på Pilegrimsleden"
+  buzzsprout_pubdate: '2026-09-08'
+  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/19531500-255-marius-brevik-fkt-pa-pilegrimsleden
+  buzzsprout_guid: Buzzsprout-19531500
+  buzzsprout_duration_hint_sec: 9816
+  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/255-marius-brevik-fkt-p%C3%A5-pilegrimsleden/id1332829214?i=1000788426687&uo=4
+  listen_spotify_episode_url: https://open.spotify.com/episode/51Q8FN3LbCO6dCQCfIq8Ji
 - slug: kim-andr-boe-dfl-rapport-fra-black-lake-race-ultratrail-2cf2c14b6c
   title: Kim André Bøe | DFL-rapport fra Black Lake Race + ultra/trail skitsnakk
   episode_url: "/episoder/kim-andr-boe-dfl-rapport-fra-black-lake-race-ultratrail-2cf2c14b6c/"
@@ -5927,7 +5929,6 @@ episodes:
   buzzsprout_url: https://www.buzzsprout.com/145661/episodes/3210046-93-johanna-astrom-koronafast-i-sverige
   buzzsprout_guid: Buzzsprout-3210046
   buzzsprout_duration_hint_sec: 4036
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/93-johanna-%C3%A5str%C3%B6m-koronafast-i-sverige/id1332829214?i=1000470350209&uo=4
   listen_spotify_episode_url: https://open.spotify.com/episode/69Htd8lQytFuoloaXQI3sk
 - slug: slampoesti-dette-er-neda-ada6739b49
   title: "#Slampoesti – Dette er NEDA"
