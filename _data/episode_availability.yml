@@ -1,16 +1,27 @@
 ---
 meta:
-  generated_at: '2026-09-09T09:55:48Z'
+  generated_at: '2026-09-10T09:53:20Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
-  total: 641
+  total: 642
   also_free: 273
   uncertain: 21
-  patreon_only: 347
+  patreon_only: 348
   unmatched_buzzsprout: 0
 episodes:
+- slug: astri-ellefsen-bli-kjent-med-en-fokk-asfalter-020-97298d53fc
+  title: Astri Ellefsen | Bli kjent med en Føkk Asfalter 020
+  episode_url: "/episoder/astri-ellefsen-bli-kjent-med-en-fokk-asfalter-020-97298d53fc/"
+  date: '2026-09-10'
+  availability: patreon_only
+  match_score: 
+  buzzsprout_title: 
+  buzzsprout_pubdate: 
+  buzzsprout_url: 
+  buzzsprout_guid: 
+  buzzsprout_duration_hint_sec: 
 - slug: kristin-harila-nadelose-fjell-bergtatt-ep-11-8b84dd4f48
   title: Kristin Harila | Nådeløse Fjell | Bergtatt Ep. 11
   episode_url: "/episoder/kristin-harila-nadelose-fjell-bergtatt-ep-11-8b84dd4f48/"
