@@ -1,16 +1,38 @@
 ---
 meta:
-  generated_at: '2026-09-14T10:49:50Z'
+  generated_at: '2026-09-15T10:13:39Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
-  total: 642
+  total: 644
   also_free: 273
   uncertain: 21
-  patreon_only: 348
+  patreon_only: 350
   unmatched_buzzsprout: 0
 episodes:
+- slug: dnt-massiv-fkt-24-finn-kvelden-for-start-simon-grimstrup-dbe390f2e6
+  title: 'DNT Massiv FKT 2/4: Finn kvelden før start, Simon Grimstrup, Mette Isaksen og Thomas Øderud'
+  episode_url: "/episoder/dnt-massiv-fkt-24-finn-kvelden-for-start-simon-grimstrup-dbe390f2e6/"
+  date: '2026-09-15'
+  availability: patreon_only
+  match_score: 
+  buzzsprout_title: 
+  buzzsprout_pubdate: 
+  buzzsprout_url: 
+  buzzsprout_guid: 
+  buzzsprout_duration_hint_sec: 
+- slug: dnt-massiv-fkt-14-intro-06ceea819e
+  title: 'DNT Massiv FKT 1/4: Intro'
+  episode_url: "/episoder/dnt-massiv-fkt-14-intro-06ceea819e/"
+  date: '2026-09-14'
+  availability: patreon_only
+  match_score: 
+  buzzsprout_title: 
+  buzzsprout_pubdate: 
+  buzzsprout_url: 
+  buzzsprout_guid: 
+  buzzsprout_duration_hint_sec: 
 - slug: astri-ellefsen-bli-kjent-med-en-fokk-asfalter-020-97298d53fc
   title: Astri Ellefsen | Bli kjent med en Føkk Asfalter 020
   episode_url: "/episoder/astri-ellefsen-bli-kjent-med-en-fokk-asfalter-020-97298d53fc/"
