@@ -1,16 +1,27 @@
 ---
 meta:
-  generated_at: '2026-09-15T10:13:39Z'
+  generated_at: '2026-09-16T10:05:36Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
-  total: 644
+  total: 645
   also_free: 273
   uncertain: 21
-  patreon_only: 350
+  patreon_only: 351
   unmatched_buzzsprout: 0
 episodes:
+- slug: dnt-massiv-fkt-34-vibes-fra-loypa-a6401f8acf
+  title: 'DNT Massiv FKT 3/4: Vibes fra løypa'
+  episode_url: "/episoder/dnt-massiv-fkt-34-vibes-fra-loypa-a6401f8acf/"
+  date: '2026-09-16'
+  availability: patreon_only
+  match_score: 
+  buzzsprout_title: 
+  buzzsprout_pubdate: 
+  buzzsprout_url: 
+  buzzsprout_guid: 
+  buzzsprout_duration_hint_sec: 
 - slug: dnt-massiv-fkt-24-finn-kvelden-for-start-simon-grimstrup-dbe390f2e6
   title: 'DNT Massiv FKT 2/4: Finn kvelden før start, Simon Grimstrup, Mette Isaksen og Thomas Øderud'
   episode_url: "/episoder/dnt-massiv-fkt-24-finn-kvelden-for-start-simon-grimstrup-dbe390f2e6/"
