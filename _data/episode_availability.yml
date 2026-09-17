@@ -1,16 +1,27 @@
 ---
 meta:
-  generated_at: '2026-09-16T10:05:36Z'
+  generated_at: '2026-09-17T10:08:22Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
-  total: 645
+  total: 646
   also_free: 273
   uncertain: 21
-  patreon_only: 351
+  patreon_only: 352
   unmatched_buzzsprout: 0
 episodes:
+- slug: dnt-massiv-fkt-44-intervju-med-finn-isaksen-og-randi-aal-abfa1058c0
+  title: 'DNT Massiv FKT 4/4: Intervju med Finn Isaksen og Randi Aalgaard'
+  episode_url: "/episoder/dnt-massiv-fkt-44-intervju-med-finn-isaksen-og-randi-aal-abfa1058c0/"
+  date: '2026-09-17'
+  availability: patreon_only
+  match_score: 
+  buzzsprout_title: 
+  buzzsprout_pubdate: 
+  buzzsprout_url: 
+  buzzsprout_guid: 
+  buzzsprout_duration_hint_sec: 
 - slug: dnt-massiv-fkt-34-vibes-fra-loypa-a6401f8acf
   title: 'DNT Massiv FKT 3/4: Vibes fra løypa'
   episode_url: "/episoder/dnt-massiv-fkt-34-vibes-fra-loypa-a6401f8acf/"
