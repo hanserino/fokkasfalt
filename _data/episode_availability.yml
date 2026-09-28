@@ -1,16 +1,27 @@
 ---
 meta:
-  generated_at: '2026-09-27T10:39:31Z'
+  generated_at: '2026-09-28T11:50:32Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
-  total: 646
+  total: 647
   also_free: 273
   uncertain: 21
-  patreon_only: 352
+  patreon_only: 353
   unmatched_buzzsprout: 0
 episodes:
+- slug: fyri-trail-2026-live-podcast-lang-intro-med-thomas-stord-26112b4f22
+  title: Fyri Trail 2026 live podcast + lang intro med Thomas Stordalen om Ida Robsahm
+  episode_url: "/episoder/fyri-trail-2026-live-podcast-lang-intro-med-thomas-stord-26112b4f22/"
+  date: '2026-09-28'
+  availability: patreon_only
+  match_score: 
+  buzzsprout_title: 
+  buzzsprout_pubdate: 
+  buzzsprout_url: 
+  buzzsprout_guid: 
+  buzzsprout_duration_hint_sec: 
 - slug: dnt-massiv-fkt-44-intervju-med-finn-isaksen-og-randi-aal-abfa1058c0
   title: 'DNT Massiv FKT 4/4: Intervju med Finn Isaksen og Randi Aalgaard'
   episode_url: "/episoder/dnt-massiv-fkt-44-intervju-med-finn-isaksen-og-randi-aal-abfa1058c0/"
