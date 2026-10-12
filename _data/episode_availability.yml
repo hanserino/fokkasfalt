@@ -1,16 +1,27 @@
 ---
 meta:
-  generated_at: '2026-10-11T11:31:16Z'
+  generated_at: '2026-10-12T13:19:19Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
-  total: 648
+  total: 649
   also_free: 273
   uncertain: 21
-  patreon_only: 354
+  patreon_only: 355
   unmatched_buzzsprout: 0
 episodes:
+- slug: inga-strmke-ai-loping-fjellet-livet-81f3a56747
+  title: Inga Strümke | AI, løping, fjellet, livet
+  episode_url: "/episoder/inga-strmke-ai-loping-fjellet-livet-81f3a56747/"
+  date: '2026-10-12'
+  availability: patreon_only
+  match_score: 
+  buzzsprout_title: 
+  buzzsprout_pubdate: 
+  buzzsprout_url: 
+  buzzsprout_guid: 
+  buzzsprout_duration_hint_sec: 
 - slug: benjamin-rodgers-stage-racing-and-community-building-c7985f488e
   title: Benjamin Rodgers | Stage racing and community building
   episode_url: "/episoder/benjamin-rodgers-stage-racing-and-community-building-c7985f488e/"
