@@ -1,14 +1,14 @@
 ---
 meta:
-  generated_at: '2026-10-13T12:49:14Z'
+  generated_at: '2026-10-14T10:21:49Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
   total: 649
-  also_free: 273
+  also_free: 274
   uncertain: 21
-  patreon_only: 355
+  patreon_only: 354
   unmatched_buzzsprout: 0
 episodes:
 - slug: inga-strmke-ai-loping-fjellet-livet-81f3a56747
@@ -26,13 +26,15 @@ episodes:
   title: Benjamin Rodgers | Stage racing and community building
   episode_url: "/episoder/benjamin-rodgers-stage-racing-and-community-building-c7985f488e/"
   date: '2026-10-07'
-  availability: patreon_only
-  match_score: 
-  buzzsprout_title: 
-  buzzsprout_pubdate: 
-  buzzsprout_url: 
-  buzzsprout_guid: 
-  buzzsprout_duration_hint_sec: 
+  availability: also_free
+  match_score: 100.0
+  buzzsprout_title: "#256 - Benjamin Rodgers | Stage racing and community building"
+  buzzsprout_pubdate: '2026-10-13'
+  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/19898555-256-benjamin-rodgers-stage-racing-and-community-building
+  buzzsprout_guid: Buzzsprout-19898555
+  buzzsprout_duration_hint_sec: 6488
+  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/256-benjamin-rodgers-stage-racing-and-community-building/id1332829214?i=1000796153266&uo=4
+  listen_spotify_episode_url: https://open.spotify.com/episode/6mNTbTjQIEVUZlPLCxScCK
 - slug: fyri-trail-2026-live-podcast-lang-intro-med-thomas-stord-26112b4f22
   title: Fyri Trail 2026 live podcast + lang intro med Thomas Stordalen om Ida Robsahm
   episode_url: "/episoder/fyri-trail-2026-live-podcast-lang-intro-med-thomas-stord-26112b4f22/"
@@ -6015,7 +6017,6 @@ episodes:
   buzzsprout_url: https://www.buzzsprout.com/145661/episodes/3301591-94-leif-abrahamsen-norges-droyeste-ultraloper
   buzzsprout_guid: Buzzsprout-3301591
   buzzsprout_duration_hint_sec: 6642
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/94-leif-abrahamsen-norges-dr%C3%B8yeste-ultral%C3%B8per/id1332829214?i=1000471140651&uo=4
   listen_spotify_episode_url: https://open.spotify.com/episode/0YUdulsxJb4Fc3IUUgJtFz
 - slug: 93-johanna-astrm-koronafast-i-sverige-95b96b8dc8
   title: "#93 - Johanna Åström | Koronafast i Sverige"
