@@ -1,27 +1,29 @@
 ---
 meta:
-  generated_at: '2026-10-18T09:45:39Z'
+  generated_at: '2026-10-19T10:56:36Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
   total: 649
-  also_free: 274
+  also_free: 275
   uncertain: 21
-  patreon_only: 354
+  patreon_only: 353
   unmatched_buzzsprout: 0
 episodes:
 - slug: inga-strmke-ai-loping-fjellet-livet-81f3a56747
   title: Inga Strümke | AI, løping, fjellet, livet
   episode_url: "/episoder/inga-strmke-ai-loping-fjellet-livet-81f3a56747/"
   date: '2026-10-12'
-  availability: patreon_only
-  match_score: 
-  buzzsprout_title: 
-  buzzsprout_pubdate: 
-  buzzsprout_url: 
-  buzzsprout_guid: 
-  buzzsprout_duration_hint_sec: 
+  availability: also_free
+  match_score: 100.0
+  buzzsprout_title: "#257 - Inga Strümke | AI, løping, fjellet, livet"
+  buzzsprout_pubdate: '2026-10-19'
+  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/19982294-257-inga-strumke-ai-loping-fjellet-livet
+  buzzsprout_guid: Buzzsprout-19982294
+  buzzsprout_duration_hint_sec: 6886
+  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/257-inga-str%C3%BCmke-ai-l%C3%B8ping-fjellet-livet/id1332829214?i=1000797034053&uo=4
+  listen_spotify_episode_url: https://open.spotify.com/episode/6e4Te3p6AOZdXYPn3zz4cI
 - slug: benjamin-rodgers-stage-racing-and-community-building-c7985f488e
   title: Benjamin Rodgers | Stage racing and community building
   episode_url: "/episoder/benjamin-rodgers-stage-racing-and-community-building-c7985f488e/"
@@ -6004,7 +6006,6 @@ episodes:
   buzzsprout_url: https://www.buzzsprout.com/145661/episodes/3395176-95-distansevingleren-runar-saether-hva-driver-han-med-i-england-egentlig
   buzzsprout_guid: Buzzsprout-3395176
   buzzsprout_duration_hint_sec: 6434
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/95-distansevingleren-runar-s%C3%A6ther-hva-driver-han-med/id1332829214?i=1000471858221&uo=4
   listen_spotify_episode_url: https://open.spotify.com/episode/5lyNBWVsKUKDrwG15Q0m6J
 - slug: early-access-episode-94-leif-abrahamsen-norges-droyeste-0cc9d0bc9e
   title: 'Early access: Episode 94 - Leif Abrahamsen | Norges drøyeste ultraløper?'
