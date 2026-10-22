@@ -1,16 +1,28 @@
 ---
 meta:
-  generated_at: '2026-10-21T10:20:49Z'
+  generated_at: '2026-10-22T10:21:14Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
-  total: 649
-  also_free: 275
-  uncertain: 21
-  patreon_only: 353
+  total: 650
+  also_free: 274
+  uncertain: 22
+  patreon_only: 354
   unmatched_buzzsprout: 0
 episodes:
+- slug: johanna-astrm-er-ikke-ferdig-9aac7aaf80
+  title: 'Johanna Åström er ikke ferdig '
+  episode_url: "/episoder/johanna-astrm-er-ikke-ferdig-9aac7aaf80/"
+  date: '2026-10-22'
+  availability: uncertain
+  match_score: 57.1
+  buzzsprout_title: "#93 - Johanna Åström | Koronafast i Sverige"
+  buzzsprout_pubdate: '2020-04-02'
+  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/3210046-93-johanna-astrom-koronafast-i-sverige
+  buzzsprout_guid: Buzzsprout-3210046
+  buzzsprout_duration_hint_sec: 4036
+  listen_spotify_episode_url: https://open.spotify.com/episode/69Htd8lQytFuoloaXQI3sk
 - slug: inga-strmke-ai-loping-fjellet-livet-81f3a56747
   title: Inga Strümke | AI, løping, fjellet, livet
   episode_url: "/episoder/inga-strmke-ai-loping-fjellet-livet-81f3a56747/"
@@ -6023,14 +6035,13 @@ episodes:
   title: "#93 - Johanna Åström | Koronafast i Sverige"
   episode_url: "/episoder/93-johanna-astrm-koronafast-i-sverige-95b96b8dc8/"
   date: '2020-04-02'
-  availability: also_free
-  match_score: 100.0
-  buzzsprout_title: "#93 - Johanna Åström | Koronafast i Sverige"
-  buzzsprout_pubdate: '2020-04-02'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/3210046-93-johanna-astrom-koronafast-i-sverige
-  buzzsprout_guid: Buzzsprout-3210046
-  buzzsprout_duration_hint_sec: 4036
-  listen_spotify_episode_url: https://open.spotify.com/episode/69Htd8lQytFuoloaXQI3sk
+  availability: patreon_only
+  match_score: 
+  buzzsprout_title: 
+  buzzsprout_pubdate: 
+  buzzsprout_url: 
+  buzzsprout_guid: 
+  buzzsprout_duration_hint_sec: 
 - slug: slampoesti-dette-er-neda-ada6739b49
   title: "#Slampoesti – Dette er NEDA"
   episode_url: "/episoder/slampoesti-dette-er-neda-ada6739b49/"
