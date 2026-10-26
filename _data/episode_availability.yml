@@ -1,28 +1,29 @@
 ---
 meta:
-  generated_at: '2026-10-25T09:57:29Z'
+  generated_at: '2026-10-26T11:17:37Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
   total: 650
-  also_free: 274
-  uncertain: 22
-  patreon_only: 354
+  also_free: 276
+  uncertain: 21
+  patreon_only: 353
   unmatched_buzzsprout: 0
 episodes:
 - slug: johanna-astrm-er-ikke-ferdig-9aac7aaf80
   title: 'Johanna Åström er ikke ferdig '
   episode_url: "/episoder/johanna-astrm-er-ikke-ferdig-9aac7aaf80/"
   date: '2026-10-22'
-  availability: uncertain
-  match_score: 57.1
-  buzzsprout_title: "#93 - Johanna Åström | Koronafast i Sverige"
-  buzzsprout_pubdate: '2020-04-02'
-  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/3210046-93-johanna-astrom-koronafast-i-sverige
-  buzzsprout_guid: Buzzsprout-3210046
-  buzzsprout_duration_hint_sec: 4036
-  listen_spotify_episode_url: https://open.spotify.com/episode/69Htd8lQytFuoloaXQI3sk
+  availability: also_free
+  match_score: 100.0
+  buzzsprout_title: "#258 - Johanna Åström er ikke ferdig"
+  buzzsprout_pubdate: '2026-10-26'
+  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/19995902-258-johanna-astrom-er-ikke-ferdig
+  buzzsprout_guid: Buzzsprout-19995902
+  buzzsprout_duration_hint_sec: 4516
+  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/258-johanna-%C3%A5str%C3%B6m-er-ikke-ferdig/id1332829214?i=1000798126172&uo=4
+  listen_spotify_episode_url: https://open.spotify.com/episode/5AbLc74cj5doNf6OEHaMWn
 - slug: inga-strmke-ai-loping-fjellet-livet-81f3a56747
   title: Inga Strümke | AI, løping, fjellet, livet
   episode_url: "/episoder/inga-strmke-ai-loping-fjellet-livet-81f3a56747/"
@@ -6005,7 +6006,6 @@ episodes:
   buzzsprout_url: https://www.buzzsprout.com/145661/episodes/3435358-96-sky-blazers-presenterer-lillo-blazecup-2020-3-trails-1-cup
   buzzsprout_guid: Buzzsprout-3435358
   buzzsprout_duration_hint_sec: 4137
-  listen_apple_episode_url: https://podcasts.apple.com/no/podcast/96-sky-blazers-presenterer-lillo-blazecup-2020-3-trails/id1332829214?i=1000472152885&uo=4
   listen_spotify_episode_url: https://open.spotify.com/episode/3ltdGwiSvJdDRF4OV7SnMC
 - slug: episode-95-runar-sather-hva-driver-han-med-i-england-ege-9389d2deb0
   title: 'Episode 95: Runar Sæther | Hva driver han med i England, egentlig? '
@@ -6035,13 +6035,14 @@ episodes:
   title: "#93 - Johanna Åström | Koronafast i Sverige"
   episode_url: "/episoder/93-johanna-astrm-koronafast-i-sverige-95b96b8dc8/"
   date: '2020-04-02'
-  availability: patreon_only
-  match_score: 
-  buzzsprout_title: 
-  buzzsprout_pubdate: 
-  buzzsprout_url: 
-  buzzsprout_guid: 
-  buzzsprout_duration_hint_sec: 
+  availability: also_free
+  match_score: 100.0
+  buzzsprout_title: "#93 - Johanna Åström | Koronafast i Sverige"
+  buzzsprout_pubdate: '2020-04-02'
+  buzzsprout_url: https://www.buzzsprout.com/145661/episodes/3210046-93-johanna-astrom-koronafast-i-sverige
+  buzzsprout_guid: Buzzsprout-3210046
+  buzzsprout_duration_hint_sec: 4036
+  listen_spotify_episode_url: https://open.spotify.com/episode/69Htd8lQytFuoloaXQI3sk
 - slug: slampoesti-dette-er-neda-ada6739b49
   title: "#Slampoesti – Dette er NEDA"
   episode_url: "/episoder/slampoesti-dette-er-neda-ada6739b49/"
