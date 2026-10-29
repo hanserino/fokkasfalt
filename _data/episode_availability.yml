@@ -1,16 +1,27 @@
 ---
 meta:
-  generated_at: '2026-10-28T11:28:53Z'
+  generated_at: '2026-10-29T11:38:05Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
-  total: 650
+  total: 651
   also_free: 276
   uncertain: 21
-  patreon_only: 353
+  patreon_only: 354
   unmatched_buzzsprout: 0
 episodes:
+- slug: askild-vatnbakk-larsen-hvordan-disponere-et-ultralop-som-93c646e262
+  title: Askild Vatnbakk Larsen | Hvordan disponere et ultraløp, som f.eks. Kullamannen 100 miles?
+  episode_url: "/episoder/askild-vatnbakk-larsen-hvordan-disponere-et-ultralop-som-93c646e262/"
+  date: '2026-10-29'
+  availability: patreon_only
+  match_score: 
+  buzzsprout_title: 
+  buzzsprout_pubdate: 
+  buzzsprout_url: 
+  buzzsprout_guid: 
+  buzzsprout_duration_hint_sec: 
 - slug: johanna-astrm-er-ikke-ferdig-9aac7aaf80
   title: 'Johanna Åström er ikke ferdig '
   episode_url: "/episoder/johanna-astrm-er-ikke-ferdig-9aac7aaf80/"
