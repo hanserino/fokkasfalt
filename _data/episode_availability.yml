@@ -1,16 +1,27 @@
 ---
 meta:
-  generated_at: '2026-11-04T13:07:52Z'
+  generated_at: '2026-11-05T04:27:38Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
-  total: 651
+  total: 652
   also_free: 276
   uncertain: 21
-  patreon_only: 354
+  patreon_only: 355
   unmatched_buzzsprout: 0
 episodes:
+- slug: kullamannen-2026-dnf-rapport-med-hk-richter-lopsrapporte-e6a558557b
+  title: Kullamannen 2026 | DNF-rapport med HK & Richter + løpsrapporter med Mjelva, Lundemo, Carlsson, Kaspersen og Thele
+  episode_url: "/episoder/kullamannen-2026-dnf-rapport-med-hk-richter-lopsrapporte-e6a558557b/"
+  date: '2026-11-05'
+  availability: patreon_only
+  match_score: 
+  buzzsprout_title: 
+  buzzsprout_pubdate: 
+  buzzsprout_url: 
+  buzzsprout_guid: 
+  buzzsprout_duration_hint_sec: 
 - slug: askild-vatnbakk-larsen-hvordan-disponere-et-ultralop-som-93c646e262
   title: Askild Vatnbakk Larsen | Hvordan disponere et ultraløp, som f.eks. Kullamannen 100 miles?
   episode_url: "/episoder/askild-vatnbakk-larsen-hvordan-disponere-et-ultralop-som-93c646e262/"
