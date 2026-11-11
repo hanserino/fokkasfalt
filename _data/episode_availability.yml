@@ -1,16 +1,27 @@
 ---
 meta:
-  generated_at: '2026-11-10T13:38:37Z'
+  generated_at: '2026-11-11T06:51:37Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
-  total: 652
+  total: 653
   also_free: 276
   uncertain: 21
-  patreon_only: 355
+  patreon_only: 356
   unmatched_buzzsprout: 0
 episodes:
+- slug: patrick-stangbye-rapport-fra-kolon-trail-run-bhutan-2026-addbfdbf4a
+  title: Patrick Stangbye | Rapport fra Kolon Trail Run Bhutan 2026
+  episode_url: "/episoder/patrick-stangbye-rapport-fra-kolon-trail-run-bhutan-2026-addbfdbf4a/"
+  date: '2026-11-11'
+  availability: patreon_only
+  match_score: 
+  buzzsprout_title: 
+  buzzsprout_pubdate: 
+  buzzsprout_url: 
+  buzzsprout_guid: 
+  buzzsprout_duration_hint_sec: 
 - slug: kullamannen-2026-dnf-rapport-med-hk-richter-lopsrapporte-e6a558557b
   title: Kullamannen 2026 | DNF-rapport med HK & Richter + løpsrapporter med Mjelva, Lundemo, Carlsson, Kaspersen og Thele
   episode_url: "/episoder/kullamannen-2026-dnf-rapport-med-hk-richter-lopsrapporte-e6a558557b/"
