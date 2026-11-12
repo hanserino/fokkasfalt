@@ -1,5 +1,5 @@
 ---
-title: Patrick Stangbye | Rapport fra Kolon Trail Run Bhutan 2026
+title: Patrick Stangbye | Rapport fra Kolon Trail Run Bhutan 2026 og Østmarka Fifty
 description: 28. oktober 2026 løp Patrick Stangbye inn til 7. plass på det 41 kilometer
   lange Kolon Trail Run i Bhutan . Løpet startet i byen Pharo på 2300 moh og avsluttet
   i Thimpu på 2700 moh med 4000 moh som høyeste punkt på løypa. 27 minutter ut i praten

@@ -1,6 +1,6 @@
 ---
 meta:
-  generated_at: '2026-11-11T12:51:29Z'
+  generated_at: '2026-11-12T13:54:55Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
@@ -12,7 +12,7 @@ stats:
   unmatched_buzzsprout: 0
 episodes:
 - slug: patrick-stangbye-rapport-fra-kolon-trail-run-bhutan-2026-addbfdbf4a
-  title: Patrick Stangbye | Rapport fra Kolon Trail Run Bhutan 2026
+  title: Patrick Stangbye | Rapport fra Kolon Trail Run Bhutan 2026 og Østmarka Fifty
   episode_url: "/episoder/patrick-stangbye-rapport-fra-kolon-trail-run-bhutan-2026-addbfdbf4a/"
   date: '2026-11-11'
   availability: patreon_only
