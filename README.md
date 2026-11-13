@@ -48,9 +48,9 @@ Mangler `PATREON_RSS_URL` i Actions, hoppes import over (ingen feil).
 
 **Sikkerhet:** Har RSS med `auth=` lekket et sted — **rotér** feed-URL i Patreon og oppdater secreten.
 
-## Patreon-låst Race-kalender 2027
+## Patreon-låst Community
 
-`/race-kalender-2027/` er en offentlig skallside. Selve kalenderen og tier-sjekken kjører i Cloudflare Worker `workers/patreon-gate/` — GitHub Pages kan ikke holde `client_secret`.
+`/community/` er inngangen. Race-kalenderen ligger på `/community/race-kalender/` (gammel URL `/race-kalender-2027/` redirecter dit). Selve kalenderen og tier-sjekken kjører i Cloudflare Worker `workers/patreon-gate/` — GitHub Pages kan ikke holde `client_secret`.
 
 **Ikke** commit eller lim inn Client Secret / access token / refresh token i chat.
 
@@ -97,7 +97,8 @@ Sett `patreon_client_id` (Client ID er offentlig) og `patreon_gate_api` til work
 | `_config.yml` | Jekyll-innstillinger, `episodes`-collection |
 | `index.md` | Forside (`layout: home`) |
 | `personvern.md` / `vilkar.md` | Personvern og vilkår (Patreon-klient) |
-| `race-kalender-2027.md` | Skall for medlemskalender |
+| `community.md` | Patreon-hub `/community/` |
+| `community/race-kalender.md` | Skall for medlemskalender |
 | `workers/patreon-gate/` | Patreon-innlogging og kalender-API |
 | `episoder.md` | Oversikt `/episoder/` |
 | `_layouts/` | HTML-maler |

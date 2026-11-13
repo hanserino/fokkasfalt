@@ -18,6 +18,9 @@ export default {
       if (request.method === "POST" && url.pathname === "/oauth/exchange") {
         return json(await exchange(request, env), 200, cors);
       }
+      if (request.method === "GET" && url.pathname === "/me") {
+        return json(await me(request, env), 200, cors);
+      }
       if (request.method === "GET" && url.pathname === "/calendar") {
         return json(await calendar(request, env), 200, cors);
       }
@@ -167,12 +170,21 @@ function evaluateMembership(ident, env) {
   return { ok: false, reason: "wrong_tier" };
 }
 
-async function calendar(request, env) {
+async function sessionPayload(request, env) {
   const token = bearer(request);
   if (!token) fail(401, "unauthorized");
   const payload = await verifyJwt(token, env.SESSION_SECRET);
   if (!payload) fail(401, "unauthorized");
+  return payload;
+}
 
+async function me(request, env) {
+  const payload = await sessionPayload(request, env);
+  return { name: payload.name || "" };
+}
+
+async function calendar(request, env) {
+  const payload = await sessionPayload(request, env);
   return { name: payload.name || "", ...loadCalendar(env) };
 }
 

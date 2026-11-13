@@ -4,6 +4,8 @@
 
   const STORAGE = "fa_patreon_session";
   const STATE = "fa_patreon_oauth_state";
+  const RETURN = "fa_patreon_return";
+  const HOME = "/community/";
   const MESSAGES = {
     missing_config: "Innlogging er ikke ferdig satt opp ennå.",
     exchange_failed: "Patreon avviste innloggingen. Prøv igjen.",
@@ -17,8 +19,9 @@
 
   const clientId = (root.dataset.clientId || "").trim();
   const api = (root.dataset.api || "").replace(/\/$/, "");
-  const page = root.dataset.page || "calendar";
+  const page = root.dataset.page || "hub";
   const redirectUri = window.location.origin + "/auth/patreon/callback";
+  const currentYear = new Date().getFullYear();
 
   if (page === "callback") {
     handleCallback();
@@ -28,9 +31,10 @@
   let calendar = { members: [] };
   let view = "people";
   let query = "";
+  let year = readYearFromUrl();
 
   bind();
-  initCalendar();
+  init();
 
   function bind() {
     const login = root.querySelector("[data-login]");
@@ -56,6 +60,12 @@
         renderCalendar();
       });
     });
+    root.querySelectorAll("[data-year-delta]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        const delta = parseInt(btn.dataset.yearDelta, 10) || 0;
+        setYear(year + delta);
+      });
+    });
   }
 
   function startLogin(event) {
@@ -66,6 +76,7 @@
     }
     const state = randomState();
     sessionStorage.setItem(STATE, state);
+    sessionStorage.setItem(RETURN, location.pathname + location.search);
     const url = new URL("https://www.patreon.com/oauth2/authorize");
     url.searchParams.set("response_type", "code");
     url.searchParams.set("client_id", clientId);
@@ -81,7 +92,9 @@
     const code = params.get("code");
     const state = params.get("state");
     const expected = sessionStorage.getItem(STATE) || "";
+    const next = safeReturn(sessionStorage.getItem(RETURN));
     sessionStorage.removeItem(STATE);
+    sessionStorage.removeItem(RETURN);
 
     const statusEl = root.querySelector("[data-callback-status]");
     if (err) {
@@ -100,13 +113,13 @@
     try {
       const data = await apiPost("/oauth/exchange", { code: code, redirect_uri: redirectUri });
       localStorage.setItem(STORAGE, JSON.stringify({ token: data.token, name: data.name || "" }));
-      window.location.replace("/race-kalender-2027/");
+      window.location.replace(next);
     } catch (e) {
       if (statusEl) statusEl.textContent = MESSAGES[e.message] || MESSAGES.server_error;
     }
   }
 
-  async function initCalendar() {
+  async function init() {
     const session = readSession();
     if (!session) {
       show("locked");
@@ -120,11 +133,21 @@
     }
     show("loading");
     try {
-      const data = await apiGet("/calendar", session.token);
-      calendar = data;
-      const hello = root.querySelector("[data-hello]");
-      if (hello) hello.textContent = data.name ? "Hei, " + data.name + "." : "Du er innlogget.";
-      renderCalendar();
+      if (page === "calendar") {
+        const data = await apiGet("/calendar", session.token);
+        calendar = data;
+        greet(data.name || session.name);
+        renderCalendar();
+      } else {
+        let data;
+        try {
+          data = await apiGet("/me", session.token);
+        } catch (err) {
+          if (err.message !== "not_found") throw err;
+          data = await apiGet("/calendar", session.token);
+        }
+        greet(data.name || session.name);
+      }
       show("open");
     } catch (e) {
       localStorage.removeItem(STORAGE);
@@ -133,8 +156,38 @@
     }
   }
 
+  function greet(name) {
+    const hello = root.querySelector("[data-hello]");
+    if (hello) hello.textContent = name ? "Hei, " + name + "." : "Du er innlogget.";
+  }
+
   function members() {
     return Array.isArray(calendar.members) ? calendar.members : [];
+  }
+
+  function raceYear(race) {
+    if (race && race.date_iso && /^\d{4}/.test(race.date_iso)) {
+      return parseInt(race.date_iso.slice(0, 4), 10);
+    }
+    const m = String((race && race.date) || "").match(/(20\d{2})/);
+    return m ? parseInt(m[1], 10) : null;
+  }
+
+  function raceInYear(race, y) {
+    const ry = raceYear(race);
+    if (ry === y) return true;
+    if (ry === null && y === currentYear) return true;
+    return false;
+  }
+
+  function memberForYear(member, y) {
+    const all = member.races || [];
+    const races = all.filter(function (race) {
+      return raceInYear(race, y);
+    });
+    if (races.length) return Object.assign({}, member, { races: races });
+    if (!all.length && y === currentYear) return Object.assign({}, member, { races: [] });
+    return null;
   }
 
   function haystack(member) {
@@ -146,14 +199,23 @@
   }
 
   function filteredMembers() {
+    const forYear = members()
+      .map(function (member) {
+        return memberForYear(member, year);
+      })
+      .filter(Boolean);
     const q = query.trim().toLowerCase();
-    if (!q) return members();
-    return members().filter(function (member) {
+    if (!q) return forYear;
+    return forYear.filter(function (member) {
       return haystack(member).indexOf(q) !== -1;
     });
   }
 
   function renderCalendar() {
+    const label = root.querySelector("[data-year-label]");
+    if (label) {
+      label.textContent = year === currentYear ? year + " (i år)" : String(year);
+    }
     const list = filteredMembers();
     const peopleEl = root.querySelector("[data-people]");
     const timelineEl = root.querySelector("[data-timeline]");
@@ -174,7 +236,12 @@
     }
 
     const noHits = list.length === 0;
-    if (empty) empty.hidden = !noHits;
+    if (empty) {
+      empty.hidden = !noHits;
+      empty.textContent = query.trim()
+        ? "Ingen treff."
+        : "Ingen løp registrert for " + year + " ennå.";
+    }
     if (peopleEl) peopleEl.hidden = view !== "people" || noHits;
     if (timelineEl) timelineEl.hidden = view !== "timeline" || noHits;
     if (noHits) return;
@@ -309,11 +376,36 @@
         return new Intl.DateTimeFormat("nb-NO", {
           day: "numeric",
           month: "short",
-          year: "numeric",
         }).format(d);
       }
     }
     return (race && race.date) || "";
+  }
+
+  function readYearFromUrl() {
+    const raw = new URLSearchParams(location.search).get("year");
+    const n = parseInt(raw, 10);
+    if (n >= 2000 && n <= 2100) return n;
+    return currentYear;
+  }
+
+  function setYear(next) {
+    if (next < 2000 || next > 2100) return;
+    year = next;
+    const url = new URL(location.href);
+    if (year === currentYear) url.searchParams.delete("year");
+    else url.searchParams.set("year", String(year));
+    history.replaceState({}, "", url.pathname + url.search);
+    renderCalendar();
+  }
+
+  function safeReturn(path) {
+    if (!path || path.charAt(0) !== "/" || path.indexOf("//") !== -1) return HOME;
+    const bare = path.split("?")[0];
+    if (bare === "/community" || bare === "/community/" || bare.indexOf("/community/") === 0) {
+      return path;
+    }
+    return HOME;
   }
 
   function show(which) {

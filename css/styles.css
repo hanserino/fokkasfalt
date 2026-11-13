@@ -102,7 +102,8 @@ a:focus-visible {
   margin-inline: auto;
 }
 
-.page-calendar .wrap {
+.page-calendar .wrap,
+.page-community .wrap {
   width: min(100% - var(--space) * 2, 52rem);
 }
 
@@ -1161,6 +1162,69 @@ a:focus-visible {
 
 .race-cal__lede {
   margin: 0 0 0.35rem;
+}
+
+.race-cal__years {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0 0 1rem;
+}
+
+.race-cal__year-label {
+  margin: 0;
+  min-width: 7.5rem;
+  text-align: center;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.race-cal__year-btn {
+  appearance: none;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.race-cal__year-btn:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.community-cards {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+}
+
+.community-card {
+  display: block;
+  padding: 1.15rem 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  text-decoration: none;
+}
+
+.community-card:hover {
+  border-color: var(--border-strong);
+}
+
+.community-card__title {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+
+.community-card__text {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
 }
 
 .race-cal__stats {

@@ -4,7 +4,11 @@ layout: default
 
 <header class="ep-nav wrap">
   <div class="ep-nav__start">
+    {% if page.gate == "calendar" %}
+    <a href="{{ '/community/' | relative_url }}" class="ep-nav__link">← community</a>
+    {% else %}
     <a href="{{ '/' | relative_url }}" class="ep-nav__link">← forsiden</a>
+    {% endif %}
   </div>
   <a href="{{ '/' | relative_url }}" class="ep-nav__brand" aria-label="Til forsiden, Føkk Asfalt">
     <img
@@ -26,7 +30,7 @@ layout: default
   <div
     id="patreon-gate"
     class="patreon-gate"
-    data-page="calendar"
+    data-page="{{ page.gate | default: 'hub' }}"
     data-client-id="{{ site.patreon_client_id }}"
     data-api="{{ site.patreon_gate_api }}"
   >
@@ -36,7 +40,7 @@ layout: default
 
     <div class="patreon-gate__panel" data-panel="locked">
       <div class="page-prose">
-        <p>Kalenderen er for betalende Patreon-medlemmer (Føkk Asfalt, Mest bang for the buck og Road to States).</p>
+        <p>Community er for betalende Patreon-medlemmer (Føkk Asfalt, Mest bang for the buck og Road to States).</p>
         <p data-status></p>
       </div>
       <div class="cta-row cta-row--start">
@@ -50,9 +54,14 @@ layout: default
         <p class="race-cal__hello" data-hello></p>
         <button type="button" class="btn btn--ghost" data-logout>Logg ut</button>
       </div>
-      <p class="race-cal__lede">
-        Hvilke løp medlemmene stiller til. Tidligere et åpent Google-ark — nå bare for Patreon.
-      </p>
+
+      {% if page.gate == "calendar" %}
+      <p class="race-cal__lede">Hvilke løp medlemmene stiller til — i fjor, i år og fremover.</p>
+      <div class="race-cal__years">
+        <button type="button" class="race-cal__year-btn" data-year-delta="-1" aria-label="Forrige år">←</button>
+        <p class="race-cal__year-label" data-year-label></p>
+        <button type="button" class="race-cal__year-btn" data-year-delta="1" aria-label="Neste år">→</button>
+      </div>
       <p class="race-cal__stats" data-stats></p>
       <div class="race-cal__controls">
         <label class="race-cal__search">
@@ -67,6 +76,17 @@ layout: default
       <p class="race-cal__empty" data-empty hidden>Ingen treff.</p>
       <div class="race-cal__people" data-people></div>
       <ol class="race-cal__timeline" data-timeline hidden></ol>
+      {% else %}
+      <p class="race-cal__lede">Sider og oversikter for Patreon-fellesskapet.</p>
+      <ul class="community-cards">
+        <li>
+          <a class="community-card" href="{{ '/community/race-kalender/' | relative_url }}">
+            <h2 class="community-card__title">Race-kalender</h2>
+            <p class="community-card__text">Se hva medlemmene løp i fjor, hva de stiller til i år, og planene for neste år.</p>
+          </a>
+        </li>
+      </ul>
+      {% endif %}
     </div>
   </div>
 </main>
