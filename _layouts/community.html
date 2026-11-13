@@ -20,7 +20,25 @@ layout: default
       decoding="async"
     />
   </a>
-  <div class="ep-nav__end" aria-hidden="true"></div>
+  <div class="ep-nav__end">
+    <div class="account-menu" data-account hidden>
+      <button
+        type="button"
+        class="account-menu__btn"
+        data-account-toggle
+        aria-expanded="false"
+        aria-haspopup="true"
+        aria-controls="account-menu"
+      >
+        <img class="account-menu__img" data-account-img alt="" width="40" height="40" hidden referrerpolicy="no-referrer" />
+        <span class="account-menu__fallback" data-account-fallback></span>
+        <span class="visually-hidden">Konto</span>
+      </button>
+      <div id="account-menu" class="account-menu__drop" data-account-drop hidden>
+        <button type="button" class="account-menu__item" data-logout>Logg ut</button>
+      </div>
+    </div>
+  </div>
 </header>
 
 <main id="main" class="ep-main wrap">
@@ -52,7 +70,6 @@ layout: default
     <div class="patreon-gate__panel" data-panel="open" hidden>
       <div class="race-cal__toolbar">
         <p class="race-cal__hello" data-hello></p>
-        <button type="button" class="btn btn--ghost" data-logout>Logg ut</button>
       </div>
 
       {% if page.gate == "calendar" %}
@@ -74,10 +91,25 @@ layout: default
           </label>
         </p>
         <div class="race-form__grid">
-          <label>
-            Løp
-            <input type="text" name="name" required maxlength="160" placeholder="Nøsen Hundreds" />
-          </label>
+          <div class="race-combo race-form__wide">
+            <label>
+              Løp
+              <input
+                type="text"
+                name="name"
+                data-race-combo
+                required
+                maxlength="160"
+                placeholder="Søk eller opprett løp"
+                autocomplete="off"
+                role="combobox"
+                aria-autocomplete="list"
+                aria-expanded="false"
+                aria-controls="race-combo-list"
+              />
+            </label>
+            <ul id="race-combo-list" class="race-combo__list" data-race-list hidden role="listbox"></ul>
+          </div>
           <label>
             Dato
             <input type="date" name="date" required />

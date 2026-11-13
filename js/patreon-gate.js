@@ -17,6 +17,8 @@
     invalid_race: "Skriv inn et løpsnavn.",
     invalid_date: "Datoen er ugyldig.",
     invalid_url: "Lenken må starte med http:// eller https://",
+    already_added: "Du er allerede på dette løpet.",
+    race_not_found: "Fant ikke løpet.",
     server_error: "Noe gikk galt. Prøv igjen om litt.",
   };
 
@@ -41,12 +43,29 @@
 
   function bind() {
     const login = root.querySelector("[data-login]");
-    const logout = root.querySelector("[data-logout]");
     const search = root.querySelector("[data-search]");
     if (login) login.addEventListener("click", startLogin);
-    if (logout) logout.addEventListener("click", function () {
-      localStorage.removeItem(STORAGE);
-      show("locked");
+    document.querySelectorAll("[data-logout]").forEach(function (logout) {
+      logout.addEventListener("click", logoutAccount);
+    });
+    const accountToggle = document.querySelector("[data-account-toggle]");
+    const accountDrop = document.querySelector("[data-account-drop]");
+    if (accountToggle) {
+      accountToggle.addEventListener("click", function (event) {
+        event.stopPropagation();
+        toggleAccountMenu();
+      });
+    }
+    if (accountDrop) {
+      accountDrop.addEventListener("click", function (event) {
+        event.stopPropagation();
+      });
+    }
+    document.addEventListener("click", function () {
+      closeAccountMenu();
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") closeAccountMenu();
     });
     if (search) {
       search.addEventListener("input", function () {
@@ -75,6 +94,11 @@
     if (form) form.addEventListener("submit", submitRace);
     if (openForm) openForm.addEventListener("click", showRaceForm);
     if (closeForm) closeForm.addEventListener("click", hideRaceForm);
+    bindRaceCombo();
+    document.addEventListener("click", function (event) {
+      const combo = root.querySelector(".race-combo");
+      if (combo && !combo.contains(event.target)) closeRaceCombo();
+    });
   }
 
   function startLogin(event) {
@@ -121,7 +145,10 @@
 
     try {
       const data = await apiPost("/oauth/exchange", { code: code, redirect_uri: redirectUri });
-      localStorage.setItem(STORAGE, JSON.stringify({ token: data.token, name: data.name || "" }));
+      localStorage.setItem(
+        STORAGE,
+        JSON.stringify({ token: data.token, name: data.name || "", image: data.image || "" })
+      );
       window.location.replace(next);
     } catch (e) {
       if (statusEl) statusEl.textContent = MESSAGES[e.message] || MESSAGES.server_error;
@@ -132,9 +159,11 @@
     const session = readSession();
     if (!session) {
       show("locked");
+      renderAccount(null);
       if (!clientId || !api) setStatus("locked", MESSAGES.missing_config);
       return;
     }
+    renderAccount(session);
     if (!api) {
       show("locked");
       setStatus("locked", MESSAGES.missing_config);
@@ -145,6 +174,7 @@
       if (page === "calendar") {
         const data = await apiGet("/calendar", session.token);
         calendar = data;
+        rememberProfile(session, data);
         greet(data.name || session.name);
         fillClaimSelect();
         setDefaultFormDate();
@@ -157,12 +187,15 @@
           if (err.message !== "not_found") throw err;
           data = await apiGet("/calendar", session.token);
         }
+        rememberProfile(session, data);
         greet(data.name || session.name);
       }
       show("open");
+      renderAccount(readSession() || session);
     } catch (e) {
       localStorage.removeItem(STORAGE);
       show("locked");
+      renderAccount(null);
       setStatus("locked", MESSAGES[e.message] || MESSAGES.unauthorized);
     }
   }
@@ -170,6 +203,125 @@
   function greet(name) {
     const hello = root.querySelector("[data-hello]");
     if (hello) hello.textContent = name ? "Hei, " + name + "." : "Du er innlogget.";
+  }
+
+  function rememberProfile(session, data) {
+    if (!session || !data) return;
+    const image = data.image || (data.self && data.self.avatar) || session.image || "";
+    const name = data.name || session.name || "";
+    if (image === session.image && name === session.name) return;
+    session.image = image;
+    session.name = name;
+    try {
+      localStorage.setItem(STORAGE, JSON.stringify(session));
+    } catch {
+      /* ignore */
+    }
+  }
+
+  function logoutAccount() {
+    localStorage.removeItem(STORAGE);
+    closeAccountMenu();
+    renderAccount(null);
+    window.location.replace(HOME);
+  }
+
+  function accountEls() {
+    return {
+      wrap: document.querySelector("[data-account]"),
+      toggle: document.querySelector("[data-account-toggle]"),
+      drop: document.querySelector("[data-account-drop]"),
+      img: document.querySelector("[data-account-img]"),
+      fallback: document.querySelector("[data-account-fallback]"),
+    };
+  }
+
+  function toggleAccountMenu() {
+    const els = accountEls();
+    if (!els.wrap || !els.drop || !els.toggle || els.wrap.hidden) return;
+    const open = els.drop.hidden;
+    els.drop.hidden = !open;
+    els.toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+
+  function closeAccountMenu() {
+    const els = accountEls();
+    if (!els.drop || !els.toggle) return;
+    els.drop.hidden = true;
+    els.toggle.setAttribute("aria-expanded", "false");
+  }
+
+  function renderAccount(session) {
+    const els = accountEls();
+    if (!els.wrap) return;
+    if (!session) {
+      closeAccountMenu();
+      els.wrap.hidden = true;
+      return;
+    }
+    els.wrap.hidden = false;
+    const url = safeClientImage(session.image || (calendar.self && calendar.self.avatar));
+    if (els.toggle) {
+      els.toggle.setAttribute("aria-label", session.name ? "Konto, " + session.name : "Konto");
+    }
+    if (els.img && url) {
+      els.img.src = url;
+      els.img.alt = session.name || "";
+      els.img.hidden = false;
+      els.img.onerror = function () {
+        els.img.hidden = true;
+        if (els.fallback) {
+          els.fallback.hidden = false;
+          els.fallback.textContent = initials(session.name || "");
+        }
+      };
+      if (els.fallback) els.fallback.hidden = true;
+    } else {
+      if (els.img) {
+        els.img.removeAttribute("src");
+        els.img.hidden = true;
+      }
+      if (els.fallback) {
+        els.fallback.hidden = false;
+        els.fallback.textContent = initials(session.name || "");
+      }
+    }
+  }
+
+  function initials(name) {
+    const parts = String(name || "")
+      .trim()
+      .split(/\s+/)
+      .filter(Boolean);
+    if (!parts.length) return "?";
+    if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+    return (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase();
+  }
+
+  function safeClientImage(url) {
+    const s = String(url || "").trim();
+    if (!s || s.length > 1000) return "";
+    if (!/^https:\/\//i.test(s)) return "";
+    return s;
+  }
+
+  function avatarEl(member, extraClass) {
+    const wrap = document.createElement("span");
+    wrap.className = extraClass ? "avatar " + extraClass : "avatar";
+    const url = safeClientImage(member && member.avatar);
+    if (url) {
+      const img = document.createElement("img");
+      img.src = url;
+      img.alt = "";
+      img.referrerPolicy = "no-referrer";
+      img.addEventListener("error", function () {
+        wrap.textContent = initials(member && member.name);
+      });
+      wrap.appendChild(img);
+    } else {
+      wrap.textContent = initials(member && member.name);
+    }
+    return wrap;
   }
 
   function members() {
@@ -279,10 +431,14 @@
     }
     const head = document.createElement("header");
     head.className = "race-person__head";
+    const identity = document.createElement("div");
+    identity.className = "race-person__identity";
+    identity.appendChild(avatarEl(member));
     const h = document.createElement("h2");
     h.className = "race-person__name";
     h.textContent = member.name;
-    head.appendChild(h);
+    identity.appendChild(h);
+    head.appendChild(identity);
     const social = document.createElement("p");
     social.className = "race-person__social";
     addLink(social, member.strava, "Strava");
@@ -301,13 +457,14 @@
     const ul = document.createElement("ul");
     ul.className = "race-person__races";
     races.forEach(function (race) {
-      ul.appendChild(raceRow(race));
+      ul.appendChild(raceRow(race, member, false));
     });
     art.appendChild(ul);
     return art;
   }
 
-  function raceRow(race, runnerName) {
+  function raceRow(race, member, showOwner) {
+    const ownerName = member && member.name;
     const li = document.createElement("li");
     li.className = "race-cal__item";
     const date = document.createElement("time");
@@ -324,10 +481,11 @@
       title.rel = "noopener noreferrer";
     }
     body.appendChild(title);
-    if (runnerName) {
+    if (showOwner && ownerName) {
       const who = document.createElement("p");
       who.className = "race-cal__runner";
-      who.textContent = runnerName;
+      who.appendChild(avatarEl(member, "avatar--sm"));
+      who.appendChild(document.createTextNode(ownerName));
       body.appendChild(who);
     }
     const metaBits = [race.distance, elevationLabel(race.elevation)].filter(Boolean);
@@ -342,6 +500,16 @@
       note.className = "race-cal__comment";
       note.textContent = race.comment;
       body.appendChild(note);
+    }
+    if (canJoinRace(race, ownerName)) {
+      const join = document.createElement("button");
+      join.type = "button";
+      join.className = "race-cal__join";
+      join.textContent = "Jeg skal også løpe dette løpet";
+      join.addEventListener("click", function () {
+        joinRace(race, join);
+      });
+      body.appendChild(join);
     }
     li.appendChild(date);
     li.appendChild(body);
@@ -361,7 +529,7 @@
     });
     el.innerHTML = "";
     rows.forEach(function (row) {
-      el.appendChild(raceRow(row.race, row.member.name));
+      el.appendChild(raceRow(row.race, row.member, true));
     });
   }
 
@@ -394,6 +562,234 @@
       }
     }
     return (race && race.date) || "";
+  }
+
+  function normName(s) {
+    return String(s || "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function raceKey(race) {
+    return normName(race.name) + "|" + (race.date_iso || "");
+  }
+
+  function myRaces() {
+    const mine = calendar.self && calendar.self.name;
+    const member = members().find(function (m) {
+      return m.name === mine;
+    });
+    return member && member.races ? member.races : [];
+  }
+
+  function alreadyHave(race) {
+    const key = raceKey(race);
+    return myRaces().some(function (row) {
+      return raceKey(row) === key;
+    });
+  }
+
+  function canJoinRace(race, ownerName) {
+    if (!race || !race.name || !race.date_iso) return false;
+    if (calendar.self && ownerName && ownerName === calendar.self.name) return false;
+    return !alreadyHave(race);
+  }
+
+  function uniqueRaces() {
+    const map = {};
+    members().forEach(function (member) {
+      (member.races || []).forEach(function (race) {
+        if (!race.name) return;
+        const key = raceKey(race);
+        if (!map[key]) {
+          map[key] = {
+            name: race.name,
+            date: race.date || "",
+            date_iso: race.date_iso || "",
+            distance: race.distance || "",
+            elevation: race.elevation || "",
+            url: race.url || "",
+            count: 1,
+          };
+        } else {
+          map[key].count += 1;
+          if (!map[key].distance && race.distance) map[key].distance = race.distance;
+          if (!map[key].elevation && race.elevation) map[key].elevation = race.elevation;
+          if (!map[key].url && race.url) map[key].url = race.url;
+        }
+      });
+    });
+    return Object.keys(map)
+      .map(function (k) {
+        return map[k];
+      })
+      .sort(function (a, b) {
+        const ay = a.date_iso || "9999";
+        const by = b.date_iso || "9999";
+        if (ay === by) return a.name.localeCompare(b.name, "nb");
+        return ay < by ? -1 : 1;
+      });
+  }
+
+  function bindRaceCombo() {
+    const input = root.querySelector("[data-race-combo]");
+    if (!input || input.dataset.bound) return;
+    input.dataset.bound = "1";
+    input.addEventListener("input", function () {
+      renderRaceCombo(input.value);
+    });
+    input.addEventListener("focus", function () {
+      renderRaceCombo(input.value);
+    });
+    const list = root.querySelector("[data-race-list]");
+    if (list) {
+      list.addEventListener("mousedown", function (event) {
+        event.preventDefault();
+      });
+    }
+    input.addEventListener("keydown", function (event) {
+      const list = root.querySelector("[data-race-list]");
+      const items = list ? list.querySelectorAll("[data-combo-opt]") : [];
+      const current = list ? list.querySelector("[data-combo-opt][aria-selected='true']") : null;
+      let idx = Array.prototype.indexOf.call(items, current);
+      if (event.key === "ArrowDown") {
+        event.preventDefault();
+        if (!items.length) renderRaceCombo(input.value);
+        idx = Math.min(idx + 1, items.length - 1);
+        highlightCombo(items, idx);
+      } else if (event.key === "ArrowUp") {
+        event.preventDefault();
+        idx = Math.max(idx - 1, 0);
+        highlightCombo(items, idx);
+      } else if (event.key === "Enter") {
+        if (current) {
+          event.preventDefault();
+          current.click();
+        }
+      } else if (event.key === "Escape") {
+        closeRaceCombo();
+      }
+    });
+  }
+
+  function highlightCombo(items, idx) {
+    items.forEach(function (el, i) {
+      el.setAttribute("aria-selected", i === idx ? "true" : "false");
+    });
+    if (items[idx]) items[idx].scrollIntoView({ block: "nearest" });
+  }
+
+  function renderRaceCombo(raw) {
+    const list = root.querySelector("[data-race-list]");
+    const input = root.querySelector("[data-race-combo]");
+    if (!list || !input) return;
+    const q = String(raw || "").trim();
+    const qn = normName(q);
+    let races = uniqueRaces();
+    if (qn) {
+      races = races.filter(function (race) {
+        return (
+          normName(race.name).indexOf(qn) !== -1 ||
+          String(race.date || "").toLowerCase().indexOf(q.toLowerCase()) !== -1
+        );
+      });
+    }
+    const inYear = [];
+    const other = [];
+    races.forEach(function (race) {
+      const y = race.date_iso ? parseInt(race.date_iso.slice(0, 4), 10) : null;
+      if (y === year || (!y && year === currentYear)) inYear.push(race);
+      else other.push(race);
+    });
+    const shown = (qn ? inYear.concat(other) : inYear).slice(0, 40);
+    list.innerHTML = "";
+    shown.forEach(function (race, i) {
+      const li = document.createElement("li");
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "race-combo__opt";
+      btn.setAttribute("data-combo-opt", "1");
+      btn.setAttribute("role", "option");
+      btn.setAttribute("aria-selected", i === 0 ? "true" : "false");
+      const label = race.date_iso || race.date ? race.name + " · " + (formatDate(race) || race.date) : race.name;
+      btn.textContent = race.count > 1 ? label + " (" + race.count + ")" : label;
+      btn.addEventListener("click", function () {
+        applyExistingRace(race);
+        closeRaceCombo();
+      });
+      li.appendChild(btn);
+      list.appendChild(li);
+    });
+    if (q.length >= 2) {
+      const li = document.createElement("li");
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "race-combo__opt race-combo__opt--create";
+      btn.setAttribute("data-combo-opt", "1");
+      btn.setAttribute("role", "option");
+      btn.setAttribute("aria-selected", shown.length === 0 ? "true" : "false");
+      btn.textContent = "Opprett «" + q + "»";
+      btn.addEventListener("click", function () {
+        input.value = q;
+        closeRaceCombo();
+        const date = root.querySelector('[data-race-form] input[name="date"]');
+        if (date && !date.value) setDefaultFormDate();
+      });
+      li.appendChild(btn);
+      list.appendChild(li);
+    }
+    const has = list.childNodes.length > 0;
+    list.hidden = !has;
+    input.setAttribute("aria-expanded", has ? "true" : "false");
+  }
+
+  function applyExistingRace(race) {
+    const form = root.querySelector("[data-race-form]");
+    if (!form) return;
+    form.elements.name.value = race.name || "";
+    if (race.date_iso) form.elements.date.value = race.date_iso;
+    else setDefaultFormDate();
+    form.elements.distance.value = race.distance || "";
+    form.elements.elevation.value = race.elevation || "";
+    form.elements.url.value = race.url || "";
+  }
+
+  function closeRaceCombo() {
+    const list = root.querySelector("[data-race-list]");
+    const input = root.querySelector("[data-race-combo]");
+    if (list) list.hidden = true;
+    if (input) input.setAttribute("aria-expanded", "false");
+  }
+
+  async function joinRace(race, button) {
+    const session = readSession();
+    if (!session) {
+      show("locked");
+      return;
+    }
+    if (button) button.disabled = true;
+    const body = { name: race.name, date: race.date_iso || "", date_iso: race.date_iso || "" };
+    const claimWrap = root.querySelector("[data-claim-wrap]");
+    const claim = root.querySelector("[data-claim-name]");
+    if (claimWrap && !claimWrap.hidden && claim && claim.value) body.claim_name = claim.value;
+    else if (calendar.suggested) body.claim_name = calendar.suggested;
+    try {
+      const data = await apiPost("/races/join", body, session.token);
+      calendar = data;
+      rememberProfile(session, data);
+      renderAccount(readSession() || session);
+      greet(data.name || session.name);
+      fillClaimSelect();
+      const raceYear = race.date_iso ? parseInt(race.date_iso.slice(0, 4), 10) : year;
+      if (raceYear >= 2000 && raceYear <= 2100 && raceYear !== year) setYear(raceYear);
+      else renderCalendar();
+    } catch (e) {
+      if (button) button.textContent = MESSAGES[e.message] || MESSAGES.server_error;
+      if (button) button.disabled = false;
+    }
   }
 
   function fillClaimSelect() {
@@ -433,8 +829,9 @@
     const status = root.querySelector("[data-form-status]");
     if (status) status.textContent = "";
     setDefaultFormDate();
-    const name = form.querySelector('input[name="name"]');
+    const name = form.querySelector("[data-race-combo]");
     if (name) name.focus();
+    renderRaceCombo("");
   }
 
   function hideRaceForm() {
@@ -444,6 +841,7 @@
       form.hidden = true;
       form.reset();
     }
+    closeRaceCombo();
     if (addRow) addRow.hidden = false;
     const status = root.querySelector("[data-form-status]");
     if (status) status.textContent = "";
@@ -486,6 +884,8 @@
     try {
       const data = await apiPost("/races", body, session.token);
       calendar = data;
+      rememberProfile(session, data);
+      renderAccount(readSession() || session);
       greet(data.name || session.name);
       fillClaimSelect();
       const raceYear = parseInt((body.date || "").slice(0, 4), 10);

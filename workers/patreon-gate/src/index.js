@@ -2,7 +2,7 @@ import bundledCalendar from "../calendar.json";
 
 const PATREON_TOKEN = "https://www.patreon.com/api/oauth2/token";
 const PATREON_IDENTITY =
-  "https://www.patreon.com/api/oauth2/v2/identity?include=memberships,memberships.currently_entitled_tiers&fields%5Buser%5D=full_name&fields%5Bmember%5D=patron_status,currently_entitled_amount_cents&fields%5Btier%5D=title";
+  "https://www.patreon.com/api/oauth2/v2/identity?include=memberships,memberships.currently_entitled_tiers&fields%5Buser%5D=full_name,image_url,thumb_url&fields%5Bmember%5D=patron_status,currently_entitled_amount_cents&fields%5Btier%5D=title";
 
 export default {
   async fetch(request, env) {
@@ -26,6 +26,9 @@ export default {
       }
       if (request.method === "POST" && url.pathname === "/races") {
         return json(await addRace(request, env), 200, cors);
+      }
+      if (request.method === "POST" && url.pathname === "/races/join") {
+        return json(await joinRace(request, env), 200, cors);
       }
       return json({ error: "not_found" }, 404, cors);
     } catch (err) {
@@ -128,16 +131,17 @@ async function exchange(request, env) {
   const gate = evaluateMembership(ident, env);
   if (!gate.ok) fail(403, gate.reason);
 
-  const token = await signJwt(
-    {
-      sub: ident.data.id,
-      name: ident.data.attributes?.full_name || "",
-      exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 14,
-    },
-    env.SESSION_SECRET
-  );
-
-  return { token, name: ident.data.attributes?.full_name || "" };
+  const name = ident.data.attributes?.full_name || "";
+  const image = safeImage(ident.data.attributes?.image_url || ident.data.attributes?.thumb_url);
+  const payload = {
+    sub: ident.data.id,
+    name,
+    image,
+    exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 14,
+  };
+  const token = await signJwt(payload, env.SESSION_SECRET);
+  await persistMemberProfile(env, payload);
+  return { token, name, image };
 }
 
 function evaluateMembership(ident, env) {
@@ -183,12 +187,12 @@ async function sessionPayload(request, env) {
 
 async function me(request, env) {
   const payload = await sessionPayload(request, env);
-  return { name: payload.name || "" };
+  return { name: payload.name || "", image: safeImage(payload.image) };
 }
 
 async function calendar(request, env) {
   const payload = await sessionPayload(request, env);
-  const data = await loadCalendar(env);
+  const data = await persistMemberProfile(env, payload);
   return publicCalendar(data, payload);
 }
 
@@ -204,12 +208,44 @@ async function addRace(request, env) {
   }
 
   const race = normalizeRace(body);
+  return saveMemberRace(env, payload, body.claim_name, race);
+}
+
+async function joinRace(request, env) {
+  const payload = await sessionPayload(request, env);
+  if (!env.CALENDAR) fail(500, "missing_config");
+
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    fail(400, "invalid_json");
+  }
+
+  const data = await loadCalendar(env);
+  const source = findExistingRace(data.members, body.name, body.date_iso || body.date);
+  if (!source) fail(404, "race_not_found");
+  const race = {
+    name: source.name,
+    date: source.date,
+    date_iso: source.date_iso,
+  };
+  if (source.distance) race.distance = source.distance;
+  if (source.elevation) race.elevation = source.elevation;
+  if (source.url) race.url = source.url;
+  return saveMemberRace(env, payload, body.claim_name, race);
+}
+
+async function saveMemberRace(env, payload, claimName, race) {
   const data = await loadCalendar(env);
   const members = cloneMembers(data.members);
-  const member = resolveMember(members, payload, body.claim_name);
+  const member = resolveMember(members, payload, claimName);
   if (!member.races) member.races = [];
-  member.races.push(race);
-  member.races.sort(compareRaces);
+  const exists = member.races.some((row) => raceKey(row) === raceKey(race));
+  if (!exists) {
+    member.races.push(race);
+    member.races.sort(compareRaces);
+  }
 
   const next = {
     members,
@@ -217,7 +253,23 @@ async function addRace(request, env) {
     updated_at: new Date().toISOString(),
   };
   await env.CALENDAR.put("data", JSON.stringify(next));
-  return publicCalendar(next, payload);
+  const out = publicCalendar(next, payload);
+  out.added = !exists;
+  return out;
+}
+
+function raceKey(race) {
+  return `${normName(race.name)}|${race.date_iso || ""}`;
+}
+
+function findExistingRace(members, name, dateIso) {
+  const key = raceKey({ name, date_iso: dateIso });
+  for (const member of members || []) {
+    for (const race of member.races || []) {
+      if (raceKey(race) === key) return race;
+    }
+  }
+  return null;
 }
 
 function cloneMembers(members) {
@@ -236,33 +288,69 @@ function normName(s) {
     .trim();
 }
 
+function applyProfile(member, payload) {
+  const sub = String(payload.sub || "");
+  if (sub) member.patreon_id = sub;
+  const image = safeImage(payload.image);
+  if (image) member.avatar = image;
+  return member;
+}
+
 function resolveMember(members, payload, claimName) {
   const sub = String(payload.sub || "");
   let member = members.find((m) => m.patreon_id && m.patreon_id === sub);
-  if (member) return member;
+  if (member) return applyProfile(member, payload);
 
   const claim = String(claimName || "").trim();
   if (claim) {
     member = members.find((m) => !m.patreon_id && normName(m.name) === normName(claim));
-    if (member) {
-      member.patreon_id = sub;
-      return member;
-    }
+    if (member) return applyProfile(member, payload);
   }
 
   member = members.find((m) => !m.patreon_id && normName(m.name) === normName(payload.name));
-  if (member) {
-    member.patreon_id = sub;
-    return member;
-  }
+  if (member) return applyProfile(member, payload);
 
-  member = {
-    name: String(payload.name || "").trim() || "Uten navn",
-    patreon_id: sub,
-    races: [],
-  };
+  member = applyProfile(
+    {
+      name: String(payload.name || "").trim() || "Uten navn",
+      races: [],
+    },
+    payload
+  );
   members.unshift(member);
   return member;
+}
+
+async function persistMemberProfile(env, payload, data) {
+  const current = data || (await loadCalendar(env));
+  if (!env.CALENDAR) return current;
+  const members = cloneMembers(current.members);
+  const sub = String(payload.sub || "");
+  const image = safeImage(payload.image);
+  let member = members.find((m) => m.patreon_id && m.patreon_id === sub);
+  if (!member) {
+    member = members.find((m) => !m.patreon_id && normName(m.name) === normName(payload.name));
+  }
+  if (!member) return current;
+  const nextImage = image || member.avatar || "";
+  const already =
+    member.patreon_id === sub && (!nextImage || member.avatar === nextImage);
+  if (already) return current;
+  applyProfile(member, { ...payload, image: nextImage });
+  const next = {
+    members,
+    imported_at: current.imported_at || "",
+    updated_at: new Date().toISOString(),
+  };
+  await env.CALENDAR.put("data", JSON.stringify(next));
+  return next;
+}
+
+function safeImage(url) {
+  const s = String(url || "").trim();
+  if (!s || s.length > 1000) return "";
+  if (!/^https:\/\//i.test(s)) return "";
+  return s;
 }
 
 function normalizeRace(body) {
@@ -315,18 +403,23 @@ function publicCalendar(data, payload) {
   const members = (data.members || []).map((m) => {
     const copy = { ...m };
     delete copy.patreon_id;
+    if (copy.avatar) copy.avatar = safeImage(copy.avatar);
+    else delete copy.avatar;
     return copy;
   });
   const mine = (data.members || []).find((m) => m.patreon_id && m.patreon_id === payload.sub);
   const suggested = (data.members || []).find(
     (m) => !m.patreon_id && normName(m.name) === normName(payload.name)
   );
+  const image = safeImage(mine?.avatar || payload.image);
   return {
     name: payload.name || "",
+    image,
     members,
     self: {
       name: mine?.name || payload.name || "",
       claimed: Boolean(mine),
+      avatar: image,
     },
     unclaimed: (data.members || []).filter((m) => !m.patreon_id).map((m) => m.name),
     suggested: suggested ? suggested.name : "",
