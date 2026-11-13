@@ -107,6 +107,12 @@ a:focus-visible {
   width: min(100% - var(--space) * 2, 52rem);
 }
 
+@media (max-width: 40rem) {
+  .page-calendar {
+    --space: 0.55rem;
+  }
+}
+
 /* Header — full-width photo + vignette (forsiden) */
 .site-header {
   --site-header-photo: linear-gradient(
@@ -1307,20 +1313,31 @@ a:focus-visible {
   margin: 0 0 0.35rem;
 }
 
+.race-cal__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.45rem 0.65rem;
+  margin: 0 0 1rem;
+}
+
 .race-cal__years {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  margin: 0 0 1rem;
+  justify-content: flex-start;
+  gap: 0.45rem;
+  margin: 0;
+  min-width: 0;
 }
 
 .race-cal__year-label {
   margin: 0;
-  min-width: 7.5rem;
+  min-width: 0;
   text-align: center;
   font-weight: 650;
   letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 .race-cal__year-btn {
@@ -1379,15 +1396,16 @@ a:focus-visible {
 
 .race-cal__controls {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
+  flex-wrap: nowrap;
+  gap: 0.5rem 0.65rem;
   align-items: center;
   justify-content: space-between;
   margin: 0 0 1.25rem;
 }
 
 .race-cal__search {
-  flex: 1 1 14rem;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .race-cal__search input {
@@ -1402,6 +1420,7 @@ a:focus-visible {
 
 .race-cal__tabs {
   display: flex;
+  flex: 0 0 auto;
   gap: 0.35rem;
 }
 
@@ -1426,8 +1445,19 @@ a:focus-visible {
 
 .race-cal__add-row {
   display: flex;
-  justify-content: flex-start;
-  margin: 0 0 1.25rem;
+  justify-content: flex-end;
+  margin: 0;
+  flex: 0 0 auto;
+}
+
+.race-cal__add-row[hidden] {
+  display: none;
+}
+
+.race-cal__add-btn {
+  padding: 0.55rem 0.9rem;
+  font-size: 0.9rem;
+  white-space: nowrap;
 }
 
 .race-form {
@@ -1466,6 +1496,8 @@ a:focus-visible {
 
 .race-form input,
 .race-form select {
+  width: 100%;
+  min-width: 0;
   font: inherit;
   color: var(--text);
   background: var(--bg);
@@ -1479,6 +1511,10 @@ a:focus-visible {
   grid-template-columns: 1fr 1fr;
   gap: 0.75rem;
   margin: 0 0 0.85rem;
+}
+
+.race-form__grid > * {
+  min-width: 0;
 }
 
 .race-form__wide {
@@ -1569,8 +1605,9 @@ a:focus-visible {
 
 .race-cal__heading {
   display: flex;
+  flex-wrap: nowrap;
   align-items: flex-start;
-  gap: 0.4rem;
+  gap: 0.35rem;
 }
 
 .race-cal__heading .race-cal__name {
@@ -1676,13 +1713,6 @@ a:focus-visible {
   background: rgba(255, 255, 255, 0.06);
 }
 
-@media (max-width: 40rem) {
-  .race-form__grid,
-  .race-form__results {
-    grid-template-columns: 1fr;
-  }
-}
-
 .race-person {
   margin: 0 0 1.75rem;
   padding-bottom: 0.25rem;
@@ -1698,10 +1728,10 @@ a:focus-visible {
 
 .race-person__head {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
-  gap: 0.35rem 1rem;
+  gap: 0.35rem 0.75rem;
   margin: 0 0 0.35rem;
 }
 
@@ -1709,6 +1739,7 @@ a:focus-visible {
   display: flex;
   align-items: center;
   gap: 0.7rem;
+  flex: 1 1 auto;
   min-width: 0;
 }
 
@@ -1743,13 +1774,20 @@ a:focus-visible {
 
 .race-person__name {
   margin: 0;
+  min-width: 0;
+  flex: 1 1 auto;
   font-size: 1.15rem;
   letter-spacing: -0.02em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .race-person__social {
   margin: 0;
+  flex: 0 0 auto;
   font-size: 0.85rem;
+  white-space: nowrap;
 }
 
 .race-person__none {
@@ -1767,19 +1805,29 @@ a:focus-visible {
 
 .race-cal__item {
   display: grid;
-  grid-template-columns: 7.5rem 1fr;
-  gap: 0.35rem 1.1rem;
-  padding: 0.7rem 0;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 0.2rem 0.85rem;
+  align-items: start;
+  padding: 0.6rem 0;
 }
 
 .race-cal__date {
   color: var(--text-muted);
   font-size: 0.88rem;
+  line-height: 1.35;
+  padding-top: 0.12rem;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.race-cal__body {
+  min-width: 0;
 }
 
 .race-cal__name {
   font-weight: 600;
   text-decoration: none;
+  overflow-wrap: anywhere;
 }
 
 .race-cal__runner,
@@ -1800,16 +1848,99 @@ a:focus-visible {
   display: flex;
   align-items: center;
   gap: 0.4rem;
+  min-width: 0;
+}
+
+.race-cal__runner span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .race-cal__comment {
   color: var(--text-subtle);
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: 40rem) {
+  .page-calendar .ep-page-title {
+    margin-bottom: 0.25rem;
+  }
+
+  .page-calendar .patreon-gate {
+    margin-top: 0.75rem;
+  }
+
+  .race-cal__toolbar {
+    margin-bottom: 0.75rem;
+  }
+
+  .race-cal__year-btn {
+    width: 2.05rem;
+    height: 2.05rem;
+  }
+
+  .race-cal__year-label {
+    font-size: 0.92rem;
+  }
+
+  .race-cal__stats {
+    margin-bottom: 0.7rem;
+  }
+
+  .race-cal__controls {
+    margin-bottom: 0.85rem;
+  }
+
+  .race-cal__search input {
+    padding: 0.5rem 0.7rem;
+  }
+
+  .race-cal__tab {
+    padding: 0.42rem 0.65rem;
+    font-size: 0.82rem;
+  }
+
+  .race-form {
+    padding: 0.85rem 0.8rem 1rem;
+  }
+
+  .race-form__grid,
+  .race-form__results {
+    gap: 0.55rem;
+  }
+
+  .race-person {
+    margin-bottom: 1.15rem;
+  }
+
+  .race-person--mine {
+    padding: 0.5rem 0.55rem 0.2rem;
+  }
+
+  .race-person__identity {
+    gap: 0.5rem;
+  }
+
+  .race-person .avatar {
+    width: 1.85rem;
+    height: 1.85rem;
+    font-size: 0.62rem;
+  }
+
+  .race-person__name {
+    font-size: 1.02rem;
+  }
+
   .race-cal__item {
-    grid-template-columns: 1fr;
-    gap: 0.15rem;
+    column-gap: 0.6rem;
+    padding: 0.48rem 0;
+  }
+
+  .race-cal__date {
+    font-size: 0.8rem;
+    padding-top: 0.18rem;
   }
 }
 

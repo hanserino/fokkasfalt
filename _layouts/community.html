@@ -107,13 +107,15 @@ layout: default
 
       {% if page.gate == "calendar" %}
       <!--<p class="race-cal__lede">Hvilke løp medlemmene stiller til — i fjor, i år og fremover.</p>-->
-      <div class="race-cal__years">
-        <button type="button" class="race-cal__year-btn" data-year-delta="-1" aria-label="Forrige år">←</button>
-        <p class="race-cal__year-label" data-year-label></p>
-        <button type="button" class="race-cal__year-btn" data-year-delta="1" aria-label="Neste år">→</button>
-      </div>
-      <div class="race-cal__add-row">
-        <button type="button" class="btn btn--secondary" data-open-form>Legg til løp</button>
+      <div class="race-cal__top">
+        <div class="race-cal__years">
+          <button type="button" class="race-cal__year-btn" data-year-delta="-1" aria-label="Forrige år">←</button>
+          <p class="race-cal__year-label" data-year-label></p>
+          <button type="button" class="race-cal__year-btn" data-year-delta="1" aria-label="Neste år">→</button>
+        </div>
+        <div class="race-cal__add-row">
+          <button type="button" class="btn btn--secondary race-cal__add-btn" data-open-form>Legg til løp</button>
+        </div>
       </div>
       <form class="race-form" data-race-form hidden>
         <h2 class="race-form__title" data-form-title>Legg inn løp</h2>

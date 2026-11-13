@@ -722,7 +722,9 @@
       const who = document.createElement("p");
       who.className = "race-cal__runner";
       who.appendChild(avatarEl(member, "avatar--sm"));
-      who.appendChild(document.createTextNode(ownerName));
+      const whoName = document.createElement("span");
+      whoName.textContent = ownerName;
+      who.appendChild(whoName);
       body.appendChild(who);
     }
     const metaBits = [race.distance, elevationLabel(race.elevation)].filter(Boolean);
