@@ -75,16 +75,15 @@ npx wrangler secret put PATREON_CLIENT_ID
 npx wrangler secret put PATREON_CLIENT_SECRET
 npx wrangler secret put SESSION_SECRET            # lang tilfeldig streng
 npx wrangler secret put PATREON_ALLOW_USER_IDS    # din egen Patreon-bruker-id, så du kommer inn
-npx wrangler secret put CALENDAR_JSON             # JSON-liste, se under
 npx wrangler deploy
 ```
 
-`CALENDAR_JSON` (hemmelig, ikke i git):
+Kalenderdata ligger i `workers/patreon-gate/calendar.json` (gitignored, Cloudflare secret er for liten). Importer og deploy:
 
-```json
-[
-  {"date":"2027-06-12","name":"Eksempel","place":"Tromsø","distance":"50k","url":"https://"}
-]
+```bash
+ruby scripts/import_race_calendar.rb
+cd workers/patreon-gate
+npx wrangler deploy
 ```
 
 ### 3. Offentlig config i `_config.yml`

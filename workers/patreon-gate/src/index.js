@@ -1,3 +1,5 @@
+import bundledCalendar from "../calendar.json";
+
 const PATREON_TOKEN = "https://www.patreon.com/api/oauth2/token";
 const PATREON_IDENTITY =
   "https://www.patreon.com/api/oauth2/v2/identity?include=memberships,memberships.currently_entitled_tiers&fields%5Buser%5D=full_name&fields%5Bmember%5D=patron_status,currently_entitled_amount_cents&fields%5Btier%5D=title";
@@ -171,17 +173,28 @@ async function calendar(request, env) {
   const payload = await verifyJwt(token, env.SESSION_SECRET);
   if (!payload) fail(401, "unauthorized");
 
-  let races = [];
+  return { name: payload.name || "", ...loadCalendar(env) };
+}
+
+function fromObject(parsed) {
+  if (!parsed) return null;
+  if (Array.isArray(parsed)) return { members: [], races: parsed };
+  if (Array.isArray(parsed.members)) {
+    return { members: parsed.members, imported_at: parsed.imported_at || "" };
+  }
+  return null;
+}
+
+function loadCalendar(env) {
   if (env.CALENDAR_JSON) {
     try {
-      const parsed = JSON.parse(env.CALENDAR_JSON);
-      races = Array.isArray(parsed) ? parsed : parsed.races || [];
+      const parsed = fromObject(JSON.parse(env.CALENDAR_JSON));
+      if (parsed) return parsed;
     } catch {
-      races = [];
+      /* fall through to bundled copy */
     }
   }
-
-  return { name: payload.name || "", races };
+  return fromObject(bundledCalendar) || { members: [] };
 }
 
 function bearer(request) {

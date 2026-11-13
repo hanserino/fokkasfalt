@@ -25,16 +25,36 @@
     return;
   }
 
+  let calendar = { members: [] };
+  let view = "people";
+  let query = "";
+
   bind();
   initCalendar();
 
   function bind() {
     const login = root.querySelector("[data-login]");
     const logout = root.querySelector("[data-logout]");
+    const search = root.querySelector("[data-search]");
     if (login) login.addEventListener("click", startLogin);
     if (logout) logout.addEventListener("click", function () {
       localStorage.removeItem(STORAGE);
       show("locked");
+    });
+    if (search) {
+      search.addEventListener("input", function () {
+        query = search.value || "";
+        renderCalendar();
+      });
+    }
+    root.querySelectorAll("[data-view]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        view = btn.dataset.view || "people";
+        root.querySelectorAll("[data-view]").forEach(function (el) {
+          el.setAttribute("aria-selected", el === btn ? "true" : "false");
+        });
+        renderCalendar();
+      });
     });
   }
 
@@ -101,7 +121,10 @@
     show("loading");
     try {
       const data = await apiGet("/calendar", session.token);
-      renderRaces(data.races || [], data.name || session.name || "");
+      calendar = data;
+      const hello = root.querySelector("[data-hello]");
+      if (hello) hello.textContent = data.name ? "Hei, " + data.name + "." : "Du er innlogget.";
+      renderCalendar();
       show("open");
     } catch (e) {
       localStorage.removeItem(STORAGE);
@@ -110,62 +133,187 @@
     }
   }
 
-  function renderRaces(races, name) {
-    const hello = root.querySelector("[data-hello]");
-    const list = root.querySelector("[data-races]");
-    const empty = root.querySelector("[data-empty]");
-    if (hello) {
-      hello.textContent = name ? "Hei, " + name + "." : "Du er innlogget.";
-    }
-    if (!list) return;
-    list.innerHTML = "";
-    if (!races.length) {
-      if (empty) empty.hidden = false;
-      return;
-    }
-    if (empty) empty.hidden = true;
-    races.forEach(function (race) {
-      const li = document.createElement("li");
-      li.className = "race-cal__item";
-      const date = document.createElement("time");
-      date.className = "race-cal__date";
-      if (race.date) {
-        date.dateTime = race.date;
-        date.textContent = formatDate(race.date);
-      } else {
-        date.textContent = "Uten dato";
-      }
-      const body = document.createElement("div");
-      body.className = "race-cal__body";
-      const title = document.createElement(race.url ? "a" : "span");
-      title.className = "race-cal__name";
-      title.textContent = race.name || "Løp";
-      if (race.url) {
-        title.href = race.url;
-        title.rel = "noopener noreferrer";
-      }
-      body.appendChild(title);
-      const metaBits = [race.place, race.distance].filter(Boolean);
-      if (metaBits.length) {
-        const meta = document.createElement("p");
-        meta.className = "race-cal__meta";
-        meta.textContent = metaBits.join(" · ");
-        body.appendChild(meta);
-      }
-      li.appendChild(date);
-      li.appendChild(body);
-      list.appendChild(li);
+  function members() {
+    return Array.isArray(calendar.members) ? calendar.members : [];
+  }
+
+  function haystack(member) {
+    const bits = [member.name];
+    (member.races || []).forEach(function (race) {
+      bits.push(race.name, race.distance, race.elevation, race.date, race.comment);
+    });
+    return bits.filter(Boolean).join(" ").toLowerCase();
+  }
+
+  function filteredMembers() {
+    const q = query.trim().toLowerCase();
+    if (!q) return members();
+    return members().filter(function (member) {
+      return haystack(member).indexOf(q) !== -1;
     });
   }
 
-  function formatDate(iso) {
-    const d = new Date(iso + "T12:00:00");
-    if (Number.isNaN(d.getTime())) return iso;
-    return new Intl.DateTimeFormat("nb-NO", {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-    }).format(d);
+  function renderCalendar() {
+    const list = filteredMembers();
+    const peopleEl = root.querySelector("[data-people]");
+    const timelineEl = root.querySelector("[data-timeline]");
+    const empty = root.querySelector("[data-empty]");
+    const stats = root.querySelector("[data-stats]");
+    const raceCount = list.reduce(function (n, m) {
+      return n + (m.races || []).length;
+    }, 0);
+    if (stats) {
+      stats.textContent =
+        list.length +
+        " " +
+        (list.length === 1 ? "person" : "personer") +
+        " · " +
+        raceCount +
+        " " +
+        (raceCount === 1 ? "løp" : "løp");
+    }
+
+    const noHits = list.length === 0;
+    if (empty) empty.hidden = !noHits;
+    if (peopleEl) peopleEl.hidden = view !== "people" || noHits;
+    if (timelineEl) timelineEl.hidden = view !== "timeline" || noHits;
+    if (noHits) return;
+
+    if (view === "timeline") {
+      renderTimeline(timelineEl, list);
+    } else {
+      renderPeople(peopleEl, list);
+    }
+  }
+
+  function renderPeople(el, list) {
+    el.innerHTML = "";
+    list.forEach(function (member) {
+      el.appendChild(personCard(member));
+    });
+  }
+
+  function personCard(member) {
+    const art = document.createElement("article");
+    art.className = "race-person";
+    const head = document.createElement("header");
+    head.className = "race-person__head";
+    const h = document.createElement("h2");
+    h.className = "race-person__name";
+    h.textContent = member.name;
+    head.appendChild(h);
+    const social = document.createElement("p");
+    social.className = "race-person__social";
+    addLink(social, member.strava, "Strava");
+    addLink(social, member.instagram, "Instagram");
+    if (social.childNodes.length) head.appendChild(social);
+    art.appendChild(head);
+
+    const races = member.races || [];
+    if (!races.length) {
+      const none = document.createElement("p");
+      none.className = "race-person__none";
+      none.textContent = "Ingen løp registrert ennå.";
+      art.appendChild(none);
+      return art;
+    }
+    const ul = document.createElement("ul");
+    ul.className = "race-person__races";
+    races.forEach(function (race) {
+      ul.appendChild(raceRow(race));
+    });
+    art.appendChild(ul);
+    return art;
+  }
+
+  function raceRow(race, runnerName) {
+    const li = document.createElement("li");
+    li.className = "race-cal__item";
+    const date = document.createElement("time");
+    date.className = "race-cal__date";
+    if (race.date_iso) date.dateTime = race.date_iso;
+    date.textContent = formatDate(race) || "Uten dato";
+    const body = document.createElement("div");
+    body.className = "race-cal__body";
+    const title = document.createElement(race.url ? "a" : "span");
+    title.className = "race-cal__name";
+    title.textContent = race.name || "Løp";
+    if (race.url) {
+      title.href = race.url;
+      title.rel = "noopener noreferrer";
+    }
+    body.appendChild(title);
+    if (runnerName) {
+      const who = document.createElement("p");
+      who.className = "race-cal__runner";
+      who.textContent = runnerName;
+      body.appendChild(who);
+    }
+    const metaBits = [race.distance, elevationLabel(race.elevation)].filter(Boolean);
+    if (metaBits.length) {
+      const meta = document.createElement("p");
+      meta.className = "race-cal__meta";
+      meta.textContent = metaBits.join(" · ");
+      body.appendChild(meta);
+    }
+    if (race.comment) {
+      const note = document.createElement("p");
+      note.className = "race-cal__comment";
+      note.textContent = race.comment;
+      body.appendChild(note);
+    }
+    li.appendChild(date);
+    li.appendChild(body);
+    return li;
+  }
+
+  function renderTimeline(el, list) {
+    const rows = [];
+    list.forEach(function (member) {
+      (member.races || []).forEach(function (race) {
+        rows.push({ member: member, race: race, sort: race.date_iso || "9999-99-99" });
+      });
+    });
+    rows.sort(function (a, b) {
+      if (a.sort === b.sort) return (a.member.name || "").localeCompare(b.member.name || "", "nb");
+      return a.sort < b.sort ? -1 : 1;
+    });
+    el.innerHTML = "";
+    rows.forEach(function (row) {
+      el.appendChild(raceRow(row.race, row.member.name));
+    });
+  }
+
+  function addLink(parent, href, label) {
+    if (!href) return;
+    if (parent.childNodes.length) {
+      parent.appendChild(document.createTextNode(" · "));
+    }
+    const a = document.createElement("a");
+    a.href = href;
+    a.rel = "noopener noreferrer";
+    a.textContent = label;
+    parent.appendChild(a);
+  }
+
+  function elevationLabel(value) {
+    if (!value) return "";
+    if (/[a-zæøå]/i.test(value)) return value;
+    return value + " hm";
+  }
+
+  function formatDate(race) {
+    if (race && race.date_iso) {
+      const d = new Date(race.date_iso + "T12:00:00");
+      if (!Number.isNaN(d.getTime())) {
+        return new Intl.DateTimeFormat("nb-NO", {
+          day: "numeric",
+          month: "short",
+          year: "numeric",
+        }).format(d);
+      }
+    }
+    return (race && race.date) || "";
   }
 
   function show(which) {

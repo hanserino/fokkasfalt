@@ -102,6 +102,10 @@ a:focus-visible {
   margin-inline: auto;
 }
 
+.page-calendar .wrap {
+  width: min(100% - var(--space) * 2, 52rem);
+}
+
 /* Header — full-width photo + vignette (forsiden) */
 .site-header {
   --site-header-photo: linear-gradient(
@@ -1149,28 +1153,117 @@ a:focus-visible {
   color: var(--text-muted);
 }
 
+.race-cal__lede,
+.race-cal__stats,
 .race-cal__empty {
   color: var(--text-muted);
 }
 
-.race-cal {
+.race-cal__lede {
+  margin: 0 0 0.35rem;
+}
+
+.race-cal__stats {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+}
+
+.race-cal__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 1.25rem;
+}
+
+.race-cal__search {
+  flex: 1 1 14rem;
+}
+
+.race-cal__search input {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+}
+
+.race-cal__tabs {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.race-cal__tab {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.race-cal__tab[aria-selected="true"] {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+
+.race-person {
+  margin: 0 0 1.75rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.race-person__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.35rem 1rem;
+  margin: 0 0 0.35rem;
+}
+
+.race-person__name {
+  margin: 0;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+
+.race-person__social {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.race-person__none {
+  margin: 0 0 0.75rem;
+  color: var(--text-subtle);
+  font-size: 0.92rem;
+}
+
+.race-person__races,
+.race-cal__timeline {
   list-style: none;
   margin: 0;
   padding: 0;
-  border-top: 1px solid var(--border);
 }
 
 .race-cal__item {
   display: grid;
-  grid-template-columns: 9.5rem 1fr;
-  gap: 0.75rem 1.25rem;
-  padding: 0.9rem 0;
-  border-bottom: 1px solid var(--border);
+  grid-template-columns: 7.5rem 1fr;
+  gap: 0.35rem 1.1rem;
+  padding: 0.7rem 0;
 }
 
 .race-cal__date {
   color: var(--text-muted);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
 }
 
 .race-cal__name {
@@ -1178,16 +1271,22 @@ a:focus-visible {
   text-decoration: none;
 }
 
-.race-cal__meta {
-  margin: 0.25rem 0 0;
+.race-cal__runner,
+.race-cal__meta,
+.race-cal__comment {
+  margin: 0.2rem 0 0;
   font-size: 0.9rem;
   color: var(--text-muted);
+}
+
+.race-cal__comment {
+  color: var(--text-subtle);
 }
 
 @media (max-width: 40rem) {
   .race-cal__item {
     grid-template-columns: 1fr;
-    gap: 0.2rem;
+    gap: 0.15rem;
   }
 }
 

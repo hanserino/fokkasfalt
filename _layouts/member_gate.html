@@ -50,8 +50,23 @@ layout: default
         <p class="race-cal__hello" data-hello></p>
         <button type="button" class="btn btn--ghost" data-logout>Logg ut</button>
       </div>
-      <p class="race-cal__empty" data-empty hidden>Ingen løp er lagt inn i kalenderen ennå.</p>
-      <ul class="race-cal" data-races></ul>
+      <p class="race-cal__lede">
+        Hvilke løp medlemmene stiller til. Tidligere et åpent Google-ark — nå bare for Patreon.
+      </p>
+      <p class="race-cal__stats" data-stats></p>
+      <div class="race-cal__controls">
+        <label class="race-cal__search">
+          <span class="visually-hidden">Søk</span>
+          <input type="search" data-search placeholder="Søk i navn og løp" autocomplete="off" />
+        </label>
+        <div class="race-cal__tabs" role="tablist" aria-label="Visning">
+          <button type="button" class="race-cal__tab" data-view="people" aria-selected="true">Personer</button>
+          <button type="button" class="race-cal__tab" data-view="timeline" aria-selected="false">Tidslinje</button>
+        </div>
+      </div>
+      <p class="race-cal__empty" data-empty hidden>Ingen treff.</p>
+      <div class="race-cal__people" data-people></div>
+      <ol class="race-cal__timeline" data-timeline hidden></ol>
     </div>
   </div>
 </main>

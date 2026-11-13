@@ -80,7 +80,7 @@
     <link rel="stylesheet" href="{{ '/css/styles.css' | relative_url }}" />
     {% if page.extra_head %}{{ page.extra_head }}{% endif %}
   </head>
-  <body>
+  <body{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
     <a class="skip-link" href="#main">Hopp til innhold</a>
     {{ content }}
   </body>
