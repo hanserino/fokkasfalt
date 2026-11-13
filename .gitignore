@@ -3,6 +3,11 @@ _site/
 node_modules/
 .env
 .DS_Store
+vendor/bundle/
+.bundle/
+workers/patreon-gate/.dev.vars
+workers/patreon-gate/calendar.json
+workers/patreon-gate/.wrangler/
 
 # Lokalt Python-miljø + NER-rapporter (scripts/extract_guest_names.py)
 scripts/.venv-ner/

@@ -1,0 +1,11 @@
+name = "fokkasfalt-patreon-gate"
+main = "src/index.js"
+compatibility_date = "2026-11-13"
+
+# Public config. Secrets: wrangler secret put PATREON_CLIENT_ID / PATREON_CLIENT_SECRET /
+# PATREON_ALLOW_USER_IDS / SESSION_SECRET / CALENDAR_JSON
+[vars]
+ALLOWED_ORIGINS = "https://fokkasfalt.no,http://127.0.0.1:4000,http://localhost:4000"
+# Paid tiers: Føkk Asfalt, Mest bang for the buck, Road to States.
+# Paying members (amount_cents > 0) are also let in, including future paid tiers.
+PATREON_TIER_IDS = "7252533,2543654,27436916"

@@ -10,6 +10,11 @@ podcast_artwork: "/assets/fokkasfalt.png"
 # GA4 måle-ID (gtag.js). Finn under Admin → Datastrømmer i Google Analytics. Tom = ingen tracking.
 google_analytics: "G-VFJFKSRCG0"
 
+# Offentlig Patreon OAuth-klient (ikke secret/token). Tom = innloggingsknapp inaktiv.
+patreon_client_id: "cend4RVGe47L9Q8CQ9CoCZvnrC5PRxYSl2C6GffsAQY7JJCbyRCRY0bUCjAamrwO"
+# Cloudflare Worker som bytter kode mot medlemskap. Tom = API ikke deployet ennå.
+patreon_gate_api: "https://fokkasfalt-patreon-gate.bestpodcasts.workers.dev"
+
 # Offentlige lytte-lenker (show-nivå) — brukes når episode matcher «also_free» i episode_availability.yml
 # (Nøkkel «listen_links» unngår konflikt med Liquid/site — ikke bruk nøkkelen «listen».)
 listen_links:
@@ -30,6 +35,7 @@ exclude:
   - .env
   - .env.example
   - .cursor
+  - workers
 
 collections:
   episodes:

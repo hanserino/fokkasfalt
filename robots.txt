@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /auth/
 
 Sitemap: https://fokkasfalt.no/sitemap.xml

@@ -1,0 +1,64 @@
+---
+layout: default
+---
+
+<header class="ep-nav wrap">
+  <div class="ep-nav__start">
+    <a href="{{ '/' | relative_url }}" class="ep-nav__link">← forsiden</a>
+  </div>
+  <a href="{{ '/' | relative_url }}" class="ep-nav__brand" aria-label="Til forsiden, Føkk Asfalt">
+    <img
+      class="ep-nav__logo"
+      src="{{ '/assets/fokkasfalt.png' | relative_url }}"
+      alt=""
+      width="400"
+      height="246"
+      decoding="async"
+    />
+  </a>
+  <div class="ep-nav__end" aria-hidden="true"></div>
+</header>
+
+<main id="main" class="ep-main wrap">
+  <h1 class="ep-page-title">{{ page.title }}</h1>
+  {{ content }}
+
+  <div
+    id="patreon-gate"
+    class="patreon-gate"
+    data-page="calendar"
+    data-client-id="{{ site.patreon_client_id }}"
+    data-api="{{ site.patreon_gate_api }}"
+  >
+    <div class="patreon-gate__panel" data-panel="loading" hidden>
+      <p class="page-prose">Sjekker medlemskap…</p>
+    </div>
+
+    <div class="patreon-gate__panel" data-panel="locked">
+      <div class="page-prose">
+        <p>Kalenderen er for betalende Patreon-medlemmer (Føkk Asfalt, Mest bang for the buck og Road to States).</p>
+        <p data-status></p>
+      </div>
+      <div class="cta-row cta-row--start">
+        <button type="button" class="btn btn--primary" data-login>Logg inn med Patreon</button>
+        <a class="btn btn--secondary" href="https://www.patreon.com/alvorpodcast" rel="noopener noreferrer">Bli medlem</a>
+      </div>
+    </div>
+
+    <div class="patreon-gate__panel" data-panel="open" hidden>
+      <div class="race-cal__toolbar">
+        <p class="race-cal__hello" data-hello></p>
+        <button type="button" class="btn btn--ghost" data-logout>Logg ut</button>
+      </div>
+      <p class="race-cal__empty" data-empty hidden>Ingen løp er lagt inn i kalenderen ennå.</p>
+      <ul class="race-cal" data-races></ul>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer wrap">
+  {% include footer-contact.html %}
+  <p class="copyright">&copy; Føkk Asfalt.</p>
+</footer>
+
+<script src="{{ '/js/patreon-gate.js' | relative_url }}" defer></script>

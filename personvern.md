@@ -20,7 +20,7 @@ Kontakt: [hans@naerdetalvor.no](mailto:hans@naerdetalvor.no).
 
 **Besøk på det åpne nettstedet.** Sidene er statiske. Vi bruker Google Analytics (GA4) for å se grovt hvordan nettstedet brukes (sider, enhet, omtrentlig geografi). Du kan blokkere dette med vanlige nettleserinnstillinger eller utvidelser.
 
-**Innlogging med Patreon.** For medlemsinnhold (for eksempel Race-kalender 2027) ber vi Patreon om å bekrefte at du er innlogget og har riktig medlemsnivå. Da kan vi motta:
+**Innlogging med Patreon.** For medlemsinnhold (for eksempel Race-kalender 2027) ber vi Patreon om å bekrefte at du er innlogget og betalende medlem. Da kan vi motta:
 
 - Patreon-bruker-ID
 - navn og profilbilde hvis Patreon sender det

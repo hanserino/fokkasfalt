@@ -1,0 +1,40 @@
+---
+layout: default
+title: Logger inn
+title_meta: Logger inn — FØKK ASFALT
+permalink: /auth/patreon/callback
+robots: noindex,nofollow
+sitemap: false
+og_type: website
+---
+
+<header class="ep-nav wrap">
+  <div class="ep-nav__start">
+    <a href="{{ '/race-kalender-2027/' | relative_url }}" class="ep-nav__link">← kalenderen</a>
+  </div>
+  <a href="{{ '/' | relative_url }}" class="ep-nav__brand" aria-label="Til forsiden, Føkk Asfalt">
+    <img
+      class="ep-nav__logo"
+      src="{{ '/assets/fokkasfalt.png' | relative_url }}"
+      alt=""
+      width="400"
+      height="246"
+      decoding="async"
+    />
+  </a>
+  <div class="ep-nav__end" aria-hidden="true"></div>
+</header>
+
+<main id="main" class="ep-main wrap">
+  <h1 class="ep-page-title">Logger inn</h1>
+  <div
+    id="patreon-gate"
+    data-page="callback"
+    data-client-id="{{ site.patreon_client_id }}"
+    data-api="{{ site.patreon_gate_api }}"
+  >
+    <p class="page-prose" data-callback-status>Kobler til Patreon…</p>
+  </div>
+</main>
+
+<script src="{{ '/js/patreon-gate.js' | relative_url }}" defer></script>

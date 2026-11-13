@@ -48,12 +48,58 @@ Mangler `PATREON_RSS_URL` i Actions, hoppes import over (ingen feil).
 
 **Sikkerhet:** Har RSS med `auth=` lekket et sted — **rotér** feed-URL i Patreon og oppdater secreten.
 
+## Patreon-låst Race-kalender 2027
+
+`/race-kalender-2027/` er en offentlig skallside. Selve kalenderen og tier-sjekken kjører i Cloudflare Worker `workers/patreon-gate/` — GitHub Pages kan ikke holde `client_secret`.
+
+**Ikke** commit eller lim inn Client Secret / access token / refresh token i chat.
+
+### 1. Lokalt `.env`
+
+Kopier `.env.example` og fyll `PATREON_CLIENT_ID`, `PATREON_CLIENT_SECRET`, `PATREON_CREATOR_ACCESS_TOKEN`, `PATREON_CREATOR_REFRESH_TOKEN`.
+
+List tiers:
+
+```bash
+ruby scripts/patreon_list_tiers.rb
+```
+
+Betalende tiers som slipper inn: **Føkk Asfalt** (`7252533`), **Mest bang for the buck** (`2543654`), **Road to States** (`27436916`). Workeren slipper også inn andre aktive medlemmer med `amount_cents > 0`.
+
+### 2. Worker (Cloudflare, gratis)
+
+```bash
+cd workers/patreon-gate
+npx wrangler login
+npx wrangler secret put PATREON_CLIENT_ID
+npx wrangler secret put PATREON_CLIENT_SECRET
+npx wrangler secret put SESSION_SECRET            # lang tilfeldig streng
+npx wrangler secret put PATREON_ALLOW_USER_IDS    # din egen Patreon-bruker-id, så du kommer inn
+npx wrangler secret put CALENDAR_JSON             # JSON-liste, se under
+npx wrangler deploy
+```
+
+`CALENDAR_JSON` (hemmelig, ikke i git):
+
+```json
+[
+  {"date":"2027-06-12","name":"Eksempel","place":"Tromsø","distance":"50k","url":"https://"}
+]
+```
+
+### 3. Offentlig config i `_config.yml`
+
+Sett `patreon_client_id` (Client ID er offentlig) og `patreon_gate_api` til worker-URL-en wrangler skriver ut, f.eks. `https://fokkasfalt-patreon-gate.<konto>.workers.dev`.
+
 ## Viktige filer
 
 | Fila | Rolle |
 |------|--------|
 | `_config.yml` | Jekyll-innstillinger, `episodes`-collection |
 | `index.md` | Forside (`layout: home`) |
+| `personvern.md` / `vilkar.md` | Personvern og vilkår (Patreon-klient) |
+| `race-kalender-2027.md` | Skall for medlemskalender |
+| `workers/patreon-gate/` | Patreon-innlogging og kalender-API |
 | `episoder.md` | Oversikt `/episoder/` |
 | `_layouts/` | HTML-maler |
 | `_episodes/*.md` | Episodeinnhold (genereres av Ruby, bygges av Jekyll) |
@@ -61,7 +107,7 @@ Mangler `PATREON_RSS_URL` i Actions, hoppes import over (ingen feil).
 | `css/styles.css` | Stiler |
 | `Gemfile` / `Gemfile.lock` | Lokalt Jekyll (+ `jekyll-sitemap`) |
 
-**Node** brukes ikke lenger (før brukt til samme import).
+**Node** trengs bare for å deploye Cloudflare-workeren (`npx wrangler`). Jekyll-siten er ren Ruby.
 
 ## Navn i episodetitler (lokalt NER)
 
