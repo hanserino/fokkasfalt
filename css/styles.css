@@ -1970,6 +1970,34 @@ a:focus-visible {
   margin-left: 1.75rem;
 }
 
+.race-cal__edition {
+  margin-top: 0.45rem;
+  padding-top: 0.35rem;
+  border-top: 1px solid var(--border);
+}
+
+.race-cal__edition-head {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem;
+}
+
+.race-cal__edition-date {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.race-cal__edition .race-cal__runners {
+  margin-top: 0.15rem;
+}
+
+.race-cal__edition .race-cal__entrant {
+  border-top: 0;
+}
+
 @media (max-width: 40rem) {
   .page-calendar .ep-page-title {
     margin-bottom: 0.25rem;
@@ -2005,8 +2033,8 @@ a:focus-visible {
   }
 
   .race-cal__tab {
-    padding: 0.42rem 0.65rem;
-    font-size: 0.82rem;
+    padding: 0.42rem 0.55rem;
+    font-size: 0.8rem;
   }
 
   .race-form {

@@ -641,11 +641,13 @@
         : "Ingen løp registrert for " + year + " ennå.";
     }
     if (peopleEl) peopleEl.hidden = view !== "people" || noHits;
-    if (timelineEl) timelineEl.hidden = view !== "timeline" || noHits;
+    if (timelineEl) timelineEl.hidden = (view !== "timeline" && view !== "alpha") || noHits;
     if (noHits) return;
 
     if (view === "timeline") {
       renderTimeline(timelineEl, list);
+    } else if (view === "alpha") {
+      renderAlpha(timelineEl, list);
     } else {
       renderPeople(peopleEl, list);
     }
@@ -709,7 +711,6 @@
     heading.className = "race-cal__heading";
     heading.appendChild(raceNameEl(race));
     if (isOwnRace(ownerName)) heading.appendChild(raceMenu(race));
-    else if (canJoinRace(race, ownerName)) heading.appendChild(joinButton(race));
     body.appendChild(heading);
     appendRaceMeta(body, race);
     li.appendChild(body);
@@ -760,12 +761,12 @@
     }
   }
 
-  function renderTimeline(el, list) {
+  function collectRaceGroups(list, keyFn) {
     const groups = [];
     const indexByKey = {};
     list.forEach(function (member) {
       (member.races || []).forEach(function (race) {
-        const key = raceKey(race);
+        const key = keyFn(race);
         let group = indexByKey[key];
         if (!group) {
           group = {
@@ -781,6 +782,11 @@
         group.entries.push({ member: member, race: race });
       });
     });
+    return groups;
+  }
+
+  function renderTimeline(el, list) {
+    const groups = collectRaceGroups(list, raceKey);
     groups.sort(function (a, b) {
       if (a.sort === b.sort) {
         return (a.race.name || "").localeCompare(b.race.name || "", "nb");
@@ -793,6 +799,94 @@
     });
   }
 
+  function renderAlpha(el, list) {
+    const groups = collectRaceGroups(list, function (race) {
+      return normName(race.name);
+    });
+    groups.sort(function (a, b) {
+      return (a.race.name || "").localeCompare(b.race.name || "", "nb");
+    });
+    el.innerHTML = "";
+    groups.forEach(function (group) {
+      el.appendChild(alphaEvent(group));
+    });
+  }
+
+  function uniqueDates(entries) {
+    const seen = {};
+    const dates = [];
+    entries.forEach(function (entry) {
+      const iso = (entry.race && entry.race.date_iso) || "";
+      if (seen[iso]) return;
+      seen[iso] = true;
+      dates.push(iso);
+    });
+    dates.sort();
+    return dates;
+  }
+
+  function formatDateRange(entries) {
+    const dates = uniqueDates(entries).filter(Boolean);
+    if (!dates.length) return "Uten dato";
+    const first = formatDate({ date_iso: dates[0] });
+    const last = formatDate({ date_iso: dates[dates.length - 1] });
+    if (first === last) return first;
+    return first + " – " + last;
+  }
+
+  function alphaEvent(group) {
+    const dates = uniqueDates(group.entries);
+    if (dates.length <= 1) return timelineEvent(group);
+
+    const li = document.createElement("li");
+    li.className = "race-cal__item";
+    const date = document.createElement("time");
+    date.className = "race-cal__date";
+    date.textContent = formatDateRange(group.entries);
+    li.appendChild(date);
+    const body = document.createElement("div");
+    body.className = "race-cal__body";
+    const heading = document.createElement("div");
+    heading.className = "race-cal__heading";
+    heading.appendChild(raceNameEl(group.race));
+    body.appendChild(heading);
+    dates.forEach(function (iso) {
+      const edition = document.createElement("div");
+      edition.className = "race-cal__edition";
+      const sample = group.entries.find(function (entry) {
+        return (entry.race.date_iso || "") === iso;
+      });
+      const editionRace = sample && sample.race;
+      const subHead = document.createElement("div");
+      subHead.className = "race-cal__edition-head";
+      const subDate = document.createElement("time");
+      subDate.className = "race-cal__edition-date";
+      if (iso) subDate.dateTime = iso;
+      subDate.textContent = iso ? formatDate({ date_iso: iso }) : "Uten dato";
+      subHead.appendChild(subDate);
+      edition.appendChild(subHead);
+      const runners = document.createElement("ul");
+      runners.className = "race-cal__runners";
+      group.entries
+        .filter(function (entry) {
+          return (entry.race.date_iso || "") === iso;
+        })
+        .sort(function (a, b) {
+          const aMine = isOwnRace(a.member && a.member.name) ? 0 : 1;
+          const bMine = isOwnRace(b.member && b.member.name) ? 0 : 1;
+          if (aMine !== bMine) return aMine - bMine;
+          return (a.member.name || "").localeCompare(b.member.name || "", "nb");
+        })
+        .forEach(function (entry) {
+          runners.appendChild(timelineRunner(entry.member, entry.race));
+        });
+      edition.appendChild(runners);
+      body.appendChild(edition);
+    });
+    li.appendChild(body);
+    return li;
+  }
+
   function timelineEvent(group) {
     const race = group.race;
     const li = document.createElement("li");
@@ -803,7 +897,6 @@
     const heading = document.createElement("div");
     heading.className = "race-cal__heading";
     heading.appendChild(raceNameEl(race));
-    if (canJoinRace(race)) heading.appendChild(joinButton(race));
     body.appendChild(heading);
     const runners = document.createElement("ul");
     runners.className = "race-cal__runners";
