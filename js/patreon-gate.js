@@ -43,6 +43,7 @@
   let view = "people";
   let query = "";
   let year = readYearFromUrl();
+  let editingRace = null;
 
   bind();
   init();
@@ -107,6 +108,13 @@
       if (event.key === "Escape") {
         closeSettings();
         closeAccountMenu();
+        const list = root.querySelector("[data-race-list]");
+        if (list && !list.hidden) {
+          closeRaceCombo();
+          return;
+        }
+        const form = root.querySelector("[data-race-form]");
+        if (form && !form.hidden) hideRaceForm();
       }
     });
     if (search) {
@@ -675,7 +683,8 @@
     const heading = document.createElement("div");
     heading.className = "race-cal__heading";
     heading.appendChild(title);
-    if (canJoinRace(race, ownerName)) heading.appendChild(joinButton(race));
+    if (isOwnRace(ownerName)) heading.appendChild(editButton(race));
+    else if (canJoinRace(race, ownerName)) heading.appendChild(joinButton(race));
     body.appendChild(heading);
     if (showOwner && ownerName) {
       const who = document.createElement("p");
@@ -793,6 +802,21 @@
     return myRaces().some(function (row) {
       return raceKey(row) === key;
     });
+  }
+
+  function isOwnRace(ownerName) {
+    return Boolean(calendar.self && ownerName && ownerName === calendar.self.name);
+  }
+
+  function editButton(race) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "race-cal__edit";
+    btn.textContent = "Rediger";
+    btn.addEventListener("click", function () {
+      openEditRace(race);
+    });
+    return btn;
   }
 
   function joinButton(race) {
@@ -1022,10 +1046,20 @@
     }
   }
 
+  function setFormMode(mode) {
+    const title = root.querySelector("[data-form-title]");
+    const submit = root.querySelector("[data-form-submit]");
+    const editing = mode === "edit";
+    if (title) title.textContent = editing ? "Rediger løp" : "Legg inn løp";
+    if (submit) submit.textContent = editing ? "Lagre endringer" : "Lagre løp";
+  }
+
   function showRaceForm() {
     const form = root.querySelector("[data-race-form]");
     const addRow = root.querySelector(".race-cal__add-row");
     if (!form) return;
+    editingRace = null;
+    setFormMode("add");
     form.hidden = false;
     if (addRow) addRow.hidden = true;
     form.reset();
@@ -1037,6 +1071,34 @@
     const name = form.querySelector("[data-race-combo]");
     if (name) name.focus();
     renderRaceCombo("");
+    form.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function openEditRace(race) {
+    const form = root.querySelector("[data-race-form]");
+    const addRow = root.querySelector(".race-cal__add-row");
+    if (!form || !race) return;
+    editingRace = { name: race.name || "", date_iso: race.date_iso || "" };
+    setFormMode("edit");
+    form.hidden = false;
+    if (addRow) addRow.hidden = true;
+    form.reset();
+    const status = root.querySelector("[data-form-status]");
+    if (status) status.textContent = "";
+    fillClaimSelect();
+    if (form.elements.name) form.elements.name.value = race.name || "";
+    if (form.elements.date) form.elements.date.value = race.date_iso || "";
+    if (form.elements.distance) form.elements.distance.value = race.distance || "";
+    if (form.elements.elevation) form.elements.elevation.value = race.elevation || "";
+    if (form.elements.time) form.elements.time.value = race.time || "";
+    if (form.elements.place) form.elements.place.value = race.place || "";
+    if (form.elements.comment) form.elements.comment.value = race.comment || "";
+    if (form.elements.url) form.elements.url.value = race.url || "";
+    syncResultFields();
+    const name = form.querySelector("[data-race-combo]");
+    if (name) name.focus();
+    closeRaceCombo();
+    form.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   function hideRaceForm() {
@@ -1046,6 +1108,8 @@
       form.hidden = true;
       form.reset();
     }
+    editingRace = null;
+    setFormMode("add");
     closeRaceCombo();
     fillClaimSelect();
     if (addRow) addRow.hidden = false;
@@ -1108,11 +1172,16 @@
       url: valueOf(form, "url"),
     };
     Object.assign(body, identityPayload());
+    const path = editingRace ? "/races/update" : "/races";
+    if (editingRace) {
+      body.original_name = editingRace.name;
+      body.original_date = editingRace.date_iso;
+    }
     const submit = form.querySelector('button[type="submit"]');
     if (submit) submit.disabled = true;
     if (status) status.textContent = "";
     try {
-      const data = await apiPost("/races", body, session.token);
+      const data = await apiPost(path, body, session.token);
       applyProfileData(session, data);
       const raceYear = parseInt((body.date || "").slice(0, 4), 10);
       if (raceYear >= 2000 && raceYear <= 2100 && raceYear !== year) setYear(raceYear);

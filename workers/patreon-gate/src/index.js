@@ -28,6 +28,9 @@ export default {
       if (request.method === "POST" && url.pathname === "/races/join") {
         return json(await joinRace(request, env), 200, cors);
       }
+      if (request.method === "POST" && url.pathname === "/races/update") {
+        return json(await updateRace(request, env), 200, cors);
+      }
       if (request.method === "POST" && url.pathname === "/profile") {
         return json(await updateProfile(request, env), 200, cors);
       }
@@ -276,6 +279,48 @@ async function joinRace(request, env) {
   if (source.elevation) race.elevation = source.elevation;
   if (source.url) race.url = source.url;
   return saveMemberRace(env, payload, body, race);
+}
+
+async function updateRace(request, env) {
+  const payload = await sessionPayload(request, env);
+  if (!env.CALENDAR) fail(500, "missing_config");
+
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    fail(400, "invalid_json");
+  }
+
+  const originalName = String(body.original_name || "").trim();
+  const originalDate = String(body.original_date || body.original_date_iso || "").trim();
+  if (!originalName || !/^\d{4}-\d{2}-\d{2}$/.test(originalDate)) fail(400, "race_not_found");
+
+  const race = normalizeRace(body);
+  const data = await loadCalendar(env);
+  const members = cloneMembers(data.members);
+  const member = resolveMember(members, payload, body.claim_name);
+  applyAlias(members, member, body, payload);
+  if (!member.races) member.races = [];
+
+  const fromKey = raceKey({ name: originalName, date_iso: originalDate });
+  const index = member.races.findIndex((row) => raceKey(row) === fromKey);
+  if (index < 0) fail(404, "race_not_found");
+
+  const nextKey = raceKey(race);
+  const clash = member.races.some((row, i) => i !== index && raceKey(row) === nextKey);
+  if (clash) fail(409, "already_added");
+
+  member.races[index] = race;
+  member.races.sort(compareRaces);
+
+  const next = {
+    members,
+    imported_at: data.imported_at || "",
+    updated_at: new Date().toISOString(),
+  };
+  await env.CALENDAR.put("data", JSON.stringify(next));
+  return publicCalendar(next, payload);
 }
 
 async function saveMemberRace(env, payload, body, race) {

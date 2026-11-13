@@ -1608,6 +1608,24 @@ a:focus-visible {
   cursor: wait;
 }
 
+.race-cal__edit {
+  appearance: none;
+  flex: 0 0 auto;
+  margin: -0.05rem 0 0;
+  padding: 0.1rem 0.15rem;
+  border: 0;
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.race-cal__edit:hover {
+  color: var(--text);
+}
+
 @media (max-width: 40rem) {
   .race-form__grid,
   .race-form__results {
