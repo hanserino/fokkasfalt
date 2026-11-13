@@ -64,7 +64,7 @@ List tiers:
 ruby scripts/patreon_list_tiers.rb
 ```
 
-Betalende tiers som slipper inn: **Føkk Asfalt** (`7252533`), **Mest bang for the buck** (`2543654`), **Road to States** (`27436916`). Workeren slipper også inn andre aktive medlemmer med `amount_cents > 0`.
+Aktive patroner på kampanjen (gratis og betalende) slipper inn til community og race-kalender. Slack vises bare for tier **Føkk Asfalt** (`7252533`).
 
 ### 2. Worker (Cloudflare, gratis)
 

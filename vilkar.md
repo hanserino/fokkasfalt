@@ -17,7 +17,7 @@ Nettstedet presenterer podcasten Føkk Asfalt. Åpne sider (forside, episodelist
 
 ## Medlemsområde
 
-Enkelte undersider, blant annet **Community** og **Race-kalender**, er forbeholdt betalende medlemmer hos oss på [Patreon](https://www.patreon.com/alvorpodcast) (Føkk Asfalt, Mest bang for the buck og Road to States). Tilgang sjekkes via innlogging med Patreon.
+**Community** og **Race-kalender** er for Patreon-medlemmer hos oss på [Patreon](https://www.patreon.com/alvorpodcast), inkludert gratismedlemskap. Enkelte deler, blant annet Slack, er forbeholdt medlemmer på nivået Føkk Asfalt. Tilgang sjekkes via innlogging med Patreon.
 
 Medlemsinnholdet er en fordel ved aktivt medlemskap. Mister du tilgang på Patreon (utmeldt, ubetalt eller annet nivå), mister du også tilgang her. Vi kan endre, flytte eller fjerne medlemsinnhold.
 

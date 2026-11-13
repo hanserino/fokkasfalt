@@ -10,8 +10,8 @@
     missing_config: "Innlogging er ikke ferdig satt opp ennå.",
     exchange_failed: "Patreon avviste innloggingen. Prøv igjen.",
     identity_failed: "Fikk ikke hentet medlemskapet ditt fra Patreon.",
-    not_member: "Denne siden er for betalende Patreon-medlemmer.",
-    wrong_tier: "Denne siden er for betalende medlemmer. Oppgrader på Patreon for å få tilgang.",
+    not_member: "Denne siden er for Patreon-medlemmer. Bli medlem og prøv igjen.",
+    wrong_tier: "Denne siden er for Patreon-medlemmer. Bli medlem og prøv igjen.",
     unauthorized: "Økten er utløpt. Logg inn på nytt.",
     bad_redirect: "Tilbake-URL fra Patreon matcher ikke. Sjekk Redirect URIs i Patreon-klienten.",
     invalid_race: "Skriv inn et løpsnavn.",
@@ -205,7 +205,12 @@
       const data = await apiPost("/oauth/exchange", { code: code, redirect_uri: redirectUri });
       localStorage.setItem(
         STORAGE,
-        JSON.stringify({ token: data.token, name: data.name || "", image: data.image || "" })
+        JSON.stringify({
+          token: data.token,
+          name: data.name || "",
+          image: data.image || "",
+          perks: data.perks || {},
+        })
       );
       window.location.replace(next);
     } catch (e) {
@@ -236,6 +241,7 @@
         rememberProfile(session, data);
         greet(data.name || session.name);
         fillAliasFields();
+        applyPerks(data);
         setDefaultFormDate();
         renderCalendar();
       } else {
@@ -250,6 +256,7 @@
         applyMeToCalendar(data);
         greet(data.display_name || data.name || session.name);
         fillAliasFields();
+        applyPerks(data);
       }
       show("open");
       renderAccount(readSession() || session);
@@ -270,9 +277,13 @@
     if (!session || !data) return;
     const image = data.image || (data.self && data.self.avatar) || session.image || "";
     const name = data.name || session.name || "";
-    if (image === session.image && name === session.name) return;
+    const perks = data.perks || (data.self && data.self.perks) || session.perks || {};
+    if (image === session.image && name === session.name && session.perks && session.perks.slack === perks.slack) {
+      return;
+    }
     session.image = image;
     session.name = name;
+    session.perks = perks;
     try {
       localStorage.setItem(STORAGE, JSON.stringify(session));
     } catch {
@@ -322,6 +333,18 @@
     calendar.self.avatar = data.image || calendar.self.avatar || "";
     calendar.self.instagram = data.instagram || "";
     calendar.self.strava = data.strava || "";
+    calendar.perks = data.perks || calendar.perks || {};
+  }
+
+  function applyPerks(data) {
+    if (data && data.perks) calendar.perks = data.perks;
+    const slack = root.querySelector("[data-perk-slack]");
+    if (slack) slack.hidden = !canUseSlack();
+  }
+
+  function canUseSlack() {
+    const perks = (calendar && calendar.perks) || {};
+    return perks.slack === true;
   }
 
   function currentAlias() {
@@ -399,6 +422,7 @@
     rememberProfile(session, data);
     greet(data.name || (session && session.name) || "");
     fillAliasFields();
+    applyPerks(data);
     renderAccount(readSession() || session);
     if (page === "calendar") renderCalendar();
   }

@@ -1,6 +1,6 @@
 const PATREON_TOKEN = "https://www.patreon.com/api/oauth2/token";
 const PATREON_IDENTITY =
-  "https://www.patreon.com/api/oauth2/v2/identity?include=memberships,memberships.currently_entitled_tiers&fields%5Buser%5D=full_name,image_url,thumb_url&fields%5Bmember%5D=patron_status,currently_entitled_amount_cents&fields%5Btier%5D=title";
+  "https://www.patreon.com/api/oauth2/v2/identity?include=memberships,memberships.campaign,memberships.currently_entitled_tiers&fields%5Buser%5D=full_name,image_url,thumb_url&fields%5Bmember%5D=patron_status,currently_entitled_amount_cents&fields%5Btier%5D=title";
 
 export default {
   async fetch(request, env) {
@@ -137,48 +137,60 @@ async function exchange(request, env) {
 
   const name = ident.data.attributes?.full_name || "";
   const image = safeImage(ident.data.attributes?.image_url || ident.data.attributes?.thumb_url);
+  const perks = { slack: Boolean(gate.slack) };
   const payload = {
     sub: ident.data.id,
     name,
     image,
+    perks,
     exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 14,
   };
   const token = await signJwt(payload, env.SESSION_SECRET);
   await persistMemberProfile(env, payload);
-  return { token, name, image };
+  return { token, name, image, perks };
 }
 
 function evaluateMembership(ident, env) {
   const userId = ident.data?.id;
   const allowUsers = csvSet(env.PATREON_ALLOW_USER_IDS);
-  if (userId && allowUsers.has(userId)) return { ok: true };
+  if (userId && allowUsers.has(userId)) return { ok: true, slack: true };
 
-  const allowedTiers = csvSet(env.PATREON_TIER_IDS);
+  const campaignId = String(env.PATREON_CAMPAIGN_ID || "").trim();
+  const slackIds = csvSet(env.SLACK_TIER_IDS || "7252533");
   const included = Array.isArray(ident.included) ? ident.included : [];
-  const members = included.filter((row) => row.type === "member");
-  const entitledIds = new Set();
+  const entitled = new Set();
   let active = false;
-  let paying = false;
 
-  for (const member of members) {
-    const status = member.attributes?.patron_status;
-    const cents = Number(member.attributes?.currently_entitled_amount_cents || 0);
-    if (status === "active_patron") {
-      active = true;
-      if (cents > 0) paying = true;
-    }
+  for (const member of included) {
+    if (member.type !== "member") continue;
+    const camp = member.relationships?.campaign?.data?.id;
+    if (campaignId && camp && String(camp) !== campaignId) continue;
+    if (member.attributes?.patron_status !== "active_patron") continue;
+    active = true;
     const tiers = member.relationships?.currently_entitled_tiers?.data || [];
     for (const t of tiers) {
-      if (t.id) entitledIds.add(String(t.id));
+      if (t.id) entitled.add(String(t.id));
     }
   }
 
-  if (paying) return { ok: true };
-  for (const id of entitledIds) {
-    if (allowedTiers.has(id)) return { ok: true };
+  if (!active) return { ok: false, reason: "not_member", slack: false };
+
+  let slack = false;
+  for (const id of entitled) {
+    if (slackIds.has(id)) slack = true;
   }
-  if (!active) return { ok: false, reason: "not_member" };
-  return { ok: false, reason: "wrong_tier" };
+  for (const row of included) {
+    if (row.type !== "tier" || !entitled.has(String(row.id))) continue;
+    if (normName(row.attributes?.title) === "fokk asfalt") slack = true;
+  }
+  return { ok: true, slack };
+}
+
+function sessionPerks(payload) {
+  if (payload?.perks && typeof payload.perks.slack === "boolean") {
+    return { slack: payload.perks.slack };
+  }
+  return { slack: true };
 }
 
 async function sessionPayload(request, env) {
@@ -200,6 +212,7 @@ async function me(request, env) {
     instagram: normalizeInstagram(mine?.instagram) || "",
     strava: normalizeStrava(mine?.strava) || "",
     image: safeImage(mine?.avatar || payload.image),
+    perks: sessionPerks(payload),
   };
 }
 
@@ -612,6 +625,7 @@ function publicCalendar(data, payload) {
       instagram: normalizeInstagram(mine?.instagram) || "",
       strava: normalizeStrava(mine?.strava) || "",
     },
+    perks: sessionPerks(payload),
     unclaimed: (data.members || []).filter((m) => !m.patreon_id).map((m) => m.name),
     suggested: suggested ? suggested.name : "",
   };

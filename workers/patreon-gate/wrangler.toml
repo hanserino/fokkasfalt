@@ -6,8 +6,10 @@ compatibility_date = "2026-11-13"
 # PATREON_ALLOW_USER_IDS / SESSION_SECRET / CALENDAR_JSON
 [vars]
 ALLOWED_ORIGINS = "https://fokkasfalt.no,https://www.fokkasfalt.no,http://127.0.0.1:4000,http://localhost:4000"
-# Paid tiers: Føkk Asfalt, Mest bang for the buck, Road to States.
-# Paying members (amount_cents > 0) are also let in, including future paid tiers.
+# Campaign: Nå Er Det Alvor / Føkk Asfalt. Any active patron (free or paid) can log in.
+PATREON_CAMPAIGN_ID = "1555279"
+# Slack is only for the Føkk Asfalt tier.
+SLACK_TIER_IDS = "7252533"
 PATREON_TIER_IDS = "7252533,2543654,27436916"
 
 [[kv_namespaces]]
