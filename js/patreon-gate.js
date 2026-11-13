@@ -105,11 +105,13 @@
     }
     document.addEventListener("click", function () {
       closeAccountMenu();
+      closeRaceMenus();
     });
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape") {
         closeSettings();
         closeAccountMenu();
+        closeRaceMenus();
         const list = root.querySelector("[data-race-list]");
         if (list && !list.hidden) {
           closeRaceCombo();
@@ -313,6 +315,7 @@
     const els = accountEls();
     if (!els.wrap || !els.drop || !els.toggle || els.wrap.hidden) return;
     const open = els.drop.hidden;
+    closeRaceMenus();
     els.drop.hidden = !open;
     els.toggle.setAttribute("aria-expanded", open ? "true" : "false");
   }
@@ -579,7 +582,6 @@
       return raceInYear(race, y);
     });
     if (races.length) return Object.assign({}, member, { races: races });
-    if (!all.length && y === DEFAULT_YEAR) return Object.assign({}, member, { races: [] });
     return null;
   }
 
@@ -713,7 +715,7 @@
     const heading = document.createElement("div");
     heading.className = "race-cal__heading";
     heading.appendChild(title);
-    if (isOwnRace(ownerName)) heading.appendChild(editButton(race));
+    if (isOwnRace(ownerName)) heading.appendChild(raceMenu(race));
     else if (canJoinRace(race, ownerName)) heading.appendChild(joinButton(race));
     body.appendChild(heading);
     if (showOwner && ownerName) {
@@ -838,15 +840,86 @@
     return Boolean(calendar.self && ownerName && ownerName === calendar.self.name);
   }
 
-  function editButton(race) {
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "race-cal__edit";
-    btn.textContent = "Rediger";
-    btn.addEventListener("click", function () {
+  function raceMenu(race) {
+    const wrap = document.createElement("div");
+    wrap.className = "race-cal__menu";
+    const toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "race-cal__menu-btn";
+    toggle.setAttribute("aria-label", "Handlinger for " + (race.name || "løp"));
+    toggle.setAttribute("aria-haspopup", "true");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.innerHTML =
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg>';
+    const drop = document.createElement("div");
+    drop.className = "race-cal__menu-drop";
+    drop.hidden = true;
+    const edit = document.createElement("button");
+    edit.type = "button";
+    edit.className = "race-cal__menu-item";
+    edit.textContent = "Rediger";
+    edit.addEventListener("click", function (event) {
+      event.stopPropagation();
+      closeRaceMenus();
       openEditRace(race);
     });
-    return btn;
+    const remove = document.createElement("button");
+    remove.type = "button";
+    remove.className = "race-cal__menu-item";
+    remove.textContent = "Fjern";
+    remove.addEventListener("click", function (event) {
+      event.stopPropagation();
+      closeRaceMenus();
+      removeOwnRace(race);
+    });
+    drop.appendChild(edit);
+    drop.appendChild(remove);
+    wrap.appendChild(toggle);
+    wrap.appendChild(drop);
+    toggle.addEventListener("click", function (event) {
+      event.stopPropagation();
+      const open = drop.hidden;
+      closeAccountMenu();
+      closeRaceMenus();
+      if (open) {
+        drop.hidden = false;
+        toggle.setAttribute("aria-expanded", "true");
+      }
+    });
+    drop.addEventListener("click", function (event) {
+      event.stopPropagation();
+    });
+    return wrap;
+  }
+
+  function closeRaceMenus() {
+    root.querySelectorAll(".race-cal__menu-drop").forEach(function (el) {
+      el.hidden = true;
+    });
+    root.querySelectorAll(".race-cal__menu-btn").forEach(function (el) {
+      el.setAttribute("aria-expanded", "false");
+    });
+  }
+
+  async function removeOwnRace(race) {
+    const label = race && race.name ? race.name : "løpet";
+    if (!window.confirm("Fjerne «" + label + "» fra listen din?")) return;
+    const session = readSession();
+    if (!session) {
+      show("locked");
+      return;
+    }
+    if (editingRace && raceKey(editingRace) === raceKey(race)) hideRaceForm();
+    try {
+      const data = await apiPost(
+        "/races/delete",
+        { name: race.name, date: race.date_iso, date_iso: race.date_iso },
+        session.token
+      );
+      applyProfileData(session, data);
+    } catch (e) {
+      window.alert(MESSAGES[e.message] || MESSAGES.server_error);
+    }
   }
 
   function joinButton(race) {

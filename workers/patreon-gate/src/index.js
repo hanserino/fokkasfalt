@@ -31,6 +31,9 @@ export default {
       if (request.method === "POST" && url.pathname === "/races/update") {
         return json(await updateRace(request, env), 200, cors);
       }
+      if (request.method === "POST" && url.pathname === "/races/delete") {
+        return json(await deleteRace(request, env), 200, cors);
+      }
       if (request.method === "POST" && url.pathname === "/profile") {
         return json(await updateProfile(request, env), 200, cors);
       }
@@ -336,6 +339,41 @@ async function updateRace(request, env) {
   return publicCalendar(next, payload);
 }
 
+async function deleteRace(request, env) {
+  const payload = await sessionPayload(request, env);
+  if (!env.CALENDAR) fail(500, "missing_config");
+
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    fail(400, "invalid_json");
+  }
+
+  const name = String(body.name || "").trim();
+  const dateIso = String(body.date_iso || body.date || "").trim();
+  if (!name || !/^\d{4}-\d{2}-\d{2}$/.test(dateIso)) fail(400, "race_not_found");
+
+  const data = await loadCalendar(env);
+  const members = cloneMembers(data.members);
+  const sub = String(payload.sub || "");
+  const member = members.find((m) => m.patreon_id && m.patreon_id === sub);
+  if (!member || !member.races) fail(404, "race_not_found");
+
+  const fromKey = raceKey({ name, date_iso: dateIso });
+  const nextRaces = member.races.filter((row) => raceKey(row) !== fromKey);
+  if (nextRaces.length === member.races.length) fail(404, "race_not_found");
+  member.races = nextRaces;
+
+  const next = {
+    members,
+    imported_at: data.imported_at || "",
+    updated_at: new Date().toISOString(),
+  };
+  await env.CALENDAR.put("data", JSON.stringify(next));
+  return publicCalendar(next, payload);
+}
+
 async function saveMemberRace(env, payload, body, race) {
   const data = await loadCalendar(env);
   const members = cloneMembers(data.members);
@@ -591,7 +629,9 @@ function compareRaces(a, b) {
 }
 
 function publicCalendar(data, payload) {
-  const members = (data.members || []).map((m) => {
+  const members = (data.members || [])
+    .filter((m) => Array.isArray(m.races) && m.races.length)
+    .map((m) => {
     const copy = { ...m };
     copy.name = displayName(m) || copy.name;
     delete copy.patreon_id;
