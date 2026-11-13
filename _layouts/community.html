@@ -110,21 +110,23 @@ layout: default
   </div>
   <div class="race-share__poster" data-race-share-poster>
     <p class="race-share__year-bg" data-race-share-year aria-hidden="true"></p>
-    <header class="race-share__head">
-      <h1 class="race-share__title" id="race-share-title" data-race-share-title></h1>
-    </header>
-    <ol class="race-share__races" data-race-share-list></ol>
-    <footer class="race-share__foot">
-      <img
-        class="race-share__logo"
-        src="{{ '/assets/fokkasfalt.png' | relative_url }}"
-        alt="Føkk Asfalt"
-        width="400"
-        height="246"
-        decoding="async"
-      />
-      <p class="race-share__site">fokkasfalt.no</p>
-    </footer>
+    <div class="race-share__fit" data-race-share-fit>
+      <header class="race-share__head">
+        <h1 class="race-share__title" id="race-share-title" data-race-share-title></h1>
+      </header>
+      <ol class="race-share__races" data-race-share-list></ol>
+      <footer class="race-share__foot">
+        <img
+          class="race-share__logo"
+          src="{{ '/assets/fokkasfalt.png' | relative_url }}"
+          alt="Føkk Asfalt"
+          width="400"
+          height="246"
+          decoding="async"
+        />
+        <p class="race-share__site">fokkasfalt.no</p>
+      </footer>
+    </div>
   </div>
 </div>
 

@@ -197,6 +197,9 @@
     const shareClose = document.querySelector("[data-race-share-close]");
     if (shareBtn) shareBtn.addEventListener("click", openSharePoster);
     if (shareClose) shareClose.addEventListener("click", closeSharePoster);
+    window.addEventListener("resize", function () {
+      if (shareOpen) fitSharePoster();
+    });
     window.addEventListener("popstate", syncMemberModalFromUrl);
     bindRaceCombo();
     document.addEventListener("click", function (event) {
@@ -741,6 +744,48 @@
       li.appendChild(main);
       list.appendChild(li);
     });
+    scheduleFitSharePoster();
+  }
+
+  function scheduleFitSharePoster() {
+    const poster = document.querySelector("[data-race-share-poster]");
+    const logo = poster && poster.querySelector(".race-share__logo");
+    requestAnimationFrame(function () {
+      requestAnimationFrame(fitSharePoster);
+    });
+    if (logo && !logo.complete) {
+      logo.addEventListener("load", fitSharePoster, { once: true });
+      logo.addEventListener("error", fitSharePoster, { once: true });
+    }
+  }
+
+  function fitSharePoster() {
+    const poster = document.querySelector("[data-race-share-poster]");
+    const fit = document.querySelector("[data-race-share-fit]");
+    const panel = document.querySelector("[data-race-share]");
+    if (!poster || !fit || (panel && panel.hidden)) return;
+    const availW = poster.clientWidth;
+    const availH = poster.clientHeight;
+    if (!availW || !availH) return;
+
+    function apply(value) {
+      fit.style.setProperty("--fit", String(value));
+    }
+
+    function overflows(value) {
+      apply(value);
+      return fit.scrollHeight > availH + 1 || fit.scrollWidth > availW + 1;
+    }
+
+    let lo = 0.22;
+    let hi = 2.2;
+    let i;
+    for (i = 0; i < 14; i++) {
+      const mid = (lo + hi) / 2;
+      if (overflows(mid)) hi = mid;
+      else lo = mid;
+    }
+    apply(Math.max(0.22, lo * 0.97));
   }
 
   function openSharePoster() {
@@ -754,6 +799,7 @@
     document.body.classList.add("race-share-open");
     shareOpen = true;
     writeMemberUrl(member);
+    scheduleFitSharePoster();
     const closeBtn = document.querySelector("[data-race-share-close]");
     if (closeBtn) closeBtn.focus();
   }
