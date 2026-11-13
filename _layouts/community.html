@@ -62,7 +62,10 @@ layout: default
         <p class="race-cal__year-label" data-year-label></p>
         <button type="button" class="race-cal__year-btn" data-year-delta="1" aria-label="Neste år">→</button>
       </div>
-      <form class="race-form" data-race-form>
+      <div class="race-cal__add-row">
+        <button type="button" class="btn btn--secondary" data-open-form>Legg til løp</button>
+      </div>
+      <form class="race-form" data-race-form hidden>
         <h2 class="race-form__title">Legg inn løp</h2>
         <p class="race-form__claim" data-claim-wrap hidden>
           <label>
@@ -97,7 +100,10 @@ layout: default
           </label>
         </div>
         <p class="race-form__status" data-form-status></p>
-        <button type="submit" class="btn btn--primary">Lagre løp</button>
+        <div class="cta-row cta-row--start">
+          <button type="submit" class="btn btn--primary">Lagre løp</button>
+          <button type="button" class="btn btn--ghost" data-close-form>Avbryt</button>
+        </div>
       </form>
       <p class="race-cal__stats" data-stats></p>
       <div class="race-cal__controls">

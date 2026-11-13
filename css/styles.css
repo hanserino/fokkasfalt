@@ -1279,6 +1279,12 @@ a:focus-visible {
   border-color: var(--text);
 }
 
+.race-cal__add-row {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 0 1.25rem;
+}
+
 .race-form {
   margin: 0 0 1.5rem;
   padding: 1rem 1.1rem 1.15rem;
@@ -1336,6 +1342,10 @@ a:focus-visible {
 
 .race-form__status:empty {
   display: none;
+}
+
+.race-form .cta-row {
+  margin-bottom: 0;
 }
 
 @media (max-width: 40rem) {

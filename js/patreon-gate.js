@@ -70,7 +70,11 @@
       });
     });
     const form = root.querySelector("[data-race-form]");
+    const openForm = root.querySelector("[data-open-form]");
+    const closeForm = root.querySelector("[data-close-form]");
     if (form) form.addEventListener("submit", submitRace);
+    if (openForm) openForm.addEventListener("click", showRaceForm);
+    if (closeForm) closeForm.addEventListener("click", hideRaceForm);
   }
 
   function startLogin(event) {
@@ -419,6 +423,32 @@
     });
   }
 
+  function showRaceForm() {
+    const form = root.querySelector("[data-race-form]");
+    const addRow = root.querySelector(".race-cal__add-row");
+    if (!form) return;
+    form.hidden = false;
+    if (addRow) addRow.hidden = true;
+    form.reset();
+    const status = root.querySelector("[data-form-status]");
+    if (status) status.textContent = "";
+    setDefaultFormDate();
+    const name = form.querySelector('input[name="name"]');
+    if (name) name.focus();
+  }
+
+  function hideRaceForm() {
+    const form = root.querySelector("[data-race-form]");
+    const addRow = root.querySelector(".race-cal__add-row");
+    if (form) {
+      form.hidden = true;
+      form.reset();
+    }
+    if (addRow) addRow.hidden = false;
+    const status = root.querySelector("[data-form-status]");
+    if (status) status.textContent = "";
+  }
+
   function setDefaultFormDate() {
     const input = root.querySelector('[data-race-form] input[name="date"]');
     if (!input || input.value) return;
@@ -462,8 +492,7 @@
       if (raceYear >= 2000 && raceYear <= 2100 && raceYear !== year) setYear(raceYear);
       else renderCalendar();
       form.reset();
-      setDefaultFormDate();
-      if (status) status.textContent = "Løpet er lagret.";
+      hideRaceForm();
     } catch (e) {
       if (status) status.textContent = MESSAGES[e.message] || MESSAGES.server_error;
     } finally {
