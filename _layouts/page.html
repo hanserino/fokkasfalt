@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<header class="ep-nav wrap">
+  <div class="ep-nav__start">
+    <a href="{{ '/' | relative_url }}" class="ep-nav__link">← forsiden</a>
+  </div>
+  <a href="{{ '/' | relative_url }}" class="ep-nav__brand" aria-label="Til forsiden, Føkk Asfalt">
+    <img
+      class="ep-nav__logo"
+      src="{{ '/assets/fokkasfalt.png' | relative_url }}"
+      alt=""
+      width="400"
+      height="246"
+      decoding="async"
+    />
+  </a>
+  <div class="ep-nav__end" aria-hidden="true"></div>
+</header>
+
+<main id="main" class="ep-main wrap">
+  <h1 class="ep-page-title">{{ page.title }}</h1>
+  <div class="page-prose">
+    {{ content }}
+  </div>
+</main>
+
+<footer class="site-footer wrap">
+  {% include footer-contact.html %}
+  <p class="copyright">&copy; Føkk Asfalt.</p>
+</footer>

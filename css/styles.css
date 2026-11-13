@@ -1090,6 +1090,39 @@ a:focus-visible {
   margin: 0 0 0.5rem;
 }
 
+.page-prose {
+  color: var(--text-muted);
+}
+
+.page-prose > *:first-child {
+  margin-top: 0;
+}
+
+.page-prose h2 {
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  margin: 1.75rem 0 0.5rem;
+}
+
+.page-prose p,
+.page-prose ul {
+  margin: 0 0 0.9rem;
+}
+
+.page-prose ul {
+  padding-left: 1.2rem;
+}
+
+.page-prose li {
+  margin: 0 0 0.35rem;
+}
+
+.page-prose a {
+  color: var(--text);
+}
+
 .ep-list {
   list-style: none;
   margin: 0;
