@@ -25,11 +25,13 @@
     invalid_strava: "Strava-lenken er ugyldig. Bruk en strava.com/athletes-lenke.",
     server_error: "Noe gikk galt. Prøv igjen om litt.",
   };
+  const IN_APP_HINT =
+    "Åpne community i Safari eller Chrome (ikke Slack, Instagram eller Messenger) og logg inn der.";
 
   const clientId = (root.dataset.clientId || "").trim();
   const api = (root.dataset.api || "").replace(/\/$/, "");
   const page = root.dataset.page || "hub";
-  const redirectUri = window.location.origin + "/auth/patreon/callback";
+  const redirectUri = oauthRedirectUri();
   const currentYear = new Date().getFullYear();
   const DEFAULT_YEAR = Math.max(2027, currentYear);
   const RACE_CATALOG = readRaceCatalog();
@@ -161,8 +163,8 @@
       return;
     }
     const state = randomState();
-    sessionStorage.setItem(STATE, state);
-    sessionStorage.setItem(RETURN, location.pathname + location.search);
+    writeOauthState(state);
+    writeOauthReturn(location.pathname + location.search);
     const url = new URL("https://www.patreon.com/oauth2/authorize");
     url.searchParams.set("response_type", "code");
     url.searchParams.set("client_id", clientId);
@@ -177,10 +179,9 @@
     const err = params.get("error");
     const code = params.get("code");
     const state = params.get("state");
-    const expected = sessionStorage.getItem(STATE) || "";
-    const next = safeReturn(sessionStorage.getItem(RETURN));
-    sessionStorage.removeItem(STATE);
-    sessionStorage.removeItem(RETURN);
+    const expected = readOauthState();
+    const next = safeReturn(readOauthReturn());
+    clearOauthState();
 
     const statusEl = root.querySelector("[data-callback-status]");
     if (err) {
@@ -188,7 +189,11 @@
       return;
     }
     if (!code || !state || state !== expected) {
-      if (statusEl) statusEl.textContent = "Ugyldig innloggingssvar. Gå tilbake og prøv igjen.";
+      if (statusEl) {
+        statusEl.textContent = inAppBrowser()
+          ? IN_APP_HINT
+          : "Innlogginga gikk ut. Gå tilbake til community og prøv igjen i Safari eller Chrome.";
+      }
       return;
     }
     if (!api) {
@@ -214,6 +219,7 @@
       show("locked");
       renderAccount(null);
       if (!clientId || !api) setStatus("locked", MESSAGES.missing_config);
+      else if (inAppBrowser()) setStatus("locked", IN_APP_HINT);
       return;
     }
     renderAccount(session);
@@ -1266,6 +1272,104 @@
     } catch {
       return null;
     }
+  }
+
+  function oauthRedirectUri() {
+    const host = window.location.hostname;
+    if (host === "localhost" || host === "127.0.0.1") {
+      return window.location.origin + "/auth/patreon/callback";
+    }
+    return "https://fokkasfalt.no/auth/patreon/callback";
+  }
+
+  function inAppBrowser() {
+    const ua = navigator.userAgent || "";
+    return /FBAN|FBAV|Instagram|Line\/|Twitter|Slack|LinkedInApp|MicroMessenger|TikTok|Bytedance|Snapchat|WhatsApp/i.test(
+      ua
+    );
+  }
+
+  function writeOauthState(state) {
+    writeOauthValue(STATE, state);
+  }
+
+  function readOauthState() {
+    return readOauthValue(STATE);
+  }
+
+  function writeOauthReturn(path) {
+    writeOauthValue(RETURN, path);
+  }
+
+  function readOauthReturn() {
+    return readOauthValue(RETURN);
+  }
+
+  function clearOauthState() {
+    clearOauthValue(STATE);
+    clearOauthValue(RETURN);
+  }
+
+  function writeOauthValue(key, value) {
+    try {
+      sessionStorage.setItem(key, value);
+      localStorage.setItem(key, value);
+    } catch {
+      /* ignore */
+    }
+    writeCookie(key, value, 600);
+  }
+
+  function readOauthValue(key) {
+    try {
+      const session = sessionStorage.getItem(key);
+      if (session) return session;
+      const local = localStorage.getItem(key);
+      if (local) return local;
+    } catch {
+      /* ignore */
+    }
+    return readCookie(key);
+  }
+
+  function clearOauthValue(key) {
+    try {
+      sessionStorage.removeItem(key);
+      localStorage.removeItem(key);
+    } catch {
+      /* ignore */
+    }
+    writeCookie(key, "", 0);
+  }
+
+  function cookieDomain() {
+    const host = window.location.hostname;
+    if (host === "fokkasfalt.no" || host === "www.fokkasfalt.no") return ".fokkasfalt.no";
+    return "";
+  }
+
+  function writeCookie(key, value, maxAge) {
+    const parts = [key + "=" + encodeURIComponent(value || ""), "Max-Age=" + maxAge, "Path=/", "SameSite=Lax"];
+    if (window.location.protocol === "https:") parts.push("Secure");
+    const domain = cookieDomain();
+    if (domain) parts.push("Domain=" + domain);
+    document.cookie = parts.join("; ");
+  }
+
+  function readCookie(key) {
+    const prefix = key + "=";
+    const parts = String(document.cookie || "").split(";");
+    for (let i = 0; i < parts.length; i++) {
+      const row = parts[i].trim();
+      if (row.indexOf(prefix) === 0) {
+        try {
+          return decodeURIComponent(row.slice(prefix.length));
+        } catch {
+          return row.slice(prefix.length);
+        }
+      }
+    }
+    return "";
   }
 
   function randomState() {
