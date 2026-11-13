@@ -19,6 +19,10 @@
     invalid_url: "Lenken må starte med http:// eller https://",
     already_added: "Du er allerede på dette løpet.",
     race_not_found: "Fant ikke løpet.",
+    invalid_alias: "Velg et visningsnavn på minst to tegn.",
+    alias_taken: "Det visningsnavnet er allerede i bruk.",
+    invalid_instagram: "Instagram-lenken er ugyldig. Bruk @brukernavn eller en instagram.com-lenke.",
+    invalid_strava: "Strava-lenken er ugyldig. Bruk en strava.com/athletes-lenke.",
     server_error: "Noe gikk galt. Prøv igjen om litt.",
   };
 
@@ -50,6 +54,39 @@
     document.querySelectorAll("[data-logout]").forEach(function (logout) {
       logout.addEventListener("click", logoutAccount);
     });
+    const settingsBtn = document.querySelector("[data-settings]");
+    const settingsClose = document.querySelector("[data-settings-close]");
+    const settingsForm = document.querySelector("[data-settings-form]");
+    const settingsPanel = document.querySelector("[data-settings-panel]");
+    if (settingsBtn) {
+      settingsBtn.addEventListener("click", function (event) {
+        event.stopPropagation();
+        closeAccountMenu();
+        openSettings();
+      });
+    }
+    if (settingsClose) settingsClose.addEventListener("click", closeSettings);
+    if (settingsForm) settingsForm.addEventListener("submit", submitSettings);
+    if (settingsPanel) {
+      settingsPanel.addEventListener("click", function (event) {
+        if (event.target === settingsPanel) closeSettings();
+      });
+    }
+    const settingsAlias = document.querySelector("[data-settings-form] input[name='alias']");
+    const claimAlias = root.querySelector("[data-claim-name]");
+    if (settingsAlias) {
+      settingsAlias.addEventListener("input", function () {
+        syncAliasInputs(settingsAlias);
+      });
+    }
+    if (claimAlias) {
+      claimAlias.addEventListener("input", function () {
+        syncAliasInputs(claimAlias);
+      });
+      claimAlias.addEventListener("change", function () {
+        saveAliasFromClaim();
+      });
+    }
     const accountToggle = document.querySelector("[data-account-toggle]");
     const accountDrop = document.querySelector("[data-account-drop]");
     if (accountToggle) {
@@ -67,7 +104,10 @@
       closeAccountMenu();
     });
     document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") closeAccountMenu();
+      if (event.key === "Escape") {
+        closeSettings();
+        closeAccountMenu();
+      }
     });
     if (search) {
       search.addEventListener("input", function () {
@@ -96,6 +136,9 @@
     if (form) form.addEventListener("submit", submitRace);
     if (openForm) openForm.addEventListener("click", showRaceForm);
     if (closeForm) closeForm.addEventListener("click", hideRaceForm);
+    const dateInput = root.querySelector('[data-race-form] input[name="date"]');
+    if (dateInput) dateInput.addEventListener("input", syncResultFields);
+    if (dateInput) dateInput.addEventListener("change", syncResultFields);
     bindRaceCombo();
     document.addEventListener("click", function (event) {
       const combo = root.querySelector(".race-combo");
@@ -178,7 +221,7 @@
         calendar = data;
         rememberProfile(session, data);
         greet(data.name || session.name);
-        fillClaimSelect();
+        fillAliasFields();
         setDefaultFormDate();
         renderCalendar();
       } else {
@@ -190,7 +233,9 @@
           data = await apiGet("/calendar", session.token);
         }
         rememberProfile(session, data);
-        greet(data.name || session.name);
+        applyMeToCalendar(data);
+        greet(data.display_name || data.name || session.name);
+        fillAliasFields();
       }
       show("open");
       renderAccount(readSession() || session);
@@ -223,6 +268,7 @@
 
   function logoutAccount() {
     localStorage.removeItem(STORAGE);
+    closeSettings();
     closeAccountMenu();
     renderAccount(null);
     window.location.replace(HOME);
@@ -251,6 +297,150 @@
     if (!els.drop || !els.toggle) return;
     els.drop.hidden = true;
     els.toggle.setAttribute("aria-expanded", "false");
+  }
+
+  function applyMeToCalendar(data) {
+    if (!data) return;
+    calendar.self = calendar.self || {};
+    calendar.self.name = data.display_name || data.name || calendar.self.name || "";
+    calendar.self.alias = data.alias || "";
+    calendar.self.patreon_name = data.name || "";
+    calendar.self.avatar = data.image || calendar.self.avatar || "";
+    calendar.self.instagram = data.instagram || "";
+    calendar.self.strava = data.strava || "";
+  }
+
+  function currentAlias() {
+    return (calendar.self && calendar.self.alias) || "";
+  }
+
+  function currentDisplayName() {
+    return (calendar.self && calendar.self.name) || "";
+  }
+
+  function fillAliasFields() {
+    fillSettings();
+    fillClaimSelect();
+  }
+
+  function fillSettings() {
+    const form = document.querySelector("[data-settings-form]");
+    if (!form) return;
+    const self = calendar.self || {};
+    fillInputIfIdle(form.elements.alias, currentAlias());
+    fillInputIfIdle(form.elements.instagram, self.instagram || "");
+    fillInputIfIdle(form.elements.strava, self.strava || "");
+    const status = document.querySelector("[data-settings-status]");
+    if (status) status.textContent = "";
+  }
+
+  function fillInputIfIdle(input, value) {
+    if (!input || document.activeElement === input) return;
+    input.value = value || "";
+  }
+
+  function syncAliasInputs(source) {
+    const value = source ? String(source.value || "") : "";
+    const settingsInput = document.querySelector("[data-settings-form] input[name='alias']");
+    const claimInput = root.querySelector("[data-claim-name]");
+    if (settingsInput && source !== settingsInput) settingsInput.value = value;
+    if (claimInput && source !== claimInput) claimInput.value = value;
+  }
+
+  function identityPayload(preferred) {
+    const claim = root.querySelector("[data-claim-name]");
+    const settings = document.querySelector("[data-settings-form] input[name='alias']");
+    const typed = String(
+      preferred != null
+        ? preferred
+        : (claim && claim.value) || (settings && settings.value) || currentAlias()
+    ).trim();
+    const patreon = (calendar.self && calendar.self.patreon_name) || "";
+    const body = {
+      alias: typed && normClient(typed) !== normClient(patreon) ? typed : "",
+    };
+    if (calendar.self && calendar.self.claimed) return body;
+    const names = Array.isArray(calendar.unclaimed) ? calendar.unclaimed : [];
+    const match = names.find(function (name) {
+      return normClient(name) === normClient(typed);
+    });
+    if (match) body.claim_name = match;
+    else if (calendar.suggested) body.claim_name = calendar.suggested;
+    return body;
+  }
+
+  function identityUnchanged(value) {
+    const typed = String(value || "").trim();
+    const alias = currentAlias();
+    const shown = alias || currentDisplayName();
+    const patreon = (calendar.self && calendar.self.patreon_name) || "";
+    if (normClient(typed) === normClient(shown)) return true;
+    if (!typed && !alias) return true;
+    if (!alias && normClient(typed) === normClient(patreon)) return true;
+    return false;
+  }
+
+  function applyProfileData(session, data) {
+    calendar = data;
+    rememberProfile(session, data);
+    greet(data.name || (session && session.name) || "");
+    fillAliasFields();
+    renderAccount(readSession() || session);
+    if (page === "calendar") renderCalendar();
+  }
+
+  async function saveAliasFromClaim() {
+    const input = root.querySelector("[data-claim-name]");
+    if (!input || identityUnchanged(input.value)) return;
+    const session = readSession();
+    if (!session) return;
+    const status = root.querySelector("[data-form-status]");
+    try {
+      const data = await apiPost("/profile", identityPayload(input.value), session.token);
+      applyProfileData(session, data);
+    } catch (e) {
+      if (status) status.textContent = MESSAGES[e.message] || MESSAGES.server_error;
+    }
+  }
+
+  function openSettings() {
+    const panel = document.querySelector("[data-settings-panel]");
+    if (!panel) return;
+    fillSettings();
+    panel.hidden = false;
+    const input = panel.querySelector('input[name="alias"]');
+    if (input) input.focus();
+  }
+
+  function closeSettings() {
+    const panel = document.querySelector("[data-settings-panel]");
+    if (panel) panel.hidden = true;
+  }
+
+  async function submitSettings(event) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const status = document.querySelector("[data-settings-status]");
+    const session = readSession();
+    if (!session) {
+      show("locked");
+      return;
+    }
+    const body = identityPayload(valueOf(form, "alias"));
+    body.instagram = valueOf(form, "instagram");
+    body.strava = valueOf(form, "strava");
+    const submit = form.querySelector('button[type="submit"]');
+    if (submit) submit.disabled = true;
+    if (status) status.textContent = "";
+    try {
+      const data = await apiPost("/profile", body, session.token);
+      applyProfileData(session, data);
+      if (status) status.textContent = "Lagret.";
+    } catch (e) {
+      if (status) status.textContent = MESSAGES[e.message] || MESSAGES.server_error;
+    } finally {
+      if (submit) submit.disabled = false;
+    }
   }
 
   function renderAccount(session) {
@@ -356,7 +546,7 @@
   }
 
   function haystack(member) {
-    const bits = [member.name];
+    const bits = [member.name, member.instagram, member.strava];
     (member.races || []).forEach(function (race) {
       bits.push(race.name, race.distance, race.elevation, race.date, race.time, race.place, race.comment);
     });
@@ -501,7 +691,9 @@
       meta.textContent = metaBits.join(" · ");
       body.appendChild(meta);
     }
-    const resultBits = [placeLabel(race.place), race.time].filter(Boolean);
+    const resultBits = raceFinished(race.date_iso)
+      ? [placeLabel(race.place), race.time].filter(Boolean)
+      : [];
     if (resultBits.length) {
       const result = document.createElement("p");
       result.className = "race-cal__result";
@@ -544,6 +736,7 @@
     const a = document.createElement("a");
     a.href = href;
     a.rel = "noopener noreferrer";
+    a.target = "_blank";
     a.textContent = label;
     parent.appendChild(a);
   }
@@ -623,49 +816,25 @@
     return !alreadyHave(race);
   }
 
-  function isLeapYear(y) {
-    return (y % 4 === 0 && y % 100 !== 0) || y % 400 === 0;
-  }
-
-  function catalogRaces() {
-    return RACE_CATALOG.map(function (row) {
-      const y = String(year);
-      let date_iso = (row.dates && row.dates[y]) || year + "-" + (row.month_day || "06-01");
-      if (date_iso.slice(5) === "02-29" && !isLeapYear(year)) date_iso = year + "-02-28";
-      return {
-        name: row.name,
-        date_iso: date_iso,
-        url: row.url || "",
-        count: 0,
-      };
-    });
-  }
-
   function uniqueRaces() {
     const map = {};
-    catalogRaces().forEach(function (race) {
-      if (!race.name) return;
-      map[raceKey(race)] = race;
+    RACE_CATALOG.forEach(function (row) {
+      if (!row.name) return;
+      const key = normName(row.name);
+      if (!map[key]) {
+        map[key] = { name: row.name, url: row.url || "" };
+      } else if (!map[key].url && row.url) {
+        map[key].url = row.url;
+      }
     });
     members().forEach(function (member) {
       (member.races || []).forEach(function (race) {
         if (!race.name) return;
-        const key = raceKey(race);
+        const key = normName(race.name);
         if (!map[key]) {
-          map[key] = {
-            name: race.name,
-            date: race.date || "",
-            date_iso: race.date_iso || "",
-            distance: race.distance || "",
-            elevation: race.elevation || "",
-            url: race.url || "",
-            count: 1,
-          };
-        } else {
-          map[key].count += 1;
-          if (!map[key].distance && race.distance) map[key].distance = race.distance;
-          if (!map[key].elevation && race.elevation) map[key].elevation = race.elevation;
-          if (!map[key].url && race.url) map[key].url = race.url;
+          map[key] = { name: race.name, url: race.url || "" };
+        } else if (!map[key].url && race.url) {
+          map[key].url = race.url;
         }
       });
     });
@@ -674,10 +843,7 @@
         return map[k];
       })
       .sort(function (a, b) {
-        const ay = a.date_iso || "9999";
-        const by = b.date_iso || "9999";
-        if (ay === by) return a.name.localeCompare(b.name, "nb");
-        return ay < by ? -1 : 1;
+        return a.name.localeCompare(b.name, "nb");
       });
   }
 
@@ -738,20 +904,10 @@
     let races = uniqueRaces();
     if (qn) {
       races = races.filter(function (race) {
-        return (
-          normName(race.name).indexOf(qn) !== -1 ||
-          String(race.date || "").toLowerCase().indexOf(q.toLowerCase()) !== -1
-        );
+        return normName(race.name).indexOf(qn) !== -1;
       });
     }
-    const inYear = [];
-    const other = [];
-    races.forEach(function (race) {
-      const y = race.date_iso ? parseInt(race.date_iso.slice(0, 4), 10) : null;
-      if (y === year || (!y && year === DEFAULT_YEAR)) inYear.push(race);
-      else other.push(race);
-    });
-    const shown = (qn ? inYear.concat(other) : inYear).slice(0, 60);
+    const shown = races.slice(0, 60);
     list.innerHTML = "";
     shown.forEach(function (race, i) {
       const li = document.createElement("li");
@@ -761,8 +917,7 @@
       btn.setAttribute("data-combo-opt", "1");
       btn.setAttribute("role", "option");
       btn.setAttribute("aria-selected", i === 0 ? "true" : "false");
-      const label = race.date_iso || race.date ? race.name + " · " + (formatDate(race) || race.date) : race.name;
-      btn.textContent = race.count > 0 ? label + " (" + race.count + ")" : label;
+      btn.textContent = race.name;
       btn.addEventListener("click", function () {
         applyExistingRace(race);
         closeRaceCombo();
@@ -770,7 +925,10 @@
       li.appendChild(btn);
       list.appendChild(li);
     });
-    if (q.length >= 2) {
+    const exact = shown.some(function (race) {
+      return normName(race.name) === qn && qn;
+    });
+    if (q.length >= 2 && !exact) {
       const li = document.createElement("li");
       const btn = document.createElement("button");
       btn.type = "button";
@@ -797,17 +955,7 @@
     const form = root.querySelector("[data-race-form]");
     if (!form) return;
     form.elements.name.value = race.name || "";
-    if (race.date_iso) form.elements.date.value = race.date_iso;
-    else setDefaultFormDate();
-    form.elements.distance.value = race.distance || "";
-    form.elements.elevation.value = race.elevation || "";
-    form.elements.url.value = race.url || "";
-    const mine = myRaces().find(function (row) {
-      return raceKey(row) === raceKey(race);
-    });
-    form.elements.time.value = (mine && mine.time) || "";
-    form.elements.place.value = (mine && mine.place) || "";
-    form.elements.comment.value = (mine && mine.comment) || "";
+    if (race.url && !form.elements.url.value) form.elements.url.value = race.url;
   }
 
   function closeRaceCombo() {
@@ -824,21 +972,15 @@
       return;
     }
     if (button) button.disabled = true;
-    const body = { name: race.name, date: race.date_iso || "", date_iso: race.date_iso || "" };
-    const claimWrap = root.querySelector("[data-claim-wrap]");
-    const claim = root.querySelector("[data-claim-name]");
-    if (claimWrap && !claimWrap.hidden && claim && claim.value) body.claim_name = claim.value;
-    else if (calendar.suggested) body.claim_name = calendar.suggested;
+    const body = Object.assign(
+      { name: race.name, date: race.date_iso || "", date_iso: race.date_iso || "" },
+      identityPayload()
+    );
     try {
       const data = await apiPost("/races/join", body, session.token);
-      calendar = data;
-      rememberProfile(session, data);
-      renderAccount(readSession() || session);
-      greet(data.name || session.name);
-      fillClaimSelect();
+      applyProfileData(session, data);
       const raceYear = race.date_iso ? parseInt(race.date_iso.slice(0, 4), 10) : year;
       if (raceYear >= 2000 && raceYear <= 2100 && raceYear !== year) setYear(raceYear);
-      else renderCalendar();
     } catch (e) {
       if (button) {
         const msg = MESSAGES[e.message] || MESSAGES.server_error;
@@ -851,29 +993,33 @@
 
   function fillClaimSelect() {
     const wrap = root.querySelector("[data-claim-wrap]");
-    const select = root.querySelector("[data-claim-name]");
-    if (!wrap || !select) return;
-    const claimed = calendar.self && calendar.self.claimed;
-    if (claimed) {
-      wrap.hidden = true;
-      select.innerHTML = "";
-      return;
-    }
+    const input = root.querySelector("[data-claim-name]");
+    const list = root.querySelector("[data-claim-list]");
+    if (!wrap || !input) return;
     wrap.hidden = false;
-    const myName = (calendar.self && calendar.self.name) || "";
+    const claimed = calendar.self && calendar.self.claimed;
+    const alias = currentAlias();
+    const shown = alias || currentDisplayName();
+    if (document.activeElement !== input) input.value = shown;
+    if (!list) return;
+    list.innerHTML = "";
+    if (claimed) return;
+    const patreon = (calendar.self && calendar.self.patreon_name) || currentDisplayName();
+    if (patreon) {
+      const fresh = document.createElement("option");
+      fresh.value = patreon;
+      fresh.label = "Ny profil: " + patreon;
+      list.appendChild(fresh);
+    }
     const names = Array.isArray(calendar.unclaimed) ? calendar.unclaimed.slice() : [];
-    select.innerHTML = "";
-    const fresh = document.createElement("option");
-    fresh.value = "";
-    fresh.textContent = myName ? "Ny profil: " + myName : "Ny profil";
-    select.appendChild(fresh);
     names.forEach(function (name) {
       const opt = document.createElement("option");
       opt.value = name;
-      opt.textContent = name;
-      if (calendar.suggested && calendar.suggested === name) opt.selected = true;
-      select.appendChild(opt);
+      list.appendChild(opt);
     });
+    if (!alias && calendar.suggested && document.activeElement !== input) {
+      input.value = calendar.suggested;
+    }
   }
 
   function showRaceForm() {
@@ -885,7 +1031,9 @@
     form.reset();
     const status = root.querySelector("[data-form-status]");
     if (status) status.textContent = "";
+    fillClaimSelect();
     setDefaultFormDate();
+    syncResultFields();
     const name = form.querySelector("[data-race-combo]");
     if (name) name.focus();
     renderRaceCombo("");
@@ -899,6 +1047,7 @@
       form.reset();
     }
     closeRaceCombo();
+    fillClaimSelect();
     if (addRow) addRow.hidden = false;
     const status = root.querySelector("[data-form-status]");
     if (status) status.textContent = "";
@@ -908,10 +1057,34 @@
     const input = root.querySelector('[data-race-form] input[name="date"]');
     if (!input || input.value) return;
     if (year === currentYear) {
-      const now = new Date();
-      input.value = now.toISOString().slice(0, 10);
+      input.value = todayIso();
     } else {
       input.value = year + "-06-01";
+    }
+    syncResultFields();
+  }
+
+  function todayIso() {
+    const n = new Date();
+    const m = String(n.getMonth() + 1).padStart(2, "0");
+    const d = String(n.getDate()).padStart(2, "0");
+    return n.getFullYear() + "-" + m + "-" + d;
+  }
+
+  function raceFinished(dateIso) {
+    return Boolean(dateIso) && dateIso <= todayIso();
+  }
+
+  function syncResultFields() {
+    const wrap = root.querySelector("[data-result-fields]");
+    const date = root.querySelector('[data-race-form] input[name="date"]');
+    if (!wrap) return;
+    const done = raceFinished(date && date.value);
+    wrap.hidden = !done;
+    if (!done) {
+      const form = root.querySelector("[data-race-form]");
+      if (form && form.elements.time) form.elements.time.value = "";
+      if (form && form.elements.place) form.elements.place.value = "";
     }
   }
 
@@ -929,27 +1102,20 @@
       date: valueOf(form, "date"),
       distance: valueOf(form, "distance"),
       elevation: valueOf(form, "elevation"),
-      time: valueOf(form, "time"),
-      place: valueOf(form, "place"),
+      time: raceFinished(valueOf(form, "date")) ? valueOf(form, "time") : "",
+      place: raceFinished(valueOf(form, "date")) ? valueOf(form, "place") : "",
       comment: valueOf(form, "comment"),
       url: valueOf(form, "url"),
     };
-    const claimWrap = root.querySelector("[data-claim-wrap]");
-    const claim = root.querySelector("[data-claim-name]");
-    if (claimWrap && !claimWrap.hidden && claim && claim.value) body.claim_name = claim.value;
+    Object.assign(body, identityPayload());
     const submit = form.querySelector('button[type="submit"]');
     if (submit) submit.disabled = true;
     if (status) status.textContent = "";
     try {
       const data = await apiPost("/races", body, session.token);
-      calendar = data;
-      rememberProfile(session, data);
-      renderAccount(readSession() || session);
-      greet(data.name || session.name);
-      fillClaimSelect();
+      applyProfileData(session, data);
       const raceYear = parseInt((body.date || "").slice(0, 4), 10);
       if (raceYear >= 2000 && raceYear <= 2100 && raceYear !== year) setYear(raceYear);
-      else renderCalendar();
       form.reset();
       hideRaceForm();
     } catch (e) {
@@ -957,6 +1123,15 @@
     } finally {
       if (submit) submit.disabled = false;
     }
+  }
+
+  function normClient(s) {
+    return String(s || "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
   }
 
   function valueOf(form, name) {

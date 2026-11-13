@@ -522,6 +522,72 @@ a:focus-visible {
   background: rgba(255, 255, 255, 0.06);
 }
 
+.settings-panel {
+  position: fixed;
+  z-index: 20;
+  inset: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 5rem 1rem 2rem;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.settings-panel[hidden] {
+  display: none;
+}
+
+.settings-panel__card {
+  width: min(100%, 26rem);
+  padding: 1.15rem 1.2rem 1.25rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--bg);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.settings-panel__title {
+  margin: 0 0 0.85rem;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+}
+
+.settings-panel__field + .settings-panel__field {
+  margin-top: 0.85rem;
+}
+
+.settings-panel__card label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.settings-panel__card input {
+  font: inherit;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.55rem 0.7rem;
+}
+
+.settings-panel__hint,
+.settings-panel__status {
+  margin: 0.55rem 0 0;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.settings-panel__status:empty {
+  display: none;
+}
+
+.settings-panel .cta-row {
+  margin-top: 1rem;
+}
+
 .ep-nav__link {
   font-size: 0.9rem;
   font-weight: 500;
@@ -1275,6 +1341,8 @@ a:focus-visible {
 
 .community-cards {
   list-style: none;
+  display: grid;
+  gap: 0.85rem;
   margin: 1.25rem 0 0;
   padding: 0;
 }
@@ -1380,6 +1448,13 @@ a:focus-visible {
   margin: 0 0 0.85rem;
 }
 
+.race-form__claim-hint {
+  display: block;
+  margin: 0.4rem 0 0;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
 .race-form__claim label,
 .race-form label {
   display: flex;
@@ -1408,6 +1483,16 @@ a:focus-visible {
 
 .race-form__wide {
   grid-column: 1 / -1;
+}
+
+.race-form__results {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.race-form__results[hidden] {
+  display: none;
 }
 
 .race-form__status {
@@ -1524,7 +1609,8 @@ a:focus-visible {
 }
 
 @media (max-width: 40rem) {
-  .race-form__grid {
+  .race-form__grid,
+  .race-form__results {
     grid-template-columns: 1fr;
   }
 }

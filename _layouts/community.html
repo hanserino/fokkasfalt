@@ -35,11 +35,44 @@ layout: default
         <span class="visually-hidden">Konto</span>
       </button>
       <div id="account-menu" class="account-menu__drop" data-account-drop hidden>
+        <button type="button" class="account-menu__item" data-settings>Profil</button>
         <button type="button" class="account-menu__item" data-logout>Logg ut</button>
       </div>
     </div>
   </div>
 </header>
+
+<div class="settings-panel" data-settings-panel hidden>
+  <div class="settings-panel__card">
+    <h2 class="settings-panel__title">Profil</h2>
+    <form data-settings-form>
+      <div class="settings-panel__field">
+        <label>
+          Visningsnavn
+          <input type="text" name="alias" maxlength="40" placeholder="Kallenavn på kalenderen" autocomplete="nickname" />
+        </label>
+        <p class="settings-panel__hint">Slik vises du for andre i community. La feltet stå tomt for å bruke Patreon-navnet ditt.</p>
+      </div>
+      <div class="settings-panel__field">
+        <label>
+          Instagram
+          <input type="text" name="instagram" maxlength="200" placeholder="@brukernavn eller lenke" autocomplete="off" inputmode="url" />
+        </label>
+      </div>
+      <div class="settings-panel__field">
+        <label>
+          Strava
+          <input type="text" name="strava" maxlength="200" placeholder="https://www.strava.com/athletes/…" autocomplete="off" inputmode="url" />
+        </label>
+      </div>
+      <p class="settings-panel__status" data-settings-status></p>
+      <div class="cta-row cta-row--start">
+        <button type="submit" class="btn btn--primary">Lagre</button>
+        <button type="button" class="btn btn--ghost" data-settings-close>Lukk</button>
+      </div>
+    </form>
+  </div>
+</div>
 
 <main id="main" class="ep-main wrap">
   <h1 class="ep-page-title">{{ page.title }}</h1>
@@ -87,8 +120,17 @@ layout: default
         <p class="race-form__claim" data-claim-wrap hidden>
           <label>
             Dette er meg i listen
-            <select data-claim-name></select>
+            <input
+              type="text"
+              data-claim-name
+              list="claim-names"
+              maxlength="40"
+              placeholder="Kallenavn på kalenderen"
+              autocomplete="nickname"
+            />
           </label>
+          <datalist id="claim-names" data-claim-list></datalist>
+          <span class="race-form__claim-hint">Samme visningsnavn som i innstillinger. Velg et navn i listen for å knytte deg til det, eller skriv et kallenavn.</span>
         </p>
         <div class="race-form__grid">
           <div class="race-combo race-form__wide">
@@ -122,14 +164,16 @@ layout: default
             Høydemeter
             <input type="text" name="elevation" maxlength="40" placeholder="2500" />
           </label>
-          <label>
-            Tid
-            <input type="text" name="time" maxlength="40" placeholder="4:32:18" />
-          </label>
-          <label>
-            Plassering
-            <input type="text" name="place" maxlength="40" placeholder="12. plass" />
-          </label>
+          <div class="race-form__results race-form__wide" data-result-fields hidden>
+            <label>
+              Tid
+              <input type="text" name="time" maxlength="40" placeholder="4:32:18" />
+            </label>
+            <label>
+              Plassering
+              <input type="text" name="place" maxlength="40" placeholder="12. plass" />
+            </label>
+          </div>
           <label class="race-form__wide">
             Kommentar
             <input type="text" name="comment" maxlength="500" placeholder="Mål, status, merknad" />
@@ -165,7 +209,17 @@ layout: default
         <li>
           <a class="community-card" href="{{ '/community/race-kalender/' | relative_url }}">
             <h2 class="community-card__title">Race-kalender</h2>
-            <p class="community-card__text">Se hva medlemmene løp i fjor, hva de stiller til i år, og planene for neste år.</p>
+            <p class="community-card__text">Full oversikt over hva slags race og FKT'er de andre Føkk Asfalt'erne har gjort og skal gjøre.</p>
+          </a>
+        </li>
+        <li>
+          <a
+            class="community-card"
+            href="https://join.slack.com/t/naerdetalvor/shared_invite/zt-adiun4np-p9sX2hr2dATEZpHZNBqikg"
+            rel="noopener noreferrer"
+          >
+            <h2 class="community-card__title">Slack</h2>
+            <p class="community-card__text">Bli med i Slack-kanalen til Føkk Asfalt og prat med de andre medlemmene.</p>
           </a>
         </li>
       </ul>

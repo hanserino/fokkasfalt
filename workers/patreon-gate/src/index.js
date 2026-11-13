@@ -28,6 +28,9 @@ export default {
       if (request.method === "POST" && url.pathname === "/races/join") {
         return json(await joinRace(request, env), 200, cors);
       }
+      if (request.method === "POST" && url.pathname === "/profile") {
+        return json(await updateProfile(request, env), 200, cors);
+      }
       return json({ error: "not_found" }, 404, cors);
     } catch (err) {
       const status = err.status || 500;
@@ -185,7 +188,48 @@ async function sessionPayload(request, env) {
 
 async function me(request, env) {
   const payload = await sessionPayload(request, env);
-  return { name: payload.name || "", image: safeImage(payload.image) };
+  const data = await loadCalendar(env);
+  const mine = (data.members || []).find((m) => m.patreon_id && m.patreon_id === payload.sub);
+  return {
+    name: payload.name || "",
+    alias: mine?.alias || "",
+    display_name: displayName(mine) || payload.name || "",
+    instagram: normalizeInstagram(mine?.instagram) || "",
+    strava: normalizeStrava(mine?.strava) || "",
+    image: safeImage(mine?.avatar || payload.image),
+  };
+}
+
+function displayName(member) {
+  const alias = String(member?.alias || "").trim();
+  if (alias) return alias;
+  return String(member?.name || "").trim();
+}
+
+async function updateProfile(request, env) {
+  const payload = await sessionPayload(request, env);
+  if (!env.CALENDAR) fail(500, "missing_config");
+
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    fail(400, "invalid_json");
+  }
+
+  const data = await loadCalendar(env);
+  const members = cloneMembers(data.members);
+  const member = resolveMember(members, payload, body.claim_name);
+  applyAlias(members, member, body, payload);
+  applyLinks(member, body);
+
+  const next = {
+    members,
+    imported_at: data.imported_at || "",
+    updated_at: new Date().toISOString(),
+  };
+  await env.CALENDAR.put("data", JSON.stringify(next));
+  return publicCalendar(next, payload);
 }
 
 async function calendar(request, env) {
@@ -206,7 +250,7 @@ async function addRace(request, env) {
   }
 
   const race = normalizeRace(body);
-  return saveMemberRace(env, payload, body.claim_name, race);
+  return saveMemberRace(env, payload, body, race);
 }
 
 async function joinRace(request, env) {
@@ -231,13 +275,14 @@ async function joinRace(request, env) {
   if (source.distance) race.distance = source.distance;
   if (source.elevation) race.elevation = source.elevation;
   if (source.url) race.url = source.url;
-  return saveMemberRace(env, payload, body.claim_name, race);
+  return saveMemberRace(env, payload, body, race);
 }
 
-async function saveMemberRace(env, payload, claimName, race) {
+async function saveMemberRace(env, payload, body, race) {
   const data = await loadCalendar(env);
   const members = cloneMembers(data.members);
-  const member = resolveMember(members, payload, claimName);
+  const member = resolveMember(members, payload, body.claim_name);
+  applyAlias(members, member, body, payload);
   if (!member.races) member.races = [];
   const existing = member.races.find((row) => raceKey(row) === raceKey(race));
   if (!existing) {
@@ -292,6 +337,83 @@ function normName(s) {
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function applyLinks(member, body) {
+  if (!body) return;
+  if (Object.prototype.hasOwnProperty.call(body, "instagram")) {
+    const url = normalizeInstagram(body.instagram);
+    if (String(body.instagram || "").trim() && !url) fail(400, "invalid_instagram");
+    if (url) member.instagram = url;
+    else delete member.instagram;
+  }
+  if (Object.prototype.hasOwnProperty.call(body, "strava")) {
+    const url = normalizeStrava(body.strava);
+    if (String(body.strava || "").trim() && !url) fail(400, "invalid_strava");
+    if (url) member.strava = url;
+    else delete member.strava;
+  }
+}
+
+function normalizeInstagram(raw) {
+  const s = String(raw || "").trim();
+  if (!s) return "";
+  let handle = "";
+  if (/^https?:\/\//i.test(s) || /instagram\.com/i.test(s)) {
+    let url;
+    try {
+      url = new URL(/^https?:\/\//i.test(s) ? s : "https://" + s.replace(/^\/\//, ""));
+    } catch {
+      return "";
+    }
+    if (!/(^|\.)instagram\.com$/i.test(url.hostname)) return "";
+    handle = url.pathname.split("/").filter(Boolean)[0] || "";
+    if (["p", "reel", "reels", "stories", "explore", "accounts"].includes(handle.toLowerCase())) return "";
+  } else {
+    handle = s.replace(/^@/, "");
+  }
+  if (!/^[A-Za-z0-9._]{2,30}$/.test(handle)) return "";
+  return "https://www.instagram.com/" + handle + "/";
+}
+
+function normalizeStrava(raw) {
+  const s = String(raw || "").trim();
+  if (!s) return "";
+  if (/^\d{3,15}$/.test(s)) return "https://www.strava.com/athletes/" + s;
+  let url;
+  try {
+    url = new URL(/^https?:\/\//i.test(s) ? s : "https://" + s.replace(/^\/\//, ""));
+  } catch {
+    return "";
+  }
+  if (!/(^|\.)strava\.com$/i.test(url.hostname)) return "";
+  const parts = url.pathname.split("/").filter(Boolean);
+  if (parts[0] === "athletes" && parts[1] && /^[A-Za-z0-9._-]{2,40}$/.test(parts[1])) {
+    return "https://www.strava.com/athletes/" + parts[1];
+  }
+  return "";
+}
+
+function applyAlias(members, member, body, payload) {
+  if (!body || !Object.prototype.hasOwnProperty.call(body, "alias")) return;
+  let alias = clip(body.alias, 40);
+  if (alias && (alias.length < 2 || /^https?:\/\//i.test(alias))) fail(400, "invalid_alias");
+  const patreon = String(payload?.name || "").trim();
+  if (
+    alias &&
+    (normName(alias) === normName(member.name) || (patreon && normName(alias) === normName(patreon)))
+  ) {
+    alias = "";
+  }
+  if (alias) {
+    const taken = members.some(
+      (row) => row !== member && normName(displayName(row)) === normName(alias)
+    );
+    if (taken) fail(409, "alias_taken");
+    member.alias = alias;
+  } else {
+    delete member.alias;
+  }
 }
 
 function applyProfile(member, payload) {
@@ -378,8 +500,9 @@ function normalizeRace(body) {
 
   const distance = clip(body.distance, 80);
   const elevation = clip(body.elevation, 40);
-  const time = clip(body.time, 40);
-  const place = clip(body.place, 40);
+  const finished = dateIso <= new Date().toISOString().slice(0, 10);
+  const time = finished ? clip(body.time, 40) : "";
+  const place = finished ? clip(body.place, 40) : "";
   const comment = clip(body.comment, 500);
   const url = String(body.url || "").trim();
   if (distance) race.distance = distance;
@@ -412,7 +535,15 @@ function compareRaces(a, b) {
 function publicCalendar(data, payload) {
   const members = (data.members || []).map((m) => {
     const copy = { ...m };
+    copy.name = displayName(m) || copy.name;
     delete copy.patreon_id;
+    delete copy.alias;
+    const instagram = normalizeInstagram(copy.instagram);
+    const strava = normalizeStrava(copy.strava);
+    if (instagram) copy.instagram = instagram;
+    else delete copy.instagram;
+    if (strava) copy.strava = strava;
+    else delete copy.strava;
     if (copy.avatar) copy.avatar = safeImage(copy.avatar);
     else delete copy.avatar;
     return copy;
@@ -422,14 +553,19 @@ function publicCalendar(data, payload) {
     (m) => !m.patreon_id && normName(m.name) === normName(payload.name)
   );
   const image = safeImage(mine?.avatar || payload.image);
+  const shown = displayName(mine) || payload.name || "";
   return {
-    name: payload.name || "",
+    name: shown,
     image,
     members,
     self: {
-      name: mine?.name || payload.name || "",
+      name: shown,
+      alias: mine?.alias || "",
+      patreon_name: payload.name || mine?.name || "",
       claimed: Boolean(mine),
       avatar: image,
+      instagram: normalizeInstagram(mine?.instagram) || "",
+      strava: normalizeStrava(mine?.strava) || "",
     },
     unclaimed: (data.members || []).filter((m) => !m.patreon_id).map((m) => m.name),
     suggested: suggested ? suggested.name : "",
