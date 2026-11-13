@@ -78,13 +78,16 @@ npx wrangler secret put PATREON_ALLOW_USER_IDS    # din egen Patreon-bruker-id, 
 npx wrangler deploy
 ```
 
-Kalenderdata ligger i `workers/patreon-gate/calendar.json` (gitignored, Cloudflare secret er for liten). Importer og deploy:
+Kalenderdata ligger i Cloudflare KV (`CALENDAR` / nøkkel `data`). Første import fra Google-arket:
 
 ```bash
 ruby scripts/import_race_calendar.rb
 cd workers/patreon-gate
+npx wrangler kv key put data --remote --path calendar.json
 npx wrangler deploy
 ```
+
+Medlemmer legger inn egne løp via skjemaet på `/community/race-kalender/`.
 
 ### 3. Offentlig config i `_config.yml`
 

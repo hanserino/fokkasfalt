@@ -24,6 +24,9 @@ export default {
       if (request.method === "GET" && url.pathname === "/calendar") {
         return json(await calendar(request, env), 200, cors);
       }
+      if (request.method === "POST" && url.pathname === "/races") {
+        return json(await addRace(request, env), 200, cors);
+      }
       return json({ error: "not_found" }, 404, cors);
     } catch (err) {
       const status = err.status || 500;
@@ -185,7 +188,149 @@ async function me(request, env) {
 
 async function calendar(request, env) {
   const payload = await sessionPayload(request, env);
-  return { name: payload.name || "", ...loadCalendar(env) };
+  const data = await loadCalendar(env);
+  return publicCalendar(data, payload);
+}
+
+async function addRace(request, env) {
+  const payload = await sessionPayload(request, env);
+  if (!env.CALENDAR) fail(500, "missing_config");
+
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    fail(400, "invalid_json");
+  }
+
+  const race = normalizeRace(body);
+  const data = await loadCalendar(env);
+  const members = cloneMembers(data.members);
+  const member = resolveMember(members, payload, body.claim_name);
+  if (!member.races) member.races = [];
+  member.races.push(race);
+  member.races.sort(compareRaces);
+
+  const next = {
+    members,
+    imported_at: data.imported_at || "",
+    updated_at: new Date().toISOString(),
+  };
+  await env.CALENDAR.put("data", JSON.stringify(next));
+  return publicCalendar(next, payload);
+}
+
+function cloneMembers(members) {
+  return (members || []).map((m) => ({
+    ...m,
+    races: Array.isArray(m.races) ? m.races.map((r) => ({ ...r })) : [],
+  }));
+}
+
+function normName(s) {
+  return String(s || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function resolveMember(members, payload, claimName) {
+  const sub = String(payload.sub || "");
+  let member = members.find((m) => m.patreon_id && m.patreon_id === sub);
+  if (member) return member;
+
+  const claim = String(claimName || "").trim();
+  if (claim) {
+    member = members.find((m) => !m.patreon_id && normName(m.name) === normName(claim));
+    if (member) {
+      member.patreon_id = sub;
+      return member;
+    }
+  }
+
+  member = members.find((m) => !m.patreon_id && normName(m.name) === normName(payload.name));
+  if (member) {
+    member.patreon_id = sub;
+    return member;
+  }
+
+  member = {
+    name: String(payload.name || "").trim() || "Uten navn",
+    patreon_id: sub,
+    races: [],
+  };
+  members.unshift(member);
+  return member;
+}
+
+function normalizeRace(body) {
+  const name = String(body.name || "").trim();
+  if (name.length < 2 || name.length > 160) fail(400, "invalid_race");
+
+  const dateIso = String(body.date || "").trim();
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(dateIso)) fail(400, "invalid_date");
+  const dt = new Date(dateIso + "T12:00:00Z");
+  if (Number.isNaN(dt.getTime())) fail(400, "invalid_date");
+  const year = dt.getUTCFullYear();
+  if (year < 2000 || year > 2100) fail(400, "invalid_date");
+
+  const race = {
+    name,
+    date: formatDateNb(dateIso),
+    date_iso: dateIso,
+  };
+
+  const distance = clip(body.distance, 80);
+  const elevation = clip(body.elevation, 40);
+  const comment = clip(body.comment, 500);
+  const url = String(body.url || "").trim();
+  if (distance) race.distance = distance;
+  if (elevation) race.elevation = elevation;
+  if (comment) race.comment = comment;
+  if (url) {
+    if (!/^https?:\/\//i.test(url) || url.length > 500) fail(400, "invalid_url");
+    race.url = url;
+  }
+  return race;
+}
+
+function clip(value, max) {
+  const s = String(value || "").trim();
+  if (!s) return "";
+  return s.slice(0, max);
+}
+
+function formatDateNb(iso) {
+  const [y, m, d] = iso.split("-");
+  return `${d}.${m}.${y}`;
+}
+
+function compareRaces(a, b) {
+  return String(a.date_iso || "9999").localeCompare(String(b.date_iso || "9999"));
+}
+
+function publicCalendar(data, payload) {
+  const members = (data.members || []).map((m) => {
+    const copy = { ...m };
+    delete copy.patreon_id;
+    return copy;
+  });
+  const mine = (data.members || []).find((m) => m.patreon_id && m.patreon_id === payload.sub);
+  const suggested = (data.members || []).find(
+    (m) => !m.patreon_id && normName(m.name) === normName(payload.name)
+  );
+  return {
+    name: payload.name || "",
+    members,
+    self: {
+      name: mine?.name || payload.name || "",
+      claimed: Boolean(mine),
+    },
+    unclaimed: (data.members || []).filter((m) => !m.patreon_id).map((m) => m.name),
+    suggested: suggested ? suggested.name : "",
+  };
 }
 
 function fromObject(parsed) {
@@ -197,16 +342,17 @@ function fromObject(parsed) {
   return null;
 }
 
-function loadCalendar(env) {
-  if (env.CALENDAR_JSON) {
-    try {
-      const parsed = fromObject(JSON.parse(env.CALENDAR_JSON));
-      if (parsed) return parsed;
-    } catch {
-      /* fall through to bundled copy */
-    }
+async function loadCalendar(env) {
+  if (env.CALENDAR) {
+    const fromKv = await env.CALENDAR.get("data", "json");
+    const parsed = fromObject(fromKv);
+    if (parsed) return parsed;
   }
-  return fromObject(bundledCalendar) || { members: [] };
+  const seeded = fromObject(bundledCalendar) || { members: [] };
+  if (env.CALENDAR) {
+    await env.CALENDAR.put("data", JSON.stringify(seeded));
+  }
+  return seeded;
 }
 
 function bearer(request) {

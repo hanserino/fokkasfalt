@@ -40,7 +40,7 @@ layout: default
 
     <div class="patreon-gate__panel" data-panel="locked">
       <div class="page-prose">
-        <p>Community er for betalende Patreon-medlemmer (Føkk Asfalt, Mest bang for the buck og Road to States).</p>
+        <p>Community er for betalende Patreon-medlemmer.</p>
         <p data-status></p>
       </div>
       <div class="cta-row cta-row--start">
@@ -56,12 +56,49 @@ layout: default
       </div>
 
       {% if page.gate == "calendar" %}
-      <p class="race-cal__lede">Hvilke løp medlemmene stiller til — i fjor, i år og fremover.</p>
+      <!--<p class="race-cal__lede">Hvilke løp medlemmene stiller til — i fjor, i år og fremover.</p>-->
       <div class="race-cal__years">
         <button type="button" class="race-cal__year-btn" data-year-delta="-1" aria-label="Forrige år">←</button>
         <p class="race-cal__year-label" data-year-label></p>
         <button type="button" class="race-cal__year-btn" data-year-delta="1" aria-label="Neste år">→</button>
       </div>
+      <form class="race-form" data-race-form>
+        <h2 class="race-form__title">Legg inn løp</h2>
+        <p class="race-form__claim" data-claim-wrap hidden>
+          <label>
+            Dette er meg i listen
+            <select data-claim-name></select>
+          </label>
+        </p>
+        <div class="race-form__grid">
+          <label>
+            Løp
+            <input type="text" name="name" required maxlength="160" placeholder="Nøsen Hundreds" />
+          </label>
+          <label>
+            Dato
+            <input type="date" name="date" required />
+          </label>
+          <label>
+            Distanse
+            <input type="text" name="distance" maxlength="80" placeholder="50 km" />
+          </label>
+          <label>
+            Høydemeter
+            <input type="text" name="elevation" maxlength="40" placeholder="2500" />
+          </label>
+          <label class="race-form__wide">
+            Kommentar
+            <input type="text" name="comment" maxlength="500" placeholder="Mål, status, merknad" />
+          </label>
+          <label class="race-form__wide">
+            Lenke
+            <input type="url" name="url" maxlength="500" placeholder="https://" />
+          </label>
+        </div>
+        <p class="race-form__status" data-form-status></p>
+        <button type="submit" class="btn btn--primary">Lagre løp</button>
+      </form>
       <p class="race-cal__stats" data-stats></p>
       <div class="race-cal__controls">
         <label class="race-cal__search">

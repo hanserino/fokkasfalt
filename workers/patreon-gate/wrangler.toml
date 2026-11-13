@@ -9,3 +9,7 @@ ALLOWED_ORIGINS = "https://fokkasfalt.no,http://127.0.0.1:4000,http://localhost:
 # Paid tiers: Føkk Asfalt, Mest bang for the buck, Road to States.
 # Paying members (amount_cents > 0) are also let in, including future paid tiers.
 PATREON_TIER_IDS = "7252533,2543654,27436916"
+
+[[kv_namespaces]]
+binding = "CALENDAR"
+id = "3220839817a84afc8eae1593f7bd18a7"

@@ -1279,10 +1279,82 @@ a:focus-visible {
   border-color: var(--text);
 }
 
+.race-form {
+  margin: 0 0 1.5rem;
+  padding: 1rem 1.1rem 1.15rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.race-form__title {
+  margin: 0 0 0.85rem;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+}
+
+.race-form__claim {
+  margin: 0 0 0.85rem;
+}
+
+.race-form__claim label,
+.race-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.race-form input,
+.race-form select {
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.55rem 0.7rem;
+}
+
+.race-form__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin: 0 0 0.85rem;
+}
+
+.race-form__wide {
+  grid-column: 1 / -1;
+}
+
+.race-form__status {
+  min-height: 1.2em;
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.race-form__status:empty {
+  display: none;
+}
+
+@media (max-width: 40rem) {
+  .race-form__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .race-person {
   margin: 0 0 1.75rem;
   padding-bottom: 0.25rem;
   border-bottom: 1px solid var(--border);
+}
+
+.race-person--mine {
+  padding: 0.65rem 0.8rem 0.35rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .race-person__head {

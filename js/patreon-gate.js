@@ -14,6 +14,9 @@
     wrong_tier: "Denne siden er for betalende medlemmer. Oppgrader på Patreon for å få tilgang.",
     unauthorized: "Økten er utløpt. Logg inn på nytt.",
     bad_redirect: "Tilbake-URL fra Patreon matcher ikke. Sjekk Redirect URIs i Patreon-klienten.",
+    invalid_race: "Skriv inn et løpsnavn.",
+    invalid_date: "Datoen er ugyldig.",
+    invalid_url: "Lenken må starte med http:// eller https://",
     server_error: "Noe gikk galt. Prøv igjen om litt.",
   };
 
@@ -66,6 +69,8 @@
         setYear(year + delta);
       });
     });
+    const form = root.querySelector("[data-race-form]");
+    if (form) form.addEventListener("submit", submitRace);
   }
 
   function startLogin(event) {
@@ -137,6 +142,8 @@
         const data = await apiGet("/calendar", session.token);
         calendar = data;
         greet(data.name || session.name);
+        fillClaimSelect();
+        setDefaultFormDate();
         renderCalendar();
       } else {
         let data;
@@ -263,6 +270,9 @@
   function personCard(member) {
     const art = document.createElement("article");
     art.className = "race-person";
+    if (calendar.self && calendar.self.name === member.name) {
+      art.classList.add("race-person--mine");
+    }
     const head = document.createElement("header");
     head.className = "race-person__head";
     const h = document.createElement("h2");
@@ -382,6 +392,90 @@
     return (race && race.date) || "";
   }
 
+  function fillClaimSelect() {
+    const wrap = root.querySelector("[data-claim-wrap]");
+    const select = root.querySelector("[data-claim-name]");
+    if (!wrap || !select) return;
+    const claimed = calendar.self && calendar.self.claimed;
+    if (claimed) {
+      wrap.hidden = true;
+      select.innerHTML = "";
+      return;
+    }
+    wrap.hidden = false;
+    const myName = (calendar.self && calendar.self.name) || "";
+    const names = Array.isArray(calendar.unclaimed) ? calendar.unclaimed.slice() : [];
+    select.innerHTML = "";
+    const fresh = document.createElement("option");
+    fresh.value = "";
+    fresh.textContent = myName ? "Ny profil: " + myName : "Ny profil";
+    select.appendChild(fresh);
+    names.forEach(function (name) {
+      const opt = document.createElement("option");
+      opt.value = name;
+      opt.textContent = name;
+      if (calendar.suggested && calendar.suggested === name) opt.selected = true;
+      select.appendChild(opt);
+    });
+  }
+
+  function setDefaultFormDate() {
+    const input = root.querySelector('[data-race-form] input[name="date"]');
+    if (!input || input.value) return;
+    if (year === currentYear) {
+      const now = new Date();
+      input.value = now.toISOString().slice(0, 10);
+    } else {
+      input.value = year + "-06-01";
+    }
+  }
+
+  async function submitRace(event) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const status = root.querySelector("[data-form-status]");
+    const session = readSession();
+    if (!session) {
+      show("locked");
+      return;
+    }
+    const body = {
+      name: valueOf(form, "name"),
+      date: valueOf(form, "date"),
+      distance: valueOf(form, "distance"),
+      elevation: valueOf(form, "elevation"),
+      comment: valueOf(form, "comment"),
+      url: valueOf(form, "url"),
+    };
+    const claimWrap = root.querySelector("[data-claim-wrap]");
+    const claim = root.querySelector("[data-claim-name]");
+    if (claimWrap && !claimWrap.hidden && claim && claim.value) body.claim_name = claim.value;
+    const submit = form.querySelector('button[type="submit"]');
+    if (submit) submit.disabled = true;
+    if (status) status.textContent = "";
+    try {
+      const data = await apiPost("/races", body, session.token);
+      calendar = data;
+      greet(data.name || session.name);
+      fillClaimSelect();
+      const raceYear = parseInt((body.date || "").slice(0, 4), 10);
+      if (raceYear >= 2000 && raceYear <= 2100 && raceYear !== year) setYear(raceYear);
+      else renderCalendar();
+      form.reset();
+      setDefaultFormDate();
+      if (status) status.textContent = "Løpet er lagret.";
+    } catch (e) {
+      if (status) status.textContent = MESSAGES[e.message] || MESSAGES.server_error;
+    } finally {
+      if (submit) submit.disabled = false;
+    }
+  }
+
+  function valueOf(form, name) {
+    const el = form.elements[name];
+    return el ? String(el.value || "").trim() : "";
+  }
+
   function readYearFromUrl() {
     const raw = new URLSearchParams(location.search).get("year");
     const n = parseInt(raw, 10);
@@ -396,6 +490,7 @@
     if (year === currentYear) url.searchParams.delete("year");
     else url.searchParams.set("year", String(year));
     history.replaceState({}, "", url.pathname + url.search);
+    setDefaultFormDate();
     renderCalendar();
   }
 
@@ -445,10 +540,12 @@
     return parseApi(res);
   }
 
-  async function apiPost(path, body) {
+  async function apiPost(path, body, token) {
+    const headers = { "Content-Type": "application/json" };
+    if (token) headers.Authorization = "Bearer " + token;
     const res = await fetch(api + path, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: headers,
       body: JSON.stringify(body),
     });
     return parseApi(res);
