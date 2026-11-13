@@ -262,4 +262,4 @@ layout: default
 {% if page.gate == "calendar" %}
 <script type="application/json" id="race-catalog">{{ site.data.race_catalog | jsonify }}</script>
 {% endif %}
-<script src="{{ '/js/patreon-gate.js' | relative_url }}" defer></script>
+<script src="{{ '/js/patreon-gate.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>

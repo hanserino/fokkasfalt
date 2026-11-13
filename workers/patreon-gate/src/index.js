@@ -596,7 +596,7 @@ function normalizeRace(body) {
     date_iso: dateIso,
   };
 
-  const distance = clip(body.distance, 80);
+  const distance = formatDistance(body);
   const elevation = clip(body.elevation, 40);
   const finished = dateIso <= new Date().toISOString().slice(0, 10);
   const time = finished ? clip(body.time, 40) : "";
@@ -620,6 +620,28 @@ function clip(value, max) {
   const s = String(value || "").trim();
   if (!s) return "";
   return s.slice(0, max);
+}
+
+function distanceUnit(token) {
+  const u = String(token || "").trim().toLowerCase();
+  if (u === "miles" || u === "mile" || u === "mi") return "miles";
+  if (u === "yards" || u === "yard" || u === "yd") return "yards";
+  if (u === "timer" || u === "hours" || u === "hour" || u === "hr" || u === "h" || u === "t") {
+    return "timer";
+  }
+  if (u === "km" || u === "k") return "km";
+  return "";
+}
+
+function formatDistance(body) {
+  const raw = clip(body.distance, 80);
+  const fromBody = distanceUnit(body.distance_unit) || "km";
+  if (!raw) return "";
+  const m = raw.match(/^([\d.,]+)\s*(km|k|miles|mile|mi|yards|yard|yd|timer|hours|hour|hr|h|t)?$/i);
+  if (!m) return raw;
+  const amount = m[1];
+  const unit = distanceUnit(m[2]) || fromBody;
+  return clip(amount + " " + unit, 80);
 }
 
 function formatDateNb(iso) {

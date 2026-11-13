@@ -1873,19 +1873,20 @@ a:focus-visible {
 }
 
 .race-cal__item {
+  --race-date-col: 5.75rem;
   display: grid;
-  grid-template-columns: max-content minmax(0, 1fr);
+  grid-template-columns: var(--race-date-col) minmax(0, 1fr);
   gap: 0.2rem 0.85rem;
   align-items: start;
   padding: 0.6rem 0;
 }
 
 .race-cal__date {
+  width: var(--race-date-col);
   color: var(--text-muted);
   font-size: 0.88rem;
   line-height: 1.35;
   padding-top: 0.12rem;
-  white-space: nowrap;
   font-variant-numeric: tabular-nums;
 }
 
@@ -1970,28 +1971,34 @@ a:focus-visible {
   margin-left: 1.75rem;
 }
 
+.race-cal__item--alpha {
+  display: block;
+}
+
+.race-cal__item--alpha .race-cal__heading {
+  margin: 0;
+}
+
 .race-cal__edition {
-  margin-top: 0.45rem;
-  padding-top: 0.35rem;
+  margin-top: 0.35rem;
+}
+
+.race-cal__edition + .race-cal__edition {
+  margin-top: 0.65rem;
+  padding-top: 0.45rem;
   border-top: 1px solid var(--border);
 }
 
-.race-cal__edition-head {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.35rem;
-}
-
 .race-cal__edition-date {
+  display: block;
+  margin: 0;
   color: var(--text-muted);
   font-size: 0.88rem;
   font-variant-numeric: tabular-nums;
 }
 
 .race-cal__edition .race-cal__runners {
-  margin-top: 0.15rem;
+  margin-top: 0.2rem;
 }
 
 .race-cal__edition .race-cal__entrant {
@@ -2069,6 +2076,7 @@ a:focus-visible {
   }
 
   .race-cal__item {
+    --race-date-col: 4.85rem;
     column-gap: 0.6rem;
     padding: 0.48rem 0;
   }

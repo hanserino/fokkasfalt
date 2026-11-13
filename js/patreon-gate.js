@@ -825,46 +825,22 @@
     return dates;
   }
 
-  function formatDateRange(entries) {
-    const dates = uniqueDates(entries).filter(Boolean);
-    if (!dates.length) return "Uten dato";
-    const first = formatDate({ date_iso: dates[0] });
-    const last = formatDate({ date_iso: dates[dates.length - 1] });
-    if (first === last) return first;
-    return first + " – " + last;
-  }
-
   function alphaEvent(group) {
     const dates = uniqueDates(group.entries);
-    if (dates.length <= 1) return timelineEvent(group);
-
     const li = document.createElement("li");
-    li.className = "race-cal__item";
-    const date = document.createElement("time");
-    date.className = "race-cal__date";
-    date.textContent = formatDateRange(group.entries);
-    li.appendChild(date);
-    const body = document.createElement("div");
-    body.className = "race-cal__body";
+    li.className = "race-cal__item race-cal__item--alpha";
     const heading = document.createElement("div");
     heading.className = "race-cal__heading";
     heading.appendChild(raceNameEl(group.race));
-    body.appendChild(heading);
+    li.appendChild(heading);
     dates.forEach(function (iso) {
       const edition = document.createElement("div");
       edition.className = "race-cal__edition";
-      const sample = group.entries.find(function (entry) {
-        return (entry.race.date_iso || "") === iso;
-      });
-      const editionRace = sample && sample.race;
-      const subHead = document.createElement("div");
-      subHead.className = "race-cal__edition-head";
       const subDate = document.createElement("time");
       subDate.className = "race-cal__edition-date";
       if (iso) subDate.dateTime = iso;
       subDate.textContent = iso ? formatDate({ date_iso: iso }) : "Uten dato";
-      subHead.appendChild(subDate);
-      edition.appendChild(subHead);
+      edition.appendChild(subDate);
       const runners = document.createElement("ul");
       runners.className = "race-cal__runners";
       group.entries
@@ -881,9 +857,8 @@
           runners.appendChild(timelineRunner(entry.member, entry.race));
         });
       edition.appendChild(runners);
-      body.appendChild(edition);
+      li.appendChild(edition);
     });
-    li.appendChild(body);
     return li;
   }
 
@@ -949,8 +924,15 @@
     parent.appendChild(a);
   }
 
+  function withDistanceUnit(dist) {
+    const s = String(dist || "").trim();
+    if (!s) return "";
+    if (/^[\d.,]+$/.test(s)) return s + " km";
+    return s;
+  }
+
   function distanceLabel(race) {
-    const dist = race && race.distance;
+    const dist = withDistanceUnit(race && race.distance);
     if (!dist) return "";
     if (race.timed && !raceFinished(race.date_iso)) return "mål " + dist;
     return dist;
@@ -981,19 +963,36 @@
 
   function fillDistance(form, raw) {
     const parsed = parseDistance(raw);
-    if (form.elements.distance) form.elements.distance.value = parsed.amount;
-    if (form.elements.distance_unit) form.elements.distance_unit.value = parsed.unit;
+    const amount = formControl(form, "distance");
+    const unit = formControl(form, "distance_unit");
+    if (amount) amount.value = parsed.amount;
+    if (unit) unit.value = parsed.unit;
   }
 
   function composeDistance(form) {
-    const amount = String(valueOf(form, "distance") || "")
+    const amount = String(controlValue(form, "distance") || "")
       .replace(/[^\d.,]/g, "")
       .trim();
     if (!amount) return "";
-    const unit = valueOf(form, "distance_unit") || "km";
-    const suffix =
-      unit === "miles" || unit === "yards" || unit === "timer" ? unit : "km";
-    return amount + " " + suffix;
+    return amount + " " + distanceUnitOf(form);
+  }
+
+  function distanceUnitOf(form) {
+    const unit = controlValue(form, "distance_unit").toLowerCase();
+    if (unit === "miles" || unit === "yards" || unit === "timer") return unit;
+    return "km";
+  }
+
+  function formControl(form, name) {
+    if (!form) return null;
+    const named = form.elements.namedItem ? form.elements.namedItem(name) : form.elements[name];
+    if (named && named.nodeName) return named;
+    return form.querySelector('[name="' + name + '"]');
+  }
+
+  function controlValue(form, name) {
+    const el = formControl(form, name);
+    return el ? String(el.value || "").trim() : "";
   }
 
   function syncTimedFields() {
@@ -1498,6 +1497,7 @@
       name: valueOf(form, "name"),
       date: valueOf(form, "date"),
       distance: composeDistance(form),
+      distance_unit: distanceUnitOf(form),
       timed: Boolean(form.elements.timed && form.elements.timed.checked),
       elevation: valueOf(form, "elevation"),
       time: raceFinished(valueOf(form, "date")) ? valueOf(form, "time") : "",
