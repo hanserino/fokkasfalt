@@ -46,6 +46,8 @@
   let query = "";
   let year = readYearFromUrl();
   let editingRace = null;
+  let modalRace = null;
+  let modalMember = null;
 
   bind();
   init();
@@ -109,6 +111,16 @@
     });
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape") {
+        const raceModal = document.querySelector("[data-race-modal]");
+        if (raceModal && !raceModal.hidden) {
+          closeRaceModal();
+          return;
+        }
+        const memberModal = document.querySelector("[data-member-modal]");
+        if (memberModal && !memberModal.hidden) {
+          closeMemberModal();
+          return;
+        }
         closeSettings();
         closeAccountMenu();
         closeRaceMenus();
@@ -153,6 +165,29 @@
     if (dateInput) dateInput.addEventListener("change", syncResultFields);
     const timed = root.querySelector("[data-timed]");
     if (timed) timed.addEventListener("change", syncTimedFields);
+    const raceModal = document.querySelector("[data-race-modal]");
+    const raceModalClose = document.querySelector("[data-race-modal-close]");
+    const raceModalJoin = document.querySelector("[data-race-modal-join]");
+    if (raceModal) {
+      raceModal.addEventListener("click", function (event) {
+        if (event.target === raceModal) closeRaceModal();
+      });
+    }
+    if (raceModalClose) raceModalClose.addEventListener("click", closeRaceModal);
+    if (raceModalJoin) {
+      raceModalJoin.addEventListener("click", function () {
+        if (modalRace) openJoinForm(modalRace);
+      });
+    }
+    const memberModal = document.querySelector("[data-member-modal]");
+    const memberModalClose = document.querySelector("[data-member-modal-close]");
+    if (memberModal) {
+      memberModal.addEventListener("click", function (event) {
+        if (event.target === memberModal) closeMemberModal();
+      });
+    }
+    if (memberModalClose) memberModalClose.addEventListener("click", closeMemberModal);
+    window.addEventListener("popstate", syncMemberModalFromUrl);
     bindRaceCombo();
     document.addEventListener("click", function (event) {
       const combo = root.querySelector(".race-combo");
@@ -248,6 +283,7 @@
         applyPerks(data);
         setDefaultFormDate();
         renderCalendar();
+        syncMemberModalFromUrl();
       } else {
         let data;
         try {
@@ -429,7 +465,14 @@
     fillAliasFields();
     applyPerks(data);
     renderAccount(readSession() || session);
-    if (page === "calendar") renderCalendar();
+    if (page === "calendar") {
+      renderCalendar();
+      if (modalMember) {
+        const next = findMemberBySlug(memberSlug(modalMember.name)) || findMemberByName(modalMember.name);
+        if (next) fillMemberModal(next);
+        else closeMemberModal({ silent: true });
+      }
+    }
   }
 
   async function saveAliasFromClaim() {
@@ -563,6 +606,127 @@
     return Array.isArray(calendar.members) ? calendar.members : [];
   }
 
+  function memberSlug(name) {
+    return String(name || "")
+      .toLowerCase()
+      .replace(/æ/g, "ae")
+      .replace(/ø/g, "o")
+      .replace(/å/g, "a")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "") || "bruker";
+  }
+
+  function findMemberByName(name) {
+    const key = normName(name);
+    if (!key) return null;
+    return (
+      members().find(function (m) {
+        return normName(m.name) === key;
+      }) || null
+    );
+  }
+
+  function findMemberBySlug(slug) {
+    const want = String(slug || "").trim().toLowerCase();
+    if (!want) return null;
+    return (
+      members().find(function (m) {
+        return memberSlug(m.name) === want;
+      }) || null
+    );
+  }
+
+  function memberParamFromUrl() {
+    return (new URLSearchParams(location.search).get("member") || "").trim();
+  }
+
+  function writeMemberUrl(member) {
+    const url = new URL(location.href);
+    if (member && member.name) url.searchParams.set("member", memberSlug(member.name));
+    else url.searchParams.delete("member");
+    history.replaceState({}, "", url.pathname + url.search);
+  }
+
+  function memberTrigger(member, className, avatarClass) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = className;
+    btn.appendChild(avatarEl(member, avatarClass));
+    const label = document.createElement("span");
+    label.className = className === "race-person__identity" ? "race-person__name" : "";
+    label.textContent = (member && member.name) || "";
+    btn.appendChild(label);
+    btn.setAttribute("aria-label", (member && member.name) || "Profil");
+    btn.addEventListener("click", function (event) {
+      event.stopPropagation();
+      openMemberModal(findMemberByName(member && member.name) || member);
+    });
+    return btn;
+  }
+
+  function fillMemberModal(member) {
+    const panel = document.querySelector("[data-member-modal]");
+    if (!panel || !member) return;
+    modalMember = member;
+    const avatarWrap = panel.querySelector("[data-member-modal-avatar]");
+    const nameEl = panel.querySelector("[data-member-modal-name]");
+    const social = panel.querySelector("[data-member-modal-social]");
+    const list = panel.querySelector("[data-member-modal-races]");
+    const none = panel.querySelector("[data-member-modal-none]");
+    if (avatarWrap) {
+      avatarWrap.innerHTML = "";
+      avatarWrap.appendChild(avatarEl(member));
+    }
+    if (nameEl) nameEl.textContent = member.name || "";
+    if (social) {
+      social.innerHTML = "";
+      addLink(social, member.strava, "Strava");
+      addLink(social, member.instagram, "Instagram");
+      social.hidden = !social.childNodes.length;
+    }
+    const races = (member.races || []).slice().sort(function (a, b) {
+      return String(a.date_iso || "9999").localeCompare(String(b.date_iso || "9999"));
+    });
+    if (list) {
+      list.innerHTML = "";
+      races.forEach(function (race) {
+        list.appendChild(raceRow(race, member));
+      });
+      list.hidden = races.length === 0;
+    }
+    if (none) none.hidden = races.length > 0;
+  }
+
+  function openMemberModal(member) {
+    if (!member) return;
+    const full = findMemberByName(member.name) || member;
+    fillMemberModal(full);
+    const panel = document.querySelector("[data-member-modal]");
+    if (panel) panel.hidden = false;
+    writeMemberUrl(full);
+  }
+
+  function closeMemberModal(opts) {
+    const panel = document.querySelector("[data-member-modal]");
+    if (panel) panel.hidden = true;
+    modalMember = null;
+    if (opts && opts.silent) return;
+    if (memberParamFromUrl()) writeMemberUrl(null);
+  }
+
+  function syncMemberModalFromUrl() {
+    const slug = memberParamFromUrl();
+    if (!slug) {
+      closeMemberModal({ silent: true });
+      return;
+    }
+    const member = findMemberBySlug(slug);
+    if (member) openMemberModal(member);
+    else closeMemberModal({ silent: true });
+  }
+
   function raceYear(race) {
     if (race && race.date_iso && /^\d{4}/.test(race.date_iso)) {
       return parseInt(race.date_iso.slice(0, 4), 10);
@@ -668,19 +832,7 @@
     }
     const head = document.createElement("header");
     head.className = "race-person__head";
-    const identity = document.createElement("div");
-    identity.className = "race-person__identity";
-    identity.appendChild(avatarEl(member));
-    const h = document.createElement("h2");
-    h.className = "race-person__name";
-    h.textContent = member.name;
-    identity.appendChild(h);
-    head.appendChild(identity);
-    const social = document.createElement("p");
-    social.className = "race-person__social";
-    addLink(social, member.strava, "Strava");
-    addLink(social, member.instagram, "Instagram");
-    if (social.childNodes.length) head.appendChild(social);
+    head.appendChild(memberTrigger(member, "race-person__identity"));
     art.appendChild(head);
 
     const races = member.races || [];
@@ -726,13 +878,14 @@
   }
 
   function raceNameEl(race) {
-    const title = document.createElement(race.url ? "a" : "span");
+    const title = document.createElement("button");
+    title.type = "button";
     title.className = "race-cal__name";
     title.textContent = race.name || "Løp";
-    if (race.url) {
-      title.href = race.url;
-      title.rel = "noopener noreferrer";
-    }
+    title.addEventListener("click", function (event) {
+      event.stopPropagation();
+      openRaceModal(race);
+    });
     return title;
   }
 
@@ -898,13 +1051,7 @@
     if (mine) item.classList.add("race-cal__entrant--mine");
     const head = document.createElement("div");
     head.className = "race-cal__entrant-head";
-    const who = document.createElement("p");
-    who.className = "race-cal__runner";
-    who.appendChild(avatarEl(member, "avatar--sm"));
-    const whoName = document.createElement("span");
-    whoName.textContent = (member && member.name) || "";
-    who.appendChild(whoName);
-    head.appendChild(who);
+    head.appendChild(memberTrigger(member, "race-cal__runner", "avatar--sm"));
     if (mine) head.appendChild(raceMenu(race));
     item.appendChild(head);
     appendRaceMeta(item, race);
@@ -1145,6 +1292,69 @@
     } catch (e) {
       window.alert(MESSAGES[e.message] || MESSAGES.server_error);
     }
+  }
+
+  function raceSiteUrl(race) {
+    const direct = String((race && race.url) || "").trim();
+    if (direct) return direct;
+    const name = race && race.name;
+    if (!name) return "";
+    const match = uniqueRaces().find(function (row) {
+      return row.url && normName(row.name) === normName(name);
+    });
+    return (match && match.url) || "";
+  }
+
+  function openRaceModal(race) {
+    const panel = document.querySelector("[data-race-modal]");
+    if (!panel || !race) return;
+    modalRace = race;
+    const title = panel.querySelector("[data-race-modal-title]");
+    const date = panel.querySelector("[data-race-modal-date]");
+    const link = panel.querySelector("[data-race-modal-link]");
+    const join = panel.querySelector("[data-race-modal-join]");
+    const status = panel.querySelector("[data-race-modal-status]");
+    if (title) title.textContent = race.name || "Løp";
+    if (date) date.textContent = formatDate(race) || "";
+    const url = raceSiteUrl(race);
+    if (link) {
+      if (url) {
+        link.href = url;
+        link.hidden = false;
+      } else {
+        link.removeAttribute("href");
+        link.hidden = true;
+      }
+    }
+    const canJoin = canJoinRace(race);
+    if (join) join.hidden = !canJoin;
+    if (status) status.hidden = canJoin || !alreadyHave(race);
+    panel.hidden = false;
+  }
+
+  function closeRaceModal() {
+    const panel = document.querySelector("[data-race-modal]");
+    if (panel) panel.hidden = true;
+    modalRace = null;
+  }
+
+  function openJoinForm(race) {
+    closeRaceModal();
+    showRaceForm();
+    const form = root.querySelector("[data-race-form]");
+    if (!form || !race) return;
+    if (form.elements.name) form.elements.name.value = race.name || "";
+    if (form.elements.date) form.elements.date.value = race.date_iso || "";
+    fillDistance(form, race.distance || "");
+    if (form.elements.timed) form.elements.timed.checked = Boolean(race.timed);
+    if (form.elements.elevation) form.elements.elevation.value = race.elevation || "";
+    if (form.elements.url) form.elements.url.value = raceSiteUrl(race);
+    if (form.elements.time) form.elements.time.value = "";
+    if (form.elements.place) form.elements.place.value = "";
+    if (form.elements.comment) form.elements.comment.value = "";
+    syncTimedFields();
+    syncResultFields();
+    closeRaceCombo();
   }
 
   function joinButton(race) {

@@ -74,6 +74,42 @@ layout: default
   </div>
 </div>
 
+<div class="settings-panel" data-member-modal hidden>
+  <div class="settings-panel__card member-modal">
+    <header class="member-modal__head">
+      <div class="member-modal__avatar" data-member-modal-avatar></div>
+      <div class="member-modal__identity">
+        <h2 class="settings-panel__title" data-member-modal-name></h2>
+        <p class="member-modal__social" data-member-modal-social></p>
+      </div>
+    </header>
+    <p class="member-modal__none" data-member-modal-none hidden>Ingen løp registrert ennå.</p>
+    <ul class="member-modal__races" data-member-modal-races></ul>
+    <div class="cta-row cta-row--start">
+      <button type="button" class="btn btn--ghost" data-member-modal-close>Lukk</button>
+    </div>
+  </div>
+</div>
+
+<div class="settings-panel" data-race-modal hidden>
+  <div class="settings-panel__card race-modal">
+    <h2 class="settings-panel__title" data-race-modal-title></h2>
+    <p class="race-modal__date" data-race-modal-date></p>
+    <a
+      class="race-modal__link"
+      data-race-modal-link
+      hidden
+      target="_blank"
+      rel="noopener noreferrer"
+    >Løpets nettside</a>
+    <p class="race-modal__status" data-race-modal-status hidden>Du er allerede på dette løpet.</p>
+    <div class="cta-row cta-row--start">
+      <button type="button" class="btn btn--primary" data-race-modal-join>Jeg skal også løpe dette løpet</button>
+      <button type="button" class="btn btn--ghost" data-race-modal-close>Lukk</button>
+    </div>
+  </div>
+</div>
+
 <main id="main" class="ep-main wrap">
   <h1 class="ep-page-title">{{ page.title }}</h1>
   {{ content }}
