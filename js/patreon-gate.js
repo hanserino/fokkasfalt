@@ -194,9 +194,13 @@
     }
     if (memberModalClose) memberModalClose.addEventListener("click", closeMemberModal);
     const shareBtn = document.querySelector("[data-member-share]");
-    const shareClose = document.querySelector("[data-race-share-close]");
+    const sharePanel = document.querySelector("[data-race-share]");
     if (shareBtn) shareBtn.addEventListener("click", openSharePoster);
-    if (shareClose) shareClose.addEventListener("click", closeSharePoster);
+    if (sharePanel) {
+      sharePanel.addEventListener("click", function () {
+        closeSharePoster();
+      });
+    }
     window.addEventListener("resize", function () {
       if (shareOpen) fitSharePoster();
     });
@@ -800,8 +804,7 @@
     shareOpen = true;
     writeMemberUrl(member);
     scheduleFitSharePoster();
-    const closeBtn = document.querySelector("[data-race-share-close]");
-    if (closeBtn) closeBtn.focus();
+    if (panel) panel.focus();
   }
 
   function closeSharePoster(opts) {

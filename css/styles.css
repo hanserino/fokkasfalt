@@ -701,13 +701,18 @@ a:focus-visible {
 }
 
 .race-share {
-  --share-chrome: 3.15rem;
   position: fixed;
   z-index: 40;
   inset: 0;
-  display: grid;
-  grid-template-rows: var(--share-chrome) minmax(0, 1fr);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #050505;
+  cursor: pointer;
+}
+
+.race-share:focus {
+  outline: none;
 }
 
 .race-share[hidden] {
@@ -718,43 +723,9 @@ body.race-share-open {
   overflow: hidden;
 }
 
-.race-share__chrome {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  padding: 0 0.85rem;
-}
-
-.race-share__hint {
-  margin: 0;
-  font-size: 0.82rem;
-  color: var(--text-muted);
-}
-
-.race-share__close {
-  appearance: none;
-  flex: 0 0 auto;
-  margin: 0;
-  padding: 0.4rem 0.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 999px;
-  background: transparent;
-  color: var(--text);
-  font: inherit;
-  font-size: 0.82rem;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.race-share__close:hover,
-.race-share__close:focus-visible {
-  border-color: #fff;
-}
-
 .race-share__poster {
   --n: 1;
-  --share-h: calc(100svh - var(--share-chrome));
+  --share-h: 100svh;
   container-type: size;
   position: relative;
   justify-self: center;
