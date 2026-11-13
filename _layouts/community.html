@@ -86,8 +86,45 @@ layout: default
     <p class="member-modal__none" data-member-modal-none hidden>Ingen løp registrert ennå.</p>
     <ul class="member-modal__races" data-member-modal-races></ul>
     <div class="cta-row cta-row--start">
+      <button type="button" class="btn btn--secondary" data-member-share hidden>
+        Del screenshot av løpsplanene dine
+      </button>
       <button type="button" class="btn btn--ghost" data-member-modal-close>Lukk</button>
     </div>
+  </div>
+</div>
+
+<div
+  class="race-share"
+  data-race-share
+  hidden
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="race-share-title"
+>
+  <div class="race-share__chrome">
+    <p class="race-share__hint">Ta et screenshot av plakaten</p>
+    <button type="button" class="race-share__close" data-race-share-close>
+      Lukk
+    </button>
+  </div>
+  <div class="race-share__poster" data-race-share-poster>
+    <p class="race-share__year-bg" data-race-share-year aria-hidden="true"></p>
+    <header class="race-share__head">
+      <h1 class="race-share__title" id="race-share-title" data-race-share-title></h1>
+    </header>
+    <ol class="race-share__races" data-race-share-list></ol>
+    <footer class="race-share__foot">
+      <img
+        class="race-share__logo"
+        src="{{ '/assets/fokkasfalt.png' | relative_url }}"
+        alt="Føkk Asfalt"
+        width="400"
+        height="246"
+        decoding="async"
+      />
+      <p class="race-share__site">fokkasfalt.no</p>
+    </footer>
   </div>
 </div>
 

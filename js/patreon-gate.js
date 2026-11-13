@@ -48,6 +48,7 @@
   let editingRace = null;
   let modalRace = null;
   let modalMember = null;
+  let shareOpen = false;
 
   bind();
   init();
@@ -114,6 +115,11 @@
         const raceModal = document.querySelector("[data-race-modal]");
         if (raceModal && !raceModal.hidden) {
           closeRaceModal();
+          return;
+        }
+        const sharePanel = document.querySelector("[data-race-share]");
+        if (sharePanel && !sharePanel.hidden) {
+          closeSharePoster();
           return;
         }
         const memberModal = document.querySelector("[data-member-modal]");
@@ -187,6 +193,10 @@
       });
     }
     if (memberModalClose) memberModalClose.addEventListener("click", closeMemberModal);
+    const shareBtn = document.querySelector("[data-member-share]");
+    const shareClose = document.querySelector("[data-race-share-close]");
+    if (shareBtn) shareBtn.addEventListener("click", openSharePoster);
+    if (shareClose) shareClose.addEventListener("click", closeSharePoster);
     window.addEventListener("popstate", syncMemberModalFromUrl);
     bindRaceCombo();
     document.addEventListener("click", function (event) {
@@ -646,7 +656,115 @@
     const url = new URL(location.href);
     if (member && member.name) url.searchParams.set("member", memberSlug(member.name));
     else url.searchParams.delete("member");
+    if (shareOpen) url.searchParams.set("share", "1");
+    else url.searchParams.delete("share");
     history.replaceState({}, "", url.pathname + url.search);
+  }
+
+  function shareParamFromUrl() {
+    return new URLSearchParams(location.search).get("share") === "1";
+  }
+
+  function isOwnMember(member) {
+    const mine = currentDisplayName();
+    return Boolean(member && mine && normName(member.name) === normName(mine));
+  }
+
+  function racesForShare(member) {
+    const scoped = memberForYear(member || {}, year);
+    return ((scoped && scoped.races) || []).slice().sort(function (a, b) {
+      return String(a.date_iso || "9999").localeCompare(String(b.date_iso || "9999"));
+    });
+  }
+
+  function sharePosterTitle(name, y) {
+    const raw = String(name || "").trim() || "Jeg";
+    return raw + "'s løpsplaner for " + y;
+  }
+
+  function shareDateParts(race) {
+    if (race && race.date_iso) {
+      const d = new Date(race.date_iso + "T12:00:00");
+      if (!Number.isNaN(d.getTime())) {
+        return {
+          day: String(d.getDate()),
+          month: new Intl.DateTimeFormat("nb-NO", { month: "short" })
+            .format(d)
+            .replace(".", "")
+            .toUpperCase(),
+        };
+      }
+    }
+    return { day: "–", month: "" };
+  }
+
+  function renderSharePoster(member, races) {
+    const poster = document.querySelector("[data-race-share-poster]");
+    const title = document.querySelector("[data-race-share-title]");
+    const yearEl = document.querySelector("[data-race-share-year]");
+    const list = document.querySelector("[data-race-share-list]");
+    if (!poster || !list) return;
+    const n = Math.max(races.length, 1);
+    poster.style.setProperty("--n", String(n));
+    if (title) title.textContent = sharePosterTitle(member && member.name, year);
+    if (yearEl) yearEl.textContent = String(year);
+    list.innerHTML = "";
+    races.forEach(function (race) {
+      const li = document.createElement("li");
+      li.className = "race-share__race";
+      const when = document.createElement("time");
+      when.className = "race-share__when";
+      if (race.date_iso) when.dateTime = race.date_iso;
+      const parts = shareDateParts(race);
+      const day = document.createElement("span");
+      day.className = "race-share__day";
+      day.textContent = parts.day;
+      const month = document.createElement("span");
+      month.className = "race-share__month";
+      month.textContent = parts.month;
+      when.appendChild(day);
+      when.appendChild(month);
+      const main = document.createElement("div");
+      main.className = "race-share__main";
+      const event = document.createElement("span");
+      event.className = "race-share__event";
+      event.textContent = race.name || "Løp";
+      main.appendChild(event);
+      const dist = distanceLabel(race);
+      if (dist) {
+        const stat = document.createElement("span");
+        stat.className = "race-share__dist";
+        stat.textContent = dist;
+        main.appendChild(stat);
+      }
+      li.appendChild(when);
+      li.appendChild(main);
+      list.appendChild(li);
+    });
+  }
+
+  function openSharePoster() {
+    const member = modalMember && (findMemberByName(modalMember.name) || modalMember);
+    if (!isOwnMember(member)) return;
+    const races = racesForShare(member);
+    if (!races.length) return;
+    renderSharePoster(member, races);
+    const panel = document.querySelector("[data-race-share]");
+    if (panel) panel.hidden = false;
+    document.body.classList.add("race-share-open");
+    shareOpen = true;
+    writeMemberUrl(member);
+    const closeBtn = document.querySelector("[data-race-share-close]");
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closeSharePoster(opts) {
+    const panel = document.querySelector("[data-race-share]");
+    if (panel) panel.hidden = true;
+    document.body.classList.remove("race-share-open");
+    shareOpen = false;
+    if (opts && opts.silent) return;
+    writeMemberUrl(modalMember);
   }
 
   function memberTrigger(member, className, avatarClass) {
@@ -697,6 +815,8 @@
       list.hidden = races.length === 0;
     }
     if (none) none.hidden = races.length > 0;
+    const shareBtn = panel.querySelector("[data-member-share]");
+    if (shareBtn) shareBtn.hidden = !(isOwnMember(member) && racesForShare(member).length);
   }
 
   function openMemberModal(member) {
@@ -709,22 +829,29 @@
   }
 
   function closeMemberModal(opts) {
+    closeSharePoster({ silent: true });
     const panel = document.querySelector("[data-member-modal]");
     if (panel) panel.hidden = true;
     modalMember = null;
     if (opts && opts.silent) return;
-    if (memberParamFromUrl()) writeMemberUrl(null);
+    writeMemberUrl(null);
   }
 
   function syncMemberModalFromUrl() {
     const slug = memberParamFromUrl();
+    const wantShare = shareParamFromUrl();
     if (!slug) {
       closeMemberModal({ silent: true });
       return;
     }
     const member = findMemberBySlug(slug);
-    if (member) openMemberModal(member);
-    else closeMemberModal({ silent: true });
+    if (!member) {
+      closeMemberModal({ silent: true });
+      return;
+    }
+    openMemberModal(member);
+    if (wantShare && isOwnMember(member) && racesForShare(member).length) openSharePoster();
+    else closeSharePoster({ silent: true });
   }
 
   function raceYear(race) {
