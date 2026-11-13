@@ -1482,19 +1482,36 @@ a:focus-visible {
   font-weight: 600;
 }
 
+.race-cal__heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+
+.race-cal__heading .race-cal__name {
+  flex: 1;
+  min-width: 0;
+}
+
 .race-cal__join {
   appearance: none;
-  display: inline-block;
-  margin: 0.45rem 0 0;
-  padding: 0.35rem 0.7rem;
+  flex: 0 0 auto;
+  width: 1.85rem;
+  height: 1.85rem;
+  margin: -0.15rem 0 0;
+  padding: 0;
   border: 1px solid var(--border-strong);
   border-radius: 999px;
   background: transparent;
   color: var(--text);
-  font: inherit;
-  font-size: 0.82rem;
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+}
+
+.race-cal__join svg {
+  display: block;
 }
 
 .race-cal__join:hover {
@@ -1613,10 +1630,16 @@ a:focus-visible {
 
 .race-cal__runner,
 .race-cal__meta,
+.race-cal__result,
 .race-cal__comment {
   margin: 0.2rem 0 0;
   font-size: 0.9rem;
   color: var(--text-muted);
+}
+
+.race-cal__result {
+  color: var(--text);
+  font-weight: 600;
 }
 
 .race-cal__runner {

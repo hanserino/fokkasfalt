@@ -27,6 +27,8 @@
   const page = root.dataset.page || "hub";
   const redirectUri = window.location.origin + "/auth/patreon/callback";
   const currentYear = new Date().getFullYear();
+  const DEFAULT_YEAR = Math.max(2027, currentYear);
+  const RACE_CATALOG = readRaceCatalog();
 
   if (page === "callback") {
     handleCallback();
@@ -339,7 +341,7 @@
   function raceInYear(race, y) {
     const ry = raceYear(race);
     if (ry === y) return true;
-    if (ry === null && y === currentYear) return true;
+    if (ry === null && y === DEFAULT_YEAR) return true;
     return false;
   }
 
@@ -349,14 +351,14 @@
       return raceInYear(race, y);
     });
     if (races.length) return Object.assign({}, member, { races: races });
-    if (!all.length && y === currentYear) return Object.assign({}, member, { races: [] });
+    if (!all.length && y === DEFAULT_YEAR) return Object.assign({}, member, { races: [] });
     return null;
   }
 
   function haystack(member) {
     const bits = [member.name];
     (member.races || []).forEach(function (race) {
-      bits.push(race.name, race.distance, race.elevation, race.date, race.comment);
+      bits.push(race.name, race.distance, race.elevation, race.date, race.time, race.place, race.comment);
     });
     return bits.filter(Boolean).join(" ").toLowerCase();
   }
@@ -480,7 +482,11 @@
       title.href = race.url;
       title.rel = "noopener noreferrer";
     }
-    body.appendChild(title);
+    const heading = document.createElement("div");
+    heading.className = "race-cal__heading";
+    heading.appendChild(title);
+    if (canJoinRace(race, ownerName)) heading.appendChild(joinButton(race));
+    body.appendChild(heading);
     if (showOwner && ownerName) {
       const who = document.createElement("p");
       who.className = "race-cal__runner";
@@ -495,21 +501,18 @@
       meta.textContent = metaBits.join(" · ");
       body.appendChild(meta);
     }
+    const resultBits = [placeLabel(race.place), race.time].filter(Boolean);
+    if (resultBits.length) {
+      const result = document.createElement("p");
+      result.className = "race-cal__result";
+      result.textContent = resultBits.join(" · ");
+      body.appendChild(result);
+    }
     if (race.comment) {
       const note = document.createElement("p");
       note.className = "race-cal__comment";
       note.textContent = race.comment;
       body.appendChild(note);
-    }
-    if (canJoinRace(race, ownerName)) {
-      const join = document.createElement("button");
-      join.type = "button";
-      join.className = "race-cal__join";
-      join.textContent = "Jeg skal også løpe dette løpet";
-      join.addEventListener("click", function () {
-        joinRace(race, join);
-      });
-      body.appendChild(join);
     }
     li.appendChild(date);
     li.appendChild(body);
@@ -549,6 +552,13 @@
     if (!value) return "";
     if (/[a-zæøå]/i.test(value)) return value;
     return value + " hm";
+  }
+
+  function placeLabel(value) {
+    const s = String(value || "").trim();
+    if (!s) return "";
+    if (/[a-zæøå./]/i.test(s)) return s;
+    return s + ". plass";
   }
 
   function formatDate(race) {
@@ -592,14 +602,51 @@
     });
   }
 
+  function joinButton(race) {
+    const join = document.createElement("button");
+    join.type = "button";
+    join.className = "race-cal__join";
+    const label = "Jeg skal også løpe dette løpet";
+    join.title = label;
+    join.setAttribute("aria-label", label);
+    join.innerHTML =
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>';
+    join.addEventListener("click", function () {
+      joinRace(race, join);
+    });
+    return join;
+  }
+
   function canJoinRace(race, ownerName) {
     if (!race || !race.name || !race.date_iso) return false;
     if (calendar.self && ownerName && ownerName === calendar.self.name) return false;
     return !alreadyHave(race);
   }
 
+  function isLeapYear(y) {
+    return (y % 4 === 0 && y % 100 !== 0) || y % 400 === 0;
+  }
+
+  function catalogRaces() {
+    return RACE_CATALOG.map(function (row) {
+      const y = String(year);
+      let date_iso = (row.dates && row.dates[y]) || year + "-" + (row.month_day || "06-01");
+      if (date_iso.slice(5) === "02-29" && !isLeapYear(year)) date_iso = year + "-02-28";
+      return {
+        name: row.name,
+        date_iso: date_iso,
+        url: row.url || "",
+        count: 0,
+      };
+    });
+  }
+
   function uniqueRaces() {
     const map = {};
+    catalogRaces().forEach(function (race) {
+      if (!race.name) return;
+      map[raceKey(race)] = race;
+    });
     members().forEach(function (member) {
       (member.races || []).forEach(function (race) {
         if (!race.name) return;
@@ -701,10 +748,10 @@
     const other = [];
     races.forEach(function (race) {
       const y = race.date_iso ? parseInt(race.date_iso.slice(0, 4), 10) : null;
-      if (y === year || (!y && year === currentYear)) inYear.push(race);
+      if (y === year || (!y && year === DEFAULT_YEAR)) inYear.push(race);
       else other.push(race);
     });
-    const shown = (qn ? inYear.concat(other) : inYear).slice(0, 40);
+    const shown = (qn ? inYear.concat(other) : inYear).slice(0, 60);
     list.innerHTML = "";
     shown.forEach(function (race, i) {
       const li = document.createElement("li");
@@ -715,7 +762,7 @@
       btn.setAttribute("role", "option");
       btn.setAttribute("aria-selected", i === 0 ? "true" : "false");
       const label = race.date_iso || race.date ? race.name + " · " + (formatDate(race) || race.date) : race.name;
-      btn.textContent = race.count > 1 ? label + " (" + race.count + ")" : label;
+      btn.textContent = race.count > 0 ? label + " (" + race.count + ")" : label;
       btn.addEventListener("click", function () {
         applyExistingRace(race);
         closeRaceCombo();
@@ -755,6 +802,12 @@
     form.elements.distance.value = race.distance || "";
     form.elements.elevation.value = race.elevation || "";
     form.elements.url.value = race.url || "";
+    const mine = myRaces().find(function (row) {
+      return raceKey(row) === raceKey(race);
+    });
+    form.elements.time.value = (mine && mine.time) || "";
+    form.elements.place.value = (mine && mine.place) || "";
+    form.elements.comment.value = (mine && mine.comment) || "";
   }
 
   function closeRaceCombo() {
@@ -787,8 +840,12 @@
       if (raceYear >= 2000 && raceYear <= 2100 && raceYear !== year) setYear(raceYear);
       else renderCalendar();
     } catch (e) {
-      if (button) button.textContent = MESSAGES[e.message] || MESSAGES.server_error;
-      if (button) button.disabled = false;
+      if (button) {
+        const msg = MESSAGES[e.message] || MESSAGES.server_error;
+        button.title = msg;
+        button.setAttribute("aria-label", msg);
+        button.disabled = false;
+      }
     }
   }
 
@@ -872,6 +929,8 @@
       date: valueOf(form, "date"),
       distance: valueOf(form, "distance"),
       elevation: valueOf(form, "elevation"),
+      time: valueOf(form, "time"),
+      place: valueOf(form, "place"),
       comment: valueOf(form, "comment"),
       url: valueOf(form, "url"),
     };
@@ -909,14 +968,14 @@
     const raw = new URLSearchParams(location.search).get("year");
     const n = parseInt(raw, 10);
     if (n >= 2000 && n <= 2100) return n;
-    return currentYear;
+    return DEFAULT_YEAR;
   }
 
   function setYear(next) {
     if (next < 2000 || next > 2100) return;
     year = next;
     const url = new URL(location.href);
-    if (year === currentYear) url.searchParams.delete("year");
+    if (year === DEFAULT_YEAR) url.searchParams.delete("year");
     else url.searchParams.set("year", String(year));
     history.replaceState({}, "", url.pathname + url.search);
     setDefaultFormDate();
@@ -941,6 +1000,17 @@
   function setStatus(panel, text) {
     const el = root.querySelector('[data-panel="' + panel + '"] [data-status]');
     if (el) el.textContent = text || "";
+  }
+
+  function readRaceCatalog() {
+    const el = document.getElementById("race-catalog");
+    if (!el) return [];
+    try {
+      const parsed = JSON.parse(el.textContent || "[]");
+      return Array.isArray(parsed) ? parsed : [];
+    } catch {
+      return [];
+    }
   }
 
   function readSession() {

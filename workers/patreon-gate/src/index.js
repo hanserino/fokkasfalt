@@ -1,5 +1,3 @@
-import bundledCalendar from "../calendar.json";
-
 const PATREON_TOKEN = "https://www.patreon.com/api/oauth2/token";
 const PATREON_IDENTITY =
   "https://www.patreon.com/api/oauth2/v2/identity?include=memberships,memberships.currently_entitled_tiers&fields%5Buser%5D=full_name,image_url,thumb_url&fields%5Bmember%5D=patron_status,currently_entitled_amount_cents&fields%5Btier%5D=title";
@@ -241,10 +239,12 @@ async function saveMemberRace(env, payload, claimName, race) {
   const members = cloneMembers(data.members);
   const member = resolveMember(members, payload, claimName);
   if (!member.races) member.races = [];
-  const exists = member.races.some((row) => raceKey(row) === raceKey(race));
-  if (!exists) {
+  const existing = member.races.find((row) => raceKey(row) === raceKey(race));
+  if (!existing) {
     member.races.push(race);
     member.races.sort(compareRaces);
+  } else {
+    mergeRaceFields(existing, race);
   }
 
   const next = {
@@ -254,8 +254,14 @@ async function saveMemberRace(env, payload, claimName, race) {
   };
   await env.CALENDAR.put("data", JSON.stringify(next));
   const out = publicCalendar(next, payload);
-  out.added = !exists;
+  out.added = !existing;
   return out;
+}
+
+function mergeRaceFields(target, source) {
+  ["distance", "elevation", "comment", "url", "time", "place"].forEach((key) => {
+    if (source[key]) target[key] = source[key];
+  });
 }
 
 function raceKey(race) {
@@ -372,10 +378,14 @@ function normalizeRace(body) {
 
   const distance = clip(body.distance, 80);
   const elevation = clip(body.elevation, 40);
+  const time = clip(body.time, 40);
+  const place = clip(body.place, 40);
   const comment = clip(body.comment, 500);
   const url = String(body.url || "").trim();
   if (distance) race.distance = distance;
   if (elevation) race.elevation = elevation;
+  if (time) race.time = time;
+  if (place) race.place = place;
   if (comment) race.comment = comment;
   if (url) {
     if (!/^https?:\/\//i.test(url) || url.length > 500) fail(400, "invalid_url");
@@ -441,11 +451,7 @@ async function loadCalendar(env) {
     const parsed = fromObject(fromKv);
     if (parsed) return parsed;
   }
-  const seeded = fromObject(bundledCalendar) || { members: [] };
-  if (env.CALENDAR) {
-    await env.CALENDAR.put("data", JSON.stringify(seeded));
-  }
-  return seeded;
+  return { members: [] };
 }
 
 function bearer(request) {

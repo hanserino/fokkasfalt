@@ -122,6 +122,14 @@ layout: default
             Høydemeter
             <input type="text" name="elevation" maxlength="40" placeholder="2500" />
           </label>
+          <label>
+            Tid
+            <input type="text" name="time" maxlength="40" placeholder="4:32:18" />
+          </label>
+          <label>
+            Plassering
+            <input type="text" name="place" maxlength="40" placeholder="12. plass" />
+          </label>
           <label class="race-form__wide">
             Kommentar
             <input type="text" name="comment" maxlength="500" placeholder="Mål, status, merknad" />
@@ -171,4 +179,7 @@ layout: default
   <p class="copyright">&copy; Føkk Asfalt.</p>
 </footer>
 
+{% if page.gate == "calendar" %}
+<script type="application/json" id="race-catalog">{{ site.data.race_catalog | jsonify }}</script>
+{% endif %}
 <script src="{{ '/js/patreon-gate.js' | relative_url }}" defer></script>
