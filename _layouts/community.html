@@ -159,12 +159,35 @@ layout: default
             <input type="date" name="date" required />
           </label>
           <label>
-            Distanse
-            <input type="text" name="distance" maxlength="80" placeholder="50 km" />
-          </label>
-          <label>
             Høydemeter
-            <input type="text" name="elevation" maxlength="40" placeholder="2500" />
+            <input type="text" name="elevation" maxlength="40" placeholder="2500" inputmode="numeric" />
+          </label>
+          <label class="race-form__check race-form__wide">
+            <input type="checkbox" name="timed" data-timed />
+            <span>
+              Tidsbasert løp
+              <span class="race-form__check-hint">24-timer, 48-timer, backyard ultra og liknende</span>
+            </span>
+          </label>
+          <label class="race-form__wide" data-distance-field>
+            <span data-distance-label>Distanse</span>
+            <div class="race-form__suffix">
+              <input
+                type="text"
+                name="distance"
+                maxlength="12"
+                placeholder="50"
+                inputmode="decimal"
+                autocomplete="off"
+                aria-label="Distanse"
+              />
+              <select name="distance_unit" aria-label="Enhet">
+                <option value="km" selected>km</option>
+                <option value="miles">miles</option>
+                <option value="yards">yards</option>
+                <option value="timer">timer</option>
+              </select>
+            </div>
           </label>
           <div class="race-form__results race-form__wide" data-result-fields hidden>
             <label>

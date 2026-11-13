@@ -1506,6 +1506,75 @@ a:focus-visible {
   padding: 0.55rem 0.7rem;
 }
 
+.race-form label.race-form__check {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.55rem;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.race-form__check input[type="checkbox"] {
+  width: 1.15rem;
+  height: 1.15rem;
+  min-width: 1.15rem;
+  margin: 0.15rem 0 0;
+  padding: 0;
+  accent-color: var(--text);
+  cursor: pointer;
+}
+
+.race-form__check-hint {
+  display: block;
+  margin: 0.15rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.race-form__suffix {
+  display: flex;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+}
+
+.race-form__suffix:focus-within {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+.race-form__suffix input,
+.race-form__suffix select {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.race-form__suffix input {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.race-form__suffix input:focus,
+.race-form__suffix select:focus {
+  outline: none;
+}
+
+.race-form__suffix select {
+  width: auto;
+  flex: 0 0 auto;
+  border-left: 1px solid var(--border);
+  background: var(--surface);
+  padding: 0.55rem 0.55rem 0.55rem 0.65rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 .race-form__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1861,6 +1930,44 @@ a:focus-visible {
 .race-cal__comment {
   color: var(--text-subtle);
   overflow-wrap: anywhere;
+}
+
+.race-cal__timeline > .race-cal__item {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.race-cal__runners {
+  list-style: none;
+  margin: 0.45rem 0 0;
+  padding: 0;
+}
+
+.race-cal__entrant {
+  margin: 0;
+  padding: 0.4rem 0 0.1rem;
+  border-top: 1px solid var(--border);
+}
+
+.race-cal__entrant-head {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem;
+}
+
+.race-cal__entrant-head .race-cal__runner {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+}
+
+.race-cal__entrant .race-cal__meta,
+.race-cal__entrant .race-cal__result,
+.race-cal__entrant .race-cal__comment {
+  margin-left: 1.75rem;
 }
 
 @media (max-width: 40rem) {

@@ -151,6 +151,8 @@
     const dateInput = root.querySelector('[data-race-form] input[name="date"]');
     if (dateInput) dateInput.addEventListener("input", syncResultFields);
     if (dateInput) dateInput.addEventListener("change", syncResultFields);
+    const timed = root.querySelector("[data-timed]");
+    if (timed) timed.addEventListener("change", syncTimedFields);
     bindRaceCombo();
     document.addEventListener("click", function (event) {
       const combo = root.querySelector(".race-combo");
@@ -589,6 +591,7 @@
     const bits = [member.name, member.instagram, member.strava];
     (member.races || []).forEach(function (race) {
       bits.push(race.name, race.distance, race.elevation, race.date, race.time, race.place, race.comment);
+      if (race.timed) bits.push("tidsbasert", "mål");
     });
     return bits.filter(Boolean).join(" ").toLowerCase();
   }
@@ -695,16 +698,33 @@
     return art;
   }
 
-  function raceRow(race, member, showOwner) {
+  function raceRow(race, member) {
     const ownerName = member && member.name;
     const li = document.createElement("li");
     li.className = "race-cal__item";
+    li.appendChild(raceDateEl(race));
+    const body = document.createElement("div");
+    body.className = "race-cal__body";
+    const heading = document.createElement("div");
+    heading.className = "race-cal__heading";
+    heading.appendChild(raceNameEl(race));
+    if (isOwnRace(ownerName)) heading.appendChild(raceMenu(race));
+    else if (canJoinRace(race, ownerName)) heading.appendChild(joinButton(race));
+    body.appendChild(heading);
+    appendRaceMeta(body, race);
+    li.appendChild(body);
+    return li;
+  }
+
+  function raceDateEl(race) {
     const date = document.createElement("time");
     date.className = "race-cal__date";
     if (race.date_iso) date.dateTime = race.date_iso;
     date.textContent = formatDate(race) || "Uten dato";
-    const body = document.createElement("div");
-    body.className = "race-cal__body";
+    return date;
+  }
+
+  function raceNameEl(race) {
     const title = document.createElement(race.url ? "a" : "span");
     title.className = "race-cal__name";
     title.textContent = race.name || "Løp";
@@ -712,27 +732,16 @@
       title.href = race.url;
       title.rel = "noopener noreferrer";
     }
-    const heading = document.createElement("div");
-    heading.className = "race-cal__heading";
-    heading.appendChild(title);
-    if (isOwnRace(ownerName)) heading.appendChild(raceMenu(race));
-    else if (canJoinRace(race, ownerName)) heading.appendChild(joinButton(race));
-    body.appendChild(heading);
-    if (showOwner && ownerName) {
-      const who = document.createElement("p");
-      who.className = "race-cal__runner";
-      who.appendChild(avatarEl(member, "avatar--sm"));
-      const whoName = document.createElement("span");
-      whoName.textContent = ownerName;
-      who.appendChild(whoName);
-      body.appendChild(who);
-    }
-    const metaBits = [race.distance, elevationLabel(race.elevation)].filter(Boolean);
+    return title;
+  }
+
+  function appendRaceMeta(parent, race) {
+    const metaBits = [distanceLabel(race), elevationLabel(race.elevation)].filter(Boolean);
     if (metaBits.length) {
       const meta = document.createElement("p");
       meta.className = "race-cal__meta";
       meta.textContent = metaBits.join(" · ");
-      body.appendChild(meta);
+      parent.appendChild(meta);
     }
     const resultBits = raceFinished(race.date_iso)
       ? [placeLabel(race.place), race.time].filter(Boolean)
@@ -741,34 +750,97 @@
       const result = document.createElement("p");
       result.className = "race-cal__result";
       result.textContent = resultBits.join(" · ");
-      body.appendChild(result);
+      parent.appendChild(result);
     }
     if (race.comment) {
       const note = document.createElement("p");
       note.className = "race-cal__comment";
       note.textContent = race.comment;
-      body.appendChild(note);
+      parent.appendChild(note);
     }
-    li.appendChild(date);
+  }
+
+  function renderTimeline(el, list) {
+    const groups = [];
+    const indexByKey = {};
+    list.forEach(function (member) {
+      (member.races || []).forEach(function (race) {
+        const key = raceKey(race);
+        let group = indexByKey[key];
+        if (!group) {
+          group = {
+            race: race,
+            entries: [],
+            sort: race.date_iso || "9999-99-99",
+          };
+          indexByKey[key] = group;
+          groups.push(group);
+        } else if (!group.race.url && race.url) {
+          group.race = race;
+        }
+        group.entries.push({ member: member, race: race });
+      });
+    });
+    groups.sort(function (a, b) {
+      if (a.sort === b.sort) {
+        return (a.race.name || "").localeCompare(b.race.name || "", "nb");
+      }
+      return a.sort < b.sort ? -1 : 1;
+    });
+    el.innerHTML = "";
+    groups.forEach(function (group) {
+      el.appendChild(timelineEvent(group));
+    });
+  }
+
+  function timelineEvent(group) {
+    const race = group.race;
+    const li = document.createElement("li");
+    li.className = "race-cal__item";
+    li.appendChild(raceDateEl(race));
+    const body = document.createElement("div");
+    body.className = "race-cal__body";
+    const heading = document.createElement("div");
+    heading.className = "race-cal__heading";
+    heading.appendChild(raceNameEl(race));
+    if (canJoinRace(race)) heading.appendChild(joinButton(race));
+    body.appendChild(heading);
+    const runners = document.createElement("ul");
+    runners.className = "race-cal__runners";
+    group.entries
+      .slice()
+      .sort(function (a, b) {
+        const aMine = isOwnRace(a.member && a.member.name) ? 0 : 1;
+        const bMine = isOwnRace(b.member && b.member.name) ? 0 : 1;
+        if (aMine !== bMine) return aMine - bMine;
+        return (a.member.name || "").localeCompare(b.member.name || "", "nb");
+      })
+      .forEach(function (entry) {
+        runners.appendChild(timelineRunner(entry.member, entry.race));
+      });
+    body.appendChild(runners);
     li.appendChild(body);
     return li;
   }
 
-  function renderTimeline(el, list) {
-    const rows = [];
-    list.forEach(function (member) {
-      (member.races || []).forEach(function (race) {
-        rows.push({ member: member, race: race, sort: race.date_iso || "9999-99-99" });
-      });
-    });
-    rows.sort(function (a, b) {
-      if (a.sort === b.sort) return (a.member.name || "").localeCompare(b.member.name || "", "nb");
-      return a.sort < b.sort ? -1 : 1;
-    });
-    el.innerHTML = "";
-    rows.forEach(function (row) {
-      el.appendChild(raceRow(row.race, row.member, true));
-    });
+  function timelineRunner(member, race) {
+    const item = document.createElement("li");
+    item.className = "race-cal__entrant";
+    const mine = isOwnRace(member && member.name);
+    if (mine) item.classList.add("race-cal__entrant--mine");
+    const head = document.createElement("div");
+    head.className = "race-cal__entrant-head";
+    const who = document.createElement("p");
+    who.className = "race-cal__runner";
+    who.appendChild(avatarEl(member, "avatar--sm"));
+    const whoName = document.createElement("span");
+    whoName.textContent = (member && member.name) || "";
+    who.appendChild(whoName);
+    head.appendChild(who);
+    if (mine) head.appendChild(raceMenu(race));
+    item.appendChild(head);
+    appendRaceMeta(item, race);
+    return item;
   }
 
   function addLink(parent, href, label) {
@@ -782,6 +854,65 @@
     a.target = "_blank";
     a.textContent = label;
     parent.appendChild(a);
+  }
+
+  function distanceLabel(race) {
+    const dist = race && race.distance;
+    if (!dist) return "";
+    if (race.timed && !raceFinished(race.date_iso)) return "mål " + dist;
+    return dist;
+  }
+
+  function parseDistance(raw) {
+    const s = String(raw || "").trim();
+    const m = s.match(
+      /^([\d.,]+)\s*(km|k|miles|mile|mi|yards|yard|yd|timer|hours|hour|hr|h|t)?\b/i
+    );
+    if (!m) return { amount: "", unit: "km" };
+    const unitRaw = String(m[2] || "km").toLowerCase();
+    let unit = "km";
+    if (unitRaw === "miles" || unitRaw === "mile" || unitRaw === "mi") unit = "miles";
+    else if (unitRaw === "yards" || unitRaw === "yard" || unitRaw === "yd") unit = "yards";
+    else if (
+      unitRaw === "timer" ||
+      unitRaw === "hours" ||
+      unitRaw === "hour" ||
+      unitRaw === "hr" ||
+      unitRaw === "h" ||
+      unitRaw === "t"
+    ) {
+      unit = "timer";
+    }
+    return { amount: m[1], unit: unit };
+  }
+
+  function fillDistance(form, raw) {
+    const parsed = parseDistance(raw);
+    if (form.elements.distance) form.elements.distance.value = parsed.amount;
+    if (form.elements.distance_unit) form.elements.distance_unit.value = parsed.unit;
+  }
+
+  function composeDistance(form) {
+    const amount = String(valueOf(form, "distance") || "")
+      .replace(/[^\d.,]/g, "")
+      .trim();
+    if (!amount) return "";
+    const unit = valueOf(form, "distance_unit") || "km";
+    const suffix =
+      unit === "miles" || unit === "yards" || unit === "timer" ? unit : "km";
+    return amount + " " + suffix;
+  }
+
+  function syncTimedFields() {
+    const form = root.querySelector("[data-race-form]");
+    const timed = form && form.elements.timed && form.elements.timed.checked;
+    const label = root.querySelector("[data-distance-label]");
+    const input = form && form.elements.distance;
+    if (label) label.textContent = timed ? "Hvor langt vil du løpe" : "Distanse";
+    if (input) {
+      input.placeholder = timed ? "200" : "50";
+      input.setAttribute("aria-label", timed ? "Hvor langt vil du løpe" : "Distanse");
+    }
   }
 
   function elevationLabel(value) {
@@ -1172,6 +1303,8 @@
     if (status) status.textContent = "";
     fillClaimSelect();
     setDefaultFormDate();
+    fillDistance(form, "");
+    syncTimedFields();
     syncResultFields();
     const name = form.querySelector("[data-race-combo]");
     if (name) name.focus();
@@ -1193,12 +1326,14 @@
     fillClaimSelect();
     if (form.elements.name) form.elements.name.value = race.name || "";
     if (form.elements.date) form.elements.date.value = race.date_iso || "";
-    if (form.elements.distance) form.elements.distance.value = race.distance || "";
+    fillDistance(form, race.distance);
+    if (form.elements.timed) form.elements.timed.checked = Boolean(race.timed);
     if (form.elements.elevation) form.elements.elevation.value = race.elevation || "";
     if (form.elements.time) form.elements.time.value = race.time || "";
     if (form.elements.place) form.elements.place.value = race.place || "";
     if (form.elements.comment) form.elements.comment.value = race.comment || "";
     if (form.elements.url) form.elements.url.value = race.url || "";
+    syncTimedFields();
     syncResultFields();
     const name = form.querySelector("[data-race-combo]");
     if (name) name.focus();
@@ -1269,7 +1404,8 @@
     const body = {
       name: valueOf(form, "name"),
       date: valueOf(form, "date"),
-      distance: valueOf(form, "distance"),
+      distance: composeDistance(form),
+      timed: Boolean(form.elements.timed && form.elements.timed.checked),
       elevation: valueOf(form, "elevation"),
       time: raceFinished(valueOf(form, "date")) ? valueOf(form, "time") : "",
       place: raceFinished(valueOf(form, "date")) ? valueOf(form, "place") : "",

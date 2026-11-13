@@ -292,6 +292,7 @@ async function joinRace(request, env) {
     date_iso: source.date_iso,
   };
   if (source.distance) race.distance = source.distance;
+  if (source.timed) race.timed = true;
   if (source.elevation) race.elevation = source.elevation;
   if (source.url) race.url = source.url;
   return saveMemberRace(env, payload, body, race);
@@ -403,6 +404,7 @@ function mergeRaceFields(target, source) {
   ["distance", "elevation", "comment", "url", "time", "place"].forEach((key) => {
     if (source[key]) target[key] = source[key];
   });
+  if (source.timed) target.timed = true;
 }
 
 function raceKey(race) {
@@ -602,6 +604,7 @@ function normalizeRace(body) {
   const comment = clip(body.comment, 500);
   const url = String(body.url || "").trim();
   if (distance) race.distance = distance;
+  if (body.timed === true || body.timed === "true") race.timed = true;
   if (elevation) race.elevation = elevation;
   if (time) race.time = time;
   if (place) race.place = place;
