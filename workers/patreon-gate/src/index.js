@@ -268,7 +268,9 @@ async function addRace(request, env) {
     fail(400, "invalid_json");
   }
 
+  const data = await loadCalendar(env);
   const race = normalizeRace(body);
+  canonicalizeRace(race, data.members);
   return saveMemberRace(env, payload, body, race);
 }
 
@@ -316,6 +318,7 @@ async function updateRace(request, env) {
   const race = normalizeRace(body);
   const data = await loadCalendar(env);
   const members = cloneMembers(data.members);
+  canonicalizeRace(race, members);
   const member = resolveMember(members, payload, body.claim_name);
   applyAlias(members, member, body, payload);
   if (!member.races) member.races = [];
@@ -435,6 +438,80 @@ function normName(s) {
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function coreName(s) {
+  return normName(s)
+    .replace(/\s*\/\s*[a-z0-9]{2,8}$/i, "")
+    .replace(/\bby utmb\b/g, " ")
+    .replace(/\b(\d+[.,]?\d*)\s*(km|k|miles|mile|mi|yards|yard|yd|timer|hours|hour|hr|h|t)\b/g, " ")
+    .replace(/\b(\d+)\s*k\b/g, " ")
+    .replace(/[-–—]/g, " ")
+    .replace(/[^a-z0-9øæå ]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function preferRaceName(a, b) {
+  const aAlias = /\/\s*[A-Za-z0-9ÆØÅæøå]{2,8}\s*$/.test(a);
+  const bAlias = /\/\s*[A-Za-z0-9ÆØÅæøå]{2,8}\s*$/.test(b);
+  if (aAlias !== bAlias) return aAlias ? b : a;
+  return a.length <= b.length ? a : b;
+}
+
+function splitNameAndDistance(raw, knownCores) {
+  const s = String(raw || "").trim();
+  const m = s.match(
+    /^(.*?)[\s\-–—]*(\d+[.,]?\d*)\s*(km|k|miles|mile|mi|yards|yard|yd|timer|hours|hour|hr|h|t)?\s*$/i
+  );
+  if (!m || m[1].trim().length < 4) return { name: s, distance: "" };
+  const amount = m[2];
+  if (/^20\d{2}$/.test(amount)) return { name: s, distance: "" };
+  const name = m[1].trim().replace(/[\s\-–—]+$/g, "");
+  if (name.length < 4) return { name: s, distance: "" };
+  const unit = distanceUnit(m[3]);
+  let dist = "";
+  if (unit) dist = `${amount} ${unit}`;
+  else {
+    const n = parseFloat(String(amount).replace(",", "."));
+    const restCore = coreName(name);
+    const known =
+      !knownCores ||
+      knownCores.has(restCore) ||
+      [...knownCores].some((core) => core === restCore);
+    if (known && n >= 20 && n <= 500) dist = `${amount} km`;
+  }
+  if (!dist) return { name: s, distance: "" };
+  return { name, distance: dist };
+}
+
+function knownNamesByCore(members) {
+  const byCore = new Map();
+  for (const member of members || []) {
+    for (const race of member.races || []) {
+      if (!race?.name) continue;
+      const core = coreName(race.name);
+      if (!core) continue;
+      const prev = byCore.get(core);
+      if (!prev || preferRaceName(race.name, prev) === race.name) byCore.set(core, race.name);
+    }
+  }
+  return byCore;
+}
+
+function canonicalizeRace(race, members) {
+  if (!race?.name) return;
+  const byCore = knownNamesByCore(members);
+  const split = splitNameAndDistance(race.name, byCore);
+  const qCore = coreName(split.name);
+  if (!qCore) return;
+  const existing = byCore.get(qCore);
+  if (split.distance) {
+    race.name = existing || split.name;
+    if (!race.distance) race.distance = split.distance;
+    return;
+  }
+  if (existing) race.name = existing;
 }
 
 function applyLinks(member, body) {

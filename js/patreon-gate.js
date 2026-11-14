@@ -1556,24 +1556,22 @@
 
   function uniqueRaces() {
     const map = {};
-    RACE_CATALOG.forEach(function (row) {
-      if (!row.name) return;
-      const key = normName(row.name);
+    function add(name, url) {
+      if (!name) return;
+      const key = coreName(name) || normName(name);
       if (!map[key]) {
-        map[key] = { name: row.name, url: row.url || "" };
-      } else if (!map[key].url && row.url) {
-        map[key].url = row.url;
+        map[key] = { name: name, url: url || "" };
+        return;
       }
+      if (preferRaceName(name, map[key].name) === name) map[key].name = name;
+      if (!map[key].url && url) map[key].url = url;
+    }
+    RACE_CATALOG.forEach(function (row) {
+      add(row.name, row.url);
     });
     members().forEach(function (member) {
       (member.races || []).forEach(function (race) {
-        if (!race.name) return;
-        const key = normName(race.name);
-        if (!map[key]) {
-          map[key] = { name: race.name, url: race.url || "" };
-        } else if (!map[key].url && race.url) {
-          map[key].url = race.url;
-        }
+        add(race.name, race.url);
       });
     });
     return Object.keys(map)
@@ -1585,6 +1583,83 @@
       });
   }
 
+  function preferRaceName(a, b) {
+    const aAlias = /\/\s*[A-Za-z0-9ÆØÅæøå]{2,8}\s*$/.test(a);
+    const bAlias = /\/\s*[A-Za-z0-9ÆØÅæøå]{2,8}\s*$/.test(b);
+    if (aAlias !== bAlias) return aAlias ? b : a;
+    return a.length <= b.length ? a : b;
+  }
+
+  function coreName(s) {
+    return normName(s)
+      .replace(/\s*\/\s*[a-z0-9]{2,8}$/i, "")
+      .replace(/\bby utmb\b/g, " ")
+      .replace(/\b(\d+[.,]?\d*)\s*(km|k|miles|mile|mi|yards|yard|yd|timer|hours|hour|hr|h|t)\b/g, " ")
+      .replace(/\b(\d+)\s*k\b/g, " ")
+      .replace(/[-–—]/g, " ")
+      .replace(/[^a-z0-9øæå ]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function splitNameAndDistance(raw) {
+    const s = String(raw || "").trim();
+    const m = s.match(
+      /^(.*?)[\s\-–—]*(\d+[.,]?\d*)\s*(km|k|miles|mile|mi|yards|yard|yd|timer|hours|hour|hr|h|t)?\s*$/i
+    );
+    if (!m || m[1].trim().length < 4) return { name: s, distance: "" };
+    const amount = m[2];
+    if (/^20\d{2}$/.test(amount)) return { name: s, distance: "" };
+    const name = m[1].trim().replace(/[\s\-–—]+$/g, "");
+    if (name.length < 4) return { name: s, distance: "" };
+    const unitRaw = m[3] || "";
+    let dist = "";
+    if (unitRaw) {
+      const parsed = parseDistance(amount + " " + unitRaw);
+      dist = parsed.amount ? parsed.amount + " " + parsed.unit : "";
+    } else {
+      const n = parseFloat(String(amount).replace(",", "."));
+      const restCore = coreName(name);
+      const known = uniqueRaces().some(function (race) {
+        return coreName(race.name) === restCore;
+      });
+      if (known && n >= 20 && n <= 500) dist = amount + " km";
+    }
+    if (!dist) return { name: s, distance: "" };
+    return { name: name, distance: dist };
+  }
+
+  function raceMatchScore(nCore, qCore, leftoverDist) {
+    if (!nCore || !qCore) return 0;
+    if (nCore === qCore) return leftoverDist ? 92 : 100;
+    if (qCore.indexOf(nCore) === 0 && nCore.length >= 10 && leftoverDist) return 88;
+    if (nCore.indexOf(qCore) === 0 && qCore.length >= 8) return 70;
+    if (nCore.indexOf(qCore) !== -1 && qCore.length >= 8) return 55;
+    if (qCore.indexOf(nCore) !== -1 && nCore.length >= 10) return leftoverDist ? 85 : 60;
+    return 0;
+  }
+
+  function matchKnownRace(raw) {
+    const split = splitNameAndDistance(raw);
+    const qCore = coreName(split.name);
+    if (!qCore) return null;
+    let best = null;
+    uniqueRaces().forEach(function (race) {
+      const score = raceMatchScore(coreName(race.name), qCore, split.distance);
+      if (!best || score > best.score) {
+        best = {
+          name: race.name,
+          url: race.url,
+          score: score,
+          distance: split.distance,
+          strong: score >= 80,
+        };
+      }
+    });
+    if (!best || best.score < 50) return null;
+    return best;
+  }
+
   function bindRaceCombo() {
     const input = root.querySelector("[data-race-combo]");
     if (!input || input.dataset.bound) return;
@@ -1594,6 +1669,12 @@
     });
     input.addEventListener("focus", function () {
       renderRaceCombo(input.value);
+    });
+    input.addEventListener("blur", function () {
+      window.setTimeout(function () {
+        const hit = matchKnownRace(input.value);
+        if (hit && hit.strong) applyCanonicalRace(hit);
+      }, 120);
     });
     const list = root.querySelector("[data-race-list]");
     if (list) {
@@ -1638,12 +1719,26 @@
     const input = root.querySelector("[data-race-combo]");
     if (!list || !input) return;
     const q = String(raw || "").trim();
-    const qn = normName(q);
+    const split = splitNameAndDistance(q);
+    const qCore = coreName(split.name || q);
     let races = uniqueRaces();
-    if (qn) {
-      races = races.filter(function (race) {
-        return normName(race.name).indexOf(qn) !== -1;
-      });
+    if (qCore) {
+      races = races
+        .map(function (race) {
+          return {
+            race: race,
+            score: raceMatchScore(coreName(race.name), qCore, split.distance),
+          };
+        })
+        .filter(function (row) {
+          return row.score > 0;
+        })
+        .sort(function (a, b) {
+          return b.score - a.score;
+        })
+        .map(function (row) {
+          return row.race;
+        });
     }
     const shown = races.slice(0, 60);
     list.innerHTML = "";
@@ -1657,15 +1752,19 @@
       btn.setAttribute("aria-selected", i === 0 ? "true" : "false");
       btn.textContent = race.name;
       btn.addEventListener("click", function () {
-        applyExistingRace(race);
+        applyCanonicalRace({
+          name: race.name,
+          url: race.url,
+          distance: split.distance,
+          strong: true,
+        });
         closeRaceCombo();
       });
       li.appendChild(btn);
       list.appendChild(li);
     });
-    const exact = shown.some(function (race) {
-      return normName(race.name) === qn && qn;
-    });
+    const strong = shown[0] && matchKnownRace(q);
+    const exact = Boolean(strong && strong.strong);
     if (q.length >= 2 && !exact) {
       const li = document.createElement("li");
       const btn = document.createElement("button");
@@ -1690,10 +1789,15 @@
   }
 
   function applyExistingRace(race) {
+    applyCanonicalRace(race);
+  }
+
+  function applyCanonicalRace(hit) {
     const form = root.querySelector("[data-race-form]");
-    if (!form) return;
-    form.elements.name.value = race.name || "";
-    if (race.url && !form.elements.url.value) form.elements.url.value = race.url;
+    if (!form || !hit) return;
+    form.elements.name.value = hit.name || "";
+    if (hit.url && !form.elements.url.value) form.elements.url.value = hit.url;
+    if (hit.distance && !controlValue(form, "distance")) fillDistance(form, hit.distance);
   }
 
   function closeRaceCombo() {
@@ -1879,6 +1983,9 @@
       show("locked");
       return;
     }
+    const typedName = valueOf(form, "name");
+    const hit = matchKnownRace(typedName);
+    if (hit && hit.strong) applyCanonicalRace(hit);
     const body = {
       name: valueOf(form, "name"),
       date: valueOf(form, "date"),
@@ -1891,6 +1998,7 @@
       comment: valueOf(form, "comment"),
       url: valueOf(form, "url"),
     };
+    if (hit && hit.strong && hit.distance && !body.distance) body.distance = hit.distance;
     Object.assign(body, identityPayload());
     const path = editingRace ? "/races/update" : "/races";
     if (editingRace) {
