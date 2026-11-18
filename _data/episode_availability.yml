@@ -1,16 +1,27 @@
 ---
 meta:
-  generated_at: '2026-11-17T14:40:51Z'
+  generated_at: '2026-11-18T14:17:48Z'
   buzzsprout_feed: https://feeds.buzzsprout.com/145661.rss
   patreon_source: _episodes/*.md (import fra Patreon-RSS)
   note: 'Automatisk fuzzy-match (tittel, ev. #nr, dato, varighet). «Usikker» bør verifiseres manuelt. listen_*_episode_url: Apple via iTunes Lookup (guid/dato), Spotify ved SPOTIFY_CLIENT_ID/SECRET.'
 stats:
-  total: 653
+  total: 654
   also_free: 276
   uncertain: 21
-  patreon_only: 356
+  patreon_only: 357
   unmatched_buzzsprout: 0
 episodes:
+- slug: gro-siljan-hjukse-john-f-jahre-360-the-challenge-2921fcf955
+  title: Gro Siljan Hjukse & John F. Jahre | 360 The Challenge
+  episode_url: "/episoder/gro-siljan-hjukse-john-f-jahre-360-the-challenge-2921fcf955/"
+  date: '2026-11-18'
+  availability: patreon_only
+  match_score: 
+  buzzsprout_title: 
+  buzzsprout_pubdate: 
+  buzzsprout_url: 
+  buzzsprout_guid: 
+  buzzsprout_duration_hint_sec: 
 - slug: patrick-stangbye-rapport-fra-kolon-trail-run-bhutan-2026-addbfdbf4a
   title: Patrick Stangbye | Rapport fra Kolon Trail Run Bhutan 2026 og Østmarka Fifty
   episode_url: "/episoder/patrick-stangbye-rapport-fra-kolon-trail-run-bhutan-2026-addbfdbf4a/"
